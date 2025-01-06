@@ -1,0 +1,166 @@
+---
+title: "Algèbre Relationnelle"
+description: "[Slides](algebre-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Algèbre Relationnelle](algebre.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: algebre-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: false
+from: markdown+emoji
+---
+
+## Algèbre Relationnelle
+
+- [A Relational Model of Data for Large Shared Data Banks](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf){target="_blank"}, Edgar F. Codd, 1970
+- Objectif : Modéliser une base de données ainsi que ses opérations
+- Dans un SGBD relationel, tout est question de relation
+
+
+## Principaux opérateurs
+
+::: {.small-table}
+| **Opérateur**        | **Description**                              |
+|----------------------|----------------------------------------------|
+| **σ (Sélection)**    | Filtrer les lignes selon une condition      |
+| **π (Projection)**   | Sélectionner des colonnes spécifiques        |
+| **U (Union)**        | Combiner les lignes de deux relations       |
+| **− (Différence)**   | Retourner les lignes présentes dans une relation mais pas dans l'autre |
+| **∩ (Intersection)** | Trouver les lignes communes aux deux relations |
+| **⨝ (Jointure)**    | Combiner deux relations basées sur une condition |
+| **x (Produit Cartésien)** | Combinaison des colonnes                | 
+:::
+
+### Sélection
+
+- Permet de filtrer les lignes d'une table selon une condition
+
+::: {.fragment}
+- :warning: Mot clé SQL associé : WHERE 
+
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+ WHERE elo < 2400;
+```
+:::
+
+
+### Projection
+
+- Permet de sélectionner certaines colonnes d'une table.
+- Mot clé SQL associé : SELECT 
+
+```{.sql}
+SELECT nom,
+       prenom
+  FROM echecs.joueuse;
+```
+
+### Union
+
+- Combine les lignes de deux tables ayant le [même nombre de colonnes et des types compatibles]{.underline}
+
+```{.sql}
+SELECT nom,
+       prenom
+  FROM echecs.joueuse
+
+UNION
+
+SELECT nom,
+       prenom
+  FROM echecs.joueur;
+```
+
+::: {.callout-tip}
+- **UNION** : Combine les résultats des requêtes et supprime les doublons
+- **UNION ALL** : Combine les résultats des requêtes et garde tous les doublons
+:::
+
+:::{.notes}
+- En général, on prend les mêmes colonnes des 2 côtés
+- Possible de faire plusieurs UNION
+- ORDER BY à la fin : ordonne le tout
+:::
+
+### Différence
+
+- Lignes qui se trouvent dans la première relation mais pas dans la seconde
+
+```{.sql}
+-- Joueuses évoluant dans un club français et pas dans un club belge
+SELECT nom,
+       prenom
+  FROM echecs.joueuse_club_fr
+
+EXCEPT
+
+SELECT nom,
+       prenom
+  FROM echecs.joueuse_club_be;
+```
+
+::: {.notes}
+Imaginons que vous ayez créé 2 tables :
+
+- joueuses évoluant dans un club français
+- joueuses évoluant dans un club belge
+:::
+
+
+
+### Intersection
+
+- Lignes communes aux deux tables
+
+```{.sql}
+-- Joueuses évoluant dans un club francais et dans un club belge
+SELECT nom,
+       prenom
+  FROM echecs.joueuse_club_fr
+
+INTERSECT
+
+SELECT nom,
+       prenom
+  FROM echecs.joueuse_club_be;
+```
+
+### Jointure
+
+- Permet de combiner deux tables en se basant sur une correspondance entre les colonnes
+
+```{.sql}
+SELECT j.nom,
+       j.prenom,
+       c.nom AS club
+  FROM echecs.joueuse j
+  JOIN echecs.club c USING (id_club);
+```
+
+### Produit Cartésien
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse j,
+       echecs.club c;
+-- WHERE j.id_club = c.id_club
+```
+
+::: {.notes}
+Ancienne pratique : utilisé avant à la place des jointures
+:::

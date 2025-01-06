@@ -1,0 +1,47 @@
+---
+title: "Glossaire"
+description: "Vocabulaire sur Python et ses concepts fondamentaux"
+author: "Natacha NJONGWA YEPNGA"
+format: html
+from: markdown+emoji
+---
+
+:construction:
+
+## Python
+
+Un langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.
+
+### Variable
+
+Un espace mémoire réservé pour stocker une valeur.  
+En Python, les variables n'ont pas de type explicitement défini, mais leur contenu en a un (ex : `int`, `str`, `float`).
+
+Synonymes : Identifiant, Conteneur.
+
+### Type de données
+
+Catégorie de données que peut prendre une variable :
+- **int** : nombres entiers.
+- **float** : nombres décimaux.
+- **str** : chaînes de caractères.
+- **bool** : valeurs booléennes (`True`, `False`).
+
+Synonymes : Type, Classe.
+
+---
+
+## Structures de contrôle
+
+### Condition
+
+Permet d’exécuter un bloc de code en fonction d’une condition.  
+Syntaxe en Python :
+```python
+if condition:
+    # Faire quelque chose
+elif autre_condition:
+    # Faire autre chose
+else:
+    # Faire par défaut
+```

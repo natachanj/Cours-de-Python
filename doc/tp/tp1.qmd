@@ -1,0 +1,378 @@
+---
+title: "Premières requêtes SQL"
+description: "Sélectionner, Filtrer, Agréger"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Introduction {.unnumbered}
+
+Vous allez réaliser ce TP su un Datalab.
+
+::: {.callout-note title="Le Datalab en quelques mots"}
+Un TP dédié vous expliquera plus en détail ce qu'est le Datalab.
+
+Le Datalab permet aux utilisateurs de lancer facilement des services pour travailler avec des langages comme R ou Python, ou encore gérer des bases de données. 
+
+Il offre une grande puissance de calcul, ce qui permet de traiter de gros volumes de données et de réaliser des analyses complexes sans se soucier des limites techniques. 
+
+Avec cette plateforme :
+
+- les utilisateurs accèdent aux ressources nécessaires en quelques clics
+- sans devoir installer eux-mêmes les logiciels 
+- ni configurer les serveurs
+:::
+
+### Datalab du GENES ou SSPCloud {.unnumbered}
+
+Connectez-vous à l'une des 2 instances suivantes (elles sont quasiment identiques) :
+
+- [ ] [Datalab du GENES](https://onyxia.lab.groupe-genes.fr/){target="_blank"}
+- [ ] [Datalab SSPCloud de l'INSEE](https://datalab.sspcloud.fr/){target="_blank"} 
+  - en créant un compte avec votre mail ENSAI
+
+::: {.callout-tip}
+Pour éviter les problèmes de charges :
+
+- Les élèves fonctionnaires feront le TP sur le SSPCloud
+- Les élèves ingénieurs :arrow_right: Datalab du GENES
+:::
+
+### VM ENSAI {.unnumbered}
+
+::: {.callout-important title="En cas d'indisponibilité des Datalabs"}
+Uniquement en cas d'indisponibilité des Datalabs, vous pouvez réaliser le TP directement sur la VM. Le logiciel DBeaver est installé.
+:::
+
+- [ ] Lancez DBeaver
+- [ ] Onglet *Base de données* :arrow_right: *Nouvelle Connexion*
+  - Type de connexion : `DuckDB`
+  - Suivant
+  - Path : `:memory:`
+  - Terminer
+- [ ] Dans l'explorer (à gauche), clic droit sur la connexion que vous venez de créer
+  - *Editeur SQL* :arrow_right: *Script SQL* (raccourci : F3)
+
+Cela ouvre une fenêtre dans laquelle vous pouvez saisir du SQL.
+
+
+## Lancement du service
+
+::: {.callout-note}
+Uniquement sur le Datalab.
+:::
+
+- [ ] Lancez le service [CloudBeaver](https://dbeaver.com/docs/cloudbeaver/){target="_blank"}
+  - Allez dans **Catalogue de services**
+  - Onglet **Databases**
+
+::: {.callout-tip title="CloudBeaver"}
+CloudBeaver est une application web légère dédiée à la gestion de bases de données. Elle permet de se connecter à divers types de bases de données, qu'elles soient SQL, NoSQL ou hébergées dans le cloud, à partir d'un seul point d'accès via un navigateur. CloudBeaver facilite l'exploration, la modification et la visualisation des données sans nécessiter l'installation de logiciels locaux. 
+
+Elle offre également des fonctionnalités de sécurité pour protéger l'accès aux données. Son interface conviviale en fait un outil accessible aussi bien aux développeurs qu'aux analystes de données.
+:::
+
+Pour ce premier TP, nous n'allons pas utiliser de base de données PostgreSQL. Nous allons simplement utiliser [DuckDB](https://duckdb.org/){target="_blank"} pour lire des fichiers de données.
+
+
+::: {.callout-tip title="DuckDB"}
+DuckDB est un moteur de base de données relationnelle conçu pour des analyses rapides et efficaces.
+
+DuckDB est idéal pour les charges de travail analytiques en raison de sa simplicité, de sa rapidité et de son extensibilité, surtout pour traiter des fichiers volumineux localement.
+
+| **Caractéristique**   | **Description**                                                                                                                                                 |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Simplicité**        | Fonctionne sans serveur, intégré dans le processus hôte. Aucune dépendance externe pour la compilation ou l'exécution, simplifiant son déploiement. |
+| **Rapidité**          | Optimisé pour l'analytique (OLAP) avec un moteur d'exécution vectorisé en colonnes, réduisant le temps de traitement pour les requêtes complexes.                 |
+| **Richesse fonctionnelle** | Supporte des requêtes SQL complexes, fonctions de fenêtre, index secondaires, et assure des garanties ACID grâce au contrôle de concurrence (MVCC).         |
+| **Extensibilité**     | Permet l’ajout de types de données, fonctions et formats de fichiers via des extensions (supporte Parquet, JSON, S3, HTTP(S)).                                   |
+| **Gratuit et open-source** | Licence MIT, code source disponible et contributions ouvertes à tous.                                                                                         |
+
+:::
+
+
+- [ ] Créez une nouvelle connexion **DuckDB**
+  - En haut à gauche, cliquez sur le +, puis New connection
+  - Sélectionner **DuckDB**
+  - Cliquez sur le bouton CREATE
+- [ ] Ouvrez un éditeur SQL
+  - Dans l'explorer à gauche, clic droit sur votre connection *DuckDB* :arrow_right: SQL Editor
+  - vous pouvez maintenant saisir du code *SQL*
+
+
+## Les prénoms
+
+
+Le fichier des prénoms contient des données sur les prénoms attribués aux enfants nés en France depuis 1900. Ces données sont disponibles au niveau France et par département.
+
+Dans ce TP, nous allons utiliser la version au format [parquet](https://parquet.apache.org/){target="_blank"}, mise à disposition sur le site [data.gouv](https://www.data.gouv.fr/fr/datasets/base-prenoms-insee-format-parquet/){target="_blank"} par [Icem7](https://www.icem7.fr/){target="_blank"}.
+
+
+::: {.callout-note title="Fichier parquet"}
+Le format **Parquet** est un format de fichier de stockage de données optimisé pour les systèmes de traitement analytique de grande échelle. Voici ses principales caractéristiques :
+
+1. **Stockage en colonnes** : Parquet stocke les données par colonnes plutôt que par lignes, ce qui améliore l'efficacité de l'accès aux données dans les charges de travail analytiques.
+   
+2. **Compression efficace** : La compression par colonne permet un taux de compression moyen de 5 à 10 fois par rapport aux formats CSV, voire plus pour de gros fichiers. Cela réduit significativement la taille des données stockées et le coût de stockage.
+
+3. **Optimisé pour l'analytique** : Parquet est conçu pour les requêtes en lecture intensive, car il permet de charger uniquement les colonnes nécessaires pour une analyse, ce qui améliore les performances en particulier sur les données volumineuses.
+
+4. **Métadonnées Riches et Auto-descriptives** : Parquet inclut des métadonnées détaillées (schéma, types de données, statistiques min/max), permettant une lecture rapide et sans risque d'erreur. Ces métadonnées facilitent également le traitement des données par différents outils.
+
+5. **Langage Indépendant et Open Source** : Le format Parquet est indépendant du langage et peut être utilisé avec divers langages de programmation (Python, R, C++, Java). Il est aussi open source et compatible avec la plupart des frameworks de big data.
+:::
+
+Pour en savoir plus sur le format Parquet : 
+
+- [Parquet, qu'est-ce que c'est ?, Databricks](https://www.databricks.com/fr/glossary/what-is-parquet){target="_blank"}
+- [What is the Parquet File Format?, Upsolver blog](https://www.upsolver.com/blog/apache-parquet-why-use){target="_blank"}
+
+---
+
+- [ ] Créez une vue `prenom` qui pointera vers le fichier parquet des prénoms
+  ```{.sql}
+  CREATE OR REPLACE VIEW prenom AS
+  FROM 'https://static.data.gouv.fr/resources/base-prenoms-insee-format-parquet/20231121-161435/prenoms-nat2022.parquet'
+  ```
+  - Vous pourrez ensuite requêter sur cette vue comme si c'était une table
+
+::: {.callout-tip title="Éxécuter une requête"}
+Cliquez sur la requête pour y positionner le pointeur de la souris, puis au choix :
+
+- Cliquez sur le petit triangle orange
+- CTRL + ENTREE
+:::
+
+
+
+
+### Premières requêtes
+
+
+::: {.callout-important}
+
+Prenez le temps et l'habitude d'écrire de jolies requêtes bien alignées !!!
+
+```{.sql filename="bien.sql"}
+SELECT c.nom AS club, 
+       AVG(j.elo) AS moyenne_elo
+  FROM joueuse j 
+ INNER JOIN club c USING (id_club) 
+ WHERE j.mail IS NOT NULL 
+ GROUP BY c.nom 
+ ORDER BY 2 DESC;
+```
+
+<br>
+
+```{.sql filename="pasbien.sql"}
+SELECT c.nom AS club, AVG(j.elo) AS moyenne_elo FROM joueuse j INNER JOIN club c USING (id_club) WHERE mail IS NOT NULL GROUP BY c.nom ORDER BY 2 DESC;
+```
+
+:::
+
+- [ ] Listez tous les éléments de `prenom`
+- [ ] Filtrez pour ne plus afficher les *prénoms rares*
+
+::: {.callout-tip title="Secret statistique"}
+Les prénoms ayant un nombre insuffisant d'occurrences sont regroupés sous une appellation générique. Cela permet de protéger le secret statistique et de garantir l'anonymat.
+
+Sans cette précaution, par exemple :
+
+- si vous vous appeliez *Yann-Adam LEFGRIGO* 
+- et que vous êtes le seul à porter ce prénom
+- n'importe qui pourrait connaître votre année de naissance
+
+De même, si vous êtiez 2 à porter ce prénom, l'autre *Yann-Adam* connaitrait aussi votre année de naissance. Ce n'est toujours pas satisfaisant. Il faut donc [à minima]{.underline} 3 individus pour garantir l'anonymat.
+:::
+
+- [ ] De quel type est le champ *annais* ? Pourquoi ?
+- [ ] Listez les différentes années de naissance
+  - Classez-ces années en décroissant
+  - Que remarquez-vous ?
+- [ ] Ajoutez un filtre pour exclure l'année non renseignée 
+
+
+### Année 2022
+
+::: {.callout}
+Filtrez sur l'année 2022 et excluez les prénoms rares.
+:::
+
+- [ ] Listez les prénoms de l'année 2022
+  - Classez-les en décroissant par le nombre de fois où ils sont été donnés
+- [ ] Listez les prénoms de l'année 2022 donnés plus de 2000 fois
+- [ ] Classez-les d'abord par sexe, puis par nombre décroissant d'occurrences
+  - Quels sont les prénoms masculins et féminins les plus donnés ?
+- [ ] Listez les prénoms féminins commençant par la lettre *Q*
+- [ ] Compter le nombre de prénoms commençant par chaque lettre
+  - Pour extraite la première lettre d'un prénom, vous pouvez par exemple utiliser la fonction `SUBSTRING`
+  - Bonus : différenciez filles et garçons
+
+
+### Statistiques descriptives
+
+
+- [ ] Lancez la commande `SUMMARIZE prenom;` pour avoir quelques stats sur la table
+
+::: {.callout}
+Filtrez pour exclure les prénoms rares.
+:::
+
+- [ ] Affichez pour l'année 2003, les prénoms et leurs nombres de caractères
+  - Trouvez une fonction adéquate
+- [ ] Affichez le nombres de caractères minimum, maximum et moyen parmi les prénoms de 2003
+- [ ] Listez les 3 prénoms de 2003 ayant le nombre de caractères maximum
+- [ ] Modifiez cette dernière requête pour afficher pour chaque année entre 2015 et 2022 le ou les prénoms avec le plus de caractères
+  - classez par année
+  - Difficulty : :star: :star: :star:
+- [ ] Affichez pour chaque année la taille moyenne des prénoms
+  - classez par année
+  - utilisez la fonction `ROUND(<value>, 2)` pour arrondir les moyennes
+  - Que remarquez-vous ?
+
+::: {.callout-tip collapse="true"} 
+Dans cette partie vous allez avoir besoin d'utiliser des sous-requêtes
+:::
+
+### Jérôme, c'est moi
+
+- [ ] Listez les différentes années où le prénom `JÉRÔME` a été donné
+  - classez par année décroissante
+  - Que remarquez-vous ?
+- [ ] Listez également les `JEROME` avec d'autres accents / sans accent
+  - recherchez une fonction DuckDB qui permet de répondre à ce besoin
+- [ ] Affichez pour chaque année le nombre de fois où le prénom JEROME a été donné, quelle que soit l'accentuation
+
+::: {.callout-tip title="Aide" collapse="true"}
+- voir Fontion DuckDB strip_accents()
+- Regroupez par strip_accents(preusuel) et annais
+- Affichez strip_accents(preusuel), annais et la somme de la colonne *nombre*
+:::
+
+### Suivi temporel
+
+::: {.callout}
+Filtrez pour exclure l'année *XXXX*.
+:::
+
+- [ ] Créez une requête qui permet d'avoir le nombre de naissances par année depuis l'année 2000
+  - Classez par année décroissante
+- [ ] Complétez la requête pour afficher le nombre de prénoms différents données chaque année
+  - Remarque : vous n'aurez pas le nombre exact car certains sont dans les prénoms rares
+- [ ] Écrivez une requête qui donne le nombre de filles et de garçons nés chaque année depuis 2000
+
+::: {.callout-note}
+Même si le champ *annais* n'est pas de type numérique, il est possible de comparer des chaines de caractères.
+
+Le [code ASCII](https://www.ascii-code.com/fr){target="_blank"} est utilisé pour comparer le premier caractère de la chaine, puis en cas d'égalité, le 2e caractère...
+:::
+
+
+### Prénoms composés
+
+Nous allons maintenant nous interesser aux prénoms composés entre 2000 et 2009
+
+- [ ] Listez les prénoms composés entre les années 2000 et 2009 incluses
+- [ ] Regroupez-les par *preusuel*, puis affichez également le nombre de fois où ils ont été donnés
+  - Triez en décroissant par ce nombre
+- [ ] Filtrez pour ne garder que les prénoms composés contenant le prénom `JEAN`
+  - Que remarquez-vous ? N'y a-t-il pas des intrus ?
+- [ ] Trouvez une solution pour remédier à ce souci
+  - Par exemple avec la fonction DuckDB `split_part()`
+
+
+### Cette année-là
+
+::: {.callout}
+Difficulty : :star: :star: :star:
+
+Filtrez sur l'année 1962 et excluez les prénoms rares.
+:::
+
+- [ ] Comptez le nombre de prénoms distincts donnés
+- [ ] Complétez en comptant le nombre de prénoms distincts donnés par sexe
+- [ ] Complétez en calculant le nombre total des prénoms distincts donnés, en prenant en compte la distinction entre les sexes
+  - exemple : ici *Dominique (H)* et *Dominique (F)* comptent pour 2 prénoms
+- [ ] Donnez la liste des prénoms donnés à la fois à des filles et des garçons
+  - affichez le nombre de fois où ils ont été donnés à chaque sexe
+- [ ] Ajoutez à la dernière requête une colonne contenant un booléen qui affiche
+  - True si le prénom a été donné à plus de filles que de garçons
+  - False sinon
+- [ ] Au lieu d'afficher ce booléen, ajoutez une condition pour n'afficher que lorsque le prénom a été plus donné à des filles
+
+
+
+## Fichier des individus
+
+- [ ] Créez une vue qui pointe vers le fichier des individus du recensement de la population 2020
+  ```{.sql}
+  CREATE OR REPLACE VIEW individus AS
+  FROM 'https://static.data.gouv.fr/resources/recensement-de-la-population-fichiers-detail-individus-localises-au-canton-ou-ville-2020-1/20231023-122841/fd-indcvi-2020.parquet';
+  ```
+- [ ] Comptez le nombre d'individus
+  - Pourquoi ce nombre d'individus vivant en France paraît faible ?
+
+::: {.callout-tip title="Poids de l'individu"}
+Dans de nombreuses bases de données de l'INSEE, la variable `ipondi` représente le poids de l'individu.
+
+i.e. Si une ligne a un IPONDI égal à 2, cela signifie qu'elle représente 2 individus.
+:::
+
+- [ ] Au lieu de compter le nombre de lignes, sommez la variable `ipondi`
+  - Vous pouvez suffixer votre somme par `::INT` pour convertir ce nombre en entier
+- [ ] Affichez 10 lignes
+  - Que remarquez-vous ?
+
+
+::: {.callout-note title="Codification"}
+Pourquoi utiliser une codification pour le fichier national individus localisés au canton-ou-ville du recensement de la population 2020 ?
+
+- **Espace de stockage réduit** : Les codes courts remplacent des chaînes de texte plus longues, ce qui diminue la taille du fichier et rend le stockage et le transfert de données plus efficaces. Même après codification, le fichier pèse plus de 500 Mo
+- **Standardisation et uniformité** : Utiliser des codes standardisés permet de garantir une structure homogène et facilite l'intégration et la comparaison des données entre différents fichiers ou études.
+- **Performances de traitement** : Les codes sont plus rapides à traiter que des textes longs, notamment pour des opérations de recherche, de tri, et de filtrage, ce qui est crucial pour les grands ensembles de données.
+:::
+
+- [ ] Pour s'y retrouver, créez une vue vers le dictionnaire des variables
+  ```{.sql}
+  CREATE OR REPLACE VIEW variables_individus AS
+  FROM 'https://static.data.gouv.fr/resources/recensement-de-la-population-fichiers-detail-individus-localises-au-canton-ou-ville-2020-1/20231025-082910/dictionnaire-variables-indcvi-2020.csv'
+  ```
+- [ ] Affichez tout le contenu de cette vue
+- [ ] Trouvez la modalité représentant le département de résidence de l'individu
+- [ ] Affichez le nombre d'habitants par départements
+  - ordonnez par numéro de département
+- [ ] Complétez la requête en :
+  - restreignant sur les individus entre 25 et 29 ans
+  -  différenciant les hommes et les femmes
+
+
+## Arrêtez votre service {.unnumbered}
+
+C'est la fin du TP, vous pouvez maintenant sauvegarder votre travail et libérer les ressources réservées :
+
+- [ ] Copiez votre code et collez le sur votre machine dans un fichier *.sql*
+  - par exemple dans `P:/Cours1A/UE3-Bases-de-donnees-relationnelles/TP1/tp1.sql`
+- [ ] Retournez sur la page d'accueil du Datalab
+- [ ] Allez dans *Mes Services* et supprimez votre service
+
+## Pour aller plus loin {.unnumbered}
+
+- [3 explorations bluffantes avec DuckDB](https://www.icem7.fr/pedagogie/3-explorations-bluffantes-avec-duckdb-1-interroger-des-fichiers-distants/){target="_blank"}
+
+{{< video https://www.youtube.com/watch?v=ajo0VBXT6ho >}}
+
+---
+
+{{< video https://www.youtube.com/watch?v=7nklk064IR8 >}}
+
+
+
+

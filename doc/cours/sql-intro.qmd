@@ -1,0 +1,974 @@
+---
+title: "SQL - Introduction"
+description: "[Slides](sql-intro-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [SQL intro](sql-intro.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: sql-intro-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: false
+from: markdown+emoji
+---
+
+## Structured Query Language
+
+::: {.callout-note title="Définition"}
+Le SQL est un langage standardisé utilisé pour interagir avec des bases de données relationnelles. 
+
+Il permet de créer, manipuler, interroger et gérer les données stockées dans des tables.
+:::
+
+### Norme SQL
+
+SQL est un language normé dont la dernière version est **SQL:2023**.
+
+::: {.callout-caution}
+Les SGBD ne respectent pas exactement la norme SQL.
+
+À un niveau avancé d'utilisation, il y a des différences entre les SGBD.
+:::
+
+- [PostgreSQL SQL](https://www.postgresql.org/docs/current/sql.html){target="_blank"}
+- [DuckDB SQL](https://duckdb.org/docs/sql/introduction.html){target="_blank"}
+
+::: {.notes}
+- Sinon c'est très ressemblant.
+- DuckDB's SQL dialect closely follows the conventions of the PostgreSQL dialect. few exceptions
+:::
+
+### Composantes du langage
+
+- Définition de Données
+- Manipulation de Données
+- Contrôle des Transactions
+- Contrôle d'accès aux Données
+
+::: {.notes}
+
+- Manipulation de Données
+  - CRUD
+- Définition de Données
+  - Créer/Modifier/Supprimer une table
+- Contrôle des Transactions
+  - BEGIN, COMMIT, ROLLBACK
+- Contrôle d'accès aux Données
+  - GRANT REVOKE
+:::
+
+
+## Définition de Données
+
+::: {.notes}
+Ici nous n'allons travailler que sur une seule table à la fois
+:::
+
+### Créer une table
+
+```{.sql}
+CREATE TABLE joueuse (
+    id_joueuse     INT,
+    nom            TEXT,
+    prenom         TEXT,
+    date_naissance DATE,
+    elo            INT,
+    est_arbitre    BOOLEAN,
+    code_pays      TEXT,
+    taux_victoires FLOAT
+);
+```
+
+::: {.notes}
+C'est comme créer les colonnes d'un tableau.
+
+Tout en spécifiant les types.
+:::
+
+### CREATE avancé
+
+```{.sql}
+CREATE TABLE echecs.joueuse (
+    id_joueuse     SERIAL         PRIMARY KEY,   
+    nom            VARCHAR(50)    NOT NULL, 
+    prenom         VARCHAR(50)    NOT NULL, 
+    date_naissance TIMESTAMP,                 
+    elo            INT            CHECK (elo > 0),  
+    mail           VARCHAR(100)   UNIQUE,         
+    est_arbitre    BOOLEAN        DEFAULT false,
+    code_pays      VARCHAR(2),          
+    taux_victoires FLOAT          CHECK (taux_victoires BETWEEN 0 AND 1)
+);
+```
+
+:::::: {.fragment}
+::: {.callout-important title="Contraintes"}
+- `NOT NULL` : l'attribut doit être renseigné
+- `UNIQUE` : chaque valeur de l'attribut est unique (pas de doublons)
+- `CHECK` : pour vérifier la cohérence d'un attribut
+:::
+::::::
+
+::: {.notes}
+- Schéma echecs : j'y viens juste après
+- SERIAL : séquence numérique, on en reparle dans quelques minutes
+- VARCHAR(50) pour limiter la taille des valeurs
+- DEFAULT : valeur par défaut (principalement lors de l'INSERT)
+
+Important : La PK est NOT NULL et UNIQUE
+:::
+
+
+### Schéma
+
+Utile lorsque le nombre de tables devient grand.
+
+- Organisation des objets, clarté
+- Gestion des permissions
+
+
+```{.sql}
+CREATE SCHEMA echecs;
+```
+
+::: {.notes}
+- Pamplemousse -> Millésime
+- Vente de légume
+- Utiliser la même bdd pour la gestion RH, le métier et la compta
+- créer un schéma pour séparer les tables
+:::
+
+---
+
+#### Table dans un schéma
+
+```{.sql}
+CREATE TABLE echecs.club (
+    id_club          SERIAL          PRIMARY KEY,  
+    nom              VARCHAR(100)    NOT NULL,   
+    ville            VARCHAR(100)    NOT NULL, 
+    date_creation    DATE
+);
+```
+
+<br>
+
+Déplacer la table *joueuse* dans le schéma *echecs* :
+
+```{.sql}
+ALTER TABLE joueuse SET SCHEMA echecs;
+```
+
+:::::: {.fragment}
+::: {.callout-note title="Schéma par défaut"}
+Par défaut les objets sont créés dans le schéma `public`.
+
+Ça devient rapidement un joyeux bazar si on ne range pas ses tables.
+:::
+::::::
+
+::: {.notes}
+C'est comme créer un fichier dans un dossier.
+:::
+
+
+### Bonnes pratiques
+
+- Nom de table représentatif et au singulier
+- Pas de majuscules, pas d'accents
+- Mots séparés par des underscores (snake_case)
+- Ne pas utiliser de mots clés réservés (date, user...)
+- Ne pas avoir de colonne qui porte le même nom que sa table
+
+::: {.notes}
+dans les requêtes : mots clés en majuscules
+:::
+
+### Modifier une colonne
+
+Modifier le type :
+
+```{.sql}
+ALTER TABLE joueuse
+ALTER COLUMN nom TYPE VARCHAR(80);
+```
+
+<br>
+
+Renommer :
+
+```{.sql}
+ALTER TABLE echecs.joueuse
+RENAME COLUMN date_naissance TO dnais;
+```
+
+### Créer/Supprimer une colonne
+
+Ajout :
+
+```{.sql}
+ALTER TABLE echecs.joueuse
+ADD COLUMN id_club INT;
+```
+
+<br>
+
+Suppression :
+
+```{.sql}
+ALTER TABLE echecs.joueuse
+DROP COLUMN taux_victoires;
+```
+
+### Définir une clé étrangère
+
+- Nous venons de créer une colonne `id_club`
+- Lions maintenant cette colonne à la table *club*
+
+```{.sql}
+ALTER TABLE echecs.joueuse
+ADD CONSTRAINT fk_id_club
+FOREIGN KEY (id_club)
+REFERENCES echecs.club(id_club);
+```
+
+:::::: {.fragment}
+::: {.callout-tip title="Clé étrangère"}
+Dans la table joueuse, l'attribut `id_club` a pour valeur soit :
+
+- une valeur de `id_club` de la table *club*
+- NULL
+:::
+::::::
+
+
+### Autres possibilités
+
+- Renommer une table
+- Ajouter / Supprimer une contrainte
+- Définir / Supprimer une valeur par défaut
+
+
+### Supprimer une table
+
+```{.sql}
+DROP TABLE echecs.joueuse;
+```
+
+:::::: {.fragment}
+::: {.callout-warning}
+**Cette opération est irréversible !**
+
+ Elle supprime définitivement :
+ 
+ - la table
+ - toutes les données qu'elle contient
+:::
+::::::
+
+```{.sql}
+DROP TABLE IF EXISTS echecs.joueuse;      -- utile pour les scripts SQL
+```
+
+
+## Insérer des données
+
+
+:::::: {.columns}
+
+::: {.column width="30%"}
+```{mermaid}
+classDiagram
+    class Club {
+        id_club PK
+        nom
+        ville
+        date_creation
+    }
+```
+:::
+
+::: {.column width="70%"}
+```{.sql}
+-- Rappel du CREATE
+CREATE TABLE echecs.club (
+    id_club          SERIAL          PRIMARY KEY,  
+    nom              VARCHAR(100)    NOT NULL,   
+    ville            VARCHAR(100)    NOT NULL, 
+    date_creation    DATE
+);
+```
+:::
+
+::::::
+
+
+:::::: {.fragment}
+```{.sql}
+INSERT INTO echecs.club 
+(nom,                              ville,            date_creation)
+VALUES           
+('C''Chartres Echecs',            'Chartres',        '1991-09-01'),
+('Bischwiller',                   'Bischwiller',     '1976-09-01'),
+('Asnieres - le Grand Echiquier', 'Asnieres',        '1987-03-20'),
+('Tours des Hauts-De-France',     'Saint-Quentin',   '1999-12-01');
+```
+::::::
+
+:::::: {.fragment}
+Pourquoi l'on n'insère pas la colonne *id_club* ? :confused:
+::::::
+
+:::{.notes}
+Attention à bien mettre les virgules au bon endroit
+
+
+- Pas de double quotes en SQL !!!
+- '' : Pour ajouter un simple quote dans une chaine
+
+:::
+
+### Séquence
+
+La colonne *id_club* est une séquence gérée par le SGBD.
+
+Les valeurs sont générées automatiquement à l'insertion et la séquence est incrémentée (1, 2, 3...).
+
+
+:::::: {.fragment}
+::: {.callout-tip title="Séquences" collapse="true"}
+Il est possible de créer et gérer ses propres séquences :
+
+```{.sql}
+CREATE SEQUENCE nom_sequence START 1 INCREMENT BY 1;
+
+SELECT currval('nom_sequence'); -- dernière valeur utilisée
+SELECT nextval('nom_sequence'); -- prochaine valeur
+
+ALTER SEQUENCE nom_sequence RESTART WITH nouvelle_valeur;
+
+DROP SEQUENCE nom_sequence;
+
+```
+:::
+::::::
+
+
+
+## Lire des données
+
+`SELECT * FROM <schema>.<table>` pour tout afficher.
+
+```{.sql}
+SELECT *
+  FROM echecs.club;
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| id_club |            nom                   |     ville     | date_creation |
+|---------|----------------------------------|---------------|---------------|
+|    1    | C'Chartres Echecs                | Chartres      | 1991-09-01    |
+|    2    | Bischwiller                      | Bischwiller   | 1976-09-01    |
+|    3    | Asnieres - le Grand Echiquier    | Asnieres      | 1987-03-20    |
+|    4    | Tours des Hauts-De-France        | Saint-Quentin | 1999-12-01    |
+
+:::
+::::::
+
+::: {.notes}
+- `*` : toutes les colonnes
+:::
+
+### Colonnes à afficher
+
+Listez les colonnes à afficher après le `SELECT`
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse;
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Guichard               | Pauline          | 2357    |
+| Daulyte-Cornette       | Deimante         | 2371    |
+| Navrotescu             | Andreea          | 2338    |
+| Sebag                  | Marie            | 2448    |
+| Millet                 | Sophie           | 2366    |
+| Skrichempko            | Almira           | 2361    |
+
+:::
+::::::
+
+### Filtrer les lignes
+
+Filtrez sur les lignes avec une clause `WHERE`.
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE elo > 2400;
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Sebag                  | Marie            | 2448    |
+
+:::
+::::::
+
+### Plusieurs filtres
+
+Le mot clé `AND` permet d'ajouter d'autres filtres. 
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE elo < 2400
+   AND prenom LIKE 'A%';
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Navrotescu             | Andreea          | 2338    |
+| Skrichempko            | Almira           | 2361    |
+
+:::
+::::::
+
+::: {.notes}
+1 seul WHERE
+
+plusieurs AND
+
+LIKE 'A%' : commence par A, j'y viens dans 2 min
+:::
+
+---
+
+Vous pouvez autoriser plusieurs conditions avec `OR`.
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE elo > 2400
+    OR prenom LIKE 'A%';
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Sebag                  | Marie            | 2448    |
+| Navrotescu             | Andreea          | 2338    |
+| Skrichempko            | Almira           | 2361    |
+
+:::
+::::::
+
+### Opérations booléennes
+
+- Utilisation des mots-clés `AND`, `OR` et `NOT`
+- *AND* prioritaire sur le *OR*
+
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE elo > 2400 OR (prenom LIKE 'A%' AND nom NOT LIKE 'N%') ;
+```
+
+
+### LIKE
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+ WHERE prenom LIKE 'A%'         -- commence par A
+    OR prenom LIKE '%A'         -- termine par A
+    OR prenom LIKE '%A%'        -- contient au moins un A
+    OR UPPER(prenom) LIKE '%A%' -- contient au moins un A ou un a
+    OR prenom LIKE 'A__'        -- commence par A suivi de 2 autres caractères
+```
+
+
+- `%` : représente entre 0 et une infinité de caractères
+- `_` : représente exactement 1 caractère
+
+::: {.callout-caution title="LIKE est sensible à la Casse"}
+MAJUSCULES ≠ minuscules
+:::
+
+:::{.notes}
+ILIKE insensible à la casse
+
+```{.sql}
+'abc' SIMILAR TO 'abc'          true
+'abc' SIMILAR TO 'a'            false
+'abc' SIMILAR TO '%(b|d)%'      true
+'abc' SIMILAR TO '(b|c)%'       false
+'-abc-' SIMILAR TO '%\mabc\M%'  true
+'xabcy' SIMILAR TO '%\mabc\M%'  false
+```
+:::
+
+
+### Plage de valeurs
+
+`BETWEEN` permet de spécifier une plage de valeurs numériques.
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE elo BETWEEN 2350 AND 2400;
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Guichard               | Pauline          | 2357    |
+| Daulyte-Cornette       | Deimante         | 2371    |
+| Millet                 | Sophie           | 2366    |
+| Skrichempko            | Almira           | 2361    |
+
+:::
+::::::
+
+
+### Valeurs dans une liste
+
+Vous pouvez spécifier qu'un attribut doit appartenir à un liste avec `IN`.
+
+Ou inversement avec `NOT IN`.
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE prenom IN ('Deimante', 'Sophie');
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Daulyte-Cornette       | Deimante         | 2371    |
+| Millet                 | Sophie           | 2366    |
+
+:::
+::::::
+
+::: {.notes}
+Possible de lister des valeurs numériques
+:::
+
+### Filtre sur les attributs booléens
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+ WHERE est_arbitre IS TRUE;
+```
+
+<br>
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+ WHERE [NOT] est_arbitre;
+```
+
+
+### Ordonner le résultat
+
+`ORDER BY` pour ordonner selon plusieurs colonnes.
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ ORDER BY elo,
+          taux_victoires DESC;
+```
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Navrotescu             | Andreea          | 2338    |
+| Guichard               | Pauline          | 2357    |
+| Skrichempko            | Almira           | 2361    |
+| Millet                 | Sophie           | 2366    |
+| Daulyte-Cornette       | Deimante         | 2371    |
+| Sebag                  | Marie            | 2448    |
+
+:::
+::::::
+
+::: {.notes}
+- ORDER BY 2 : 2e colonne
+- Remarque : pas obligé de SELECT les colonnes du OBY
+:::
+
+### Afficher n lignes
+
+```{.sql}
+SELECT nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ LIMIT 3;
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom**                | **prenom**       | **elo** |
+|------------------------|------------------|---------|
+| Guichard               | Pauline          | 2357    |
+| Daulyte-Cornette       | Deimante         | 2371    |
+| Navrotescu             | Andreea          | 2338    |
+
+:::
+::::::
+
+## Mise à jour de données
+
+```{.sql}
+UPDATE echecs.joueuse
+   SET elo = 2399,
+       prenom = 'Popo'
+ WHERE id_joueuse = 1;
+```
+
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+
+```{.sql}
+SELECT id_joueuse,
+       nom,
+       prenom,
+       elo
+  FROM echecs.joueuse
+ WHERE id_joueuse = 1;
+```
+
+<br>
+
+| **id_joueuse**  | **nom**                | **prenom**       | **elo** |
+|-----------------|------------------------|------------------|---------|
+| 1               | Guichard               | Popo             | 2399    |
+
+:::
+::::::
+
+### Màj globale
+
+Imaginons que vous souhaitez modifier le `elo` de toutes les joueuses.
+
+```{.sql}
+UPDATE echecs.joueuse
+   SET elo = elo + 100;
+```
+
+::: {.callout-warning}
+Généralement un message d'avertissement vous demande si vous êtes certain de vouloir mettre à jour toutes les lignes.
+:::
+
+## Suppression de données
+
+Supprimer une joueuse :
+
+```{.sql}
+DELETE FROM echecs.joueuse
+ WHERE id_joueuse = 1;
+```
+
+<br>
+
+Vider la table :
+
+```{.sql}
+DELETE FROM echecs.joueuse;
+```
+
+## Validation des opérations
+
+Et si ? Vous avez exécuté par erreur :
+
+`DELETE FROM echecs.joueuse;` :scream:  
+
+:::::: {.fragment}
+Il y a un système de transactions avec les mots clés :
+
+- BEGIN
+- COMMIT
+- ROLLBACK
+
+:::::: {.callout-warning title="Auto-commit"}
+Attention : il n'y a pas de garde-fou lorsque vous êtes en Auto-commit.
+:::
+::::::
+
+::: {.notes}
+Vu plus tard dans le cours
+:::
+
+
+## Dates et Heures
+
+### Type DATE
+
+Quelques opérations avec le type `DATE`.
+
+```{.sql}
+SELECT nom,
+       prenom,
+       EXTRACT(YEAR FROM date_naissance) AS annee_naissance,
+       date_naissance + INTERVAL '10 years' AS anniv_dix_ans,
+       AGE(CURRENT_DATE, date_naissance) AS age
+  FROM echecs.joueuse
+ WHERE date_naissance >= '1991-04-20'
+    OR date_naissance BETWEEN '1991-04-20' AND '1992-12-31'
+    OR EXTRACT(MONTH FROM date_naissance) = 4;
+```
+
+### Type TIMESTAMP
+
+Pour stocker la date et l'heure
+
+```{.sql}
+CREATE TABLE echecs.club (
+    id_club          SERIAL          PRIMARY KEY,  
+    nom              VARCHAR(100)    NOT NULL,   
+    ville            VARCHAR(100)    NOT NULL, 
+    date_creation    TIMESTAMP
+);
+```
+
+---
+
+#### Utilisations
+
+```{.sql}
+INSERT INTO echecs.club (nom, ville, date_creation)
+VALUES ('C''Chartres Echecs', 'Chartres', '1991-09-01 20:00:00');
+```
+
+<br>
+
+```{.sql}
+INSERT INTO echecs.club (nom, ville, date_creation)
+VALUES ('Bischwiller', 'Bischwiller', CURRENT_TIMESTAMP);
+```
+
+Vous pouvez utiliser également sur le type *TIMESTAMP* : 
+
+- `EXTRACT`, 
+- `BETWEEN`, 
+- les opérateurs de comparaison
+
+
+
+## Valeurs nulles
+
+### Tester si un attribut est NULL
+
+Joueuses dont le mail n'est pas renseigné :
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+ WHERE mail IS NULL; 
+```
+
+<br>
+
+Et inversemenent :
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+ WHERE mail IS NOT NULL;
+```
+
+### COALESCE
+
+::: {.callout-tip title="La fonction COALESCE"}
+En PostgreSQL, la fonction COALESCE :
+
+- prend un nombre quelconque de paramètres
+- retourne le 1er paramètre dont la valeur est NON NULLE
+:::
+
+:::{.notes}
+```{.python}
+c(x1, x2, ... xn):
+  if x1:
+    return x1
+  else:
+    return c(x2, ... xn)
+```
+
+NVL pour Oracle (à ne pas confondre avec MVL)
+:::
+
+### COALESCE - Exemple
+
+```{.sql}
+SELECT COALESCE(mail, tel, 'pas de contact')
+  FROM echecs.joueuse
+ WHERE id_joueuse = 1
+```
+
+La requête ci-dessus va afficher :
+
+- Si mail est NON NULL :arrow_right: mail
+- Sinon 
+  - Si tel NON NULL :arrow_right: tel
+  - Sinon :arrow_right: `pas de contact`
+
+
+### NULLIF
+
+```{.sql}
+SELECT NULLIF(tel, '00.00.00.00.00') 
+  FROM echecs.joueuse;
+```
+
+- Si tel = `00.00.00.00.00`
+  - Renvoie *NULL*
+
+## Divers
+
+### Jouer avec les colonnes
+
+```{.sql}
+SELECT CONCAT(nom, ' ', prenom) AS nom_complet,
+       elo
+  FROM echecs.joueuse;
+```
+
+<br>
+
+:::::: {.fragment}
+::: {.small-table}
+
+| **nom_complet**                   | **elo** |
+|-----------------------------------|---------|
+| Guichard         Pauline          | 2357    |
+| Daulyte-Cornette Deimante         | 2371    |
+| Navrotescu       Andreea          | 2338    |
+| Sebag            Marie            | 2448    |
+| Millet           Sophie           | 2366    |
+| Skrichempko      Almira           | 2361    |
+
+:::
+::::::
+
+### Supprimer les doublons
+
+Le mot clé `DISTINCT` permet de supprimer les doublons.
+
+```{.sql}
+SELECT DISTINCT prenom
+  FROM echecs.joueuse;
+```
+
+### Choix
+
+```{.sql}
+SELECT CASE WHEN elo > 2400 THEN 'Niveau MI'
+            WHEN elo > 2200 THEN 'Joueuse très forte'
+            ELSE 'Joueuse de niveau normal'
+       END
+  FROM echecs.joueuse;
+```
+
+### Échantillon
+
+Afficher un échantillon aléatoire de 10 % des lignes
+
+```{.sql}
+SELECT *
+  FROM echecs.joueuse
+TABLESAMPLE BERNOULLI(10);
+```
+
+### Et même !?
+
+```{.sql}
+SELECT 1,
+       TRUE,
+       'a',
+       current_date,
+       NOW()
+  FROM echecs.joueuse;
+```
+
+## Résumé
+
+- CREATE / ALTER / DELETE
+- INSERT
+- SELECT
+- WHERE

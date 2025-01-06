@@ -1,0 +1,50 @@
+/************************************************************/
+/* Table                                                    */
+/************************************************************/
+
+.small-table table {
+  font-size: 0.8em; /* Taille réduite pour les tables */
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.small-table th, .small-table td {
+  border: 1px solid #ddd; /* Bordure fine */
+  padding: 8px;
+  text-align: left;
+}
+
+.small-table th {
+  background-color: #2A7F62; /* Fond vert Python */
+  color: white;
+  font-weight: bold;
+}
+
+.small-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternance de couleur pour les lignes */
+}
+
+.small-table tr:hover {
+  background-color: #ddd; /* Surlignage au survol */
+}
+
+/************************************************************/
+/* Various                                                  */
+/************************************************************/
+
+.sourceCode .co { /* Python comments */
+  color: #6A9955; /* Vert pour les commentaires Python */
+}
+
+.sourceCode .kw { /* Python keywords */
+  color: #569CD6; /* Bleu pour les mots-clés Python */
+}
+
+.sourceCode .st { /* Python strings */
+  color: #D69D85; /* Orange clair pour les chaînes de caractères */
+}
+
+.sourceCode .dt { /* Python numbers/digits */
+  color: #B5CEA8; /* Vert clair pour les nombres */
+}

@@ -1,23 +1,67 @@
+var:
+  url-repo: https://github.com/LeCoinStat/Cours-de-Python   # to call this value : {{< meta var.url-repo >}}
+
 project:
   type: website
 
 website:
-  title: "Cours de Python"
+  title: "Base de données"
+  repo-url: "{{< meta var.url-repo >}}"
+  repo-branch: main
+  reader-mode: true
   navbar:
+    background: "#447099"
     left:
-      - text: "Accueil"
+      - icon: house
         href: index.qmd
-      - text: "Introduction"
-        href: introduction.qmd
-      - text: "Examen"
-        href: examen.qmd
-      - text: "Contact"
-        href: contact.qmd
+        text: Home
+      - text: Cours
+        menu:
+          - href: doc/cours/intro.qmd
+            text: "Introduction"
+          - href: doc/cours/bases-de-donnees.qmd
+            text: "Base de données"
+          - href: doc/cours/sql-intro.qmd
+            text: "Introduction à SQL"
+          - href: doc/cours/agregations.qmd
+            text: "Agrégations"
+          - href: doc/cours/algebre.qmd
+            text: "Algèbre Relationnelle"
+          - href: doc/cours/jointures.qmd
+            text: "Jointures"
+          - href: doc/cours/sql-avance.qmd
+            text: "SQL avancé"
+          - href: doc/cours/formalisation.qmd
+            text: "Formalisation des BDD"
+      - text: TP
+        menu:
+          - href: doc/tp/tp1.qmd
+            text: "TP1 - Premières requêtes"
+          - href: doc/tp/tp2.qmd
+            text: "TP2 - Vintage"
+          - href: doc/tp/tp3.qmd
+            text: "TP3 - Datalab"
+          - href: doc/tp/tp4.qmd
+            text: "TP4 - Chess Unofficial Fed"
+    right:
+      - href: doc/glossaire.qmd
+        text: Glossaire
+      - icon: github
+        href: "{{< meta var.url-repo >}}"
+        target: "_blank"
+  page-footer:
+    right: |
+      Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>
+      [Code source]({{< meta var.url-repo >}}){.external target="_blank"}
+
+execute:
+  freeze: auto  # re-render only when source changes
 
 format:
   html:
-    theme: cerulean
-    code-fold: true
-    toc: true
-    toc-title: "Plan du site"
-    toc-depth: 2
+    theme:
+      dark: solar
+      light: cosmo
+    css: styles.css
+  revealjs: 
+    css: styles-reveal.css

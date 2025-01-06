@@ -410,3 +410,13 @@ print("Python !")
 | Caractères spéciaux    | Modifie l'apparence (nouvelle ligne, tabulation). |
 
 ---
+
+# Les Structures conditionnelles et les Boucles
+
+Les structures conditionnelles et les boucles permettent de contrôler le flux d'un programme en fonction de certaines conditions ou de répéter des actions.
+
+---
+
+## Les Structures conditionnelles
+
+Les structures conditionnelles permettent d'exécuter des blocs de code uniquement si une condition est remplie.

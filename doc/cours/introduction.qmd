@@ -24,13 +24,13 @@ from: markdown+emoji
 
 # Introduction à Python
 
-## 1. Introduction
+##  Introduction
 
 Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.
 
 ---
 
-### 1.1 Qu’est-ce que Python?
+### Qu’est-ce que Python?
 
 - Python est un langage interprété, open source, et multiplateforme.
 - Créé par **Guido van Rossum** en 1989 (première version en 1991).
@@ -40,7 +40,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ---
 
-### 1.2 Conseils pour l’apprentissage de Python
+###  Conseils pour l’apprentissage de Python
 
 - **Pratique régulière** : Codez régulièrement pour solidifier vos bases.
 - **Explorez des projets simples** : Calculatrice, jeu de devinettes, gestion d’inventaire.
@@ -58,7 +58,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ### **Outils recommandés pour coder en Python**
 
-##### **1. Visual Studio Code (VS Code)**  
+##### **Visual Studio Code (VS Code)**  
 - **Qu'est-ce que VS Code ?**  
   - Un éditeur de code léger, puissant et extensible, développé par Microsoft.  
   - Idéal pour écrire et exécuter des scripts Python grâce à ses extensions.  
@@ -78,7 +78,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
   - Une distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d'environnements.  
   - Idéal pour la data science et le machine learning.  
 
-- **Installer Anaconda** :  
+-# **Installer Anaconda** :  
   - Téléchargez-le depuis [anaconda.com](https://www.anaconda.com/products/distribution).  
   - Suivez les instructions pour votre système d'exploitation (Windows, macOS, Linux).  
 
@@ -116,3 +116,123 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
   - Support intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).  
 
 
+## Premiers pas avec Python
+
+Python est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.
+
+### Déclaration de variables
+Une variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d'y attribuer une valeur :
+
+```python
+x = 5
+y = "Python"
+print(x, y)
+```
+
+
+
+### Les Commentaires en Python
+
+Dans un script Python, tout ce qui suit le caractère `#` est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées **commentaires** et sont destinées à expliquer le code dans un langage humain.
+
+---
+
+#### Pourquoi utiliser des commentaires ?
+
+- **Clarifier le code** : Expliquez des portions complexes pour vous ou d'autres développeurs.
+- **Documenter le fonctionnement** : Fournir des indications sur le rôle d'un morceau de code ou d'une fonction.
+- **Faciliter la maintenance** : Les commentaires rendent votre code plus compréhensible à long terme.
+
+Les commentaires ne sont pas exécutés par Python et n'affectent donc pas les performances du programme.
+
+---
+
+Pour ajouter un commentaire, commencez la ligne avec un `#`. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.
+
+**Exemple simple** :
+```python
+# Ceci est un commentaire simple
+print("Hello world!")  # Affiche un message à l'écran
+
+# Déclaration de variables
+nom = "Alice"  # Nom de l'utilisateur
+age = 25       # Âge de l'utilisateur
+
+# Affichage des informations
+print(f"Nom : {nom}")
+print(f"Âge : {age}")
+
+# Cette partie affiche une salutation
+print("Bonjour et bienvenue dans le cours de Python !")
+
+```
+
+#### Bonnes pratiques pour les commentaires
+
+- Soyez concis et clair
+Vos commentaires doivent aller à l’essentiel et être compréhensibles.
+
+```python
+# Calcule la somme des éléments de la liste
+total = sum([1, 2, 3, 4])
+```
+
+- Évitez les commentaires inutiles
+
+Ne commentez pas des choses évidentes que le code lui-même exprime clairement.
+
+**Exemple inutile** :
+```python
+# Attribue la valeur 5 à la variable x
+x = 5
+```
+
+- Mettez à jour vos commentaires
+
+Assurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.
+
+
+#### Différents types de commentaires
+
+##### Commentaires sur une ligne
+
+Ils s'écrivent avec `#` au début de la ligne.
+
+```python
+# Ce programme affiche un message
+print("Bienvenue en Python !")
+```
+
+##### Commentaires multilignes
+
+Pour commenter plusieurs lignes, vous pouvez utiliser `#` au début de chaque ligne ou une chaîne de caractères triple (`"""` ou `'''`) si le commentaire est temporaire.
+
+```python
+# Début du programme
+# Ce script montre un exemple
+# avec des commentaires multilignes.
+```
+
+
+Voici le contenu en Markdown prêt à copier et coller :
+
+markdown
+Copier le code
+## Commentaires multilignes
+
+Pour commenter plusieurs lignes, vous pouvez utiliser `#` au début de chaque ligne ou une chaîne de caractères triple (`"""` ou `'''`) si le commentaire est temporaire.
+
+```python
+# Début du programme
+# Ce script montre un exemple
+# avec des commentaires multilignes.
+```
+Ou avec une chaîne triple :
+
+```python
+"""
+Ce script illustre :
+- L'utilisation de variables
+- L'utilisation des commentaires
+"""
+```

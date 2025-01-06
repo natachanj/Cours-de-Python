@@ -1,6 +1,6 @@
 ---
 title: "Introduction à Python : Bases et Structures Fondamentales"
-description: "[Slides](introduction-python-slides.html)"
+description: "[Slides](introduction-slides.html)"
 author: "Natacha Njongwa Yepnga"
 format: 
   html:
@@ -73,12 +73,12 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ---
 
-#####**Anaconda**
+##### **Anaconda**
 - **Qu'est-ce qu'Anaconda ?**  
   - Une distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d'environnements.  
   - Idéal pour la data science et le machine learning.  
 
--**Installer Anaconda** :  
+- **Installer Anaconda** :  
   - Téléchargez-le depuis [anaconda.com](https://www.anaconda.com/products/distribution).  
   - Suivez les instructions pour votre système d'exploitation (Windows, macOS, Linux).  
 
@@ -478,7 +478,7 @@ if age >= 18:
     else:
         print("Vous ne pouvez pas voter, même si vous êtes majeur.")
 else:
-    print("Vous êtes mineur."
+    print("Vous êtes mineur.")
 ```
 ---
 

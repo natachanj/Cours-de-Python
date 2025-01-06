@@ -98,130 +98,116 @@
     "text": "Jointure croisée\nCROSS JOIN renvoie le produit cartésien des deux tables.\n\n\n\n\nnom\nprenom\nclub\n\n\n\n\nDaulyte\nDeimante\nC’Chartres Echecs\n\n\nDaulyte\nDeimante\nBischwiller\n\n\nDaulyte\nDeimante\nAsnieres - le Grand Echiquier\n\n\nDaulyte\nDeimante\nTours des Hauts-De-France\n\n\nNavrotescu\nAndreea\nC’Chartres Echecs\n\n\nNavrotescu\nAndreea\nBischwiller\n\n\nNavrotescu\nAndreea\nAsnieres - le Grand Echiquier\n\n\n…\n…\n…"
   },
   {
-    "objectID": "doc/cours/algebre.html",
-    "href": "doc/cours/algebre.html",
-    "title": "Algèbre Relationnelle",
+    "objectID": "doc/cours/introduction.html",
+    "href": "doc/cours/introduction.html",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "",
-    "text": "A Relational Model of Data for Large Shared Data Banks, Edgar F. Codd, 1970\nObjectif : Modéliser une base de données ainsi que ses opérations\nDans un SGBD relationel, tout est question de relation"
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez tous les jours pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\nAnaconda : Une distribution Python recommandée pour la data science, qui inclut des outils comme Jupyter Notebook et de nombreuses bibliothèques préinstallées.\n#### Outils recommandés pour coder en Python\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
   },
   {
-    "objectID": "doc/cours/algebre.html#algèbre-relationnelle",
-    "href": "doc/cours/algebre.html#algèbre-relationnelle",
-    "title": "Algèbre Relationnelle",
+    "objectID": "doc/cours/introduction.html#introduction",
+    "href": "doc/cours/introduction.html#introduction",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "",
-    "text": "A Relational Model of Data for Large Shared Data Banks, Edgar F. Codd, 1970\nObjectif : Modéliser une base de données ainsi que ses opérations\nDans un SGBD relationel, tout est question de relation"
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez tous les jours pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\nAnaconda : Une distribution Python recommandée pour la data science, qui inclut des outils comme Jupyter Notebook et de nombreuses bibliothèques préinstallées.\n#### Outils recommandés pour coder en Python\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
   },
   {
-    "objectID": "doc/cours/algebre.html#principaux-opérateurs",
-    "href": "doc/cours/algebre.html#principaux-opérateurs",
-    "title": "Algèbre Relationnelle",
-    "section": "2 Principaux opérateurs",
-    "text": "2 Principaux opérateurs\n\n\n\n\n\n\n\n\nOpérateur\nDescription\n\n\n\n\nσ (Sélection)\nFiltrer les lignes selon une condition\n\n\nπ (Projection)\nSélectionner des colonnes spécifiques\n\n\nU (Union)\nCombiner les lignes de deux relations\n\n\n− (Différence)\nRetourner les lignes présentes dans une relation mais pas dans l’autre\n\n\n∩ (Intersection)\nTrouver les lignes communes aux deux relations\n\n\n⨝ (Jointure)\nCombiner deux relations basées sur une condition\n\n\nx (Produit Cartésien)\nCombinaison des colonnes\n\n\n\n\n\nSélection\n\nPermet de filtrer les lignes d’une table selon une condition\n\n\n\n⚠️ Mot clé SQL associé : WHERE\n\nSELECT *\n  FROM echecs.joueuse\n WHERE elo &lt; 2400;\n\n\n\nProjection\n\nPermet de sélectionner certaines colonnes d’une table.\nMot clé SQL associé : SELECT\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse;\n\n\nUnion\n\nCombine les lignes de deux tables ayant le même nombre de colonnes et des types compatibles\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse\n\nUNION\n\nSELECT nom,\n       prenom\n  FROM echecs.joueur;\n\n\n\n\n\n\nTip\n\n\n\n\nUNION : Combine les résultats des requêtes et supprime les doublons\nUNION ALL : Combine les résultats des requêtes et garde tous les doublons\n\n\n\n\n\nEn général, on prend les mêmes colonnes des 2 côtés\nPossible de faire plusieurs UNION\nORDER BY à la fin : ordonne le tout\n\n\n\n\nDifférence\n\nLignes qui se trouvent dans la première relation mais pas dans la seconde\n\n-- Joueuses évoluant dans un club français et pas dans un club belge\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_fr\n\nEXCEPT\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_be;\n\nImaginons que vous ayez créé 2 tables :\n\njoueuses évoluant dans un club français\njoueuses évoluant dans un club belge\n\n\n\n\nIntersection\n\nLignes communes aux deux tables\n\n-- Joueuses évoluant dans un club francais et dans un club belge\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_fr\n\nINTERSECT\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_be;\n\n\nJointure\n\nPermet de combiner deux tables en se basant sur une correspondance entre les colonnes\n\nSELECT j.nom,\n       j.prenom,\n       c.nom AS club\n  FROM echecs.joueuse j\n  JOIN echecs.club c USING (id_club);\n\n\nProduit Cartésien\nSELECT *\n  FROM echecs.joueuse j,\n       echecs.club c;\n-- WHERE j.id_club = c.id_club\n\nAncienne pratique : utilisé avant à la place des jointures"
+    "objectID": "doc/cours/introduction-slides.html#introduction",
+    "href": "doc/cours/introduction-slides.html#introduction",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "1. Introduction",
+    "text": "1. Introduction\nPython est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle."
   },
   {
-    "objectID": "doc/cours/algebre-slides.html#algèbre-relationnelle",
-    "href": "doc/cours/algebre-slides.html#algèbre-relationnelle",
-    "title": "Algèbre Relationnelle",
-    "section": "Algèbre Relationnelle",
-    "text": "Algèbre Relationnelle\n\nA Relational Model of Data for Large Shared Data Banks, Edgar F. Codd, 1970\nObjectif : Modéliser une base de données ainsi que ses opérations\nDans un SGBD relationel, tout est question de relation"
-  },
-  {
-    "objectID": "doc/cours/algebre-slides.html#principaux-opérateurs",
-    "href": "doc/cours/algebre-slides.html#principaux-opérateurs",
-    "title": "Algèbre Relationnelle",
-    "section": "Principaux opérateurs",
-    "text": "Principaux opérateurs\n\n\n\n\n\n\n\n\nOpérateur\nDescription\n\n\n\n\nσ (Sélection)\nFiltrer les lignes selon une condition\n\n\nπ (Projection)\nSélectionner des colonnes spécifiques\n\n\nU (Union)\nCombiner les lignes de deux relations\n\n\n− (Différence)\nRetourner les lignes présentes dans une relation mais pas dans l’autre\n\n\n∩ (Intersection)\nTrouver les lignes communes aux deux relations\n\n\n⨝ (Jointure)\nCombiner deux relations basées sur une condition\n\n\nx (Produit Cartésien)\nCombinaison des colonnes"
-  },
-  {
-    "objectID": "doc/cours/agregations.html",
-    "href": "doc/cours/agregations.html",
-    "title": "Agrégations",
+    "objectID": "doc/cours/sql-avance.html",
+    "href": "doc/cours/sql-avance.html",
+    "title": "SQL avancé",
     "section": "",
-    "text": "id_joueuse\nnom\nprenom\nelo\nville_club\n\n\n\n\n1\nGuichard\nPauline\n2357\nAsnieres\n\n\n2\nDaulyte\nDeimante\n2371\nChartres\n\n\n3\nNavrotescu\nAndreea\n2338\nAsnieres\n\n\n4\nSebag\nMarie\n2448\nBischwiller\n\n\n5\nMillet\nSophie\n2366\nAsnieres\n\n\n6\nSkrichempko\nAlmira\n2361\nBischwiller\n\n\n\n\n\nj’ai intégré ici le club pour faciliter les choses"
+    "text": "Données utilisées"
   },
   {
-    "objectID": "doc/cours/agregations.html#données-utilisées",
-    "href": "doc/cours/agregations.html#données-utilisées",
-    "title": "Agrégations",
-    "section": "",
-    "text": "id_joueuse\nnom\nprenom\nelo\nville_club\n\n\n\n\n1\nGuichard\nPauline\n2357\nAsnieres\n\n\n2\nDaulyte\nDeimante\n2371\nChartres\n\n\n3\nNavrotescu\nAndreea\n2338\nAsnieres\n\n\n4\nSebag\nMarie\n2448\nBischwiller\n\n\n5\nMillet\nSophie\n2366\nAsnieres\n\n\n6\nSkrichempko\nAlmira\n2361\nBischwiller\n\n\n\n\n\nj’ai intégré ici le club pour faciliter les choses"
+    "objectID": "doc/cours/sql-avance.html#sous-requête",
+    "href": "doc/cours/sql-avance.html#sous-requête",
+    "title": "SQL avancé",
+    "section": "1 Sous-requête",
+    "text": "1 Sous-requête\n\nDans un filtre\nVous souhaitez lister les joueuses avec un elo supérieur à la moyenne.\n\n\nSELECT nom, \n       prenom,\n       elo\nFROM echecs.joueuse\nWHERE elo &gt;= (SELECT AVG(elo) \n                FROM echecs.joueuse);\n\n\nVu dans les 1er TP :\n\nSELECT AVG(elo) FROM echecs.joueuse renvoie un nombre\non peut le comparer à un autre nombre\n\n\n\n\nImbriquer les SELECT\nSELECT j.nom, \n       j.prenom, \n       j.elo,\n       mec.max_elo_club\n  FROM (SELECT id_club,\n               MAX(elo) AS max_elo_club\n          FROM joueuse\n         GROUP BY id_club) mec\n  JOIN joueuse j USING(id_club);\n\nCeci est également une table et peut être requêtée par la suite\nSELECT id_club,\n       MAX(elo) AS max_elo_club\n  FROM joueuse\n GROUP BY id_club\n\n\n\nEXISTS\nSELECT *\n  FROM echecs.club c\n WHERE EXISTS (SELECT 1\n                 FROM echecs.joueuse j\n                WHERE c.id_club = j.id_club\n                  AND j.elo &gt; 2400);\nLa syntaxe ressemble à celle du IN mais le EXISTS est plus performant.\nSELECT *\n  FROM echecs.club c\n WHERE c.id_club IN (SELECT j.id_club\n                       FROM echecs.joueuse j\n                      WHERE j.elo &gt; 2400);\n\n\nEXISTS : dès qu’une correspondance est trouvée, c’est gagné\nIN : génére l’intégralité de la sous-table"
   },
   {
-    "objectID": "doc/cours/agregations.html#questions",
-    "href": "doc/cours/agregations.html#questions",
-    "title": "Agrégations",
-    "section": "2 Questions",
-    "text": "2 Questions\nQuelques questions que l’on peut se poser :\n\n\nQuel est le id_joueuse maximum ?\nQuel est le nombre de joueuses ?\nQuelle est la moyenne elo par club ?"
+    "objectID": "doc/cours/sql-avance.html#les-vues",
+    "href": "doc/cours/sql-avance.html#les-vues",
+    "title": "SQL avancé",
+    "section": "2 Les vues",
+    "text": "2 Les vues\n\nJoueuses Françaises\n\n\n\n\n\n\nQuestion\n\n\n\nImaginons que nous avons de nombreuses requêtes à écrire sur les joueuses françaises ayant plus de 2000 elo.\nEt nous n’avons pas envie de nous embêter à écrire à chaque fois toutes les restrictions.\n\n\n\n\nNouvelle table\nSolution 1 : créons une nouvelle table\nCREATE TABLE echecs.joueuse_fr_2000\nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR'\n   AND elo &gt;= 2000\n\n\n\n\n\n\n\nProblèmes\n\n\n\n\nDuplication des données\nMise à jour\n\n\n\n\n\n\nCommon Table Expression\nPour une utilisation ponctuelle, utilisez une CTE 😎\n\nCommencez par définir votre sous-requête joueuses_fr_elo2000 avec WITH\nAppelez joueuses_fr_elo2000 dans la requête principale\n\nWITH joueuses_fr_elo2000 \nAS (SELECT *\n      FROM echecs.joueuse\n     WHERE code_pays = 'FR' \n       AND elo &gt; 2000\n)\nSELECT nom, prenom, elo\n  FROM joueuses_fr_elo2000\n WHERE prenom LIKE 'A%';\n\n\nUsage avancé\nAssez classe\nComme une sous-requête\nOu comme si vous avez créé une vue temporaire\n\n\n\n\nTable temporaire\nN’existe que le temps de la session.\n\nCREATE TEMPORARY TABLE joueuses_fr_elo2000 \nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR' \n   AND elo &gt; 2000;\n\n\n\n\n\n\nRemarque\n\n\n\nUne table temporaire n’est pas définie dans un schéma.\n\n\n\n\nVue\n\n\n\n\n\n\nDéfinition\n\n\n\nUne vue représente une table virtuelle, dont la structure et les données proviennent du résultat d’une requête SQL prédéfinie.\nElle ne stocke pas directement les données, mais la requête elle-même, et s’exécute à chaque utilisation.\n\n\n\nCREATE VIEW echecs.joueuses_fr_elo2000 \nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR' \n   AND elo &gt; 2000;\n\n\nSe requête comme si c’est une table\nSELECT only\nPAS de UPDATE, DELETE, INSERT\n\n\n\n\nAvantages et inconvénients\n\n✔️ Simplicité d’accès aux données\n✔️ Meilleure organisation des données\n✔️ Contrôle des accès aux données\n❌ Performance\n\n\n\nInterroger sans se soucier des structures complexes des tables\nSauvegarde de requêtes complexes\nStructurer logiquement les données\nMasquer des colonnes / lignes sensibles\n❌ s’exécutent dynamiquement à chaque appel\n\n\n\n\nVues matérialisées\nPhoto à un instant t (snapshot) 📷\n\nCREATE MATERIALIZED VIEW joueuses_fr_elo2000 \nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR' \n   AND elo &gt; 2000;"
   },
   {
-    "objectID": "doc/cours/agregations.html#compter-les-lignes",
-    "href": "doc/cours/agregations.html#compter-les-lignes",
-    "title": "Agrégations",
-    "section": "3 Compter les lignes",
-    "text": "3 Compter les lignes\nSELECT COUNT(*)\n  FROM echecs.joueuse\n WHERE elo &lt; 2400;\n\n\n\n\ncount\n\n\n\n\n5\n\n\n\n\n\nSELECT COUNT(DISTINCT prenom)\n  FROM echecs.joueuse;\n\n\n\n\ncount\n\n\n\n\n6\n\n\n\n\n\nJ’utilise souvent COUNT(1) -&gt; c’est pareil\n\n\nCompter avec un filtre\nL’opérateur FILTER permet de calculer une agrégation conditionnelle.\nSELECT COUNT(*) FILTER (WHERE elo BETWEEN 2300 AND 2399) AS niv_fm,\n       COUNT(*) FILTER (WHERE elo BETWEEN 2400 AND 2499) AS niv_im\n  FROM echecs.joueuse;\n\n\n\n\nniv_fm\nniv_im\n\n\n\n\n5\n1"
+    "objectID": "doc/cours/sql-avance.html#gérer-les-droits",
+    "href": "doc/cours/sql-avance.html#gérer-les-droits",
+    "title": "SQL avancé",
+    "section": "3 Gérer les droits",
+    "text": "3 Gérer les droits\nL’utilisateur qui crée une table peut distribuer des droits aux autres.\nVoir section priviléges de la doc PostgreSQL\n\nDonner des droits sur une table\n-- Lecture pour tous\nGRANT SELECT ON echecs.joueuse TO PUBLIC;\n\n-- Tous les droits\nGRANT ALL PRIVILEGES ON echecs.joueuse TO chantal WITH GRANT OPTION;\n\n\nPUBLIC : tous les utilisateurs\nSuffixe WITH GRANT OPTION pour donner le droit de transmettre ce droit\n\n\n\nRetirer des droits\n-- Lecture\nREVOKE SELECT ON echecs.joueuse TO chantal;\n\n-- Tous les droits\nREVOKE ALL PRIVILEGES ON echecs.joueuse TO chantal;\n\nSuffixe CASCADE pour retirer les droits à ceux qui ont reçu les droits de la part de…\n\n\nRôle\nPour une gestion simplifiée des droits\n-- créer un rôle\nCREATE ROLE eleve;\n\n-- ajouter des droits au rôle\nGRANT SELECT, INSERT ON echecs.joueuse TO eleve;\n\n-- donner le rôle à Chantal\nGRANT eleve TO chantal;\n\nImaginons que pour chaque nouvel élève, il faut donner les droits sur 20 tables.\nPlus pratique avec les rôles.\n\n\n\nDroits sur un schéma\n-- droit d'accès au schéma i.e. de consulter les objets du schéma\nGRANT USAGE ON SCHEMA echecs TO PUBLIC;\n\n-- retire à Chantal le droit de créer de nouveaux objets (tables, vues, etc.) dans le schéma\nREVOKE CREATE ON SCHEMA echecs FROM chantal;\n\n-- Autorise à effectuer des requêtes SELECT sur toutes les tables du schéma\nGRANT SELECT ON ALL TABLES IN SCHEMA echecs TO PUBLIC;\n\npas de question à l’exam sur les droits de schéma"
   },
   {
-    "objectID": "doc/cours/agregations.html#somme",
-    "href": "doc/cours/agregations.html#somme",
-    "title": "Agrégations",
-    "section": "4 Somme",
-    "text": "4 Somme\nSELECT SUM(elo)\n  FROM echecs.joueuse;\n\n\n\n\nsum\n\n\n\n\n14223\n\n\n\n\n\nSELECT SUM(elo) / COUNT(elo)\n  FROM echecs.joueuse;"
+    "objectID": "doc/cours/sql-avance.html#transactions",
+    "href": "doc/cours/sql-avance.html#transactions",
+    "title": "SQL avancé",
+    "section": "4 Transactions",
+    "text": "4 Transactions\n\nExemple classique\n\n\n\n\n\n\nMission\n\n\n\nVous devez transférer discrétement et sans vous tromper 10 millions entre les comptes de Shakira et Cristiano.\nMalheureusement l’opération est assez longue et vous devez vous prémunir contre le risque d’une interruption.\nComment faire ? 😕\n\n\n\n\nTransfert de fonds\nBEGIN; -- Début de la transaction\n\nUPDATE compte SET solde = solde - 10000000 WHERE id = 1;\nUPDATE compte SET solde = solde + 10000000 WHERE id = 2;\n\nCOMMIT; -- Valider si ok\n\nROLLBACK; -- en cas d'erreur\n\n\nPlusieurs utilisateurs peuvent faire des requêtes en même temps\nLOCK\nSAVEPOINT my_savepoint;\nROLLBACK TO my_savepoint;\nmode AUTOCOMMIT\n\n\n\n\nPropriétés ACID\nPour définir la fiabilité des transactions :\n\nAtomicité : Une transaction est “tout ou rien”\nCohérence : La base reste dans un état valide avant et après la transaction\nIsolation : Les transactions concurrentes n’interfèrent pas entre elles\nDurabilité : Une transaction validée est enregistrée de manière permanente, même en cas de panne\n\n\n\nSoit toutes les opérations réussissent, soit elles sont annulées (rollback)"
   },
   {
-    "objectID": "doc/cours/agregations.html#stats-descriptives",
-    "href": "doc/cours/agregations.html#stats-descriptives",
-    "title": "Agrégations",
-    "section": "5 Stats descriptives",
-    "text": "5 Stats descriptives\nSELECT MAX(elo),\n       MIN(elo),\n       AVG(elo)\n  FROM echecs.joueuse;\n\n\n\n\nmax\nmin\navg\n\n\n\n\n2448\n2338\n2373.5\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nVous pouvez également calculer : VARIANCE, STDDEV.\n\n\n\nComment afficher la joueuse avec le plus grand elo ? 😵\n\n\nSous-requête\nEn utilisant une sous-requête :\n\nSELECT MAX(elo) FROM echecs.joueuse ➡️ renvoie un nombre\nNous pouvons ensuite tester si elo est égal à ce nombre\n\n\nSELECT nom,\n       prenom,\n       elo\n  FROM echecs.joueuse\n WHERE elo = (SELECT MAX(elo) FROM echecs.joueuse);"
+    "objectID": "doc/cours/sql-avance.html#index",
+    "href": "doc/cours/sql-avance.html#index",
+    "title": "SQL avancé",
+    "section": "5 Index",
+    "text": "5 Index\n\nCréer un index\n\n\n\n\n\n\nDéfinition\n\n\n\nUn index est une structure de données qui améliore la vitesse des opérations de lecture sur une table en facilitant la recherche des données.\nIl permet une lecture plus rapide sur une colonne utilisée fréquemment dans WHERE, JOIN, GROUP BY, ORDER BY\n\n\nCREATE INDEX echecs.idx_nom_joueuse ON echecs.joueuse (nom);\n\n\nRecherche longue si beaucoup de lignes\nSystème clé-valeur (index -&gt; ligne)\n\n\n\n\nAvantages et inconvénients\n\n✔️ Haute cardinalité\n✔️ Peu de valeurs nulles\n❌ Créations, mises à jour\n❌ Prend de la place\n\n\n\nsi Haute cardinalité : beaucoup de valeurs distinctes\nSi une colonne est souvent modifiée, l’index associé doit être mis à jour\nIndex sous jacent sur colonnes UNIQUE (PK incluse)"
   },
   {
-    "objectID": "doc/cours/agregations.html#regroupement",
-    "href": "doc/cours/agregations.html#regroupement",
-    "title": "Agrégations",
-    "section": "6 Regroupement",
-    "text": "6 Regroupement\nComment obtenir la moyenne elo par club ?\n\nSELECT ville_club,    -- Supposons que la table joueuse a un attribut ville_club\n       AVG(elo)\n  FROM echecs.joueuse\n GROUP BY ville_club;\n\n\n\n\nville_club\navg_elo\n\n\n\n\nAsnieres\n2372.4\n\n\nChartres\n2371.0\n\n\nBischwiller\n2404.5\n\n\n\n\n\n\nJ’ai mis ville_club car id_club c’est moins joli et on verra les jointures ensuite.\nVous pouvez utiliser ROUND() pour arrondir.\n\n\nColonnes du GROUP BY\nVous pouvez grouper en utilisant plusieurs colonnes.\n\n\n\n\n\n\nImportant\n\n\n\nLes colonnes présentes dans le SELECT doivent impérativement être présentes dans le GROUP BY.\nL’inverse n’est pas vrai. Vous pouvez avoir des colonnes du GROUP BY que vous n’affichez pas dans le SELECT.\n\n\n\nje dis bien colonnes et pas fonctions d’aggrégation\n\n\n\nFiltrer suite au GROUP BY\nComment faire pour afficher uniquement les clubs où la moyenne élo est inférieure à 2400 ?\n\nSELECT ville_club,\n       AVG(elo)\n  FROM echecs.joueuse\n GROUP BY ville_club\nHAVING AVG(elo) &lt; 2400;\n\n\n\n\n\nclub\navg_elo\n\n\n\n\nAsnieres\n2372.4\n\n\nChartres\n2371.0\n\n\n\n\n\n\n\nHaving Vs Where\n\nWHERE - Filtre Avant l’Agrégation\nHAVING - Filtre Après l’Agrégation"
+    "objectID": "doc/cours/sql-avance.html#trigger",
+    "href": "doc/cours/sql-avance.html#trigger",
+    "title": "SQL avancé",
+    "section": "6 Trigger",
+    "text": "6 Trigger\n\n\n\n\n\n\nDéfinition\n\n\n\nUn trigger est une fonction qui s’exécute automatiquement en réponse à une mise à jour d’une table\nIl permet par exemple de :\n\nGarantir l’intégrité des données\nImplémenter des règles métier\nSynchroniser des données\n\n\n\n\nPeut se déclencher avant ou après une maj\n\nGarantir l’intégrité des données : Valider ou corriger les données avant leur enregistrement.\nImplémenter des règles métier : Empêcher des suppressions ou modifications non autorisées.\nSynchroniser des données : Mettre à jour des tables liées automatiquement."
   },
   {
-    "objectID": "doc/cours/agregations-slides.html#données-utilisées",
-    "href": "doc/cours/agregations-slides.html#données-utilisées",
-    "title": "Agrégations",
-    "section": "Données utilisées",
-    "text": "Données utilisées\n\n\n\n\n\n\n\n\n\n\n\nid_joueuse\nnom\nprenom\nelo\nville_club\n\n\n\n\n1\nGuichard\nPauline\n2357\nAsnieres\n\n\n2\nDaulyte\nDeimante\n2371\nChartres\n\n\n3\nNavrotescu\nAndreea\n2338\nAsnieres\n\n\n4\nSebag\nMarie\n2448\nBischwiller\n\n\n5\nMillet\nSophie\n2366\nAsnieres\n\n\n6\nSkrichempko\nAlmira\n2361\nBischwiller\n\n\n\n\n\nj’ai intégré ici le club pour faciliter les choses"
+    "objectID": "doc/cours/sql-avance-slides.html#sous-requête",
+    "href": "doc/cours/sql-avance-slides.html#sous-requête",
+    "title": "SQL avancé",
+    "section": "Sous-requête",
+    "text": "Sous-requête"
   },
   {
-    "objectID": "doc/cours/agregations-slides.html#questions",
-    "href": "doc/cours/agregations-slides.html#questions",
-    "title": "Agrégations",
-    "section": "Questions",
-    "text": "Questions\nQuelques questions que l’on peut se poser :\n\n\nQuel est le id_joueuse maximum ?\nQuel est le nombre de joueuses ?\nQuelle est la moyenne elo par club ?"
+    "objectID": "doc/cours/sql-avance-slides.html#les-vues",
+    "href": "doc/cours/sql-avance-slides.html#les-vues",
+    "title": "SQL avancé",
+    "section": "Les vues",
+    "text": "Les vues"
   },
   {
-    "objectID": "doc/cours/agregations-slides.html#compter-les-lignes",
-    "href": "doc/cours/agregations-slides.html#compter-les-lignes",
-    "title": "Agrégations",
-    "section": "Compter les lignes",
-    "text": "Compter les lignes\nSELECT COUNT(*)\n  FROM echecs.joueuse\n WHERE elo &lt; 2400;\n\n\n\n\ncount\n\n\n\n\n5\n\n\n\n\n\nSELECT COUNT(DISTINCT prenom)\n  FROM echecs.joueuse;\n\n\n\n\ncount\n\n\n\n\n6\n\n\n\n\n\nJ’utilise souvent COUNT(1) -&gt; c’est pareil"
+    "objectID": "doc/cours/sql-avance-slides.html#gérer-les-droits",
+    "href": "doc/cours/sql-avance-slides.html#gérer-les-droits",
+    "title": "SQL avancé",
+    "section": "Gérer les droits",
+    "text": "Gérer les droits\nL’utilisateur qui crée une table peut distribuer des droits aux autres.\nVoir section priviléges de la doc PostgreSQL"
   },
   {
-    "objectID": "doc/cours/agregations-slides.html#somme",
-    "href": "doc/cours/agregations-slides.html#somme",
-    "title": "Agrégations",
-    "section": "Somme",
-    "text": "Somme\nSELECT SUM(elo)\n  FROM echecs.joueuse;\n\n\n\n\nsum\n\n\n\n\n14223\n\n\n\n\n\nSELECT SUM(elo) / COUNT(elo)\n  FROM echecs.joueuse;"
+    "objectID": "doc/cours/sql-avance-slides.html#transactions",
+    "href": "doc/cours/sql-avance-slides.html#transactions",
+    "title": "SQL avancé",
+    "section": "Transactions",
+    "text": "Transactions"
   },
   {
-    "objectID": "doc/cours/agregations-slides.html#stats-descriptives",
-    "href": "doc/cours/agregations-slides.html#stats-descriptives",
-    "title": "Agrégations",
-    "section": "Stats descriptives",
-    "text": "Stats descriptives\nSELECT MAX(elo),\n       MIN(elo),\n       AVG(elo)\n  FROM echecs.joueuse;\n\n\n\n\nmax\nmin\navg\n\n\n\n\n2448\n2338\n2373.5\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nVous pouvez également calculer : VARIANCE, STDDEV.\n\n\n\n\nComment afficher la joueuse avec le plus grand elo ? 😵"
+    "objectID": "doc/cours/sql-avance-slides.html#index",
+    "href": "doc/cours/sql-avance-slides.html#index",
+    "title": "SQL avancé",
+    "section": "Index",
+    "text": "Index"
   },
   {
-    "objectID": "doc/cours/agregations-slides.html#regroupement",
-    "href": "doc/cours/agregations-slides.html#regroupement",
-    "title": "Agrégations",
-    "section": "Regroupement",
-    "text": "Regroupement\nComment obtenir la moyenne elo par club ?\n\nSELECT ville_club,    -- Supposons que la table joueuse a un attribut ville_club\n       AVG(elo)\n  FROM echecs.joueuse\n GROUP BY ville_club;\n\n\n\n\nville_club\navg_elo\n\n\n\n\nAsnieres\n2372.4\n\n\nChartres\n2371.0\n\n\nBischwiller\n2404.5\n\n\n\n\n\n\nJ’ai mis ville_club car id_club c’est moins joli et on verra les jointures ensuite.\nVous pouvez utiliser ROUND() pour arrondir."
+    "objectID": "doc/cours/sql-avance-slides.html#trigger",
+    "href": "doc/cours/sql-avance-slides.html#trigger",
+    "title": "SQL avancé",
+    "section": "Trigger",
+    "text": "Trigger\n\n\n\n\n\n\n\nDéfinition\n\n\nUn trigger est une fonction qui s’exécute automatiquement en réponse à une mise à jour d’une table\nIl permet par exemple de :\n\nGarantir l’intégrité des données\nImplémenter des règles métier\nSynchroniser des données\n\n\n\n\n\n\nPeut se déclencher avant ou après une maj\n\nGarantir l’intégrité des données : Valider ou corriger les données avant leur enregistrement.\nImplémenter des règles métier : Empêcher des suppressions ou modifications non autorisées.\nSynchroniser des données : Mettre à jour des tables liées automatiquement."
   },
   {
     "objectID": "doc/cours/intro.html",
@@ -805,95 +791,39 @@
     "text": "7 SGBD\n\n\n\n\n\n\nDéfinition\n\n\n\nUn Système de Gestion de Bases de Données est un logiciel qui permet de créer, gérer et manipuler des bases de données.\nIl fournit des outils pour stocker, récupérer, modifier et sécuriser les données.\n\n\n\nPostgreSQL\nMySQL, MariaDB\nOracle Database\nSQLite\n\n\n7.1 PostgreSQL\n\nOpen Source, Libre\nCommunauté active\nStable et performant\nBasé sur le modèle client-serveur\nExtension PostGIS (Données géographiques)\n\n\nutilisé à l’INSEE\nclient-serveur classique :\n\nle composant serveur central « postmaster » gère tous les fichiers de bdd\nainsi que toutes les connexions établies pour la communication avec le serveur de bdd.\n\nLes utilisateurs n’ont besoin que d’un programme client approprié pour établir la connexion\n\n\n\n7.2 Outil de Gestion et Administration\nIl est nécessaire d’avoir un outil pour gérer et administrer une base de données.\n\n\n\n\n\n\nTip\n\n\n\n\nPostgreSQL : Installé sur un serveur, sert de moteur de base de données\npgAdmin : Interface graphique pour interagir avec PostgreSQL\n\n\n\n\npgAdmin\nDBeaver\n\n\n\n7.3 Kesako\n\nBase de données : endroit où sont stockées les informations\nSGBD : logiciel qui permet de créer, gérer et manipuler les bases de données\nOutil de gestion du SGBD : application graphique qui facilite l’interaction avec un SGBD\nSQL : Langage pour donner les instructions à la base de données\n\n\n\nBDD : bibliothèque\nSGBD : bibliothécaire\nOutil : tableau de bord interactif pour les bibliothécaires\n\nA l’ENSAI :\n\nvous avez chacun une bdd (nom=id)\nutilisez DBeaver pour vous y connecter"
   },
   {
-    "objectID": "doc/cours/sql-avance-slides.html#sous-requête",
-    "href": "doc/cours/sql-avance-slides.html#sous-requête",
-    "title": "SQL avancé",
-    "section": "Sous-requête",
-    "text": "Sous-requête"
+    "objectID": "doc/cours/algebre-slides.html#algèbre-relationnelle",
+    "href": "doc/cours/algebre-slides.html#algèbre-relationnelle",
+    "title": "Algèbre Relationnelle",
+    "section": "Algèbre Relationnelle",
+    "text": "Algèbre Relationnelle\n\nA Relational Model of Data for Large Shared Data Banks, Edgar F. Codd, 1970\nObjectif : Modéliser une base de données ainsi que ses opérations\nDans un SGBD relationel, tout est question de relation"
   },
   {
-    "objectID": "doc/cours/sql-avance-slides.html#les-vues",
-    "href": "doc/cours/sql-avance-slides.html#les-vues",
-    "title": "SQL avancé",
-    "section": "Les vues",
-    "text": "Les vues"
+    "objectID": "doc/cours/algebre-slides.html#principaux-opérateurs",
+    "href": "doc/cours/algebre-slides.html#principaux-opérateurs",
+    "title": "Algèbre Relationnelle",
+    "section": "Principaux opérateurs",
+    "text": "Principaux opérateurs\n\n\n\n\n\n\n\n\nOpérateur\nDescription\n\n\n\n\nσ (Sélection)\nFiltrer les lignes selon une condition\n\n\nπ (Projection)\nSélectionner des colonnes spécifiques\n\n\nU (Union)\nCombiner les lignes de deux relations\n\n\n− (Différence)\nRetourner les lignes présentes dans une relation mais pas dans l’autre\n\n\n∩ (Intersection)\nTrouver les lignes communes aux deux relations\n\n\n⨝ (Jointure)\nCombiner deux relations basées sur une condition\n\n\nx (Produit Cartésien)\nCombinaison des colonnes"
   },
   {
-    "objectID": "doc/cours/sql-avance-slides.html#gérer-les-droits",
-    "href": "doc/cours/sql-avance-slides.html#gérer-les-droits",
-    "title": "SQL avancé",
-    "section": "Gérer les droits",
-    "text": "Gérer les droits\nL’utilisateur qui crée une table peut distribuer des droits aux autres.\nVoir section priviléges de la doc PostgreSQL"
-  },
-  {
-    "objectID": "doc/cours/sql-avance-slides.html#transactions",
-    "href": "doc/cours/sql-avance-slides.html#transactions",
-    "title": "SQL avancé",
-    "section": "Transactions",
-    "text": "Transactions"
-  },
-  {
-    "objectID": "doc/cours/sql-avance-slides.html#index",
-    "href": "doc/cours/sql-avance-slides.html#index",
-    "title": "SQL avancé",
-    "section": "Index",
-    "text": "Index"
-  },
-  {
-    "objectID": "doc/cours/sql-avance-slides.html#trigger",
-    "href": "doc/cours/sql-avance-slides.html#trigger",
-    "title": "SQL avancé",
-    "section": "Trigger",
-    "text": "Trigger\n\n\n\n\n\n\n\nDéfinition\n\n\nUn trigger est une fonction qui s’exécute automatiquement en réponse à une mise à jour d’une table\nIl permet par exemple de :\n\nGarantir l’intégrité des données\nImplémenter des règles métier\nSynchroniser des données\n\n\n\n\n\n\nPeut se déclencher avant ou après une maj\n\nGarantir l’intégrité des données : Valider ou corriger les données avant leur enregistrement.\nImplémenter des règles métier : Empêcher des suppressions ou modifications non autorisées.\nSynchroniser des données : Mettre à jour des tables liées automatiquement."
-  },
-  {
-    "objectID": "doc/cours/sql-avance.html",
-    "href": "doc/cours/sql-avance.html",
-    "title": "SQL avancé",
+    "objectID": "doc/cours/algebre.html",
+    "href": "doc/cours/algebre.html",
+    "title": "Algèbre Relationnelle",
     "section": "",
-    "text": "Données utilisées"
+    "text": "A Relational Model of Data for Large Shared Data Banks, Edgar F. Codd, 1970\nObjectif : Modéliser une base de données ainsi que ses opérations\nDans un SGBD relationel, tout est question de relation"
   },
   {
-    "objectID": "doc/cours/sql-avance.html#sous-requête",
-    "href": "doc/cours/sql-avance.html#sous-requête",
-    "title": "SQL avancé",
-    "section": "1 Sous-requête",
-    "text": "1 Sous-requête\n\nDans un filtre\nVous souhaitez lister les joueuses avec un elo supérieur à la moyenne.\n\n\nSELECT nom, \n       prenom,\n       elo\nFROM echecs.joueuse\nWHERE elo &gt;= (SELECT AVG(elo) \n                FROM echecs.joueuse);\n\n\nVu dans les 1er TP :\n\nSELECT AVG(elo) FROM echecs.joueuse renvoie un nombre\non peut le comparer à un autre nombre\n\n\n\n\nImbriquer les SELECT\nSELECT j.nom, \n       j.prenom, \n       j.elo,\n       mec.max_elo_club\n  FROM (SELECT id_club,\n               MAX(elo) AS max_elo_club\n          FROM joueuse\n         GROUP BY id_club) mec\n  JOIN joueuse j USING(id_club);\n\nCeci est également une table et peut être requêtée par la suite\nSELECT id_club,\n       MAX(elo) AS max_elo_club\n  FROM joueuse\n GROUP BY id_club\n\n\n\nEXISTS\nSELECT *\n  FROM echecs.club c\n WHERE EXISTS (SELECT 1\n                 FROM echecs.joueuse j\n                WHERE c.id_club = j.id_club\n                  AND j.elo &gt; 2400);\nLa syntaxe ressemble à celle du IN mais le EXISTS est plus performant.\nSELECT *\n  FROM echecs.club c\n WHERE c.id_club IN (SELECT j.id_club\n                       FROM echecs.joueuse j\n                      WHERE j.elo &gt; 2400);\n\n\nEXISTS : dès qu’une correspondance est trouvée, c’est gagné\nIN : génére l’intégralité de la sous-table"
+    "objectID": "doc/cours/algebre.html#algèbre-relationnelle",
+    "href": "doc/cours/algebre.html#algèbre-relationnelle",
+    "title": "Algèbre Relationnelle",
+    "section": "",
+    "text": "A Relational Model of Data for Large Shared Data Banks, Edgar F. Codd, 1970\nObjectif : Modéliser une base de données ainsi que ses opérations\nDans un SGBD relationel, tout est question de relation"
   },
   {
-    "objectID": "doc/cours/sql-avance.html#les-vues",
-    "href": "doc/cours/sql-avance.html#les-vues",
-    "title": "SQL avancé",
-    "section": "2 Les vues",
-    "text": "2 Les vues\n\nJoueuses Françaises\n\n\n\n\n\n\nQuestion\n\n\n\nImaginons que nous avons de nombreuses requêtes à écrire sur les joueuses françaises ayant plus de 2000 elo.\nEt nous n’avons pas envie de nous embêter à écrire à chaque fois toutes les restrictions.\n\n\n\n\nNouvelle table\nSolution 1 : créons une nouvelle table\nCREATE TABLE echecs.joueuse_fr_2000\nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR'\n   AND elo &gt;= 2000\n\n\n\n\n\n\n\nProblèmes\n\n\n\n\nDuplication des données\nMise à jour\n\n\n\n\n\n\nCommon Table Expression\nPour une utilisation ponctuelle, utilisez une CTE 😎\n\nCommencez par définir votre sous-requête joueuses_fr_elo2000 avec WITH\nAppelez joueuses_fr_elo2000 dans la requête principale\n\nWITH joueuses_fr_elo2000 \nAS (SELECT *\n      FROM echecs.joueuse\n     WHERE code_pays = 'FR' \n       AND elo &gt; 2000\n)\nSELECT nom, prenom, elo\n  FROM joueuses_fr_elo2000\n WHERE prenom LIKE 'A%';\n\n\nUsage avancé\nAssez classe\nComme une sous-requête\nOu comme si vous avez créé une vue temporaire\n\n\n\n\nTable temporaire\nN’existe que le temps de la session.\n\nCREATE TEMPORARY TABLE joueuses_fr_elo2000 \nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR' \n   AND elo &gt; 2000;\n\n\n\n\n\n\nRemarque\n\n\n\nUne table temporaire n’est pas définie dans un schéma.\n\n\n\n\nVue\n\n\n\n\n\n\nDéfinition\n\n\n\nUne vue représente une table virtuelle, dont la structure et les données proviennent du résultat d’une requête SQL prédéfinie.\nElle ne stocke pas directement les données, mais la requête elle-même, et s’exécute à chaque utilisation.\n\n\n\nCREATE VIEW echecs.joueuses_fr_elo2000 \nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR' \n   AND elo &gt; 2000;\n\n\nSe requête comme si c’est une table\nSELECT only\nPAS de UPDATE, DELETE, INSERT\n\n\n\n\nAvantages et inconvénients\n\n✔️ Simplicité d’accès aux données\n✔️ Meilleure organisation des données\n✔️ Contrôle des accès aux données\n❌ Performance\n\n\n\nInterroger sans se soucier des structures complexes des tables\nSauvegarde de requêtes complexes\nStructurer logiquement les données\nMasquer des colonnes / lignes sensibles\n❌ s’exécutent dynamiquement à chaque appel\n\n\n\n\nVues matérialisées\nPhoto à un instant t (snapshot) 📷\n\nCREATE MATERIALIZED VIEW joueuses_fr_elo2000 \nAS\nSELECT *\n  FROM echecs.joueuse\n WHERE code_pays = 'FR' \n   AND elo &gt; 2000;"
-  },
-  {
-    "objectID": "doc/cours/sql-avance.html#gérer-les-droits",
-    "href": "doc/cours/sql-avance.html#gérer-les-droits",
-    "title": "SQL avancé",
-    "section": "3 Gérer les droits",
-    "text": "3 Gérer les droits\nL’utilisateur qui crée une table peut distribuer des droits aux autres.\nVoir section priviléges de la doc PostgreSQL\n\nDonner des droits sur une table\n-- Lecture pour tous\nGRANT SELECT ON echecs.joueuse TO PUBLIC;\n\n-- Tous les droits\nGRANT ALL PRIVILEGES ON echecs.joueuse TO chantal WITH GRANT OPTION;\n\n\nPUBLIC : tous les utilisateurs\nSuffixe WITH GRANT OPTION pour donner le droit de transmettre ce droit\n\n\n\nRetirer des droits\n-- Lecture\nREVOKE SELECT ON echecs.joueuse TO chantal;\n\n-- Tous les droits\nREVOKE ALL PRIVILEGES ON echecs.joueuse TO chantal;\n\nSuffixe CASCADE pour retirer les droits à ceux qui ont reçu les droits de la part de…\n\n\nRôle\nPour une gestion simplifiée des droits\n-- créer un rôle\nCREATE ROLE eleve;\n\n-- ajouter des droits au rôle\nGRANT SELECT, INSERT ON echecs.joueuse TO eleve;\n\n-- donner le rôle à Chantal\nGRANT eleve TO chantal;\n\nImaginons que pour chaque nouvel élève, il faut donner les droits sur 20 tables.\nPlus pratique avec les rôles.\n\n\n\nDroits sur un schéma\n-- droit d'accès au schéma i.e. de consulter les objets du schéma\nGRANT USAGE ON SCHEMA echecs TO PUBLIC;\n\n-- retire à Chantal le droit de créer de nouveaux objets (tables, vues, etc.) dans le schéma\nREVOKE CREATE ON SCHEMA echecs FROM chantal;\n\n-- Autorise à effectuer des requêtes SELECT sur toutes les tables du schéma\nGRANT SELECT ON ALL TABLES IN SCHEMA echecs TO PUBLIC;\n\npas de question à l’exam sur les droits de schéma"
-  },
-  {
-    "objectID": "doc/cours/sql-avance.html#transactions",
-    "href": "doc/cours/sql-avance.html#transactions",
-    "title": "SQL avancé",
-    "section": "4 Transactions",
-    "text": "4 Transactions\n\nExemple classique\n\n\n\n\n\n\nMission\n\n\n\nVous devez transférer discrétement et sans vous tromper 10 millions entre les comptes de Shakira et Cristiano.\nMalheureusement l’opération est assez longue et vous devez vous prémunir contre le risque d’une interruption.\nComment faire ? 😕\n\n\n\n\nTransfert de fonds\nBEGIN; -- Début de la transaction\n\nUPDATE compte SET solde = solde - 10000000 WHERE id = 1;\nUPDATE compte SET solde = solde + 10000000 WHERE id = 2;\n\nCOMMIT; -- Valider si ok\n\nROLLBACK; -- en cas d'erreur\n\n\nPlusieurs utilisateurs peuvent faire des requêtes en même temps\nLOCK\nSAVEPOINT my_savepoint;\nROLLBACK TO my_savepoint;\nmode AUTOCOMMIT\n\n\n\n\nPropriétés ACID\nPour définir la fiabilité des transactions :\n\nAtomicité : Une transaction est “tout ou rien”\nCohérence : La base reste dans un état valide avant et après la transaction\nIsolation : Les transactions concurrentes n’interfèrent pas entre elles\nDurabilité : Une transaction validée est enregistrée de manière permanente, même en cas de panne\n\n\n\nSoit toutes les opérations réussissent, soit elles sont annulées (rollback)"
-  },
-  {
-    "objectID": "doc/cours/sql-avance.html#index",
-    "href": "doc/cours/sql-avance.html#index",
-    "title": "SQL avancé",
-    "section": "5 Index",
-    "text": "5 Index\n\nCréer un index\n\n\n\n\n\n\nDéfinition\n\n\n\nUn index est une structure de données qui améliore la vitesse des opérations de lecture sur une table en facilitant la recherche des données.\nIl permet une lecture plus rapide sur une colonne utilisée fréquemment dans WHERE, JOIN, GROUP BY, ORDER BY\n\n\nCREATE INDEX echecs.idx_nom_joueuse ON echecs.joueuse (nom);\n\n\nRecherche longue si beaucoup de lignes\nSystème clé-valeur (index -&gt; ligne)\n\n\n\n\nAvantages et inconvénients\n\n✔️ Haute cardinalité\n✔️ Peu de valeurs nulles\n❌ Créations, mises à jour\n❌ Prend de la place\n\n\n\nsi Haute cardinalité : beaucoup de valeurs distinctes\nSi une colonne est souvent modifiée, l’index associé doit être mis à jour\nIndex sous jacent sur colonnes UNIQUE (PK incluse)"
-  },
-  {
-    "objectID": "doc/cours/sql-avance.html#trigger",
-    "href": "doc/cours/sql-avance.html#trigger",
-    "title": "SQL avancé",
-    "section": "6 Trigger",
-    "text": "6 Trigger\n\n\n\n\n\n\nDéfinition\n\n\n\nUn trigger est une fonction qui s’exécute automatiquement en réponse à une mise à jour d’une table\nIl permet par exemple de :\n\nGarantir l’intégrité des données\nImplémenter des règles métier\nSynchroniser des données\n\n\n\n\nPeut se déclencher avant ou après une maj\n\nGarantir l’intégrité des données : Valider ou corriger les données avant leur enregistrement.\nImplémenter des règles métier : Empêcher des suppressions ou modifications non autorisées.\nSynchroniser des données : Mettre à jour des tables liées automatiquement."
+    "objectID": "doc/cours/algebre.html#principaux-opérateurs",
+    "href": "doc/cours/algebre.html#principaux-opérateurs",
+    "title": "Algèbre Relationnelle",
+    "section": "2 Principaux opérateurs",
+    "text": "2 Principaux opérateurs\n\n\n\n\n\n\n\n\nOpérateur\nDescription\n\n\n\n\nσ (Sélection)\nFiltrer les lignes selon une condition\n\n\nπ (Projection)\nSélectionner des colonnes spécifiques\n\n\nU (Union)\nCombiner les lignes de deux relations\n\n\n− (Différence)\nRetourner les lignes présentes dans une relation mais pas dans l’autre\n\n\n∩ (Intersection)\nTrouver les lignes communes aux deux relations\n\n\n⨝ (Jointure)\nCombiner deux relations basées sur une condition\n\n\nx (Produit Cartésien)\nCombinaison des colonnes\n\n\n\n\n\nSélection\n\nPermet de filtrer les lignes d’une table selon une condition\n\n\n\n⚠️ Mot clé SQL associé : WHERE\n\nSELECT *\n  FROM echecs.joueuse\n WHERE elo &lt; 2400;\n\n\n\nProjection\n\nPermet de sélectionner certaines colonnes d’une table.\nMot clé SQL associé : SELECT\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse;\n\n\nUnion\n\nCombine les lignes de deux tables ayant le même nombre de colonnes et des types compatibles\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse\n\nUNION\n\nSELECT nom,\n       prenom\n  FROM echecs.joueur;\n\n\n\n\n\n\nTip\n\n\n\n\nUNION : Combine les résultats des requêtes et supprime les doublons\nUNION ALL : Combine les résultats des requêtes et garde tous les doublons\n\n\n\n\n\nEn général, on prend les mêmes colonnes des 2 côtés\nPossible de faire plusieurs UNION\nORDER BY à la fin : ordonne le tout\n\n\n\n\nDifférence\n\nLignes qui se trouvent dans la première relation mais pas dans la seconde\n\n-- Joueuses évoluant dans un club français et pas dans un club belge\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_fr\n\nEXCEPT\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_be;\n\nImaginons que vous ayez créé 2 tables :\n\njoueuses évoluant dans un club français\njoueuses évoluant dans un club belge\n\n\n\n\nIntersection\n\nLignes communes aux deux tables\n\n-- Joueuses évoluant dans un club francais et dans un club belge\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_fr\n\nINTERSECT\n\nSELECT nom,\n       prenom\n  FROM echecs.joueuse_club_be;\n\n\nJointure\n\nPermet de combiner deux tables en se basant sur une correspondance entre les colonnes\n\nSELECT j.nom,\n       j.prenom,\n       c.nom AS club\n  FROM echecs.joueuse j\n  JOIN echecs.club c USING (id_club);\n\n\nProduit Cartésien\nSELECT *\n  FROM echecs.joueuse j,\n       echecs.club c;\n-- WHERE j.id_club = c.id_club\n\nAncienne pratique : utilisé avant à la place des jointures"
   },
   {
     "objectID": "doc/cours/sql-intro-slides.html#structured-query-language",

@@ -9,8 +9,8 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <meta name="author" content="Ludovic Deneuville">
-  <title>Base de données – Agrégations</title>
+  <meta name="author" content="Natacha Njongwa Yepnga">
+  <title>Base de données – Introduction à Python : Bases et Structures Fondamentales</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -193,400 +193,155 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Agrégations</h1>
+  <h1 class="title">Introduction à Python : Bases et Structures Fondamentales</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Ludovic Deneuville 
+Natacha Njongwa Yepnga 
 </div>
 </div>
 </div>
 
 </section>
-<section id="données-utilisées" class="title-slide slide level2 center">
-<h2>Données utilisées</h2>
-<div class="small-table">
-<table class="caption-top">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 28%">
-<col style="width: 21%">
-<col style="width: 10%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>id_joueuse</strong></th>
-<th><strong>nom</strong></th>
-<th><strong>prenom</strong></th>
-<th><strong>elo</strong></th>
-<th><strong>ville_club</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Guichard</td>
-<td>Pauline</td>
-<td>2357</td>
-<td>Asnieres</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Daulyte</td>
-<td>Deimante</td>
-<td>2371</td>
-<td>Chartres</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Navrotescu</td>
-<td>Andreea</td>
-<td>2338</td>
-<td>Asnieres</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Sebag</td>
-<td>Marie</td>
-<td>2448</td>
-<td>Bischwiller</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Millet</td>
-<td>Sophie</td>
-<td>2366</td>
-<td>Asnieres</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Skrichempko</td>
-<td>Almira</td>
-<td>2361</td>
-<td>Bischwiller</td>
-</tr>
-</tbody>
-</table>
-</div>
-<aside class="notes">
-<p>j’ai intégré ici le club pour faciliter les choses</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
+<section>
+<section id="introduction-à-python" class="title-slide slide level1 center">
+<h1>Introduction à Python</h1>
 
-<section id="questions" class="title-slide slide level2 center">
-<h2>Questions</h2>
-<p>Quelques questions que l’on peut se poser :</p>
-<div>
+</section>
+<section id="introduction" class="title-slide slide level2 center">
+<h2>1. Introduction</h2>
+<p>Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.</p>
+</section>
+<section id="quest-ce-que-python" class="slide level3">
+<h3>1.1 Qu’est-ce que Python?</h3>
 <ul>
-<li class="fragment">Quel est le id_joueuse maximum ?</li>
-<li class="fragment">Quel est le nombre de joueuses ?</li>
-<li class="fragment">Quelle est la moyenne elo par club ?</li>
+<li>Python est un langage interprété, open source, et multiplateforme.</li>
+<li>Créé par <strong>Guido van Rossum</strong> en 1989 (première version en 1991).</li>
+<li>Points forts :
+<ul>
+<li>Syntaxe simple et lisible.</li>
+<li>Large écosystème de bibliothèques.</li>
+</ul></li>
 </ul>
-</div>
 </section>
-
-<section>
-<section id="compter-les-lignes" class="title-slide slide level2 center">
-<h2>Compter les lignes</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> elo <span class="op">&lt;</span> <span class="dv">2400</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>count</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><br></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> prenom)</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>count</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>6</td>
-</tr>
-</tbody>
-</table>
-</div>
-<aside class="notes">
-<p>J’utilise souvent COUNT(1) -&gt; c’est pareil</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="compter-avec-un-filtre" class="slide level3">
-<h3>Compter avec un filtre</h3>
-<p>L’opérateur <code>FILTER</code> permet de calculer une agrégation conditionnelle.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (<span class="kw">WHERE</span> elo <span class="kw">BETWEEN</span> <span class="dv">2300</span> <span class="kw">AND</span> <span class="dv">2399</span>) <span class="kw">AS</span> niv_fm,</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (<span class="kw">WHERE</span> elo <span class="kw">BETWEEN</span> <span class="dv">2400</span> <span class="kw">AND</span> <span class="dv">2499</span>) <span class="kw">AS</span> niv_im</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>niv_fm</strong></th>
-<th><strong>niv_im</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section></section>
-<section id="somme" class="title-slide slide level2 center">
-<h2>Somme</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(elo)</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>sum</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>14223</td>
-</tr>
-</tbody>
-</table>
-</div>
-<aside class="notes">
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(elo) <span class="op">/</span> <span class="fu">COUNT</span>(elo)</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="stats-descriptives" class="title-slide slide level2 center">
-<h2>Stats descriptives</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(elo),</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">MIN</span>(elo),</span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(elo)</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>max</strong></th>
-<th><strong>min</strong></th>
-<th><strong>avg</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2448</td>
-<td>2338</td>
-<td>2373.5</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>Vous pouvez également calculer : <code>VARIANCE</code>, <code>STDDEV</code>.</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Comment afficher la joueuse avec le plus grand elo ? <span class="emoji" data-emoji="dizzy_face">😵</span></p>
-</div>
-</section>
-<section id="sous-requête" class="slide level3">
-<h3>Sous-requête</h3>
-<p>En utilisant une <strong>sous-requête</strong> :</p>
+<section id="conseils-pour-lapprentissage-de-python" class="slide level3">
+<h3>1.2 Conseils pour l’apprentissage de Python</h3>
 <ul>
-<li><code>SELECT MAX(elo) FROM echecs.joueuse</code> <span class="emoji" data-emoji="arrow_right">➡️</span> renvoie un nombre</li>
-<li>Nous pouvons ensuite tester si <em>elo</em> est égal à ce nombre</li>
+<li><strong>Pratique régulière</strong> : Codez tous les jours pour solidifier vos bases.</li>
+<li><strong>Explorez des projets simples</strong> : Calculatrice, jeu de devinettes, gestion d’inventaire.</li>
+<li><strong>Utilisez les ressources disponibles</strong> :
+<ul>
+<li>Documentation officielle : <a href="https://www.python.org/doc/">python.org/doc</a>.</li>
+<li>Plateformes d’exercices : <a href="https://leetcode.com/">LeetCode</a>, <a href="https://www.hackerrank.com/">Hackerrank</a>.</li>
+</ul></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> nom,</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>       prenom,</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>       elo</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse</span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> elo <span class="op">=</span> (<span class="kw">SELECT</span> <span class="fu">MAX</span>(elo) <span class="kw">FROM</span> echecs.joueuse);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section>
-<section>
-<section id="regroupement" class="title-slide slide level2 center">
-<h2>Regroupement</h2>
-<p>Comment obtenir la moyenne elo par club ?</p>
-<div class="fragment">
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ville_club,    <span class="co">-- Supposons que la table joueuse a un attribut ville_club</span></span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(elo)</span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse</span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> ville_club;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>ville_club</strong></th>
-<th><strong>avg_elo</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Asnieres</td>
-<td>2372.4</td>
-</tr>
-<tr class="even">
-<td>Chartres</td>
-<td>2371.0</td>
-</tr>
-<tr class="odd">
-<td>Bischwiller</td>
-<td>2404.5</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<aside class="notes">
-<p>J’ai mis ville_club car id_club c’est moins joli et on verra les jointures ensuite.</p>
-<p>Vous pouvez utiliser ROUND() pour arrondir.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="colonnes-du-group-by" class="slide level3">
-<h3>Colonnes du GROUP BY</h3>
-<p>Vous pouvez grouper en utilisant plusieurs colonnes.</p>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>Les colonnes présentes dans le <em>SELECT</em> doivent impérativement être présentes dans le <em>GROUP BY</em>.</p>
-<p>L’inverse n’est pas vrai. Vous pouvez avoir des colonnes du <em>GROUP BY</em> que vous n’affichez pas dans le <em>SELECT</em>.</p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>je dis bien colonnes et pas fonctions d’aggrégation</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="filtrer-suite-au-group-by" class="slide level3">
-<h3>Filtrer suite au GROUP BY</h3>
-<p>Comment faire pour afficher uniquement les clubs où la moyenne élo est inférieure à 2400 ?</p>
-<div class="fragment">
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ville_club,</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(elo)</span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse</span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> ville_club</span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(elo) <span class="op">&lt;</span> <span class="dv">2400</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="small-table">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>club</strong></th>
-<th><strong>avg_elo</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Asnieres</td>
-<td>2372.4</td>
-</tr>
-<tr class="even">
-<td>Chartres</td>
-<td>2371.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="having-vs-where" class="slide level3">
-<h3>Having Vs Where</h3>
+<section id="conseils-pour-installer-et-configurer-python" class="slide level3">
+<h3>1.3 Conseils pour installer et configurer Python</h3>
+<h4 id="installer-python"><strong>Installer Python</strong></h4>
 <ul>
-<li><strong>WHERE</strong> - Filtre Avant l’Agrégation</li>
-<li><strong>HAVING</strong> - Filtre Après l’Agrégation</li>
+<li>Téléchargez Python depuis <a href="https://www.python.org/">python.org</a>.<br>
+</li>
+<li><strong>Anaconda</strong> : Une distribution Python recommandée pour la data science, qui inclut des outils comme Jupyter Notebook et de nombreuses bibliothèques préinstallées.<br>
+#### <strong>Outils recommandés pour coder en Python</strong></li>
+</ul>
+<h5 id="visual-studio-code-vs-code"><strong>1. Visual Studio Code (VS Code)</strong></h5>
+<ul>
+<li><strong>Qu’est-ce que VS Code ?</strong>
+<ul>
+<li>Un éditeur de code léger, puissant et extensible, développé par Microsoft.<br>
+</li>
+<li>Idéal pour écrire et exécuter des scripts Python grâce à ses extensions.</li>
+</ul></li>
+<li><strong>Installer VS Code</strong> :
+<ul>
+<li>Téléchargez-le sur <a href="https://code.visualstudio.com/">code.visualstudio.com</a>.<br>
+</li>
+<li>Installez l’extension <strong>Python</strong> via le <strong>Visual Studio Code Marketplace</strong> :
+<ol type="1">
+<li>Ouvrez VS Code.</li>
+<li>Allez dans l’onglet des extensions (icône avec des blocs).</li>
+<li>Recherchez <strong>Python</strong> et cliquez sur “Installer”.</li>
+</ol></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level3">
+
+<h5 id="anaconda"><strong>Anaconda</strong></h5>
+<ul>
+<li><strong>Qu’est-ce qu’Anaconda ?</strong>
+<ul>
+<li>Une distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.<br>
+</li>
+<li>Idéal pour la data science et le machine learning.</li>
+</ul></li>
+<li><strong>Installer Anaconda</strong> :
+<ul>
+<li>Téléchargez-le depuis <a href="https://www.anaconda.com/products/distribution">anaconda.com</a>.<br>
+</li>
+<li>Suivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).</li>
+</ul></li>
+<li><strong>Avantages</strong> :
+<ul>
+<li>Configuration simplifiée pour débuter.<br>
+</li>
+<li>Gestion facile des environnements virtuels avec <code>conda</code>.</li>
+</ul></li>
+</ul>
+<h5 id="jupyter-notebook"><strong>Jupyter Notebook</strong></h5>
+<ul>
+<li><strong>Qu’est-ce que Jupyter Notebook ?</strong>
+<ul>
+<li>Un environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).<br>
+</li>
+<li>Idéal pour la data science et les visualisations.</li>
+</ul></li>
+<li><strong>Installer Jupyter Notebook</strong> :
+<ul>
+<li><p>Si vous avez Anaconda, Jupyter est préinstallé.<br>
+</p></li>
+<li><p>Sinon, installez-le avec <code>pip</code> :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level3">
+
+<h5 id="google-colab"><strong>3. Google Colab</strong></h5>
+<ul>
+<li><strong>Qu’est-ce que Google Colab ?</strong>
+<ul>
+<li>Un environnement en ligne gratuit pour coder en Python, développé par Google.<br>
+</li>
+<li>Aucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.<br>
+</li>
+<li>Avantage : accès à des GPU gratuits pour le machine learning.</li>
+</ul></li>
+<li><strong>Accéder à Google Colab</strong> :
+<ol type="1">
+<li>Rendez-vous sur <a href="https://colab.research.google.com/">colab.research.google.com</a>.<br>
+</li>
+<li>Connectez-vous avec un compte Google.<br>
+</li>
+<li>Créez un nouveau notebook en cliquant sur <strong>New Notebook</strong>.</li>
+</ol></li>
+<li><strong>Fonctionnalités clés</strong> :
+<ul>
+<li>Sauvegarde automatique sur Google Drive.<br>
+</li>
+<li>Support intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).</li>
+</ul></li>
 </ul>
 
 
-</section></section>
+</section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="../../index.html">Home</a> — <a href="agregations.html">Agrégations</a></p>
+<p><a href="../../index.html">Home</a> — <a href="introduction.html">Introduction à Python</a></p>
 </div>
 </div></div>
 

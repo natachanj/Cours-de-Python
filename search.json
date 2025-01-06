@@ -109,7 +109,7 @@
     "href": "doc/cours/introduction.html#les-structures-conditionnelles",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "4.1 Les Structures conditionnelles",
-    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie"
+    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie\n\n\n\nExemple simple\nnombre = 10\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",
@@ -557,7 +557,56 @@
     "href": "doc/cours/intro-python-slides.html#bibliographie",
     "title": "Programmation avec Python : Bases et Applications",
     "section": "Bibliographie",
-    "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nW3Schools Python Tutorial"
+    "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nSite\nSite officiel Python\nTutoriel de la documentation officielle en ligne"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#mémentos-et-abrégés",
+    "href": "doc/cours/intro-python-slides.html#mémentos-et-abrégés",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Mémentos et abrégés",
+    "text": "Mémentos et abrégés\n\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#tutoriels-en-ligne",
+    "href": "doc/cours/intro-python-slides.html#tutoriels-en-ligne",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Tutoriels en ligne",
+    "text": "Tutoriels en ligne\n\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#téléchargements",
+    "href": "doc/cours/intro-python-slides.html#téléchargements",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Téléchargements",
+    "text": "Téléchargements\n\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#livres-et-cours-en-ligne",
+    "href": "doc/cours/intro-python-slides.html#livres-et-cours-en-ligne",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Livres et cours en ligne",
+    "text": "Livres et cours en ligne\n\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#ressources-académiques",
+    "href": "doc/cours/intro-python-slides.html#ressources-académiques",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ressources académiques",
+    "text": "Ressources académiques\n\nCours Python de l’École Polytechnique Universitaire UMPC"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#développement-et-intégration",
+    "href": "doc/cours/intro-python-slides.html#développement-et-intégration",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Développement et intégration",
+    "text": "Développement et intégration\n\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#communauté-francophone-et-tutoriels",
+    "href": "doc/cours/intro-python-slides.html#communauté-francophone-et-tutoriels",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Communauté francophone et tutoriels",
+    "text": "Communauté francophone et tutoriels\n\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
   },
   {
     "objectID": "doc/cours/intro.html",
@@ -620,7 +669,56 @@
     "href": "doc/cours/intro.html#bibliographie",
     "title": "Programmation avec Python : Bases et Applications",
     "section": "Bibliographie",
-    "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nW3Schools Python Tutorial"
+    "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nSite\nSite officiel Python\nTutoriel de la documentation officielle en ligne"
+  },
+  {
+    "objectID": "doc/cours/intro.html#mémentos-et-abrégés",
+    "href": "doc/cours/intro.html#mémentos-et-abrégés",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Mémentos et abrégés",
+    "text": "Mémentos et abrégés\n\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012"
+  },
+  {
+    "objectID": "doc/cours/intro.html#tutoriels-en-ligne",
+    "href": "doc/cours/intro.html#tutoriels-en-ligne",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Tutoriels en ligne",
+    "text": "Tutoriels en ligne\n\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne"
+  },
+  {
+    "objectID": "doc/cours/intro.html#téléchargements",
+    "href": "doc/cours/intro.html#téléchargements",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Téléchargements",
+    "text": "Téléchargements\n\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)"
+  },
+  {
+    "objectID": "doc/cours/intro.html#livres-et-cours-en-ligne",
+    "href": "doc/cours/intro.html#livres-et-cours-en-ligne",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Livres et cours en ligne",
+    "text": "Livres et cours en ligne\n\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010"
+  },
+  {
+    "objectID": "doc/cours/intro.html#ressources-académiques",
+    "href": "doc/cours/intro.html#ressources-académiques",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ressources académiques",
+    "text": "Ressources académiques\n\nCours Python de l’École Polytechnique Universitaire UMPC"
+  },
+  {
+    "objectID": "doc/cours/intro.html#développement-et-intégration",
+    "href": "doc/cours/intro.html#développement-et-intégration",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Développement et intégration",
+    "text": "Développement et intégration\n\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011"
+  },
+  {
+    "objectID": "doc/cours/intro.html#communauté-francophone-et-tutoriels",
+    "href": "doc/cours/intro.html#communauté-francophone-et-tutoriels",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Communauté francophone et tutoriels",
+    "text": "Communauté francophone et tutoriels\n\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
   },
   {
     "objectID": "doc/glossaire.html",

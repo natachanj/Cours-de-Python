@@ -433,3 +433,14 @@ La condition `if` est utilisée pour vérifier si une expression est vraie. Si c
 if condition:
     # Code à exécuter si la condition est vraie
 ```
+
+---
+#### Exemple simple
+```python
+nombre = 10
+
+if nombre > 0:
+    print("Le nombre est positif.")
+
+```
+---

@@ -14,7 +14,7 @@ h2::before {
 }
 
 h3::before {
-  content: '\1F40D'; /*Snake emoji pour Python*/
+  content: '\25AA';  /* Small black square */
   margin-right: 8px;
 }
 

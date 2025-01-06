@@ -20,7 +20,7 @@ website:
           - href: doc/cours/intro.qmd
             text: "Introduction"
           - href: doc/cours/introduction.qmd
-            text: "Base de données"
+            text: "Les Fondamentaux de Python : Variables, Structures et Types de Données""
           - href: doc/cours/sql-intro.qmd
             text: "Introduction à SQL"
           - href: doc/cours/agregations.qmd

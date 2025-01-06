@@ -208,13 +208,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#quest-ce-quune-variable" id="toc-quest-ce-quune-variable" class="nav-link" data-scroll-target="#quest-ce-quune-variable"><span class="header-section-number">2.1</span> Qu’est-ce qu’une variable ?</a></li>
   <li><a href="#déclaration-dune-variable" id="toc-déclaration-dune-variable" class="nav-link" data-scroll-target="#déclaration-dune-variable"><span class="header-section-number">2.2</span> Déclaration d’une variable</a></li>
-  <li><a href="#les-types-de-base-en-python" id="toc-les-types-de-base-en-python" class="nav-link" data-scroll-target="#les-types-de-base-en-python"><span class="header-section-number">2.3</span> Les Types de Base en Python</a></li>
+  <li><a href="#les-types-de-base-en-python" id="toc-les-types-de-base-en-python" class="nav-link" data-scroll-target="#les-types-de-base-en-python"><span class="header-section-number">2.3</span> Les Types de Base en Python</a>
+  <ul class="collapse">
+  <li><a href="#entiers-int" id="toc-entiers-int" class="nav-link" data-scroll-target="#entiers-int">Entiers (<code>int</code>)</a></li>
+  <li><a href="#flottants-float" id="toc-flottants-float" class="nav-link" data-scroll-target="#flottants-float">Flottants (<code>float</code>)</a></li>
+  <li><a href="#booléens-bool" id="toc-booléens-bool" class="nav-link" data-scroll-target="#booléens-bool">Booléens (<code>bool</code>)</a></li>
+  <li><a href="#résumé-des-types-de-base" id="toc-résumé-des-types-de-base" class="nav-link" data-scroll-target="#résumé-des-types-de-base">Résumé des types de base</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#afficher-des-résultats-en-python" id="toc-afficher-des-résultats-en-python" class="nav-link" data-scroll-target="#afficher-des-résultats-en-python"><span class="header-section-number">3</span> Afficher des résultats en Python</a>
   <ul class="collapse">
   <li><a href="#la-fonction-print" id="toc-la-fonction-print" class="nav-link" data-scroll-target="#la-fonction-print"><span class="header-section-number">3.1</span> La fonction <code>print()</code></a></li>
   <li><a href="#afficher-plusieurs-éléments" id="toc-afficher-plusieurs-éléments" class="nav-link" data-scroll-target="#afficher-plusieurs-éléments"><span class="header-section-number">3.2</span> Afficher plusieurs éléments</a></li>
   <li><a href="#formatage-des-chaînes" id="toc-formatage-des-chaînes" class="nav-link" data-scroll-target="#formatage-des-chaînes"><span class="header-section-number">3.3</span> Formatage des chaînes</a></li>
+  <li><a href="#caractères-spéciaux" id="toc-caractères-spéciaux" class="nav-link" data-scroll-target="#caractères-spéciaux"><span class="header-section-number">3.4</span> Caractères spéciaux</a></li>
+  <li><a href="#contrôler-la-fin-de-laffichage" id="toc-contrôler-la-fin-de-laffichage" class="nav-link" data-scroll-target="#contrôler-la-fin-de-laffichage"><span class="header-section-number">3.5</span> Contrôler la fin de l’affichage</a></li>
+  <li><a href="#résumé" id="toc-résumé" class="nav-link" data-scroll-target="#résumé"><span class="header-section-number">3.6</span> Résumé</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="introduction-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -519,6 +528,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <p>Ces types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.</p>
 </section>
+<section id="chaînes-de-caractères-str" class="level4">
+<h4 class="anchored" data-anchor-id="chaînes-de-caractères-str">Chaînes de caractères (<code>str</code>)</h4>
+<p>Les chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.</p>
+<p><strong>Exemple</strong> :</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Déclaration de variables</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>nom <span class="op">=</span> <span class="st">"Alice"</span>   <span class="co"># Chaîne de caractères</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="bu">type</span>(nom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="entiers-int" class="level3">
+<h3 class="anchored" data-anchor-id="entiers-int">Entiers (<code>int</code>)</h3>
+<p>Les entiers représentent des nombres sans décimales, qu’ils soient positifs ou négatifs.</p>
+<p><strong>Exemple</strong> :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Déclaration de variables</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>age <span class="op">=</span> <span class="dv">25</span>        <span class="co"># Entier</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="bu">type</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="flottants-float" class="level3">
+<h3 class="anchored" data-anchor-id="flottants-float">Flottants (<code>float</code>)</h3>
+<p>Les flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions. <strong>Exemple</strong> :</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Déclaration de variables</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>pi <span class="op">=</span> <span class="fl">3.14</span>       <span class="co"># Nombre flottant</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="bu">type</span>(pi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="booléens-bool" class="level3">
+<h3 class="anchored" data-anchor-id="booléens-bool">Booléens (<code>bool</code>)</h3>
+<p>Les booléens sont des valeurs logiques, pouvant être <code>True</code> (vrai) ou <code>False</code> (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d’un programme. <strong>Exemple</strong> :</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Déclaration de variables</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>est_actif <span class="op">=</span> <span class="va">True</span>  <span class="co"># Booléen</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">type</span>(est_actif)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="résumé-des-types-de-base" class="level3">
+<h3 class="anchored" data-anchor-id="résumé-des-types-de-base">Résumé des types de base</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>str</code></td>
+<td>Chaîne de caractères</td>
+</tr>
+<tr class="even">
+<td><code>int</code></td>
+<td>Nombres entiers</td>
+</tr>
+<tr class="odd">
+<td><code>float</code></td>
+<td>Nombres décimaux</td>
+</tr>
+<tr class="even">
+<td><code>bool</code></td>
+<td>Valeurs logiques (True/False)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
 </section>
 </section>
 <section id="afficher-des-résultats-en-python" class="level1" data-number="3">
@@ -529,14 +602,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.1" class="anchored" data-anchor-id="la-fonction-print"><span class="header-section-number">3.1</span> La fonction <code>print()</code></h2>
 <p><code>print()</code> est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.</p>
 <p><strong>Exemple</strong> :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">print</span>(valeur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">print</span>(valeur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="afficher-plusieurs-éléments" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="afficher-plusieurs-éléments"><span class="header-section-number">3.2</span> Afficher plusieurs éléments</h2>
 <p>Vous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.</p>
 <p><strong>Exemple</strong> :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(<span class="st">"Bonjour"</span>, <span class="st">"Python"</span>, <span class="fl">3.10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">print</span>(<span class="st">"Bonjour"</span>, <span class="st">"Python"</span>, <span class="fl">3.10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="formatage-des-chaînes" class="level2" data-number="3.3">
@@ -545,20 +618,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>Concaténation avec <code>+</code></strong> : Combine des chaînes de caractères.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>nom <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(<span class="st">"Bonjour, "</span> <span class="op">+</span> nom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>nom <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(<span class="st">"Bonjour, "</span> <span class="op">+</span> nom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>Substitution avec <code>f-strings</code></strong> : Insère directement des variables dans une chaîne avec une syntaxe claire.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>nom <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>age <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(<span class="ss">f"Bonjour, je m'appelle </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> ans."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>nom <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="bu">print</span>(<span class="ss">f"Bonjour, je m'appelle </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> ans."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>Méthode <code>format()</code></strong> : Insère des variables dans une chaîne avec des positions spécifiques.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>nom <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>age <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="bu">print</span>(<span class="st">"Bonjour, je m'appelle </span><span class="sc">{}</span><span class="st"> et j'ai </span><span class="sc">{}</span><span class="st"> ans."</span>.<span class="bu">format</span>(nom, age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>nom <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="bu">print</span>(<span class="st">"Bonjour, je m'appelle </span><span class="sc">{}</span><span class="st"> et j'ai </span><span class="sc">{}</span><span class="st"> ans."</span>.<span class="bu">format</span>(nom, age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="caractères-spéciaux" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="caractères-spéciaux"><span class="header-section-number">3.4</span> Caractères spéciaux</h2>
+<p>Certaines séquences spéciales permettent de modifier l’affichage : - <code>\\n</code> : Effectue un saut de ligne. - <code>\\t</code> : Ajoute une tabulation.</p>
+<p>Ces caractères sont utiles pour structurer l’affichage dans la console.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="bu">print</span>(<span class="st">"Bonjour</span><span class="ch">\\</span><span class="st">nPython"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="bu">print</span>(<span class="st">"Nom:</span><span class="ch">\\</span><span class="st">tAlice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="contrôler-la-fin-de-laffichage" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="contrôler-la-fin-de-laffichage"><span class="header-section-number">3.5</span> Contrôler la fin de l’affichage</h2>
+<p>Par défaut, chaque appel à <code>print()</code> termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="bu">print</span>(<span class="st">"Bonjour"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="bu">print</span>(<span class="st">"Python !"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="résumé" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="résumé"><span class="header-section-number">3.6</span> Résumé</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>print()</code></td>
+<td>Affiche des données dans la console.</td>
+</tr>
+<tr class="even">
+<td>Concaténation</td>
+<td>Combine plusieurs chaînes de caractères.</td>
+</tr>
+<tr class="odd">
+<td><code>f-strings</code></td>
+<td>Insère des variables directement dans une chaîne.</td>
+</tr>
+<tr class="even">
+<td><code>.format()</code></td>
+<td>Formate une chaîne avec des variables.</td>
+</tr>
+<tr class="odd">
+<td>Caractères spéciaux</td>
+<td>Modifie l’apparence (nouvelle ligne, tabulation).</td>
+</tr>
+</tbody>
+</table>
 <hr>
 
 

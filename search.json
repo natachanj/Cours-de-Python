@@ -60,7 +60,7 @@
     "href": "doc/cours/introduction.html#les-types-de-base-en-python",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "2.3 Les Types de Base en Python",
-    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique\n\nCes types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts."
+    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique\n\nCes types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.\n\n\nChaînes de caractères (str)\nLes chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\ntype(nom)\n\n\n\nEntiers (int)\nLes entiers représentent des nombres sans décimales, qu’ils soient positifs ou négatifs.\nExemple :\n# Déclaration de variables\nage = 25        # Entier\ntype(age)\n\n\n\nFlottants (float)\nLes flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions. Exemple :\n# Déclaration de variables\npi = 3.14       # Nombre flottant\ntype(pi)\n\n\n\nBooléens (bool)\nLes booléens sont des valeurs logiques, pouvant être True (vrai) ou False (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d’un programme. Exemple :\n# Déclaration de variables\nest_actif = True  # Booléen\ntype(est_actif)\n\n\n\nRésumé des types de base\n\n\n\nType\nDescription\n\n\n\n\nstr\nChaîne de caractères\n\n\nint\nNombres entiers\n\n\nfloat\nNombres décimaux\n\n\nbool\nValeurs logiques (True/False)"
   },
   {
     "objectID": "doc/cours/introduction.html#la-fonction-print",
@@ -82,6 +82,27 @@
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "3.3 Formatage des chaînes",
     "text": "3.3 Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#caractères-spéciaux",
+    "href": "doc/cours/introduction.html#caractères-spéciaux",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.4 Caractères spéciaux",
+    "text": "3.4 Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#contrôler-la-fin-de-laffichage",
+    "href": "doc/cours/introduction.html#contrôler-la-fin-de-laffichage",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.5 Contrôler la fin de l’affichage",
+    "text": "3.5 Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#résumé",
+    "href": "doc/cours/introduction.html#résumé",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.6 Résumé",
+    "text": "3.6 Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",
@@ -138,6 +159,27 @@
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "Formatage des chaînes",
     "text": "Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#caractères-spéciaux",
+    "href": "doc/cours/introduction-slides.html#caractères-spéciaux",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Caractères spéciaux",
+    "text": "Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#contrôler-la-fin-de-laffichage",
+    "href": "doc/cours/introduction-slides.html#contrôler-la-fin-de-laffichage",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Contrôler la fin de l’affichage",
+    "text": "Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#résumé",
+    "href": "doc/cours/introduction-slides.html#résumé",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Résumé",
+    "text": "Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
   },
   {
     "objectID": "doc/tp/tp1.html",

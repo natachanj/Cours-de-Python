@@ -410,3 +410,91 @@ print("Python !")
 | Caractères spéciaux    | Modifie l'apparence (nouvelle ligne, tabulation). |
 
 ---
+
+
+# Les Structures conditionnelles et les Boucles
+
+Les structures conditionnelles et les boucles permettent de contrôler le flux d'un programme en fonction de certaines conditions ou de répéter des actions.
+
+---
+
+## Les Structures conditionnelles
+
+Les structures conditionnelles permettent d'exécuter des blocs de code uniquement si une condition est remplie.
+
+---
+
+### La condition `if`
+
+La condition `if` est utilisée pour vérifier si une expression est vraie. Si c'est le cas, le bloc de code associé est exécuté.
+
+#### Syntaxe de base 
+```python
+if condition:
+    # Code à exécuter si la condition est vraie
+```
+---
+#### Exemple simple
+```python
+nombre = 10
+
+if nombre > 0:
+    print("Le nombre est positif.")
+
+```
+---
+
+#### Ajout de `else`
+L'instruction `else permet d'exécuter un bloc de code si la condition est fausse.
+
+```python
+nombre = -5
+if nombre > 0:
+    print("Le nombre est positif.")
+else:
+    print("Le nombre est négatif ou nul.")
+```
+---
+#### Ajout de `elif`
+L'instruction `elif` permet de vérifier plusieurs conditions successives.
+```python
+nombre = 0
+
+if nombre > 0:
+    print("Le nombre est positif.")
+elif nombre == 0:
+    print("Le nombre est nul.")
+else:
+    print("Le nombre est négatif.")
+```
+---
+### Conditions imbriquées
+Les `if` peuvent être imbriqués pour vérifier des conditions multiples.
+```python
+age = 20
+citoyen = True
+
+if age >= 18:
+    if citoyen:
+        print("Vous pouvez voter.")
+    else:
+        print("Vous ne pouvez pas voter, même si vous êtes majeur.")
+else:
+    print("Vous êtes mineur.")
+```
+---
+
+### Comparaisons en Python
+
+Les opérateurs de comparaison permettent d'évaluer des expressions.
+
+| Opérateur | Description                      |
+|-----------|----------------------------------|
+| `==`      | Égalité                          |
+| `!=`      | Différence                       |
+| `<`       | Inférieur à                      |
+| `<=`      | Inférieur ou égal à              |
+| `>`       | Supérieur à                      |
+| `>=`      | Supérieur ou égal à              |
+
+---

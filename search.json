@@ -109,7 +109,7 @@
     "href": "doc/cours/introduction.html#les-structures-conditionnelles",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "4.1 Les Structures conditionnelles",
-    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base"
+    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

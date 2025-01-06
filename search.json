@@ -60,7 +60,28 @@
     "href": "doc/cours/introduction.html#les-types-de-base-en-python",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "2.3 Les Types de Base en Python",
-    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique"
+    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique\n\nCes types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#la-fonction-print",
+    "href": "doc/cours/introduction.html#la-fonction-print",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.1 La fonction print()",
+    "text": "3.1 La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#afficher-plusieurs-éléments",
+    "href": "doc/cours/introduction.html#afficher-plusieurs-éléments",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.2 Afficher plusieurs éléments",
+    "text": "3.2 Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#formatage-des-chaînes",
+    "href": "doc/cours/introduction.html#formatage-des-chaînes",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.3 Formatage des chaînes",
+    "text": "3.3 Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",
@@ -96,6 +117,27 @@
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "Les Types de Base en Python",
     "text": "Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#la-fonction-print",
+    "href": "doc/cours/introduction-slides.html#la-fonction-print",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "La fonction print()",
+    "text": "La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#afficher-plusieurs-éléments",
+    "href": "doc/cours/introduction-slides.html#afficher-plusieurs-éléments",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Afficher plusieurs éléments",
+    "text": "Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#formatage-des-chaînes",
+    "href": "doc/cours/introduction-slides.html#formatage-des-chaînes",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Formatage des chaînes",
+    "text": "Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
   },
   {
     "objectID": "doc/tp/tp1.html",

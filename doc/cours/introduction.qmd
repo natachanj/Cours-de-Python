@@ -73,12 +73,12 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ---
 
-##### **Anaconda**
+#####**Anaconda**
 - **Qu'est-ce qu'Anaconda ?**  
   - Une distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d'environnements.  
   - Idéal pour la data science et le machine learning.  
 
--# **Installer Anaconda** :  
+-**Installer Anaconda** :  
   - Téléchargez-le depuis [anaconda.com](https://www.anaconda.com/products/distribution).  
   - Suivez les instructions pour votre système d'exploitation (Windows, macOS, Linux).  
 
@@ -410,14 +410,227 @@ print("Python !")
 ---
 
 
-# Les listes en Python 
-
 # Les Structures conditionnelles et les Boucles
 
-# La condition if
+Les structures conditionnelles et les boucles permettent de contrôler le flux d'un programme en fonction de certaines conditions ou de répéter des actions.
+
+---
+
+## Les Structures conditionnelles
+
+Les structures conditionnelles permettent d'exécuter des blocs de code uniquement si une condition est remplie.
+
+---
+
+### La condition `if`
+
+La condition `if` est utilisée pour vérifier si une expression est vraie. Si c'est le cas, le bloc de code associé est exécuté.
+
+#### Syntaxe de base 
+```python
+if condition:
+    # Code à exécuter si la condition est vraie
+```
+---
+#### Exemple simple
+```python
+nombre = 10
+
+if nombre > 0:
+    print("Le nombre est positif.")
+
+```
+---
+
+#### Ajout de `else`
+L'instruction `else permet d'exécuter un bloc de code si la condition est fausse.
+
+```python
+nombre = -5
+if nombre > 0:
+    print("Le nombre est positif.")
+else:
+    print("Le nombre est négatif ou nul.")
+```
+---
+#### Ajout de `elif`
+L'instruction `elif` permet de vérifier plusieurs conditions successives.
+```python
+nombre = 0
+
+if nombre > 0:
+    print("Le nombre est positif.")
+elif nombre == 0:
+    print("Le nombre est nul.")
+else:
+    print("Le nombre est négatif.")
+```
+---
+### Conditions imbriquées
+Les `if` peuvent être imbriqués pour vérifier des conditions multiples.
+```python
+age = 20
+citoyen = True
+
+if age >= 18:
+    if citoyen:
+        print("Vous pouvez voter.")
+    else:
+        print("Vous ne pouvez pas voter, même si vous êtes majeur.")
+else:
+    print("Vous êtes mineur."
+```
+---
+
+### Comparaisons en Python
+
+Les opérateurs de comparaison permettent d'évaluer des expressions.
+
+| Opérateur | Description                      |
+|-----------|----------------------------------|
+| `==`      | Égalité                          |
+| `!=`      | Différence                       |
+| `<`       | Inférieur à                      |
+| `<=`      | Inférieur ou égal à              |
+| `>`       | Supérieur à                      |
+| `>=`      | Supérieur ou égal à              |
+
+---
+
+### Opérateurs logiques
+
+Les opérateurs logiques permettent de combiner plusieurs conditions.
+
+| Opérateur | Description                        |
+|-----------|------------------------------------|
+| `and`     | Toutes les conditions doivent être vraies. |
+| `or`      | Au moins une des conditions doit être vraie. |
+| `not`     | Inverse le résultat de la condition. |
+
+---
+
+## Les Boucles en Python
+
+Les boucles permettent de répéter des actions tant qu'une condition est vraie ou pour un nombre fixe d'itérations.
+
+---
+
+### La boucle `for`
+
+1. La boucle `for` est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).
+2. Chaque élément de la séquence est traité successivement.
+
+---
+
+### La boucle `while`
+
+1. La boucle `while` répète un bloc de code tant qu'une condition est vraie.
+2. Attention aux boucles infinies : assurez-vous que la condition de sortie est atteinte.
+
+---
+
+### Contrôle des boucles
+
+| Instruction | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| `break`     | Interrompt la boucle immédiatement, même si la condition n'est pas terminée. |
+| `continue`  | Passe à l'itération suivante sans exécuter le reste du bloc de code actuel.  |
+| `pass`      | Ne fait rien. Utilisé comme espace réservé dans une boucle ou une condition.|
+
+---
+
+## Résumé
+
+| Structure        | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `if`             | Exécute un bloc si une condition est vraie.                                |
+| `elif`           | Ajoute des conditions supplémentaires.                                     |
+| `else`           | Définit un bloc exécuté si toutes les conditions sont fausses.             |
+| `for`            | Parcourt une séquence ou un intervalle.                                    |
+| `while`          | Répète un bloc tant qu'une condition est vraie.                            |
+| `break`          | Interrompt une boucle.                                                    |
+| `continue`       | Saute à l'itération suivante.                                              |
+| `pass`           | Ne fait rien (utile pour des blocs vides).                                 |
+
+---
+
+Avec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !
+
 
 # Les Types de données en Python
-## Les listes
+## Les listes en Python
+
+Les listes sont des structures de données fondamentales en Python. Elles permettent de stocker plusieurs éléments dans un ordre spécifique et sont très utilisées pour manipuler des collections de données.
+
+---
+
+### Qu'est-ce qu'une liste ?
+
+Une liste est une collection ordonnée et modifiable d'éléments. Ces éléments peuvent être de différents types (nombres, chaînes de caractères, booléens, etc.).
+
+---
+
+### Création de listes
+
+Les listes peuvent être créées à partir d'une série d'éléments séparés par des virgules et entourés de crochets `[ ]`.
+
+---
+
+### Propriétés des listes
+
+1. **Ordonnées** : Les éléments conservent leur position dans l'ordre dans lequel ils ont été ajoutés.
+2. **Modifiables** : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d'éléments).
+3. **Hétérogènes** : Une liste peut contenir des éléments de différents types.
+
+---
+
+### Opérations sur les listes
+
+1. **Indexation** : Chaque élément de la liste a une position (index), à partir de 0 pour le premier élément.
+2. **Slicing (Découpage)** : Permet d'accéder à une sous-partie de la liste en utilisant des indices.
+3. **Concaténation** : Deux listes peuvent être combinées pour former une nouvelle liste.
+4. **Répétition** : Une liste peut être répétée plusieurs fois.
+
+---
+
+### Méthodes communes des listes
+
+1. **Ajouter des éléments** : Avec les méthodes comme `append()` pour ajouter un élément à la fin ou `insert()` pour l’ajouter à une position spécifique.
+2. **Supprimer des éléments** : Avec des méthodes comme `remove()` pour supprimer une valeur spécifique ou `pop()` pour supprimer un élément à un index donné.
+3. **Rechercher des éléments** : La méthode `index()` permet de trouver la position d'un élément.
+4. **Trier et inverser** : Avec les méthodes `sort()` pour trier et `reverse()` pour inverser l'ordre des éléments.
+
+---
+
+### Parcourir une liste
+
+Les listes peuvent être parcourues élément par élément, généralement à l'aide de boucles.
+
+---
+
+### Les listes imbriquées
+
+Les listes peuvent contenir d'autres listes, ce qui permet de créer des structures de données en deux dimensions ou plus.
+
+---
+
+### Résumé des principales méthodes de liste
+
+| Méthode       | Description                                    |
+|---------------|------------------------------------------------|
+| `append(x)`   | Ajoute un élément `x` à la fin de la liste.    |
+| `insert(i, x)`| Insère un élément `x` à l'index `i`.           |
+| `remove(x)`   | Supprime la première occurrence de `x`.        |
+| `pop(i)`      | Supprime l'élément à l'index `i` et le retourne.|
+| `index(x)`    | Retourne l'index de la première occurrence de `x`.|
+| `count(x)`    | Compte le nombre d'occurrences de `x`.         |
+| `sort()`      | Trie les éléments de la liste.                 |
+| `reverse()`   | Inverse l'ordre des éléments.                  |
+
+---
+
+Les listes sont un outil puissant en Python et constituent un élément de base pour manipuler et organiser des données dans vos programmes.
+
 ## Les dictionnaires
 ## Les tuples
 ## Les Sets

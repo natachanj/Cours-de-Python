@@ -42,7 +42,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ### 1.2 Conseils pour l’apprentissage de Python
 
-- **Pratique régulière** : Codez tous les jours pour solidifier vos bases.
+- **Pratique régulière** : Codez régulièrement pour solidifier vos bases.
 - **Explorez des projets simples** : Calculatrice, jeu de devinettes, gestion d’inventaire.
 - **Utilisez les ressources disponibles** :
   - Documentation officielle : [python.org/doc](https://www.python.org/doc/).
@@ -50,13 +50,13 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ---
 
-### 1.3 Conseils pour installer et configurer Python
+### Installer et configurer Python
 
 #### **Installer Python**
 
 - Téléchargez Python depuis [python.org](https://www.python.org/).  
-- **Anaconda** : Une distribution Python recommandée pour la data science, qui inclut des outils comme Jupyter Notebook et de nombreuses bibliothèques préinstallées.  
-#### **Outils recommandés pour coder en Python**
+
+### **Outils recommandés pour coder en Python**
 
 ##### **1. Visual Studio Code (VS Code)**  
 - **Qu'est-ce que VS Code ?**  
@@ -100,7 +100,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 
 ---
 
-##### **3. Google Colab**
+##### **Google Colab**
 - **Qu'est-ce que Google Colab ?**  
   - Un environnement en ligne gratuit pour coder en Python, développé par Google.  
   - Aucun besoin d'installer Python ou Jupyter : tout fonctionne dans votre navigateur.  
@@ -114,3 +114,5 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 - **Fonctionnalités clés** :  
   - Sauvegarde automatique sur Google Drive.  
   - Support intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).  
+
+

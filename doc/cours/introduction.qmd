@@ -262,5 +262,62 @@ Exemples de types que vous pourriez rencontrer :
 - `int` : Entier
 - `float` : Nombre décimal
 - `bool` : Valeur logique
+---
 
+Ces types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.
+
+
+
+# Afficher des résultats en Python
+
+Afficher des résultats est une étape essentielle pour visualiser les données et comprendre ce que fait votre programme. En Python, l'affichage se fait principalement avec la fonction `print()`.
+
+---
+
+## La fonction `print()`
+
+`print()` est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.
+
+**Exemple** :
+```python
+print(valeur)
+```
+
+
+---
+
+## Afficher plusieurs éléments
+
+Vous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.
+
+**Exemple** :
+```python
+print("Bonjour", "Python", 3.10)
+```
+---
+
+## Formatage des chaînes
+
+Pour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :
+
+- **Concaténation avec `+`** : Combine des chaînes de caractères.
+
+```python
+nom = "Alice"
+print("Bonjour, " + nom)
+```
+- **Substitution avec `f-strings`** : Insère directement des variables dans une chaîne avec une syntaxe claire.
+
+```python
+nom = "Alice"
+age = 25
+print(f"Bonjour, je m'appelle {nom} et j'ai {age} ans.")
+```
+
+- **Méthode `format()`** : Insère des variables dans une chaîne avec des positions spécifiques.
+```python
+nom = "Alice"
+age = 25
+print("Bonjour, je m'appelle {} et j'ai {} ans.".format(nom, age))
+```
 ---

@@ -428,3 +428,8 @@ Les structures conditionnelles permettent d'exécuter des blocs de code uniqueme
 La condition `if` est utilisée pour vérifier si une expression est vraie. Si c'est le cas, le bloc de code associé est exécuté.
 
 #### Syntaxe de base 
+
+```python
+if condition:
+    # Code à exécuter si la condition est vraie
+```

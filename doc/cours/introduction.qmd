@@ -116,3 +116,52 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
   - Sauvegarde automatique sur Google Drive.  
   - Support intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).  
 ---
+
+## Premiers pas avec Python
+
+Python est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.
+
+### Déclaration de variables
+Une variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d'y attribuer une valeur :
+
+```python
+x = 5
+y = "Python"
+print(x, y)
+```
+---
+### Les Commentaires en Python
+
+Dans un script Python, tout ce qui suit le caractère `#` est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées **commentaires** et sont destinées à expliquer le code dans un langage humain.
+
+---
+
+#### Pourquoi utiliser des commentaires ?
+
+- **Clarifier le code** : Expliquez des portions complexes pour vous ou d'autres développeurs.
+- **Documenter le fonctionnement** : Fournir des indications sur le rôle d'un morceau de code ou d'une fonction.
+- **Faciliter la maintenance** : Les commentaires rendent votre code plus compréhensible à long terme.
+
+Les commentaires ne sont pas exécutés par Python et n'affectent donc pas les performances du programme.
+
+---
+
+Pour ajouter un commentaire, commencez la ligne avec un `#`. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.
+
+**Exemple simple** :
+```python
+# Ceci est un commentaire simple
+print("Hello world!")  # Affiche un message à l'écran
+
+# Déclaration de variables
+nom = "Alice"  # Nom de l'utilisateur
+age = 25       # Âge de l'utilisateur
+
+# Affichage des informations
+print(f"Nom : {nom}")
+print(f"Âge : {age}")
+
+# Cette partie affiche une salutation
+print("Bonjour et bienvenue dans le cours de Python !")
+
+```

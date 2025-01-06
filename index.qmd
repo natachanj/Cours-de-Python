@@ -1,0 +1,6 @@
+---
+title: "Accueil"
+---
+# Bienvenue
+
+Bienvenue sur le site du cours de Python. Explorez les sections pour apprendre les bases, pratiquer avec des exercices, et passer l'examen !

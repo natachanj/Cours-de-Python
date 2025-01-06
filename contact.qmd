@@ -1,0 +1,6 @@
+---
+title: "Contact"
+---
+# Contact
+
+Vous pouvez me joindre à cette adresse : [email@example.com](mailto:email@example.com).

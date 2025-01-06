@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Cours de Python"
+  navbar:
+    left:
+      - text: "Accueil"
+        href: index.qmd
+      - text: "Introduction"
+        href: introduction.qmd
+      - text: "Examen"
+        href: examen.qmd
+      - text: "Contact"
+        href: contact.qmd
+
+format:
+  html:
+    theme: cerulean
+    code-fold: true
+    toc: true
+    toc-title: "Plan du site"
+    toc-depth: 2

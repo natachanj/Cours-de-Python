@@ -266,6 +266,59 @@ Exemples de types que vous pourriez rencontrer :
 
 Ces types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.
 
+####  Chaînes de caractères (`str`)
+Les chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.
+
+
+**Exemple** :
+```python
+# Déclaration de variables
+nom = "Alice"   # Chaîne de caractères
+type(nom)
+```
+---
+
+###   Entiers (`int`)
+Les entiers représentent des nombres sans décimales, qu'ils soient positifs ou négatifs.
+
+**Exemple** :
+```python
+# Déclaration de variables
+age = 25        # Entier
+type(age)
+```
+---
+
+###  Flottants (`float`)
+Les flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions.
+**Exemple** :
+```python
+# Déclaration de variables
+pi = 3.14       # Nombre flottant
+type(pi)
+```
+---
+
+### Booléens (`bool`)
+Les booléens sont des valeurs logiques, pouvant être `True` (vrai) ou `False` (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d'un programme.
+**Exemple** :
+```python
+# Déclaration de variables
+est_actif = True  # Booléen
+type(est_actif)
+```
+---
+
+### Résumé des types de base
+
+| Type   | Description                  |
+|--------|------------------------------|
+| `str`  | Chaîne de caractères         |
+| `int`  | Nombres entiers              |
+| `float`| Nombres décimaux             |
+| `bool` | Valeurs logiques (True/False)|
+
+---
 
 
 # Afficher des résultats en Python
@@ -320,4 +373,40 @@ nom = "Alice"
 age = 25
 print("Bonjour, je m'appelle {} et j'ai {} ans.".format(nom, age))
 ```
+---
+
+
+## Caractères spéciaux
+
+Certaines séquences spéciales permettent de modifier l'affichage :
+- `\\n` : Effectue un saut de ligne.
+- `\\t` : Ajoute une tabulation.
+
+Ces caractères sont utiles pour structurer l'affichage dans la console.
+
+```python
+print("Bonjour\\nPython")
+print("Nom:\\tAlice")
+```
+---
+
+## Contrôler la fin de l'affichage
+
+Par défaut, chaque appel à `print()` termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.
+```python
+print("Bonjour", end=" ")
+print("Python !")
+```
+---
+
+## Résumé
+
+| Méthode                | Description                                       |
+|------------------------|---------------------------------------------------|
+| `print()`              | Affiche des données dans la console.             |
+| Concaténation          | Combine plusieurs chaînes de caractères.          |
+| `f-strings`            | Insère des variables directement dans une chaîne.|
+| `.format()`            | Formate une chaîne avec des variables.           |
+| Caractères spéciaux    | Modifie l'apparence (nouvelle ligne, tabulation). |
+
 ---

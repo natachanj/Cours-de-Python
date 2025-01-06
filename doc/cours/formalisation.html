@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Natacha NJONGWA YEPNGA">
-<meta name="description" content="Cours de programmation avec Python pour le Master 218">
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="Slides">
 
-<title>Programmation avec Python: Analyse de données et Data visualisation – Base de données</title>
+<title>Formalisation des bases de données – Base de données</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a2a0e12bb60fe246e2e9f081b0cc26f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-786175bc03f08c9c0cfecc4767a07620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a2a0e12bb60fe246e2e9f081b0cc26f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-786175bc03f08c9c0cfecc4767a07620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,19 +70,23 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="forest">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Base de données</span>
     </a>
   </div>
@@ -93,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -103,35 +107,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cours">    
         <li>
-    <a class="dropdown-item" href="./doc/cours/intro.html">
+    <a class="dropdown-item" href="../../doc/cours/intro.html">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/bases-de-donnees.html">
+    <a class="dropdown-item" href="../../doc/cours/bases-de-donnees.html">
  <span class="dropdown-text">Base de données</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/sql-intro.html">
+    <a class="dropdown-item" href="../../doc/cours/sql-intro.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/agregations.html">
+    <a class="dropdown-item" href="../../doc/cours/agregations.html">
  <span class="dropdown-text">Agrégations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/algebre.html">
+    <a class="dropdown-item" href="../../doc/cours/algebre.html">
  <span class="dropdown-text">Algèbre Relationnelle</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/jointures.html">
+    <a class="dropdown-item" href="../../doc/cours/jointures.html">
  <span class="dropdown-text">Jointures</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/sql-avance.html">
+    <a class="dropdown-item" href="../../doc/cours/sql-avance.html">
  <span class="dropdown-text">SQL avancé</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/cours/formalisation.html">
+    <a class="dropdown-item" href="../../doc/cours/formalisation.html">
  <span class="dropdown-text">Formalisation des BDD</span></a>
   </li>  
     </ul>
@@ -142,19 +146,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tp">    
         <li>
-    <a class="dropdown-item" href="./doc/tp/tp1.html">
+    <a class="dropdown-item" href="../../doc/tp/tp1.html">
  <span class="dropdown-text">TP1 - Premières requêtes</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/tp/tp2.html">
+    <a class="dropdown-item" href="../../doc/tp/tp2.html">
  <span class="dropdown-text">TP2 - Vintage</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/tp/tp3.html">
+    <a class="dropdown-item" href="../../doc/tp/tp3.html">
  <span class="dropdown-text">TP3 - Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/tp/tp4.html">
+    <a class="dropdown-item" href="../../doc/tp/tp4.html">
  <span class="dropdown-text">TP4 - Chess Unofficial Fed</span></a>
   </li>  
     </ul>
@@ -162,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./doc/glossaire.html"> 
+    <a class="nav-link" href="../../doc/glossaire.html"> 
 <span class="menu-text">Glossaire</span></a>
   </li>  
   <li class="nav-item compact">
@@ -186,19 +190,51 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#dépendances-fonctionnelles" id="toc-dépendances-fonctionnelles" class="nav-link" data-scroll-target="#dépendances-fonctionnelles"><span class="header-section-number">1</span> Dépendances fonctionnelles</a>
+  <ul class="collapse">
+  <li><a href="#les-axiomes-darmstrong" id="toc-les-axiomes-darmstrong" class="nav-link" data-scroll-target="#les-axiomes-darmstrong">Les axiomes d’Armstrong</a></li>
+  <li><a href="#règles-dérivées" id="toc-règles-dérivées" class="nav-link" data-scroll-target="#règles-dérivées">Règles dérivées</a></li>
+  <li><a href="#deux-propriétés" id="toc-deux-propriétés" class="nav-link" data-scroll-target="#deux-propriétés">Deux Propriétés</a></li>
+  </ul></li>
+  <li><a href="#formes-normales" id="toc-formes-normales" class="nav-link" data-scroll-target="#formes-normales"><span class="header-section-number">2</span> Formes normales</a>
+  <ul class="collapse">
+  <li><a href="#normalisation" id="toc-normalisation" class="nav-link" data-scroll-target="#normalisation">Normalisation</a></li>
+  <li><a href="#ère-forme-normale" id="toc-ère-forme-normale" class="nav-link" data-scroll-target="#ère-forme-normale">1ère forme normale</a></li>
+  <li><a href="#e-forme-normale" id="toc-e-forme-normale" class="nav-link" data-scroll-target="#e-forme-normale">2e forme normale</a></li>
+  <li><a href="#e-forme-normale-1" id="toc-e-forme-normale-1" class="nav-link" data-scroll-target="#e-forme-normale-1">3e forme normale</a></li>
+  </ul></li>
+  <li><a href="#modélisation-uml" id="toc-modélisation-uml" class="nav-link" data-scroll-target="#modélisation-uml"><span class="header-section-number">3</span> Modélisation UML</a>
+  <ul class="collapse">
+  <li><a href="#unified-modeling-language" id="toc-unified-modeling-language" class="nav-link" data-scroll-target="#unified-modeling-language">Unified Modeling Language</a></li>
+  <li><a href="#modèles" id="toc-modèles" class="nav-link" data-scroll-target="#modèles">Modèles</a></li>
+  <li><a href="#associations-1n" id="toc-associations-1n" class="nav-link" data-scroll-target="#associations-1n">Associations 1:n</a></li>
+  <li><a href="#associations-multiples" id="toc-associations-multiples" class="nav-link" data-scroll-target="#associations-multiples">Associations multiples</a></li>
+  <li><a href="#associations-nn" id="toc-associations-nn" class="nav-link" data-scroll-target="#associations-nn">Associations n:n</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="formalisation-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Programmation avec Python: Analyse de données et Data visualisation</h1>
+<h1 class="title">Formalisation des bases de données</h1>
 </div>
 
 <div>
   <div class="description">
-    Cours de programmation avec Python pour le Master 218
+    <a href="formalisation-slides.html">Slides</a>
   </div>
 </div>
 
@@ -208,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Natacha NJONGWA YEPNGA </p>
+             <p>Ludovic Deneuville </p>
           </div>
   </div>
     
@@ -221,132 +257,446 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="objectifs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objectifs">Objectifs</h2>
+<p>Structurer une base de données pour qu’elle soit :</p>
 <ul>
-<li>6 sessions de 3 heures (18 heures au total)</li>
+<li>efficace</li>
+<li>propre</li>
+<li>légère</li>
+<li>facile à maintenir</li>
 </ul>
-<section id="contenu-du-cours" class="level2">
-<h2 class="anchored" data-anchor-id="contenu-du-cours">Contenu du cours</h2>
+<div class="notes">
 <ul>
-<li>Introduction à Python
-<ul>
-<li>Présentation et installation</li>
-<li>Variables, types de données, opérateurs</li>
-</ul></li>
-<li>Structures de contrôle
-<ul>
-<li>Conditions (<code>if</code>, <code>elif</code>, <code>else</code>)</li>
-<li>Boucles (<code>for</code>, <code>while</code>)</li>
-<li>Gestion des erreurs (<code>try</code>, <code>except</code>)</li>
-</ul></li>
-<li>Les fonctions
-<ul>
-<li>Définir et appeler des fonctions</li>
-<li>Paramètres, valeurs de retour</li>
-</ul></li>
-<li>Manipulation de données avec <code>pandas</code>
-<ul>
-<li>Chargement de fichiers CSV/Excel</li>
-<li>Nettoyage des données (valeurs manquantes, transformations)</li>
-<li>Sélection et filtrage des données</li>
-</ul></li>
-<li>Visualisation des données
-<ul>
-<li>Graphiques avec <code>Matplotlib</code></li>
-<li>Visualisation avancée avec <code>Seaborn</code></li>
-</ul></li>
-<li>Programmation orientée objet (POO)
-<ul>
-<li>Définition de classes, objets, méthodes</li>
-</ul></li>
-<li><strong>Introduction au Machine Learning avec Python</strong>
-<ul>
-<li>Bibliothèques essentielles : <code>scikit-learn</code></li>
-<li>Préparation des données pour le ML (normalisation, division en train/test)</li>
-<li>Modèles supervisés : régression linéaire et classification (KNN)</li>
-<li>Évaluation des modèles : métriques (MAE, R², précision, rappel)</li>
-<li>Notions de surapprentissage et régularisation</li>
-</ul></li>
-<li>Projet final
-<ul>
-<li>Nettoyage, exploration, visualisation et modélisation d’un dataset</li>
-</ul></li>
+<li>pas de doublons et de redondances</li>
+<li>Moins de risques d’incohérences entre différentes parties de la base</li>
+<li>Stockage réduit, car les informations répétées sont éliminées.</li>
 </ul>
+</div>
 </section>
-<section id="correction-des-tp" class="level2">
-<h2 class="anchored" data-anchor-id="correction-des-tp">Correction des TP</h2>
-<section id="séance-1-introduction-à-python" class="level3">
-<h3 class="anchored" data-anchor-id="séance-1-introduction-à-python"><strong>Séance 1 : Introduction à Python</strong></h3>
+<section id="dépendances-fonctionnelles" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="dépendances-fonctionnelles"><span class="header-section-number">1</span> Dépendances fonctionnelles</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une dépendance fonctionnelle indique qu’une colonne (ou un ensemble de colonnes) détermine de manière unique une autre colonne :</p>
 <ul>
-<li><strong>TP1</strong> :
-<ul>
-<li>Écrire un programme pour manipuler des types simples (nombres, chaînes).</li>
-<li>Implémenter un calcul d’aire et périmètre de figures géométriques.</li>
-<li>Ajouter une fonction pour vérifier si un mot est un palindrome.</li>
-</ul></li>
+<li>X → Y</li>
+<li>X détermine Y</li>
+<li>Y dépend fonctionnellement de X</li>
 </ul>
+</div>
+</div>
+<div class="notes">
+<p>Si on connait X, on peut en déduire Y</p>
+</div>
+<section id="les-axiomes-darmstrong" class="level3">
+<h3 class="anchored" data-anchor-id="les-axiomes-darmstrong">Les axiomes d’Armstrong</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Nom</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Réflexivité</td>
+<td>(X, Y) → X</td>
+</tr>
+<tr class="even">
+<td>Augmentation</td>
+<td>Si X → Y, alors XZ → YZ</td>
+</tr>
+<tr class="odd">
+<td>Transitivité</td>
+<td>Si X → Y et Y → Z alors, X → Z</td>
+</tr>
+</tbody>
+</table>
+<div class="notes">
+<ul>
+<li>(nom, prenom) → nom</li>
+<li>id_joueuse → nom alors (id_joueuse, id_partie) → (id_joueuse, nom)</li>
+</ul>
+</div>
 </section>
-<section id="séance-2-structures-de-contrôle" class="level3">
-<h3 class="anchored" data-anchor-id="séance-2-structures-de-contrôle"><strong>Séance 2 : Structures de contrôle</strong></h3>
-<ul>
-<li><strong>TP2</strong> :
-<ul>
-<li>Créer un programme pour afficher les nombres premiers dans une plage donnée.</li>
-<li>Écrire des scripts utilisant des boucles imbriquées (tables de multiplication).</li>
-<li>Ajouter la gestion d’erreurs pour une division par zéro.</li>
-</ul></li>
-</ul>
+<section id="règles-dérivées" class="level3">
+<h3 class="anchored" data-anchor-id="règles-dérivées">Règles dérivées</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Nom</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Union</td>
+<td>Si X → Y et X → Z, alors X → YZ</td>
+</tr>
+<tr class="even">
+<td>Décomposition</td>
+<td>Si X → YZ, alors X → Z et X → Y</td>
+</tr>
+<tr class="odd">
+<td>Pseudo-transitivité</td>
+<td>Si X → Y et WY → Z alors WX → Z</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="séance-3-manipulation-de-données-avec-pandas" class="level3">
-<h3 class="anchored" data-anchor-id="séance-3-manipulation-de-données-avec-pandas"><strong>Séance 3 : Manipulation de données avec <code>pandas</code></strong></h3>
+<section id="deux-propriétés" class="level3">
+<h3 class="anchored" data-anchor-id="deux-propriétés">Deux Propriétés</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dépendance Fonctionnelle Élémentaire">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dépendance Fonctionnelle Élémentaire
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>X → Y est élémentaire s’il n’existe aucun sous-ensemble strict Z inclus dans X tel que Z → Y</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Dépendance Fonctionnelle Directe">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dépendance Fonctionnelle Directe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>X → Y est directe s’il n’existe pas de Z tel que X → Z et Z → Y</p>
+</div>
+</div>
+<div class="notes">
 <ul>
-<li><strong>TP3</strong> :
-<ul>
-<li>Charger un dataset CSV.</li>
-<li>Nettoyer les données (valeurs manquantes, doublons).</li>
-<li>Appliquer des filtres conditionnels pour extraire des sous-ensembles.</li>
-<li>Effectuer des statistiques descriptives simples (<code>mean</code>, <code>std</code>, <code>min</code>, <code>max</code>).</li>
-</ul></li>
+<li>pas élémenaire : num_client, nom → adresse</li>
 </ul>
+</div>
 </section>
-<section id="séance-4-visualisation-des-données" class="level3">
-<h3 class="anchored" data-anchor-id="séance-4-visualisation-des-données"><strong>Séance 4 : Visualisation des données</strong></h3>
-<ul>
-<li><strong>TP4</strong> :
-<ul>
-<li>Créer des histogrammes et des scatterplots avec <code>Matplotlib</code>.</li>
-<li>Utiliser <code>Seaborn</code> pour tracer des heatmaps et analyser des corrélations.</li>
-<li>Personnaliser des graphiques (titres, étiquettes, couleurs).</li>
-</ul></li>
-</ul>
 </section>
-<section id="séance-5-programmation-orientée-objet-poo" class="level3">
-<h3 class="anchored" data-anchor-id="séance-5-programmation-orientée-objet-poo"><strong>Séance 5 : Programmation orientée objet (POO)</strong></h3>
+<section id="formes-normales" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="formes-normales"><span class="header-section-number">2</span> Formes normales</h2>
+<section id="normalisation" class="level3">
+<h3 class="anchored" data-anchor-id="normalisation">Normalisation</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La normalisation vise à organiser les données :</p>
 <ul>
-<li><strong>TP5</strong> :
-<ul>
-<li>Implémenter une classe pour gérer les données d’un étudiant (nom, notes, moyenne).<br>
-</li>
-<li>Ajouter des méthodes pour calculer la moyenne et vérifier la réussite.<br>
-</li>
-<li>Étendre la classe avec des attributs supplémentaires (matières optionnelles).</li>
-</ul></li>
+<li>en éliminant les redondances et les incohérences</li>
+<li>en préservant les dépendances fonctionnelles</li>
+<li>sans perdre d’informations</li>
 </ul>
+</div>
+</div>
 </section>
-<section id="séance-6-machine-learning-avec-python" class="level3">
-<h3 class="anchored" data-anchor-id="séance-6-machine-learning-avec-python"><strong>Séance 6 : Machine Learning avec Python</strong></h3>
+<section id="ère-forme-normale" class="level3">
+<h3 class="anchored" data-anchor-id="ère-forme-normale">1ère forme normale</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une relation est 1NF si tous ses attributs sont atomiques.</p>
+</div>
+</div>
 <ul>
-<li><strong>TP6</strong> :
+<li>Une <em>date</em> est atomique</li>
+<li>Un <em>nom</em> est atomique</li>
+<li>Une <em>liste de prénoms</em> n’est pas atomique</li>
+<li>Est-ce qu’un <em>adresse</em> est atomique ?</li>
+</ul>
+<div class="notes">
 <ul>
-<li>Charger un dataset (<code>pandas</code>) et le préparer pour le Machine Learning (normalisation, séparation train/test).<br>
-</li>
-<li>Implémenter un modèle de régression linéaire pour prédire une variable cible.<br>
-</li>
-<li>Utiliser un modèle de classification (KNN) pour classer des données.<br>
-</li>
-<li>Évaluer les performances avec des métriques comme R², précision et rappel.</li>
+<li>atomique : représente une seule information</li>
+<li>non atomique : plusieurs informations combinées</li>
+<li>assez subjectif</li>
+<li>dépend du cas d’utilisation
+<ul>
+<li>si vous n’utilisez pas le champ adresse -&gt; atomique</li>
+<li>si vous avez utiliser par exemple la ville -&gt; pas atomique</li>
 </ul></li>
 </ul>
+</div>
+</section>
+<section id="e-forme-normale" class="level3">
+<h3 class="anchored" data-anchor-id="e-forme-normale">2e forme normale</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une relation est 2NF si :</p>
+<ul>
+<li>elle est 1NF</li>
+<li>tout attribut non clé est en DF élémentaire avec la clé</li>
+</ul>
+<p>Autrement dit, tous les attributs sont déterminés par la clé complète.</p>
+</div>
+</div>
 <hr>
+<p>Exemple de relation non 2NF :</p>
+<ul>
+<li>joueuse(<u>nom, prenom, dnais</u>) → elo</li>
+<li>si par exemple (nom, dnais) → elo
+<ul>
+<li>si <em>nom</em> et <em>dnais</em> suffisent pour déterminer le <em>elo</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="e-forme-normale-1" class="level3">
+<h3 class="anchored" data-anchor-id="e-forme-normale-1">3e forme normale</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une relation est 3NF si :</p>
+<ul>
+<li>elle est 2NF</li>
+<li>tout attribut non clé est en DF directe avec la clé</li>
+</ul>
+<p>Autrement dit, un attribut ne peut pas dépendre fonctionnellement d’un autre attribut non clé.</p>
+</div>
+</div>
+<hr>
+<p>Exemple de relation non 3NF :</p>
+<ul>
+<li>joueuse(<u>id_joueuse</u>, code_pays, capitale)</li>
+<li>id_joueuse → (code_pays, capitale)</li>
+<li>or code_pays → capitale donc DF non directe</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Passer en 3NF">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Passer en 3NF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Créer une table <em>pays</em></p>
+<ul>
+<li>joueuse(<u>id_joueuse</u>, code_pays)</li>
+<li>pays(<u>code_pays</u>, capitale)</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="modélisation-uml" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="modélisation-uml"><span class="header-section-number">3</span> Modélisation UML</h2>
+<section id="unified-modeling-language" class="level3">
+<h3 class="anchored" data-anchor-id="unified-modeling-language">Unified Modeling Language</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>UML est un langage de modélisation graphique standardisé utilisé pour spécifier, visualiser, concevoir et documenter différents aspects des systèmes logiciels.</p>
+<p>Il offre une série de diagrammes pour représenter différents aspects d’un système.</p>
+</div>
+</div>
+</section>
+<section id="modèles" class="level3" data-background-color="beige">
+<h3 data-background-color="beige" class="anchored" data-anchor-id="modèles">Modèles</h3>
+<div class="columns">
+<div class="column">
+<p>Modèle conceptuel</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class Joueuse {
+        identifiant
+        nom
+        prenom
+        elo
+        identifiant du club
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div><div class="column">
+<p>Modèle physique</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class joueuse {
+        id_joueuse SERIAL PK
+        nom        VARCHAR50
+        prenom     VARCHAR50
+        elo        INT
+        #id_club   INT
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="notes">
+<ul>
+<li>Conceptuel : niveau utilisateur (accents, espaces)</li>
+<li>Physique : niveau développeur (transposable directement en SQL)</li>
+</ul>
+</div>
+</section>
+<section id="associations-1n" class="level3" data-background-color="beige">
+<h3 data-background-color="beige" class="anchored" data-anchor-id="associations-1n">Associations 1:n</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class joueuse {
+        id_joueuse SERIAL PK
+        nom        VARCHAR50
+        prenom     VARCHAR50
+        elo        INT
+        #id_club   INT
+    }
+    
+    class club {
+        id_club   SERIAL PK
+        nom       VARCHAR50
+        ville     VARCHAR50
+    }
+
+    joueuse "*" -- "0..1" club
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><a href="../../doc/cours/bases-de-donnees.html#associations">cf.&nbsp;Cours BDD, partie associations</a></p>
+</section>
+<section id="associations-multiples" class="level3" data-background-color="beige">
+<h3 data-background-color="beige" class="anchored" data-anchor-id="associations-multiples">Associations multiples</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class joueuse {
+        id_joueuse SERIAL PK
+        nom        VARCHAR50
+        prenom     VARCHAR50
+        elo        INT
+        #id_club   INT
+    }
+    
+    class partie {
+        #id_blanc     INT
+        #id_noir      INT
+        #id_resultat  INT
+    }
+
+    partie "*" --&gt; "1" joueuse : jouée avec les blancs par ▶
+    partie "*" --&gt; "1" joueuse : jouée avec les noirs par ▶
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="associations-nn" class="level3" data-background-color="beige">
+<h3 data-background-color="beige" class="anchored" data-anchor-id="associations-nn">Associations n:n</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class joueuse {
+        id_joueuse SERIAL PK
+        nom        VARCHAR50
+        prenom     VARCHAR50
+        elo        INT
+        #id_club   INT
+    }
+    
+    class participe {
+        #id_joueuse     INT
+        #id_tournoi     INT
+    }
+
+    class tournoi {
+        #id_tournoi     INT
+        nom             INT
+    }
+
+    joueuse "1" -- "*" participe
+    participe "*" -- "1" tournoi
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
 </section>

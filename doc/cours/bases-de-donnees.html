@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="Slides">
+
+<title>Bases de Données – Base de données</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a2a0e12bb60fe246e2e9f081b0cc26f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-786175bc03f08c9c0cfecc4767a07620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="mermaid-theme" content="forest">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Base de données</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cours" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cours</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cours">    
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/intro.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/bases-de-donnees.html">
+ <span class="dropdown-text">Base de données</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/sql-intro.html">
+ <span class="dropdown-text">Introduction à SQL</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/agregations.html">
+ <span class="dropdown-text">Agrégations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/algebre.html">
+ <span class="dropdown-text">Algèbre Relationnelle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/jointures.html">
+ <span class="dropdown-text">Jointures</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/sql-avance.html">
+ <span class="dropdown-text">SQL avancé</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/formalisation.html">
+ <span class="dropdown-text">Formalisation des BDD</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tp" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">TP</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tp">    
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp1.html">
+ <span class="dropdown-text">TP1 - Premières requêtes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp2.html">
+ <span class="dropdown-text">TP2 - Vintage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp3.html">
+ <span class="dropdown-text">TP3 - Datalab</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp4.html">
+ <span class="dropdown-text">TP4 - Chess Unofficial Fed</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../doc/glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/LeCoinStat/Cours-de-Python" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#une-donnée" id="toc-une-donnée" class="nav-link active" data-scroll-target="#une-donnée"><span class="header-section-number">1</span> Une donnée ?</a>
+  <ul class="collapse">
+  <li><a href="#définition-dune-donnée" id="toc-définition-dune-donnée" class="nav-link" data-scroll-target="#définition-dune-donnée"><span class="header-section-number">1.1</span> Définition d’une donnée</a></li>
+  <li><a href="#où-stocker-des-données" id="toc-où-stocker-des-données" class="nav-link" data-scroll-target="#où-stocker-des-données"><span class="header-section-number">1.2</span> Où stocker des données</a></li>
+  <li><a href="#format-parquet" id="toc-format-parquet" class="nav-link" data-scroll-target="#format-parquet"><span class="header-section-number">1.3</span> Format Parquet</a></li>
+  </ul></li>
+  <li><a href="#une-base-de-données" id="toc-une-base-de-données" class="nav-link" data-scroll-target="#une-base-de-données"><span class="header-section-number">2</span> Une base de données ?</a></li>
+  <li><a href="#enjeux" id="toc-enjeux" class="nav-link" data-scroll-target="#enjeux"><span class="header-section-number">3</span> Enjeux</a></li>
+  <li><a href="#types-de-bases-de-données" id="toc-types-de-bases-de-données" class="nav-link" data-scroll-target="#types-de-bases-de-données"><span class="header-section-number">4</span> Types de bases de données</a>
+  <ul class="collapse">
+  <li><a href="#hiérarchique" id="toc-hiérarchique" class="nav-link" data-scroll-target="#hiérarchique"><span class="header-section-number">4.1</span> Hiérarchique</a></li>
+  <li><a href="#réseau" id="toc-réseau" class="nav-link" data-scroll-target="#réseau"><span class="header-section-number">4.2</span> Réseau</a></li>
+  <li><a href="#relationnelle" id="toc-relationnelle" class="nav-link" data-scroll-target="#relationnelle"><span class="header-section-number">4.3</span> Relationnelle</a></li>
+  <li><a href="#nosql" id="toc-nosql" class="nav-link" data-scroll-target="#nosql"><span class="header-section-number">4.4</span> NoSQL</a></li>
+  <li><a href="#autres" id="toc-autres" class="nav-link" data-scroll-target="#autres"><span class="header-section-number">4.5</span> Autres</a></li>
+  </ul></li>
+  <li><a href="#base-de-données-relationnelle" id="toc-base-de-données-relationnelle" class="nav-link" data-scroll-target="#base-de-données-relationnelle"><span class="header-section-number">5</span> Base de données relationnelle</a>
+  <ul class="collapse">
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table"><span class="header-section-number">5.1</span> Table</a></li>
+  <li><a href="#relations-entre-les-tables" id="toc-relations-entre-les-tables" class="nav-link" data-scroll-target="#relations-entre-les-tables"><span class="header-section-number">5.2</span> Relations entre les tables</a></li>
+  <li><a href="#clé-primaire" id="toc-clé-primaire" class="nav-link" data-scroll-target="#clé-primaire"><span class="header-section-number">5.3</span> Clé primaire ?</a></li>
+  <li><a href="#clé-primaire-technique" id="toc-clé-primaire-technique" class="nav-link" data-scroll-target="#clé-primaire-technique"><span class="header-section-number">5.4</span> Clé primaire technique</a></li>
+  <li><a href="#clé-primaire-1" id="toc-clé-primaire-1" class="nav-link" data-scroll-target="#clé-primaire-1"><span class="header-section-number">5.5</span> Clé primaire</a></li>
+  <li><a href="#clé-étrangère" id="toc-clé-étrangère" class="nav-link" data-scroll-target="#clé-étrangère"><span class="header-section-number">5.6</span> Clé étrangère ?</a></li>
+  <li><a href="#clé-étrangère-1" id="toc-clé-étrangère-1" class="nav-link" data-scroll-target="#clé-étrangère-1"><span class="header-section-number">5.7</span> Clé étrangère</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question"><span class="header-section-number">5.8</span> Question</a></li>
+  <li><a href="#autre-question" id="toc-autre-question" class="nav-link" data-scroll-target="#autre-question"><span class="header-section-number">5.9</span> Autre question</a></li>
+  <li><a href="#table-dassociation" id="toc-table-dassociation" class="nav-link" data-scroll-target="#table-dassociation"><span class="header-section-number">5.10</span> Table d’association</a></li>
+  </ul></li>
+  <li><a href="#associations" id="toc-associations" class="nav-link" data-scroll-target="#associations"><span class="header-section-number">6</span> Associations</a>
+  <ul class="collapse">
+  <li><a href="#association-11" id="toc-association-11" class="nav-link" data-scroll-target="#association-11"><span class="header-section-number">6.1</span> Association 1:1</a></li>
+  <li><a href="#association-1n" id="toc-association-1n" class="nav-link" data-scroll-target="#association-1n"><span class="header-section-number">6.2</span> Association 1:n</a></li>
+  <li><a href="#association-nn" id="toc-association-nn" class="nav-link" data-scroll-target="#association-nn"><span class="header-section-number">6.3</span> Association n:n</a></li>
+  <li><a href="#association-récursive" id="toc-association-récursive" class="nav-link" data-scroll-target="#association-récursive"><span class="header-section-number">6.4</span> Association récursive</a></li>
+  <li><a href="#association-multiples" id="toc-association-multiples" class="nav-link" data-scroll-target="#association-multiples"><span class="header-section-number">6.5</span> Association multiples</a></li>
+  </ul></li>
+  <li><a href="#sgbd" id="toc-sgbd" class="nav-link" data-scroll-target="#sgbd"><span class="header-section-number">7</span> SGBD</a>
+  <ul class="collapse">
+  <li><a href="#postgresql" id="toc-postgresql" class="nav-link" data-scroll-target="#postgresql"><span class="header-section-number">7.1</span> PostgreSQL</a></li>
+  <li><a href="#outil-de-gestion-et-administration" id="toc-outil-de-gestion-et-administration" class="nav-link" data-scroll-target="#outil-de-gestion-et-administration"><span class="header-section-number">7.2</span> Outil de Gestion et Administration</a></li>
+  <li><a href="#kesako" id="toc-kesako" class="nav-link" data-scroll-target="#kesako"><span class="header-section-number">7.3</span> Kesako</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="bases-de-donnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Bases de Données</h1>
+</div>
+
+<div>
+  <div class="description">
+    <a href="bases-de-donnees-slides.html">Slides</a>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="une-donnée" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="une-donnée"><span class="header-section-number">1</span> Une donnée ?</h2>
+<div class="fragment">
+<ul>
+<li>texte (nom, prénom, ville…)</li>
+<li>numérique (age, prix…)</li>
+<li>date</li>
+<li>liste (compétences, loisirs)</li>
+<li>image</li>
+<li>fichier</li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>types ?</li>
+<li>valeurs ?</li>
+<li>représente quelque chose</li>
+</ul>
+</div>
+<section id="définition-dune-donnée" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="définition-dune-donnée"><span class="header-section-number">1.1</span> Définition d’une donnée</h3>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une <strong>donnée</strong> est une information brute composée de 3 éléments :</p>
+<ul>
+<li>un concept (exemple : hauteur d’un monument)</li>
+<li>un domaine des possibles (nombre entier positif et une unité : mètres)</li>
+<li>une valeur (pour la tour Eiffel : 324)</li>
+</ul>
+</div>
+</div>
+<p>Source : <a href="https://www.insee.fr/fr/information/5008707" target="_blank">Qu’est-ce qu’une donnée ?</a>, Courrier des statistiques N5, Pascal Rivière</p>
+</div>
+</section>
+<section id="où-stocker-des-données" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="où-stocker-des-données"><span class="header-section-number">1.2</span> Où stocker des données</h3>
+<div class="incremental">
+<ul class="incremental">
+<li>Fichier txt</li>
+<li>Fichier csv</li>
+<li>Fichier <a href="https://www.json.org/json-fr.html" target="_blank">json</a>, <a href="https://anapioficeandfire.com/api/houses" target="_blank">Exemple</a></li>
+<li>Fichier <a href="https://parquet.apache.org/" target="_blank">parquet</a></li>
+<li>Base de données</li>
+</ul>
+</div>
+<div class="notes">
+<p>J’avais eu une question lors de la prez Git : où on stocke les données si on peut pas les mettre sur GitHub.</p>
+<ul>
+<li>On ne garde pas les données sur sa machine (risque de fuite)</li>
+<li>Dans l’idéal on bosse dans le cloud et on stocke sur S3</li>
+<li>Sinon on travaille dans un espace dédié (AUS)</li>
+</ul>
+<p>Suivre sur Linkedin : Mauvière, Holtz, Blefari, Lesur, Galiana, Degorre, Natacha NJONGWA</p>
+</div>
+</section>
+<section id="format-parquet" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="format-parquet"><span class="header-section-number">1.3</span> Format Parquet</h3>
+<ul>
+<li>Stockage orienté colonne</li>
+<li>Contient des métadonnées</li>
+<li>Adapté pour le stockage de données figées</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Articles intéressants">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Articles intéressants
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://www.icem7.fr/outils/parquet-devrait-remplacer-le-format-csv/" target="_blank">Parquet pour remplacer csv</a>, Éric Mauvière, Icem7</li>
+<li><a href="https://www.icem7.fr/outils/comment-bien-preparer-son-parquet/" target="_blank">Comment bien préparer son Parquet</a>, Éric Mauvière, Icem7</li>
+<li><a href="https://book.utilitr.org/03_Fiches_thematiques/Fiche_import_fichiers_parquet.html" target="_blank">Lire et écrire des fichiers Parquet</a>, UtilitR</li>
+</ul>
+</div>
+</div>
+<div class="notes">
+<ul>
+<li>Données figées -&gt; parquet</li>
+<li>Données mouvantes -&gt; bdd PostgreSQL</li>
+<li>Tad Viewer pour afficher le contenu d’un parquet</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="une-base-de-données" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="une-base-de-données"><span class="header-section-number">2</span> Une base de données ?</h2>
+<div class="incremental">
+<div class="callout callout-style-default callout-note callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une <strong>base de données</strong> est un ensemble de données rassemblées et stockées de manière organisée dans un but spécifique.</p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Types ?</p>
+<p>On n’utilise pas la même structure pour du texte ou des fichiers.</p>
+</div>
+</section>
+<section id="enjeux" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="enjeux"><span class="header-section-number">3</span> Enjeux</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Accès aux données : langage SQL</li>
+<li>Sécurité des données : seuls les utilisateurs autorisés (droits)</li>
+<li>Partage des données : facile en lecture, mais en écriture ?</li>
+<li>Non-redondance des données</li>
+<li>Cohérence des données : respect des contraintes d’intégrité</li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>Se brancher à la BDD qui est sur un serveur</li>
+<li>Règles pour la cohérence. <span class="emoji" data-emoji="warning">⚠️</span> trop de règles -&gt; bon dosage</li>
+</ul>
+</div>
+</section>
+<section id="types-de-bases-de-données" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="types-de-bases-de-données"><span class="header-section-number">4</span> Types de bases de données</h2>
+<section id="hiérarchique" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="hiérarchique"><span class="header-section-number">4.1</span> Hiérarchique</h3>
+<ul>
+<li>Données organisées comme un arbre</li>
+<li>Relations de type parent-enfant</li>
+<li>Annuaires LDAP, systèmes de fichiers</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">stateDiagram 
+    ENSAI --&gt; Permanent
+    ENSAI --&gt; Eleve
+    Permanent --&gt; Enseignant
+    Permanent --&gt; Administratif
+    Eleve --&gt; 1A
+    Eleve --&gt; 2A
+    Eleve --&gt; 3A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="réseau" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="réseau"><span class="header-section-number">4.2</span> Réseau</h3>
+<ul>
+<li>Organisée en graphe</li>
+<li>Les enregistrements peuvent avoir plusieurs parents et enfants</li>
+<li>Réseaux de transports &nbsp;</li>
+</ul>
+</section>
+<section id="relationnelle" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="relationnelle"><span class="header-section-number">4.3</span> Relationnelle</h3>
+<ul>
+<li>Organisée en tables</li>
+<li>Lien entre les tables</li>
+</ul>
+<div class="notes">
+<p>Quelques tables sont gérables avec Excel ou Calc.</p>
+<p>Mais ça devient vite trop compliqué.</p>
+</div>
+</section>
+<section id="nosql" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="nosql"><span class="header-section-number">4.4</span> NoSQL</h3>
+<p>Nombreux sous-types :</p>
+<div class="small-table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 68%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Exemple</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Clé-valeur</td>
+<td>Données sous forme de paires clé-valeur. Idéale pour des lectures rapides avec peu de structure.</td>
+<td>DynamoDB</td>
+</tr>
+<tr class="even">
+<td>Colonnes</td>
+<td>Organisée en colonnes, adaptée aux grandes quantités de données avec peu de relations entre elles.</td>
+<td>Cassandra</td>
+</tr>
+<tr class="odd">
+<td>Document</td>
+<td>Stocke des documents semi-structurés, souvent en format JSON ou XML, permettant une grande flexibilité.</td>
+<td>MongoDB</td>
+</tr>
+<tr class="even">
+<td>Graphes</td>
+<td>Organisée sous forme de nœuds et de relations, idéale pour des données très connectées ou inter-relées.</td>
+<td>Neo4j</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="notes">
+<p>Not Only SQL</p>
+</div>
+</section>
+<section id="autres" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="autres"><span class="header-section-number">4.5</span> Autres</h3>
+<ul>
+<li>Bases de données de séries temporelles</li>
+</ul>
+</section>
+</section>
+<section id="base-de-données-relationnelle" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="base-de-données-relationnelle"><span class="header-section-number">5</span> Base de données relationnelle</h2>
+<section id="table" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="table"><span class="header-section-number">5.1</span> Table</h3>
+<ul>
+<li>Composée de lignes et de colonnes</li>
+<li>Chaque table représente une entité</li>
+<li>Chaque <u>ligne</u> est un enregistrement</li>
+<li>Chaque <u>colonne</u> représente un attribut de l’entité
+<ul>
+<li>Types de données : texte, num…</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Imaginez un classeur Excel avec plusieurs feuilles</p>
+</div>
+</section>
+<section id="relations-entre-les-tables" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="relations-entre-les-tables"><span class="header-section-number">5.2</span> Relations entre les tables</h3>
+<ul>
+<li><u><strong>Clé primaire</strong></u> (PK) pour identifier chaque enregistrement dans une table
+<ul>
+<li>de manière unique</li>
+<li>sans ambiguïté</li>
+</ul></li>
+<li><u><strong>Clé étrangère</strong></u> (FK) pour créer des liens avec d’autres tables
+<ul>
+<li>attribut d’une table A</li>
+<li>correspond à la clé primaire d’une table B</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Exemples juste après</p>
+</div>
+</section>
+<section id="clé-primaire" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="clé-primaire"><span class="header-section-number">5.3</span> Clé primaire ?</h3>
+<div class="small-table">
+<table class="caption-top table">
+<caption>joueuse ♕</caption>
+<thead>
+<tr class="header">
+<th><strong>nom</strong></th>
+<th><strong>prenom</strong></th>
+<th><strong>elo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Guichard</td>
+<td>Pauline</td>
+<td>2357</td>
+</tr>
+<tr class="even">
+<td>Daulyte-Cornette</td>
+<td>Deimante</td>
+<td>2371</td>
+</tr>
+<tr class="odd">
+<td>Navrotescu</td>
+<td>Andreea</td>
+<td>2338</td>
+</tr>
+<tr class="even">
+<td>Sebag</td>
+<td>Marie</td>
+<td>2448</td>
+</tr>
+<tr class="odd">
+<td>Millet</td>
+<td>Sophie</td>
+<td>2366</td>
+</tr>
+<tr class="even">
+<td>Skrichempko</td>
+<td>Almira</td>
+<td>2361</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>Quel champ choisir comme clé primaire ? <span class="emoji" data-emoji="neutral_face">😐</span></p>
+</div>
+</section>
+<section id="clé-primaire-technique" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="clé-primaire-technique"><span class="header-section-number">5.4</span> Clé primaire technique</h3>
+<p>Créons une séquence numérique. <span class="emoji" data-emoji="sunglasses">😎</span></p>
+<div class="small-table">
+<table class="caption-top table">
+<caption>joueuse</caption>
+<thead>
+<tr class="header">
+<th><strong>id_joueuse</strong></th>
+<th><strong>nom</strong></th>
+<th><strong>prenom</strong></th>
+<th><strong>elo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Guichard</td>
+<td>Pauline</td>
+<td>2357</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Daulyte-Cornette</td>
+<td>Deimante</td>
+<td>2371</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Navrotescu</td>
+<td>Andreea</td>
+<td>2338</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Sebag</td>
+<td>Marie</td>
+<td>2448</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Millet</td>
+<td>Sophie</td>
+<td>2366</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Skrichempko</td>
+<td>Almira</td>
+<td>2361</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="clé-primaire-1" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="clé-primaire-1"><span class="header-section-number">5.5</span> Clé primaire</h3>
+<ul>
+<li>Attribut (ou ensemble d’attributs)</li>
+<li>Unique</li>
+<li>Non nulle</li>
+<li>Immuable</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sauf mention contraire, nous utiliserons une clé primaire “technique” : séquence.</p>
+</div>
+</div>
+<div class="notes">
+<p>Immuable :</p>
+<ul>
+<li>idéalement stable, elle ne change pas au cours du temps</li>
+<li>Pour maintenir l’intégrité des liens avec d’autres tables</li>
+</ul>
+<p>Remarque : pas obligatoire d’avoir une clé primaire</p>
+<p><u>Question</u> : nous voulons ajouter le club de chaque joueuse, comment faire ?</p>
+</div>
+</section>
+<section id="clé-étrangère" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="clé-étrangère"><span class="header-section-number">5.6</span> Clé étrangère ?</h3>
+<p>Comment relier ces 2 tables ?</p>
+<ul>
+<li>une joueuse joue pour un seul club</li>
+<li>Un club peut avoir plusieurs joueuses</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class joueuse {
+        id_joueuse PK
+        nom
+        prenom
+        elo
+    }
+    
+    class club {
+        id_club PK
+        nom
+        ville
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+<div class="small-table">
+<table class="caption-top table">
+<caption>club</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 55%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>id_club</strong></th>
+<th><strong>nom</strong></th>
+<th><strong>ville</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>C’Chartres Echecs</td>
+<td>Chartres</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Bischwiller</td>
+<td>Bischwiller</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Asnieres - le Grand Echiquier</td>
+<td>Asnieres</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Tours des Hauts-De-France</td>
+<td>Saint-Quentin</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="clé-étrangère-1" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="clé-étrangère-1"><span class="header-section-number">5.7</span> Clé étrangère</h3>
+<p>En ajoutant une clé étrangère.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class joueuse {
+        id_joueuse PK
+        nom
+        prenom
+        elo
+        id_club FK
+    }
+    
+    class club {
+        id_club PK
+        nom
+        ville
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+<div class="small-table">
+<table class="caption-top table">
+<caption>joueuse</caption>
+<colgroup>
+<col style="width: 19%">
+<col style="width: 29%">
+<col style="width: 22%">
+<col style="width: 11%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>id_joueuse</strong></th>
+<th><strong>nom</strong></th>
+<th><strong>prenom</strong></th>
+<th><strong>elo</strong></th>
+<th><strong>id_club</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Guichard</td>
+<td>Pauline</td>
+<td>2357</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Daulyte</td>
+<td>Deimante</td>
+<td>2371</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Navrotescu</td>
+<td>Andreea</td>
+<td>2338</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Sebag</td>
+<td>Marie</td>
+<td>2448</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Millet</td>
+<td>Sophie</td>
+<td>2366</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Skrichempko</td>
+<td>Almira</td>
+<td>2361</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-caution callout-titled" title="Remarques">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remarques
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une clé étrangère peut être nulle.</p>
+<p>Une clé étrangère référence une valeur existante de clé primaire.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question" class="level3" data-number="5.8">
+<h3 data-number="5.8" class="anchored" data-anchor-id="question"><span class="header-section-number">5.8</span> Question</h3>
+<p>Et si vous supprimez, le club de C’Chartres Echecs ? <span class="emoji" data-emoji="innocent">😇</span></p>
+<p><br></p>
+<div class="fragment">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<pre><code>SQL Error [23503]: ERROR: UPDATE or DELETE on table "club" violates the foreign key constraint "fk_id_club" on table "joueuse". Detail: Key (id_club)=(1) is still referenced from table "joueuse".</code></pre>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>id_club = 1</p>
+<p>Erreur aussi si vous essayer d’insert une joueuse avec id_club=9</p>
+</div>
+</section>
+<section id="autre-question" class="level3" data-number="5.9">
+<h3 data-number="5.9" class="anchored" data-anchor-id="autre-question"><span class="header-section-number">5.9</span> Autre question</h3>
+<p>Si une joueuse peut adhérer à plusieurs clubs ? <span class="emoji" data-emoji="confused">😕</span></p>
+<div class="incremental">
+<ul class="incremental">
+<li><em>id_club</em> devient une liste de clubs ?</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="hide-html-render">
+<p><img src="https://media.giphy.com/media/Y8hzdgPnZ6Hwk/source.gif" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<div class="notes">
+<p>Par exemple si notre bdd contient aussi les clubs belges, allemands, espagnols…</p>
+</div>
+</section>
+<section id="table-dassociation" class="level3" data-number="5.10">
+<h3 data-number="5.10" class="anchored" data-anchor-id="table-dassociation"><span class="header-section-number">5.10</span> Table d’association</h3>
+<p>Création d’une table d’association : <strong>adhesion</strong> <span class="emoji" data-emoji="sweat_smile">😅</span></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class Adhesion {
+        id_joueuse FK
+        id_club FK
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+<div class="small-table">
+<table class="caption-top table">
+<caption>adhesion</caption>
+<thead>
+<tr class="header">
+<th><strong>id_club</strong></th>
+<th><strong>id_joueuse</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="notes">
+<p>Imaginons que la Picardie devienne Belge.</p>
+<p>Clé primaire ?</p>
+<ul>
+<li>id_adhesion</li>
+<li>(id_club, id_joueuse)</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="associations" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="associations"><span class="header-section-number">6</span> Associations</h2>
+<p>Il existe plusieurs types d’associations entre tables.</p>
+<section id="association-11" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="association-11"><span class="header-section-number">6.1</span> Association 1:1</h3>
+<p>Une entité dans la table A est associée à une seule entité dans la table B.</p>
+<p>Exemple :</p>
+<ul>
+<li>Une personne a une seule carte vitale</li>
+<li>Une carte vitale appartient à une seule personne</li>
+</ul>
+<div class="notes">
+<p>on aurait pu tout mettre dans la même table</p>
+<p><u>Question</u> : Où met-on la clé étrangère ?</p>
+</div>
+</section>
+<section id="association-1n" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="association-1n"><span class="header-section-number">6.2</span> Association 1:n</h3>
+<p>Une entité dans la table A peut-être associée à plusieurs entités dans la table B.</p>
+<p>Exemple :</p>
+<ul>
+<li>Un club est composé de plusieurs joueuses</li>
+<li>Une joueuse adhère à un seul club</li>
+</ul>
+<div class="notes">
+<p>Supposons de nouveau qu’une joueuse ne joue que pour 1 seul club.</p>
+<p><u>Question</u> : Où met-on la clé étrangère ?</p>
+</div>
+</section>
+<section id="association-nn" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="association-nn"><span class="header-section-number">6.3</span> Association n:n</h3>
+<p>Une entité dans la table A peut-être associée à plusieurs entités dans la table B.</p>
+<p>Et inversement, une entité dans la table B peut-être associée à plusieurs entités dans la table A.</p>
+<p>Exemple :</p>
+<ul>
+<li>une joueuse participe à plusieurs tournois</li>
+<li>Un tournoi regroupe plusieurs joueuses</li>
+</ul>
+<div class="notes">
+<p><u>Question</u> : Comment fait-t-on ?</p>
+<ul>
+<li>Table d’association</li>
+</ul>
+</div>
+</section>
+<section id="association-récursive" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="association-récursive"><span class="header-section-number">6.4</span> Association récursive</h3>
+<p>Une table peut avoir des relations avec elle-même.</p>
+<p>Dans ce cas, la table contient une clé étrangère qui référence <u>sa propre clé primaire</u>.</p>
+<p>Exemple :</p>
+<ul>
+<li><em>employe (<u>id_employe</u>, nom, prenom, #id_superieur)</em></li>
+<li><em>id_superieur</em> clé étrangère qui référence <em>id_employe</em></li>
+</ul>
+<div class="notes">
+<p>Conventions</p>
+<ul>
+<li>PK soulignée</li>
+<li>FK avec #</li>
+</ul>
+</div>
+</section>
+<section id="association-multiples" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="association-multiples"><span class="header-section-number">6.5</span> Association multiples</h3>
+<p>Une table A peut avoir plusieurs relations avec une table B.</p>
+<p>Exemple :</p>
+<ul>
+<li><em>equipe (<u>id_equipe</u>, nom)</em></li>
+<li><em>match (<u>id_match</u>, #id_equipe1, #id_equipe2, score)</em></li>
+</ul>
+<div class="notes">
+<p>Nous reviendrons sur les associations quand nous parlerons des jointures.</p>
+</div>
+</section>
+</section>
+<section id="sgbd" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sgbd"><span class="header-section-number">7</span> SGBD</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Définition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un <strong>Système de Gestion de Bases de Données</strong> est un logiciel qui permet de créer, gérer et manipuler des bases de données.</p>
+<p>Il fournit des outils pour stocker, récupérer, modifier et sécuriser les données.</p>
+</div>
+</div>
+<ul>
+<li><strong><a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a></strong></li>
+<li><a href="https://www.mysql.com/" target="_blank">MySQL</a>, <a href="https://mariadb.org/" target="_blank">MariaDB</a></li>
+<li><a href="https://www.oracle.com/database/" target="_blank">Oracle Database</a></li>
+<li><a href="https://www.sqlite.org/" target="_blank">SQLite</a></li>
+</ul>
+<section id="postgresql" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="postgresql"><span class="header-section-number">7.1</span> PostgreSQL</h3>
+<ul>
+<li>Open Source, Libre</li>
+<li>Communauté active</li>
+<li>Stable et performant</li>
+<li>Basé sur le modèle client-serveur</li>
+<li>Extension <a href="https://postgis.net/" target="_blank">PostGIS</a> (Données géographiques)</li>
+</ul>
+<div class="notes">
+<p>utilisé à l’INSEE</p>
+<p>client-serveur classique :</p>
+<ul>
+<li>le composant serveur central « postmaster » gère tous les fichiers de bdd</li>
+<li>ainsi que toutes les connexions établies pour la communication avec le serveur de bdd.</li>
+</ul>
+<p>Les utilisateurs n’ont besoin que d’un programme client approprié pour établir la connexion</p>
+</div>
+</section>
+<section id="outil-de-gestion-et-administration" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="outil-de-gestion-et-administration"><span class="header-section-number">7.2</span> Outil de Gestion et Administration</h3>
+<p>Il est nécessaire d’avoir un <strong>outil pour gérer et administrer</strong> une base de données.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>PostgreSQL : Installé sur un serveur, sert de moteur de base de données</li>
+<li>pgAdmin : Interface graphique pour interagir avec PostgreSQL</li>
+</ul>
+</div>
+</div>
+<ul>
+<li><a href="https://www.pgadmin.org/" target="_blank">pgAdmin</a></li>
+<li><a href="https://dbeaver.io/" target="_blank">DBeaver</a></li>
+</ul>
+</section>
+<section id="kesako" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="kesako"><span class="header-section-number">7.3</span> Kesako</h3>
+<ul>
+<li>Base de données : endroit où sont stockées les informations</li>
+<li>SGBD : logiciel qui permet de créer, gérer et manipuler les bases de données</li>
+<li>Outil de gestion du SGBD : application graphique qui facilite l’interaction avec un SGBD</li>
+<li>SQL : Langage pour donner les instructions à la base de données</li>
+</ul>
+<div class="notes">
+<ul>
+<li>BDD : bibliothèque</li>
+<li>SGBD : bibliothécaire</li>
+<li>Outil : tableau de bord interactif pour les bibliothécaires</li>
+</ul>
+<p>A l’ENSAI :</p>
+<ul>
+<li>vous avez chacun une bdd (nom=id)</li>
+<li>utilisez DBeaver pour vous y connecter</li>
+</ul>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/LeCoinStat\.github\.io\/Cours-de-Python\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/LeCoinStat/Cours-de-Python" class="external" target="_blank">Code source</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

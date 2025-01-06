@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="TP4 et TP5">
+
+<title>Chess Unofficial Federation – Base de données</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a2a0e12bb60fe246e2e9f081b0cc26f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-786175bc03f08c9c0cfecc4767a07620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Base de données</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cours" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cours</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cours">    
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/intro.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/bases-de-donnees.html">
+ <span class="dropdown-text">Base de données</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/sql-intro.html">
+ <span class="dropdown-text">Introduction à SQL</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/agregations.html">
+ <span class="dropdown-text">Agrégations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/algebre.html">
+ <span class="dropdown-text">Algèbre Relationnelle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/jointures.html">
+ <span class="dropdown-text">Jointures</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/sql-avance.html">
+ <span class="dropdown-text">SQL avancé</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/formalisation.html">
+ <span class="dropdown-text">Formalisation des BDD</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tp" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">TP</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tp">    
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp1.html">
+ <span class="dropdown-text">TP1 - Premières requêtes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp2.html">
+ <span class="dropdown-text">TP2 - Vintage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp3.html">
+ <span class="dropdown-text">TP3 - Datalab</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp4.html">
+ <span class="dropdown-text">TP4 - Chess Unofficial Fed</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../doc/glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/LeCoinStat/Cours-de-Python" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#lancement-des-services" id="toc-lancement-des-services" class="nav-link" data-scroll-target="#lancement-des-services"><span class="header-section-number">1</span> Lancement des services</a></li>
+  <li><a href="#les-données" id="toc-les-données" class="nav-link" data-scroll-target="#les-données"><span class="header-section-number">2</span> Les données</a>
+  <ul class="collapse">
+  <li><a href="#chargez-les-données" id="toc-chargez-les-données" class="nav-link" data-scroll-target="#chargez-les-données"><span class="header-section-number">2.1</span> Chargez les données</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">2.2</span> Description</a></li>
+  <li><a href="#modèle-de-données" id="toc-modèle-de-données" class="nav-link" data-scroll-target="#modèle-de-données"><span class="header-section-number">2.3</span> Modèle de données</a></li>
+  </ul></li>
+  <li><a href="#recherche-des-irrégularités" id="toc-recherche-des-irrégularités" class="nav-link" data-scroll-target="#recherche-des-irrégularités"><span class="header-section-number">3</span> Recherche des irrégularités</a></li>
+  <li><a href="#élection-des-présidentes" id="toc-élection-des-présidentes" class="nav-link" data-scroll-target="#élection-des-présidentes"><span class="header-section-number">4</span> Élection des présidentes</a></li>
+  <li><a href="#remise-en-route-tp5" id="toc-remise-en-route-tp5" class="nav-link" data-scroll-target="#remise-en-route-tp5"><span class="header-section-number">5</span> Remise en route TP5</a></li>
+  <li><a href="#quelques-statistiques" id="toc-quelques-statistiques" class="nav-link" data-scroll-target="#quelques-statistiques"><span class="header-section-number">6</span> Quelques statistiques</a></li>
+  <li><a href="#afficher-les-résultats-de-parties" id="toc-afficher-les-résultats-de-parties" class="nav-link" data-scroll-target="#afficher-les-résultats-de-parties"><span class="header-section-number">7</span> Afficher les résultats de parties</a></li>
+  <li><a href="#gagnantes-des-tournois" id="toc-gagnantes-des-tournois" class="nav-link" data-scroll-target="#gagnantes-des-tournois"><span class="header-section-number">8</span> Gagnantes des tournois</a></li>
+  <li><a href="#qui-est-la-meilleure" id="toc-qui-est-la-meilleure" class="nav-link" data-scroll-target="#qui-est-la-meilleure"><span class="header-section-number">9</span> Qui est la meilleure ?</a></li>
+  <li><a href="#arrêtez-votre-service" id="toc-arrêtez-votre-service" class="nav-link" data-scroll-target="#arrêtez-votre-service">Arrêtez votre service</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chess Unofficial Federation</h1>
+</div>
+
+<div>
+  <div class="description">
+    TP4 et TP5
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Écrivez des requêtes jolies !</li>
+</ul>
+</div>
+</div>
+<p>Ce sujet vous occupera pour les TP4 et 5.</p>
+</section>
+<section id="lancement-des-services" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="lancement-des-services"><span class="header-section-number">1</span> Lancement des services</h2>
+<p>Connectez-vous à l’une des 2 instances suivantes d’Onyxia (elles sont quasiment identiques) :</p>
+<ul>
+<li><a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">Datalab du GENES</a></li>
+<li><a href="https://datalab.sspcloud.fr/" target="_blank">Datalab SSPCloud de l’INSEE</a>
+<ul>
+<li>si besoin de créer un compte, utilisez votre mail ENSAI</li>
+</ul></li>
+</ul>
+<p>Et ensuite lancez les services suivants (voir TP2 si besoin de plus de détails)</p>
+<ul class="task-list">
+<li><label><input type="checkbox">PostgreSQL : <a href="https://onyxia.lab.groupe-genes.fr/launcher/databases/postgresql?name=postgresql&amp;version=1.0.3&amp;autoLaunch=true&amp;postgresql.primary.persistence.size=«1Gi»&amp;postgresql.primary.resources.limits.cpu=«500m»&amp;postgresql.primary.resources.limits.memory=«2Gi»" target="_blank">Datalab GENES</a> ou <a href="https://datalab.sspcloud.fr/launcher/databases/postgresql?name=postgresql&amp;version=1.0.3&amp;postgresql.primary.persistence.size=«1Gi»&amp;postgresql.primary.resources.limits.cpu=«500m»&amp;postgresql.primary.resources.limits.memory=«2Gi»&amp;autoLaunch=true" target="_blank">SPPCloud</a></label></li>
+<li><label><input type="checkbox">CloudBeaver</label></li>
+</ul>
+</section>
+<section id="les-données" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="les-données"><span class="header-section-number">2</span> Les données</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Votre mission du jour sera d’aider la nouvellement créée <em>Fédération Française des Échecs Sincéres et Sans Subterfuges</em> à corriger les erreurs dans sa base de données pour ensuite récompenser ses meilleures joueuses.</p>
+</div>
+</div>
+</div>
+<section id="chargez-les-données" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="chargez-les-données"><span class="header-section-number">2.1</span> Chargez les données</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez le contenu de ces 2 scripts sql</label>
+<ul>
+<li><a href="./data/tp4-create-table.sql" target="_blank">création des tables</a></li>
+<li><a href="./data/tp4-pop-table.sql" target="_blank">insertion des données</a></li>
+</ul></li>
+<li><label><input type="checkbox">Collez-les dans la fenêtre SQL de CloudBeaver</label></li>
+<li><label><input type="checkbox">Exécutez les scripts</label>
+<ul>
+<li>Cliquez sur la petite icone sous les triangles oranges qui ressemble à <span class="emoji" data-emoji="scroll">📜</span></li>
+<li>raccourci (ALT + X)</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Reprise TP5">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reprise TP5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Après avoir chargé les données pour le TP5, veuillez appliquer ces corrections vues lors d’un exercice du TP4 :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> echecs.joueuse</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> elo <span class="op">=</span> elo <span class="op">-</span> <span class="dv">1200</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> elo <span class="op">&gt;</span> <span class="dv">2600</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> code_titre <span class="kw">IS</span> <span class="kw">NULL</span>;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> echecs.joueuse</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> date_naissance <span class="op">=</span> date_naissance <span class="op">+</span> <span class="dt">INTERVAL</span> <span class="st">'100 years'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_joueuse <span class="kw">IN</span> (<span class="dv">111</span>, <span class="dv">122</span>, <span class="dv">133</span>, <span class="dv">144</span>);</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> echecs.joueuse</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> date_naissance <span class="op">=</span> date_naissance <span class="op">-</span> <span class="dt">INTERVAL</span> <span class="st">'100 years'</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_joueuse <span class="kw">IN</span> (<span class="dv">155</span>, <span class="dv">166</span>, <span class="dv">177</span>, <span class="dv">188</span>);</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> echecs.joueuse</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> nom <span class="op">=</span> <span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(nom, <span class="st">'EUH'</span>, <span class="st">'E'</span>), <span class="st">'AO'</span>, <span class="st">'A'</span>), <span class="st">'OU'</span>, <span class="st">'U'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> code_titre <span class="kw">IS</span> <span class="kw">NULL</span>;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> echecs.partie</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_blanc <span class="op">=</span> id_noir;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="description" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="description"><span class="header-section-number">2.2</span> Description</h3>
+<p>Les tables sont les suivantes :</p>
+<ul>
+<li><strong>joueuse</strong>(<u>id_joueuse</u>, code_titre, nom, prenom, elo, date_naissance, #id_club, arbitre)</li>
+<li><strong>titre</strong>(<u>code</u>, nom, description)</li>
+<li><strong>club</strong>(<u>id_club</u>, nom, ville, #id_presidente)</li>
+<li><strong>partie</strong>(<u>id_partie</u>, #id_blanc, #id_noir, date_partie, #id_resultat, #id_ouverture, #id_tournoi)</li>
+<li><strong>resultat_partie</strong>(<u>id_resultat</u>, resultat, description)</li>
+<li><strong>ouverture</strong>(<u>id_ouverture</u>, eco, nom, coups)</li>
+<li><strong>tournoi</strong>(<u>id_tournoi</u>, nom, ville, date_debut, date_fin, #id_cadence, nb_rondes, nb_participantes, #id_arbitre)</li>
+<li><strong>cadence</strong>(<u>id_cadence</u>, nom, description)</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Catégorie</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Joueuse</strong></td>
+<td>Liste des joueuses</td>
+</tr>
+<tr class="even">
+<td><strong>Titre</strong></td>
+<td>Liste des titres, certains attribués aux fortes joueuses</td>
+</tr>
+<tr class="odd">
+<td><strong>Club</strong></td>
+<td>Liste des clubs</td>
+</tr>
+<tr class="even">
+<td><strong>Partie</strong></td>
+<td>Partie entre 2 joueuses, soit libre, soit dans le cadre d’un tournoi</td>
+</tr>
+<tr class="odd">
+<td><strong>Résultat_partie</strong></td>
+<td>Différents résultats possibles dans une partie (par exemple : victoire des blancs, match nul, etc.)</td>
+</tr>
+<tr class="even">
+<td><strong>Ouverture</strong></td>
+<td>Désignation de l’ouverture (comment débute une partie)</td>
+</tr>
+<tr class="odd">
+<td><strong>Tournoi</strong></td>
+<td>Liste des tournois</td>
+</tr>
+<tr class="even">
+<td><strong>Cadence</strong></td>
+<td>Rythme de jeu lors d’un tournoi (blitz, rapide, lent)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="modèle-de-données" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="modèle-de-données"><span class="header-section-number">2.3</span> Modèle de données</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans le modèle de données, certaines tables sont reliées 2 fois entre elles :</p>
+<ul>
+<li><em>joueuse</em> et <em>partie</em> : car lors d’une partie une joueuse a les blancs et l’autre, les noirs</li>
+<li><em>joueuse</em> et <em>club</em> :
+<ul>
+<li><em>id_club</em> est une clé étrangère dans la table <em>joueuse</em> car une joueuse est membre d’un seul club</li>
+<li><em>id_presidente</em> est une clé étrangère de la table <em>club</em> référençant l’<em>id_joueuse</em> de la présidente</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p><a href="./data/tp4-modele.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./data/tp4-modele.PNG" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="recherche-des-irrégularités" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="recherche-des-irrégularités"><span class="header-section-number">3</span> Recherche des irrégularités</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>À la fédération, il y a malheureusement de nombreuses rumeurs de corruption, et même de dopage !</p>
+<p>Votre première mission sera de vérifier l’intégrité des données de la base.</p>
+</div>
+</div>
+</div>
+<p>Il paraîtrait que certaines joueuses aient truquées leurs classements elo. Vérifiez et corrigez cela :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Listez la table des joueuses</label></li>
+<li><label><input type="checkbox">Classez par elo décroissant</label></li>
+<li><label><input type="checkbox">Écrivez une requête qui permet d’afficher les joueuses avec un elo suspect (elo &gt; 2600 et non titrée)</label>
+<ul>
+<li>Notez leurs <em>id_joueuse</em></li>
+</ul></li>
+<li><label><input type="checkbox">Pour chacune de ces joueuses, diminuez leur elo de 1200</label></li>
+<li><label><input type="checkbox">Vérifier à partir de leurs <em>id_joueuse</em> que la mise à jour a bien été effectuée</label></li>
+</ul>
+<p>Une autre erreur concernerait les dates de naissances des joueuses</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Affichez l’année de naissance des joueuses</label></li>
+<li><label><input type="checkbox">Regroupez par année et comptez le nombre d’occurences</label></li>
+<li><label><input type="checkbox">Écrivez une requête pour ne garder que les joueuses avec des années de naissances étranges</label></li>
+<li><label><input type="checkbox">Apportez une correction adaptée</label></li>
+</ul>
+<p>Toujours sur la table des joueuses, vous avez peut-être remarqué qu’une puissante technique d’anonymisation a été utilisée.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Commencez par afficher dans un <em>SELECT</em> une version plus propre</label></li>
+<li><label><input type="checkbox">Une fois que le résultat est assez correct, mettez à jour la table <em>joueuse</em></label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Vous pouvez utiliser la fonction <em>REPLACE()</em>
+<ul>
+<li>et même les enchainer : REPLACE(REPLACE(REPLACE()))</li>
+</ul></li>
+<li>Attention : les noms des joueuses titrées n’ont pas été anonymisées</li>
+</ul>
+<p>Si vous souhaitez utiliser des techniques d’anonymisation un peu plus efficaces, rendez-vous en 3A pour les Master ID et STD.</p>
+</div>
+</div>
+</div>
+<p>Passons maintenant à la table des parties. À votre avis, est-ce normal de jouer des parties contre soi-même ?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Détectez les parties suspectes</label></li>
+<li><label><input type="checkbox">À partir de ces données, créez une table <em>tricheuse</em> pour pouvoir surveiller leurs agissements par la suite</label></li>
+<li><label><input type="checkbox">Supprimez les parties suspectes</label></li>
+</ul>
+</section>
+<section id="élection-des-présidentes" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="élection-des-présidentes"><span class="header-section-number">4</span> Élection des présidentes</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Vous avez peut-être remarqué que les clubs n’ont pas de présidentes, nous allons donc organiser des élections sans triche !</p>
+<p>Mais pour faire plus simple, la fédé a décidé de nommer comme présidente de chaque club, sa joueuse ayant le plus faible elo.</p>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Listez pour chaque club, ses joueuses</label>
+<ul>
+<li>affichez le nom du club, ainsi que tout le contenu de la table joueuse</li>
+</ul></li>
+<li><label><input type="checkbox">Pour chaque club, trouvez le <em>elo</em> minimum</label></li>
+<li><label><input type="checkbox">Stockez dans une table temporaire tous les couples (id_club, elo_minimum)</label></li>
+<li><label><input type="checkbox">Trouvez pour chaque club, la joueuse avec le plus petit <em>elo</em></label>
+<ul>
+<li>en cas d’égalité, prenez ensuite le plus petit <em>id_joueuse</em></li>
+</ul></li>
+<li><label><input type="checkbox">Stockez dans une table temporaire les couples (id_club, id_joueuse de la future présidente)</label></li>
+<li><label><input type="checkbox">Mettez à jour la table <em>club</em> avec leurs nouvelles présidentes</label></li>
+<li><label><input type="checkbox">Listez les clubs et leurs présidentes</label></li>
+</ul>
+</section>
+<section id="remise-en-route-tp5" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="remise-en-route-tp5"><span class="header-section-number">5</span> Remise en route TP5</h2>
+<p>Quelques questions faciles pour se remettre en route.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Affichez noms, prénoms, elo des joueuses ainsi que le nom de leur club. Ordonnez par elo décroissant</label>
+<ul>
+<li>Combien avez-vous de lignes ?</li>
+<li>Combien de lignes compte la table <em>joueuse</em> ?</li>
+</ul></li>
+<li><label><input type="checkbox">Affichez tous les noms, prénoms, elo des joueuses ainsi que leur éventuel nom de club</label></li>
+<li><label><input type="checkbox">Ajoutez à la précédente requête l’éventuel nom du titre de la joueuse</label></li>
+</ul>
+</section>
+<section id="quelques-statistiques" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="quelques-statistiques"><span class="header-section-number">6</span> Quelques statistiques</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Regardons maintenant quelques statistiques sur ces données.</p>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Comptez le nombre de parties jouées</label></li>
+<li><label><input type="checkbox">Affichez le nombre de parties jouées par tournoi</label>
+<ul>
+<li>affichez le nom du tournoi</li>
+<li>incluez les parties jouées hors tournoi</li>
+</ul></li>
+<li><label><input type="checkbox">Pour chaque tournoi, calculez également les taux de victoire des blancs et des noirs, ainsi que celui de matchs nuls</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Commencez par exemple par calculer le nombre de victoires des blancs</li>
+<li>Divisez par le bon nombre</li>
+<li>Pour avoir un float, vous pouvez multiplier par <em>1.0</em></li>
+<li>Utilisez <em>ROUND()</em> pour arrondir à 2 chiffres significatifs</li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Complétez pour ne conserver que les tournois avec 20 % ou moins de matchs nuls</label></li>
+</ul>
+<p>Jetons maintenant un oeil aux ouvertures qui permettent de gagner plus souvent</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Ouvertures">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ouvertures
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En début de partie, le nombre de coups possibles et corrects reste assez limité. Les différentes possibilités de commencer une partie sont catégorisées et appelées Ouvertures.</p>
+<p>Vient ensuite le milieu de jeu lorsque toutes les pièces sont développées.</p>
+<p>Et enfin (si personne ne s’est pris un échec et mat) la finale, i.e.&nbsp;lorsque les Dames ont été échangées et qu’il reste peu de pièces.</p>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Une des ouvertures n’existe pas, elle n’a été jouée dans aucune partie</label>
+<ul>
+<li>Trouvez et supprimez cette ouverture</li>
+</ul></li>
+<li><label><input type="checkbox">Comme fait précédemment pour les tournois, calculez pour chaque ouverture :</label>
+<ul>
+<li>nombre de parties jouées</li>
+<li>taux de victoire des blancs</li>
+<li>taux de victoire des noirs</li>
+<li>taux de matchs nuls</li>
+</ul></li>
+<li><label><input type="checkbox">Affichez les joueuses ayant joué plus de 5 fois avec les pièces noires la <em>Défense Sicilienne</em></label></li>
+</ul>
+</section>
+<section id="afficher-les-résultats-de-parties" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="afficher-les-résultats-de-parties"><span class="header-section-number">7</span> Afficher les résultats de parties</h2>
+<p>Les résultats de parties sont généralement affichés sous ce format :</p>
+<table class="caption-top table">
+<caption>Aix-les-Bains 2006</caption>
+<colgroup>
+<col style="width: 39%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 29%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Blancs</th>
+<th></th>
+<th>Rés</th>
+<th>Noirs</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PRZYMUSINSKI Nicolas</td>
+<td>2043</td>
+<td>0 - 1</td>
+<td>f GREGOIRE Sylvain</td>
+<td>2268</td>
+</tr>
+<tr class="even">
+<td>MEYNARD Thibault</td>
+<td>2256</td>
+<td>1 - 0</td>
+<td>ZERMICHE Cherif</td>
+<td>2035</td>
+</tr>
+<tr class="odd">
+<td>HOUARD Yannick</td>
+<td>2010</td>
+<td>X - X</td>
+<td>PEREZ Flavio</td>
+<td>2230</td>
+</tr>
+<tr class="even">
+<td>COULON Guillaume</td>
+<td>2001</td>
+<td>0 - 1</td>
+<td>JOLLY Jean-Francois</td>
+<td>2211</td>
+</tr>
+<tr class="odd">
+<td>FISCHER Marc</td>
+<td>2185</td>
+<td>X - X</td>
+<td>DENEUVILLE Ludovic</td>
+<td>2003</td>
+</tr>
+<tr class="even">
+<td>MATHIS Julien</td>
+<td>1951</td>
+<td>0 - 1</td>
+<td>PIERONI Guillaume</td>
+<td>2170</td>
+</tr>
+<tr class="odd">
+<td>BOIZANTE Yvain</td>
+<td>2148</td>
+<td>X - X</td>
+<td>SAEZ Nicolas</td>
+<td>1998</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>L’objectif de cette partie est d’aboutir à ce résultat.</p>
+<p>Vous noterez le <code>f</code> à la première ligne qui est l’éventuel titre de la joueuse en minuscule.</p>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Commencez par joindre les tables contenant les éléments à afficher</label></li>
+<li><label><input type="checkbox">Ensuite, gardez uniquement les colonnes nécessaires</label></li>
+<li><label><input type="checkbox">Concaténez titre, nom et prénom, et renommez les colonnes pour obtenir l’affichage demandé</label></li>
+<li><label><input type="checkbox">Affichez les résultat du <em>Blitz à Rennes</em> (tournoi)</label></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Enfin nous souhaitons récompenser la meilleure performance.</p>
+<p>Une performance est une victoire contre une joueuse ayant au moins 400 points elo de plus.</p>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Affichez toutes les performances</label></li>
+<li><label><input type="checkbox">Classez-les par différence de elo décroissante</label></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Un paquet de <span class="emoji" data-emoji="cookie">🍪</span> est à retirer dans le bureau du professeur pour la joueuse détentrice de la meilleure perf !</p>
+<p>Et pour l’autrice de la plus belle contre-perf, notre partenaire premium, la <a href="https://fflose.com/" target="_blank">Fédération Française de la Lose</a> offre un magnifique tee-shirt floqué <em>Reine des Mazettes</em>, <em>J’ai raté un mat en 1</em>, <em>Je suis passé de +10 à -10</em> ou encore <em>J’ai fait pat avec Roi et Dame contre Roi</em>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gagnantes-des-tournois" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="gagnantes-des-tournois"><span class="header-section-number">8</span> Gagnantes des tournois</h2>
+<p>Via la table <em>partie</em>, il est possible de retrouver quelle joueuse a participé à quel tournoi.</p>
+<p>Cependant ce n’est pas très intuitif, ni pratique.</p>
+<p>Nous allons donc commencer par créer une vue des participantes</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Listez les différents tournois auquels a participé <em>HOU Yifan</em></label></li>
+<li><label><input type="checkbox">Listez tous les différents couples (id_joueuse, id_tournoi) possibles et existants dans la table <em>partie</em></label></li>
+<li><label><input type="checkbox">Créez la vue <code>participante(id_tournoi, id_joueuse)</code></label>
+<ul>
+<li>en y insérant les données de la dernière requête</li>
+</ul></li>
+<li><label><input type="checkbox">Vérifiez que cette vue contient 960 enregistrements</label></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Pour trouver les gagnantes des tournois, il faut trouver leurs nombres de points marqués.</p>
+<p>Une célébre citation dit « Je ne perds jamais, soit je gagne, soit j’apprends ».</p>
+<p>Aux échecs, la victoire rapporte 1 point, le match nul 0.5 et la défaite 0.</p>
+</div>
+</div>
+</div>
+<p>Cependant un problème se pose : une seule ligne de la <em>partie</em> contient le nombre de points marqués de 2 joueuses.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_partie</th>
+<th>id_blanc</th>
+<th>id_noir</th>
+<th>resultat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>11</td>
+<td>22</td>
+<td>1 - 0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>123</td>
+<td>99</td>
+<td>X - X</td>
+</tr>
+</tbody>
+</table>
+<p>Pour calculer les points de chaque joueuse, ce serait plus pratique de dupliquer chaque ligne pour avoir :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_partie</th>
+<th>id_joueuse</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>11</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>22</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>123</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>99</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="task-list">
+<li><label><input type="checkbox">Listez pour toutes les parties, le score des blancs (comme sur le tableau ci-dessus)</label></li>
+<li><label><input type="checkbox">Incluez également pour la suite, les colonnes :</label>
+<ul>
+<li><em>id_tournoi</em></li>
+<li>le <em>elo</em> de l’adversaire</li>
+</ul></li>
+<li><label><input type="checkbox">Faites de même pour les noirs et stockez le tout dans une vue <em>partie_score</em></label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Vous pouvez utiliser une structure <em>CASE WHEN THEN</em></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">&lt;</span>?<span class="op">&gt;</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">CASE</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="op">&lt;</span>?<span class="op">&gt;</span> <span class="cf">THEN</span> <span class="op">&lt;</span>?<span class="op">&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="op">&lt;</span>?<span class="op">&gt;</span> <span class="cf">THEN</span> <span class="op">&lt;</span>?<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           <span class="cf">ELSE</span> <span class="op">&lt;</span>?<span class="op">&gt;</span>          </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> score</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> <span class="op">&lt;</span>?<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Vérifiez que pour toutes les parties, le score cumulé des deux joueuses vaut 1</label></li>
+<li><label><input type="checkbox">Affichez le classement par points de l’<em>Open de Guingamp</em></label></li>
+</ul>
+<p>Vous remarquez qu’il y a des égalités au nombre de points.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Utilisez la moyenne elo des adversaires pour départager les ex æquo</label>
+<ul>
+<li>Plus la joueuse a affronté d’autres joueuses fortes, mieux elle sera classée</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Vérification">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vérification
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Une petite requête basique pour vérifier vos résultats :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> resultat_score <span class="kw">AS</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> rp.<span class="op">*</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">CASE</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="cf">WHEN</span> rp.resultat <span class="kw">IN</span> (<span class="st">'1 - 0'</span>, <span class="st">'1 - F'</span>) <span class="cf">THEN</span> <span class="dv">1</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               <span class="cf">WHEN</span> rp.resultat <span class="op">=</span> <span class="st">'X - X'</span>             <span class="cf">THEN</span> <span class="fl">0.5</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="cf">ELSE</span> <span class="dv">0</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>           <span class="cf">END</span> <span class="kw">AS</span> score_blanc,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>           <span class="cf">CASE</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>               <span class="cf">WHEN</span> rp.resultat <span class="kw">IN</span> (<span class="st">'0 - 1'</span>, <span class="st">'F - 1'</span>) <span class="cf">THEN</span> <span class="dv">1</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>               <span class="cf">WHEN</span> rp.resultat <span class="op">=</span> <span class="st">'X - X'</span>             <span class="cf">THEN</span> <span class="fl">0.5</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>               <span class="cf">ELSE</span> <span class="dv">0</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>           <span class="cf">END</span> <span class="kw">AS</span> score_noir</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">FROM</span> echecs.resultat_partie rp</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>partie_score <span class="kw">AS</span> (</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> p.id_partie,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>           p.id_tournoi,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>           UNNEST(<span class="dt">ARRAY</span>[id_blanc, id_noir]) <span class="kw">AS</span> id_joueuse,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>           UNNEST(<span class="dt">ARRAY</span>[score_blanc, score_noir]) <span class="kw">AS</span> score,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>           UNNEST(<span class="dt">ARRAY</span>[jn.elo, jb.elo]) <span class="kw">AS</span> elo_adversaire</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="kw">FROM</span> echecs.partie p</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="kw">JOIN</span> resultat_score <span class="kw">USING</span>(id_resultat)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="kw">JOIN</span> echecs.joueuse jb <span class="kw">ON</span> (jb.id_joueuse <span class="op">=</span> p.id_blanc)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="kw">JOIN</span> echecs.joueuse jn <span class="kw">ON</span> (jn.id_joueuse <span class="op">=</span> p.id_noir)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> CONCAT_WS(<span class="st">' '</span>, <span class="fu">LOWER</span>(j.code_titre), j.nom, j.prenom) <span class="kw">AS</span> joueuse,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>       j.elo,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>       <span class="fu">SUM</span>(ps.score) <span class="kw">AS</span> points,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ROUND</span>(<span class="fu">AVG</span>(ps.elo_adversaire)) <span class="kw">AS</span> moyenne_elo_adversaire</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> echecs.joueuse j</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> partie_score ps <span class="kw">USING</span>(id_joueuse)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> echecs.tournoi t <span class="kw">USING</span>(id_tournoi)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> t.nom <span class="op">=</span> <span class="st">'Open de Guingamp'</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> j.id_joueuse,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>          joueuse,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>          j.elo</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> points <span class="kw">DESC</span>,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>          moyenne_elo_adversaire <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Créez une vue contenant le classement de chaque joueuse dans chaque tournoi</label>
+<ul>
+<li>incluez le nom du tournoi, de la joueuse, son nombre de points, la moyenne elo des adversaire</li>
+<li>calculez son classement dans le tournoi (<span class="emoji" data-emoji="bulb">💡</span> voir RANK OVER PARTITION BY)</li>
+</ul></li>
+<li><label><input type="checkbox">Affichez la liste de toutes les gagnantes des tournois</label></li>
+</ul>
+</section>
+<section id="qui-est-la-meilleure" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="qui-est-la-meilleure"><span class="header-section-number">9</span> Qui est la meilleure ?</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Nous souhaitons calculer le pourcentage de points marqués par chaque joueuse, ainsi que ses taux de victoires, matchs nuls et défaites.</p>
+</div>
+</div>
+</div>
+<p>Choisissez une joueuse, par exemple <em>Judith POLGAR</em></p>
+<ul class="task-list">
+<li><label><input type="checkbox">En utilisant une vue déjà créée, calculez son nombre de parties jouées et son nombre de points marqués</label></li>
+<li><label><input type="checkbox">Calculez le ratio pour avoir son ratio de points par partie</label></li>
+<li><label><input type="checkbox">Calculez ses taux de victoires, matchs nuls et défaites</label></li>
+<li><label><input type="checkbox">Adaptez la requête pour faire ces calculs pour toutes les joueuses</label>
+<ul>
+<li>classez par ratio de points par partie déscroissant</li>
+</ul></li>
+</ul>
+</section>
+<section id="arrêtez-votre-service" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="arrêtez-votre-service">Arrêtez votre service</h2>
+<p>C’est la fin du TP, vous pouvez maintenant sauvegarder votre travail et libérer les ressources réservées :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez votre code et collez le sur votre machine dans un fichier <em>.sql</em></label>
+<ul>
+<li>par exemple dans <code>P:/Cours1A/UE3-Bases-de-donnees-relationnelles/TP4/tp4.sql</code></li>
+<li>ou en téléchargeant depuis CloudBeaver le fichier sql (petit bouton avec un dossier et une flèche vers le bas)</li>
+</ul></li>
+<li><label><input type="checkbox">Retournez sur la page d’accueil du Datalab</label></li>
+<li><label><input type="checkbox">Allez dans <em>Mes Services</em> et supprimez votre service</label></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/LeCoinStat\.github\.io\/Cours-de-Python\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/LeCoinStat/Cours-de-Python" class="external" target="_blank">Code source</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

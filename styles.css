@@ -1,0 +1,184 @@
+/* CSS Styles pour le cours de Python */
+
+/************************************************************/
+/* Titles                                                   */
+/************************************************************/
+
+h1, h2, h3, h4 {
+  color: #2A7F62; /* Teinte verte pour rappeler Python */
+}
+
+h2::before {
+  content: '\25B6'; /*Arrow Forward*/
+  margin-right: 8px;
+}
+
+h3::before {
+  content: '\1F40D'; /*Snake emoji pour Python*/
+  margin-right: 8px;
+}
+
+h4::before {
+  content: '\1F4BB';  /*Laptop emoji*/
+  margin-right: 8px;
+}
+
+.header-section-number:after { /* Ajoute un point après les numéros de sections */
+  content: ".";
+}
+
+/************************************************************/
+/* Format                                                   */
+/************************************************************/
+
+.column {
+  width: 50%;
+  padding: 5px;
+}
+
+img { /* Centre les images */
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/************************************************************/
+/* Code Styling                                             */
+/************************************************************/
+
+pre, code { /* Styles pour les blocs de code */
+  font-family: "Courier New", Courier, monospace;
+  background-color: #F4F4F4;
+  border-left: 4px solid #2A7F62;
+  padding: 10px;
+  margin: 10px 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.sourceCode .co { /* Python comments */
+  color: #6A9955; /* Vert pour les commentaires Python */
+}
+
+.sourceCode .kw { /* Python keywords */
+  color: #569CD6; /* Bleu pour les mots-clés Python */
+}
+
+.sourceCode .st { /* Python strings */
+  color: #D69D85; /* Orange clair pour les chaînes de caractères */
+}
+
+/************************************************************/
+/* Box                                                      */
+/************************************************************/
+
+.green-box, .blue-box, .yellow-box, .white-box {
+  color: black;
+  border-radius: 10px;
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 2px;
+  width: 100%;
+}
+
+.green-box {
+  background-color: #E8F5E9;
+  border: solid 2px #2A7F62;
+}
+
+.blue-box {
+  background-color: #E3F2FD;
+  border: solid 2px #1565C0;
+}
+
+.yellow-box {
+  background-color: #FFFDE7;
+  border: solid 2px #FFD600;
+}
+
+.white-box {
+  background-color: white;
+  border: solid 2px black;
+}
+
+/************************************************************/
+/* Buttons                                                  */
+/************************************************************/
+
+.green-button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  background-color: #2A7F62;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+  background-color: #1B5E50;
+}
+
+.grey-button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: black;
+  background-color: #B0BEC5;
+  border: 2px solid #37474F;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.grey-button:hover {
+  background-color: #90A4AE;
+  border-color: #263238;
+}
+
+/************************************************************/
+/* Various                                                  */
+/************************************************************/
+
+.notes, .hide-html-render {
+  display: none;
+}
+
+blockquote {
+  font-style: italic;
+  color: #616161;
+  border-left: 4px solid #2A7F62;
+  padding-left: 10px;
+  margin: 10px 0;
+}
+
+
+/* Styles pour le code Python */
+
+.sourceCode .co { /* Python comments */
+  color: #6A9955; /* Vert pour les commentaires Python */
+}
+
+.sourceCode .kw { /* Python keywords */
+  color: #569CD6; /* Bleu pour les mots-clés Python */
+}
+
+.sourceCode .st { /* Python strings */
+  color: #D69D85; /* Orange clair pour les chaînes de caractères */
+}
+
+.sourceCode .dt { /* Python numbers/digits */
+  color: #B5CEA8; /* Vert clair pour les nombres */
+}

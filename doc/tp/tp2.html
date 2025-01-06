@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="TP2">
+
+<title>Exercices vintages – Base de données</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a2a0e12bb60fe246e2e9f081b0cc26f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-786175bc03f08c9c0cfecc4767a07620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Base de données</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cours" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cours</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cours">    
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/intro.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/bases-de-donnees.html">
+ <span class="dropdown-text">Base de données</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/sql-intro.html">
+ <span class="dropdown-text">Introduction à SQL</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/agregations.html">
+ <span class="dropdown-text">Agrégations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/algebre.html">
+ <span class="dropdown-text">Algèbre Relationnelle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/jointures.html">
+ <span class="dropdown-text">Jointures</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/sql-avance.html">
+ <span class="dropdown-text">SQL avancé</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/formalisation.html">
+ <span class="dropdown-text">Formalisation des BDD</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tp" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">TP</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tp">    
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp1.html">
+ <span class="dropdown-text">TP1 - Premières requêtes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp2.html">
+ <span class="dropdown-text">TP2 - Vintage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp3.html">
+ <span class="dropdown-text">TP3 - Datalab</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp4.html">
+ <span class="dropdown-text">TP4 - Chess Unofficial Fed</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../doc/glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/LeCoinStat/Cours-de-Python" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#lancement-des-services" id="toc-lancement-des-services" class="nav-link" data-scroll-target="#lancement-des-services"><span class="header-section-number">1</span> Lancement des services</a>
+  <ul class="collapse">
+  <li><a href="#datalab-du-genes-ou-sspcloud" id="toc-datalab-du-genes-ou-sspcloud" class="nav-link" data-scroll-target="#datalab-du-genes-ou-sspcloud"><span class="header-section-number">1.1</span> Datalab du GENES ou SSPCloud</a></li>
+  <li><a href="#base-de-données-postgresql" id="toc-base-de-données-postgresql" class="nav-link" data-scroll-target="#base-de-données-postgresql"><span class="header-section-number">1.2</span> Base de données PostgreSQL</a></li>
+  <li><a href="#cloudbeaver" id="toc-cloudbeaver" class="nav-link" data-scroll-target="#cloudbeaver"><span class="header-section-number">1.3</span> CloudBeaver</a></li>
+  <li><a href="#vm-ensai" id="toc-vm-ensai" class="nav-link" data-scroll-target="#vm-ensai"><span class="header-section-number">1.4</span> VM ENSAI</a></li>
+  </ul></li>
+  <li><a href="#méthodo-écrire-une-requête" id="toc-méthodo-écrire-une-requête" class="nav-link" data-scroll-target="#méthodo-écrire-une-requête"><span class="header-section-number">2</span> Méthodo : Écrire une requête</a>
+  <ul class="collapse">
+  <li><a href="#listez-les-tables-nécessaires" id="toc-listez-les-tables-nécessaires" class="nav-link" data-scroll-target="#listez-les-tables-nécessaires"><span class="header-section-number">2.1</span> Listez les tables nécessaires</a></li>
+  <li><a href="#appliquez-les-filtres" id="toc-appliquez-les-filtres" class="nav-link" data-scroll-target="#appliquez-les-filtres"><span class="header-section-number">2.2</span> Appliquez les filtres</a></li>
+  <li><a href="#ordonnez-les-résultats" id="toc-ordonnez-les-résultats" class="nav-link" data-scroll-target="#ordonnez-les-résultats"><span class="header-section-number">2.3</span> Ordonnez les résultats</a></li>
+  <li><a href="#sélectionner-les-colonnes-requises" id="toc-sélectionner-les-colonnes-requises" class="nav-link" data-scroll-target="#sélectionner-les-colonnes-requises"><span class="header-section-number">2.4</span> Sélectionner les colonnes requises</a></li>
+  </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a>
+  <ul class="collapse">
+  <li><a href="#école-de-musique" id="toc-école-de-musique" class="nav-link" data-scroll-target="#école-de-musique"><span class="header-section-number">3.1</span> École de musique <span class="emoji" data-emoji="guitar">🎸</span></a></li>
+  <li><a href="#location-de-dvd" id="toc-location-de-dvd" class="nav-link" data-scroll-target="#location-de-dvd"><span class="header-section-number">3.2</span> Location de DVD <span class="emoji" data-emoji="cd">💿</span></a></li>
+  <li><a href="#rugby-world-cup" id="toc-rugby-world-cup" class="nav-link" data-scroll-target="#rugby-world-cup"><span class="header-section-number">3.3</span> Rugby World Cup <span class="emoji" data-emoji="rugby_football">🏉</span></a></li>
+  </ul></li>
+  <li><a href="#arrêtez-votre-service" id="toc-arrêtez-votre-service" class="nav-link" data-scroll-target="#arrêtez-votre-service">Arrêtez votre service</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exercices vintages</h1>
+</div>
+
+<div>
+  <div class="description">
+    TP2
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Lors du premier TP, nous avons utilisé DuckDB pour lire les données d’un fichier parquet. Aujourd’hui nous allons créer notre propre base de données PostgreSQL, puis y déclarer des tables et insérer de données. Enfin nous allons requêter ces données.</p>
+<p>Lors de ce TP, vous allez :</p>
+<ul>
+<li>Créer votre base de données <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a></li>
+<li>Lancer des scripts de création de tables et d’insertion de données</li>
+<li>Relier des tables en utilisant les jointures</li>
+<li>Sélectionner et filtrer des données</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Écrivez des requêtes jolies !</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lancement-des-services" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="lancement-des-services"><span class="header-section-number">1</span> Lancement des services</h2>
+<section id="datalab-du-genes-ou-sspcloud" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="datalab-du-genes-ou-sspcloud"><span class="header-section-number">1.1</span> Datalab du GENES ou SSPCloud</h3>
+<p>Connectez-vous à l’une des 2 instances suivantes d’Onyxia (elles sont quasiment identiques) :</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">Datalab du GENES</a></label></li>
+<li><label><input type="checkbox"><a href="https://datalab.sspcloud.fr/" target="_blank">Datalab SSPCloud de l’INSEE</a></label>
+<ul>
+<li>si besoin de créer un compte, utilisez votre mail ENSAI</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>L’instance du GENES est plus récente donc encore en cours de rodage. Celle de l’INSEE est plus ancienne et donc plus robuste.</p>
+<p>Pour éviter les problèmes de charges, vous utiliserez selon votre profil :</p>
+<ul>
+<li>élèves fonctionnaires <span class="emoji" data-emoji="arrow_right">➡️</span> SSPCloud</li>
+<li>élèves ingénieurs <span class="emoji" data-emoji="arrow_right">➡️</span> SSPCloud ou Datalab du GENES</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="base-de-données-postgresql" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="base-de-données-postgresql"><span class="header-section-number">1.2</span> Base de données PostgreSQL</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Lancez le service PostgreSQL</label>
+<ul>
+<li>Lien direct de lancement : <a href="https://onyxia.lab.groupe-genes.fr/launcher/databases/postgresql?name=postgresql&amp;version=1.0.3&amp;autoLaunch=true&amp;postgresql.primary.persistence.size=«1Gi»&amp;postgresql.primary.resources.limits.cpu=«500m»&amp;postgresql.primary.resources.limits.memory=«2Gi»" target="_blank">Datalab GENES</a> ou <a href="https://datalab.sspcloud.fr/launcher/databases/postgresql?name=postgresql&amp;version=1.0.3&amp;postgresql.primary.persistence.size=«1Gi»&amp;postgresql.primary.resources.limits.cpu=«500m»&amp;postgresql.primary.resources.limits.memory=«2Gi»&amp;autoLaunch=true" target="_blank">SPPCloud</a></li>
+<li>ou manuellement : <strong>Catalogue de services</strong> <span class="emoji" data-emoji="arrow_right">➡️</span> <strong>Databases</strong> <span class="emoji" data-emoji="arrow_right">➡️</span> <code>Lancer</code></li>
+<li>Configuration Postgresql <span class="emoji" data-emoji="arrow_right">➡️</span> Primary : Mettez tous les paramètres au minimum (Persistent volume size, CPU, Memory)
+<ul>
+<li>Cela permettra d’éviter de réserver inutilement des ressources dont vous n’aurez pas besoin</li>
+</ul></li>
+<li>Cliquez sur <code>Lancer</code></li>
+</ul></li>
+<li><label><input type="checkbox">Copiez-collez dans un fichier texte les informations de connexion PostgreSQL : Hostname, Port, Database, Username, Password</label></li>
+</ul>
+</section>
+<section id="cloudbeaver" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="cloudbeaver"><span class="header-section-number">1.3</span> CloudBeaver</h3>
+<p>Nous venons de créer un SGBD, nous avons maintenant besoin d’un outil de gestion pour s’y connecter et envoyer des requêtes.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Lancez le service CloudBeaver</label>
+<ul>
+<li><strong>Catalogue de services</strong> <span class="emoji" data-emoji="arrow_right">➡️</span> <strong>Databases</strong></li>
+</ul></li>
+<li><label><input type="checkbox">Copiez-collez également les informations de connexion au service <em>CloudBeaver</em></label></li>
+<li><label><input type="checkbox">Ouvrez ce service</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Normalement la connexion à la base de données <em>PostgreSQL</em> est détectée automatiquement.</p>
+<p>Dans le cas contraire, il faut cliquer sur le +, puis sur <em>New connection</em> et renseigner les éléments de connexion.</p>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Dans l’explorateur à gauche, clic droit sur bdd PostgreSQL <span class="emoji" data-emoji="arrow_right">➡️</span> SQL Editor</label></li>
+</ul>
+<p>Cela ouvre une fenêtre où vous pouvez écrire du code SQL pour interagir avec votre base de données.</p>
+</section>
+<section id="vm-ensai" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="vm-ensai"><span class="header-section-number">1.4</span> VM ENSAI</h3>
+<p>Uniquement en cas de soucis avec les Datalabs, vous pouvez faire le TP sur la VM.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="DBeaver sur la VM">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+DBeaver sur la VM
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un serveur héberge une base de données PostgreSQL.</p>
+<p>Pour vous connecter à votre bdd, lancez le logiciel DBeaver depuis votre VM. Ensuite, uniquement la première fois, vous devrez effectuer le paramètrage ci-dessous et créer la connexion à votre bdd.</p>
+<section id="paramètrage" class="level4">
+<h4 class="anchored" data-anchor-id="paramètrage">Paramètrage</h4>
+<ul>
+<li>Menu <code>Fenêtre</code> &gt; <code>Preference</code>
+<ul>
+<li>Formatage SQL
+<ul>
+<li>Casse des mots clefs : <code>UPPER</code></li>
+<li><label><input type="checkbox" checked="">Insert spaces for tabs</label></li>
+<li>Appliquer</li>
+</ul></li>
+<li>Metadonnées
+<ul>
+<li>Décocher <code>Ouvrir une connexion séparée pour la lecture des métadonnées</code></li>
+</ul></li>
+<li>Editeur SQL
+<ul>
+<li>Décocher <code>Ouvrir une connexion séparée pour chaque éditeur</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="création-de-la-connexion-postgresql" class="level4">
+<h4 class="anchored" data-anchor-id="création-de-la-connexion-postgresql">Création de la connexion PostgreSQL</h4>
+<ul>
+<li>Cliquer sur l’icone <code>Nouvelle connexion</code> en haut à gauche sous fichier</li>
+<li>Sélectionner <code>PostgreSQL</code> puis suivant
+<ul>
+<li>Host : <code>sgbd-eleves.domensai.ecole</code></li>
+<li>Port : <code>5432</code></li>
+<li>Database : <code>idxxxx</code></li>
+<li>Nom d’utilisateur : <code>idxxxx</code></li>
+<li>Mot de passe : <code>idxxxx</code></li>
+<li><code>Test de connexion</code></li>
+<li>Acceptez les mises à jour des pilotes</li>
+<li><code>Terminer</code></li>
+</ul></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="méthodo-écrire-une-requête" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="méthodo-écrire-une-requête"><span class="header-section-number">2</span> Méthodo : Écrire une requête</h2>
+<p>Il est parfois difficile d’écrire du premier coup LA requête qui répond directement à la question posée. Voici une méthode qui peut vous aider à écrire vos requêtes pas à pas :</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Imaginons que l’on vous demande de lister les noms et prénoms des joueuses du club de la ville de <em>Saint Quentin</em>, dont le prénom commence par un <em>A</em> classées par elo décroissant.</p>
+<p>joueuse(<u>id_joueuse</u>, nom, prenom, elo, #id_club)</p>
+<p>club(<u>id_club</u>, nom, ville)</p>
+</div>
+</div>
+</div>
+<section id="listez-les-tables-nécessaires" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="listez-les-tables-nécessaires"><span class="header-section-number">2.1</span> Listez les tables nécessaires</h3>
+<p>Commencez par lister les tables nécessaires, puis joignez les. Ici nous avons besoin des 2 tables.</p>
+<p>Utilisez pour l’instant <code>SELECT *</code> pour sélectionner toutes les colonnes.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> joueuse j</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> club c <span class="kw">USING</span>(id_club);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="appliquez-les-filtres" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="appliquez-les-filtres"><span class="header-section-number">2.2</span> Appliquez les filtres</h3>
+<p>Pour ne garder que les lignes qui nous intéressent :</p>
+<ul>
+<li>Ville du club : <em>Saint Quentin</em></li>
+<li>Prénom qui commence par un A**</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> joueuse j</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> club c <span class="kw">USING</span>(id_club)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> c.ville <span class="op">=</span> <span class="st">'Saint Quentin'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> j.prenom <span class="kw">LIKE</span> <span class="st">'A%'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ordonnez-les-résultats" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="ordonnez-les-résultats"><span class="header-section-number">2.3</span> Ordonnez les résultats</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> joueuse j</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> club c <span class="kw">USING</span>(id_club)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> c.ville <span class="op">=</span> <span class="st">'Saint Quentin'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> j.prenom <span class="kw">LIKE</span> <span class="st">'A%'</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> j.elo <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sélectionner-les-colonnes-requises" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="sélectionner-les-colonnes-requises"><span class="header-section-number">2.4</span> Sélectionner les colonnes requises</h3>
+<p>Il est demandé de ne garder que les noms et prénoms des joueuses</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> j.nom,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       j.prenom</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> joueuse j</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> club c <span class="kw">USING</span>(id_club)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> c.ville <span class="op">=</span> <span class="st">'Saint Quentin'</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> j.prenom <span class="kw">LIKE</span> <span class="st">'A%'</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> j.elo <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="exercices" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercices"><span class="header-section-number">3</span> Exercices</h2>
+<section id="école-de-musique" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="école-de-musique"><span class="header-section-number">3.1</span> École de musique <span class="emoji" data-emoji="guitar">🎸</span></h3>
+<p>Nous allons commencer par créer les tables et insérer les données :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez le contenu de ce <a href="./data/tp2-musique-create-pop.sql" target="_blank">script sql</a></label></li>
+<li><label><input type="checkbox">Collez dans la fenêtre SQL de CloudBeaver</label></li>
+<li><label><input type="checkbox">Exécutez le script</label>
+<ul>
+<li>Cliquez sur la petite icone sous les triangles oranges qui ressemble à <span class="emoji" data-emoji="scroll">📜</span></li>
+<li>raccourci (ALT + X)</li>
+</ul></li>
+<li><label><input type="checkbox">Vérifiez que votre schéma et vos tables sont créés</label>
+<ul>
+<li>Dans l’explorateur : PostgreSQL <span class="emoji" data-emoji="arrow_right">➡️</span> Databases <span class="emoji" data-emoji="arrow_right">➡️</span> defaultdb <span class="emoji" data-emoji="arrow_right">➡️</span> Schemas</li>
+<li>Clic droit sur <em>Schemas</em> <span class="emoji" data-emoji="arrow_right">➡️</span> Refresh</li>
+</ul></li>
+</ul>
+<p>Si tout est ok, vous n’avez plus besoin du script de création et d’insertion de données.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Supprimez tout le contenu du code SQL que vous venez d’exécuter ou ouvrez un nouvel éditeur SQL</label></li>
+</ul>
+<p>Voici le modèle de données :</p>
+<p><a href="./data/tp2-musique-modele.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./data/tp2-musique-modele.PNG" class="img-fluid"></a></p>
+<p>Vous pouvez maintenant commencer l’exercice et écrire les requêtes permettant de répondre aux questions suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Quels sont les noms des instruments présents dans la base de données</label></li>
+<li><label><input type="checkbox">Quels sont les noms et adresses des adhérents</label></li>
+<li><label><input type="checkbox">Quelle est l’adresse de l’adhérent numéro 15</label></li>
+<li><label><input type="checkbox">Quels sont les numéros des adhérents de nom <em>DUPONT</em></label></li>
+</ul>
+<p>Réalisez les jointures qui permettent d’obtenir :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Les noms des instruments dont joue chaque adhérent</label></li>
+<li><label><input type="checkbox">Le nom des adhérents inscrits au cours numéro 6</label></li>
+<li><label><input type="checkbox">Les noms des cours ayant lieu le samedi et les noms des adhérents inscrits</label></li>
+<li><label><input type="checkbox">Les noms des cours auxquels sont inscrits les adhérents qui jouent du piano</label></li>
+<li><label><input type="checkbox">De quels instruments jouent les personnes inscrites au cours de guitare classique (<code>GUIT-CLASS</code>)</label></li>
+</ul>
+</section>
+<section id="location-de-dvd" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="location-de-dvd"><span class="header-section-number">3.2</span> Location de DVD <span class="emoji" data-emoji="cd">💿</span></h3>
+<p>Il fut un temps où des entreprises se spécialisaient dans la location de DVD. Dans cet exercice, une telle entreprise souhaite informatiser la gestion des prêts.</p>
+<p>Voici le Modèle de données :</p>
+<p><a href="./data/tp2-dvd-modele.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./data/tp2-dvd-modele.PNG" class="img-fluid"></a></p>
+<section id="création-de-tables" class="level4">
+<h4 class="anchored" data-anchor-id="création-de-tables">Création de tables</h4>
+<ul class="task-list">
+<li><p><label><input type="checkbox">Utiliser le code ci-dessous pour créer le schéma et les 3 tables de droite</label></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">SCHEMA</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> dvd <span class="kw">CASCADE</span>;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">SCHEMA</span> dvd;</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dvd.realisateur(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    num_realisateur    <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    nom_realisateur    TEXT,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    prenom_realisateur TEXT);</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dvd.film(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    num_film       <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    titre          TEXT,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    genre          TEXT,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    date_sortie    <span class="dt">DATE</span>);</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dvd.a_realise(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    num_film         <span class="dt">INT</span> <span class="kw">REFERENCES</span> dvd.film(num_film),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    num_realisateur  <span class="dt">INT</span> <span class="kw">REFERENCES</span> dvd.realisateur(num_realisateur),</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (num_film, num_realisateur));</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><label><input type="checkbox">Écrivez les requêtes qui permettent de créer les 3 autres tables</label></p></li>
+<li><p><label><input type="checkbox">Chargez les données avec ce <a href="./data/tp2-dvd-pop.sql" target="_blank">script sql</a></label></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Attention, ici l’ordre de création des tables a son importance.</p>
+<p>Reprenons et modifions l’exemple ci-dessus :</p>
+<ul>
+<li>imaginez que vous essayez de <u>créer en premier</u> la table <code>a_realise</code></li>
+<li>le champ <em>num_film</em> de cette table est une clé étrangère</li>
+<li>il référence la clé primaire <em>num_film</em> de la table <code>film</code></li>
+<li>or si la table <code>film</code> n’existe pas, à votre avis, que va-t-il se passer ?</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="requêtes" class="level4">
+<h4 class="anchored" data-anchor-id="requêtes">Requêtes</h4>
+<p>Donnez les requêtes pour obtenir :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Nom et prénom des adhérents</label></li>
+<li><label><input type="checkbox">Titre des films de la base</label></li>
+<li><label><input type="checkbox">Numéro d’adhérent de <code>Pierre DUCHEMIN</code></label></li>
+<li><label><input type="checkbox">Nom, Prénom et adresse de tous les <code>DUCHEMIN</code></label></li>
+<li><label><input type="checkbox">Numéro des DVD du film <code>la guerre des etoiles</code></label></li>
+</ul>
+<p>Pour les 3 requêtes suivantes, vous afficherez les noms et prénoms sur une seule colonne. Utilisez le mot clé <code>AS</code> pour renommer cette colonne à l’affichage.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Nom, Prénom des adhérents ayant emprunté le film <code>la guerre des etoiles</code></label></li>
+<li><label><input type="checkbox">Nom, Prénom des adhérents ayant au moins un emprunt en cours (la date de fin de l’emprunt est nulle)</label></li>
+<li><label><input type="checkbox">Nom, Prénom du réalisateur de la <em>Guerre des étoiles</em></label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Il existe différentes manières de concaténer du texte :</p>
+<ul>
+<li>fonctions PostgreSQL <em>CONCAT()</em>, <em>CONCAT_WS()</em></li>
+<li>opérateur <code>||</code></li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Titre des films empruntés par Pierre DUCHEMIN, ainsi que dates de début et de fin</label></li>
+<li><label><input type="checkbox">Nom des réalisateurs des films empruntés par Pierre DUCHEMIN</label></li>
+<li><label><input type="checkbox">Nom des réalisateurs de films de science fiction ou policiers</label></li>
+</ul>
+<p>Utilisons maintenant des méthodes d’agrégation pour répondre aux questions suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Nombre de DVD dont le coût de l’emprunt est inférieur ou égal à 2€</label></li>
+<li><label><input type="checkbox">Nombre d’emprunts ayant été effectués par Dominique Duchemin</label></li>
+<li><label><input type="checkbox">Nombre de films différents ayant été empruntés par Dominique Duchemin</label></li>
+<li><label><input type="checkbox">Numéro des DVD en ordre décroissant du nombre de fois qu’ils ont été empruntés</label></li>
+<li><label><input type="checkbox">Numéro du DVD le plus récemment acheté</label></li>
+</ul>
+<p>Quelques questions sur les dates :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Quelle a été la durée d’emprunt la plus longue</label></li>
+<li><label><input type="checkbox">En date du 10 août 2010, combien de DVD sont en cours d’emprunt</label></li>
+<li><label><input type="checkbox">Combien de dvd ont été achetés chaque année</label></li>
+</ul>
+<p>Pour terminer cet exercice, nous allons rechercher les titres des films qui n’ont jamais été empruntés. Procédons par étapes et écrivez les requêtes suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Différents numéros des films empruntés</label></li>
+<li><label><input type="checkbox">Titre des films ayant pour numéro 18, 19 ou 20</label></li>
+<li><label><input type="checkbox">Titre des films n’ayant pas pour numéros ni 18, ni 19, ni 20</label></li>
+<li><label><input type="checkbox">Titre des films n’ayant jamais été empruntés</label></li>
+</ul>
+</section>
+</section>
+<section id="rugby-world-cup" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="rugby-world-cup"><span class="header-section-number">3.3</span> Rugby World Cup <span class="emoji" data-emoji="rugby_football">🏉</span></h3>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Pour les plus rapides <span class="emoji" data-emoji="rocket">🚀</span></p>
+</div>
+</div>
+</div>
+<p>Nous souhaitons informatiser les résultats de la coupe du monde de rugby. Pour cela nous avons créé les deux tables suivantes : <em>equipe</em> et <em>matches</em>.</p>
+<p>Commencez par créez et charger les tables avec <a href="./data/tp2-rugby-create-pop.sql" target="_blank">ce script</a>.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Donner les noms des équipes qui ont joué à Nantes</label></li>
+<li><label><input type="checkbox">Contre quelles équipes a joué l’équipe de France ?</label></li>
+<li><label><input type="checkbox">Pour tous les matchs, affichez les informations suivantes :</label>
+<ul>
+<li>Date du match</li>
+<li>Nom de la première équipe</li>
+<li>nombre de points de la première équipe</li>
+<li>nombre de points de la deuxième équipe</li>
+<li>nom de la deuxième équipe et lieu du match</li>
+</ul></li>
+<li><label><input type="checkbox">Quels sont les noms d’équipes qui ont gagné au moins deux matchs</label></li>
+<li><label><input type="checkbox">Quels sont les noms des équipes qui ont perdu tous leurs matchs</label></li>
+<li><label><input type="checkbox">Pour chaque équipe donner le nombre de matchs qu’elles ont gagné ou perdu</label></li>
+<li><label><input type="checkbox">Donner le nombre total de points obtenus par équipe en classant les équipes de celle ayant marqué le plus à celle ayant marqué le moins</label></li>
+</ul>
+</section>
+</section>
+<section id="arrêtez-votre-service" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="arrêtez-votre-service">Arrêtez votre service</h2>
+<p>C’est la fin du TP, vous pouvez maintenant sauvegarder votre travail et libérer les ressources réservées :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez votre code et collez le sur votre machine dans un fichier <em>.sql</em></label>
+<ul>
+<li>par exemple dans <code>P:/Cours1A/UE3-Bases-de-donnees-relationnelles/TP2/tp2.sql</code></li>
+<li>ou en téléchargeant depuis CloudBeaver le fichier sql (petit bouton avec un dossier et une flèche vers le bas)</li>
+</ul></li>
+<li><label><input type="checkbox">Retournez sur la page d’accueil du Datalab</label></li>
+<li><label><input type="checkbox">Allez dans <em>Mes Services</em> et supprimez votre service</label></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/LeCoinStat\.github\.io\/Cours-de-Python\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/LeCoinStat/Cours-de-Python" class="external" target="_blank">Code source</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -85,6 +85,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 - **Avantages** :  
   - Configuration simplifiée pour débuter.  
   - Gestion facile des environnements virtuels avec `conda`. 
+---
 
 ##### **Jupyter Notebook**
 - **Qu'est-ce que Jupyter Notebook ?**  
@@ -114,7 +115,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 - **Fonctionnalités clés** :  
   - Sauvegarde automatique sur Google Drive.  
   - Support intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).  
-
+---
 
 ## Premiers pas avec Python
 
@@ -128,9 +129,7 @@ x = 5
 y = "Python"
 print(x, y)
 ```
-
-
-
+---
 ### Les Commentaires en Python
 
 Dans un script Python, tout ce qui suit le caractère `#` est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées **commentaires** et sont destinées à expliquer le code dans un langage humain.
@@ -194,7 +193,7 @@ Assurez-vous que vos commentaires reflètent toujours le fonctionnement réel du
 
 #### Différents types de commentaires
 
-##### Commentaires sur une ligne
+- Commentaires sur une ligne
 
 Ils s'écrivent avec `#` au début de la ligne.
 
@@ -203,22 +202,7 @@ Ils s'écrivent avec `#` au début de la ligne.
 print("Bienvenue en Python !")
 ```
 
-##### Commentaires multilignes
-
-Pour commenter plusieurs lignes, vous pouvez utiliser `#` au début de chaque ligne ou une chaîne de caractères triple (`"""` ou `'''`) si le commentaire est temporaire.
-
-```python
-# Début du programme
-# Ce script montre un exemple
-# avec des commentaires multilignes.
-```
-
-
-Voici le contenu en Markdown prêt à copier et coller :
-
-markdown
-Copier le code
-## Commentaires multilignes
+- Commentaires multilignes
 
 Pour commenter plusieurs lignes, vous pouvez utiliser `#` au début de chaque ligne ou une chaîne de caractères triple (`"""` ou `'''`) si le commentaire est temporaire.
 
@@ -236,3 +220,207 @@ Ce script illustre :
 - L'utilisation des commentaires
 """
 ```
+
+# Les variables en Python
+
+## Qu'est-ce qu'une variable ?
+Une **variable** est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes.
+
+---
+
+## Déclaration d'une variable
+En Python, il suffit d'utiliser un nom valide et de lui assigner une valeur avec le symbole `=`.
+
+**Exemple** :
+```python
+# Déclaration de variables
+nom = "Alice"   # Chaîne de caractères
+age = 25        # Entier
+pi = 3.14       # Nombre flottant
+est_actif = True  # Booléen
+```
+
+##  Les Types de Base en Python
+
+Python propose plusieurs types de données de base, essentiels pour la manipulation des informations.
+
+---
+### Comment connaître le type d'une variable en Python ?
+
+Python propose une fonction intégrée appelée `type()` pour déterminer le type de données d'une variable.
+
+---
+
+#### Utilisation de `type()`
+
+La fonction `type()` prend une variable en argument et retourne son type.
+
+Exemples de types que vous pourriez rencontrer :
+- `str` : Chaîne de caractères
+- `int` : Entier
+- `float` : Nombre décimal
+- `bool` : Valeur logique
+
+---
+####  Chaînes de caractères (`str`)
+Les chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.
+
+
+**Exemple** :
+```python
+# Déclaration de variables
+nom = "Alice"   # Chaîne de caractères
+type(nom)
+```
+---
+
+###   Entiers (`int`)
+Les entiers représentent des nombres sans décimales, qu'ils soient positifs ou négatifs.
+
+**Exemple** :
+```python
+# Déclaration de variables
+age = 25        # Entier
+type(age)
+```
+---
+
+###  Flottants (`float`)
+Les flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions.
+**Exemple** :
+```python
+# Déclaration de variables
+pi = 3.14       # Nombre flottant
+type(pi)
+```
+---
+
+### Booléens (`bool`)
+Les booléens sont des valeurs logiques, pouvant être `True` (vrai) ou `False` (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d'un programme.
+**Exemple** :
+```python
+# Déclaration de variables
+est_actif = True  # Booléen
+type(est_actif)
+```
+---
+
+### Résumé des types de base
+
+| Type   | Description                  |
+|--------|------------------------------|
+| `str`  | Chaîne de caractères         |
+| `int`  | Nombres entiers              |
+| `float`| Nombres décimaux             |
+| `bool` | Valeurs logiques (True/False)|
+
+---
+
+Ces types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.
+
+
+
+# Afficher des résultats en Python
+
+Afficher des résultats est une étape essentielle pour visualiser les données et comprendre ce que fait votre programme. En Python, l'affichage se fait principalement avec la fonction `print()`.
+
+---
+
+## La fonction `print()`
+
+`print()` est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.
+
+**Exemple** :
+```python
+print(valeur)
+```
+
+
+---
+
+## Afficher plusieurs éléments
+
+Vous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.
+
+**Exemple** :
+```python
+print("Bonjour", "Python", 3.10)
+```
+---
+
+## Formatage des chaînes
+
+Pour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :
+
+- **Concaténation avec `+`** : Combine des chaînes de caractères.
+
+```python
+nom = "Alice"
+print("Bonjour, " + nom)
+```
+- **Substitution avec `f-strings`** : Insère directement des variables dans une chaîne avec une syntaxe claire.
+
+```python
+nom = "Alice"
+age = 25
+print(f"Bonjour, je m'appelle {nom} et j'ai {age} ans.")
+```
+
+- **Méthode `format()`** : Insère des variables dans une chaîne avec des positions spécifiques.
+```python
+nom = "Alice"
+age = 25
+print("Bonjour, je m'appelle {} et j'ai {} ans.".format(nom, age))
+```
+---
+
+## Caractères spéciaux
+
+Certaines séquences spéciales permettent de modifier l'affichage :
+- `\\n` : Effectue un saut de ligne.
+- `\\t` : Ajoute une tabulation.
+
+Ces caractères sont utiles pour structurer l'affichage dans la console.
+
+```python
+print("Bonjour\\nPython")
+print("Nom:\\tAlice")
+```
+---
+
+## Contrôler la fin de l'affichage
+
+Par défaut, chaque appel à `print()` termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.
+```python
+print("Bonjour", end=" ")
+print("Python !")
+```
+---
+
+## Résumé
+
+| Méthode                | Description                                       |
+|------------------------|---------------------------------------------------|
+| `print()`              | Affiche des données dans la console.             |
+| Concaténation          | Combine plusieurs chaînes de caractères.          |
+| `f-strings`            | Insère des variables directement dans une chaîne.|
+| `.format()`            | Formate une chaîne avec des variables.           |
+| Caractères spéciaux    | Modifie l'apparence (nouvelle ligne, tabulation). |
+
+---
+
+
+# Les listes en Python 
+
+# Les Structures conditionnelles et les Boucles
+
+# La condition if
+
+# Les Types de données en Python
+## Les listes
+## Les dictionnaires
+## Les tuples
+## Les Sets
+## Les maps
+
+

@@ -445,14 +445,3 @@ if nombre > 0:
 ---
 
 
-#### Ajout de `else`
-L'instruction `else permet d'exécuter un bloc de code si la condition est fausse.
-
-```python
-nombre = -5
-if nombre > 0:
-    print("Le nombre est positif.")
-else:
-    print("Le nombre est négatif ou nul.")
-```
----

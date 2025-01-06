@@ -165,3 +165,27 @@ print(f"Âge : {age}")
 print("Bonjour et bienvenue dans le cours de Python !")
 
 ```
+
+#### Bonnes pratiques pour les commentaires
+
+- Soyez concis et clair
+Vos commentaires doivent aller à l’essentiel et être compréhensibles.
+
+```python
+# Calcule la somme des éléments de la liste
+total = sum([1, 2, 3, 4])
+```
+
+- Évitez les commentaires inutiles
+
+Ne commentez pas des choses évidentes que le code lui-même exprime clairement.
+
+**Exemple inutile** :
+```python
+# Attribue la valeur 5 à la variable x
+x = 5
+```
+
+- Mettez à jour vos commentaires
+
+Assurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.

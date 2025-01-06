@@ -228,3 +228,39 @@ Ce script illustre :
 Une **variable** est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes.
 
 ---
+
+
+## Déclaration d'une variable
+En Python, il suffit d'utiliser un nom valide et de lui assigner une valeur avec le symbole `=`.
+
+**Exemple** :
+```python
+# Déclaration de variables
+nom = "Alice"   # Chaîne de caractères
+age = 25        # Entier
+pi = 3.14       # Nombre flottant
+est_actif = True  # Booléen
+```
+
+##  Les Types de Base en Python
+
+Python propose plusieurs types de données de base, essentiels pour la manipulation des informations.
+
+---
+### Comment connaître le type d'une variable en Python ?
+
+Python propose une fonction intégrée appelée `type()` pour déterminer le type de données d'une variable.
+
+---
+
+#### Utilisation de `type()`
+
+La fonction `type()` prend une variable en argument et retourne son type.
+
+Exemples de types que vous pourriez rencontrer :
+- `str` : Chaîne de caractères
+- `int` : Entier
+- `float` : Nombre décimal
+- `bool` : Valeur logique
+
+---

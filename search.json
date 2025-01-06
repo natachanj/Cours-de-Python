@@ -49,6 +49,20 @@
     "text": "2.1 Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
   },
   {
+    "objectID": "doc/cours/introduction.html#déclaration-dune-variable",
+    "href": "doc/cours/introduction.html#déclaration-dune-variable",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "2.2 Déclaration d’une variable",
+    "text": "2.2 Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#les-types-de-base-en-python",
+    "href": "doc/cours/introduction.html#les-types-de-base-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "2.3 Les Types de Base en Python",
+    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique"
+  },
+  {
     "objectID": "doc/cours/introduction-slides.html#introduction",
     "href": "doc/cours/introduction-slides.html#introduction",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
@@ -68,6 +82,20 @@
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "Qu’est-ce qu’une variable ?",
     "text": "Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#déclaration-dune-variable",
+    "href": "doc/cours/introduction-slides.html#déclaration-dune-variable",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Déclaration d’une variable",
+    "text": "Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#les-types-de-base-en-python",
+    "href": "doc/cours/introduction-slides.html#les-types-de-base-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Les Types de Base en Python",
+    "text": "Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable."
   },
   {
     "objectID": "doc/tp/tp1.html",

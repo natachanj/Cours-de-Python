@@ -207,6 +207,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#les-variables-en-python" id="toc-les-variables-en-python" class="nav-link" data-scroll-target="#les-variables-en-python"><span class="header-section-number">2</span> Les variables en Python</a>
   <ul class="collapse">
   <li><a href="#quest-ce-quune-variable" id="toc-quest-ce-quune-variable" class="nav-link" data-scroll-target="#quest-ce-quune-variable"><span class="header-section-number">2.1</span> Qu’est-ce qu’une variable ?</a></li>
+  <li><a href="#déclaration-dune-variable" id="toc-déclaration-dune-variable" class="nav-link" data-scroll-target="#déclaration-dune-variable"><span class="header-section-number">2.2</span> Déclaration d’une variable</a></li>
+  <li><a href="#les-types-de-base-en-python" id="toc-les-types-de-base-en-python" class="nav-link" data-scroll-target="#les-types-de-base-en-python"><span class="header-section-number">2.3</span> Les Types de Base en Python</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="introduction-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -477,8 +479,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.1" class="anchored" data-anchor-id="quest-ce-quune-variable"><span class="header-section-number">2.1</span> Qu’est-ce qu’une variable ?</h2>
 <p>Une <strong>variable</strong> est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes.</p>
 <hr>
+</section>
+<section id="déclaration-dune-variable" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="déclaration-dune-variable"><span class="header-section-number">2.2</span> Déclaration d’une variable</h2>
+<p>En Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole <code>=</code>.</p>
+<p><strong>Exemple</strong> :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Déclaration de variables</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>nom <span class="op">=</span> <span class="st">"Alice"</span>   <span class="co"># Chaîne de caractères</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>age <span class="op">=</span> <span class="dv">25</span>        <span class="co"># Entier</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>pi <span class="op">=</span> <span class="fl">3.14</span>       <span class="co"># Nombre flottant</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>est_actif <span class="op">=</span> <span class="va">True</span>  <span class="co"># Booléen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="les-types-de-base-en-python" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="les-types-de-base-en-python"><span class="header-section-number">2.3</span> Les Types de Base en Python</h2>
+<p>Python propose plusieurs types de données de base, essentiels pour la manipulation des informations.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>### Comment connaître le type d’une variable en Python ?</td>
+</tr>
+<tr class="even">
+<td>Python propose une fonction intégrée appelée <code>type()</code> pour déterminer le type de données d’une variable.</td>
+</tr>
+</tbody>
+</table>
+<section id="utilisation-de-type" class="level4">
+<h4 class="anchored" data-anchor-id="utilisation-de-type">Utilisation de <code>type()</code></h4>
+<p>La fonction <code>type()</code> prend une variable en argument et retourne son type.</p>
+<p>Exemples de types que vous pourriez rencontrer : - <code>str</code> : Chaîne de caractères - <code>int</code> : Entier - <code>float</code> : Nombre décimal - <code>bool</code> : Valeur logique</p>
+<hr>
 
 
+</section>
 </section>
 </section>
 

@@ -102,14 +102,14 @@
     "href": "doc/cours/introduction.html",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "",
-    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez tous les jours pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\nAnaconda : Une distribution Python recommandée pour la data science, qui inclut des outils comme Jupyter Notebook et de nombreuses bibliothèques préinstallées.\n#### Outils recommandés pour coder en Python\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
   },
   {
     "objectID": "doc/cours/introduction.html#introduction",
     "href": "doc/cours/introduction.html#introduction",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "",
-    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez tous les jours pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\nAnaconda : Une distribution Python recommandée pour la data science, qui inclut des outils comme Jupyter Notebook et de nombreuses bibliothèques préinstallées.\n#### Outils recommandés pour coder en Python\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",
@@ -212,107 +212,121 @@
   {
     "objectID": "doc/cours/intro.html",
     "href": "doc/cours/intro.html",
-    "title": "Bases de Données Relationnelles et SQL",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "",
-    "text": "6h CM\n15h TP + 3h TD\nludovic.deneuville@ensai.fr\nbureau 161\nsur la base des cours de Benjamin Girault"
+    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
   },
   {
-    "objectID": "doc/cours/intro.html#bases-de-données-relationnelles-et-sql",
-    "href": "doc/cours/intro.html#bases-de-données-relationnelles-et-sql",
-    "title": "Bases de Données Relationnelles et SQL",
+    "objectID": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
+    "href": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "",
-    "text": "6h CM\n15h TP + 3h TD\nludovic.deneuville@ensai.fr\nbureau 161\nsur la base des cours de Benjamin Girault"
+    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
   },
   {
     "objectID": "doc/cours/intro.html#objectifs",
     "href": "doc/cours/intro.html#objectifs",
-    "title": "Bases de Données Relationnelles et SQL",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Objectifs",
-    "text": "Objectifs\n\nInterrogation\nCréation\nModélisation\nSavoir utiliser le langage SQL\n\n\nUML pour la modélisation"
+    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
   },
   {
-    "objectID": "doc/cours/intro.html#sql",
-    "href": "doc/cours/intro.html#sql",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "SQL",
-    "text": "SQL\n\nSyntaxe simple\nEfficace\nTrès utilisé\n\n\n\nCompétence indispensable du Datascientist\nça s’encapsule dans plein de langages (R, Python, Julia, Stata, SAS…)\nutile pour Big Data"
+    "objectID": "doc/cours/intro.html#python",
+    "href": "doc/cours/intro.html#python",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Python",
+    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
   },
   {
-    "objectID": "doc/cours/intro.html#conventions",
-    "href": "doc/cours/intro.html#conventions",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "Conventions",
-    "text": "Conventions\n\n&lt;...&gt; : texte à remplacer\n[...] : élément optionnel\nUne requête se termine par un ;\n-- Ce qui vient ensuite est commenté\n\n\n\nParfois possible d’utiliser /* commentaire */\n; : même si les logiciels souvent s’en moquent\n\n\n\nRequêtes SQL jolies\n\nretour à la ligne\nmots clés alignés\nMots clés en MAJUSCULE\n\n\n\nMots clés en MAJUSCULE, reste en minuscules\n\n\n\n\n\npasbien.sql\n\nSELECT c.nom AS club, AVG(j.elo) AS moyenne_elo FROM joueuse j INNER JOIN club c USING (id_club) WHERE mail IS NOT NULL GROUP BY c.nom ORDER BY 2 DESC;\n\n\n\n\n\n\n\n\n\nbien.sql\n\nSELECT c.nom AS club, \n       AVG(j.elo) AS moyenne_elo\n  FROM joueuse j \n INNER JOIN club c USING (id_club) \n WHERE j.mail IS NOT NULL \n GROUP BY c.nom \n ORDER BY 2 DESC;\n\n\n\n\n\n\n\nFaites un effort pour vous même et pour vos relecteurs"
+    "objectID": "doc/cours/intro.html#organisation-des-tp",
+    "href": "doc/cours/intro.html#organisation-des-tp",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Organisation des TP",
+    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
   },
   {
-    "objectID": "doc/cours/intro.html#les-tp",
-    "href": "doc/cours/intro.html#les-tp",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "Les TP",
-    "text": "Les TP\n\n5 TP + 1 TD\nBase de données : PostgreSQL\nOutils : Datalab, cloudBeaver, DBeaver\n\n\n\nBDD : PostgreSQL + DuckDB\nPeut-être un TP sur les VM\n\nDbeaver installé\nune bdd chacun sur un serveur ENSAI\n\n\n\n\nCe qu’il faut faire\n\nLire attentivement les consignes\nEssayer de résoudre par soi même\nChercher dans le cours / sur internet\nDemander de l’aide à ses camarades\nDemander de l’aide à l’enseignant\n\n\nça peut paraitre un peu infentilisant mais c’est nécessaire de le rappeler !!!\nsi je demande un setup… faites le sinon ça risque de péter plus tard.\n\n\n\nÀ ne pas faire\n\nPoster l’énoncé sur ChatGPT\nCopier / Coller la réponse sans rien comprendre\n\n\nSauf si vous voulez ne rien retenir…\n\nJe ne dis pas qu’il ne faut jamais utiliser les LLM\nça peut servir pour débgugger\nou pour des taches sans VA"
+    "objectID": "doc/cours/intro.html#ce-quil-faut-faire",
+    "href": "doc/cours/intro.html#ce-quil-faut-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ce qu’il faut faire",
+    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
+  },
+  {
+    "objectID": "doc/cours/intro.html#à-ne-pas-faire",
+    "href": "doc/cours/intro.html#à-ne-pas-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "À ne pas faire",
+    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
   },
   {
     "objectID": "doc/cours/intro.html#évaluation",
     "href": "doc/cours/intro.html#évaluation",
-    "title": "Bases de Données Relationnelles et SQL",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Évaluation",
-    "text": "Évaluation\n\nLundi 6 Janvier 10h\nDurée : 2h\nSur papier\nSans documents\n\n\n\npartie QCM\ndes requêtes SQL à écrire\npas de pièges\npour vérifier que vous retenez l’essentiel"
+    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations.\n\n\nPartie 2 : QCM.\n\nDurée : 2h.\nQuestions portant sur les concepts abordés pendant le cours et les TP.\nLa date sera définie à l’avance."
   },
   {
     "objectID": "doc/cours/intro.html#bibliographie",
     "href": "doc/cours/intro.html#bibliographie",
-    "title": "Bases de Données Relationnelles et SQL",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Bibliographie",
-    "text": "Bibliographie\n\nhttps://laurent-audibert.developpez.com/Cours-BD/\nhttps://upinfo.univ-cotedazur.fr/im/bases-de-donnees/\nhttps://oseox.fr/sql/\nhttps://learnsql.fr/blog/aide-memoire-pour-les-entretiens-sql/\nhttps://datascientest.com/base-de-donnees-definition\nhttps://www.postgresql.org/docs/current/sql.html\n\n\nImportance de la biblio en projet, stage\n\ndésolé s’il y a des fautes, j’ai écrit ce cours un peu dans l’urgence\nn’hésitez pas à me les notifier (pas de point bonus)\nmoi j’ai le droit, après je serai assez intransigent si vous laissez des fautes dans vos rapports"
+    "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nW3Schools Python Tutorial"
   },
   {
-    "objectID": "doc/cours/intro-slides.html#bases-de-données-relationnelles-et-sql",
-    "href": "doc/cours/intro-slides.html#bases-de-données-relationnelles-et-sql",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "Bases de Données Relationnelles et SQL",
-    "text": "Bases de Données Relationnelles et SQL\n\n6h CM\n15h TP + 3h TD\nludovic.deneuville@ensai.fr\nbureau 161\nsur la base des cours de Benjamin Girault"
+    "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
+    "href": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Programmation avec Python : Bases et Applications",
+    "text": "Programmation avec Python : Bases et Applications\n\n18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
   },
   {
-    "objectID": "doc/cours/intro-slides.html#objectifs",
-    "href": "doc/cours/intro-slides.html#objectifs",
-    "title": "Bases de Données Relationnelles et SQL",
+    "objectID": "doc/cours/intro-python-slides.html#objectifs",
+    "href": "doc/cours/intro-python-slides.html#objectifs",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Objectifs",
-    "text": "Objectifs\n\nInterrogation\nCréation\nModélisation\nSavoir utiliser le langage SQL\n\n\nUML pour la modélisation"
+    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
   },
   {
-    "objectID": "doc/cours/intro-slides.html#sql",
-    "href": "doc/cours/intro-slides.html#sql",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "SQL",
-    "text": "SQL\n\nSyntaxe simple\nEfficace\nTrès utilisé\n\n\n\nCompétence indispensable du Datascientist\nça s’encapsule dans plein de langages (R, Python, Julia, Stata, SAS…)\nutile pour Big Data"
+    "objectID": "doc/cours/intro-python-slides.html#python",
+    "href": "doc/cours/intro-python-slides.html#python",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Python",
+    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
   },
   {
-    "objectID": "doc/cours/intro-slides.html#conventions",
-    "href": "doc/cours/intro-slides.html#conventions",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "Conventions",
-    "text": "Conventions\n\n&lt;...&gt; : texte à remplacer\n[...] : élément optionnel\nUne requête se termine par un ;\n-- Ce qui vient ensuite est commenté\n\n\n\nParfois possible d’utiliser /* commentaire */\n; : même si les logiciels souvent s’en moquent"
+    "objectID": "doc/cours/intro-python-slides.html#organisation-des-tp",
+    "href": "doc/cours/intro-python-slides.html#organisation-des-tp",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Organisation des TP",
+    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
   },
   {
-    "objectID": "doc/cours/intro-slides.html#les-tp",
-    "href": "doc/cours/intro-slides.html#les-tp",
-    "title": "Bases de Données Relationnelles et SQL",
-    "section": "Les TP",
-    "text": "Les TP\n\n5 TP + 1 TD\nBase de données : PostgreSQL\nOutils : Datalab, cloudBeaver, DBeaver\n\n\n\nBDD : PostgreSQL + DuckDB\nPeut-être un TP sur les VM\n\nDbeaver installé\nune bdd chacun sur un serveur ENSAI"
+    "objectID": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
+    "href": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ce qu’il faut faire",
+    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
   },
   {
-    "objectID": "doc/cours/intro-slides.html#évaluation",
-    "href": "doc/cours/intro-slides.html#évaluation",
-    "title": "Bases de Données Relationnelles et SQL",
+    "objectID": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
+    "href": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "À ne pas faire",
+    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#évaluation",
+    "href": "doc/cours/intro-python-slides.html#évaluation",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Évaluation",
-    "text": "Évaluation\n\nLundi 6 Janvier 10h\nDurée : 2h\nSur papier\nSans documents\n\n\n\npartie QCM\ndes requêtes SQL à écrire\npas de pièges\npour vérifier que vous retenez l’essentiel"
+    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations.\n\n\nPartie 2 : QCM.\n\nDurée : 2h.\nQuestions portant sur les concepts abordés pendant le cours et les TP.\nLa date sera définie à l’avance."
   },
   {
-    "objectID": "doc/cours/intro-slides.html#bibliographie",
-    "href": "doc/cours/intro-slides.html#bibliographie",
-    "title": "Bases de Données Relationnelles et SQL",
+    "objectID": "doc/cours/intro-python-slides.html#bibliographie",
+    "href": "doc/cours/intro-python-slides.html#bibliographie",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Bibliographie",
-    "text": "Bibliographie\n\nhttps://laurent-audibert.developpez.com/Cours-BD/\nhttps://upinfo.univ-cotedazur.fr/im/bases-de-donnees/\nhttps://oseox.fr/sql/\nhttps://learnsql.fr/blog/aide-memoire-pour-les-entretiens-sql/\nhttps://datascientest.com/base-de-donnees-definition\nhttps://www.postgresql.org/docs/current/sql.html\n\n\nImportance de la biblio en projet, stage\n\ndésolé s’il y a des fautes, j’ai écrit ce cours un peu dans l’urgence\nn’hésitez pas à me les notifier (pas de point bonus)\nmoi j’ai le droit, après je serai assez intransigent si vous laissez des fautes dans vos rapports"
+    "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nW3Schools Python Tutorial"
   },
   {
     "objectID": "doc/tp/tp1.html",

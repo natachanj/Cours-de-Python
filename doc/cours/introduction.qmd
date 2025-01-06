@@ -484,17 +484,3 @@ else:
 ```
 ---
 
-### Comparaisons en Python
-
-Les opérateurs de comparaison permettent d'évaluer des expressions.
-
-| Opérateur | Description                      |
-|-----------|----------------------------------|
-| `==`      | Égalité                          |
-| `!=`      | Différence                       |
-| `<`       | Inférieur à                      |
-| `<=`      | Inférieur ou égal à              |
-| `>`       | Supérieur à                      |
-| `>=`      | Supérieur ou égal à              |
-
----

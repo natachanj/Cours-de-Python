@@ -189,3 +189,42 @@ x = 5
 - Mettez à jour vos commentaires
 
 Assurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.
+
+
+
+#### Différents types de commentaires
+
+- Commentaires sur une ligne
+
+Ils s'écrivent avec `#` au début de la ligne.
+
+```python
+# Ce programme affiche un message
+print("Bienvenue en Python !")
+```
+
+- Commentaires multilignes
+
+Pour commenter plusieurs lignes, vous pouvez utiliser `#` au début de chaque ligne ou une chaîne de caractères triple (`"""` ou `'''`) si le commentaire est temporaire.
+
+```python
+# Début du programme
+# Ce script montre un exemple
+# avec des commentaires multilignes.
+```
+Ou avec une chaîne triple :
+
+```python
+"""
+Ce script illustre :
+- L'utilisation de variables
+- L'utilisation des commentaires
+"""
+```
+
+# Les variables en Python
+
+## Qu'est-ce qu'une variable ?
+Une **variable** est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes.
+
+---

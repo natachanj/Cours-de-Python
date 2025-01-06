@@ -105,6 +105,13 @@
     "text": "3.6 Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
   },
   {
+    "objectID": "doc/cours/introduction.html#les-structures-conditionnelles",
+    "href": "doc/cours/introduction.html#les-structures-conditionnelles",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "4.1 Les Structures conditionnelles",
+    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie."
+  },
+  {
     "objectID": "doc/cours/introduction-slides.html#introduction",
     "href": "doc/cours/introduction-slides.html#introduction",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
@@ -180,6 +187,13 @@
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "Résumé",
     "text": "Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#les-structures-conditionnelles",
+    "href": "doc/cours/introduction-slides.html#les-structures-conditionnelles",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Les Structures conditionnelles",
+    "text": "Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie."
   },
   {
     "objectID": "doc/tp/tp1.html",

@@ -420,3 +420,26 @@ Les structures conditionnelles et les boucles permettent de contrôler le flux d
 ## Les Structures conditionnelles
 
 Les structures conditionnelles permettent d'exécuter des blocs de code uniquement si une condition est remplie.
+
+
+---
+
+### La condition `if`
+
+La condition `if` est utilisée pour vérifier si une expression est vraie. Si c'est le cas, le bloc de code associé est exécuté.
+
+#### Syntaxe de base 
+```python
+if condition:
+    # Code à exécuter si la condition est vraie
+```
+---
+#### Exemple simple
+```python
+nombre = 10
+
+if nombre > 0:
+    print("Le nombre est positif.")
+
+```
+---

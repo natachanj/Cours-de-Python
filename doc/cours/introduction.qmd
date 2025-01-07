@@ -24,8 +24,6 @@ from: markdown+emoji
 
 # Introduction à python
 
-
-
 ## Premiers pas avec Python
 
 Python est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.

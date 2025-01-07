@@ -542,13 +542,5 @@ Les boucles permettent de répéter des actions tant qu'une condition est vraie 
 ---
 
 
-### Contrôle des boucles
 
-| Instruction | Description                                                                 |
-|-------------|-----------------------------------------------------------------------------|
-| `break`     | Interrompt la boucle immédiatement, même si la condition n'est pas terminée. |
-| `continue`  | Passe à l'itération suivante sans exécuter le reste du bloc de code actuel.  |
-| `pass`      | Ne fait rien. Utilisé comme espace réservé dans une boucle ou une condition.|
-
----
 

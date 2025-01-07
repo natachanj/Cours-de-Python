@@ -130,7 +130,7 @@
     "href": "doc/cours/typedonnees.html#les-listes-list",
     "title": "Les Types de données en Python",
     "section": "1 Les Listes (list)",
-    "text": "1 Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques : - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
+    "text": "1 Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types.\n\n\n\nCréation de listes\nLes listes peuvent être créées à partir d’une série d’éléments séparés par des virgules et entourés de crochets [ ].\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
   },
   {
     "objectID": "doc/cours/typedonnees.html#les-tuples-tuple",
@@ -147,11 +147,18 @@
     "text": "3 Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\nExemple :\npersonne = {\"nom\": \"Alice\", \"age\": 25, \"ville\": \"Paris\"}\nprint(personne[\"nom\"])  # Affiche \"Alice\"\n\n# Modifier la valeur associée à une clé\npersonne[\"age\"] = 26\nprint(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}"
   },
   {
+    "objectID": "doc/cours/typedonnees.html#les-ensembles-set",
+    "href": "doc/cours/typedonnees.html#les-ensembles-set",
+    "title": "Les Types de données en Python",
+    "section": "4 Les Ensembles (set)",
+    "text": "4 Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc.\n\nExemple :\nlettres = {\"a\", \"b\", \"c\"}\nnombres = {1, 2, 3, 2}  # Les doublons sont supprimés\nprint(nombres)  # Affiche : {1, 2, 3}"
+  },
+  {
     "objectID": "doc/cours/typedonnees-slides.html#les-listes-list",
     "href": "doc/cours/typedonnees-slides.html#les-listes-list",
     "title": "Les Types de données en Python",
     "section": "Les Listes (list)",
-    "text": "Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques : - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
+    "text": "Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types."
   },
   {
     "objectID": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
@@ -166,6 +173,13 @@
     "title": "Les Types de données en Python",
     "section": "Les Dictionnaires (dict)",
     "text": "Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\nExemple :\npersonne = {\"nom\": \"Alice\", \"age\": 25, \"ville\": \"Paris\"}\nprint(personne[\"nom\"])  # Affiche \"Alice\"\n\n# Modifier la valeur associée à une clé\npersonne[\"age\"] = 26\nprint(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-ensembles-set",
+    "href": "doc/cours/typedonnees-slides.html#les-ensembles-set",
+    "title": "Les Types de données en Python",
+    "section": "Les Ensembles (set)",
+    "text": "Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc.\n\nExemple :\nlettres = {\"a\", \"b\", \"c\"}\nnombres = {1, 2, 3, 2}  # Les doublons sont supprimés\nprint(nombres)  # Affiche : {1, 2, 3}"
   },
   {
     "objectID": "doc/tp/tp1.html",

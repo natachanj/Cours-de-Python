@@ -193,9 +193,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#les-listes-list" id="toc-les-listes-list" class="nav-link active" data-scroll-target="#les-listes-list"><span class="header-section-number">1</span> Les Listes (<code>list</code>)</a></li>
+  <li><a href="#les-listes-list" id="toc-les-listes-list" class="nav-link active" data-scroll-target="#les-listes-list"><span class="header-section-number">1</span> Les Listes (<code>list</code>)</a>
+  <ul class="collapse">
+  <li><a href="#création-de-listes" id="toc-création-de-listes" class="nav-link" data-scroll-target="#création-de-listes">Création de listes</a></li>
+  </ul></li>
   <li><a href="#les-tuples-tuple" id="toc-les-tuples-tuple" class="nav-link" data-scroll-target="#les-tuples-tuple"><span class="header-section-number">2</span> Les Tuples (<code>tuple</code>)</a></li>
   <li><a href="#les-dictionnaires-dict" id="toc-les-dictionnaires-dict" class="nav-link" data-scroll-target="#les-dictionnaires-dict"><span class="header-section-number">3</span> Les Dictionnaires (<code>dict</code>)</a></li>
+  <li><a href="#les-ensembles-set" id="toc-les-ensembles-set" class="nav-link" data-scroll-target="#les-ensembles-set"><span class="header-section-number">4</span> Les Ensembles (<code>set</code>)</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="typedonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
@@ -241,13 +245,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="les-listes-list" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="les-listes-list"><span class="header-section-number">1</span> Les Listes (<code>list</code>)</h2>
 <p>Les listes sont des <strong>collections ordonnées</strong> et <strong>modifiables</strong>. Elles peuvent contenir des éléments de types différents.</p>
-<p><strong>Caractéristiques :</strong> - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.</p>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Ordonnées</strong> : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.</li>
+<li><strong>Modifiables</strong> : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).</li>
+<li><strong>Hétérogènes</strong> : Une liste peut contenir des éléments de différents types.</li>
+</ul>
+<hr>
+<section id="création-de-listes" class="level3">
+<h3 class="anchored" data-anchor-id="création-de-listes">Création de listes</h3>
+<p>Les listes peuvent être créées à partir d’une série d’éléments séparés par des virgules et entourés de crochets <code>[ ]</code>.</p>
 <p><strong>Exemple :</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"banane"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb1-2"><a href="#cb1-2"></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb1-3"><a href="#cb1-3"></a>fruits.append(<span class="st">"orange"</span>)  <span class="co"># Ajoute un élément</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
+</section>
 </section>
 <section id="les-tuples-tuple" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="les-tuples-tuple"><span class="header-section-number">2</span> Les Tuples (<code>tuple</code>)</h2>
@@ -279,6 +293,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Modifier la valeur associée à une clé</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a>personne[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">26</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a><span class="bu">print</span>(personne)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="les-ensembles-set" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="les-ensembles-set"><span class="header-section-number">4</span> Les Ensembles (<code>set</code>)</h2>
+<p>Les ensembles sont des <strong>collections non ordonnées</strong> et <strong>uniques</strong> (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.</p>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Non ordonnés</strong> : Les éléments n’ont pas de position fixe.</li>
+<li><strong>Éléments uniques</strong> : Les doublons sont automatiquement supprimés.</li>
+<li><strong>Opérations mathématiques</strong> : Permettent des opérations comme l’union, l’intersection, la différence, etc.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
+<span id="cb4-2"><a href="#cb4-2"></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

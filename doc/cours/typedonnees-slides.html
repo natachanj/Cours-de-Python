@@ -215,7 +215,16 @@ Natacha Njongwa Yepnga
 <section id="les-listes-list" class="title-slide slide level2 center">
 <h2>Les Listes (<code>list</code>)</h2>
 <p>Les listes sont des <strong>collections ordonnées</strong> et <strong>modifiables</strong>. Elles peuvent contenir des éléments de types différents.</p>
-<p><strong>Caractéristiques :</strong> - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.</p>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Ordonnées</strong> : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.</li>
+<li><strong>Modifiables</strong> : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).</li>
+<li><strong>Hétérogènes</strong> : Une liste peut contenir des éléments de différents types.</li>
+</ul>
+</section>
+<section id="création-de-listes" class="slide level3">
+<h3>Création de listes</h3>
+<p>Les listes peuvent être créées à partir d’une série d’éléments séparés par des virgules et entourés de crochets <code>[ ]</code>.</p>
 <p><strong>Exemple :</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"banane"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb1-2"><a></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
@@ -258,6 +267,21 @@ Natacha Njongwa Yepnga
 <span id="cb3-4"><a></a><span class="co"># Modifier la valeur associée à une clé</span></span>
 <span id="cb3-5"><a></a>personne[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">26</span></span>
 <span id="cb3-6"><a></a><span class="bu">print</span>(personne)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="les-ensembles-set" class="title-slide slide level2 center">
+<h2>Les Ensembles (<code>set</code>)</h2>
+<p>Les ensembles sont des <strong>collections non ordonnées</strong> et <strong>uniques</strong> (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.</p>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Non ordonnés</strong> : Les éléments n’ont pas de position fixe.</li>
+<li><strong>Éléments uniques</strong> : Les doublons sont automatiquement supprimés.</li>
+<li><strong>Opérations mathématiques</strong> : Permettent des opérations comme l’union, l’intersection, la différence, etc.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
+<span id="cb4-2"><a></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
+<span id="cb4-3"><a></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

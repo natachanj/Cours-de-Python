@@ -1,0 +1,67 @@
+
+### Installer et configurer Python
+
+#### **Installer Python**
+
+- Téléchargez Python depuis [python.org](https://www.python.org/).  
+
+### **Outils recommandés pour coder en Python**
+
+##### **Visual Studio Code (VS Code)**  
+- **Qu'est-ce que VS Code ?**  
+  - Un éditeur de code léger, puissant et extensible, développé par Microsoft.  
+  - Idéal pour écrire et exécuter des scripts Python grâce à ses extensions.  
+
+- **Installer VS Code** :  
+  - Téléchargez-le sur [code.visualstudio.com](https://code.visualstudio.com/).  
+  - Installez l'extension **Python** via le **Visual Studio Code Marketplace** :
+    1. Ouvrez VS Code.
+    2. Allez dans l'onglet des extensions (icône avec des blocs).
+    3. Recherchez **Python** et cliquez sur "Installer".
+
+
+---
+
+##### **Anaconda**
+- **Qu'est-ce qu'Anaconda ?**  
+  - Une distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d'environnements.  
+  - Idéal pour la data science et le machine learning.  
+
+- **Installer Anaconda** :  
+  - Téléchargez-le depuis [anaconda.com](https://www.anaconda.com/products/distribution).  
+  - Suivez les instructions pour votre système d'exploitation (Windows, macOS, Linux).  
+
+- **Avantages** :  
+  - Configuration simplifiée pour débuter.  
+  - Gestion facile des environnements virtuels avec `conda`. 
+---
+
+##### **Jupyter Notebook**
+- **Qu'est-ce que Jupyter Notebook ?**  
+  - Un environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés "cellules").  
+  - Idéal pour la data science et les visualisations.  
+
+- **Installer Jupyter Notebook** :  
+  - Si vous avez Anaconda, Jupyter est préinstallé.  
+  - Sinon, installez-le avec `pip` :  
+    ```bash
+    pip install notebook
+    ```
+
+---
+
+##### **Google Colab**
+- **Qu'est-ce que Google Colab ?**  
+  - Un environnement en ligne gratuit pour coder en Python, développé par Google.  
+  - Aucun besoin d'installer Python ou Jupyter : tout fonctionne dans votre navigateur.  
+  - Avantage : accès à des GPU gratuits pour le machine learning.
+
+- **Accéder à Google Colab** :  
+  1. Rendez-vous sur [colab.research.google.com](https://colab.research.google.com/).  
+  2. Connectez-vous avec un compte Google.  
+  3. Créez un nouveau notebook en cliquant sur **New Notebook**.
+
+- **Fonctionnalités clés** :  
+  - Sauvegarde automatique sur Google Drive.  
+  - Support intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).  
+---

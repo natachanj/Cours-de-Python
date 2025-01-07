@@ -490,6 +490,13 @@
     "text": "Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations."
   },
   {
+    "objectID": "doc/cours/introduction-slides.html#résumé-1",
+    "href": "doc/cours/introduction-slides.html#résumé-1",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Résumé",
+    "text": "Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
+  },
+  {
     "objectID": "doc/cours/introduction.html",
     "href": "doc/cours/introduction.html",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
@@ -585,6 +592,13 @@
     "href": "doc/cours/introduction.html#les-boucles-en-python",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "4.2 Les Boucles en Python",
-    "text": "4.2 Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations.\n\n\nLa boucle for\n\nLa boucle for est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).\nChaque élément de la séquence est traité successivement.\n\n\n\n\nLa boucle while\n\nLa boucle while répète un bloc de code tant qu’une condition est vraie.\nAttention aux boucles infinies : assurez-vous que la condition de sortie est atteinte."
+    "text": "4.2 Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations.\n\n\nLa boucle for\n\nLa boucle for est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).\nChaque élément de la séquence est traité successivement.\n\n\n\n\nLa boucle while\n\nLa boucle while répète un bloc de code tant qu’une condition est vraie.\nAttention aux boucles infinies : assurez-vous que la condition de sortie est atteinte.\n\n\n\n\nContrôle des boucles\n\n\n\n\n\n\n\nInstruction\nDescription\n\n\n\n\nbreak\nInterrompt la boucle immédiatement, même si la condition n’est pas terminée.\n\n\ncontinue\nPasse à l’itération suivante sans exécuter le reste du bloc de code actuel.\n\n\npass\nNe fait rien. Utilisé comme espace réservé dans une boucle ou une condition."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#résumé-1",
+    "href": "doc/cours/introduction.html#résumé-1",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "4.3 Résumé",
+    "text": "4.3 Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
   }
 ]

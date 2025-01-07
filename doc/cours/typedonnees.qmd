@@ -362,16 +362,131 @@ Les dictionnaires sont des **collections non ordonnées** (dans les versions ant
 - **Modifiables** : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.
 - **Clés uniques** : Une clé ne peut être présente qu'une seule fois.
 
+### Création de Dictionnaires
+
+Un dictionnaire peut être créé en utilisant des accolades `{}` et des paires clé-valeur séparées par des deux-points `:`.
+
 **Exemple :**
 ```python
-personne = {"nom": "Alice", "age": 25, "ville": "Paris"}
-print(personne["nom"])  # Affiche "Alice"
-
-# Modifier la valeur associée à une clé
-personne["age"] = 26
-print(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
+mon_dict = {
+    'nom': 'Alice',
+    'age': 25,
+    'ville': 'Paris'
+}
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
 ```
 
+### Opérations CRUD sur les Dictionnaires
+
+Les dictionnaires permettent les opérations fondamentales **CRUD** (Create, Read, Update, Delete) comme suit :
+
+- **Create (Créer)** : Ajouter de nouvelles paires clé-valeur.
+- **Read (Lire)** : Accéder à une valeur via sa clé.
+- **Update (Mettre à jour)** : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.
+- **Delete (Supprimer)** : Supprimer une paire clé-valeur.
+
+#### Créer un Dictionnaire (Create)
+
+**Exemple :**
+```python
+# Créer un dictionnaire vide
+mon_dict = {}
+
+# Ajouter des paires clé-valeur
+mon_dict['nom'] = 'Alice'
+mon_dict['age'] = 25
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}
+```
+#### Lire les Données (Read)
+
+**Accéder à une valeur par sa clé :**
+```python
+mon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+print(mon_dict['nom'])  # Affiche : Alice
+```
+
+**Utiliser la méthode `get()` pour éviter les erreurs :**
+```python
+print(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable
+```
+
+**Parcourir un dictionnaire :**
+```python
+for cle, valeur in mon_dict.items():
+    print(f'{cle} : {valeur}')
+```
+
+**Clés et valeurs :**
+```python
+print(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville'])
+print(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])
+```
+
+#### Mettre à Jour un Dictionnaire (Update)
+
+**Ajouter ou modifier une clé :**
+```python
+mon_dict = {'nom': 'Alice', 'age': 25}
+mon_dict['ville'] = 'Paris'  # Ajout
+mon_dict['age'] = 26         # Mise à jour
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
+```
+
+**Fusionner deux dictionnaires :**
+```python
+autre_dict = {'pays': 'France', 'profession': 'Ingénieure'}
+mon_dict.update(autre_dict)
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}
+```
+
+#### Supprimer des Éléments (Delete)
+
+**Supprimer une paire clé-valeur :**
+```python
+mon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+del mon_dict['age']
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}
+```
+
+**Supprimer et retourner une valeur avec `pop()` :**
+```python
+ville = mon_dict.pop('ville')
+print(ville)  # Affiche : Paris
+print(mon_dict)  # Affiche : {'nom': 'Alice'}
+```
+
+**Supprimer tous les éléments avec `clear()` :**
+```python
+mon_dict.clear()
+print(mon_dict)  # Affiche : {}
+```
+
+### Avantages des Dictionnaires
+
+- **Rapidité** : Accès direct aux valeurs via les clés.
+- **Flexible** : Peut contenir des données de types variés.
+- **Organisation** : Idéal pour structurer des données complexes.
+
+**Exemple :**
+```python
+utilisateur = {
+    'id': 123,
+    'nom': 'Alice',
+    'contact': {
+        'email': 'alice@example.com',
+        'telephone': '123-456-7890'
+    }
+}
+print(utilisateur['contact']['email'])  # Affiche : alice@example.com
+```
+
+### Différences entre Listes et Dictionnaires
+
+| Caractéristique       | Liste                         | Dictionnaire                   |
+|-----------------------|-------------------------------|---------------------------------|
+| **Accès aux données**| Par index numérique          | Par clé                        |
+| **Structure**        | Séquence ordonnée            | Paires clé-valeur              |
+| **Mutabilité**       | Mutable                      | Mutable (clés immuables)       |
 
 ##  Les Ensembles (`set`)
 

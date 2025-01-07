@@ -6,12 +6,12 @@
 
 ### **Séance 1 : Introduction, variables, types de données et structures de contrôle (3h)**  
 - Présentation de Python et conventions de nommage.  
-- Variables et types de données : `int`, `float`, `str`, `bool`, listes, dictionnaires, tuples, sets.  
-- Introduction à `map` et `lambda`.  
+- Variables et types de données : `int`, `float`, `str`, `bool`
 - Structures de contrôle : `if`, `elif`, `else`, `for`, `while`.  
 
 ### **Séance 2 : Fonctions, modules et introduction à la Programmation Orientée Objet (POO) (3h)**  
 
+- **Types de données ;** , listes, dictionnaires, tuples, sets.  
 - **Fonctions :**  
   - Définir des fonctions (`def`) et travailler avec des paramètres et des valeurs de retour.  
   - Fonctions anonymes (`lambda`) et leur usage pratique.  
@@ -22,7 +22,6 @@
 - **Introduction à la Programmation Orientée Objet (POO) :**  
   - Concepts clés : classes, objets, attributs, méthodes.  
   - Créer une classe simple et instancier des objets.  
-  - Exercice : Modéliser une classe `Voiture` avec des attributs (`marque`, `modele`, `année`) et une méthode (`afficher_details`).
 
 
 ### **Séance 3 : Analyse des données avec NumPy et Pandas (3h)**  
@@ -49,8 +48,8 @@
 
 ## **Travaux Pratiques (TP)**
 
-- **TP1** : Variables, types de données et structures de contrôle.  
-- **TP2** : Création de fonctions et structuration modulaire.  
+- **TP1** : Variables et structures de contrôle.  
+- **TP2** : Création de fonctions et structuration modulaire et Types de données.  
 - **TP3** : Analyse des données avec NumPy et Pandas.  
 - **TP4** : Visualisation et statistiques avec Python.  
 - **TP5** : Machine Learning : régression linéaire et classification.  

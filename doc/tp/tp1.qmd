@@ -1,6 +1,6 @@
 ---
 title: "Bien Démarrer Avec Python"
-description: Introduction à Python et Structures de Contrôle
+description: "Sélectionner, Filtrer, Agréger"
 author: "Natacha NJONGWA YEPNGA"
 format: 
   html:
@@ -11,38 +11,3 @@ from: markdown+emoji
 number-sections: true
 number-depth: 3
 ---
-
-# Contenu du TP : Introduction à Python et Structures de Contrôle
-
-Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données. 
-
-## Partie 1 : Bien démarrer avec Python
-Ce fichier introduit les concepts de base pour débuter avec Python :
-- Installation et configuration de l'environnement Python.
-- Premiers pas avec les types de données (entiers, flottants, chaînes, etc.).
-- Utilisation de l'instruction `print()` pour afficher des résultats.
-- Premiers calculs et manipulations de variables.
-
-[Télécharger le notebook : Bien démarrer avec Python](00_Bien_Demarrer_Avec_Python.ipynb){.external}
-
-
----
-
-## Partie 2 : Structures de Contrôle et Types de Données
-Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :
-- Les structures de contrôle comme les boucles `for` et `while`.
-- Les conditions `if`, `elif`, et `else`.
-- Manipulation des types de données complexes comme les listes, dictionnaires, et ensembles.
-- Exercices pratiques pour appliquer les concepts étudiés.
-
-- [Télécharger le notebook : Structures de contrôle et types de données](01_Structures_Controles_Types_Donnees.ipynb){.external}
-
----
-
-## Objectif
-À la fin de ce TP, vous serez capable de :
-- Manipuler les types de données de base en Python.
-- Utiliser des structures conditionnelles et des boucles pour contrôler l'exécution de votre code.
-- Résoudre des exercices pratiques pour renforcer vos compétences.
-
-Téléchargez les fichiers et commencez votre apprentissage dès maintenant !

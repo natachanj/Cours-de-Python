@@ -498,9 +498,125 @@ Les ensembles sont des **collections non ordonnées** et **uniques** (chaque él
 - **Éléments uniques** : Les doublons sont automatiquement supprimés.
 - **Opérations mathématiques** : Permettent des opérations comme l'union, l'intersection, la différence, etc.
 
+### Création d'Ensembles
+
+Un ensemble peut être créé en utilisant la fonction `set()` ou en plaçant des éléments entre accolades `{}`.
+
 **Exemple :**
 ```python
-lettres = {"a", "b", "c"}
-nombres = {1, 2, 3, 2}  # Les doublons sont supprimés
-print(nombres)  # Affiche : {1, 2, 3}
+mon_set = {1, 2, 3, 4}
+print(mon_set)  # Affiche : {1, 2, 3, 4}
+
+# Création d'un ensemble à partir d'une liste
+mon_set = set([1, 2, 2, 3])
+print(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)
 ```
+
+### Opérations CRUD sur les Ensembles
+
+Les ensembles prennent en charge les opérations fondamentales **CRUD** (Create, Read, Update, Delete) :
+
+- **Create (Créer)** : Ajouter de nouveaux éléments.
+- **Read (Lire)** : Vérifier la présence d'un élément.
+- **Update (Mettre à jour)** : Ajouter ou supprimer des éléments.
+- **Delete (Supprimer)** : Supprimer des éléments ou réinitialiser l'ensemble.
+
+#### Créer un Ensemble (Create)
+
+**Exemple :**
+```python
+# Créer un ensemble vide
+mon_set = set()
+
+# Ajouter des éléments
+mon_set.add(1)
+mon_set.add(2)
+print(mon_set)  # Affiche : {1, 2}
+```
+
+#### Lire les Données (Read)
+
+**Vérifier la présence d'un élément :**
+```python
+mon_set = {1, 2, 3}
+print(1 in mon_set)  # Affiche : True
+print(4 in mon_set)  # Affiche : False
+```
+
+**Parcourir un ensemble avec une boucle :**
+```python
+for element in mon_set:
+    print(element)
+```
+
+**Taille de l'ensemble :**
+```python
+print(len(mon_set))  # Affiche : 3
+```
+
+#### Mettre à Jour un Ensemble (Update)
+
+**Ajouter des éléments :**
+```python
+mon_set = {1, 2}
+mon_set.add(3)  # Ajoute un seul élément
+mon_set.update([4, 5])  # Ajoute plusieurs éléments
+print(mon_set)  # Affiche : {1, 2, 3, 4, 5}
+```
+
+**Supprimer des éléments :**
+
+Avec `remove()` :
+```python
+mon_set.remove(2)  # Supprime 2 de l'ensemble
+print(mon_set)  # Affiche : {1, 3, 4, 5}
+```
+
+Avec `discard()` (ne lève pas d'erreur si l'élément n'existe pas) :
+```python
+mon_set.discard(10)  # Aucun effet si 10 n'est pas présent
+```
+
+#### Supprimer des Éléments (Delete)
+
+**Supprimer un élément avec `pop()` :**
+```python
+mon_set = {1, 2, 3}
+element = mon_set.pop()  # Supprime et retourne un élément aléatoire
+print(element)  # Affiche : 1 (ou un autre élément)
+print(mon_set)  # Affiche : {2, 3}
+```
+
+**Supprimer tous les éléments avec `clear()` :**
+```python
+mon_set.clear()
+print(mon_set)  # Affiche : set()
+```
+
+### Opérations Mathématiques avec les Ensembles
+
+Les ensembles permettent des opérations mathématiques classiques :
+
+**Union :** Combine tous les éléments des deux ensembles.
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}
+```
+
+**Intersection :** Récupère les éléments communs aux deux ensembles.
+```python
+print(set1 & set2)  # Affiche : {3}
+```
+
+**Différence :** Récupère les éléments présents dans le premier ensemble mais pas dans le second.
+```python
+print(set1 - set2)  # Affiche : {1, 2}
+```
+
+**Différence Symétrique :** Récupère les éléments présents dans un seul des deux ensembles.
+```python
+print(set1 ^ set2)  # Affiche : {1, 2, 4, 5}
+```
+
+

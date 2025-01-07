@@ -112,6 +112,19 @@ pre, code { /* Styles pour les blocs de code */
   border: solid 2px black;
 }
 
+
+
+code { /* Styles pour les balises <code> inline */
+  background-color: transparent !important; /* Supprime l'arrière-plan */
+  color: gray !important; /* Texte en gris */
+  padding: 0 !important; /* Supprime les espaces internes */
+  margin: 0 !important; /* Supprime les marges */
+  border: none !important; /* Supprime toute bordure */
+  font-family: "Courier New", Courier, monospace; /* Assure une police adaptée au code */
+  display: inline; /* Assure un affichage en ligne */
+}
+
+
 /************************************************************/
 /* Buttons                                                  */
 /************************************************************/

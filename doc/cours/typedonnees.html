@@ -267,7 +267,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Python propose des types de données avancés pour manipuler des collections de données ou des structures complexes. Ces types sont essentiels pour gérer des informations organisées.</p>
-<hr>
 <section id="les-listes-list" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="les-listes-list"><span class="header-section-number">1</span> Les Listes (<code>list</code>)</h2>
 <p>Les listes sont des <strong>collections ordonnées</strong> et <strong>modifiables</strong>. Elles peuvent contenir des éléments de types différents.</p>
@@ -297,6 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Update (Mettre à jour)</strong> : Modifier les données existantes.</li>
 <li><strong>Delete (Supprimer)</strong> : Effacer les données.</li>
 </ul>
+<hr>
 <section id="créer-une-liste-create" class="level4">
 <h4 class="anchored" data-anchor-id="créer-une-liste-create">Créer une Liste (Create)</h4>
 <p>Pour créer une liste, utilisez des crochets (<code>[]</code>) et séparez les éléments par des virgules.</p>
@@ -327,6 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Exemple :</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    <span class="bu">print</span>(fruit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="longueur-de-la-liste" class="level4">
 <h4 class="anchored" data-anchor-id="longueur-de-la-liste">Longueur de la liste</h4>
@@ -412,6 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="avec-del">Avec <code>del</code> :</h4>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">del</span> fruits[<span class="dv">0</span>]  <span class="co"># Supprime le premier élément</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
 <section id="utilisation-de-pop" class="level3">
@@ -424,6 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-4"><a href="#cb13-4"></a>dernier_fruit <span class="op">=</span> fruits.pop()  <span class="co"># Supprime "tomate" de la liste</span></span>
 <span id="cb13-5"><a href="#cb13-5"></a><span class="bu">print</span>(dernier_fruit)  <span class="co"># Affiche : "tomate"</span></span>
 <span id="cb13-6"><a href="#cb13-6"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="supprimer-tous-les-éléments-avec-clear" class="level3">
 <h3 class="anchored" data-anchor-id="supprimer-tous-les-éléments-avec-clear">Supprimer tous les éléments avec <code>clear()</code></h3>
@@ -434,6 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-3"><a href="#cb14-3"></a><span class="co"># Supprimer tous les éléments</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a>fruits.clear()</span>
 <span id="cb14-5"><a href="#cb14-5"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : []</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="différence-entre-pop-et-clear" class="level3">
 <h3 class="anchored" data-anchor-id="différence-entre-pop-et-clear">Différence entre <code>pop()</code> et <code>clear()</code></h3>
@@ -467,6 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong><code>pop()</code></strong> est utile lorsque vous voulez traiter ou sauvegarder l’élément supprimé.</li>
 <li><strong><code>clear()</code></strong> est idéal pour réinitialiser une liste sans conserver ses éléments.</li>
 </ul>
+<hr>
 </section>
 <section id="résumé-des-méthodes-crud-sur-les-listes" class="level3">
 <h3 class="anchored" data-anchor-id="résumé-des-méthodes-crud-sur-les-listes">Résumé des Méthodes CRUD sur les Listes</h3>
@@ -506,6 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
 </section>
 <section id="les-tuples-tuple" class="level2" data-number="2">
@@ -516,12 +522,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Ordonnés</strong> : Les éléments conservent leur position.</li>
 <li><strong>Immuables</strong> : Impossible de modifier, ajouter ou supprimer des éléments après leur création.</li>
 </ul>
+<hr>
 <section id="création-de-tuples" class="level3">
 <h3 class="anchored" data-anchor-id="création-de-tuples">Création de Tuples</h3>
 <p>Un tuple peut être créé en plaçant une série d’éléments séparés par des virgules dans des parenthèses <code>()</code>.</p>
 <p><strong>Exemple :</strong></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>mon_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(mon_tuple)  <span class="co"># Affiche : (1, 2, 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="opérations-crud-sur-les-tuples" class="level3">
 <h3 class="anchored" data-anchor-id="opérations-crud-sur-les-tuples">Opérations CRUD sur les Tuples</h3>
@@ -532,6 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Update (Mettre à jour)</strong> : Pas directement possible (les tuples sont immuables).</li>
 <li><strong>Delete (Supprimer)</strong> : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.</li>
 </ul>
+<hr>
 <section id="créer-un-tuple-create" class="level4">
 <h4 class="anchored" data-anchor-id="créer-un-tuple-create">Créer un Tuple (Create)</h4>
 <p><strong>Exemple :</strong></p>

@@ -297,7 +297,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Update (Mettre à jour)</strong> : Modifier les données existantes.</li>
 <li><strong>Delete (Supprimer)</strong> : Effacer les données.</li>
 </ul>
-<p>Voici comment ces opérations s’appliquent aux listes en Python.</p>
 <section id="créer-une-liste-create" class="level4">
 <h4 class="anchored" data-anchor-id="créer-une-liste-create">Créer une Liste (Create)</h4>
 <p>Pour créer une liste, utilisez des crochets (<code>[]</code>) et séparez les éléments par des virgules.</p>
@@ -308,6 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Créer une liste avec des éléments</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"banane"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'banane', 'cerise']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
 <section id="lire-les-données-read" class="level3">
@@ -319,6 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"banane"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(fruits[<span class="dv">0</span>])  <span class="co"># Affiche : "pomme"</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(fruits[<span class="op">-</span><span class="dv">1</span>])  <span class="co"># Affiche : "cerise" (dernier élément)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="parcourir-une-liste" class="level4">
 <h4 class="anchored" data-anchor-id="parcourir-une-liste">Parcourir une liste</h4>
@@ -333,6 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Exemple :</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"banane"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="bu">len</span>(fruits))  <span class="co"># Affiche : 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
 <section id="mettre-à-jour-une-liste-update" class="level3">
@@ -344,6 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"banane"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb6-2"><a href="#cb6-2"></a>fruits[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"orange"</span>  <span class="co"># Remplace "banane" par "orange"</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'orange', 'cerise']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="ajouter-des-éléments" class="level4">
 <h4 class="anchored" data-anchor-id="ajouter-des-éléments">Ajouter des éléments</h4>
@@ -354,6 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"orange"</span>, <span class="st">"cerise"</span>]</span>
 <span id="cb7-2"><a href="#cb7-2"></a>fruits.append(<span class="st">"mangue"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'orange', 'cerise', 'mangue']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
 <section id="à-une-position-spécifique" class="level4">
@@ -363,6 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>fruits <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"orange"</span>, <span class="st">"cerise"</span>, <span class="st">"mangue"</span>]</span>
 <span id="cb8-2"><a href="#cb8-2"></a>fruits.insert(<span class="dv">1</span>, <span class="st">"fraise"</span>)  <span class="co"># Ajoute "fraise" à l'index 1</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="fusionner-deux-listes" class="level4">
 <h4 class="anchored" data-anchor-id="fusionner-deux-listes">Fusionner deux listes</h4>
@@ -374,6 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Fusion avec extend()</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a>fruits.extend(legumes)</span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="fusionner-deux-listes-avec-lopérateur" class="level4">
 <h4 class="anchored" data-anchor-id="fusionner-deux-listes-avec-lopérateur">Fusionner deux listes avec l’opérateur <code>+</code></h4>
@@ -385,6 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Fusion avec +</span></span>
 <span id="cb10-5"><a href="#cb10-5"></a>nouvelle_liste <span class="op">=</span> fruits <span class="op">+</span> legumes</span>
 <span id="cb10-6"><a href="#cb10-6"></a><span class="bu">print</span>(nouvelle_liste)  <span class="co"># Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
 <section id="supprimer-des-éléments-delete" class="level3">
@@ -395,6 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Exemple :</strong></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fruits.remove(<span class="st">"orange"</span>)  <span class="co"># Supprime "orange"</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
 <section id="supprimer-un-élément-par-son-index" class="level3">

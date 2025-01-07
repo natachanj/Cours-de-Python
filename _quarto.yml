@@ -20,7 +20,9 @@ website:
           - href: doc/cours/intro.qmd
             text: "Présentation du cours"
           - href: doc/cours/introduction.qmd
-            text: "Les Fondamentaux de Python : Variables, Structures et Types de Données"
+            text: "Les Fondamentaux de Python : Variables, Structures de contrôle"
+          - href: doc/cours/introduction.qmd
+            text: "Les types de données en Python"
      
       - text: TP
         menu:

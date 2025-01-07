@@ -110,7 +110,7 @@ fruits = ["pomme", "banane", "cerise"]
 print(len(fruits))  # Affiche : 3
 ```
 
-### 3. Mettre à Jour une Liste (Update)
+###  Mettre à Jour une Liste (Update)
 
 #### Modifier un élément existant
 
@@ -121,6 +121,60 @@ Accédez à l'élément par son index et assignez-lui une nouvelle valeur.
 fruits = ["pomme", "banane", "cerise"]
 fruits[1] = "orange"  # Remplace "banane" par "orange"
 print(fruits)  # Affiche : ['pomme', 'orange', 'cerise']
+```
+
+
+
+#### Ajouter des éléments
+
+##### À la fin de la liste : 
+
+Utilisez la méthode `append()`.
+
+**Exemple :**
+```python
+fruits = ["pomme", "orange", "cerise"]
+fruits.append("mangue")
+print(fruits)  # Affiche : ['pomme', 'orange', 'cerise', 'mangue']
+```
+
+#### À une position spécifique
+
+Utilisez la méthode `insert()` pour insérer un élément à une position spécifique dans une liste.
+
+**Exemple :**
+```python
+fruits = ["pomme", "orange", "cerise", "mangue"]
+fruits.insert(1, "fraise")  # Ajoute "fraise" à l'index 1
+print(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']
+```
+
+#### Fusionner deux listes
+
+Pour fusionner deux listes, vous pouvez utiliser l'opérateur `+` ou la méthode `extend()`.
+
+**Exemple :**
+```python
+legumes = ["carotte", "tomate"]
+fruits = ["pomme", "fraise", "orange", "cerise", "mangue"]
+
+# Fusion avec extend()
+fruits.extend(legumes)
+print(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+#### Fusionner deux listes avec l'opérateur `+`
+
+Vous pouvez également utiliser l'opérateur `+` pour créer une nouvelle liste fusionnée.
+
+**Exemple :**
+```python
+legumes = ["carotte", "tomate"]
+fruits = ["pomme", "fraise", "orange", "cerise", "mangue"]
+
+# Fusion avec +
+nouvelle_liste = fruits + legumes
+print(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
 ```
 
 

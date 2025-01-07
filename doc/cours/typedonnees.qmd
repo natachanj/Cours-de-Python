@@ -313,14 +313,11 @@ Comme les tuples sont immuables, les opérations **Update** et **Delete** diffè
 mon_tuple = (1, 'Python', 3.14)
 print(mon_tuple)  # Affiche : (1, 'Python', 3.14)
 ```
---- 
 
 Vous pouvez également créer un tuple sans parenthèses (packing) :
 ```python
 mon_tuple = 1, 'Python', 3.14
 ```
-
----
 
 #### Lire les Données (Read)
 
@@ -336,13 +333,10 @@ for element in mon_tuple:
     print(element)
 ```
 
----
-
 **Longueur du tuple :**
 ```python
 print(len(mon_tuple))  # Affiche : 3
 ```
----
 #### Mettre à Jour un Tuple (Update)
 
 Les tuples sont **immutables**, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un **nouveau tuple** basé sur l'ancien.
@@ -354,8 +348,6 @@ nouveau_tuple = mon_tuple + (4, 5)
 print(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)
 ```
 
----
-
 #### Supprimer un Tuple (Delete)
 
 Vous ne pouvez pas supprimer un élément spécifique d'un tuple, mais vous pouvez supprimer le tuple entier.
@@ -365,8 +357,6 @@ Vous ne pouvez pas supprimer un élément spécifique d'un tuple, mais vous pouv
 mon_tuple = (1, 2, 3)
 del mon_tuple
 ```
-
----
 
 ### Avantages des Tuples
 
@@ -382,8 +372,6 @@ coordonnees = {
 }
 print(coordonnees[(1, 2)])  # Affiche : 'Point A'
 ```
-
----
 
 ### Différences entre Listes et Tuples
 
@@ -405,8 +393,6 @@ Les dictionnaires sont des **collections non ordonnées** (dans les versions ant
 - **Modifiables** : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.
 - **Clés uniques** : Une clé ne peut être présente qu'une seule fois.
 
----
-
 ### Création de Dictionnaires
 
 Un dictionnaire peut être créé en utilisant des accolades `{}` et des paires clé-valeur séparées par des deux-points `:`.
@@ -421,8 +407,6 @@ mon_dict = {
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
 ```
 
----
-
 ### Opérations CRUD sur les Dictionnaires
 
 Les dictionnaires permettent les opérations fondamentales **CRUD** (Create, Read, Update, Delete) comme suit :
@@ -431,8 +415,6 @@ Les dictionnaires permettent les opérations fondamentales **CRUD** (Create, Rea
 - **Read (Lire)** : Accéder à une valeur via sa clé.
 - **Update (Mettre à jour)** : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.
 - **Delete (Supprimer)** : Supprimer une paire clé-valeur.
-
----
 
 #### Créer un Dictionnaire (Create)
 
@@ -446,9 +428,6 @@ mon_dict['nom'] = 'Alice'
 mon_dict['age'] = 25
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}
 ```
-
----
-
 #### Lire les Données (Read)
 
 **Accéder à une valeur par sa clé :**
@@ -461,7 +440,6 @@ print(mon_dict['nom'])  # Affiche : Alice
 ```python
 print(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable
 ```
----
 
 **Parcourir un dictionnaire :**
 ```python
@@ -475,8 +453,6 @@ print(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville']
 print(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])
 ```
 
----
-
 #### Mettre à Jour un Dictionnaire (Update)
 
 **Ajouter ou modifier une clé :**
@@ -486,7 +462,6 @@ mon_dict['ville'] = 'Paris'  # Ajout
 mon_dict['age'] = 26         # Mise à jour
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
 ```
----
 
 **Fusionner deux dictionnaires :**
 ```python
@@ -494,7 +469,6 @@ autre_dict = {'pays': 'France', 'profession': 'Ingénieure'}
 mon_dict.update(autre_dict)
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}
 ```
----
 
 #### Supprimer des Éléments (Delete)
 
@@ -504,8 +478,6 @@ mon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
 del mon_dict['age']
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}
 ```
-
----
 
 **Supprimer et retourner une valeur avec `pop()` :**
 ```python
@@ -519,8 +491,6 @@ print(mon_dict)  # Affiche : {'nom': 'Alice'}
 mon_dict.clear()
 print(mon_dict)  # Affiche : {}
 ```
-
----
 
 ### Avantages des Dictionnaires
 
@@ -541,8 +511,6 @@ utilisateur = {
 print(utilisateur['contact']['email'])  # Affiche : alice@example.com
 ```
 
----
-
 ### Différences entre Listes et Dictionnaires
 
 | Caractéristique       | Liste                         | Dictionnaire                   |
@@ -551,7 +519,6 @@ print(utilisateur['contact']['email'])  # Affiche : alice@example.com
 | **Structure**        | Séquence ordonnée            | Paires clé-valeur              |
 | **Mutabilité**       | Mutable                      | Mutable (clés immuables)       |
 
----
 ##  Les Ensembles (`set`)
 
 Les ensembles sont des **collections non ordonnées** et **uniques** (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.
@@ -561,8 +528,6 @@ Les ensembles sont des **collections non ordonnées** et **uniques** (chaque él
 - **Non ordonnés** : Les éléments n'ont pas de position fixe.
 - **Éléments uniques** : Les doublons sont automatiquement supprimés.
 - **Opérations mathématiques** : Permettent des opérations comme l'union, l'intersection, la différence, etc.
-
----
 
 ### Création d'Ensembles
 
@@ -577,7 +542,6 @@ print(mon_set)  # Affiche : {1, 2, 3, 4}
 mon_set = set([1, 2, 2, 3])
 print(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)
 ```
----
 
 ### Opérations CRUD sur les Ensembles
 
@@ -587,8 +551,6 @@ Les ensembles prennent en charge les opérations fondamentales **CRUD** (Create,
 - **Read (Lire)** : Vérifier la présence d'un élément.
 - **Update (Mettre à jour)** : Ajouter ou supprimer des éléments.
 - **Delete (Supprimer)** : Supprimer des éléments ou réinitialiser l'ensemble.
-
----
 
 #### Créer un Ensemble (Create)
 
@@ -602,7 +564,6 @@ mon_set.add(1)
 mon_set.add(2)
 print(mon_set)  # Affiche : {1, 2}
 ```
----
 
 #### Lire les Données (Read)
 
@@ -612,7 +573,6 @@ mon_set = {1, 2, 3}
 print(1 in mon_set)  # Affiche : True
 print(4 in mon_set)  # Affiche : False
 ```
----
 
 **Parcourir un ensemble avec une boucle :**
 ```python
@@ -624,7 +584,6 @@ for element in mon_set:
 ```python
 print(len(mon_set))  # Affiche : 3
 ```
----
 
 #### Mettre à Jour un Ensemble (Update)
 
@@ -635,7 +594,6 @@ mon_set.add(3)  # Ajoute un seul élément
 mon_set.update([4, 5])  # Ajoute plusieurs éléments
 print(mon_set)  # Affiche : {1, 2, 3, 4, 5}
 ```
----
 
 **Supprimer des éléments :**
 
@@ -650,7 +608,6 @@ Avec `discard()` (ne lève pas d'erreur si l'élément n'existe pas) :
 mon_set.discard(10)  # Aucun effet si 10 n'est pas présent
 ```
 
----
 #### Supprimer des Éléments (Delete)
 
 **Supprimer un élément avec `pop()` :**
@@ -660,7 +617,6 @@ element = mon_set.pop()  # Supprime et retourne un élément aléatoire
 print(element)  # Affiche : 1 (ou un autre élément)
 print(mon_set)  # Affiche : {2, 3}
 ```
----
 
 **Supprimer tous les éléments avec `clear()` :**
 ```python
@@ -668,7 +624,6 @@ mon_set.clear()
 print(mon_set)  # Affiche : set()
 ```
 
----
 ### Opérations Mathématiques avec les Ensembles
 
 Les ensembles permettent des opérations mathématiques classiques :
@@ -679,13 +634,11 @@ set1 = {1, 2, 3}
 set2 = {3, 4, 5}
 print(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}
 ```
----
 
 **Intersection :** Récupère les éléments communs aux deux ensembles.
 ```python
 print(set1 & set2)  # Affiche : {3}
 ```
----
 
 **Différence :** Récupère les éléments présents dans le premier ensemble mais pas dans le second.
 ```python

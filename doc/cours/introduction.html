@@ -230,6 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#les-structures-conditionnelles" id="toc-les-structures-conditionnelles" class="nav-link" data-scroll-target="#les-structures-conditionnelles"><span class="header-section-number">4.1</span> Les Structures conditionnelles</a>
   <ul class="collapse">
   <li><a href="#la-condition-if" id="toc-la-condition-if" class="nav-link" data-scroll-target="#la-condition-if">La condition <code>if</code></a></li>
+  <li><a href="#conditions-imbriquées" id="toc-conditions-imbriquées" class="nav-link" data-scroll-target="#conditions-imbriquées">Conditions imbriquées</a></li>
+  <li><a href="#comparaisons-en-python" id="toc-comparaisons-en-python" class="nav-link" data-scroll-target="#comparaisons-en-python">Comparaisons en Python</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -722,7 +724,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ajout-de-else" class="level4">
 <h4 class="anchored" data-anchor-id="ajout-de-else">Ajout de <code>else</code></h4>
-<p>L’instruction `else permet d’exécuter un bloc de code si la condition est fausse.</p>
+<p>L’instruction <code>else</code> permet d’exécuter un bloc de code si la condition est fausse.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>nombre <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="cf">if</span> nombre <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb23-3"><a href="#cb23-3"></a>    <span class="bu">print</span>(<span class="st">"Le nombre est positif."</span>)</span>
@@ -742,9 +744,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-7"><a href="#cb24-7"></a><span class="cf">else</span>:</span>
 <span id="cb24-8"><a href="#cb24-8"></a>    <span class="bu">print</span>(<span class="st">"Le nombre est négatif."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
-
-
 </section>
+</section>
+<section id="conditions-imbriquées" class="level3">
+<h3 class="anchored" data-anchor-id="conditions-imbriquées">Conditions imbriquées</h3>
+<p>Les <code>if</code> peuvent être imbriqués pour vérifier des conditions multiples.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>citoyen <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="cf">if</span> citoyen:</span>
+<span id="cb25-6"><a href="#cb25-6"></a>        <span class="bu">print</span>(<span class="st">"Vous pouvez voter."</span>)</span>
+<span id="cb25-7"><a href="#cb25-7"></a>    <span class="cf">else</span>:</span>
+<span id="cb25-8"><a href="#cb25-8"></a>        <span class="bu">print</span>(<span class="st">"Vous ne pouvez pas voter, même si vous êtes majeur."</span>)</span>
+<span id="cb25-9"><a href="#cb25-9"></a><span class="cf">else</span>:</span>
+<span id="cb25-10"><a href="#cb25-10"></a>    <span class="bu">print</span>(<span class="st">"Vous êtes mineur."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="comparaisons-en-python" class="level3">
+<h3 class="anchored" data-anchor-id="comparaisons-en-python">Comparaisons en Python</h3>
+<p>Les opérateurs de comparaison permettent d’évaluer des expressions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Opérateur</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>Égalité</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>Différence</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td>Inférieur à</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>Inférieur ou égal à</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>Supérieur à</td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td>Supérieur ou égal à</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+
 </section>
 </section>
 </section>

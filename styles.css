@@ -54,12 +54,12 @@ p {
 
 pre, code { /* Styles pour les blocs de code */
   font-family: "Courier New", Courier, monospace;
-  background-color: #E0E0E0; /* Gris clair */
-  border-left: none; /* Supprime la bordure verte */
-  padding: 10px;
-  margin: 10px 0;
-  display: block;
-  overflow-x: auto;
+  background-color: transparent; /* Supprime l'arrière-plan */
+  border-left: none; /* Supprime la bordure jaune */
+  color: gray; /* Texte en gris */
+  padding: 0; /* Supprime le padding si nécessaire */
+  margin: 0; /* Supprime les marges si nécessaire */
+  display: inline; /* Affichage inline si vous voulez seulement le texte */
 }
 
 .sourceCode .co { /* Python comments */

@@ -313,6 +313,7 @@ Comme les tuples sont immuables, les opérations **Update** et **Delete** diffè
 mon_tuple = (1, 'Python', 3.14)
 print(mon_tuple)  # Affiche : (1, 'Python', 3.14)
 ```
+--- 
 
 Vous pouvez également créer un tuple sans parenthèses (packing) :
 ```python
@@ -550,6 +551,7 @@ print(utilisateur['contact']['email'])  # Affiche : alice@example.com
 | **Structure**        | Séquence ordonnée            | Paires clé-valeur              |
 | **Mutabilité**       | Mutable                      | Mutable (clés immuables)       |
 
+---
 ##  Les Ensembles (`set`)
 
 Les ensembles sont des **collections non ordonnées** et **uniques** (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.
@@ -559,6 +561,8 @@ Les ensembles sont des **collections non ordonnées** et **uniques** (chaque él
 - **Non ordonnés** : Les éléments n'ont pas de position fixe.
 - **Éléments uniques** : Les doublons sont automatiquement supprimés.
 - **Opérations mathématiques** : Permettent des opérations comme l'union, l'intersection, la différence, etc.
+
+---
 
 ### Création d'Ensembles
 
@@ -573,6 +577,7 @@ print(mon_set)  # Affiche : {1, 2, 3, 4}
 mon_set = set([1, 2, 2, 3])
 print(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)
 ```
+---
 
 ### Opérations CRUD sur les Ensembles
 
@@ -582,6 +587,8 @@ Les ensembles prennent en charge les opérations fondamentales **CRUD** (Create,
 - **Read (Lire)** : Vérifier la présence d'un élément.
 - **Update (Mettre à jour)** : Ajouter ou supprimer des éléments.
 - **Delete (Supprimer)** : Supprimer des éléments ou réinitialiser l'ensemble.
+
+---
 
 #### Créer un Ensemble (Create)
 
@@ -595,6 +602,7 @@ mon_set.add(1)
 mon_set.add(2)
 print(mon_set)  # Affiche : {1, 2}
 ```
+---
 
 #### Lire les Données (Read)
 
@@ -604,6 +612,7 @@ mon_set = {1, 2, 3}
 print(1 in mon_set)  # Affiche : True
 print(4 in mon_set)  # Affiche : False
 ```
+---
 
 **Parcourir un ensemble avec une boucle :**
 ```python
@@ -615,6 +624,7 @@ for element in mon_set:
 ```python
 print(len(mon_set))  # Affiche : 3
 ```
+---
 
 #### Mettre à Jour un Ensemble (Update)
 
@@ -625,6 +635,7 @@ mon_set.add(3)  # Ajoute un seul élément
 mon_set.update([4, 5])  # Ajoute plusieurs éléments
 print(mon_set)  # Affiche : {1, 2, 3, 4, 5}
 ```
+---
 
 **Supprimer des éléments :**
 
@@ -639,6 +650,7 @@ Avec `discard()` (ne lève pas d'erreur si l'élément n'existe pas) :
 mon_set.discard(10)  # Aucun effet si 10 n'est pas présent
 ```
 
+---
 #### Supprimer des Éléments (Delete)
 
 **Supprimer un élément avec `pop()` :**
@@ -648,6 +660,7 @@ element = mon_set.pop()  # Supprime et retourne un élément aléatoire
 print(element)  # Affiche : 1 (ou un autre élément)
 print(mon_set)  # Affiche : {2, 3}
 ```
+---
 
 **Supprimer tous les éléments avec `clear()` :**
 ```python
@@ -655,6 +668,7 @@ mon_set.clear()
 print(mon_set)  # Affiche : set()
 ```
 
+---
 ### Opérations Mathématiques avec les Ensembles
 
 Les ensembles permettent des opérations mathématiques classiques :
@@ -665,11 +679,13 @@ set1 = {1, 2, 3}
 set2 = {3, 4, 5}
 print(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}
 ```
+---
 
 **Intersection :** Récupère les éléments communs aux deux ensembles.
 ```python
 print(set1 & set2)  # Affiche : {3}
 ```
+---
 
 **Différence :** Récupère les éléments présents dans le premier ensemble mais pas dans le second.
 ```python

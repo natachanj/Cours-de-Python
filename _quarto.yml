@@ -28,6 +28,10 @@ website:
         menu:
           - href: doc/tp/tp1.qmd
             text: "TP1 - Premières requêtes"
+          - href: doc/tp/00_Bien_Demarrer_Avec_Python.ipynb
+            text: "TP0 - Bien démarrer avec Python"
+          - href: doc/tp/01_Structures_Controles_Types_Donnees.ipynb
+            text: "TP1 - Structures de contrôle et types de données"
     right:
       - href: doc/glossaire.qmd
         text: Glossaire
@@ -41,6 +45,7 @@ website:
 
 execute:
   freeze: auto  # re-render only when source changes
+  enabled: true  # Permet l'exécution des cellules
 
 format:
   html:

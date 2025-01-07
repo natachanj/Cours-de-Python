@@ -26,7 +26,7 @@ Python propose des types de données avancés pour manipuler des collections de 
 
 ---
 
-## 1. Les Listes (`list`)
+## Les Listes (`list`)
 
 Les listes sont des **collections ordonnées** et **modifiables**. Elles peuvent contenir des éléments de types différents.
 
@@ -44,3 +44,41 @@ print(fruits)
 ```
 
 ---
+
+
+## Les Tuples (`tuple`)
+
+Les tuples sont des **collections ordonnées**, mais **immuables** (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.
+
+**Caractéristiques :**
+
+- **Ordonnés** : Les éléments conservent leur position.
+- **Immuables** : Impossible de modifier, ajouter ou supprimer des éléments après leur création.
+
+**Exemple :**
+```python
+coordonnees = (10.5, 42.3)
+jours_semaine = ("lundi", "mardi", "mercredi")
+print(coordonnees)  # Affiche : (10.5, 42.3)
+```
+---
+
+## Les Dictionnaires (`dict`)
+
+Les dictionnaires sont des **collections non ordonnées** (dans les versions antérieures à Python 3.7) qui stockent des **paires clé-valeur**. Chaque clé doit être unique.
+
+**Caractéristiques :**
+
+- **Accès rapide** : Vous pouvez accéder rapidement aux valeurs à l'aide de leurs clés.
+- **Modifiables** : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.
+- **Clés uniques** : Une clé ne peut être présente qu'une seule fois.
+
+**Exemple :**
+```python
+personne = {"nom": "Alice", "age": 25, "ville": "Paris"}
+print(personne["nom"])  # Affiche "Alice"
+
+# Modifier la valeur associée à une clé
+personne["age"] = 26
+print(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
+```

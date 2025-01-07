@@ -27,7 +27,7 @@ website:
       - text: TP
         menu:
           - href: doc/tp/tp1.qmd
-            text: "TP1 - Premières requêtes"
+            text: "TP1 - Premiers pas en Python"
     right:
       - href: doc/glossaire.qmd
         text: Glossaire
@@ -42,6 +42,10 @@ website:
 execute:
   freeze: auto  # re-render only when source changes
   enabled: false  # Active l'exécution des notebooks
+
+exclude:
+  - notebooks/*.ipynb  # Exclut les fichiers .ipynb du rendu
+  - doc/tp/*.ipynb     # Exclut les fichiers .ipynb du répertoire tp
 
 format:
   html:

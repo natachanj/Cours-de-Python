@@ -315,12 +315,12 @@ type(est_actif)
 
 ### Résumé des types de base
 
-| Type   | Description                  |
-|--------|------------------------------|
-| `str`  | Chaîne de caractères         |
-| `int`  | Nombres entiers              |
-| `float`| Nombres décimaux             |
-| `bool` | Valeurs logiques (True/False)|
+| Type   | Description                          | Exemple                     |
+|--------|--------------------------------------|-----------------------------|
+| `int`  | Nombre entier                        | `42`, `-5`                  |
+| `float`| Nombre décimal (flottant)            | `3.14`, `-0.5`              |
+| `bool` | Valeur logique                       | `True`, `False`             |
+| `str`  | Chaîne de caractères (texte)         | `"Bonjour"`, `'Python'`     |
 
 ---
 

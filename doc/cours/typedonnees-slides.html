@@ -523,6 +523,7 @@ Natacha Njongwa Yepnga
 <section class="slide level3">
 
 </section></section>
+<section>
 <section id="les-dictionnaires-dict" class="title-slide slide level2 center">
 <h2>Les Dictionnaires (<code>dict</code>)</h2>
 <p>Les dictionnaires sont des <strong>collections non ordonnées</strong> (dans les versions antérieures à Python 3.7) qui stockent des <strong>paires clé-valeur</strong>. Chaque clé doit être unique.</p>
@@ -532,15 +533,123 @@ Natacha Njongwa Yepnga
 <li><strong>Modifiables</strong> : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.</li>
 <li><strong>Clés uniques</strong> : Une clé ne peut être présente qu’une seule fois.</li>
 </ul>
-<p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>personne <span class="op">=</span> {<span class="st">"nom"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"ville"</span>: <span class="st">"Paris"</span>}</span>
-<span id="cb24-2"><a></a><span class="bu">print</span>(personne[<span class="st">"nom"</span>])  <span class="co"># Affiche "Alice"</span></span>
-<span id="cb24-3"><a></a></span>
-<span id="cb24-4"><a></a><span class="co"># Modifier la valeur associée à une clé</span></span>
-<span id="cb24-5"><a></a>personne[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">26</span></span>
-<span id="cb24-6"><a></a><span class="bu">print</span>(personne)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-
+<section id="création-de-dictionnaires" class="slide level3">
+<h3>Création de Dictionnaires</h3>
+<p>Un dictionnaire peut être créé en utilisant des accolades <code>{}</code> et des paires clé-valeur séparées par des deux-points <code>:</code>.</p>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>mon_dict <span class="op">=</span> {</span>
+<span id="cb24-2"><a></a>    <span class="st">'nom'</span>: <span class="st">'Alice'</span>,</span>
+<span id="cb24-3"><a></a>    <span class="st">'age'</span>: <span class="dv">25</span>,</span>
+<span id="cb24-4"><a></a>    <span class="st">'ville'</span>: <span class="st">'Paris'</span></span>
+<span id="cb24-5"><a></a>}</span>
+<span id="cb24-6"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="opérations-crud-sur-les-dictionnaires" class="slide level3">
+<h3>Opérations CRUD sur les Dictionnaires</h3>
+<p>Les dictionnaires permettent les opérations fondamentales <strong>CRUD</strong> (Create, Read, Update, Delete) comme suit :</p>
+<ul>
+<li><strong>Create (Créer)</strong> : Ajouter de nouvelles paires clé-valeur.</li>
+<li><strong>Read (Lire)</strong> : Accéder à une valeur via sa clé.</li>
+<li><strong>Update (Mettre à jour)</strong> : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.</li>
+<li><strong>Delete (Supprimer)</strong> : Supprimer une paire clé-valeur.</li>
+</ul>
+<h4 id="créer-un-dictionnaire-create">Créer un Dictionnaire (Create)</h4>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="co"># Créer un dictionnaire vide</span></span>
+<span id="cb25-2"><a></a>mon_dict <span class="op">=</span> {}</span>
+<span id="cb25-3"><a></a></span>
+<span id="cb25-4"><a></a><span class="co"># Ajouter des paires clé-valeur</span></span>
+<span id="cb25-5"><a></a>mon_dict[<span class="st">'nom'</span>] <span class="op">=</span> <span class="st">'Alice'</span></span>
+<span id="cb25-6"><a></a>mon_dict[<span class="st">'age'</span>] <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb25-7"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 25}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="lire-les-données-read-2">Lire les Données (Read)</h4>
+<p><strong>Accéder à une valeur par sa clé :</strong></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>mon_dict <span class="op">=</span> {<span class="st">'nom'</span>: <span class="st">'Alice'</span>, <span class="st">'age'</span>: <span class="dv">25</span>, <span class="st">'ville'</span>: <span class="st">'Paris'</span>}</span>
+<span id="cb26-2"><a></a><span class="bu">print</span>(mon_dict[<span class="st">'nom'</span>])  <span class="co"># Affiche : Alice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Utiliser la méthode <code>get()</code> pour éviter les erreurs :</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="bu">print</span>(mon_dict.get(<span class="st">'pays'</span>, <span class="st">'Clé introuvable'</span>))  <span class="co"># Affiche : Clé introuvable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Parcourir un dictionnaire :</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="cf">for</span> cle, valeur <span class="kw">in</span> mon_dict.items():</span>
+<span id="cb28-2"><a></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>cle<span class="sc">}</span><span class="ss"> : </span><span class="sc">{</span>valeur<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Clés et valeurs :</strong></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="bu">print</span>(mon_dict.keys())   <span class="co"># Affiche les clés : dict_keys(['nom', 'age', 'ville'])</span></span>
+<span id="cb29-2"><a></a><span class="bu">print</span>(mon_dict.values()) <span class="co"># Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="mettre-à-jour-un-dictionnaire-update">Mettre à Jour un Dictionnaire (Update)</h4>
+<p><strong>Ajouter ou modifier une clé :</strong></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a>mon_dict <span class="op">=</span> {<span class="st">'nom'</span>: <span class="st">'Alice'</span>, <span class="st">'age'</span>: <span class="dv">25</span>}</span>
+<span id="cb30-2"><a></a>mon_dict[<span class="st">'ville'</span>] <span class="op">=</span> <span class="st">'Paris'</span>  <span class="co"># Ajout</span></span>
+<span id="cb30-3"><a></a>mon_dict[<span class="st">'age'</span>] <span class="op">=</span> <span class="dv">26</span>         <span class="co"># Mise à jour</span></span>
+<span id="cb30-4"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Fusionner deux dictionnaires :</strong></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>autre_dict <span class="op">=</span> {<span class="st">'pays'</span>: <span class="st">'France'</span>, <span class="st">'profession'</span>: <span class="st">'Ingénieure'</span>}</span>
+<span id="cb31-2"><a></a>mon_dict.update(autre_dict)</span>
+<span id="cb31-3"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="supprimer-des-éléments-delete-1">Supprimer des Éléments (Delete)</h4>
+<p><strong>Supprimer une paire clé-valeur :</strong></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>mon_dict <span class="op">=</span> {<span class="st">'nom'</span>: <span class="st">'Alice'</span>, <span class="st">'age'</span>: <span class="dv">25</span>, <span class="st">'ville'</span>: <span class="st">'Paris'</span>}</span>
+<span id="cb32-2"><a></a><span class="kw">del</span> mon_dict[<span class="st">'age'</span>]</span>
+<span id="cb32-3"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {'nom': 'Alice', 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Supprimer et retourner une valeur avec <code>pop()</code> :</strong></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>ville <span class="op">=</span> mon_dict.pop(<span class="st">'ville'</span>)</span>
+<span id="cb33-2"><a></a><span class="bu">print</span>(ville)  <span class="co"># Affiche : Paris</span></span>
+<span id="cb33-3"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {'nom': 'Alice'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Supprimer tous les éléments avec <code>clear()</code> :</strong></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>mon_dict.clear()</span>
+<span id="cb34-2"><a></a><span class="bu">print</span>(mon_dict)  <span class="co"># Affiche : {}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="avantages-des-dictionnaires" class="slide level3">
+<h3>Avantages des Dictionnaires</h3>
+<ul>
+<li><strong>Rapidité</strong> : Accès direct aux valeurs via les clés.</li>
+<li><strong>Flexible</strong> : Peut contenir des données de types variés.</li>
+<li><strong>Organisation</strong> : Idéal pour structurer des données complexes.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>utilisateur <span class="op">=</span> {</span>
+<span id="cb35-2"><a></a>    <span class="st">'id'</span>: <span class="dv">123</span>,</span>
+<span id="cb35-3"><a></a>    <span class="st">'nom'</span>: <span class="st">'Alice'</span>,</span>
+<span id="cb35-4"><a></a>    <span class="st">'contact'</span>: {</span>
+<span id="cb35-5"><a></a>        <span class="st">'email'</span>: <span class="st">'alice@example.com'</span>,</span>
+<span id="cb35-6"><a></a>        <span class="st">'telephone'</span>: <span class="st">'123-456-7890'</span></span>
+<span id="cb35-7"><a></a>    }</span>
+<span id="cb35-8"><a></a>}</span>
+<span id="cb35-9"><a></a><span class="bu">print</span>(utilisateur[<span class="st">'contact'</span>][<span class="st">'email'</span>])  <span class="co"># Affiche : alice@example.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="différences-entre-listes-et-dictionnaires" class="slide level3">
+<h3>Différences entre Listes et Dictionnaires</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 35%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caractéristique</th>
+<th>Liste</th>
+<th>Dictionnaire</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Accès aux données</strong></td>
+<td>Par index numérique</td>
+<td>Par clé</td>
+</tr>
+<tr class="even">
+<td><strong>Structure</strong></td>
+<td>Séquence ordonnée</td>
+<td>Paires clé-valeur</td>
+</tr>
+<tr class="odd">
+<td><strong>Mutabilité</strong></td>
+<td>Mutable</td>
+<td>Mutable (clés immuables)</td>
+</tr>
+</tbody>
+</table>
+</section></section>
 <section id="les-ensembles-set" class="title-slide slide level2 center">
 <h2>Les Ensembles (<code>set</code>)</h2>
 <p>Les ensembles sont des <strong>collections non ordonnées</strong> et <strong>uniques</strong> (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.</p>
@@ -551,9 +660,9 @@ Natacha Njongwa Yepnga
 <li><strong>Opérations mathématiques</strong> : Permettent des opérations comme l’union, l’intersection, la différence, etc.</li>
 </ul>
 <p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
-<span id="cb25-2"><a></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
-<span id="cb25-3"><a></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
+<span id="cb36-2"><a></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
+<span id="cb36-3"><a></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

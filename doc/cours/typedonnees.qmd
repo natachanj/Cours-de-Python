@@ -318,7 +318,6 @@ Vous pouvez également créer un tuple sans parenthèses (packing) :
 ```python
 mon_tuple = 1, 'Python', 3.14
 ```
----
 
 #### Lire les Données (Read)
 
@@ -333,7 +332,6 @@ print(mon_tuple[1])  # Affiche : 'Python'
 for element in mon_tuple:
     print(element)
 ```
----
 
 **Longueur du tuple :**
 ```python
@@ -349,7 +347,6 @@ mon_tuple = (1, 2, 3)
 nouveau_tuple = mon_tuple + (4, 5)
 print(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)
 ```
----
 
 #### Supprimer un Tuple (Delete)
 

@@ -552,17 +552,3 @@ Les boucles permettent de répéter des actions tant qu'une condition est vraie 
 
 ---
 
-## Résumé
-
-| Structure        | Description                                                                 |
-|------------------|-----------------------------------------------------------------------------|
-| `if`             | Exécute un bloc si une condition est vraie.                                |
-| `elif`           | Ajoute des conditions supplémentaires.                                     |
-| `else`           | Définit un bloc exécuté si toutes les conditions sont fausses.             |
-| `for`            | Parcourt une séquence ou un intervalle.                                    |
-| `while`          | Répète un bloc tant qu'une condition est vraie.                            |
-| `break`          | Interrompt une boucle.                                                    |
-| `continue`       | Saute à l'itération suivante.                                              |
-| `pass`           | Ne fait rien (utile pour des blocs vides).                                 |
-
----

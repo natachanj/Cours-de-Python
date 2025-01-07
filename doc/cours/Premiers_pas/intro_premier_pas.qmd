@@ -1,28 +1,3 @@
----
-title: "Introduction à Python : Bases et Structures Fondamentales"
-description: "[Slides](introduction-slides.html)"
-author: "Natacha Njongwa Yepnga"
-format: 
-  html:
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    number-sections: true
-    number-depth: 2
-  revealjs:
-    theme: moon
-    footer: "[Home](../../index.html) --- [Introduction à Python](introduction.html)"
-    slide-number: c/t                    # collapsed/total
-    slide-level: 3
-    controls: true
-    output-file: introduction-slides.html
-mermaid:
-  theme: forest
-code-line-numbers: true
-from: markdown+emoji
----
-
-# Introduction à Python
 
 ##  Introduction
 

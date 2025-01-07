@@ -378,6 +378,45 @@ Natacha Njongwa Yepnga
 <li><strong><code>pop()</code></strong> est utile lorsque vous voulez traiter ou sauvegarder l’élément supprimé.</li>
 <li><strong><code>clear()</code></strong> est idéal pour réinitialiser une liste sans conserver ses éléments.</li>
 </ul>
+</section>
+<section id="résumé-des-méthodes-crud-sur-les-listes" class="slide level3">
+<h3>Résumé des Méthodes CRUD sur les Listes</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 31%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Opération</th>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code>[]</code>, <code>append()</code>, <code>insert()</code></td>
+<td>Créer ou ajouter des éléments.</td>
+</tr>
+<tr class="even">
+<td>Read</td>
+<td><code>index</code>, <code>len()</code>, <code>for</code> loop</td>
+<td>Lire ou parcourir les éléments.</td>
+</tr>
+<tr class="odd">
+<td>Update</td>
+<td><code>index</code>, <code>append()</code>, <code>extend()</code></td>
+<td>Modifier ou ajouter des éléments.</td>
+</tr>
+<tr class="even">
+<td>Delete</td>
+<td><code>remove()</code>, <code>pop()</code>, <code>del</code>, <code>clear()</code></td>
+<td>Supprimer des éléments ou tout vider.</td>
+</tr>
+</tbody>
+</table>
 </section></section>
 <section>
 <section id="les-tuples-tuple" class="title-slide slide level2 center">
@@ -388,10 +427,23 @@ Natacha Njongwa Yepnga
 <li><strong>Ordonnés</strong> : Les éléments conservent leur position.</li>
 <li><strong>Immuables</strong> : Impossible de modifier, ajouter ou supprimer des éléments après leur création.</li>
 </ul>
+</section>
+<section id="création-de-tuples" class="slide level3">
+<h3>Création de Tuples</h3>
+<p>Un tuple peut être créé en plaçant une série d’éléments séparés par des virgules dans des parenthèses <code>()</code>.</p>
 <p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>coordonnees <span class="op">=</span> (<span class="fl">10.5</span>, <span class="fl">42.3</span>)</span>
-<span id="cb15-2"><a></a>jours_semaine <span class="op">=</span> (<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>)</span>
-<span id="cb15-3"><a></a><span class="bu">print</span>(coordonnees)  <span class="co"># Affiche : (10.5, 42.3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>mon_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb15-2"><a></a><span class="bu">print</span>(mon_tuple)  <span class="co"># Affiche : (1, 2, 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="opérations-crud-sur-les-tuples" class="slide level3">
+<h3>Opérations CRUD sur les Tuples</h3>
+<p>Comme les tuples sont immuables, les opérations <strong>Update</strong> et <strong>Delete</strong> diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :</p>
+<ul>
+<li><strong>Create (Créer)</strong> : Ajouter de nouvelles données.</li>
+<li><strong>Read (Lire)</strong> : Consulter ou accéder aux données existantes.</li>
+<li><strong>Update (Mettre à jour)</strong> : Pas directement possible (les tuples sont immuables).</li>
+<li><strong>Delete (Supprimer)</strong> : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.</li>
+</ul>
 </section>
 <section class="slide level3">
 

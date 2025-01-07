@@ -273,6 +273,83 @@ Comme les tuples sont immuables, les opérations **Update** et **Delete** diffè
 - **Read (Lire)** : Consulter ou accéder aux données existantes.
 - **Update (Mettre à jour)** : Pas directement possible (les tuples sont immuables).
 - **Delete (Supprimer)** : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.
+
+#### Créer un Tuple (Create)
+
+**Exemple :**
+```python
+# Créer un tuple avec des éléments
+mon_tuple = (1, 'Python', 3.14)
+print(mon_tuple)  # Affiche : (1, 'Python', 3.14)
+```
+
+Vous pouvez également créer un tuple sans parenthèses (packing) :
+```python
+mon_tuple = 1, 'Python', 3.14
+```
+
+#### Lire les Données (Read)
+
+**Accéder à un élément par son index :**
+```python
+mon_tuple = (1, 'Python', 3.14)
+print(mon_tuple[1])  # Affiche : 'Python'
+```
+
+**Parcourir un tuple avec une boucle :**
+```python
+for element in mon_tuple:
+    print(element)
+```
+
+**Longueur du tuple :**
+```python
+print(len(mon_tuple))  # Affiche : 3
+```
+#### Mettre à Jour un Tuple (Update)
+
+Les tuples sont **immutables**, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un **nouveau tuple** basé sur l'ancien.
+
+**Exemple :**
+```python
+mon_tuple = (1, 2, 3)
+nouveau_tuple = mon_tuple + (4, 5)
+print(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)
+```
+
+#### Supprimer un Tuple (Delete)
+
+Vous ne pouvez pas supprimer un élément spécifique d'un tuple, mais vous pouvez supprimer le tuple entier.
+
+**Exemple :**
+```python
+mon_tuple = (1, 2, 3)
+del mon_tuple
+```
+
+### Avantages des Tuples
+
+- **Immutabilité** : Protège les données contre les modifications accidentelles.
+- **Performance** : Les tuples sont plus rapides à traiter que les listes.
+- **Utilisation dans les clés de dictionnaire** : Les tuples peuvent être utilisés comme clés dans un dictionnaire (contrairement aux listes).
+
+**Exemple :**
+```python
+coordonnees = {
+    (0, 0): 'Origine',
+    (1, 2): 'Point A'
+}
+print(coordonnees[(1, 2)])  # Affiche : 'Point A'
+```
+
+### Différences entre Listes et Tuples
+
+| Caractéristique       | Liste               | Tuple               |
+|-----------------------|---------------------|---------------------|
+| **Mutabilité**       | Mutable             | Immuable            |
+| **Syntaxe**          | `[ ]`               | `( )`               |
+| **Performance**      | Plus lente          | Plus rapide         |
+| **Utilisation**      | Données modifiables | Données fixes       |
 ---
 
 ## Les Dictionnaires (`dict`)

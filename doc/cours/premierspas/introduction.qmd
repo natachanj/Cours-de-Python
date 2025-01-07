@@ -24,7 +24,7 @@ from: markdown+emoji
 
 # Introduction à python
 
-{{< include biendebuter.qmd >}}
+# {{< include biendebuter.qmd >}}
 
 ## Premiers pas avec Python
 

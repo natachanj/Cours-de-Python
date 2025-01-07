@@ -54,8 +54,8 @@ p {
 
 pre, code { /* Styles pour les blocs de code */
   font-family: "Courier New", Courier, monospace;
-  background-color: #F4F4F4;
-  border-left: 4px solid #2A7F62;
+  background-color: #E0E0E0; /* Gris clair */
+  border-left: none; /* Supprime la bordure verte */
   padding: 10px;
   margin: 10px 0;
   display: block;

@@ -553,6 +553,13 @@
     "text": "Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie."
   },
   {
+    "objectID": "doc/cours/introduction-slides.html#les-boucles-en-python",
+    "href": "doc/cours/introduction-slides.html#les-boucles-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Les Boucles en Python",
+    "text": "Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations."
+  },
+  {
     "objectID": "doc/cours/introduction.html",
     "href": "doc/cours/introduction.html",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
@@ -641,6 +648,13 @@
     "href": "doc/cours/introduction.html#les-structures-conditionnelles",
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "4.1 Les Structures conditionnelles",
-    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie\n\n\n\nExemple simple\nnombre = 10\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\n\n\n\nAjout de else\nL’instruction else permet d’exécuter un bloc de code si la condition est fausse.\nnombre = -5\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelse:\n    print(\"Le nombre est négatif ou nul.\")\n\n\n\nAjout de elif\nL’instruction elif permet de vérifier plusieurs conditions successives.\nnombre = 0\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelif nombre == 0:\n    print(\"Le nombre est nul.\")\nelse:\n    print(\"Le nombre est négatif.\")\n\n\n\n\nConditions imbriquées\nLes if peuvent être imbriqués pour vérifier des conditions multiples.\nage = 20\ncitoyen = True\n\nif age &gt;= 18:\n    if citoyen:\n        print(\"Vous pouvez voter.\")\n    else:\n        print(\"Vous ne pouvez pas voter, même si vous êtes majeur.\")\nelse:\n    print(\"Vous êtes mineur.\")\n\n\n\nComparaisons en Python\nLes opérateurs de comparaison permettent d’évaluer des expressions.\n\n\n\nOpérateur\nDescription\n\n\n\n\n==\nÉgalité\n\n\n!=\nDifférence\n\n\n&lt;\nInférieur à\n\n\n&lt;=\nInférieur ou égal à\n\n\n&gt;\nSupérieur à\n\n\n&gt;=\nSupérieur ou égal à"
+    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie\n\n\n\nExemple simple\nnombre = 10\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\n\n\n\nAjout de else\nL’instruction else permet d’exécuter un bloc de code si la condition est fausse.\nnombre = -5\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelse:\n    print(\"Le nombre est négatif ou nul.\")\n\n\n\nAjout de elif\nL’instruction elif permet de vérifier plusieurs conditions successives.\nnombre = 0\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelif nombre == 0:\n    print(\"Le nombre est nul.\")\nelse:\n    print(\"Le nombre est négatif.\")\n\n\n\n\nConditions imbriquées\nLes if peuvent être imbriqués pour vérifier des conditions multiples.\nage = 20\ncitoyen = True\n\nif age &gt;= 18:\n    if citoyen:\n        print(\"Vous pouvez voter.\")\n    else:\n        print(\"Vous ne pouvez pas voter, même si vous êtes majeur.\")\nelse:\n    print(\"Vous êtes mineur.\")\n\n\n\nComparaisons en Python\nLes opérateurs de comparaison permettent d’évaluer des expressions.\n\n\n\nOpérateur\nDescription\n\n\n\n\n==\nÉgalité\n\n\n!=\nDifférence\n\n\n&lt;\nInférieur à\n\n\n&lt;=\nInférieur ou égal à\n\n\n&gt;\nSupérieur à\n\n\n&gt;=\nSupérieur ou égal à\n\n\n\n\n\n\nOpérateurs logiques\nLes opérateurs logiques permettent de combiner plusieurs conditions.\n\n\n\nOpérateur\nDescription\n\n\n\n\nand\nToutes les conditions doivent être vraies.\n\n\nor\nAu moins une des conditions doit être vraie.\n\n\nnot\nInverse le résultat de la condition."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#les-boucles-en-python",
+    "href": "doc/cours/introduction.html#les-boucles-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "4.2 Les Boucles en Python",
+    "text": "4.2 Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations.\n\n\nLa boucle for\n\nLa boucle for est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).\nChaque élément de la séquence est traité successivement.\n\n\n\n\nLa boucle while\n\nLa boucle while répète un bloc de code tant qu’une condition est vraie.\nAttention aux boucles infinies : assurez-vous que la condition de sortie est atteinte."
   }
 ]

@@ -90,6 +90,8 @@ from: markdown+emoji
     - Visualisation des données et interprétation.
     - Conclusions et recommandations.
 
+---
+
 - **Partie 2** : QCM.
   - Durée : 2h.
   - Questions portant sur les concepts abordés pendant le cours et les TP.
@@ -100,6 +102,7 @@ from: markdown+emoji
 ## Bibliographie {.smaller}
 
 - [Documentation officielle Python](https://docs.python.org/3/)
+- [Cours excellent de l'ENSAE] (https://pythonds.linogaliana.fr/)
 - [Python for Everybody](https://www.py4e.com/)
 - [Google Colab](https://colab.research.google.com/)
 - [Python Crash Course (Livre)](https://nostarch.com/pythoncrashcourse2e)

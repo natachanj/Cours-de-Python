@@ -23,7 +23,6 @@ Ce fichier introduit les concepts de base pour débuter avec Python :
 - Utilisation de l'instruction `print()` pour afficher des résultats.
 - Premiers calculs et manipulations de variables.
 
-[Télécharger le notebook : Bien démarrer avec Python](00_Bien_Demarrer_Avec_Python.ipynb){.external}
 
 
 ---
@@ -34,6 +33,8 @@ Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler 
 - Les conditions `if`, `elif`, et `else`.
 - Manipulation des types de données complexes comme les listes, dictionnaires, et ensembles.
 - Exercices pratiques pour appliquer les concepts étudiés.
+
+[Télécharger le notebook : Bien démarrer avec Python](https://drive.google.com/file/d/1_SW5vvWCo_0yXhlPgyvEBMes51m-gOvW/view?usp=drive_link)
 
 
 

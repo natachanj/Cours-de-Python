@@ -104,24 +104,22 @@ from: markdown+emoji
 - [Documentation officielle Python](https://docs.python.org/3/)
 - [Cours excellent de l'ENSAE] (https://pythonds.linogaliana.fr/)
 - [Python for Everybody](https://www.py4e.com/)
-- [Google Colab](https://colab.research.google.com/)
 - [Python Crash Course (Livre)](https://nostarch.com/pythoncrashcourse2e)
 - [Site](https://www.lamsade.dauphine.fr/~manouvri/PYTHON/CoursPython_MM.html)
-
-- [Site officiel Python](https://www.python.org/)
-- [Tutoriel de la documentation officielle en ligne](https://docs.python.org/3/tutorial/index.html)
 - [Mémento Bases Python 3](https://python-simple.com/) de Laurent POINTAL, 2012-2013
 - [Abrégé Dense Python 3.2](https://python-simple.com/) de Laurent POINTAL, 2012
 
+---
 
 - [A Quick, Painless Tutorial on the Python Language](https://heather.cs.ucdavis.edu/~matloff/Python/PythonIntro.pdf) de Norman Matloff, 2008 (PDF)
 - [Tutoriels Python en ligne](https://www.python.org/about/gettingstarted/)
-
 - [Dernière version de Python et interface IDLE](https://www.python.org/downloads/)
 - [Outil IEP (Interactive Editor for Python)](https://iep-project.github.io/)
-
 - [Think Python - How to Think Like a Computer Scientist](https://greenteapress.com/wp/think-python-2e/) d'Allen B. Downey, 2014
 - [Apprendre à programmer avec Python](https://inforef.be/swi/download/apprendre_python3_5.pdf) de Gérard Swinnen, 2009
+
+---
+
 - [Une introduction à Python 3](https://python-simple.com/) de Robert CORDEAU et Laurent POINTAL, 2010
 - [Cours Python de l'École Polytechnique Universitaire UMPC](http://python.developpez.com/cours/)
 - [Documentation sur l'intégration C/C++/Python](https://docs.python.org/3/extending/index.html)

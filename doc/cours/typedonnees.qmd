@@ -61,8 +61,6 @@ Les opérations **CRUD** (Create, Read, Update, Delete) représentent les action
 - **Update (Mettre à jour)** : Modifier les données existantes.
 - **Delete (Supprimer)** : Effacer les données.
 
-Voici comment ces opérations s'appliquent aux listes en Python.
-
 
 ####  Créer une Liste (Create)
 
@@ -77,6 +75,7 @@ ma_liste = []
 fruits = ["pomme", "banane", "cerise"]
 print(fruits)  # Affiche : ['pomme', 'banane', 'cerise']
 ```
+---
 
 ###  Lire les Données (Read)
 
@@ -89,6 +88,8 @@ fruits = ["pomme", "banane", "cerise"]
 print(fruits[0])  # Affiche : "pomme"
 print(fruits[-1])  # Affiche : "cerise" (dernier élément)
 ```
+
+---
 
 #### Parcourir une liste
 
@@ -110,6 +111,8 @@ fruits = ["pomme", "banane", "cerise"]
 print(len(fruits))  # Affiche : 3
 ```
 
+---
+
 ###  Mettre à Jour une Liste (Update)
 
 #### Modifier un élément existant
@@ -123,6 +126,7 @@ fruits[1] = "orange"  # Remplace "banane" par "orange"
 print(fruits)  # Affiche : ['pomme', 'orange', 'cerise']
 ```
 
+---
 
 
 #### Ajouter des éléments
@@ -138,6 +142,8 @@ fruits.append("mangue")
 print(fruits)  # Affiche : ['pomme', 'orange', 'cerise', 'mangue']
 ```
 
+---
+
 #### À une position spécifique
 
 Utilisez la méthode `insert()` pour insérer un élément à une position spécifique dans une liste.
@@ -148,6 +154,8 @@ fruits = ["pomme", "orange", "cerise", "mangue"]
 fruits.insert(1, "fraise")  # Ajoute "fraise" à l'index 1
 print(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']
 ```
+
+---
 
 #### Fusionner deux listes
 
@@ -163,6 +171,8 @@ fruits.extend(legumes)
 print(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
 ```
 
+---
+
 #### Fusionner deux listes avec l'opérateur `+`
 
 Vous pouvez également utiliser l'opérateur `+` pour créer une nouvelle liste fusionnée.
@@ -177,6 +187,8 @@ nouvelle_liste = fruits + legumes
 print(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
 ```
 
+---
+
 ###  Supprimer des Éléments (Delete)
 
 #### Supprimer un élément par sa valeur
@@ -188,6 +200,7 @@ fruits.remove("orange")  # Supprime "orange"
 print(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']
 ```
 
+---
 
 ### Supprimer un élément par son index
 

@@ -232,6 +232,9 @@ Ce script illustre :
 """
 ```
 
+---
+
+
 # Les variables en Python
 
 ## Qu'est-ce qu'une variable ?
@@ -251,6 +254,7 @@ age = 25        # Entier
 pi = 3.14       # Nombre flottant
 est_actif = True  # Booléen
 ```
+---
 
 ##  Les Types de Base en Python
 

@@ -18,10 +18,13 @@ Ce TP est composé de deux parties principales qui vous guideront à travers les
 
 ## Partie 1 : Bien démarrer avec Python
 Ce fichier introduit les concepts de base pour débuter avec Python :
+
 - Installation et configuration de l'environnement Python.
 - Premiers pas avec les types de données (entiers, flottants, chaînes, etc.).
 - Utilisation de l'instruction `print()` pour afficher des résultats.
 - Premiers calculs et manipulations de variables.
+
+[Télécharger le notebook : Bien démarrer avec Python](https://drive.google.com/file/d/1_SW5vvWCo_0yXhlPgyvEBMes51m-gOvW/view?usp=drive_link)
 
 
 
@@ -29,12 +32,13 @@ Ce fichier introduit les concepts de base pour débuter avec Python :
 
 ## Partie 2 : Structures de Contrôle et Types de Données
 Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :
+
 - Les structures de contrôle comme les boucles `for` et `while`.
 - Les conditions `if`, `elif`, et `else`.
 - Manipulation des types de données complexes comme les listes, dictionnaires, et ensembles.
 - Exercices pratiques pour appliquer les concepts étudiés.
 
-[Télécharger le notebook : Bien démarrer avec Python](https://drive.google.com/file/d/1_SW5vvWCo_0yXhlPgyvEBMes51m-gOvW/view?usp=drive_link)
+[Télécharger le notebook : Structures de Contrôle et Types de Données](https://drive.google.com/file/d/1YSB2yJuIXgENSWCJQ0QoH9Qq3OJPo23M/view?usp=drive_link)
 
 
 

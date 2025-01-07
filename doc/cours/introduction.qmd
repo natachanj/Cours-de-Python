@@ -456,3 +456,19 @@ else:
     print("Le nombre est négatif ou nul.")
 ```
 ---
+
+#### Ajout de `elif`
+
+L'instruction `elif` permet de vérifier plusieurs conditions successives.
+
+```python
+nombre = 0
+
+if nombre > 0:
+    print("Le nombre est positif.")
+elif nombre == 0:
+    print("Le nombre est nul.")
+else:
+    print("Le nombre est négatif.")
+```
+---

@@ -169,6 +169,7 @@ print(f"Âge : {age}")
 print("Bonjour et bienvenue dans le cours de Python !")
 
 ```
+---
 
 #### Bonnes pratiques pour les commentaires
 
@@ -179,6 +180,8 @@ Vos commentaires doivent aller à l’essentiel et être compréhensibles.
 # Calcule la somme des éléments de la liste
 total = sum([1, 2, 3, 4])
 ```
+
+---
 
 - Évitez les commentaires inutiles
 
@@ -194,6 +197,7 @@ x = 5
 
 Assurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.
 
+---
 
 
 #### Différents types de commentaires
@@ -206,6 +210,8 @@ Ils s'écrivent avec `#` au début de la ligne.
 # Ce programme affiche un message
 print("Bienvenue en Python !")
 ```
+
+---
 
 - Commentaires multilignes
 

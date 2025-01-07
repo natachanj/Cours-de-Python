@@ -540,11 +540,13 @@ Les opérateurs de comparaison permettent d'évaluer des expressions.
 
 Les opérateurs logiques permettent de combiner plusieurs conditions.
 
-| Opérateur | Description                        |
-|-----------|------------------------------------|
-| `and`     | Toutes les conditions doivent être vraies. |
-| `or`      | Au moins une des conditions doit être vraie. |
-| `not`     | Inverse le résultat de la condition. |
+| Opérateur | Description                         | Exemple                              | Résultat |
+|------------|-------------------------------------|--------------------------------------|-----------|
+| `and`, `&` | Retourne `True` si **toutes** les conditions sont `True` | `True and True`, `True & True`     | `True`    |
+| `or`, `|`  | Retourne `True` si **au moins une** condition est `True` | `True or False`, `True | False`    | `True`    |
+| `not`      | Inverse la valeur booléenne          | `not True`                         | `False`   |
+|            |                                     | `not False`                        | `True`    |
+
 
 ---
 

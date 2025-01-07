@@ -78,13 +78,18 @@ pre, code { /* Styles pour les blocs de code */
 /* Box                                                      */
 /************************************************************/
 
-.green-box, .blue-box, .yellow-box, .white-box {
+.green-box, .blue-box, .white-box {
   color: black;
   border-radius: 10px;
   margin: 0 0 15px;
   overflow: hidden;
   padding: 2px;
   width: 100%;
+}
+
+.yellow-box {
+  background-color: transparent !important;
+  border: none !important;
 }
 
 .green-box {

@@ -236,6 +236,14 @@ print(fruits)  # Affiche : []
 - **`pop()`** est utile lorsque vous voulez traiter ou sauvegarder l'élément supprimé.
 - **`clear()`** est idéal pour réinitialiser une liste sans conserver ses éléments.
 
+### Résumé des Méthodes CRUD sur les Listes
+
+| Opération | Méthode                | Description                             |
+|-----------|------------------------|-----------------------------------------|
+| Create    | `[]`, `append()`, `insert()` | Créer ou ajouter des éléments.         |
+| Read      | `index`, `len()`, `for` loop | Lire ou parcourir les éléments.       |
+| Update    | `index`, `append()`, `extend()` | Modifier ou ajouter des éléments.    |
+| Delete    | `remove()`, `pop()`, `del`, `clear()` | Supprimer des éléments ou tout vider. |
 
 
 ## Les Tuples (`tuple`)
@@ -247,12 +255,24 @@ Les tuples sont des **collections ordonnées**, mais **immuables** (non modifiab
 - **Ordonnés** : Les éléments conservent leur position.
 - **Immuables** : Impossible de modifier, ajouter ou supprimer des éléments après leur création.
 
+### Création de Tuples
+
+Un tuple peut être créé en plaçant une série d'éléments séparés par des virgules dans des parenthèses `()`.
+
 **Exemple :**
 ```python
-coordonnees = (10.5, 42.3)
-jours_semaine = ("lundi", "mardi", "mercredi")
-print(coordonnees)  # Affiche : (10.5, 42.3)
+mon_tuple = (1, 2, 3)
+print(mon_tuple)  # Affiche : (1, 2, 3)
 ```
+
+### Opérations CRUD sur les Tuples
+
+Comme les tuples sont immuables, les opérations **Update** et **Delete** diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :
+
+- **Create (Créer)** : Ajouter de nouvelles données.
+- **Read (Lire)** : Consulter ou accéder aux données existantes.
+- **Update (Mettre à jour)** : Pas directement possible (les tuples sont immuables).
+- **Delete (Supprimer)** : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.
 ---
 
 ## Les Dictionnaires (`dict`)

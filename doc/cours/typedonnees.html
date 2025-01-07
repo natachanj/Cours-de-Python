@@ -199,6 +199,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#opérations-crud-sur-les-listes-en-python" id="toc-opérations-crud-sur-les-listes-en-python" class="nav-link" data-scroll-target="#opérations-crud-sur-les-listes-en-python">Opérations CRUD sur les Listes en Python</a></li>
   <li><a href="#lire-les-données-read" id="toc-lire-les-données-read" class="nav-link" data-scroll-target="#lire-les-données-read">Lire les Données (Read)</a></li>
   <li><a href="#mettre-à-jour-une-liste-update" id="toc-mettre-à-jour-une-liste-update" class="nav-link" data-scroll-target="#mettre-à-jour-une-liste-update">Mettre à Jour une Liste (Update)</a></li>
+  <li><a href="#supprimer-des-éléments-delete" id="toc-supprimer-des-éléments-delete" class="nav-link" data-scroll-target="#supprimer-des-éléments-delete">Supprimer des Éléments (Delete)</a></li>
+  <li><a href="#supprimer-un-élément-par-son-index" id="toc-supprimer-un-élément-par-son-index" class="nav-link" data-scroll-target="#supprimer-un-élément-par-son-index">Supprimer un élément par son index</a></li>
+  <li><a href="#utilisation-de-pop" id="toc-utilisation-de-pop" class="nav-link" data-scroll-target="#utilisation-de-pop">Utilisation de <code>pop()</code></a></li>
+  <li><a href="#supprimer-tous-les-éléments-avec-clear" id="toc-supprimer-tous-les-éléments-avec-clear" class="nav-link" data-scroll-target="#supprimer-tous-les-éléments-avec-clear">Supprimer tous les éléments avec <code>clear()</code></a></li>
+  <li><a href="#différence-entre-pop-et-clear" id="toc-différence-entre-pop-et-clear" class="nav-link" data-scroll-target="#différence-entre-pop-et-clear">Différence entre <code>pop()</code> et <code>clear()</code></a></li>
   </ul></li>
   <li><a href="#les-tuples-tuple" id="toc-les-tuples-tuple" class="nav-link" data-scroll-target="#les-tuples-tuple"><span class="header-section-number">2</span> Les Tuples (<code>tuple</code>)</a></li>
   <li><a href="#les-dictionnaires-dict" id="toc-les-dictionnaires-dict" class="nav-link" data-scroll-target="#les-dictionnaires-dict"><span class="header-section-number">3</span> Les Dictionnaires (<code>dict</code>)</a></li>
@@ -364,6 +369,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-6"><a href="#cb10-6"></a><span class="bu">print</span>(nouvelle_liste)  <span class="co"># Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
+<section id="supprimer-des-éléments-delete" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-des-éléments-delete">Supprimer des Éléments (Delete)</h3>
+<section id="supprimer-un-élément-par-sa-valeur" class="level4">
+<h4 class="anchored" data-anchor-id="supprimer-un-élément-par-sa-valeur">Supprimer un élément par sa valeur</h4>
+<p>Utilisez la méthode <code>remove()</code>.</p>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fruits.remove(<span class="st">"orange"</span>)  <span class="co"># Supprime "orange"</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="supprimer-un-élément-par-son-index" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-un-élément-par-son-index">Supprimer un élément par son index</h3>
+<p>Utilisez l’instruction <code>del</code> ou la méthode <code>pop()</code>.</p>
+<section id="avec-del" class="level4">
+<h4 class="anchored" data-anchor-id="avec-del">Avec <code>del</code> :</h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">del</span> fruits[<span class="dv">0</span>]  <span class="co"># Supprime le premier élément</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="utilisation-de-pop" class="level3">
+<h3 class="anchored" data-anchor-id="utilisation-de-pop">Utilisation de <code>pop()</code></h3>
+<p>La méthode <code>pop()</code> supprime un élément d’une liste <strong>et le retourne</strong>. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.</p>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>fruits <span class="op">=</span> [<span class="st">'pomme'</span>, <span class="st">'fraise'</span>, <span class="st">'cerise'</span>, <span class="st">'mangue'</span>, <span class="st">'carotte'</span>, <span class="st">'tomate'</span>]</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># Supprimer et retourner le dernier élément</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>dernier_fruit <span class="op">=</span> fruits.pop()  <span class="co"># Supprime "tomate" de la liste</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="bu">print</span>(dernier_fruit)  <span class="co"># Affiche : "tomate"</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="supprimer-tous-les-éléments-avec-clear" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-tous-les-éléments-avec-clear">Supprimer tous les éléments avec <code>clear()</code></h3>
+<p>La méthode <code>clear()</code> supprime <strong>tous les éléments</strong> de la liste, laissant une liste vide. Contrairement à <code>pop()</code>, elle ne retourne aucun élément.</p>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>fruits <span class="op">=</span> [<span class="st">'pomme'</span>, <span class="st">'fraise'</span>, <span class="st">'cerise'</span>, <span class="st">'mangue'</span>, <span class="st">'carotte'</span>]</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># Supprimer tous les éléments</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>fruits.clear()</span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="bu">print</span>(fruits)  <span class="co"># Affiche : []</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="différence-entre-pop-et-clear" class="level3">
+<h3 class="anchored" data-anchor-id="différence-entre-pop-et-clear">Différence entre <code>pop()</code> et <code>clear()</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 50%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Méthode</th>
+<th>Fonctionnalité</th>
+<th>Exemple de résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pop()</code></td>
+<td>Supprime <strong>et retourne</strong> un seul élément de la liste (par défaut, le dernier).</td>
+<td><code>fruits.pop()</code> -&gt; retourne <code>"tomate"</code>, modifie la liste.</td>
+</tr>
+<tr class="even">
+<td><code>clear()</code></td>
+<td>Supprime <strong>tous les éléments</strong> de la liste sans retourner quoi que ce soit.</td>
+<td><code>fruits.clear()</code> -&gt; retourne <code>None</code>, vide la liste.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>pop()</code></strong> est utile lorsque vous voulez traiter ou sauvegarder l’élément supprimé.</li>
+<li><strong><code>clear()</code></strong> est idéal pour réinitialiser une liste sans conserver ses éléments.</li>
+</ul>
+</section>
 </section>
 <section id="les-tuples-tuple" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="les-tuples-tuple"><span class="header-section-number">2</span> Les Tuples (<code>tuple</code>)</h2>
@@ -374,9 +452,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Immuables</strong> : Impossible de modifier, ajouter ou supprimer des éléments après leur création.</li>
 </ul>
 <p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>coordonnees <span class="op">=</span> (<span class="fl">10.5</span>, <span class="fl">42.3</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>jours_semaine <span class="op">=</span> (<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>)</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="bu">print</span>(coordonnees)  <span class="co"># Affiche : (10.5, 42.3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>coordonnees <span class="op">=</span> (<span class="fl">10.5</span>, <span class="fl">42.3</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>jours_semaine <span class="op">=</span> (<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="bu">print</span>(coordonnees)  <span class="co"># Affiche : (10.5, 42.3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="les-dictionnaires-dict" class="level2" data-number="3">
@@ -389,12 +467,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Clés uniques</strong> : Une clé ne peut être présente qu’une seule fois.</li>
 </ul>
 <p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>personne <span class="op">=</span> {<span class="st">"nom"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"ville"</span>: <span class="st">"Paris"</span>}</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(personne[<span class="st">"nom"</span>])  <span class="co"># Affiche "Alice"</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Modifier la valeur associée à une clé</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>personne[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">26</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="bu">print</span>(personne)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>personne <span class="op">=</span> {<span class="st">"nom"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"ville"</span>: <span class="st">"Paris"</span>}</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(personne[<span class="st">"nom"</span>])  <span class="co"># Affiche "Alice"</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># Modifier la valeur associée à une clé</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>personne[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">26</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="bu">print</span>(personne)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="les-ensembles-set" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="les-ensembles-set"><span class="header-section-number">4</span> Les Ensembles (<code>set</code>)</h2>
@@ -406,9 +484,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Opérations mathématiques</strong> : Permettent des opérations comme l’union, l’intersection, la différence, etc.</li>
 </ul>
 <p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
-<span id="cb13-2"><a href="#cb13-2"></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
+<span id="cb17-2"><a href="#cb17-2"></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

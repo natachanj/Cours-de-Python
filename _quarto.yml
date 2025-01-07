@@ -5,7 +5,7 @@ project:
   type: website
 
 website:
-  title: "Base de données"
+  title: "Programmation en Python"
   repo-url: "{{< meta var.url-repo >}}"
   repo-branch: main
   reader-mode: true

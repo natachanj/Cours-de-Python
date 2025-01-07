@@ -31,9 +31,16 @@ Python propose des types de données avancés pour manipuler des collections de 
 Les listes sont des **collections ordonnées** et **modifiables**. Elles peuvent contenir des éléments de types différents.
 
 **Caractéristiques :**
-- Ordonnées : Les éléments conservent leur ordre.
-- Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments.
-- Peuvent contenir des doublons.
+
+- **Ordonnées** : Les éléments conservent leur position dans l'ordre dans lequel ils ont été ajoutés.
+- **Modifiables** : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d'éléments).
+- **Hétérogènes** : Une liste peut contenir des éléments de différents types.
+
+---
+
+### Création de listes
+
+Les listes peuvent être créées à partir d'une série d'éléments séparés par des virgules et entourés de crochets `[ ]`.
 
 **Exemple :**
 ```python
@@ -81,4 +88,22 @@ print(personne["nom"])  # Affiche "Alice"
 # Modifier la valeur associée à une clé
 personne["age"] = 26
 print(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
+```
+
+
+##  Les Ensembles (`set`)
+
+Les ensembles sont des **collections non ordonnées** et **uniques** (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.
+
+**Caractéristiques :**
+
+- **Non ordonnés** : Les éléments n'ont pas de position fixe.
+- **Éléments uniques** : Les doublons sont automatiquement supprimés.
+- **Opérations mathématiques** : Permettent des opérations comme l'union, l'intersection, la différence, etc.
+
+**Exemple :**
+```python
+lettres = {"a", "b", "c"}
+nombres = {1, 2, 3, 2}  # Les doublons sont supprimés
+print(nombres)  # Affiche : {1, 2, 3}
 ```

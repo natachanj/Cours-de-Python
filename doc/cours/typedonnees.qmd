@@ -177,6 +177,66 @@ nouvelle_liste = fruits + legumes
 print(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
 ```
 
+###  Supprimer des Éléments (Delete)
+
+#### Supprimer un élément par sa valeur
+Utilisez la méthode `remove()`.
+
+**Exemple :**
+```python
+fruits.remove("orange")  # Supprime "orange"
+print(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+
+### Supprimer un élément par son index
+
+Utilisez l'instruction `del` ou la méthode `pop()`.
+
+#### Avec `del` :
+```python
+del fruits[0]  # Supprime le premier élément
+print(fruits)  # Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+### Utilisation de `pop()`
+
+La méthode `pop()` supprime un élément d'une liste **et le retourne**. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.
+
+**Exemple :**
+```python
+fruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']
+
+# Supprimer et retourner le dernier élément
+dernier_fruit = fruits.pop()  # Supprime "tomate" de la liste
+print(dernier_fruit)  # Affiche : "tomate"
+print(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']
+```
+
+### Supprimer tous les éléments avec `clear()`
+
+La méthode `clear()` supprime **tous les éléments** de la liste, laissant une liste vide. Contrairement à `pop()`, elle ne retourne aucun élément.
+
+**Exemple :**
+```python
+fruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']
+
+# Supprimer tous les éléments
+fruits.clear()
+print(fruits)  # Affiche : []
+```
+
+### Différence entre `pop()` et `clear()`
+
+| Méthode   | Fonctionnalité                                         | Exemple de résultat                       |
+|-----------|--------------------------------------------------------|-------------------------------------------|
+| `pop()`   | Supprime **et retourne** un seul élément de la liste (par défaut, le dernier). | `fruits.pop()` -> retourne `"tomate"`, modifie la liste. |
+| `clear()` | Supprime **tous les éléments** de la liste sans retourner quoi que ce soit. | `fruits.clear()` -> retourne `None`, vide la liste. |
+
+- **`pop()`** est utile lorsque vous voulez traiter ou sauvegarder l'élément supprimé.
+- **`clear()`** est idéal pour réinitialiser une liste sans conserver ses éléments.
+
+
 
 ## Les Tuples (`tuple`)
 

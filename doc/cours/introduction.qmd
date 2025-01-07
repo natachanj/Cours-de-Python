@@ -51,7 +51,7 @@ Python est un langage de programmation polyvalent, apprécié pour sa simplicit�
 ---
 
 
-{{< include doc/cours/conseils.qmd >}}
+
 
 
 ## Premiers pas avec Python

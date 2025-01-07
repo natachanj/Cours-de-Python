@@ -78,7 +78,7 @@ fruits = ["pomme", "banane", "cerise"]
 print(fruits)  # Affiche : ['pomme', 'banane', 'cerise']
 ```
 
-### 2. Lire les Données (Read)
+###  Lire les Données (Read)
 
 #### Accéder à un élément par son index
 Les indices commencent à 0.
@@ -88,6 +88,39 @@ Les indices commencent à 0.
 fruits = ["pomme", "banane", "cerise"]
 print(fruits[0])  # Affiche : "pomme"
 print(fruits[-1])  # Affiche : "cerise" (dernier élément)
+```
+
+#### Parcourir une liste
+
+Vous pouvez utiliser une boucle pour parcourir tous les éléments.
+
+**Exemple :**
+```python
+for fruit in fruits:
+    print(fruit)
+```
+
+#### Longueur de la liste
+
+Utilisez la fonction `len()` pour connaître le nombre d'éléments dans une liste.
+
+**Exemple :**
+```python
+fruits = ["pomme", "banane", "cerise"]
+print(len(fruits))  # Affiche : 3
+```
+
+### 3. Mettre à Jour une Liste (Update)
+
+#### Modifier un élément existant
+
+Accédez à l'élément par son index et assignez-lui une nouvelle valeur.
+
+**Exemple :**
+```python
+fruits = ["pomme", "banane", "cerise"]
+fruits[1] = "orange"  # Remplace "banane" par "orange"
+print(fruits)  # Affiche : ['pomme', 'orange', 'cerise']
 ```
 
 

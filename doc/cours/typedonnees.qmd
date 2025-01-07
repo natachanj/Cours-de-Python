@@ -319,6 +319,8 @@ Vous pouvez également créer un tuple sans parenthèses (packing) :
 mon_tuple = 1, 'Python', 3.14
 ```
 
+---
+
 #### Lire les Données (Read)
 
 **Accéder à un élément par son index :**
@@ -333,10 +335,13 @@ for element in mon_tuple:
     print(element)
 ```
 
+---
+
 **Longueur du tuple :**
 ```python
 print(len(mon_tuple))  # Affiche : 3
 ```
+---
 #### Mettre à Jour un Tuple (Update)
 
 Les tuples sont **immutables**, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un **nouveau tuple** basé sur l'ancien.
@@ -348,6 +353,8 @@ nouveau_tuple = mon_tuple + (4, 5)
 print(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)
 ```
 
+---
+
 #### Supprimer un Tuple (Delete)
 
 Vous ne pouvez pas supprimer un élément spécifique d'un tuple, mais vous pouvez supprimer le tuple entier.
@@ -357,6 +364,8 @@ Vous ne pouvez pas supprimer un élément spécifique d'un tuple, mais vous pouv
 mon_tuple = (1, 2, 3)
 del mon_tuple
 ```
+
+---
 
 ### Avantages des Tuples
 
@@ -372,6 +381,8 @@ coordonnees = {
 }
 print(coordonnees[(1, 2)])  # Affiche : 'Point A'
 ```
+
+---
 
 ### Différences entre Listes et Tuples
 
@@ -393,6 +404,8 @@ Les dictionnaires sont des **collections non ordonnées** (dans les versions ant
 - **Modifiables** : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.
 - **Clés uniques** : Une clé ne peut être présente qu'une seule fois.
 
+---
+
 ### Création de Dictionnaires
 
 Un dictionnaire peut être créé en utilisant des accolades `{}` et des paires clé-valeur séparées par des deux-points `:`.
@@ -407,6 +420,8 @@ mon_dict = {
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
 ```
 
+---
+
 ### Opérations CRUD sur les Dictionnaires
 
 Les dictionnaires permettent les opérations fondamentales **CRUD** (Create, Read, Update, Delete) comme suit :
@@ -415,6 +430,8 @@ Les dictionnaires permettent les opérations fondamentales **CRUD** (Create, Rea
 - **Read (Lire)** : Accéder à une valeur via sa clé.
 - **Update (Mettre à jour)** : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.
 - **Delete (Supprimer)** : Supprimer une paire clé-valeur.
+
+---
 
 #### Créer un Dictionnaire (Create)
 
@@ -428,6 +445,9 @@ mon_dict['nom'] = 'Alice'
 mon_dict['age'] = 25
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}
 ```
+
+---
+
 #### Lire les Données (Read)
 
 **Accéder à une valeur par sa clé :**
@@ -440,6 +460,7 @@ print(mon_dict['nom'])  # Affiche : Alice
 ```python
 print(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable
 ```
+---
 
 **Parcourir un dictionnaire :**
 ```python
@@ -453,6 +474,8 @@ print(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville']
 print(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])
 ```
 
+---
+
 #### Mettre à Jour un Dictionnaire (Update)
 
 **Ajouter ou modifier une clé :**
@@ -462,6 +485,7 @@ mon_dict['ville'] = 'Paris'  # Ajout
 mon_dict['age'] = 26         # Mise à jour
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
 ```
+---
 
 **Fusionner deux dictionnaires :**
 ```python
@@ -469,6 +493,7 @@ autre_dict = {'pays': 'France', 'profession': 'Ingénieure'}
 mon_dict.update(autre_dict)
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}
 ```
+---
 
 #### Supprimer des Éléments (Delete)
 
@@ -478,6 +503,8 @@ mon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
 del mon_dict['age']
 print(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}
 ```
+
+---
 
 **Supprimer et retourner une valeur avec `pop()` :**
 ```python
@@ -491,6 +518,8 @@ print(mon_dict)  # Affiche : {'nom': 'Alice'}
 mon_dict.clear()
 print(mon_dict)  # Affiche : {}
 ```
+
+---
 
 ### Avantages des Dictionnaires
 
@@ -510,6 +539,8 @@ utilisateur = {
 }
 print(utilisateur['contact']['email'])  # Affiche : alice@example.com
 ```
+
+---
 
 ### Différences entre Listes et Dictionnaires
 

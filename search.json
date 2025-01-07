@@ -129,15 +129,43 @@
     "objectID": "doc/cours/typedonnees.html#les-listes-list",
     "href": "doc/cours/typedonnees.html#les-listes-list",
     "title": "Les Types de données en Python",
-    "section": "1 1. Les Listes (list)",
-    "text": "1 1. Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques : - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
+    "section": "1 Les Listes (list)",
+    "text": "1 Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques : - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-tuples-tuple",
+    "href": "doc/cours/typedonnees.html#les-tuples-tuple",
+    "title": "Les Types de données en Python",
+    "section": "2 Les Tuples (tuple)",
+    "text": "2 Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création.\n\nExemple :\ncoordonnees = (10.5, 42.3)\njours_semaine = (\"lundi\", \"mardi\", \"mercredi\")\nprint(coordonnees)  # Affiche : (10.5, 42.3)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-dictionnaires-dict",
+    "href": "doc/cours/typedonnees.html#les-dictionnaires-dict",
+    "title": "Les Types de données en Python",
+    "section": "3 Les Dictionnaires (dict)",
+    "text": "3 Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\nExemple :\npersonne = {\"nom\": \"Alice\", \"age\": 25, \"ville\": \"Paris\"}\nprint(personne[\"nom\"])  # Affiche \"Alice\"\n\n# Modifier la valeur associée à une clé\npersonne[\"age\"] = 26\nprint(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}"
   },
   {
     "objectID": "doc/cours/typedonnees-slides.html#les-listes-list",
     "href": "doc/cours/typedonnees-slides.html#les-listes-list",
     "title": "Les Types de données en Python",
-    "section": "1. Les Listes (list)",
-    "text": "1. Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques : - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
+    "section": "Les Listes (list)",
+    "text": "Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques : - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
+    "href": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
+    "title": "Les Types de données en Python",
+    "section": "Les Tuples (tuple)",
+    "text": "Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création.\n\nExemple :\ncoordonnees = (10.5, 42.3)\njours_semaine = (\"lundi\", \"mardi\", \"mercredi\")\nprint(coordonnees)  # Affiche : (10.5, 42.3)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-dictionnaires-dict",
+    "href": "doc/cours/typedonnees-slides.html#les-dictionnaires-dict",
+    "title": "Les Types de données en Python",
+    "section": "Les Dictionnaires (dict)",
+    "text": "Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\nExemple :\npersonne = {\"nom\": \"Alice\", \"age\": 25, \"ville\": \"Paris\"}\nprint(personne[\"nom\"])  # Affiche \"Alice\"\n\n# Modifier la valeur associée à une clé\npersonne[\"age\"] = 26\nprint(personne)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}"
   },
   {
     "objectID": "doc/tp/tp1.html",

@@ -213,7 +213,7 @@ Natacha Njongwa Yepnga
 </section>
 <section>
 <section id="les-listes-list" class="title-slide slide level2 center">
-<h2>1. Les Listes (<code>list</code>)</h2>
+<h2>Les Listes (<code>list</code>)</h2>
 <p>Les listes sont des <strong>collections ordonnées</strong> et <strong>modifiables</strong>. Elles peuvent contenir des éléments de types différents.</p>
 <p><strong>Caractéristiques :</strong> - Ordonnées : Les éléments conservent leur ordre. - Modifiables : Vous pouvez ajouter, supprimer ou modifier des éléments. - Peuvent contenir des doublons.</p>
 <p><strong>Exemple :</strong></p>
@@ -224,9 +224,43 @@ Natacha Njongwa Yepnga
 </section>
 <section class="slide level3">
 
-
+</section></section>
+<section>
+<section id="les-tuples-tuple" class="title-slide slide level2 center">
+<h2>Les Tuples (<code>tuple</code>)</h2>
+<p>Les tuples sont des <strong>collections ordonnées</strong>, mais <strong>immuables</strong> (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.</p>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Ordonnés</strong> : Les éléments conservent leur position.</li>
+<li><strong>Immuables</strong> : Impossible de modifier, ajouter ou supprimer des éléments après leur création.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>coordonnees <span class="op">=</span> (<span class="fl">10.5</span>, <span class="fl">42.3</span>)</span>
+<span id="cb2-2"><a></a>jours_semaine <span class="op">=</span> (<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>)</span>
+<span id="cb2-3"><a></a><span class="bu">print</span>(coordonnees)  <span class="co"># Affiche : (10.5, 42.3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
 
 </section></section>
+<section id="les-dictionnaires-dict" class="title-slide slide level2 center">
+<h2>Les Dictionnaires (<code>dict</code>)</h2>
+<p>Les dictionnaires sont des <strong>collections non ordonnées</strong> (dans les versions antérieures à Python 3.7) qui stockent des <strong>paires clé-valeur</strong>. Chaque clé doit être unique.</p>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Accès rapide</strong> : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.</li>
+<li><strong>Modifiables</strong> : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.</li>
+<li><strong>Clés uniques</strong> : Une clé ne peut être présente qu’une seule fois.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>personne <span class="op">=</span> {<span class="st">"nom"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"ville"</span>: <span class="st">"Paris"</span>}</span>
+<span id="cb3-2"><a></a><span class="bu">print</span>(personne[<span class="st">"nom"</span>])  <span class="co"># Affiche "Alice"</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Modifier la valeur associée à une clé</span></span>
+<span id="cb3-5"><a></a>personne[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">26</span></span>
+<span id="cb3-6"><a></a><span class="bu">print</span>(personne)  <span class="co"># Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

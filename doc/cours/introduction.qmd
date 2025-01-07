@@ -544,3 +544,28 @@ Les boucles permettent de répéter des actions tant qu'une condition est vraie 
 2. Attention aux boucles infinies : assurez-vous que la condition de sortie est atteinte.
 
 ---
+
+|-------------|-----------------------------------------------------------------------------|
+| `break`     | Interrompt la boucle immédiatement, même si la condition n'est pas terminée. |
+| `continue`  | Passe à l'itération suivante sans exécuter le reste du bloc de code actuel.  |
+| `pass`      | Ne fait rien. Utilisé comme espace réservé dans une boucle ou une condition.|
+
+---
+
+## Résumé
+
+| Structure        | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `if`             | Exécute un bloc si une condition est vraie.                                 |
+| `elif`           | Ajoute des conditions supplémentaires.                                      |
+| `else`           | Définit un bloc exécuté si toutes les conditions sont fausses.              |
+| `for`            | Parcourt une séquence ou un intervalle.                                     |
+| `while`          | Répète un bloc tant qu'une condition est vraie.                             |
+| `break`          | Interrompt une boucle.                                                      |
+| `continue`       | Saute à l'itération suivante.                                               |
+| `pass`           | Ne fait rien (utile pour des blocs vides).                                  |
+
+---
+
+
+Avec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !

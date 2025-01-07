@@ -404,19 +404,6 @@ print("Nom:\\tAlice")
 ```
 ---
 
-
-Voici une liste des caractères spéciaux les plus couramment utilisés en Python :
-
-| Caractère | Description                                | Exemple d'utilisation                        |
-|-----------|--------------------------------------------|----------------------------------------------|
-| `\n`     | Saut de ligne                             | "Bonjour\nPython" produit :\nBonjour\nPython |
-| `\t`     | Tabulation                                | "Nom:\tAlice" produit :\nNom:    Alice      |
-| `\\`     | Barre oblique inversée                    | "C:\\Utilisateurs" produit : C:\Utilisateurs |
-| `\'`     | Apostrophe dans une chaîne entre guillemets simples | 'C\'est un test' produit : C'est un test   |
-| `\"`    | Guillemets dans une chaîne entre guillemets doubles | "Il a dit : \"Bonjour\"" produit : Il a dit : "Bonjour" |
-
----
-
 ## Contrôler la fin de l'affichage
 
 Par défaut, chaque appel à `print()` termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.
@@ -540,13 +527,11 @@ Les opérateurs de comparaison permettent d'évaluer des expressions.
 
 Les opérateurs logiques permettent de combiner plusieurs conditions.
 
-| Opérateur | Description                         | Exemple                              | Résultat |
-|------------|-------------------------------------|--------------------------------------|-----------|
-| `and`, `&` | Retourne `True` si **toutes** les conditions sont `True` | `True and True`, `True & True`     | `True`    |
-| `or`, `|`  | Retourne `True` si **au moins une** condition est `True` | `True or False`, `True | False`    | `True`    |
-| `not`      | Inverse la valeur booléenne          | `not True`                         | `False`   |
-|            |                                     | `not False`                        | `True`    |
-
+| Opérateur | Description                        |
+|-----------|------------------------------------|
+| `and`     | Toutes les conditions doivent être vraies. |
+| `or`      | Au moins une des conditions doit être vraie. |
+| `not`     | Inverse le résultat de la condition. |
 
 ---
 

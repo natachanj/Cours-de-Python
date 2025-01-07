@@ -119,46 +119,193 @@
     "text": "Bibliographie\n\nDocumentation officielle Python\nPython for Everybody\nGoogle Colab\nPython Crash Course (Livre)\nSite\nSite officiel Python\nTutoriel de la documentation officielle en ligne\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010\nCours Python de l’École Polytechnique Universitaire UMPC\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
   },
   {
-    "objectID": "doc/glossaire.html",
-    "href": "doc/glossaire.html",
-    "title": "Glossaire",
+    "objectID": "doc/cours/typedonnees.html",
+    "href": "doc/cours/typedonnees.html",
+    "title": "Les Types de données en Python",
     "section": "",
-    "text": "🚧"
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).\n\n\n\n\n\n\n\n\nPython est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.\n\n\nUne variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d’y attribuer une valeur :\nx = 5\ny = \"Python\"\nprint(x, y)\n\n\n\n\nDans un script Python, tout ce qui suit le caractère # est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées commentaires et sont destinées à expliquer le code dans un langage humain.\n\n\n\n\nClarifier le code : Expliquez des portions complexes pour vous ou d’autres développeurs.\nDocumenter le fonctionnement : Fournir des indications sur le rôle d’un morceau de code ou d’une fonction.\nFaciliter la maintenance : Les commentaires rendent votre code plus compréhensible à long terme.\n\nLes commentaires ne sont pas exécutés par Python et n’affectent donc pas les performances du programme.\n\nPour ajouter un commentaire, commencez la ligne avec un #. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.\nExemple simple :\n# Ceci est un commentaire simple\nprint(\"Hello world!\")  # Affiche un message à l'écran\n\n# Déclaration de variables\nnom = \"Alice\"  # Nom de l'utilisateur\nage = 25       # Âge de l'utilisateur\n\n# Affichage des informations\nprint(f\"Nom : {nom}\")\nprint(f\"Âge : {age}\")\n\n# Cette partie affiche une salutation\nprint(\"Bonjour et bienvenue dans le cours de Python !\")\n\n\n\n\nSoyez concis et clair Vos commentaires doivent aller à l’essentiel et être compréhensibles.\n\n# Calcule la somme des éléments de la liste\ntotal = sum([1, 2, 3, 4])\n\nÉvitez les commentaires inutiles\n\nNe commentez pas des choses évidentes que le code lui-même exprime clairement.\nExemple inutile :\n# Attribue la valeur 5 à la variable x\nx = 5\n\nMettez à jour vos commentaires\n\nAssurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.\n\n\n\n\nCommentaires sur une ligne\n\nIls s’écrivent avec # au début de la ligne.\n# Ce programme affiche un message\nprint(\"Bienvenue en Python !\")\n\nCommentaires multilignes\n\nPour commenter plusieurs lignes, vous pouvez utiliser # au début de chaque ligne ou une chaîne de caractères triple (\"\"\" ou ''') si le commentaire est temporaire.\n# Début du programme\n# Ce script montre un exemple\n# avec des commentaires multilignes.\nOu avec une chaîne triple :\n\"\"\"\nCe script illustre :\n- L'utilisation de variables\n- L'utilisation des commentaires\n\"\"\""
   },
   {
-    "objectID": "doc/glossaire.html#python",
-    "href": "doc/glossaire.html#python",
-    "title": "Glossaire",
-    "section": "Python",
-    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
-  },
-  {
-    "objectID": "doc/glossaire.html#structures-de-contrôle",
-    "href": "doc/glossaire.html#structures-de-contrôle",
-    "title": "Glossaire",
-    "section": "Structures de contrôle",
-    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Programmation avec Python: Analyse de données et Data visualisation",
+    "objectID": "doc/cours/typedonnees.html#introduction",
+    "href": "doc/cours/typedonnees.html#introduction",
+    "title": "Les Types de données en Python",
     "section": "",
-    "text": "6 sessions de 3 heures (18 heures au total)"
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
   },
   {
-    "objectID": "index.html#contenu-du-cours",
-    "href": "index.html#contenu-du-cours",
-    "title": "Programmation avec Python: Analyse de données et Data visualisation",
-    "section": "Contenu du cours",
-    "text": "Contenu du cours\n\nIntroduction à Python\n\nPrésentation et installation\nVariables, types de données, opérateurs\n\nStructures de contrôle\n\nConditions (if, elif, else)\nBoucles (for, while)\nGestion des erreurs (try, except)\n\nLes fonctions\n\nDéfinir et appeler des fonctions\nParamètres, valeurs de retour\n\nManipulation de données avec pandas\n\nChargement de fichiers CSV/Excel\nNettoyage des données (valeurs manquantes, transformations)\nSélection et filtrage des données\n\nVisualisation des données\n\nGraphiques avec Matplotlib\nVisualisation avancée avec Seaborn\n\nProgrammation orientée objet (POO)\n\nDéfinition de classes, objets, méthodes\n\nIntroduction au Machine Learning avec Python\n\nBibliothèques essentielles : scikit-learn\nPréparation des données pour le ML (normalisation, division en train/test)\nModèles supervisés : régression linéaire et classification (KNN)\nÉvaluation des modèles : métriques (MAE, R², précision, rappel)\nNotions de surapprentissage et régularisation\n\nProjet final\n\nNettoyage, exploration, visualisation et modélisation d’un dataset"
+    "objectID": "doc/cours/typedonnees.html#premiers-pas-avec-python",
+    "href": "doc/cours/typedonnees.html#premiers-pas-avec-python",
+    "title": "Les Types de données en Python",
+    "section": "",
+    "text": "Python est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.\n\n\nUne variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d’y attribuer une valeur :\nx = 5\ny = \"Python\"\nprint(x, y)\n\n\n\n\nDans un script Python, tout ce qui suit le caractère # est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées commentaires et sont destinées à expliquer le code dans un langage humain.\n\n\n\n\nClarifier le code : Expliquez des portions complexes pour vous ou d’autres développeurs.\nDocumenter le fonctionnement : Fournir des indications sur le rôle d’un morceau de code ou d’une fonction.\nFaciliter la maintenance : Les commentaires rendent votre code plus compréhensible à long terme.\n\nLes commentaires ne sont pas exécutés par Python et n’affectent donc pas les performances du programme.\n\nPour ajouter un commentaire, commencez la ligne avec un #. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.\nExemple simple :\n# Ceci est un commentaire simple\nprint(\"Hello world!\")  # Affiche un message à l'écran\n\n# Déclaration de variables\nnom = \"Alice\"  # Nom de l'utilisateur\nage = 25       # Âge de l'utilisateur\n\n# Affichage des informations\nprint(f\"Nom : {nom}\")\nprint(f\"Âge : {age}\")\n\n# Cette partie affiche une salutation\nprint(\"Bonjour et bienvenue dans le cours de Python !\")\n\n\n\n\nSoyez concis et clair Vos commentaires doivent aller à l’essentiel et être compréhensibles.\n\n# Calcule la somme des éléments de la liste\ntotal = sum([1, 2, 3, 4])\n\nÉvitez les commentaires inutiles\n\nNe commentez pas des choses évidentes que le code lui-même exprime clairement.\nExemple inutile :\n# Attribue la valeur 5 à la variable x\nx = 5\n\nMettez à jour vos commentaires\n\nAssurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.\n\n\n\n\nCommentaires sur une ligne\n\nIls s’écrivent avec # au début de la ligne.\n# Ce programme affiche un message\nprint(\"Bienvenue en Python !\")\n\nCommentaires multilignes\n\nPour commenter plusieurs lignes, vous pouvez utiliser # au début de chaque ligne ou une chaîne de caractères triple (\"\"\" ou ''') si le commentaire est temporaire.\n# Début du programme\n# Ce script montre un exemple\n# avec des commentaires multilignes.\nOu avec une chaîne triple :\n\"\"\"\nCe script illustre :\n- L'utilisation de variables\n- L'utilisation des commentaires\n\"\"\""
   },
   {
-    "objectID": "index.html#correction-des-tp",
-    "href": "index.html#correction-des-tp",
-    "title": "Programmation avec Python: Analyse de données et Data visualisation",
-    "section": "Correction des TP",
-    "text": "Correction des TP\n\nSéance 1 : Introduction à Python\n\nTP1 :\n\nÉcrire un programme pour manipuler des types simples (nombres, chaînes).\nImplémenter un calcul d’aire et périmètre de figures géométriques.\nAjouter une fonction pour vérifier si un mot est un palindrome.\n\n\n\n\nSéance 2 : Structures de contrôle\n\nTP2 :\n\nCréer un programme pour afficher les nombres premiers dans une plage donnée.\nÉcrire des scripts utilisant des boucles imbriquées (tables de multiplication).\nAjouter la gestion d’erreurs pour une division par zéro.\n\n\n\n\nSéance 3 : Manipulation de données avec pandas\n\nTP3 :\n\nCharger un dataset CSV.\nNettoyer les données (valeurs manquantes, doublons).\nAppliquer des filtres conditionnels pour extraire des sous-ensembles.\nEffectuer des statistiques descriptives simples (mean, std, min, max).\n\n\n\n\nSéance 4 : Visualisation des données\n\nTP4 :\n\nCréer des histogrammes et des scatterplots avec Matplotlib.\nUtiliser Seaborn pour tracer des heatmaps et analyser des corrélations.\nPersonnaliser des graphiques (titres, étiquettes, couleurs).\n\n\n\n\nSéance 5 : Programmation orientée objet (POO)\n\nTP5 :\n\nImplémenter une classe pour gérer les données d’un étudiant (nom, notes, moyenne).\n\nAjouter des méthodes pour calculer la moyenne et vérifier la réussite.\n\nÉtendre la classe avec des attributs supplémentaires (matières optionnelles).\n\n\n\n\nSéance 6 : Machine Learning avec Python\n\nTP6 :\n\nCharger un dataset (pandas) et le préparer pour le Machine Learning (normalisation, séparation train/test).\n\nImplémenter un modèle de régression linéaire pour prédire une variable cible.\n\nUtiliser un modèle de classification (KNN) pour classer des données.\n\nÉvaluer les performances avec des métriques comme R², précision et rappel."
+    "objectID": "doc/cours/typedonnees.html#quest-ce-quune-variable",
+    "href": "doc/cours/typedonnees.html#quest-ce-quune-variable",
+    "title": "Les Types de données en Python",
+    "section": "2.1 Qu’est-ce qu’une variable ?",
+    "text": "2.1 Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#déclaration-dune-variable",
+    "href": "doc/cours/typedonnees.html#déclaration-dune-variable",
+    "title": "Les Types de données en Python",
+    "section": "2.2 Déclaration d’une variable",
+    "text": "2.2 Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-types-de-base-en-python",
+    "href": "doc/cours/typedonnees.html#les-types-de-base-en-python",
+    "title": "Les Types de données en Python",
+    "section": "2.3 Les Types de Base en Python",
+    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique\n\nCes types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.\n\n\nChaînes de caractères (str)\nLes chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\ntype(nom)\n\n\n\nEntiers (int)\nLes entiers représentent des nombres sans décimales, qu’ils soient positifs ou négatifs.\nExemple :\n# Déclaration de variables\nage = 25        # Entier\ntype(age)\n\n\n\nFlottants (float)\nLes flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions. Exemple :\n# Déclaration de variables\npi = 3.14       # Nombre flottant\ntype(pi)\n\n\n\nBooléens (bool)\nLes booléens sont des valeurs logiques, pouvant être True (vrai) ou False (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d’un programme. Exemple :\n# Déclaration de variables\nest_actif = True  # Booléen\ntype(est_actif)\n\n\n\nRésumé des types de base\n\n\n\nType\nDescription\n\n\n\n\nstr\nChaîne de caractères\n\n\nint\nNombres entiers\n\n\nfloat\nNombres décimaux\n\n\nbool\nValeurs logiques (True/False)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#la-fonction-print",
+    "href": "doc/cours/typedonnees.html#la-fonction-print",
+    "title": "Les Types de données en Python",
+    "section": "3.1 La fonction print()",
+    "text": "3.1 La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#afficher-plusieurs-éléments",
+    "href": "doc/cours/typedonnees.html#afficher-plusieurs-éléments",
+    "title": "Les Types de données en Python",
+    "section": "3.2 Afficher plusieurs éléments",
+    "text": "3.2 Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#formatage-des-chaînes",
+    "href": "doc/cours/typedonnees.html#formatage-des-chaînes",
+    "title": "Les Types de données en Python",
+    "section": "3.3 Formatage des chaînes",
+    "text": "3.3 Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#caractères-spéciaux",
+    "href": "doc/cours/typedonnees.html#caractères-spéciaux",
+    "title": "Les Types de données en Python",
+    "section": "3.4 Caractères spéciaux",
+    "text": "3.4 Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#contrôler-la-fin-de-laffichage",
+    "href": "doc/cours/typedonnees.html#contrôler-la-fin-de-laffichage",
+    "title": "Les Types de données en Python",
+    "section": "3.5 Contrôler la fin de l’affichage",
+    "text": "3.5 Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#résumé",
+    "href": "doc/cours/typedonnees.html#résumé",
+    "title": "Les Types de données en Python",
+    "section": "3.6 Résumé",
+    "text": "3.6 Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-structures-conditionnelles",
+    "href": "doc/cours/typedonnees.html#les-structures-conditionnelles",
+    "title": "Les Types de données en Python",
+    "section": "4.1 Les Structures conditionnelles",
+    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie\n\n\n\nExemple simple\nnombre = 10\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\n\n\n\nAjout de else\nL’instruction else permet d’exécuter un bloc de code si la condition est fausse.\nnombre = -5\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelse:\n    print(\"Le nombre est négatif ou nul.\")\n\n\n\nAjout de elif\nL’instruction elif permet de vérifier plusieurs conditions successives.\nnombre = 0\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelif nombre == 0:\n    print(\"Le nombre est nul.\")\nelse:\n    print(\"Le nombre est négatif.\")\n\n\n\n\nConditions imbriquées\nLes if peuvent être imbriqués pour vérifier des conditions multiples.\nage = 20\ncitoyen = True\n\nif age &gt;= 18:\n    if citoyen:\n        print(\"Vous pouvez voter.\")\n    else:\n        print(\"Vous ne pouvez pas voter, même si vous êtes majeur.\")\nelse:\n    print(\"Vous êtes mineur.\")\n\n\n\nComparaisons en Python\nLes opérateurs de comparaison permettent d’évaluer des expressions.\n\n\n\nOpérateur\nDescription\n\n\n\n\n==\nÉgalité\n\n\n!=\nDifférence\n\n\n&lt;\nInférieur à\n\n\n&lt;=\nInférieur ou égal à\n\n\n&gt;\nSupérieur à\n\n\n&gt;=\nSupérieur ou égal à\n\n\n\n\n\n\nOpérateurs logiques\nLes opérateurs logiques permettent de combiner plusieurs conditions.\n\n\n\nOpérateur\nDescription\n\n\n\n\nand\nToutes les conditions doivent être vraies.\n\n\nor\nAu moins une des conditions doit être vraie.\n\n\nnot\nInverse le résultat de la condition."
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-boucles-en-python",
+    "href": "doc/cours/typedonnees.html#les-boucles-en-python",
+    "title": "Les Types de données en Python",
+    "section": "4.2 Les Boucles en Python",
+    "text": "4.2 Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations.\n\n\nLa boucle for\n\nLa boucle for est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).\nChaque élément de la séquence est traité successivement.\n\n\n\n\nLa boucle while\n\nLa boucle while répète un bloc de code tant qu’une condition est vraie.\nAttention aux boucles infinies : assurez-vous que la condition de sortie est atteinte."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#introduction",
+    "href": "doc/cours/typedonnees-slides.html#introduction",
+    "title": "Les Types de données en Python",
+    "section": "Introduction",
+    "text": "Introduction\nPython est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#premiers-pas-avec-python",
+    "href": "doc/cours/typedonnees-slides.html#premiers-pas-avec-python",
+    "title": "Les Types de données en Python",
+    "section": "Premiers pas avec Python",
+    "text": "Premiers pas avec Python\nPython est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#quest-ce-quune-variable",
+    "href": "doc/cours/typedonnees-slides.html#quest-ce-quune-variable",
+    "title": "Les Types de données en Python",
+    "section": "Qu’est-ce qu’une variable ?",
+    "text": "Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#déclaration-dune-variable",
+    "href": "doc/cours/typedonnees-slides.html#déclaration-dune-variable",
+    "title": "Les Types de données en Python",
+    "section": "Déclaration d’une variable",
+    "text": "Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-types-de-base-en-python",
+    "href": "doc/cours/typedonnees-slides.html#les-types-de-base-en-python",
+    "title": "Les Types de données en Python",
+    "section": "Les Types de Base en Python",
+    "text": "Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\n\n\n\n\n### Comment connaître le type d’une variable en Python ?\n\n\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#la-fonction-print",
+    "href": "doc/cours/typedonnees-slides.html#la-fonction-print",
+    "title": "Les Types de données en Python",
+    "section": "La fonction print()",
+    "text": "La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#afficher-plusieurs-éléments",
+    "href": "doc/cours/typedonnees-slides.html#afficher-plusieurs-éléments",
+    "title": "Les Types de données en Python",
+    "section": "Afficher plusieurs éléments",
+    "text": "Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#formatage-des-chaînes",
+    "href": "doc/cours/typedonnees-slides.html#formatage-des-chaînes",
+    "title": "Les Types de données en Python",
+    "section": "Formatage des chaînes",
+    "text": "Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#caractères-spéciaux",
+    "href": "doc/cours/typedonnees-slides.html#caractères-spéciaux",
+    "title": "Les Types de données en Python",
+    "section": "Caractères spéciaux",
+    "text": "Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#contrôler-la-fin-de-laffichage",
+    "href": "doc/cours/typedonnees-slides.html#contrôler-la-fin-de-laffichage",
+    "title": "Les Types de données en Python",
+    "section": "Contrôler la fin de l’affichage",
+    "text": "Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#résumé",
+    "href": "doc/cours/typedonnees-slides.html#résumé",
+    "title": "Les Types de données en Python",
+    "section": "Résumé",
+    "text": "Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-structures-conditionnelles",
+    "href": "doc/cours/typedonnees-slides.html#les-structures-conditionnelles",
+    "title": "Les Types de données en Python",
+    "section": "Les Structures conditionnelles",
+    "text": "Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-boucles-en-python",
+    "href": "doc/cours/typedonnees-slides.html#les-boucles-en-python",
+    "title": "Les Types de données en Python",
+    "section": "Les Boucles en Python",
+    "text": "Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations."
   },
   {
     "objectID": "doc/tp/tp1.html",
@@ -208,6 +355,48 @@
     "title": "Premières requêtes SQL",
     "section": "Pour aller plus loin",
     "text": "Pour aller plus loin\n\n3 explorations bluffantes avec DuckDB"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Programmation avec Python: Analyse de données et Data visualisation",
+    "section": "",
+    "text": "6 sessions de 3 heures (18 heures au total)"
+  },
+  {
+    "objectID": "index.html#contenu-du-cours",
+    "href": "index.html#contenu-du-cours",
+    "title": "Programmation avec Python: Analyse de données et Data visualisation",
+    "section": "Contenu du cours",
+    "text": "Contenu du cours\n\nIntroduction à Python\n\nPrésentation et installation\nVariables, types de données, opérateurs\n\nStructures de contrôle\n\nConditions (if, elif, else)\nBoucles (for, while)\nGestion des erreurs (try, except)\n\nLes fonctions\n\nDéfinir et appeler des fonctions\nParamètres, valeurs de retour\n\nManipulation de données avec pandas\n\nChargement de fichiers CSV/Excel\nNettoyage des données (valeurs manquantes, transformations)\nSélection et filtrage des données\n\nVisualisation des données\n\nGraphiques avec Matplotlib\nVisualisation avancée avec Seaborn\n\nProgrammation orientée objet (POO)\n\nDéfinition de classes, objets, méthodes\n\nIntroduction au Machine Learning avec Python\n\nBibliothèques essentielles : scikit-learn\nPréparation des données pour le ML (normalisation, division en train/test)\nModèles supervisés : régression linéaire et classification (KNN)\nÉvaluation des modèles : métriques (MAE, R², précision, rappel)\nNotions de surapprentissage et régularisation\n\nProjet final\n\nNettoyage, exploration, visualisation et modélisation d’un dataset"
+  },
+  {
+    "objectID": "index.html#correction-des-tp",
+    "href": "index.html#correction-des-tp",
+    "title": "Programmation avec Python: Analyse de données et Data visualisation",
+    "section": "Correction des TP",
+    "text": "Correction des TP\n\nSéance 1 : Introduction à Python\n\nTP1 :\n\nÉcrire un programme pour manipuler des types simples (nombres, chaînes).\nImplémenter un calcul d’aire et périmètre de figures géométriques.\nAjouter une fonction pour vérifier si un mot est un palindrome.\n\n\n\n\nSéance 2 : Structures de contrôle\n\nTP2 :\n\nCréer un programme pour afficher les nombres premiers dans une plage donnée.\nÉcrire des scripts utilisant des boucles imbriquées (tables de multiplication).\nAjouter la gestion d’erreurs pour une division par zéro.\n\n\n\n\nSéance 3 : Manipulation de données avec pandas\n\nTP3 :\n\nCharger un dataset CSV.\nNettoyer les données (valeurs manquantes, doublons).\nAppliquer des filtres conditionnels pour extraire des sous-ensembles.\nEffectuer des statistiques descriptives simples (mean, std, min, max).\n\n\n\n\nSéance 4 : Visualisation des données\n\nTP4 :\n\nCréer des histogrammes et des scatterplots avec Matplotlib.\nUtiliser Seaborn pour tracer des heatmaps et analyser des corrélations.\nPersonnaliser des graphiques (titres, étiquettes, couleurs).\n\n\n\n\nSéance 5 : Programmation orientée objet (POO)\n\nTP5 :\n\nImplémenter une classe pour gérer les données d’un étudiant (nom, notes, moyenne).\n\nAjouter des méthodes pour calculer la moyenne et vérifier la réussite.\n\nÉtendre la classe avec des attributs supplémentaires (matières optionnelles).\n\n\n\n\nSéance 6 : Machine Learning avec Python\n\nTP6 :\n\nCharger un dataset (pandas) et le préparer pour le Machine Learning (normalisation, séparation train/test).\n\nImplémenter un modèle de régression linéaire pour prédire une variable cible.\n\nUtiliser un modèle de classification (KNN) pour classer des données.\n\nÉvaluer les performances avec des métriques comme R², précision et rappel."
+  },
+  {
+    "objectID": "doc/glossaire.html",
+    "href": "doc/glossaire.html",
+    "title": "Glossaire",
+    "section": "",
+    "text": "🚧"
+  },
+  {
+    "objectID": "doc/glossaire.html#python",
+    "href": "doc/glossaire.html#python",
+    "title": "Glossaire",
+    "section": "Python",
+    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
+  },
+  {
+    "objectID": "doc/glossaire.html#structures-de-contrôle",
+    "href": "doc/glossaire.html#structures-de-contrôle",
+    "title": "Glossaire",
+    "section": "Structures de contrôle",
+    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

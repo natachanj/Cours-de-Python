@@ -507,3 +507,36 @@ Les opérateurs de comparaison permettent d'évaluer des expressions.
 | `>=`      | Supérieur ou égal à              |
 
 ---
+
+
+### Opérateurs logiques
+
+Les opérateurs logiques permettent de combiner plusieurs conditions.
+
+| Opérateur | Description                        |
+|-----------|------------------------------------|
+| `and`     | Toutes les conditions doivent être vraies. |
+| `or`      | Au moins une des conditions doit être vraie. |
+| `not`     | Inverse le résultat de la condition. |
+
+---
+
+## Les Boucles en Python
+
+Les boucles permettent de répéter des actions tant qu'une condition est vraie ou pour un nombre fixe d'itérations.
+
+---
+
+### La boucle `for`
+
+1. La boucle `for` est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).
+2. Chaque élément de la séquence est traité successivement.
+
+---
+
+### La boucle `while`
+
+1. La boucle `while` répète un bloc de code tant qu'une condition est vraie.
+2. Attention aux boucles infinies : assurez-vous que la condition de sortie est atteinte.
+
+---

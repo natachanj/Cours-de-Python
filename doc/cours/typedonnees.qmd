@@ -24,7 +24,6 @@ from: markdown+emoji
 
 Python propose des types de données avancés pour manipuler des collections de données ou des structures complexes. Ces types sont essentiels pour gérer des informations organisées.
 
----
 
 ## Les Listes (`list`)
 
@@ -60,6 +59,8 @@ Les opérations **CRUD** (Create, Read, Update, Delete) représentent les action
 - **Read (Lire)** : Consulter ou accéder aux données existantes.
 - **Update (Mettre à jour)** : Modifier les données existantes.
 - **Delete (Supprimer)** : Effacer les données.
+
+---
 
 
 ####  Créer une Liste (Create)
@@ -100,6 +101,8 @@ Vous pouvez utiliser une boucle pour parcourir tous les éléments.
 for fruit in fruits:
     print(fruit)
 ```
+
+---
 
 #### Longueur de la liste
 
@@ -212,6 +215,8 @@ del fruits[0]  # Supprime le premier élément
 print(fruits)  # Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']
 ```
 
+---
+
 ### Utilisation de `pop()`
 
 La méthode `pop()` supprime un élément d'une liste **et le retourne**. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.
@@ -225,6 +230,7 @@ dernier_fruit = fruits.pop()  # Supprime "tomate" de la liste
 print(dernier_fruit)  # Affiche : "tomate"
 print(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']
 ```
+---
 
 ### Supprimer tous les éléments avec `clear()`
 
@@ -238,6 +244,7 @@ fruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']
 fruits.clear()
 print(fruits)  # Affiche : []
 ```
+---
 
 ### Différence entre `pop()` et `clear()`
 
@@ -249,6 +256,8 @@ print(fruits)  # Affiche : []
 - **`pop()`** est utile lorsque vous voulez traiter ou sauvegarder l'élément supprimé.
 - **`clear()`** est idéal pour réinitialiser une liste sans conserver ses éléments.
 
+---
+
 ### Résumé des Méthodes CRUD sur les Listes
 
 | Opération | Méthode                | Description                             |
@@ -259,6 +268,8 @@ print(fruits)  # Affiche : []
 | Delete    | `remove()`, `pop()`, `del`, `clear()` | Supprimer des éléments ou tout vider. |
 
 
+---
+
 ## Les Tuples (`tuple`)
 
 Les tuples sont des **collections ordonnées**, mais **immuables** (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.
@@ -267,6 +278,9 @@ Les tuples sont des **collections ordonnées**, mais **immuables** (non modifiab
 
 - **Ordonnés** : Les éléments conservent leur position.
 - **Immuables** : Impossible de modifier, ajouter ou supprimer des éléments après leur création.
+
+---
+
 
 ### Création de Tuples
 
@@ -278,6 +292,8 @@ mon_tuple = (1, 2, 3)
 print(mon_tuple)  # Affiche : (1, 2, 3)
 ```
 
+---
+
 ### Opérations CRUD sur les Tuples
 
 Comme les tuples sont immuables, les opérations **Update** et **Delete** diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :
@@ -286,6 +302,8 @@ Comme les tuples sont immuables, les opérations **Update** et **Delete** diffè
 - **Read (Lire)** : Consulter ou accéder aux données existantes.
 - **Update (Mettre à jour)** : Pas directement possible (les tuples sont immuables).
 - **Delete (Supprimer)** : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.
+
+---
 
 #### Créer un Tuple (Create)
 

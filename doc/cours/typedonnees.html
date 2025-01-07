@@ -220,7 +220,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#avantages-des-dictionnaires" id="toc-avantages-des-dictionnaires" class="nav-link" data-scroll-target="#avantages-des-dictionnaires">Avantages des Dictionnaires</a></li>
   <li><a href="#différences-entre-listes-et-dictionnaires" id="toc-différences-entre-listes-et-dictionnaires" class="nav-link" data-scroll-target="#différences-entre-listes-et-dictionnaires">Différences entre Listes et Dictionnaires</a></li>
   </ul></li>
-  <li><a href="#les-ensembles-set" id="toc-les-ensembles-set" class="nav-link" data-scroll-target="#les-ensembles-set"><span class="header-section-number">4</span> Les Ensembles (<code>set</code>)</a></li>
+  <li><a href="#les-ensembles-set" id="toc-les-ensembles-set" class="nav-link" data-scroll-target="#les-ensembles-set"><span class="header-section-number">4</span> Les Ensembles (<code>set</code>)</a>
+  <ul class="collapse">
+  <li><a href="#création-densembles" id="toc-création-densembles" class="nav-link" data-scroll-target="#création-densembles">Création d’Ensembles</a></li>
+  <li><a href="#opérations-crud-sur-les-ensembles" id="toc-opérations-crud-sur-les-ensembles" class="nav-link" data-scroll-target="#opérations-crud-sur-les-ensembles">Opérations CRUD sur les Ensembles</a></li>
+  <li><a href="#opérations-mathématiques-avec-les-ensembles" id="toc-opérations-mathématiques-avec-les-ensembles" class="nav-link" data-scroll-target="#opérations-mathématiques-avec-les-ensembles">Opérations Mathématiques avec les Ensembles</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="typedonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
@@ -748,12 +753,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Éléments uniques</strong> : Les doublons sont automatiquement supprimés.</li>
 <li><strong>Opérations mathématiques</strong> : Permettent des opérations comme l’union, l’intersection, la différence, etc.</li>
 </ul>
+<section id="création-densembles" class="level3">
+<h3 class="anchored" data-anchor-id="création-densembles">Création d’Ensembles</h3>
+<p>Un ensemble peut être créé en utilisant la fonction <code>set()</code> ou en plaçant des éléments entre accolades <code>{}</code>.</p>
 <p><strong>Exemple :</strong></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>lettres <span class="op">=</span> {<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>}</span>
-<span id="cb36-2"><a href="#cb36-2"></a>nombres <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>}  <span class="co"># Les doublons sont supprimés</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a><span class="bu">print</span>(nombres)  <span class="co"># Affiche : {1, 2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : {1, 2, 3, 4}</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="co"># Création d'un ensemble à partir d'une liste</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>mon_set <span class="op">=</span> <span class="bu">set</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : {1, 2, 3} (les doublons sont supprimés)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="opérations-crud-sur-les-ensembles" class="level3">
+<h3 class="anchored" data-anchor-id="opérations-crud-sur-les-ensembles">Opérations CRUD sur les Ensembles</h3>
+<p>Les ensembles prennent en charge les opérations fondamentales <strong>CRUD</strong> (Create, Read, Update, Delete) :</p>
+<ul>
+<li><strong>Create (Créer)</strong> : Ajouter de nouveaux éléments.</li>
+<li><strong>Read (Lire)</strong> : Vérifier la présence d’un élément.</li>
+<li><strong>Update (Mettre à jour)</strong> : Ajouter ou supprimer des éléments.</li>
+<li><strong>Delete (Supprimer)</strong> : Supprimer des éléments ou réinitialiser l’ensemble.</li>
+</ul>
+<section id="créer-un-ensemble-create" class="level4">
+<h4 class="anchored" data-anchor-id="créer-un-ensemble-create">Créer un Ensemble (Create)</h4>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Créer un ensemble vide</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>mon_set <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb37-3"><a href="#cb37-3"></a></span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="co"># Ajouter des éléments</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>mon_set.add(<span class="dv">1</span>)</span>
+<span id="cb37-6"><a href="#cb37-6"></a>mon_set.add(<span class="dv">2</span>)</span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : {1, 2}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lire-les-données-read-3" class="level4">
+<h4 class="anchored" data-anchor-id="lire-les-données-read-3">Lire les Données (Read)</h4>
+<p><strong>Vérifier la présence d’un élément :</strong></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="kw">in</span> mon_set)  <span class="co"># Affiche : True</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="bu">print</span>(<span class="dv">4</span> <span class="kw">in</span> mon_set)  <span class="co"># Affiche : False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Parcourir un ensemble avec une boucle :</strong></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="cf">for</span> element <span class="kw">in</span> mon_set:</span>
+<span id="cb39-2"><a href="#cb39-2"></a>    <span class="bu">print</span>(element)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Taille de l’ensemble :</strong></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="bu">print</span>(<span class="bu">len</span>(mon_set))  <span class="co"># Affiche : 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="mettre-à-jour-un-ensemble-update" class="level4">
+<h4 class="anchored" data-anchor-id="mettre-à-jour-un-ensemble-update">Mettre à Jour un Ensemble (Update)</h4>
+<p><strong>Ajouter des éléments :</strong></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>}</span>
+<span id="cb41-2"><a href="#cb41-2"></a>mon_set.add(<span class="dv">3</span>)  <span class="co"># Ajoute un seul élément</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>mon_set.update([<span class="dv">4</span>, <span class="dv">5</span>])  <span class="co"># Ajoute plusieurs éléments</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : {1, 2, 3, 4, 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Supprimer des éléments :</strong></p>
+<p>Avec <code>remove()</code> :</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>mon_set.remove(<span class="dv">2</span>)  <span class="co"># Supprime 2 de l'ensemble</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : {1, 3, 4, 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Avec <code>discard()</code> (ne lève pas d’erreur si l’élément n’existe pas) :</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>mon_set.discard(<span class="dv">10</span>)  <span class="co"># Aucun effet si 10 n'est pas présent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="supprimer-des-éléments-delete-2" class="level4">
+<h4 class="anchored" data-anchor-id="supprimer-des-éléments-delete-2">Supprimer des Éléments (Delete)</h4>
+<p><strong>Supprimer un élément avec <code>pop()</code> :</strong></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
+<span id="cb44-2"><a href="#cb44-2"></a>element <span class="op">=</span> mon_set.pop()  <span class="co"># Supprime et retourne un élément aléatoire</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="bu">print</span>(element)  <span class="co"># Affiche : 1 (ou un autre élément)</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : {2, 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Supprimer tous les éléments avec <code>clear()</code> :</strong></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>mon_set.clear()</span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="bu">print</span>(mon_set)  <span class="co"># Affiche : set()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="opérations-mathématiques-avec-les-ensembles" class="level3">
+<h3 class="anchored" data-anchor-id="opérations-mathématiques-avec-les-ensembles">Opérations Mathématiques avec les Ensembles</h3>
+<p>Les ensembles permettent des opérations mathématiques classiques :</p>
+<p><strong>Union :</strong> Combine tous les éléments des deux ensembles.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>set1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
+<span id="cb46-2"><a href="#cb46-2"></a>set2 <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="bu">print</span>(set1 <span class="op">|</span> set2)  <span class="co"># Affiche : {1, 2, 3, 4, 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Intersection :</strong> Récupère les éléments communs aux deux ensembles.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="bu">print</span>(set1 <span class="op">&amp;</span> set2)  <span class="co"># Affiche : {3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Différence :</strong> Récupère les éléments présents dans le premier ensemble mais pas dans le second.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="bu">print</span>(set1 <span class="op">-</span> set2)  <span class="co"># Affiche : {1, 2}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Différence Symétrique :</strong> Récupère les éléments présents dans un seul des deux ensembles.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="bu">print</span>(set1 <span class="op">^</span> set2)  <span class="co"># Affiche : {1, 2, 4, 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

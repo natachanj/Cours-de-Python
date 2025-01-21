@@ -269,6 +269,42 @@ Natacha Njongwa Yepnga
 <span id="cb5-6"><a></a></span>
 <span id="cb5-7"><a></a><span class="co"># Exemple d'utilisation</span></span>
 <span id="cb5-8"><a></a><span class="bu">print</span>(ajouter(<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># Affiche : 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="fonction-avec-un-nombre-variable-de-paramètres" class="title-slide slide level2 center">
+<h2>Fonction avec un nombre variable de paramètres</h2>
+<p>Une fonction peut accepter un nombre variable d’arguments :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> somme(<span class="op">*</span>args):</span>
+<span id="cb6-2"><a></a>    <span class="cf">return</span> <span class="bu">sum</span>(args)</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="co"># Exemple d'utilisation</span></span>
+<span id="cb6-5"><a></a><span class="bu">print</span>(somme(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># Affiche : 10</span></span>
+<span id="cb6-6"><a></a><span class="bu">print</span>(somme(<span class="dv">5</span>, <span class="dv">10</span>))       <span class="co"># Affiche : 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="passage-des-paramètres-immuable-et-non-immuable" class="title-slide slide level2 center">
+<h2>Passage des paramètres : immuable et non immuable</h2>
+<p>Les types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être.</p>
+</section>
+<section id="exemple" class="slide level3">
+<h3>Exemple :</h3>
+<h4 id="avec-un-type-immuable-chaîne">Avec un type immuable (chaîne) :</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> modifier_chaine(chaine):</span>
+<span id="cb7-2"><a></a>    chaine <span class="op">+=</span> <span class="st">" modifié"</span></span>
+<span id="cb7-3"><a></a>    <span class="cf">return</span> chaine</span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a>texte <span class="op">=</span> <span class="st">"Texte original"</span></span>
+<span id="cb7-6"><a></a><span class="bu">print</span>(modifier_chaine(texte))  <span class="co"># Affiche : Texte original modifié</span></span>
+<span id="cb7-7"><a></a><span class="bu">print</span>(texte)  <span class="co"># Affiche : Texte original</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="avec-un-type-mutable-liste" class="slide level3">
+<h3>Avec un type mutable (liste) :</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> ajouter_element(liste):</span>
+<span id="cb8-2"><a></a>    liste.append(<span class="dv">5</span>)</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb8-5"><a></a>ajouter_element(ma_liste)</span>
+<span id="cb8-6"><a></a><span class="bu">print</span>(ma_liste)  <span class="co"># Affiche : [1, 2, 3, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

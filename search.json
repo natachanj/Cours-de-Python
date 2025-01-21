@@ -280,6 +280,20 @@
     "text": "Affecter une instance de fonction à une variable\nLes fonctions peuvent être assignées à des variables pour être utilisées plus tard :\ndef addition(a, b):\n    return a + b\n\n# Affecter la fonction à une variable\najouter = addition\n\n# Exemple d'utilisation\nprint(ajouter(3, 4))  # Affiche : 7"
   },
   {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-un-nombre-variable-de-paramètres",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-un-nombre-variable-de-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction avec un nombre variable de paramètres",
+    "text": "Fonction avec un nombre variable de paramètres\nUne fonction peut accepter un nombre variable d’arguments :\ndef somme(*args):\n    return sum(args)\n\n# Exemple d'utilisation\nprint(somme(1, 2, 3, 4))  # Affiche : 10\nprint(somme(5, 10))       # Affiche : 15"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#passage-des-paramètres-immuable-et-non-immuable",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#passage-des-paramètres-immuable-et-non-immuable",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Passage des paramètres : immuable et non immuable",
+    "text": "Passage des paramètres : immuable et non immuable\nLes types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être."
+  },
+  {
     "objectID": "doc/cours/fonctionsmodules.html",
     "href": "doc/cours/fonctionsmodules.html",
     "title": "Fonctions, Modules et POO en Python",
@@ -320,6 +334,20 @@
     "title": "Fonctions, Modules et POO en Python",
     "section": "2.5 Affecter une instance de fonction à une variable",
     "text": "2.5 Affecter une instance de fonction à une variable\nLes fonctions peuvent être assignées à des variables pour être utilisées plus tard :\ndef addition(a, b):\n    return a + b\n\n# Affecter la fonction à une variable\najouter = addition\n\n# Exemple d'utilisation\nprint(ajouter(3, 4))  # Affiche : 7"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#fonction-avec-un-nombre-variable-de-paramètres",
+    "href": "doc/cours/fonctionsmodules.html#fonction-avec-un-nombre-variable-de-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.6 Fonction avec un nombre variable de paramètres",
+    "text": "2.6 Fonction avec un nombre variable de paramètres\nUne fonction peut accepter un nombre variable d’arguments :\ndef somme(*args):\n    return sum(args)\n\n# Exemple d'utilisation\nprint(somme(1, 2, 3, 4))  # Affiche : 10\nprint(somme(5, 10))       # Affiche : 15"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#passage-des-paramètres-immuable-et-non-immuable",
+    "href": "doc/cours/fonctionsmodules.html#passage-des-paramètres-immuable-et-non-immuable",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.7 Passage des paramètres : immuable et non immuable",
+    "text": "2.7 Passage des paramètres : immuable et non immuable\nLes types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être.\n\nExemple :\n\nAvec un type immuable (chaîne) :\ndef modifier_chaine(chaine):\n    chaine += \" modifié\"\n    return chaine\n\ntexte = \"Texte original\"\nprint(modifier_chaine(texte))  # Affiche : Texte original modifié\nprint(texte)  # Affiche : Texte original\n\n\n\nAvec un type mutable (liste) :\ndef ajouter_element(liste):\n    liste.append(5)\n\nma_liste = [1, 2, 3]\najouter_element(ma_liste)\nprint(ma_liste)  # Affiche : [1, 2, 3, 5]"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

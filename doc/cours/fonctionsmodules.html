@@ -205,6 +205,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#fonction-avec-paramètres" id="toc-fonction-avec-paramètres" class="nav-link" data-scroll-target="#fonction-avec-paramètres"><span class="header-section-number">2.3</span> Fonction avec paramètres</a></li>
   <li><a href="#valeur-par-défaut-des-paramètres" id="toc-valeur-par-défaut-des-paramètres" class="nav-link" data-scroll-target="#valeur-par-défaut-des-paramètres"><span class="header-section-number">2.4</span> Valeur par défaut des paramètres</a></li>
   <li><a href="#affecter-une-instance-de-fonction-à-une-variable" id="toc-affecter-une-instance-de-fonction-à-une-variable" class="nav-link" data-scroll-target="#affecter-une-instance-de-fonction-à-une-variable"><span class="header-section-number">2.5</span> Affecter une instance de fonction à une variable</a></li>
+  <li><a href="#fonction-avec-un-nombre-variable-de-paramètres" id="toc-fonction-avec-un-nombre-variable-de-paramètres" class="nav-link" data-scroll-target="#fonction-avec-un-nombre-variable-de-paramètres"><span class="header-section-number">2.6</span> Fonction avec un nombre variable de paramètres</a></li>
+  <li><a href="#passage-des-paramètres-immuable-et-non-immuable" id="toc-passage-des-paramètres-immuable-et-non-immuable" class="nav-link" data-scroll-target="#passage-des-paramètres-immuable-et-non-immuable"><span class="header-section-number">2.7</span> Passage des paramètres : immuable et non immuable</a>
+  <ul class="collapse">
+  <li><a href="#exemple" id="toc-exemple" class="nav-link" data-scroll-target="#exemple">Exemple :</a></li>
+  <li><a href="#avec-un-type-mutable-liste" id="toc-avec-un-type-mutable-liste" class="nav-link" data-scroll-target="#avec-un-type-mutable-liste">Avec un type mutable (liste) :</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fonctions-modules-poo-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -303,8 +309,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6"></a></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Exemple d'utilisation</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="bu">print</span>(ajouter(<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># Affiche : 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fonction-avec-un-nombre-variable-de-paramètres" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="fonction-avec-un-nombre-variable-de-paramètres"><span class="header-section-number">2.6</span> Fonction avec un nombre variable de paramètres</h2>
+<p>Une fonction peut accepter un nombre variable d’arguments :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> somme(<span class="op">*</span>args):</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="cf">return</span> <span class="bu">sum</span>(args)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Exemple d'utilisation</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="bu">print</span>(somme(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># Affiche : 10</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="bu">print</span>(somme(<span class="dv">5</span>, <span class="dv">10</span>))       <span class="co"># Affiche : 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="passage-des-paramètres-immuable-et-non-immuable" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="passage-des-paramètres-immuable-et-non-immuable"><span class="header-section-number">2.7</span> Passage des paramètres : immuable et non immuable</h2>
+<p>Les types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être.</p>
+<section id="exemple" class="level3">
+<h3 class="anchored" data-anchor-id="exemple">Exemple :</h3>
+<section id="avec-un-type-immuable-chaîne" class="level4">
+<h4 class="anchored" data-anchor-id="avec-un-type-immuable-chaîne">Avec un type immuable (chaîne) :</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> modifier_chaine(chaine):</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    chaine <span class="op">+=</span> <span class="st">" modifié"</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">return</span> chaine</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>texte <span class="op">=</span> <span class="st">"Texte original"</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="bu">print</span>(modifier_chaine(texte))  <span class="co"># Affiche : Texte original modifié</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="bu">print</span>(texte)  <span class="co"># Affiche : Texte original</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="avec-un-type-mutable-liste" class="level3">
+<h3 class="anchored" data-anchor-id="avec-un-type-mutable-liste">Avec un type mutable (liste) :</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> ajouter_element(liste):</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    liste.append(<span class="dv">5</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb8-5"><a href="#cb8-5"></a>ajouter_element(ma_liste)</span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="bu">print</span>(ma_liste)  <span class="co"># Affiche : [1, 2, 3, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 </section>
 

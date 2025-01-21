@@ -293,24 +293,12 @@ from mon_package.module1 import ma_fonction
 ```
 
 ---
-### Introduction à la Programmation Orientée Objet (POO)
 
-La programmation orientée objet (POO) est un paradigme de programmation basé sur le concept de "classes" et "objets", qui permet de structurer le code de manière modulaire et réutilisable.
+# Introduction à la Programmation Orientée Objet (POO) (1h)
 
----
+## Premier exemple de classe
 
-### Concepts clés
-
-- **Classe** : Modèle ou plan permettant de créer des objets. Elle définit les attributs (données) et les méthodes (fonctions).
-- **Objet** : Instance d'une classe.
-- **Attributs** : Variables associées à une classe ou un objet.
-- **Méthodes** : Fonctions définies dans une classe pour manipuler ses attributs ou accomplir des tâches spécifiques.
-
----
-
-### Créer une classe simple et instancier des objets
-
-Voici un exemple de classe simple représentant une "Personne" :
+Une classe est un modèle pour créer des objets. Voici un exemple de classe simple :
 
 ```python
 class Personne:
@@ -321,18 +309,28 @@ class Personne:
     def se_presenter(self):
         return f"Je m'appelle {self.nom} et j'ai {self.age} ans."
 
-# Instanciation d'objets
+# Instanciation d'un objet
 personne1 = Personne("Alice", 30)
-personne2 = Personne("Bob", 25)
-
-# Utilisation
-print(personne1.se_presenter())  # Affiche : Je m'appelle Alice et j'ai 30 ans.
-print(personne2.se_presenter())  # Affiche : Je m'appelle Bob et j'ai 25 ans.
+print(personne1.se_presenter())
 ```
 
----
+## Accessibilité
 
-### Objet complexe
+En Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (`__`) :
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.__nom = nom  # Attribut privé
+        self.age = age
+
+    def get_nom(self):
+        return self.__nom
+
+# Utilisation
+personne = Personne("Alice", 25)
+```
+###  Objet complexe
 
 Une classe peut contenir des attributs qui sont eux-mêmes des objets :
 
@@ -356,11 +354,9 @@ personne = Personne("Alice", 30, adresse)
 print(personne.afficher_adresse())  # Affiche : 123 Rue Principale, Paris
 ```
 
----
+###  Héritage
 
-### Héritage
-
-L'héritage permet à une classe d'hériter des attributs et des méthodes d'une autre classe. Cela favorise la réutilisation du code.
+L'héritage permet à une classe d'hériter des attributs et des méthodes d'une autre classe :
 
 ```python
 class Animal:
@@ -384,11 +380,9 @@ print(chien.parler())  # Affiche : Woof
 print(chat.parler())  # Affiche : Meow
 ```
 
----
+###  Polymorphisme
 
-### Polymorphisme
-
-Le polymorphisme permet d'utiliser une même méthode définie dans plusieurs classes différentes.
+Le polymorphisme permet d'utiliser une même méthode définie dans plusieurs classes différentes :
 
 ```python
 animaux = [Chien("Rex"), Chat("Miaou")]
@@ -397,11 +391,9 @@ for animal in animaux:
     print(f"{animal.nom} dit {animal.parler()}")
 ```
 
----
+###  Encapsulation et propriétés
 
-### Encapsulation et propriétés
-
-L'encapsulation permet de contrôler l'accès et la modification des attributs d'une classe. Cela se fait généralement à l'aide des propriétés.
+L'encapsulation permet de contrôler l'accès et la modification des attributs d'une classe en utilisant des propriétés.
 
 ```python
 class CompteBancaire:
@@ -426,49 +418,19 @@ compte.solde = 2000  # Modification du solde
 print(compte.solde)  # Affiche : 2000
 ```
 
----
-
-### Abstraction
-
-L'abstraction consiste à définir des classes ou des méthodes génériques qui servent de base pour les classes spécifiques. Cela se fait avec des classes ou méthodes abstraites.
-
-```python
-from abc import ABC, abstractmethod
-
-class Forme(ABC):
-    @abstractmethod
-    def aire(self):
-        pass
-
-class Rectangle(Forme):
-    def __init__(self, largeur, hauteur):
-        self.largeur = largeur
-        self.hauteur = hauteur
-
-    def aire(self):
-        return self.largeur * self.hauteur
-
-rectangle = Rectangle(10, 5)
-print(rectangle.aire())  # Affiche : 50
-```
-
----
-
 ### Exercices pratiques
 
-1. **Créer une classe `Livre` :**
-   - Attributs : `titre`, `auteur`, `pages`.
-   - Méthode : `afficher_informations` qui affiche les détails du livre.
+1. **Fonctions :**
+   - Créez une fonction qui calcule le carré de chaque élément d'une liste.
+   - Implémentez une fonction lambda pour trier une liste de tuples par leur second élément.
 
-2. **Créer une classe `Bibliotheque` :**
-   - Attributs : liste de livres.
-   - Méthodes : ajouter un livre, retirer un livre, afficher tous les livres.
+2. **Modules :**
+   - Créez un module contenant des fonctions pour des opérations de base (addition, multiplication).
+   - Importez ce module et utilisez ses fonctions dans un fichier principal.
 
-3. **Créer une hiérarchie d'héritage :**
-   - Classe de base `Vehicule`.
-   - Classes dérivées : `Voiture`, `Moto` avec des méthodes spécifiques comme `afficher_type`.
+3. **POO :**
+   - Créez une classe `Voiture` avec des attributs `marque`, `modele` et une méthode `afficher_details`.
+   - Implémentez une classe `VoitureElectrique` héritant de `Voiture`, avec un attribut supplémentaire pour l'autonomie.
 
-4. **Créer une classe abstraite `Forme` :**
-   - Méthodes abstraites : `aire` et `perimetre`.
-   - Implémenter les classes `Cercle` et `Rectangle`.
+---
 

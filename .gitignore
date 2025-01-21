@@ -1,2 +1,5 @@
 /.quarto/
 /_site/
+# Fichiers système macOS
+.DS_Store
+._*

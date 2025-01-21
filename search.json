@@ -249,7 +249,7 @@
     "href": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
     "title": "Fonctions, Modules et POO en Python",
     "section": "Les fonctions Python existantes",
-    "text": "Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\n** Exemples **:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
+    "text": "Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\nExemples:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
   },
   {
     "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
@@ -312,7 +312,7 @@
     "href": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
     "title": "Fonctions, Modules et POO en Python",
     "section": "Introduction aux modules",
-    "text": "Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\n** Exemple ** :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
+    "text": "Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\nExemple :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
   },
   {
     "objectID": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
@@ -375,7 +375,7 @@
     "href": "doc/cours/fonctionsmodules.html#les-fonctions-python-existantes",
     "title": "Fonctions, Modules et POO en Python",
     "section": "2.1 Les fonctions Python existantes",
-    "text": "2.1 Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\n** Exemples **:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
+    "text": "2.1 Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\nExemples:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html#fonction-simple-sans-paramètre",
@@ -438,7 +438,7 @@
     "href": "doc/cours/fonctionsmodules.html#introduction-aux-modules",
     "title": "Fonctions, Modules et POO en Python",
     "section": "3.1 Introduction aux modules",
-    "text": "3.1 Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\n** Exemple ** :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
+    "text": "3.1 Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\nExemple :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html#utiliser-un-module-dans-un-autre-fichier",

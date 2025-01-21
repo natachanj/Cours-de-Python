@@ -218,6 +218,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#fonction-anonyme-lambda-function" id="toc-fonction-anonyme-lambda-function" class="nav-link" data-scroll-target="#fonction-anonyme-lambda-function"><span class="header-section-number">2.9</span> Fonction anonyme (lambda function)</a></li>
   </ul></li>
+  <li><a href="#modules-en-python" id="toc-modules-en-python" class="nav-link" data-scroll-target="#modules-en-python"><span class="header-section-number">3</span> Modules en Python</a>
+  <ul class="collapse">
+  <li><a href="#introduction-aux-modules" id="toc-introduction-aux-modules" class="nav-link" data-scroll-target="#introduction-aux-modules"><span class="header-section-number">3.1</span> Introduction aux modules</a></li>
+  <li><a href="#utiliser-un-module-dans-un-autre-fichier" id="toc-utiliser-un-module-dans-un-autre-fichier" class="nav-link" data-scroll-target="#utiliser-un-module-dans-un-autre-fichier"><span class="header-section-number">3.2</span> Utiliser un module dans un autre fichier</a></li>
+  <li><a href="#importation-de-modules" id="toc-importation-de-modules" class="nav-link" data-scroll-target="#importation-de-modules"><span class="header-section-number">3.3</span> Importation de modules</a></li>
+  <li><a href="#modules-standards" id="toc-modules-standards" class="nav-link" data-scroll-target="#modules-standards"><span class="header-section-number">3.4</span> Modules standards</a></li>
+  <li><a href="#créer-et-structurer-un-projet-avec-des-modules" id="toc-créer-et-structurer-un-projet-avec-des-modules" class="nav-link" data-scroll-target="#créer-et-structurer-un-projet-avec-des-modules"><span class="header-section-number">3.5</span> Créer et structurer un projet avec des modules</a></li>
+  <li><a href="#les-packages" id="toc-les-packages" class="nav-link" data-scroll-target="#les-packages"><span class="header-section-number">3.6</span> Les packages</a></li>
+  </ul></li>
+  <li><a href="#introduction-à-la-programmation-orientée-objet-poo-1h" id="toc-introduction-à-la-programmation-orientée-objet-poo-1h" class="nav-link" data-scroll-target="#introduction-à-la-programmation-orientée-objet-poo-1h"><span class="header-section-number">4</span> Introduction à la Programmation Orientée Objet (POO) (1h)</a>
+  <ul class="collapse">
+  <li><a href="#premier-exemple-de-classe" id="toc-premier-exemple-de-classe" class="nav-link" data-scroll-target="#premier-exemple-de-classe"><span class="header-section-number">4.1</span> Premier exemple de classe</a></li>
+  <li><a href="#accessibilité" id="toc-accessibilité" class="nav-link" data-scroll-target="#accessibilité"><span class="header-section-number">4.2</span> Accessibilité</a>
+  <ul class="collapse">
+  <li><a href="#objet-complexe" id="toc-objet-complexe" class="nav-link" data-scroll-target="#objet-complexe">Objet complexe</a></li>
+  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage">Héritage</a></li>
+  <li><a href="#polymorphisme" id="toc-polymorphisme" class="nav-link" data-scroll-target="#polymorphisme">Polymorphisme</a></li>
+  <li><a href="#encapsulation-et-propriétés" id="toc-encapsulation-et-propriétés" class="nav-link" data-scroll-target="#encapsulation-et-propriétés">Encapsulation et propriétés</a></li>
+  <li><a href="#exercices-pratiques" id="toc-exercices-pratiques" class="nav-link" data-scroll-target="#exercices-pratiques">Exercices pratiques</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fonctions-modules-poo-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
@@ -396,8 +417,217 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-6"><a href="#cb11-6"></a>nombres <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">1</span>), (<span class="dv">5</span>, <span class="dv">0</span>)]</span>
 <span id="cb11-7"><a href="#cb11-7"></a>nombres_tries <span class="op">=</span> <span class="bu">sorted</span>(nombres, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
 <span id="cb11-8"><a href="#cb11-8"></a><span class="bu">print</span>(nombres_tries)  <span class="co"># Affiche : [(5, 0), (3, 1), (1, 2)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="modules-en-python" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Modules en Python</h1>
+<section id="introduction-aux-modules" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction-aux-modules"><span class="header-section-number">3.1</span> Introduction aux modules</h2>
+<p>Un module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.</p>
+<p>** Exemple ** :<br>
+Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> saluer(nom):</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="cf">return</span> <span class="ss">f"Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="utiliser-un-module-dans-un-autre-fichier" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="utiliser-un-module-dans-un-autre-fichier"><span class="header-section-number">3.2</span> Utiliser un module dans un autre fichier</h2>
+<p>Dans un autre fichier, vous pouvez importer et utiliser ce module :</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">import</span> mon_module</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(mon_module.saluer(<span class="st">"Alice"</span>))  <span class="co"># Affiche : Bonjour, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="importation-de-modules" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="importation-de-modules"><span class="header-section-number">3.3</span> Importation de modules</h2>
+<p>Il existe plusieurs façons d’importer un module ou ses éléments :</p>
+<ul>
+<li><strong>Importer un module complet :</strong></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="im">import</span> math</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">print</span>(math.sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Importer un élément spécifique d’un module :</strong></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Renommer un module ou un élément lors de l’importation :</strong></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> math <span class="im">as</span> m</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(m.sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="modules-standards" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="modules-standards"><span class="header-section-number">3.4</span> Modules standards</h2>
+<p>Python fournit une bibliothèque standard riche avec des modules pour diverses tâches :</p>
+<ul>
+<li><strong>Manipulation de dates :</strong></li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">import</span> datetime</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a>aujourdhui <span class="op">=</span> datetime.date.today()</span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="bu">print</span>(aujourdhui)  <span class="co"># Affiche la date d'aujourd'hui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Génération de nombres aléatoires :</strong></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">import</span> random</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>nombre <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="bu">print</span>(nombre)  <span class="co"># Affiche un nombre aléatoire entre 1 et 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="créer-et-structurer-un-projet-avec-des-modules" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="créer-et-structurer-un-projet-avec-des-modules"><span class="header-section-number">3.5</span> Créer et structurer un projet avec des modules</h2>
+<p>Un projet Python peut contenir plusieurs fichiers et répertoires pour organiser le code.</p>
+<p><strong>Structure d’exemple :</strong></p>
+<pre><code>mon_projet/
+|-- main.py
+|-- utilitaires.py
+|-- data/
+    |-- __init__.py
+    |-- traitement.py</code></pre>
+<p>Dans le fichier <code>main.py</code>, vous pouvez importer les modules comme suit :</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">from</span> data.traitement <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="les-packages" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="les-packages"><span class="header-section-number">3.6</span> Les packages</h2>
+<p>Un package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier <code>__init__.py</code>.</p>
+<p><strong>Exemple de structure de package :</strong></p>
+<pre><code>mon_package/
+|-- __init__.py
+|-- module1.py
+|-- module2.py</code></pre>
+<p>Vous pouvez importer des éléments d’un package comme suit :</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="im">from</span> mon_package.module1 <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="introduction-à-la-programmation-orientée-objet-poo-1h" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Introduction à la Programmation Orientée Objet (POO) (1h)</h1>
+<section id="premier-exemple-de-classe" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="premier-exemple-de-classe"><span class="header-section-number">4.1</span> Premier exemple de classe</h2>
+<p>Une classe est un modèle pour créer des objets. Voici un exemple de classe simple :</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">class</span> Personne:</span>
+<span id="cb23-2"><a href="#cb23-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
+<span id="cb23-3"><a href="#cb23-3"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb23-4"><a href="#cb23-4"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="kw">def</span> se_presenter(<span class="va">self</span>):</span>
+<span id="cb23-7"><a href="#cb23-7"></a>        <span class="cf">return</span> <span class="ss">f"Je m'appelle </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> ans."</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="co"># Instanciation d'un objet</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>personne1 <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>)</span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="bu">print</span>(personne1.se_presenter())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="accessibilité" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="accessibilité"><span class="header-section-number">4.2</span> Accessibilité</h2>
+<p>En Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (<code>__</code>) :</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">class</span> Personne:</span>
+<span id="cb24-2"><a href="#cb24-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
+<span id="cb24-3"><a href="#cb24-3"></a>        <span class="va">self</span>.__nom <span class="op">=</span> nom  <span class="co"># Attribut privé</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="kw">def</span> get_nom(<span class="va">self</span>):</span>
+<span id="cb24-7"><a href="#cb24-7"></a>        <span class="cf">return</span> <span class="va">self</span>.__nom</span>
+<span id="cb24-8"><a href="#cb24-8"></a></span>
+<span id="cb24-9"><a href="#cb24-9"></a><span class="co"># Utilisation</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="objet-complexe" class="level3">
+<h3 class="anchored" data-anchor-id="objet-complexe">Objet complexe</h3>
+<p>Une classe peut contenir des attributs qui sont eux-mêmes des objets :</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">class</span> Adresse:</span>
+<span id="cb25-2"><a href="#cb25-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, rue, ville):</span>
+<span id="cb25-3"><a href="#cb25-3"></a>        <span class="va">self</span>.rue <span class="op">=</span> rue</span>
+<span id="cb25-4"><a href="#cb25-4"></a>        <span class="va">self</span>.ville <span class="op">=</span> ville</span>
+<span id="cb25-5"><a href="#cb25-5"></a></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="kw">class</span> Personne:</span>
+<span id="cb25-7"><a href="#cb25-7"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age, adresse):</span>
+<span id="cb25-8"><a href="#cb25-8"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb25-9"><a href="#cb25-9"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb25-10"><a href="#cb25-10"></a>        <span class="va">self</span>.adresse <span class="op">=</span> adresse</span>
+<span id="cb25-11"><a href="#cb25-11"></a></span>
+<span id="cb25-12"><a href="#cb25-12"></a>    <span class="kw">def</span> afficher_adresse(<span class="va">self</span>):</span>
+<span id="cb25-13"><a href="#cb25-13"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>rue<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>ville<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a></span>
+<span id="cb25-15"><a href="#cb25-15"></a>adresse <span class="op">=</span> Adresse(<span class="st">"123 Rue Principale"</span>, <span class="st">"Paris"</span>)</span>
+<span id="cb25-16"><a href="#cb25-16"></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>, adresse)</span>
+<span id="cb25-17"><a href="#cb25-17"></a><span class="bu">print</span>(personne.afficher_adresse())  <span class="co"># Affiche : 123 Rue Principale, Paris</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="héritage" class="level3">
+<h3 class="anchored" data-anchor-id="héritage">Héritage</h3>
+<p>L’héritage permet à une classe d’hériter des attributs et des méthodes d’une autre classe :</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb26-2"><a href="#cb26-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom):</span>
+<span id="cb26-3"><a href="#cb26-3"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb26-4"><a href="#cb26-4"></a></span>
+<span id="cb26-5"><a href="#cb26-5"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb26-6"><a href="#cb26-6"></a>        <span class="cf">pass</span>  <span class="co"># Méthode à redéfinir</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a></span>
+<span id="cb26-8"><a href="#cb26-8"></a><span class="kw">class</span> Chien(Animal):</span>
+<span id="cb26-9"><a href="#cb26-9"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb26-10"><a href="#cb26-10"></a>        <span class="cf">return</span> <span class="st">"Woof"</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a></span>
+<span id="cb26-12"><a href="#cb26-12"></a><span class="kw">class</span> Chat(Animal):</span>
+<span id="cb26-13"><a href="#cb26-13"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb26-14"><a href="#cb26-14"></a>        <span class="cf">return</span> <span class="st">"Meow"</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a></span>
+<span id="cb26-16"><a href="#cb26-16"></a>chien <span class="op">=</span> Chien(<span class="st">"Rex"</span>)</span>
+<span id="cb26-17"><a href="#cb26-17"></a>chat <span class="op">=</span> Chat(<span class="st">"Miaou"</span>)</span>
+<span id="cb26-18"><a href="#cb26-18"></a><span class="bu">print</span>(chien.parler())  <span class="co"># Affiche : Woof</span></span>
+<span id="cb26-19"><a href="#cb26-19"></a><span class="bu">print</span>(chat.parler())  <span class="co"># Affiche : Meow</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="polymorphisme" class="level3">
+<h3 class="anchored" data-anchor-id="polymorphisme">Polymorphisme</h3>
+<p>Le polymorphisme permet d’utiliser une même méthode définie dans plusieurs classes différentes :</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>animaux <span class="op">=</span> [Chien(<span class="st">"Rex"</span>), Chat(<span class="st">"Miaou"</span>)]</span>
+<span id="cb27-2"><a href="#cb27-2"></a></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="cf">for</span> animal <span class="kw">in</span> animaux:</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>animal<span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> dit </span><span class="sc">{</span>animal<span class="sc">.</span>parler()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="encapsulation-et-propriétés" class="level3">
+<h3 class="anchored" data-anchor-id="encapsulation-et-propriétés">Encapsulation et propriétés</h3>
+<p>L’encapsulation permet de contrôler l’accès et la modification des attributs d’une classe en utilisant des propriétés.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">class</span> CompteBancaire:</span>
+<span id="cb28-2"><a href="#cb28-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titulaire, solde):</span>
+<span id="cb28-3"><a href="#cb28-3"></a>        <span class="va">self</span>.titulaire <span class="op">=</span> titulaire</span>
+<span id="cb28-4"><a href="#cb28-4"></a>        <span class="va">self</span>.__solde <span class="op">=</span> solde  <span class="co"># Attribut privé</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a></span>
+<span id="cb28-6"><a href="#cb28-6"></a>    <span class="at">@property</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>    <span class="kw">def</span> solde(<span class="va">self</span>):</span>
+<span id="cb28-8"><a href="#cb28-8"></a>        <span class="cf">return</span> <span class="va">self</span>.__solde</span>
+<span id="cb28-9"><a href="#cb28-9"></a></span>
+<span id="cb28-10"><a href="#cb28-10"></a>    <span class="at">@solde.setter</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>    <span class="kw">def</span> solde(<span class="va">self</span>, montant):</span>
+<span id="cb28-12"><a href="#cb28-12"></a>        <span class="cf">if</span> montant <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb28-13"><a href="#cb28-13"></a>            <span class="va">self</span>.__solde <span class="op">=</span> montant</span>
+<span id="cb28-14"><a href="#cb28-14"></a>        <span class="cf">else</span>:</span>
+<span id="cb28-15"><a href="#cb28-15"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Le solde ne peut pas être négatif"</span>)</span>
+<span id="cb28-16"><a href="#cb28-16"></a></span>
+<span id="cb28-17"><a href="#cb28-17"></a>compte <span class="op">=</span> CompteBancaire(<span class="st">"Alice"</span>, <span class="dv">1000</span>)</span>
+<span id="cb28-18"><a href="#cb28-18"></a><span class="bu">print</span>(compte.solde)  <span class="co"># Accès au solde</span></span>
+<span id="cb28-19"><a href="#cb28-19"></a>compte.solde <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># Modification du solde</span></span>
+<span id="cb28-20"><a href="#cb28-20"></a><span class="bu">print</span>(compte.solde)  <span class="co"># Affiche : 2000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exercices-pratiques" class="level3">
+<h3 class="anchored" data-anchor-id="exercices-pratiques">Exercices pratiques</h3>
+<ol type="1">
+<li><strong>Fonctions :</strong>
+<ul>
+<li>Créez une fonction qui calcule le carré de chaque élément d’une liste.</li>
+<li>Implémentez une fonction lambda pour trier une liste de tuples par leur second élément.</li>
+</ul></li>
+<li><strong>Modules :</strong>
+<ul>
+<li>Créez un module contenant des fonctions pour des opérations de base (addition, multiplication).</li>
+<li>Importez ce module et utilisez ses fonctions dans un fichier principal.</li>
+</ul></li>
+<li><strong>POO :</strong>
+<ul>
+<li>Créez une classe <code>Voiture</code> avec des attributs <code>marque</code>, <code>modele</code> et une méthode <code>afficher_details</code>.</li>
+<li>Implémentez une classe <code>VoitureElectrique</code> héritant de <code>Voiture</code>, avec un attribut supplémentaire pour l’autonomie.</li>
+</ul></li>
+</ol>
+<hr>
 
 
+</section>
 </section>
 </section>
 

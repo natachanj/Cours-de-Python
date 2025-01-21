@@ -308,6 +308,62 @@
     "text": "Fonction anonyme (lambda function)\nLes fonctions lambda sont définies en une seule ligne pour des opérations simples :\n# Exemple : Calculer le carré d'un nombre\ncarre = lambda x: x ** 2\nprint(carre(4))  # Affiche : 16\n\n# Trier une liste de tuples selon le deuxième élément\nnombres = [(1, 2), (3, 1), (5, 0)]\nnombres_tries = sorted(nombres, key=lambda x: x[1])\nprint(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]"
   },
   {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Introduction aux modules",
+    "text": "Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\n** Exemple ** :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Utiliser un module dans un autre fichier",
+    "text": "Utiliser un module dans un autre fichier\nDans un autre fichier, vous pouvez importer et utiliser ce module :\nimport mon_module\n\nprint(mon_module.saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#importation-de-modules",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#importation-de-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Importation de modules",
+    "text": "Importation de modules\nIl existe plusieurs façons d’importer un module ou ses éléments :\n\nImporter un module complet :\n\nimport math\nprint(math.sqrt(16))  # Affiche : 4.0\n\nImporter un élément spécifique d’un module :\n\nfrom math import sqrt\nprint(sqrt(16))  # Affiche : 4.0\n\nRenommer un module ou un élément lors de l’importation :\n\nimport math as m\nprint(m.sqrt(16))  # Affiche : 4.0"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#modules-standards",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#modules-standards",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Modules standards",
+    "text": "Modules standards\nPython fournit une bibliothèque standard riche avec des modules pour diverses tâches :\n\nManipulation de dates :\n\nimport datetime\n\naujourdhui = datetime.date.today()\nprint(aujourdhui)  # Affiche la date d'aujourd'hui\n\nGénération de nombres aléatoires :\n\nimport random\n\nnombre = random.randint(1, 10)\nprint(nombre)  # Affiche un nombre aléatoire entre 1 et 10"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#créer-et-structurer-un-projet-avec-des-modules",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#créer-et-structurer-un-projet-avec-des-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Créer et structurer un projet avec des modules",
+    "text": "Créer et structurer un projet avec des modules\nUn projet Python peut contenir plusieurs fichiers et répertoires pour organiser le code.\nStructure d’exemple :\nmon_projet/\n|-- main.py\n|-- utilitaires.py\n|-- data/\n    |-- __init__.py\n    |-- traitement.py\nDans le fichier main.py, vous pouvez importer les modules comme suit :\nfrom data.traitement import ma_fonction"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#les-packages",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#les-packages",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Les packages",
+    "text": "Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#premier-exemple-de-classe",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#premier-exemple-de-classe",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Premier exemple de classe",
+    "text": "Premier exemple de classe\nUne classe est un modèle pour créer des objets. Voici un exemple de classe simple :\nclass Personne:\n    def __init__(self, nom, age):\n        self.nom = nom\n        self.age = age\n\n    def se_presenter(self):\n        return f\"Je m'appelle {self.nom} et j'ai {self.age} ans.\"\n\n# Instanciation d'un objet\npersonne1 = Personne(\"Alice\", 30)\nprint(personne1.se_presenter())"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#accessibilité",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#accessibilité",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Accessibilité",
+    "text": "Accessibilité\nEn Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (__) :\nclass Personne:\n    def __init__(self, nom, age):\n        self.__nom = nom  # Attribut privé\n        self.age = age\n\n    def get_nom(self):\n        return self.__nom\n\n# Utilisation\npersonne = Personne(\"Alice\", 25)"
+  },
+  {
     "objectID": "doc/cours/fonctionsmodules.html",
     "href": "doc/cours/fonctionsmodules.html",
     "title": "Fonctions, Modules et POO en Python",
@@ -376,6 +432,62 @@
     "title": "Fonctions, Modules et POO en Python",
     "section": "2.9 Fonction anonyme (lambda function)",
     "text": "2.9 Fonction anonyme (lambda function)\nLes fonctions lambda sont définies en une seule ligne pour des opérations simples :\n# Exemple : Calculer le carré d'un nombre\ncarre = lambda x: x ** 2\nprint(carre(4))  # Affiche : 16\n\n# Trier une liste de tuples selon le deuxième élément\nnombres = [(1, 2), (3, 1), (5, 0)]\nnombres_tries = sorted(nombres, key=lambda x: x[1])\nprint(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#introduction-aux-modules",
+    "href": "doc/cours/fonctionsmodules.html#introduction-aux-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "3.1 Introduction aux modules",
+    "text": "3.1 Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\n** Exemple ** :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#utiliser-un-module-dans-un-autre-fichier",
+    "href": "doc/cours/fonctionsmodules.html#utiliser-un-module-dans-un-autre-fichier",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "3.2 Utiliser un module dans un autre fichier",
+    "text": "3.2 Utiliser un module dans un autre fichier\nDans un autre fichier, vous pouvez importer et utiliser ce module :\nimport mon_module\n\nprint(mon_module.saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#importation-de-modules",
+    "href": "doc/cours/fonctionsmodules.html#importation-de-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "3.3 Importation de modules",
+    "text": "3.3 Importation de modules\nIl existe plusieurs façons d’importer un module ou ses éléments :\n\nImporter un module complet :\n\nimport math\nprint(math.sqrt(16))  # Affiche : 4.0\n\nImporter un élément spécifique d’un module :\n\nfrom math import sqrt\nprint(sqrt(16))  # Affiche : 4.0\n\nRenommer un module ou un élément lors de l’importation :\n\nimport math as m\nprint(m.sqrt(16))  # Affiche : 4.0"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#modules-standards",
+    "href": "doc/cours/fonctionsmodules.html#modules-standards",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "3.4 Modules standards",
+    "text": "3.4 Modules standards\nPython fournit une bibliothèque standard riche avec des modules pour diverses tâches :\n\nManipulation de dates :\n\nimport datetime\n\naujourdhui = datetime.date.today()\nprint(aujourdhui)  # Affiche la date d'aujourd'hui\n\nGénération de nombres aléatoires :\n\nimport random\n\nnombre = random.randint(1, 10)\nprint(nombre)  # Affiche un nombre aléatoire entre 1 et 10"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#créer-et-structurer-un-projet-avec-des-modules",
+    "href": "doc/cours/fonctionsmodules.html#créer-et-structurer-un-projet-avec-des-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "3.5 Créer et structurer un projet avec des modules",
+    "text": "3.5 Créer et structurer un projet avec des modules\nUn projet Python peut contenir plusieurs fichiers et répertoires pour organiser le code.\nStructure d’exemple :\nmon_projet/\n|-- main.py\n|-- utilitaires.py\n|-- data/\n    |-- __init__.py\n    |-- traitement.py\nDans le fichier main.py, vous pouvez importer les modules comme suit :\nfrom data.traitement import ma_fonction"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#les-packages",
+    "href": "doc/cours/fonctionsmodules.html#les-packages",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "3.6 Les packages",
+    "text": "3.6 Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#premier-exemple-de-classe",
+    "href": "doc/cours/fonctionsmodules.html#premier-exemple-de-classe",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "4.1 Premier exemple de classe",
+    "text": "4.1 Premier exemple de classe\nUne classe est un modèle pour créer des objets. Voici un exemple de classe simple :\nclass Personne:\n    def __init__(self, nom, age):\n        self.nom = nom\n        self.age = age\n\n    def se_presenter(self):\n        return f\"Je m'appelle {self.nom} et j'ai {self.age} ans.\"\n\n# Instanciation d'un objet\npersonne1 = Personne(\"Alice\", 30)\nprint(personne1.se_presenter())"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#accessibilité",
+    "href": "doc/cours/fonctionsmodules.html#accessibilité",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "4.2 Accessibilité",
+    "text": "4.2 Accessibilité\nEn Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (__) :\nclass Personne:\n    def __init__(self, nom, age):\n        self.__nom = nom  # Attribut privé\n        self.age = age\n\n    def get_nom(self):\n        return self.__nom\n\n# Utilisation\npersonne = Personne(\"Alice\", 25)\n\nObjet complexe\nUne classe peut contenir des attributs qui sont eux-mêmes des objets :\nclass Adresse:\n    def __init__(self, rue, ville):\n        self.rue = rue\n        self.ville = ville\n\nclass Personne:\n    def __init__(self, nom, age, adresse):\n        self.nom = nom\n        self.age = age\n        self.adresse = adresse\n\n    def afficher_adresse(self):\n        return f\"{self.adresse.rue}, {self.adresse.ville}\"\n\nadresse = Adresse(\"123 Rue Principale\", \"Paris\")\npersonne = Personne(\"Alice\", 30, adresse)\nprint(personne.afficher_adresse())  # Affiche : 123 Rue Principale, Paris\n\n\nHéritage\nL’héritage permet à une classe d’hériter des attributs et des méthodes d’une autre classe :\nclass Animal:\n    def __init__(self, nom):\n        self.nom = nom\n\n    def parler(self):\n        pass  # Méthode à redéfinir\n\nclass Chien(Animal):\n    def parler(self):\n        return \"Woof\"\n\nclass Chat(Animal):\n    def parler(self):\n        return \"Meow\"\n\nchien = Chien(\"Rex\")\nchat = Chat(\"Miaou\")\nprint(chien.parler())  # Affiche : Woof\nprint(chat.parler())  # Affiche : Meow\n\n\nPolymorphisme\nLe polymorphisme permet d’utiliser une même méthode définie dans plusieurs classes différentes :\nanimaux = [Chien(\"Rex\"), Chat(\"Miaou\")]\n\nfor animal in animaux:\n    print(f\"{animal.nom} dit {animal.parler()}\")\n\n\nEncapsulation et propriétés\nL’encapsulation permet de contrôler l’accès et la modification des attributs d’une classe en utilisant des propriétés.\nclass CompteBancaire:\n    def __init__(self, titulaire, solde):\n        self.titulaire = titulaire\n        self.__solde = solde  # Attribut privé\n\n    @property\n    def solde(self):\n        return self.__solde\n\n    @solde.setter\n    def solde(self, montant):\n        if montant &gt;= 0:\n            self.__solde = montant\n        else:\n            raise ValueError(\"Le solde ne peut pas être négatif\")\n\ncompte = CompteBancaire(\"Alice\", 1000)\nprint(compte.solde)  # Accès au solde\ncompte.solde = 2000  # Modification du solde\nprint(compte.solde)  # Affiche : 2000\n\n\nExercices pratiques\n\nFonctions :\n\nCréez une fonction qui calcule le carré de chaque élément d’une liste.\nImplémentez une fonction lambda pour trier une liste de tuples par leur second élément.\n\nModules :\n\nCréez un module contenant des fonctions pour des opérations de base (addition, multiplication).\nImportez ce module et utilisez ses fonctions dans un fichier principal.\n\nPOO :\n\nCréez une classe Voiture avec des attributs marque, modele et une méthode afficher_details.\nImplémentez une classe VoitureElectrique héritant de Voiture, avec un attribut supplémentaire pour l’autonomie."
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

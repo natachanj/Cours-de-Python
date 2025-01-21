@@ -165,20 +165,136 @@ modifier_globale()
 print(z)  # Affiche : 30
 ```
 
-## Fonction anonyme (lambda function)
+### Fonctions anonymes (lambda) et leur usage pratique
 
-Les fonctions lambda sont définies en une seule ligne pour des opérations simples :
+Les fonctions anonymes, appelées "lambda" en Python, sont des fonctions définies sans utiliser le mot-clé `def`. Elles permettent de créer des fonctions courtes, généralement en une seule ligne.
+
+---
+
+### Définir une fonction lambda
+
+Une fonction lambda suit cette syntaxe :
 
 ```python
-# Exemple : Calculer le carré d'un nombre
+lambda arguments: expression
+```
+
+- **arguments** : Les paramètres que la fonction prend.
+- **expression** : L'opération ou le calcul effectué.
+
+Exemple :
+
+```python
 carre = lambda x: x ** 2
 print(carre(4))  # Affiche : 16
+```
 
-# Trier une liste de tuples selon le deuxième élément
+---
+
+### Utilisation des fonctions lambda
+
+Les fonctions lambda sont souvent utilisées lorsqu'une fonction temporaire ou rapide est nécessaire. Voici quelques cas d'usage pratique :
+
+#### 1. Utilisation avec `map()`
+
+La fonction `map()` applique une fonction donnée à chaque élément d'un itérable (comme une liste).
+
+```python
+nombres = [1, 2, 3, 4, 5]
+carres = list(map(lambda x: x ** 2, nombres))
+print(carres)  # Affiche : [1, 4, 9, 16, 25]
+```
+
+#### 2. Utilisation avec `filter()`
+
+La fonction `filter()` retourne les éléments d'un itérable qui satisfont une condition.
+
+```python
+nombres = [1, 2, 3, 4, 5]
+nombres_pairs = list(filter(lambda x: x % 2 == 0, nombres))
+print(nombres_pairs)  # Affiche : [2, 4]
+```
+
+#### 3. Utilisation avec `sorted()`
+
+Les fonctions lambda sont souvent utilisées pour trier des listes selon des critères spécifiques.
+
+```python
 nombres = [(1, 2), (3, 1), (5, 0)]
 nombres_tries = sorted(nombres, key=lambda x: x[1])
 print(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]
 ```
+
+---
+
+### Comparaison avec les fonctions définies
+
+Les fonctions lambda sont utiles pour des cas simples, mais elles ne remplacent pas les fonctions définies avec `def`, surtout pour des tâches complexes.
+
+#### Exemple avec `def` :
+
+```python
+def carre(x):
+    return x ** 2
+
+print(carre(4))  # Affiche : 16
+```
+
+---
+
+### Utilisation avancée
+
+#### 1. Combiner `lambda` avec `reduce()`
+
+La fonction `reduce()` applique une fonction de cumul à une séquence, réduisant ainsi cette séquence à une seule valeur.
+
+```python
+from functools import reduce
+
+nombres = [1, 2, 3, 4]
+somme = reduce(lambda x, y: x + y, nombres)
+print(somme)  # Affiche : 10
+```
+
+#### 2. Lambda dans des dictionnaires
+
+Les fonctions lambda peuvent être utilisées dans des dictionnaires pour effectuer des calculs conditionnels.
+
+```python
+operations = {
+    "addition": lambda x, y: x + y,
+    "multiplication": lambda x, y: x * y
+}
+
+print(operations["addition"](3, 5))  # Affiche : 8
+print(operations["multiplication"](3, 5))  # Affiche : 15
+```
+
+---
+
+### Bonnes pratiques
+
+1. **Lisibilité** : N'utilisez pas de lambda pour des fonctions complexes. Préférez une fonction `def` pour améliorer la lisibilité.
+2. **Usage limité** : Les fonctions lambda sont conçues pour des cas simples et temporaires.
+3. **Documentez** : Bien que les lambda soient concises, documentez leur utilisation si elles sont utilisées dans un code complexe.
+
+---
+
+### Exercices pratiques
+
+1. **Calcul de la somme des carrés :**
+   - Utilisez une fonction lambda avec `map()` pour calculer le carré de chaque élément d'une liste, puis la somme des carrés avec `reduce()`.
+
+2. **Filtrage :**
+   - Écrivez une fonction lambda avec `filter()` pour trouver tous les mots contenant plus de 3 lettres dans une liste de mots.
+
+3. **Tri personnalisé :**
+   - Créez une liste de tuples représentant des produits avec leur prix. Utilisez une fonction lambda avec `sorted()` pour trier la liste par prix.
+
+---
+
+
+
 
 # Modules en Python
 

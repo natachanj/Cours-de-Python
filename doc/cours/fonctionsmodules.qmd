@@ -179,3 +179,258 @@ nombres = [(1, 2), (3, 1), (5, 0)]
 nombres_tries = sorted(nombres, key=lambda x: x[1])
 print(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]
 ```
+
+# Modules en Python
+
+## Introduction aux modules
+
+Un module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d'autres fichiers. L'utilisation de modules permet de structurer un projet et d'encapsuler des fonctionnalités spécifiques dans des fichiers distincts.
+
+** Exemple ** :  
+Créez un fichier nommé `mon_module.py` avec le contenu suivant :
+
+```python
+def saluer(nom):
+    return f"Bonjour, {nom}!"
+```
+
+## Utiliser un module dans un autre fichier
+
+Dans un autre fichier, vous pouvez importer et utiliser ce module :
+
+```python
+import mon_module
+
+print(mon_module.saluer("Alice"))  # Affiche : Bonjour, Alice!
+```
+
+
+## Importation de modules
+
+Il existe plusieurs façons d'importer un module ou ses éléments :
+
+- **Importer un module complet :**
+
+```python
+import math
+print(math.sqrt(16))  # Affiche : 4.0
+```
+
+- **Importer un élément spécifique d'un module :**
+
+```python
+from math import sqrt
+print(sqrt(16))  # Affiche : 4.0
+```
+
+- **Renommer un module ou un élément lors de l'importation :**
+
+```python
+import math as m
+print(m.sqrt(16))  # Affiche : 4.0
+```
+
+## Modules standards
+
+Python fournit une bibliothèque standard riche avec des modules pour diverses tâches :
+
+- **Manipulation de dates :**
+
+```python
+import datetime
+
+aujourdhui = datetime.date.today()
+print(aujourdhui)  # Affiche la date d'aujourd'hui
+```
+
+- **Génération de nombres aléatoires :**
+
+```python
+import random
+
+nombre = random.randint(1, 10)
+print(nombre)  # Affiche un nombre aléatoire entre 1 et 10
+```
+
+## Créer et structurer un projet avec des modules
+
+Un projet Python peut contenir plusieurs fichiers et répertoires pour organiser le code.
+
+**Structure d'exemple :**
+
+```
+mon_projet/
+|-- main.py
+|-- utilitaires.py
+|-- data/
+    |-- __init__.py
+    |-- traitement.py
+```
+
+Dans le fichier `main.py`, vous pouvez importer les modules comme suit :
+
+```python
+from data.traitement import ma_fonction
+```
+
+## Les packages
+
+Un package est un répertoire contenant plusieurs modules, généralement accompagné d'un fichier `__init__.py`.
+
+**Exemple de structure de package :**
+
+```
+mon_package/
+|-- __init__.py
+|-- module1.py
+|-- module2.py
+```
+
+Vous pouvez importer des éléments d'un package comme suit :
+
+```python
+from mon_package.module1 import ma_fonction
+```
+
+---
+
+# Introduction à la Programmation Orientée Objet (POO) (1h)
+
+## Premier exemple de classe
+
+Une classe est un modèle pour créer des objets. Voici un exemple de classe simple :
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def se_presenter(self):
+        return f"Je m'appelle {self.nom} et j'ai {self.age} ans."
+
+# Instanciation d'un objet
+personne1 = Personne("Alice", 30)
+print(personne1.se_presenter())
+```
+
+## Accessibilité
+
+En Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (`__`) :
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.__nom = nom  # Attribut privé
+        self.age = age
+
+    def get_nom(self):
+        return self.__nom
+
+# Utilisation
+personne = Personne("Alice", 25)
+```
+###  Objet complexe
+
+Une classe peut contenir des attributs qui sont eux-mêmes des objets :
+
+```python
+class Adresse:
+    def __init__(self, rue, ville):
+        self.rue = rue
+        self.ville = ville
+
+class Personne:
+    def __init__(self, nom, age, adresse):
+        self.nom = nom
+        self.age = age
+        self.adresse = adresse
+
+    def afficher_adresse(self):
+        return f"{self.adresse.rue}, {self.adresse.ville}"
+
+adresse = Adresse("123 Rue Principale", "Paris")
+personne = Personne("Alice", 30, adresse)
+print(personne.afficher_adresse())  # Affiche : 123 Rue Principale, Paris
+```
+
+###  Héritage
+
+L'héritage permet à une classe d'hériter des attributs et des méthodes d'une autre classe :
+
+```python
+class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def parler(self):
+        pass  # Méthode à redéfinir
+
+class Chien(Animal):
+    def parler(self):
+        return "Woof"
+
+class Chat(Animal):
+    def parler(self):
+        return "Meow"
+
+chien = Chien("Rex")
+chat = Chat("Miaou")
+print(chien.parler())  # Affiche : Woof
+print(chat.parler())  # Affiche : Meow
+```
+
+###  Polymorphisme
+
+Le polymorphisme permet d'utiliser une même méthode définie dans plusieurs classes différentes :
+
+```python
+animaux = [Chien("Rex"), Chat("Miaou")]
+
+for animal in animaux:
+    print(f"{animal.nom} dit {animal.parler()}")
+```
+
+###  Encapsulation et propriétés
+
+L'encapsulation permet de contrôler l'accès et la modification des attributs d'une classe en utilisant des propriétés.
+
+```python
+class CompteBancaire:
+    def __init__(self, titulaire, solde):
+        self.titulaire = titulaire
+        self.__solde = solde  # Attribut privé
+
+    @property
+    def solde(self):
+        return self.__solde
+
+    @solde.setter
+    def solde(self, montant):
+        if montant >= 0:
+            self.__solde = montant
+        else:
+            raise ValueError("Le solde ne peut pas être négatif")
+
+compte = CompteBancaire("Alice", 1000)
+print(compte.solde)  # Accès au solde
+compte.solde = 2000  # Modification du solde
+print(compte.solde)  # Affiche : 2000
+```
+
+### Exercices pratiques
+
+1. **Fonctions :**
+   - Créez une fonction qui calcule le carré de chaque élément d'une liste.
+   - Implémentez une fonction lambda pour trier une liste de tuples par leur second élément.
+
+2. **Modules :**
+   - Créez un module contenant des fonctions pour des opérations de base (addition, multiplication).
+   - Importez ce module et utilisez ses fonctions dans un fichier principal.
+
+3. **POO :**
+   - Créez une classe `Voiture` avec des attributs `marque`, `modele` et une méthode `afficher_details`.
+   - Implémentez une classe `VoitureElectrique` héritant de `Voiture`, avec un attribut supplémentaire pour l'autonomie.
+
+---
+

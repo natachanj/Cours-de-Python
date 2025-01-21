@@ -20,7 +20,7 @@ number-depth: 3
 - Structurer un projet Python en utilisant des modules.
 - Découvrir les bases de la programmation orientée objet.
 
-Vous pouvez télécharger le fichier .ipynb en cliquant [Télécharger le notebook : Types de Données] (https://drive.google.com/file/d/1pFA0ZOGX0A92r7ryk6AMGthDW21bbI8u/view?usp=drive_link)
+Vous pouvez télécharger le fichier .ipynb en cliquant [ici](https://drive.google.com/file/d/1pFA0ZOGX0A92r7ryk6AMGthDW21bbI8u/view?usp=drive_link)
 
 ## Partie 1 : Fonctions
 

@@ -469,6 +469,62 @@
     "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
   },
   {
+    "objectID": "doc/tp/tp3.html",
+    "href": "doc/tp/tp3.html",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
+    "href": "doc/tp/tp3.html#objectifs-du-tp",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
+    "href": "doc/tp/tp3.html#introduction-à-numpy",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#création-de-tableaux",
+    "href": "doc/tp/tp3.html#création-de-tableaux",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#accès-et-modifications",
+    "href": "doc/tp/tp3.html#accès-et-modifications",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#exercices-pratiques",
+    "href": "doc/tp/tp3.html#exercices-pratiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#récapitulatif",
+    "href": "doc/tp/tp3.html#récapitulatif",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Programmation avec Python: Analyse de données et Data visualisation",

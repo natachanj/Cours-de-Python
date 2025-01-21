@@ -309,6 +309,7 @@ Créez un fichier nommé `mon_module.py` avec le contenu suivant :
 def saluer(nom):
     return f"Bonjour, {nom}!"
 ```
+---
 
 ## Utiliser un module dans un autre fichier
 

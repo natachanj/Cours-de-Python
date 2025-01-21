@@ -37,7 +37,7 @@ from: markdown+emoji
 
 Python offre une large gamme de fonctions intégrées comme `print()`, `len()`, `type()` ou encore `sum()`. Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.
 
-** Exemples **:
+**Exemples**:
 ```python
 print("Bonjour")  # Affiche : Bonjour
 print(len("Python"))  # Affiche : 6
@@ -186,7 +186,7 @@ print(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]
 
 Un module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d'autres fichiers. L'utilisation de modules permet de structurer un projet et d'encapsuler des fonctionnalités spécifiques dans des fichiers distincts.
 
-** Exemple ** :  
+**Exemple** :  
 Créez un fichier nommé `mon_module.py` avec le contenu suivant :
 
 ```python
@@ -293,12 +293,24 @@ from mon_package.module1 import ma_fonction
 ```
 
 ---
+### Introduction à la Programmation Orientée Objet (POO)
 
-# Introduction à la Programmation Orientée Objet (POO) (1h)
+La programmation orientée objet (POO) est un paradigme de programmation basé sur le concept de "classes" et "objets", qui permet de structurer le code de manière modulaire et réutilisable.
 
-## Premier exemple de classe
+---
 
-Une classe est un modèle pour créer des objets. Voici un exemple de classe simple :
+### Concepts clés
+
+- **Classe** : Modèle ou plan permettant de créer des objets. Elle définit les attributs (données) et les méthodes (fonctions).
+- **Objet** : Instance d'une classe.
+- **Attributs** : Variables associées à une classe ou un objet.
+- **Méthodes** : Fonctions définies dans une classe pour manipuler ses attributs ou accomplir des tâches spécifiques.
+
+---
+
+### Créer une classe simple et instancier des objets
+
+Voici un exemple de classe simple représentant une "Personne" :
 
 ```python
 class Personne:
@@ -309,28 +321,18 @@ class Personne:
     def se_presenter(self):
         return f"Je m'appelle {self.nom} et j'ai {self.age} ans."
 
-# Instanciation d'un objet
+# Instanciation d'objets
 personne1 = Personne("Alice", 30)
-print(personne1.se_presenter())
-```
-
-## Accessibilité
-
-En Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (`__`) :
-
-```python
-class Personne:
-    def __init__(self, nom, age):
-        self.__nom = nom  # Attribut privé
-        self.age = age
-
-    def get_nom(self):
-        return self.__nom
+personne2 = Personne("Bob", 25)
 
 # Utilisation
-personne = Personne("Alice", 25)
+print(personne1.se_presenter())  # Affiche : Je m'appelle Alice et j'ai 30 ans.
+print(personne2.se_presenter())  # Affiche : Je m'appelle Bob et j'ai 25 ans.
 ```
-###  Objet complexe
+
+---
+
+### Objet complexe
 
 Une classe peut contenir des attributs qui sont eux-mêmes des objets :
 
@@ -354,9 +356,11 @@ personne = Personne("Alice", 30, adresse)
 print(personne.afficher_adresse())  # Affiche : 123 Rue Principale, Paris
 ```
 
-###  Héritage
+---
 
-L'héritage permet à une classe d'hériter des attributs et des méthodes d'une autre classe :
+### Héritage
+
+L'héritage permet à une classe d'hériter des attributs et des méthodes d'une autre classe. Cela favorise la réutilisation du code.
 
 ```python
 class Animal:
@@ -380,9 +384,11 @@ print(chien.parler())  # Affiche : Woof
 print(chat.parler())  # Affiche : Meow
 ```
 
-###  Polymorphisme
+---
 
-Le polymorphisme permet d'utiliser une même méthode définie dans plusieurs classes différentes :
+### Polymorphisme
+
+Le polymorphisme permet d'utiliser une même méthode définie dans plusieurs classes différentes.
 
 ```python
 animaux = [Chien("Rex"), Chat("Miaou")]
@@ -391,9 +397,11 @@ for animal in animaux:
     print(f"{animal.nom} dit {animal.parler()}")
 ```
 
-###  Encapsulation et propriétés
+---
 
-L'encapsulation permet de contrôler l'accès et la modification des attributs d'une classe en utilisant des propriétés.
+### Encapsulation et propriétés
+
+L'encapsulation permet de contrôler l'accès et la modification des attributs d'une classe. Cela se fait généralement à l'aide des propriétés.
 
 ```python
 class CompteBancaire:
@@ -418,19 +426,49 @@ compte.solde = 2000  # Modification du solde
 print(compte.solde)  # Affiche : 2000
 ```
 
-### Exercices pratiques
+---
 
-1. **Fonctions :**
-   - Créez une fonction qui calcule le carré de chaque élément d'une liste.
-   - Implémentez une fonction lambda pour trier une liste de tuples par leur second élément.
+### Abstraction
 
-2. **Modules :**
-   - Créez un module contenant des fonctions pour des opérations de base (addition, multiplication).
-   - Importez ce module et utilisez ses fonctions dans un fichier principal.
+L'abstraction consiste à définir des classes ou des méthodes génériques qui servent de base pour les classes spécifiques. Cela se fait avec des classes ou méthodes abstraites.
 
-3. **POO :**
-   - Créez une classe `Voiture` avec des attributs `marque`, `modele` et une méthode `afficher_details`.
-   - Implémentez une classe `VoitureElectrique` héritant de `Voiture`, avec un attribut supplémentaire pour l'autonomie.
+```python
+from abc import ABC, abstractmethod
+
+class Forme(ABC):
+    @abstractmethod
+    def aire(self):
+        pass
+
+class Rectangle(Forme):
+    def __init__(self, largeur, hauteur):
+        self.largeur = largeur
+        self.hauteur = hauteur
+
+    def aire(self):
+        return self.largeur * self.hauteur
+
+rectangle = Rectangle(10, 5)
+print(rectangle.aire())  # Affiche : 50
+```
 
 ---
+
+### Exercices pratiques
+
+1. **Créer une classe `Livre` :**
+   - Attributs : `titre`, `auteur`, `pages`.
+   - Méthode : `afficher_informations` qui affiche les détails du livre.
+
+2. **Créer une classe `Bibliotheque` :**
+   - Attributs : liste de livres.
+   - Méthodes : ajouter un livre, retirer un livre, afficher tous les livres.
+
+3. **Créer une hiérarchie d'héritage :**
+   - Classe de base `Vehicule`.
+   - Classes dérivées : `Voiture`, `Moto` avec des méthodes spécifiques comme `afficher_type`.
+
+4. **Créer une classe abstraite `Forme` :**
+   - Méthodes abstraites : `aire` et `perimetre`.
+   - Implémenter les classes `Cercle` et `Rectangle`.
 

@@ -31,3 +31,61 @@ from: markdown+emoji
 - Structurer un projet Python avec des modules.
 - Introduire les bases de la Programmation Orientée Objet (POO).
 
+# Les fonctions en Python
+
+## Les fonctions Python existantes
+
+Python offre une large gamme de fonctions intégrées comme `print()`, `len()`, `type()` ou encore `sum()`. Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.
+
+** Exemples **:
+```python
+print("Bonjour")  # Affiche : Bonjour
+print(len("Python"))  # Affiche : 6
+```
+
+## Fonction simple sans paramètre
+Une fonction sans paramètre exécute toujours les mêmes instructions :
+```python
+def dire_bonjour():
+    return "Bonjour !"
+
+print(dire_bonjour())  # Affiche : Bonjour !
+```
+## Fonction avec paramètres
+
+Une fonction avec paramètres peut être personnalisée selon les valeurs passées :
+
+```python
+def saluer(nom):
+    return f"Bonjour, {nom}!"
+
+print(saluer("Alice"))  # Affiche : Bonjour, Alice!
+```
+
+## Valeur par défaut des paramètres
+
+Les paramètres peuvent avoir des valeurs par défaut :
+
+```python
+def saluer(nom, message="Bonjour"):
+    return f"{message}, {nom}!"
+
+# Exemple d'utilisation
+print(saluer("Jean"))  # Affiche : Bonjour, Jean!
+print(saluer("Marie", "Salut"))  # Affiche : Salut, Marie!
+```
+
+## Affecter une instance de fonction à une variable
+
+Les fonctions peuvent être assignées à des variables pour être utilisées plus tard :
+
+```python
+def addition(a, b):
+    return a + b
+
+# Affecter la fonction à une variable
+ajouter = addition
+
+# Exemple d'utilisation
+print(ajouter(3, 4))  # Affiche : 7
+```

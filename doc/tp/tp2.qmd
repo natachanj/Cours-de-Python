@@ -1,0 +1,116 @@
+---
+title: "Fonctions, Modules et POO"
+description: Introduction aux fonctions, aux modules et à la programmation orientée objet (POO) en Python
+author: "Natacha NJONGWA YEPNGA"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+# TP 2 : : Fonctions et Programmation Orientée Objet (POO)
+
+## Objectifs
+- Comprendre et appliquer les fonctions en Python.
+- Structurer un projet Python en utilisant des modules.
+- Découvrir les bases de la programmation orientée objet.
+
+## Partie 1 : Fonctions
+
+### Exercice 1 : Tableau de multiplication
+Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.
+
+---
+
+### Exercice 2 : Recherche d’un élément
+Écrivez une fonction qui prend en paramètres une liste `L` et un élément `a`, et qui retourne `True` si `a` est présent dans la liste, et `False` sinon.
+
+---
+
+### Exercice 3 : Multiplication des éléments d’une liste
+Écrivez une fonction qui prend une liste `L` de nombres et un entier `n` en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par `n`.
+
+---
+
+### Exercice 4 : Position d’un élément
+Écrivez une fonction qui prend en paramètres une liste `L` et un élément `a`, et retourne la position de `a` dans la liste. Si l'élément n'est pas présent, renvoyez `-1`. **N'utilisez pas la fonction `index()`**.
+
+---
+
+### Exercice 5 : Dictionnaire de parité
+Écrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité (`'pair'` ou `'impair'`).
+
+---
+
+### Exercice 6 : Comptage des occurrences
+Écrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.
+
+---
+
+### Exercice 7 : Liste en compréhension
+Créez une liste en compréhension qui contient uniquement les carrés des nombres pairs d'une liste donnée.
+
+---
+
+### Exercice 8 : Dictionnaire en compréhension
+Créez un dictionnaire en compréhension qui associe chaque élément d'une liste à son carré.
+
+---
+
+## Partie 2 : Programmation Orientée Objet (POO)
+
+### Exercice 9 : Classe `Book`
+1. Définissez une classe `Book` avec les attributs : `title`, `author` et `price`.
+2. Implémentez un constructeur pour initialiser ces attributs.
+3. Ajoutez une méthode `view()` qui affiche les informations du livre.
+4. Testez la classe en créant plusieurs instances.
+
+---
+
+### Exercice 10 : Classe `Polynome`
+1. Implémentez une classe `Polynome` représentant un polynôme du second degré \( P(x) = ax^2 + bx + c \).
+2. Ajoutez les méthodes suivantes :
+   - `eval(x)` : calcule la valeur de \( P(x) \) pour une valeur donnée de \( x \).
+   - `delta()` : calcule le discriminant \( \Delta = b^2 - 4ac \).
+   - `racines()` : calcule les racines du polynôme si elles existent.
+
+---
+
+### Exercice 11 : Classe `Domino`
+1. Créez une classe `Domino` avec deux attributs représentant les valeurs des deux parties du domino.
+2. Ajoutez une méthode `affiche_points()` pour afficher les points du domino.
+3. Ajoutez une méthode `valeur()` pour retourner la somme des points.
+4. Testez votre classe en instanciant plusieurs dominos.
+
+---
+
+### Exercice 12 : Récursivité
+1. Écrivez une fonction récursive pour calculer la somme des éléments d’une liste.
+2. Implémentez une fonction récursive pour calculer la suite de Fibonacci \( F(n) \).
+
+La suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :
+
+\[
+F(n) =
+\begin{cases} 
+0 & \text{si } n = 0, \\
+1 & \text{si } n = 1, \\
+F(n-1) + F(n-2) & \text{si } n > 1.
+\end{cases}
+\]
+
+---
+
+#### Les premiers termes de la suite
+Pour \( n = 0, 1, 2, \ldots, 9 \), la suite de Fibonacci est donnée par :
+
+\[
+F(0) = 0, \, F(1) = 1, \, F(2) = 1, \, F(3) = 2, \, F(4) = 3, \, F(5) = 5, \, F(6) = 8, \, F(7) = 13, \, F(8) = 21, \, F(9) = 34.
+\]
+
+---

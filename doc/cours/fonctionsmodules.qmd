@@ -131,3 +131,51 @@ ma_liste = [1, 2, 3]
 ajouter_element(ma_liste)
 print(ma_liste)  # Affiche : [1, 2, 3, 5]
 ```
+
+## Variable locale/variable globale
+
+- **Variable locale** : Définie à l'intérieur d'une fonction et inaccessible en dehors.
+- **Variable globale** : Accessible partout dans le programme.
+
+### Exemple :
+
+#### Variables locale  :
+```python
+x = 10  # Variable globale
+
+def afficher_variables():
+    y = 5  # Variable locale
+    print("x =", x)  # Accède à la variable globale
+    print("y =", y)  # Accède à la variable locale
+
+afficher_variables()
+# print(y)  # Provoque une erreur : y n'est pas défini en dehors de la fonction
+```
+
+### Modifier une variable globale :
+
+```python
+z = 20  # Variable globale
+
+def modifier_globale():
+    global z  # Permet de modifier la variable globale
+    z = 30
+
+modifier_globale()
+print(z)  # Affiche : 30
+```
+
+## Fonction anonyme (lambda function)
+
+Les fonctions lambda sont définies en une seule ligne pour des opérations simples :
+
+```python
+# Exemple : Calculer le carré d'un nombre
+carre = lambda x: x ** 2
+print(carre(4))  # Affiche : 16
+
+# Trier une liste de tuples selon le deuxième élément
+nombres = [(1, 2), (3, 1), (5, 0)]
+nombres_tries = sorted(nombres, key=lambda x: x[1])
+print(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]
+```

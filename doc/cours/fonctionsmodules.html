@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -164,6 +198,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#objectifs-du-cours" id="toc-objectifs-du-cours" class="nav-link active" data-scroll-target="#objectifs-du-cours"><span class="header-section-number">1</span> Objectifs du cours</a></li>
+  <li><a href="#les-fonctions-en-python" id="toc-les-fonctions-en-python" class="nav-link" data-scroll-target="#les-fonctions-en-python"><span class="header-section-number">2</span> Les fonctions en Python</a>
+  <ul class="collapse">
+  <li><a href="#les-fonctions-python-existantes" id="toc-les-fonctions-python-existantes" class="nav-link" data-scroll-target="#les-fonctions-python-existantes"><span class="header-section-number">2.1</span> Les fonctions Python existantes</a></li>
+  <li><a href="#fonction-simple-sans-paramètre" id="toc-fonction-simple-sans-paramètre" class="nav-link" data-scroll-target="#fonction-simple-sans-paramètre"><span class="header-section-number">2.2</span> Fonction simple sans paramètre</a></li>
+  <li><a href="#fonction-avec-paramètres" id="toc-fonction-avec-paramètres" class="nav-link" data-scroll-target="#fonction-avec-paramètres"><span class="header-section-number">2.3</span> Fonction avec paramètres</a></li>
+  <li><a href="#valeur-par-défaut-des-paramètres" id="toc-valeur-par-défaut-des-paramètres" class="nav-link" data-scroll-target="#valeur-par-défaut-des-paramètres"><span class="header-section-number">2.4</span> Valeur par défaut des paramètres</a></li>
+  <li><a href="#affecter-une-instance-de-fonction-à-une-variable" id="toc-affecter-une-instance-de-fonction-à-une-variable" class="nav-link" data-scroll-target="#affecter-une-instance-de-fonction-à-une-variable"><span class="header-section-number">2.5</span> Affecter une instance de fonction à une variable</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fonctions-modules-poo-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
@@ -214,8 +256,56 @@ ul.task-list li input[type="checkbox"] {
 <li>Structurer un projet Python avec des modules.</li>
 <li>Introduire les bases de la Programmation Orientée Objet (POO).</li>
 </ul>
+</section>
+<section id="les-fonctions-en-python" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Les fonctions en Python</h1>
+<section id="les-fonctions-python-existantes" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="les-fonctions-python-existantes"><span class="header-section-number">2.1</span> Les fonctions Python existantes</h2>
+<p>Python offre une large gamme de fonctions intégrées comme <code>print()</code>, <code>len()</code>, <code>type()</code> ou encore <code>sum()</code>. Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.</p>
+<p>** Exemples **:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">print</span>(<span class="st">"Bonjour"</span>)  <span class="co"># Affiche : Bonjour</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">"Python"</span>))  <span class="co"># Affiche : 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fonction-simple-sans-paramètre" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="fonction-simple-sans-paramètre"><span class="header-section-number">2.2</span> Fonction simple sans paramètre</h2>
+<p>Une fonction sans paramètre exécute toujours les mêmes instructions :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> dire_bonjour():</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">return</span> <span class="st">"Bonjour !"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(dire_bonjour())  <span class="co"># Affiche : Bonjour !</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fonction-avec-paramètres" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="fonction-avec-paramètres"><span class="header-section-number">2.3</span> Fonction avec paramètres</h2>
+<p>Une fonction avec paramètres peut être personnalisée selon les valeurs passées :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> saluer(nom):</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">return</span> <span class="ss">f"Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">print</span>(saluer(<span class="st">"Alice"</span>))  <span class="co"># Affiche : Bonjour, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="valeur-par-défaut-des-paramètres" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="valeur-par-défaut-des-paramètres"><span class="header-section-number">2.4</span> Valeur par défaut des paramètres</h2>
+<p>Les paramètres peuvent avoir des valeurs par défaut :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> saluer(nom, message<span class="op">=</span><span class="st">"Bonjour"</span>):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Exemple d'utilisation</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(saluer(<span class="st">"Jean"</span>))  <span class="co"># Affiche : Bonjour, Jean!</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(saluer(<span class="st">"Marie"</span>, <span class="st">"Salut"</span>))  <span class="co"># Affiche : Salut, Marie!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="affecter-une-instance-de-fonction-à-une-variable" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="affecter-une-instance-de-fonction-à-une-variable"><span class="header-section-number">2.5</span> Affecter une instance de fonction à une variable</h2>
+<p>Les fonctions peuvent être assignées à des variables pour être utilisées plus tard :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> addition(a, b):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Affecter la fonction à une variable</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>ajouter <span class="op">=</span> addition</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Exemple d'utilisation</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="bu">print</span>(ajouter(<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># Affiche : 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

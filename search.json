@@ -245,11 +245,81 @@
     "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
   },
   {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Les fonctions Python existantes",
+    "text": "Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\n** Exemples **:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction simple sans paramètre",
+    "text": "Fonction simple sans paramètre\nUne fonction sans paramètre exécute toujours les mêmes instructions :\ndef dire_bonjour():\n    return \"Bonjour !\"\n\nprint(dire_bonjour())  # Affiche : Bonjour !"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-paramètres",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction avec paramètres",
+    "text": "Fonction avec paramètres\nUne fonction avec paramètres peut être personnalisée selon les valeurs passées :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\"\n\nprint(saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#valeur-par-défaut-des-paramètres",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#valeur-par-défaut-des-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Valeur par défaut des paramètres",
+    "text": "Valeur par défaut des paramètres\nLes paramètres peuvent avoir des valeurs par défaut :\ndef saluer(nom, message=\"Bonjour\"):\n    return f\"{message}, {nom}!\"\n\n# Exemple d'utilisation\nprint(saluer(\"Jean\"))  # Affiche : Bonjour, Jean!\nprint(saluer(\"Marie\", \"Salut\"))  # Affiche : Salut, Marie!"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#affecter-une-instance-de-fonction-à-une-variable",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#affecter-une-instance-de-fonction-à-une-variable",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Affecter une instance de fonction à une variable",
+    "text": "Affecter une instance de fonction à une variable\nLes fonctions peuvent être assignées à des variables pour être utilisées plus tard :\ndef addition(a, b):\n    return a + b\n\n# Affecter la fonction à une variable\najouter = addition\n\n# Exemple d'utilisation\nprint(ajouter(3, 4))  # Affiche : 7"
+  },
+  {
     "objectID": "doc/cours/fonctionsmodules.html",
     "href": "doc/cours/fonctionsmodules.html",
     "title": "Fonctions, Modules et POO en Python",
     "section": "",
-    "text": "1 Objectifs du cours\n\nComprendre les concepts des fonctions en Python : définition, paramètres et valeurs de retour.\nExplorer les fonctions anonymes (lambda) et leur utilisation pratique.\nDifférencier les variables locales et globales.\nMaîtriser les listes en compréhension et les dictionnaires en compréhension.\nStructurer un projet Python avec des modules.\nIntroduire les bases de la Programmation Orientée Objet (POO)."
+    "text": "Comprendre les concepts des fonctions en Python : définition, paramètres et valeurs de retour.\nExplorer les fonctions anonymes (lambda) et leur utilisation pratique.\nDifférencier les variables locales et globales.\nMaîtriser les listes en compréhension et les dictionnaires en compréhension.\nStructurer un projet Python avec des modules.\nIntroduire les bases de la Programmation Orientée Objet (POO)."
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#les-fonctions-python-existantes",
+    "href": "doc/cours/fonctionsmodules.html#les-fonctions-python-existantes",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.1 Les fonctions Python existantes",
+    "text": "2.1 Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\n** Exemples **:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#fonction-simple-sans-paramètre",
+    "href": "doc/cours/fonctionsmodules.html#fonction-simple-sans-paramètre",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.2 Fonction simple sans paramètre",
+    "text": "2.2 Fonction simple sans paramètre\nUne fonction sans paramètre exécute toujours les mêmes instructions :\ndef dire_bonjour():\n    return \"Bonjour !\"\n\nprint(dire_bonjour())  # Affiche : Bonjour !"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#fonction-avec-paramètres",
+    "href": "doc/cours/fonctionsmodules.html#fonction-avec-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.3 Fonction avec paramètres",
+    "text": "2.3 Fonction avec paramètres\nUne fonction avec paramètres peut être personnalisée selon les valeurs passées :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\"\n\nprint(saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#valeur-par-défaut-des-paramètres",
+    "href": "doc/cours/fonctionsmodules.html#valeur-par-défaut-des-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.4 Valeur par défaut des paramètres",
+    "text": "2.4 Valeur par défaut des paramètres\nLes paramètres peuvent avoir des valeurs par défaut :\ndef saluer(nom, message=\"Bonjour\"):\n    return f\"{message}, {nom}!\"\n\n# Exemple d'utilisation\nprint(saluer(\"Jean\"))  # Affiche : Bonjour, Jean!\nprint(saluer(\"Marie\", \"Salut\"))  # Affiche : Salut, Marie!"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#affecter-une-instance-de-fonction-à-une-variable",
+    "href": "doc/cours/fonctionsmodules.html#affecter-une-instance-de-fonction-à-une-variable",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.5 Affecter une instance de fonction à une variable",
+    "text": "2.5 Affecter une instance de fonction à une variable\nLes fonctions peuvent être assignées à des variables pour être utilisées plus tard :\ndef addition(a, b):\n    return a + b\n\n# Affecter la fonction à une variable\najouter = addition\n\n# Exemple d'utilisation\nprint(ajouter(3, 4))  # Affiche : 7"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

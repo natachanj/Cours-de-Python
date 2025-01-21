@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ab7a322b4ca39adb1086c9e0171297e3.css">
   <link rel="stylesheet" href="../../styles-reveal.css">
@@ -149,8 +214,64 @@ Natacha Njongwa Yepnga
 <li>Structurer un projet Python avec des modules.</li>
 <li>Introduire les bases de la Programmation Orientée Objet (POO).</li>
 </ul>
+</section>
+
+<section>
+<section id="les-fonctions-en-python" class="title-slide slide level1 center">
+<h1>Les fonctions en Python</h1>
+
+</section>
+<section id="les-fonctions-python-existantes" class="title-slide slide level2 center">
+<h2>Les fonctions Python existantes</h2>
+<p>Python offre une large gamme de fonctions intégrées comme <code>print()</code>, <code>len()</code>, <code>type()</code> ou encore <code>sum()</code>. Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.</p>
+<p>** Exemples **:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="bu">print</span>(<span class="st">"Bonjour"</span>)  <span class="co"># Affiche : Bonjour</span></span>
+<span id="cb1-2"><a></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">"Python"</span>))  <span class="co"># Affiche : 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="fonction-simple-sans-paramètre" class="title-slide slide level2 center">
+<h2>Fonction simple sans paramètre</h2>
+<p>Une fonction sans paramètre exécute toujours les mêmes instructions :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> dire_bonjour():</span>
+<span id="cb2-2"><a></a>    <span class="cf">return</span> <span class="st">"Bonjour !"</span></span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="bu">print</span>(dire_bonjour())  <span class="co"># Affiche : Bonjour !</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="fonction-avec-paramètres" class="title-slide slide level2 center">
+<h2>Fonction avec paramètres</h2>
+<p>Une fonction avec paramètres peut être personnalisée selon les valeurs passées :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> saluer(nom):</span>
+<span id="cb3-2"><a></a>    <span class="cf">return</span> <span class="ss">f"Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="bu">print</span>(saluer(<span class="st">"Alice"</span>))  <span class="co"># Affiche : Bonjour, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="valeur-par-défaut-des-paramètres" class="title-slide slide level2 center">
+<h2>Valeur par défaut des paramètres</h2>
+<p>Les paramètres peuvent avoir des valeurs par défaut :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> saluer(nom, message<span class="op">=</span><span class="st">"Bonjour"</span>):</span>
+<span id="cb4-2"><a></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="co"># Exemple d'utilisation</span></span>
+<span id="cb4-5"><a></a><span class="bu">print</span>(saluer(<span class="st">"Jean"</span>))  <span class="co"># Affiche : Bonjour, Jean!</span></span>
+<span id="cb4-6"><a></a><span class="bu">print</span>(saluer(<span class="st">"Marie"</span>, <span class="st">"Salut"</span>))  <span class="co"># Affiche : Salut, Marie!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="affecter-une-instance-de-fonction-à-une-variable" class="title-slide slide level2 center">
+<h2>Affecter une instance de fonction à une variable</h2>
+<p>Les fonctions peuvent être assignées à des variables pour être utilisées plus tard :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> addition(a, b):</span>
+<span id="cb5-2"><a></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="co"># Affecter la fonction à une variable</span></span>
+<span id="cb5-5"><a></a>ajouter <span class="op">=</span> addition</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a><span class="co"># Exemple d'utilisation</span></span>
+<span id="cb5-8"><a></a><span class="bu">print</span>(ajouter(<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># Affiche : 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

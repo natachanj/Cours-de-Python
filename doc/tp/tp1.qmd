@@ -38,7 +38,10 @@ Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler 
 - Manipulation des types de données complexes comme les listes, dictionnaires, et ensembles.
 - Exercices pratiques pour appliquer les concepts étudiés.
 
-[Télécharger le notebook : Structures de Contrôle et Types de Données](https://drive.google.com/file/d/1YSB2yJuIXgENSWCJQ0QoH9Qq3OJPo23M/view?usp=drive_link)
+[Télécharger le notebook : Structure de contôle](https://drive.google.com/file/d/1C6hwy2zJ68CnCnD4eg7dTxkFZHWY5UMu/view?usp=drive_link)
+
+[Télécharger le notebook : Types de Données](https://drive.google.com/file/d/184G19xzuZHyyjTuVrjY03DZQaK0oklkA/view?usp=drive_link)
+
 
 
 

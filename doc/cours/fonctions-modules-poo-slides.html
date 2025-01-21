@@ -338,18 +338,96 @@ Natacha Njongwa Yepnga
 <span id="cb10-7"><a></a>modifier_globale()</span>
 <span id="cb10-8"><a></a><span class="bu">print</span>(z)  <span class="co"># Affiche : 30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="fonctions-anonymes-lambda-et-leur-usage-pratique" class="slide level3">
+<h3>Fonctions anonymes (lambda) et leur usage pratique</h3>
+<p>Les fonctions anonymes, appelées “lambda” en Python, sont des fonctions définies sans utiliser le mot-clé <code>def</code>. Elles permettent de créer des fonctions courtes, généralement en une seule ligne.</p>
+</section>
+<section id="définir-une-fonction-lambda" class="slide level3">
+<h3>Définir une fonction lambda</h3>
+<p>Une fonction lambda suit cette syntaxe :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">lambda</span> arguments: expression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>arguments</strong> : Les paramètres que la fonction prend.</li>
+<li><strong>expression</strong> : L’opération ou le calcul effectué.</li>
+</ul>
+<p>Exemple :</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>carre <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb12-2"><a></a><span class="bu">print</span>(carre(<span class="dv">4</span>))  <span class="co"># Affiche : 16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="utilisation-des-fonctions-lambda" class="slide level3">
+<h3>Utilisation des fonctions lambda</h3>
+<p>Les fonctions lambda sont souvent utilisées lorsqu’une fonction temporaire ou rapide est nécessaire. Voici quelques cas d’usage pratique :</p>
+<h4 id="utilisation-avec-map">1. Utilisation avec <code>map()</code></h4>
+<p>La fonction <code>map()</code> applique une fonction donnée à chaque élément d’un itérable (comme une liste).</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb13-2"><a></a>carres <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span>, nombres))</span>
+<span id="cb13-3"><a></a><span class="bu">print</span>(carres)  <span class="co"># Affiche : [1, 4, 9, 16, 25]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="utilisation-avec-filter">2. Utilisation avec <code>filter()</code></h4>
+<p>La fonction <code>filter()</code> retourne les éléments d’un itérable qui satisfont une condition.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb14-2"><a></a>nombres_pairs <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, nombres))</span>
+<span id="cb14-3"><a></a><span class="bu">print</span>(nombres_pairs)  <span class="co"># Affiche : [2, 4]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="utilisation-avec-sorted">3. Utilisation avec <code>sorted()</code></h4>
+<p>Les fonctions lambda sont souvent utilisées pour trier des listes selon des critères spécifiques.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>nombres <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">1</span>), (<span class="dv">5</span>, <span class="dv">0</span>)]</span>
+<span id="cb15-2"><a></a>nombres_tries <span class="op">=</span> <span class="bu">sorted</span>(nombres, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
+<span id="cb15-3"><a></a><span class="bu">print</span>(nombres_tries)  <span class="co"># Affiche : [(5, 0), (3, 1), (1, 2)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="comparaison-avec-les-fonctions-définies" class="slide level3">
+<h3>Comparaison avec les fonctions définies</h3>
+<p>Les fonctions lambda sont utiles pour des cas simples, mais elles ne remplacent pas les fonctions définies avec <code>def</code>, surtout pour des tâches complexes.</p>
+<h4 id="exemple-avec-def">Exemple avec <code>def</code> :</h4>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">def</span> carre(x):</span>
+<span id="cb16-2"><a></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb16-3"><a></a></span>
+<span id="cb16-4"><a></a><span class="bu">print</span>(carre(<span class="dv">4</span>))  <span class="co"># Affiche : 16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="utilisation-avancée" class="slide level3">
+<h3>Utilisation avancée</h3>
+<h4 id="combiner-lambda-avec-reduce">1. Combiner <code>lambda</code> avec <code>reduce()</code></h4>
+<p>La fonction <code>reduce()</code> applique une fonction de cumul à une séquence, réduisant ainsi cette séquence à une seule valeur.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></span>
+<span id="cb17-2"><a></a></span>
+<span id="cb17-3"><a></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb17-4"><a></a>somme <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> x, y: x <span class="op">+</span> y, nombres)</span>
+<span id="cb17-5"><a></a><span class="bu">print</span>(somme)  <span class="co"># Affiche : 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="lambda-dans-des-dictionnaires">2. Lambda dans des dictionnaires</h4>
+<p>Les fonctions lambda peuvent être utilisées dans des dictionnaires pour effectuer des calculs conditionnels.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>operations <span class="op">=</span> {</span>
+<span id="cb18-2"><a></a>    <span class="st">"addition"</span>: <span class="kw">lambda</span> x, y: x <span class="op">+</span> y,</span>
+<span id="cb18-3"><a></a>    <span class="st">"multiplication"</span>: <span class="kw">lambda</span> x, y: x <span class="op">*</span> y</span>
+<span id="cb18-4"><a></a>}</span>
+<span id="cb18-5"><a></a></span>
+<span id="cb18-6"><a></a><span class="bu">print</span>(operations[<span class="st">"addition"</span>](<span class="dv">3</span>, <span class="dv">5</span>))  <span class="co"># Affiche : 8</span></span>
+<span id="cb18-7"><a></a><span class="bu">print</span>(operations[<span class="st">"multiplication"</span>](<span class="dv">3</span>, <span class="dv">5</span>))  <span class="co"># Affiche : 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bonnes-pratiques" class="slide level3">
+<h3>Bonnes pratiques</h3>
+<ol type="1">
+<li><strong>Lisibilité</strong> : N’utilisez pas de lambda pour des fonctions complexes. Préférez une fonction <code>def</code> pour améliorer la lisibilité.</li>
+<li><strong>Usage limité</strong> : Les fonctions lambda sont conçues pour des cas simples et temporaires.</li>
+<li><strong>Documentez</strong> : Bien que les lambda soient concises, documentez leur utilisation si elles sont utilisées dans un code complexe.</li>
+</ol>
+</section>
+<section id="exercices-pratiques" class="slide level3">
+<h3>Exercices pratiques</h3>
+<ol type="1">
+<li><strong>Calcul de la somme des carrés :</strong>
+<ul>
+<li>Utilisez une fonction lambda avec <code>map()</code> pour calculer le carré de chaque élément d’une liste, puis la somme des carrés avec <code>reduce()</code>.</li>
+</ul></li>
+<li><strong>Filtrage :</strong>
+<ul>
+<li>Écrivez une fonction lambda avec <code>filter()</code> pour trouver tous les mots contenant plus de 3 lettres dans une liste de mots.</li>
+</ul></li>
+<li><strong>Tri personnalisé :</strong>
+<ul>
+<li>Créez une liste de tuples représentant des produits avec leur prix. Utilisez une fonction lambda avec <code>sorted()</code> pour trier la liste par prix.</li>
+</ul></li>
+</ol>
+</section>
+<section class="slide level3">
 
-<section id="fonction-anonyme-lambda-function" class="title-slide slide level2 center">
-<h2>Fonction anonyme (lambda function)</h2>
-<p>Les fonctions lambda sont définies en une seule ligne pour des opérations simples :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># Exemple : Calculer le carré d'un nombre</span></span>
-<span id="cb11-2"><a></a>carre <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb11-3"><a></a><span class="bu">print</span>(carre(<span class="dv">4</span>))  <span class="co"># Affiche : 16</span></span>
-<span id="cb11-4"><a></a></span>
-<span id="cb11-5"><a></a><span class="co"># Trier une liste de tuples selon le deuxième élément</span></span>
-<span id="cb11-6"><a></a>nombres <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">1</span>), (<span class="dv">5</span>, <span class="dv">0</span>)]</span>
-<span id="cb11-7"><a></a>nombres_tries <span class="op">=</span> <span class="bu">sorted</span>(nombres, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
-<span id="cb11-8"><a></a><span class="bu">print</span>(nombres_tries)  <span class="co"># Affiche : [(5, 0), (3, 1), (1, 2)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section>
@@ -362,16 +440,16 @@ Natacha Njongwa Yepnga
 <p>Un module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.</p>
 <p><strong>Exemple</strong> :<br>
 Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> saluer(nom):</span>
-<span id="cb12-2"><a></a>    <span class="cf">return</span> <span class="ss">f"Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">def</span> saluer(nom):</span>
+<span id="cb19-2"><a></a>    <span class="cf">return</span> <span class="ss">f"Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="utiliser-un-module-dans-un-autre-fichier" class="title-slide slide level2 center">
 <h2>Utiliser un module dans un autre fichier</h2>
 <p>Dans un autre fichier, vous pouvez importer et utiliser ce module :</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="im">import</span> mon_module</span>
-<span id="cb13-2"><a></a></span>
-<span id="cb13-3"><a></a><span class="bu">print</span>(mon_module.saluer(<span class="st">"Alice"</span>))  <span class="co"># Affiche : Bonjour, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="im">import</span> mon_module</span>
+<span id="cb20-2"><a></a></span>
+<span id="cb20-3"><a></a><span class="bu">print</span>(mon_module.saluer(<span class="st">"Alice"</span>))  <span class="co"># Affiche : Bonjour, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="importation-de-modules" class="title-slide slide level2 center">
@@ -380,18 +458,18 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
 <ul>
 <li><strong>Importer un module complet :</strong></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">import</span> math</span>
-<span id="cb14-2"><a></a><span class="bu">print</span>(math.sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="im">import</span> math</span>
+<span id="cb21-2"><a></a><span class="bu">print</span>(math.sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>Importer un élément spécifique d’un module :</strong></li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
-<span id="cb15-2"><a></a><span class="bu">print</span>(sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
+<span id="cb22-2"><a></a><span class="bu">print</span>(sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>Renommer un module ou un élément lors de l’importation :</strong></li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="im">import</span> math <span class="im">as</span> m</span>
-<span id="cb16-2"><a></a><span class="bu">print</span>(m.sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">import</span> math <span class="im">as</span> m</span>
+<span id="cb23-2"><a></a><span class="bu">print</span>(m.sqrt(<span class="dv">16</span>))  <span class="co"># Affiche : 4.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="modules-standards" class="title-slide slide level2 center">
@@ -400,17 +478,17 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
 <ul>
 <li><strong>Manipulation de dates :</strong></li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="im">import</span> datetime</span>
-<span id="cb17-2"><a></a></span>
-<span id="cb17-3"><a></a>aujourdhui <span class="op">=</span> datetime.date.today()</span>
-<span id="cb17-4"><a></a><span class="bu">print</span>(aujourdhui)  <span class="co"># Affiche la date d'aujourd'hui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="im">import</span> datetime</span>
+<span id="cb24-2"><a></a></span>
+<span id="cb24-3"><a></a>aujourdhui <span class="op">=</span> datetime.date.today()</span>
+<span id="cb24-4"><a></a><span class="bu">print</span>(aujourdhui)  <span class="co"># Affiche la date d'aujourd'hui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>Génération de nombres aléatoires :</strong></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">import</span> random</span>
-<span id="cb18-2"><a></a></span>
-<span id="cb18-3"><a></a>nombre <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb18-4"><a></a><span class="bu">print</span>(nombre)  <span class="co"># Affiche un nombre aléatoire entre 1 et 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="im">import</span> random</span>
+<span id="cb25-2"><a></a></span>
+<span id="cb25-3"><a></a>nombre <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb25-4"><a></a><span class="bu">print</span>(nombre)  <span class="co"># Affiche un nombre aléatoire entre 1 et 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="créer-et-structurer-un-projet-avec-des-modules" class="title-slide slide level2 center">
@@ -424,7 +502,7 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
     |-- __init__.py
     |-- traitement.py</code></pre>
 <p>Dans le fichier <code>main.py</code>, vous pouvez importer les modules comme suit :</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="im">from</span> data.traitement <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="im">from</span> data.traitement <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="les-packages" class="title-slide slide level2 center">
@@ -436,7 +514,7 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
 |-- module1.py
 |-- module2.py</code></pre>
 <p>Vous pouvez importer des éléments d’un package comme suit :</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="im">from</span> mon_package.module1 <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="im">from</span> mon_package.module1 <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level3">
 
@@ -450,110 +528,110 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
 <section id="premier-exemple-de-classe" class="title-slide slide level2 center">
 <h2>Premier exemple de classe</h2>
 <p>Une classe est un modèle pour créer des objets. Voici un exemple de classe simple :</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="kw">class</span> Personne:</span>
-<span id="cb23-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
-<span id="cb23-3"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
-<span id="cb23-4"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb23-5"><a></a></span>
-<span id="cb23-6"><a></a>    <span class="kw">def</span> se_presenter(<span class="va">self</span>):</span>
-<span id="cb23-7"><a></a>        <span class="cf">return</span> <span class="ss">f"Je m'appelle </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> ans."</span></span>
-<span id="cb23-8"><a></a></span>
-<span id="cb23-9"><a></a><span class="co"># Instanciation d'un objet</span></span>
-<span id="cb23-10"><a></a>personne1 <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>)</span>
-<span id="cb23-11"><a></a><span class="bu">print</span>(personne1.se_presenter())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="kw">class</span> Personne:</span>
+<span id="cb30-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
+<span id="cb30-3"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb30-4"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb30-5"><a></a></span>
+<span id="cb30-6"><a></a>    <span class="kw">def</span> se_presenter(<span class="va">self</span>):</span>
+<span id="cb30-7"><a></a>        <span class="cf">return</span> <span class="ss">f"Je m'appelle </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> ans."</span></span>
+<span id="cb30-8"><a></a></span>
+<span id="cb30-9"><a></a><span class="co"># Instanciation d'un objet</span></span>
+<span id="cb30-10"><a></a>personne1 <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>)</span>
+<span id="cb30-11"><a></a><span class="bu">print</span>(personne1.se_presenter())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="accessibilité" class="title-slide slide level2 center">
 <h2>Accessibilité</h2>
 <p>En Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (<code>__</code>) :</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">class</span> Personne:</span>
-<span id="cb24-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
-<span id="cb24-3"><a></a>        <span class="va">self</span>.__nom <span class="op">=</span> nom  <span class="co"># Attribut privé</span></span>
-<span id="cb24-4"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb24-5"><a></a></span>
-<span id="cb24-6"><a></a>    <span class="kw">def</span> get_nom(<span class="va">self</span>):</span>
-<span id="cb24-7"><a></a>        <span class="cf">return</span> <span class="va">self</span>.__nom</span>
-<span id="cb24-8"><a></a></span>
-<span id="cb24-9"><a></a><span class="co"># Utilisation</span></span>
-<span id="cb24-10"><a></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="kw">class</span> Personne:</span>
+<span id="cb31-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
+<span id="cb31-3"><a></a>        <span class="va">self</span>.__nom <span class="op">=</span> nom  <span class="co"># Attribut privé</span></span>
+<span id="cb31-4"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb31-5"><a></a></span>
+<span id="cb31-6"><a></a>    <span class="kw">def</span> get_nom(<span class="va">self</span>):</span>
+<span id="cb31-7"><a></a>        <span class="cf">return</span> <span class="va">self</span>.__nom</span>
+<span id="cb31-8"><a></a></span>
+<span id="cb31-9"><a></a><span class="co"># Utilisation</span></span>
+<span id="cb31-10"><a></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="objet-complexe" class="slide level3">
 <h3>Objet complexe</h3>
 <p>Une classe peut contenir des attributs qui sont eux-mêmes des objets :</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="kw">class</span> Adresse:</span>
-<span id="cb25-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, rue, ville):</span>
-<span id="cb25-3"><a></a>        <span class="va">self</span>.rue <span class="op">=</span> rue</span>
-<span id="cb25-4"><a></a>        <span class="va">self</span>.ville <span class="op">=</span> ville</span>
-<span id="cb25-5"><a></a></span>
-<span id="cb25-6"><a></a><span class="kw">class</span> Personne:</span>
-<span id="cb25-7"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age, adresse):</span>
-<span id="cb25-8"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
-<span id="cb25-9"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb25-10"><a></a>        <span class="va">self</span>.adresse <span class="op">=</span> adresse</span>
-<span id="cb25-11"><a></a></span>
-<span id="cb25-12"><a></a>    <span class="kw">def</span> afficher_adresse(<span class="va">self</span>):</span>
-<span id="cb25-13"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>rue<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>ville<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb25-14"><a></a></span>
-<span id="cb25-15"><a></a>adresse <span class="op">=</span> Adresse(<span class="st">"123 Rue Principale"</span>, <span class="st">"Paris"</span>)</span>
-<span id="cb25-16"><a></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>, adresse)</span>
-<span id="cb25-17"><a></a><span class="bu">print</span>(personne.afficher_adresse())  <span class="co"># Affiche : 123 Rue Principale, Paris</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="kw">class</span> Adresse:</span>
+<span id="cb32-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, rue, ville):</span>
+<span id="cb32-3"><a></a>        <span class="va">self</span>.rue <span class="op">=</span> rue</span>
+<span id="cb32-4"><a></a>        <span class="va">self</span>.ville <span class="op">=</span> ville</span>
+<span id="cb32-5"><a></a></span>
+<span id="cb32-6"><a></a><span class="kw">class</span> Personne:</span>
+<span id="cb32-7"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age, adresse):</span>
+<span id="cb32-8"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb32-9"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb32-10"><a></a>        <span class="va">self</span>.adresse <span class="op">=</span> adresse</span>
+<span id="cb32-11"><a></a></span>
+<span id="cb32-12"><a></a>    <span class="kw">def</span> afficher_adresse(<span class="va">self</span>):</span>
+<span id="cb32-13"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>rue<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>ville<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb32-14"><a></a></span>
+<span id="cb32-15"><a></a>adresse <span class="op">=</span> Adresse(<span class="st">"123 Rue Principale"</span>, <span class="st">"Paris"</span>)</span>
+<span id="cb32-16"><a></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>, adresse)</span>
+<span id="cb32-17"><a></a><span class="bu">print</span>(personne.afficher_adresse())  <span class="co"># Affiche : 123 Rue Principale, Paris</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="héritage" class="slide level3">
 <h3>Héritage</h3>
 <p>L’héritage permet à une classe d’hériter des attributs et des méthodes d’une autre classe :</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">class</span> Animal:</span>
-<span id="cb26-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom):</span>
-<span id="cb26-3"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
-<span id="cb26-4"><a></a></span>
-<span id="cb26-5"><a></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
-<span id="cb26-6"><a></a>        <span class="cf">pass</span>  <span class="co"># Méthode à redéfinir</span></span>
-<span id="cb26-7"><a></a></span>
-<span id="cb26-8"><a></a><span class="kw">class</span> Chien(Animal):</span>
-<span id="cb26-9"><a></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
-<span id="cb26-10"><a></a>        <span class="cf">return</span> <span class="st">"Woof"</span></span>
-<span id="cb26-11"><a></a></span>
-<span id="cb26-12"><a></a><span class="kw">class</span> Chat(Animal):</span>
-<span id="cb26-13"><a></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
-<span id="cb26-14"><a></a>        <span class="cf">return</span> <span class="st">"Meow"</span></span>
-<span id="cb26-15"><a></a></span>
-<span id="cb26-16"><a></a>chien <span class="op">=</span> Chien(<span class="st">"Rex"</span>)</span>
-<span id="cb26-17"><a></a>chat <span class="op">=</span> Chat(<span class="st">"Miaou"</span>)</span>
-<span id="cb26-18"><a></a><span class="bu">print</span>(chien.parler())  <span class="co"># Affiche : Woof</span></span>
-<span id="cb26-19"><a></a><span class="bu">print</span>(chat.parler())  <span class="co"># Affiche : Meow</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="kw">class</span> Animal:</span>
+<span id="cb33-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom):</span>
+<span id="cb33-3"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb33-4"><a></a></span>
+<span id="cb33-5"><a></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb33-6"><a></a>        <span class="cf">pass</span>  <span class="co"># Méthode à redéfinir</span></span>
+<span id="cb33-7"><a></a></span>
+<span id="cb33-8"><a></a><span class="kw">class</span> Chien(Animal):</span>
+<span id="cb33-9"><a></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb33-10"><a></a>        <span class="cf">return</span> <span class="st">"Woof"</span></span>
+<span id="cb33-11"><a></a></span>
+<span id="cb33-12"><a></a><span class="kw">class</span> Chat(Animal):</span>
+<span id="cb33-13"><a></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb33-14"><a></a>        <span class="cf">return</span> <span class="st">"Meow"</span></span>
+<span id="cb33-15"><a></a></span>
+<span id="cb33-16"><a></a>chien <span class="op">=</span> Chien(<span class="st">"Rex"</span>)</span>
+<span id="cb33-17"><a></a>chat <span class="op">=</span> Chat(<span class="st">"Miaou"</span>)</span>
+<span id="cb33-18"><a></a><span class="bu">print</span>(chien.parler())  <span class="co"># Affiche : Woof</span></span>
+<span id="cb33-19"><a></a><span class="bu">print</span>(chat.parler())  <span class="co"># Affiche : Meow</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="polymorphisme" class="slide level3">
 <h3>Polymorphisme</h3>
 <p>Le polymorphisme permet d’utiliser une même méthode définie dans plusieurs classes différentes :</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>animaux <span class="op">=</span> [Chien(<span class="st">"Rex"</span>), Chat(<span class="st">"Miaou"</span>)]</span>
-<span id="cb27-2"><a></a></span>
-<span id="cb27-3"><a></a><span class="cf">for</span> animal <span class="kw">in</span> animaux:</span>
-<span id="cb27-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>animal<span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> dit </span><span class="sc">{</span>animal<span class="sc">.</span>parler()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>animaux <span class="op">=</span> [Chien(<span class="st">"Rex"</span>), Chat(<span class="st">"Miaou"</span>)]</span>
+<span id="cb34-2"><a></a></span>
+<span id="cb34-3"><a></a><span class="cf">for</span> animal <span class="kw">in</span> animaux:</span>
+<span id="cb34-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>animal<span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> dit </span><span class="sc">{</span>animal<span class="sc">.</span>parler()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="encapsulation-et-propriétés" class="slide level3">
 <h3>Encapsulation et propriétés</h3>
 <p>L’encapsulation permet de contrôler l’accès et la modification des attributs d’une classe en utilisant des propriétés.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="kw">class</span> CompteBancaire:</span>
-<span id="cb28-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titulaire, solde):</span>
-<span id="cb28-3"><a></a>        <span class="va">self</span>.titulaire <span class="op">=</span> titulaire</span>
-<span id="cb28-4"><a></a>        <span class="va">self</span>.__solde <span class="op">=</span> solde  <span class="co"># Attribut privé</span></span>
-<span id="cb28-5"><a></a></span>
-<span id="cb28-6"><a></a>    <span class="at">@property</span></span>
-<span id="cb28-7"><a></a>    <span class="kw">def</span> solde(<span class="va">self</span>):</span>
-<span id="cb28-8"><a></a>        <span class="cf">return</span> <span class="va">self</span>.__solde</span>
-<span id="cb28-9"><a></a></span>
-<span id="cb28-10"><a></a>    <span class="at">@solde.setter</span></span>
-<span id="cb28-11"><a></a>    <span class="kw">def</span> solde(<span class="va">self</span>, montant):</span>
-<span id="cb28-12"><a></a>        <span class="cf">if</span> montant <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="cb28-13"><a></a>            <span class="va">self</span>.__solde <span class="op">=</span> montant</span>
-<span id="cb28-14"><a></a>        <span class="cf">else</span>:</span>
-<span id="cb28-15"><a></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Le solde ne peut pas être négatif"</span>)</span>
-<span id="cb28-16"><a></a></span>
-<span id="cb28-17"><a></a>compte <span class="op">=</span> CompteBancaire(<span class="st">"Alice"</span>, <span class="dv">1000</span>)</span>
-<span id="cb28-18"><a></a><span class="bu">print</span>(compte.solde)  <span class="co"># Accès au solde</span></span>
-<span id="cb28-19"><a></a>compte.solde <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># Modification du solde</span></span>
-<span id="cb28-20"><a></a><span class="bu">print</span>(compte.solde)  <span class="co"># Affiche : 2000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a><span class="kw">class</span> CompteBancaire:</span>
+<span id="cb35-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titulaire, solde):</span>
+<span id="cb35-3"><a></a>        <span class="va">self</span>.titulaire <span class="op">=</span> titulaire</span>
+<span id="cb35-4"><a></a>        <span class="va">self</span>.__solde <span class="op">=</span> solde  <span class="co"># Attribut privé</span></span>
+<span id="cb35-5"><a></a></span>
+<span id="cb35-6"><a></a>    <span class="at">@property</span></span>
+<span id="cb35-7"><a></a>    <span class="kw">def</span> solde(<span class="va">self</span>):</span>
+<span id="cb35-8"><a></a>        <span class="cf">return</span> <span class="va">self</span>.__solde</span>
+<span id="cb35-9"><a></a></span>
+<span id="cb35-10"><a></a>    <span class="at">@solde.setter</span></span>
+<span id="cb35-11"><a></a>    <span class="kw">def</span> solde(<span class="va">self</span>, montant):</span>
+<span id="cb35-12"><a></a>        <span class="cf">if</span> montant <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb35-13"><a></a>            <span class="va">self</span>.__solde <span class="op">=</span> montant</span>
+<span id="cb35-14"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb35-15"><a></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Le solde ne peut pas être négatif"</span>)</span>
+<span id="cb35-16"><a></a></span>
+<span id="cb35-17"><a></a>compte <span class="op">=</span> CompteBancaire(<span class="st">"Alice"</span>, <span class="dv">1000</span>)</span>
+<span id="cb35-18"><a></a><span class="bu">print</span>(compte.solde)  <span class="co"># Accès au solde</span></span>
+<span id="cb35-19"><a></a>compte.solde <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># Modification du solde</span></span>
+<span id="cb35-20"><a></a><span class="bu">print</span>(compte.solde)  <span class="co"># Affiche : 2000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exercices-pratiques" class="slide level3">
+<section id="exercices-pratiques-1" class="slide level3">
 <h3>Exercices pratiques</h3>
 <ol type="1">
 <li><strong>Fonctions :</strong>

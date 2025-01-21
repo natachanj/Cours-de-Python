@@ -89,3 +89,45 @@ ajouter = addition
 # Exemple d'utilisation
 print(ajouter(3, 4))  # Affiche : 7
 ```
+
+## Fonction avec un nombre variable de paramètres
+
+Une fonction peut accepter un nombre variable d'arguments :
+
+```python
+def somme(*args):
+    return sum(args)
+
+# Exemple d'utilisation
+print(somme(1, 2, 3, 4))  # Affiche : 10
+print(somme(5, 10))       # Affiche : 15
+```
+
+
+## Passage des paramètres : immuable et non immuable
+
+Les types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l'être.
+
+### Exemple :
+
+#### Avec un type immuable (chaîne) :
+```python
+def modifier_chaine(chaine):
+    chaine += " modifié"
+    return chaine
+
+texte = "Texte original"
+print(modifier_chaine(texte))  # Affiche : Texte original modifié
+print(texte)  # Affiche : Texte original
+```
+
+### Avec un type mutable (liste) :
+
+```python
+def ajouter_element(liste):
+    liste.append(5)
+
+ma_liste = [1, 2, 3]
+ajouter_element(ma_liste)
+print(ma_liste)  # Affiche : [1, 2, 3, 5]
+```

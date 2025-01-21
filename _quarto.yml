@@ -31,7 +31,7 @@ website:
           - href: doc/tp/tp1.qmd
             text: "TP1 - Premiers pas en Python"
           - href: doc/tp/tp2.qmd
-            text: "TP2 - Fonctions, modules et POO"
+            text: "TP2 - Fonctions, mo"
     right:
       - href: doc/glossaire.qmd
         text: Glossaire

@@ -1,0 +1,653 @@
+---
+title: "Fonctions, Modules et POO en Python"
+description: "[Slides](fonctions-modules-poo-slides.html)"
+author: "Natacha Njongwa Yepnga"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Fonctions, Modules et POO](fonctions-modules-poo.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: fonctions-modules-poo-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: true
+from: markdown+emoji
+---
+
+Python propose des types de données avancés pour manipuler des collections de données ou des structures complexes. Ces types sont essentiels pour gérer des informations organisées.
+
+
+## Les Listes (`list`)
+
+Les listes sont des **collections ordonnées** et **modifiables**. Elles peuvent contenir des éléments de types différents.
+
+**Caractéristiques :**
+
+- **Ordonnées** : Les éléments conservent leur position dans l'ordre dans lequel ils ont été ajoutés.
+- **Modifiables** : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d'éléments).
+- **Hétérogènes** : Une liste peut contenir des éléments de différents types.
+
+---
+
+### Création de listes
+
+Les listes peuvent être créées à partir d'une série d'éléments séparés par des virgules et entourés de crochets `[ ]`.
+
+**Exemple :**
+```python
+fruits = ["pomme", "banane", "cerise"]
+nombres = [1, 2, 3, 4]
+fruits.append("orange")  # Ajoute un élément
+print(fruits)
+```
+
+---
+
+### Opérations CRUD sur les Listes en Python
+
+Les opérations **CRUD** (Create, Read, Update, Delete) représentent les actions fondamentales que l'on peut effectuer sur des données dans une application. Ces actions sont souvent utilisées dans la gestion des bases de données, mais elles s'appliquent également aux structures de données comme les listes en Python :
+
+- **Create (Créer)** : Ajouter de nouvelles données.
+- **Read (Lire)** : Consulter ou accéder aux données existantes.
+- **Update (Mettre à jour)** : Modifier les données existantes.
+- **Delete (Supprimer)** : Effacer les données.
+
+---
+
+
+####  Créer une Liste (Create)
+
+Pour créer une liste, utilisez des crochets (`[]`) et séparez les éléments par des virgules.
+
+**Exemple :**
+```python
+# Créer une liste vide
+ma_liste = []
+
+# Créer une liste avec des éléments
+fruits = ["pomme", "banane", "cerise"]
+print(fruits)  # Affiche : ['pomme', 'banane', 'cerise']
+```
+---
+
+###  Lire les Données (Read)
+
+#### Accéder à un élément par son index
+Les indices commencent à 0.
+
+**Exemple :**
+```python
+fruits = ["pomme", "banane", "cerise"]
+print(fruits[0])  # Affiche : "pomme"
+print(fruits[-1])  # Affiche : "cerise" (dernier élément)
+```
+
+---
+
+#### Parcourir une liste
+
+Vous pouvez utiliser une boucle pour parcourir tous les éléments.
+
+**Exemple :**
+```python
+for fruit in fruits:
+    print(fruit)
+```
+
+---
+
+#### Longueur de la liste
+
+Utilisez la fonction `len()` pour connaître le nombre d'éléments dans une liste.
+
+**Exemple :**
+```python
+fruits = ["pomme", "banane", "cerise"]
+print(len(fruits))  # Affiche : 3
+```
+
+---
+
+###  Mettre à Jour une Liste (Update)
+
+#### Modifier un élément existant
+
+Accédez à l'élément par son index et assignez-lui une nouvelle valeur.
+
+**Exemple :**
+```python
+fruits = ["pomme", "banane", "cerise"]
+fruits[1] = "orange"  # Remplace "banane" par "orange"
+print(fruits)  # Affiche : ['pomme', 'orange', 'cerise']
+```
+
+---
+
+
+#### Ajouter des éléments
+
+##### À la fin de la liste : 
+
+Utilisez la méthode `append()`.
+
+**Exemple :**
+```python
+fruits = ["pomme", "orange", "cerise"]
+fruits.append("mangue")
+print(fruits)  # Affiche : ['pomme', 'orange', 'cerise', 'mangue']
+```
+
+---
+
+#### À une position spécifique
+
+Utilisez la méthode `insert()` pour insérer un élément à une position spécifique dans une liste.
+
+**Exemple :**
+```python
+fruits = ["pomme", "orange", "cerise", "mangue"]
+fruits.insert(1, "fraise")  # Ajoute "fraise" à l'index 1
+print(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']
+```
+
+---
+
+#### Fusionner deux listes
+
+Pour fusionner deux listes, vous pouvez utiliser l'opérateur `+` ou la méthode `extend()`.
+
+**Exemple :**
+```python
+legumes = ["carotte", "tomate"]
+fruits = ["pomme", "fraise", "orange", "cerise", "mangue"]
+
+# Fusion avec extend()
+fruits.extend(legumes)
+print(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+---
+
+#### Fusionner deux listes avec l'opérateur `+`
+
+Vous pouvez également utiliser l'opérateur `+` pour créer une nouvelle liste fusionnée.
+
+**Exemple :**
+```python
+legumes = ["carotte", "tomate"]
+fruits = ["pomme", "fraise", "orange", "cerise", "mangue"]
+
+# Fusion avec +
+nouvelle_liste = fruits + legumes
+print(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+---
+
+###  Supprimer des Éléments (Delete)
+
+#### Supprimer un élément par sa valeur
+Utilisez la méthode `remove()`.
+
+**Exemple :**
+```python
+fruits.remove("orange")  # Supprime "orange"
+print(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+---
+
+### Supprimer un élément par son index
+
+Utilisez l'instruction `del` ou la méthode `pop()`.
+
+#### Avec `del` :
+```python
+del fruits[0]  # Supprime le premier élément
+print(fruits)  # Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']
+```
+
+---
+
+### Utilisation de `pop()`
+
+La méthode `pop()` supprime un élément d'une liste **et le retourne**. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.
+
+**Exemple :**
+```python
+fruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']
+
+# Supprimer et retourner le dernier élément
+dernier_fruit = fruits.pop()  # Supprime "tomate" de la liste
+print(dernier_fruit)  # Affiche : "tomate"
+print(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']
+```
+---
+
+### Supprimer tous les éléments avec `clear()`
+
+La méthode `clear()` supprime **tous les éléments** de la liste, laissant une liste vide. Contrairement à `pop()`, elle ne retourne aucun élément.
+
+**Exemple :**
+```python
+fruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']
+
+# Supprimer tous les éléments
+fruits.clear()
+print(fruits)  # Affiche : []
+```
+---
+
+### Différence entre `pop()` et `clear()`
+
+| Méthode   | Fonctionnalité                                         | Exemple de résultat                       |
+|-----------|--------------------------------------------------------|-------------------------------------------|
+| `pop()`   | Supprime **et retourne** un seul élément de la liste (par défaut, le dernier). | `fruits.pop()` -> retourne `"tomate"`, modifie la liste. |
+| `clear()` | Supprime **tous les éléments** de la liste sans retourner quoi que ce soit. | `fruits.clear()` -> retourne `None`, vide la liste. |
+
+- **`pop()`** est utile lorsque vous voulez traiter ou sauvegarder l'élément supprimé.
+- **`clear()`** est idéal pour réinitialiser une liste sans conserver ses éléments.
+
+---
+
+### Résumé des Méthodes CRUD sur les Listes
+
+| Opération | Méthode                | Description                             |
+|-----------|------------------------|-----------------------------------------|
+| Create    | `[]`, `append()`, `insert()` | Créer ou ajouter des éléments.         |
+| Read      | `index`, `len()`, `for` loop | Lire ou parcourir les éléments.       |
+| Update    | `index`, `append()`, `extend()` | Modifier ou ajouter des éléments.    |
+| Delete    | `remove()`, `pop()`, `del`, `clear()` | Supprimer des éléments ou tout vider. |
+
+
+---
+
+## Les Tuples (`tuple`)
+
+Les tuples sont des **collections ordonnées**, mais **immuables** (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.
+
+**Caractéristiques :**
+
+- **Ordonnés** : Les éléments conservent leur position.
+- **Immuables** : Impossible de modifier, ajouter ou supprimer des éléments après leur création.
+
+---
+
+
+### Création de Tuples
+
+Un tuple peut être créé en plaçant une série d'éléments séparés par des virgules dans des parenthèses `()`.
+
+**Exemple :**
+```python
+mon_tuple = (1, 2, 3)
+print(mon_tuple)  # Affiche : (1, 2, 3)
+```
+
+---
+
+### Opérations CRUD sur les Tuples
+
+Comme les tuples sont immuables, les opérations **Update** et **Delete** diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :
+
+- **Create (Créer)** : Ajouter de nouvelles données.
+- **Read (Lire)** : Consulter ou accéder aux données existantes.
+- **Update (Mettre à jour)** : Pas directement possible (les tuples sont immuables).
+- **Delete (Supprimer)** : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.
+
+---
+
+#### Créer un Tuple (Create)
+
+**Exemple :**
+```python
+# Créer un tuple avec des éléments
+mon_tuple = (1, 'Python', 3.14)
+print(mon_tuple)  # Affiche : (1, 'Python', 3.14)
+```
+
+Vous pouvez également créer un tuple sans parenthèses (packing) :
+```python
+mon_tuple = 1, 'Python', 3.14
+```
+
+#### Lire les Données (Read)
+
+**Accéder à un élément par son index :**
+```python
+mon_tuple = (1, 'Python', 3.14)
+print(mon_tuple[1])  # Affiche : 'Python'
+```
+
+**Parcourir un tuple avec une boucle :**
+```python
+for element in mon_tuple:
+    print(element)
+```
+
+**Longueur du tuple :**
+```python
+print(len(mon_tuple))  # Affiche : 3
+```
+#### Mettre à Jour un Tuple (Update)
+
+Les tuples sont **immutables**, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un **nouveau tuple** basé sur l'ancien.
+
+**Exemple :**
+```python
+mon_tuple = (1, 2, 3)
+nouveau_tuple = mon_tuple + (4, 5)
+print(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)
+```
+
+#### Supprimer un Tuple (Delete)
+
+Vous ne pouvez pas supprimer un élément spécifique d'un tuple, mais vous pouvez supprimer le tuple entier.
+
+**Exemple :**
+```python
+mon_tuple = (1, 2, 3)
+del mon_tuple
+```
+
+### Avantages des Tuples
+
+- **Immutabilité** : Protège les données contre les modifications accidentelles.
+- **Performance** : Les tuples sont plus rapides à traiter que les listes.
+- **Utilisation dans les clés de dictionnaire** : Les tuples peuvent être utilisés comme clés dans un dictionnaire (contrairement aux listes).
+
+**Exemple :**
+```python
+coordonnees = {
+    (0, 0): 'Origine',
+    (1, 2): 'Point A'
+}
+print(coordonnees[(1, 2)])  # Affiche : 'Point A'
+```
+
+### Différences entre Listes et Tuples
+
+| Caractéristique       | Liste               | Tuple               |
+|-----------------------|---------------------|---------------------|
+| **Mutabilité**       | Mutable             | Immuable            |
+| **Syntaxe**          | `[ ]`               | `( )`               |
+| **Performance**      | Plus lente          | Plus rapide         |
+| **Utilisation**      | Données modifiables | Données fixes       |
+---
+
+## Les Dictionnaires (`dict`)
+
+Les dictionnaires sont des **collections non ordonnées** (dans les versions antérieures à Python 3.7) qui stockent des **paires clé-valeur**. Chaque clé doit être unique.
+
+**Caractéristiques :**
+
+- **Accès rapide** : Vous pouvez accéder rapidement aux valeurs à l'aide de leurs clés.
+- **Modifiables** : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.
+- **Clés uniques** : Une clé ne peut être présente qu'une seule fois.
+
+### Création de Dictionnaires
+
+Un dictionnaire peut être créé en utilisant des accolades `{}` et des paires clé-valeur séparées par des deux-points `:`.
+
+**Exemple :**
+```python
+mon_dict = {
+    'nom': 'Alice',
+    'age': 25,
+    'ville': 'Paris'
+}
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+```
+
+### Opérations CRUD sur les Dictionnaires
+
+Les dictionnaires permettent les opérations fondamentales **CRUD** (Create, Read, Update, Delete) comme suit :
+
+- **Create (Créer)** : Ajouter de nouvelles paires clé-valeur.
+- **Read (Lire)** : Accéder à une valeur via sa clé.
+- **Update (Mettre à jour)** : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.
+- **Delete (Supprimer)** : Supprimer une paire clé-valeur.
+
+#### Créer un Dictionnaire (Create)
+
+**Exemple :**
+```python
+# Créer un dictionnaire vide
+mon_dict = {}
+
+# Ajouter des paires clé-valeur
+mon_dict['nom'] = 'Alice'
+mon_dict['age'] = 25
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}
+```
+#### Lire les Données (Read)
+
+**Accéder à une valeur par sa clé :**
+```python
+mon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+print(mon_dict['nom'])  # Affiche : Alice
+```
+
+**Utiliser la méthode `get()` pour éviter les erreurs :**
+```python
+print(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable
+```
+
+**Parcourir un dictionnaire :**
+```python
+for cle, valeur in mon_dict.items():
+    print(f'{cle} : {valeur}')
+```
+
+**Clés et valeurs :**
+```python
+print(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville'])
+print(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])
+```
+
+#### Mettre à Jour un Dictionnaire (Update)
+
+**Ajouter ou modifier une clé :**
+```python
+mon_dict = {'nom': 'Alice', 'age': 25}
+mon_dict['ville'] = 'Paris'  # Ajout
+mon_dict['age'] = 26         # Mise à jour
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}
+```
+
+**Fusionner deux dictionnaires :**
+```python
+autre_dict = {'pays': 'France', 'profession': 'Ingénieure'}
+mon_dict.update(autre_dict)
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}
+```
+
+#### Supprimer des Éléments (Delete)
+
+**Supprimer une paire clé-valeur :**
+```python
+mon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+del mon_dict['age']
+print(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}
+```
+
+**Supprimer et retourner une valeur avec `pop()` :**
+```python
+ville = mon_dict.pop('ville')
+print(ville)  # Affiche : Paris
+print(mon_dict)  # Affiche : {'nom': 'Alice'}
+```
+
+**Supprimer tous les éléments avec `clear()` :**
+```python
+mon_dict.clear()
+print(mon_dict)  # Affiche : {}
+```
+
+### Avantages des Dictionnaires
+
+- **Rapidité** : Accès direct aux valeurs via les clés.
+- **Flexible** : Peut contenir des données de types variés.
+- **Organisation** : Idéal pour structurer des données complexes.
+
+**Exemple :**
+```python
+utilisateur = {
+    'id': 123,
+    'nom': 'Alice',
+    'contact': {
+        'email': 'alice@example.com',
+        'telephone': '123-456-7890'
+    }
+}
+print(utilisateur['contact']['email'])  # Affiche : alice@example.com
+```
+
+### Différences entre Listes et Dictionnaires
+
+| Caractéristique       | Liste                         | Dictionnaire                   |
+|-----------------------|-------------------------------|---------------------------------|
+| **Accès aux données**| Par index numérique          | Par clé                        |
+| **Structure**        | Séquence ordonnée            | Paires clé-valeur              |
+| **Mutabilité**       | Mutable                      | Mutable (clés immuables)       |
+
+##  Les Ensembles (`set`)
+
+Les ensembles sont des **collections non ordonnées** et **uniques** (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.
+
+**Caractéristiques :**
+
+- **Non ordonnés** : Les éléments n'ont pas de position fixe.
+- **Éléments uniques** : Les doublons sont automatiquement supprimés.
+- **Opérations mathématiques** : Permettent des opérations comme l'union, l'intersection, la différence, etc.
+
+### Création d'Ensembles
+
+Un ensemble peut être créé en utilisant la fonction `set()` ou en plaçant des éléments entre accolades `{}`.
+
+**Exemple :**
+```python
+mon_set = {1, 2, 3, 4}
+print(mon_set)  # Affiche : {1, 2, 3, 4}
+
+# Création d'un ensemble à partir d'une liste
+mon_set = set([1, 2, 2, 3])
+print(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)
+```
+
+### Opérations CRUD sur les Ensembles
+
+Les ensembles prennent en charge les opérations fondamentales **CRUD** (Create, Read, Update, Delete) :
+
+- **Create (Créer)** : Ajouter de nouveaux éléments.
+- **Read (Lire)** : Vérifier la présence d'un élément.
+- **Update (Mettre à jour)** : Ajouter ou supprimer des éléments.
+- **Delete (Supprimer)** : Supprimer des éléments ou réinitialiser l'ensemble.
+
+#### Créer un Ensemble (Create)
+
+**Exemple :**
+```python
+# Créer un ensemble vide
+mon_set = set()
+
+# Ajouter des éléments
+mon_set.add(1)
+mon_set.add(2)
+print(mon_set)  # Affiche : {1, 2}
+```
+
+#### Lire les Données (Read)
+
+**Vérifier la présence d'un élément :**
+```python
+mon_set = {1, 2, 3}
+print(1 in mon_set)  # Affiche : True
+print(4 in mon_set)  # Affiche : False
+```
+
+**Parcourir un ensemble avec une boucle :**
+```python
+for element in mon_set:
+    print(element)
+```
+
+**Taille de l'ensemble :**
+```python
+print(len(mon_set))  # Affiche : 3
+```
+
+#### Mettre à Jour un Ensemble (Update)
+
+**Ajouter des éléments :**
+```python
+mon_set = {1, 2}
+mon_set.add(3)  # Ajoute un seul élément
+mon_set.update([4, 5])  # Ajoute plusieurs éléments
+print(mon_set)  # Affiche : {1, 2, 3, 4, 5}
+```
+
+**Supprimer des éléments :**
+
+Avec `remove()` :
+```python
+mon_set.remove(2)  # Supprime 2 de l'ensemble
+print(mon_set)  # Affiche : {1, 3, 4, 5}
+```
+
+Avec `discard()` (ne lève pas d'erreur si l'élément n'existe pas) :
+```python
+mon_set.discard(10)  # Aucun effet si 10 n'est pas présent
+```
+
+#### Supprimer des Éléments (Delete)
+
+**Supprimer un élément avec `pop()` :**
+```python
+mon_set = {1, 2, 3}
+element = mon_set.pop()  # Supprime et retourne un élément aléatoire
+print(element)  # Affiche : 1 (ou un autre élément)
+print(mon_set)  # Affiche : {2, 3}
+```
+
+**Supprimer tous les éléments avec `clear()` :**
+```python
+mon_set.clear()
+print(mon_set)  # Affiche : set()
+```
+
+### Opérations Mathématiques avec les Ensembles
+
+Les ensembles permettent des opérations mathématiques classiques :
+
+**Union :** Combine tous les éléments des deux ensembles.
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}
+```
+
+**Intersection :** Récupère les éléments communs aux deux ensembles.
+```python
+print(set1 & set2)  # Affiche : {3}
+```
+
+**Différence :** Récupère les éléments présents dans le premier ensemble mais pas dans le second.
+```python
+print(set1 - set2)  # Affiche : {1, 2}
+```
+
+**Différence Symétrique :** Récupère les éléments présents dans un seul des deux ensembles.
+```python
+print(set1 ^ set2)  # Affiche : {1, 2, 4, 5}
+```
+
+

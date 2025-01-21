@@ -23,6 +23,8 @@ website:
             text: "Les Fondamentaux de Python : Variables, Structures de contrôle"
           - href: doc/cours/typedonnees.qmd
             text: "Les types de données en Python"
+          - href: doc/cours/fonctionsmodules.qmd
+            text: "Fonctions, Modules et POO en Python"
      
       - text: TP
         menu:

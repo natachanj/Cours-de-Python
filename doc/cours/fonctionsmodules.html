@@ -231,17 +231,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#importation-de-modules" id="toc-importation-de-modules" class="nav-link" data-scroll-target="#importation-de-modules"><span class="header-section-number">3.3</span> Importation de modules</a></li>
   <li><a href="#modules-standards" id="toc-modules-standards" class="nav-link" data-scroll-target="#modules-standards"><span class="header-section-number">3.4</span> Modules standards</a></li>
   <li><a href="#créer-et-structurer-un-projet-avec-des-modules" id="toc-créer-et-structurer-un-projet-avec-des-modules" class="nav-link" data-scroll-target="#créer-et-structurer-un-projet-avec-des-modules"><span class="header-section-number">3.5</span> Créer et structurer un projet avec des modules</a></li>
-  <li><a href="#les-packages" id="toc-les-packages" class="nav-link" data-scroll-target="#les-packages"><span class="header-section-number">3.6</span> Les packages</a></li>
-  </ul></li>
-  <li><a href="#introduction-à-la-programmation-orientée-objet-poo-1h" id="toc-introduction-à-la-programmation-orientée-objet-poo-1h" class="nav-link" data-scroll-target="#introduction-à-la-programmation-orientée-objet-poo-1h"><span class="header-section-number">4</span> Introduction à la Programmation Orientée Objet (POO) (1h)</a>
+  <li><a href="#les-packages" id="toc-les-packages" class="nav-link" data-scroll-target="#les-packages"><span class="header-section-number">3.6</span> Les packages</a>
   <ul class="collapse">
-  <li><a href="#premier-exemple-de-classe" id="toc-premier-exemple-de-classe" class="nav-link" data-scroll-target="#premier-exemple-de-classe"><span class="header-section-number">4.1</span> Premier exemple de classe</a></li>
-  <li><a href="#accessibilité" id="toc-accessibilité" class="nav-link" data-scroll-target="#accessibilité"><span class="header-section-number">4.2</span> Accessibilité</a>
-  <ul class="collapse">
+  <li><a href="#introduction-à-la-programmation-orientée-objet-poo" id="toc-introduction-à-la-programmation-orientée-objet-poo" class="nav-link" data-scroll-target="#introduction-à-la-programmation-orientée-objet-poo">Introduction à la Programmation Orientée Objet (POO)</a></li>
+  <li><a href="#concepts-clés" id="toc-concepts-clés" class="nav-link" data-scroll-target="#concepts-clés">Concepts clés</a></li>
+  <li><a href="#créer-une-classe-simple-et-instancier-des-objets" id="toc-créer-une-classe-simple-et-instancier-des-objets" class="nav-link" data-scroll-target="#créer-une-classe-simple-et-instancier-des-objets">Créer une classe simple et instancier des objets</a></li>
   <li><a href="#objet-complexe" id="toc-objet-complexe" class="nav-link" data-scroll-target="#objet-complexe">Objet complexe</a></li>
   <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage">Héritage</a></li>
   <li><a href="#polymorphisme" id="toc-polymorphisme" class="nav-link" data-scroll-target="#polymorphisme">Polymorphisme</a></li>
   <li><a href="#encapsulation-et-propriétés" id="toc-encapsulation-et-propriétés" class="nav-link" data-scroll-target="#encapsulation-et-propriétés">Encapsulation et propriétés</a></li>
+  <li><a href="#abstraction" id="toc-abstraction" class="nav-link" data-scroll-target="#abstraction">Abstraction</a></li>
   <li><a href="#exercices-pratiques-1" id="toc-exercices-pratiques-1" class="nav-link" data-scroll-target="#exercices-pratiques-1">Exercices pratiques</a></li>
   </ul></li>
   </ul></li>
@@ -599,13 +598,24 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
 <p>Vous pouvez importer des éléments d’un package comme suit :</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">from</span> mon_package.module1 <span class="im">import</span> ma_fonction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
+<section id="introduction-à-la-programmation-orientée-objet-poo" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-à-la-programmation-orientée-objet-poo">Introduction à la Programmation Orientée Objet (POO)</h3>
+<p>La programmation orientée objet (POO) est un paradigme de programmation basé sur le concept de “classes” et “objets”, qui permet de structurer le code de manière modulaire et réutilisable.</p>
+<hr>
 </section>
+<section id="concepts-clés" class="level3">
+<h3 class="anchored" data-anchor-id="concepts-clés">Concepts clés</h3>
+<ul>
+<li><strong>Classe</strong> : Modèle ou plan permettant de créer des objets. Elle définit les attributs (données) et les méthodes (fonctions).</li>
+<li><strong>Objet</strong> : Instance d’une classe.</li>
+<li><strong>Attributs</strong> : Variables associées à une classe ou un objet.</li>
+<li><strong>Méthodes</strong> : Fonctions définies dans une classe pour manipuler ses attributs ou accomplir des tâches spécifiques.</li>
+</ul>
+<hr>
 </section>
-<section id="introduction-à-la-programmation-orientée-objet-poo-1h" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Introduction à la Programmation Orientée Objet (POO) (1h)</h1>
-<section id="premier-exemple-de-classe" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="premier-exemple-de-classe"><span class="header-section-number">4.1</span> Premier exemple de classe</h2>
-<p>Une classe est un modèle pour créer des objets. Voici un exemple de classe simple :</p>
+<section id="créer-une-classe-simple-et-instancier-des-objets" class="level3">
+<h3 class="anchored" data-anchor-id="créer-une-classe-simple-et-instancier-des-objets">Créer une classe simple et instancier des objets</h3>
+<p>Voici un exemple de classe simple représentant une “Personne” :</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">class</span> Personne:</span>
 <span id="cb30-2"><a href="#cb30-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
 <span id="cb30-3"><a href="#cb30-3"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
@@ -614,119 +624,141 @@ Créez un fichier nommé <code>mon_module.py</code> avec le contenu suivant :</p
 <span id="cb30-6"><a href="#cb30-6"></a>    <span class="kw">def</span> se_presenter(<span class="va">self</span>):</span>
 <span id="cb30-7"><a href="#cb30-7"></a>        <span class="cf">return</span> <span class="ss">f"Je m'appelle </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> ans."</span></span>
 <span id="cb30-8"><a href="#cb30-8"></a></span>
-<span id="cb30-9"><a href="#cb30-9"></a><span class="co"># Instanciation d'un objet</span></span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="co"># Instanciation d'objets</span></span>
 <span id="cb30-10"><a href="#cb30-10"></a>personne1 <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>)</span>
-<span id="cb30-11"><a href="#cb30-11"></a><span class="bu">print</span>(personne1.se_presenter())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-11"><a href="#cb30-11"></a>personne2 <span class="op">=</span> Personne(<span class="st">"Bob"</span>, <span class="dv">25</span>)</span>
+<span id="cb30-12"><a href="#cb30-12"></a></span>
+<span id="cb30-13"><a href="#cb30-13"></a><span class="co"># Utilisation</span></span>
+<span id="cb30-14"><a href="#cb30-14"></a><span class="bu">print</span>(personne1.se_presenter())  <span class="co"># Affiche : Je m'appelle Alice et j'ai 30 ans.</span></span>
+<span id="cb30-15"><a href="#cb30-15"></a><span class="bu">print</span>(personne2.se_presenter())  <span class="co"># Affiche : Je m'appelle Bob et j'ai 25 ans.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
-<section id="accessibilité" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="accessibilité"><span class="header-section-number">4.2</span> Accessibilité</h2>
-<p>En Python, les attributs sont accessibles par défaut, mais vous pouvez les rendre privés en ajoutant un double underscore (<code>__</code>) :</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">class</span> Personne:</span>
-<span id="cb31-2"><a href="#cb31-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age):</span>
-<span id="cb31-3"><a href="#cb31-3"></a>        <span class="va">self</span>.__nom <span class="op">=</span> nom  <span class="co"># Attribut privé</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb31-5"><a href="#cb31-5"></a></span>
-<span id="cb31-6"><a href="#cb31-6"></a>    <span class="kw">def</span> get_nom(<span class="va">self</span>):</span>
-<span id="cb31-7"><a href="#cb31-7"></a>        <span class="cf">return</span> <span class="va">self</span>.__nom</span>
-<span id="cb31-8"><a href="#cb31-8"></a></span>
-<span id="cb31-9"><a href="#cb31-9"></a><span class="co"># Utilisation</span></span>
-<span id="cb31-10"><a href="#cb31-10"></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="objet-complexe" class="level3">
 <h3 class="anchored" data-anchor-id="objet-complexe">Objet complexe</h3>
 <p>Une classe peut contenir des attributs qui sont eux-mêmes des objets :</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">class</span> Adresse:</span>
-<span id="cb32-2"><a href="#cb32-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, rue, ville):</span>
-<span id="cb32-3"><a href="#cb32-3"></a>        <span class="va">self</span>.rue <span class="op">=</span> rue</span>
-<span id="cb32-4"><a href="#cb32-4"></a>        <span class="va">self</span>.ville <span class="op">=</span> ville</span>
-<span id="cb32-5"><a href="#cb32-5"></a></span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="kw">class</span> Personne:</span>
-<span id="cb32-7"><a href="#cb32-7"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age, adresse):</span>
-<span id="cb32-8"><a href="#cb32-8"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
-<span id="cb32-9"><a href="#cb32-9"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb32-10"><a href="#cb32-10"></a>        <span class="va">self</span>.adresse <span class="op">=</span> adresse</span>
-<span id="cb32-11"><a href="#cb32-11"></a></span>
-<span id="cb32-12"><a href="#cb32-12"></a>    <span class="kw">def</span> afficher_adresse(<span class="va">self</span>):</span>
-<span id="cb32-13"><a href="#cb32-13"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>rue<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>ville<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb32-14"><a href="#cb32-14"></a></span>
-<span id="cb32-15"><a href="#cb32-15"></a>adresse <span class="op">=</span> Adresse(<span class="st">"123 Rue Principale"</span>, <span class="st">"Paris"</span>)</span>
-<span id="cb32-16"><a href="#cb32-16"></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>, adresse)</span>
-<span id="cb32-17"><a href="#cb32-17"></a><span class="bu">print</span>(personne.afficher_adresse())  <span class="co"># Affiche : 123 Rue Principale, Paris</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">class</span> Adresse:</span>
+<span id="cb31-2"><a href="#cb31-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, rue, ville):</span>
+<span id="cb31-3"><a href="#cb31-3"></a>        <span class="va">self</span>.rue <span class="op">=</span> rue</span>
+<span id="cb31-4"><a href="#cb31-4"></a>        <span class="va">self</span>.ville <span class="op">=</span> ville</span>
+<span id="cb31-5"><a href="#cb31-5"></a></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="kw">class</span> Personne:</span>
+<span id="cb31-7"><a href="#cb31-7"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, age, adresse):</span>
+<span id="cb31-8"><a href="#cb31-8"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb31-9"><a href="#cb31-9"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb31-10"><a href="#cb31-10"></a>        <span class="va">self</span>.adresse <span class="op">=</span> adresse</span>
+<span id="cb31-11"><a href="#cb31-11"></a></span>
+<span id="cb31-12"><a href="#cb31-12"></a>    <span class="kw">def</span> afficher_adresse(<span class="va">self</span>):</span>
+<span id="cb31-13"><a href="#cb31-13"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>rue<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>adresse<span class="sc">.</span>ville<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb31-14"><a href="#cb31-14"></a></span>
+<span id="cb31-15"><a href="#cb31-15"></a>adresse <span class="op">=</span> Adresse(<span class="st">"123 Rue Principale"</span>, <span class="st">"Paris"</span>)</span>
+<span id="cb31-16"><a href="#cb31-16"></a>personne <span class="op">=</span> Personne(<span class="st">"Alice"</span>, <span class="dv">30</span>, adresse)</span>
+<span id="cb31-17"><a href="#cb31-17"></a><span class="bu">print</span>(personne.afficher_adresse())  <span class="co"># Affiche : 123 Rue Principale, Paris</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="héritage" class="level3">
 <h3 class="anchored" data-anchor-id="héritage">Héritage</h3>
-<p>L’héritage permet à une classe d’hériter des attributs et des méthodes d’une autre classe :</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">class</span> Animal:</span>
-<span id="cb33-2"><a href="#cb33-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom):</span>
-<span id="cb33-3"><a href="#cb33-3"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
-<span id="cb33-4"><a href="#cb33-4"></a></span>
-<span id="cb33-5"><a href="#cb33-5"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
-<span id="cb33-6"><a href="#cb33-6"></a>        <span class="cf">pass</span>  <span class="co"># Méthode à redéfinir</span></span>
-<span id="cb33-7"><a href="#cb33-7"></a></span>
-<span id="cb33-8"><a href="#cb33-8"></a><span class="kw">class</span> Chien(Animal):</span>
-<span id="cb33-9"><a href="#cb33-9"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
-<span id="cb33-10"><a href="#cb33-10"></a>        <span class="cf">return</span> <span class="st">"Woof"</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a></span>
-<span id="cb33-12"><a href="#cb33-12"></a><span class="kw">class</span> Chat(Animal):</span>
-<span id="cb33-13"><a href="#cb33-13"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
-<span id="cb33-14"><a href="#cb33-14"></a>        <span class="cf">return</span> <span class="st">"Meow"</span></span>
-<span id="cb33-15"><a href="#cb33-15"></a></span>
-<span id="cb33-16"><a href="#cb33-16"></a>chien <span class="op">=</span> Chien(<span class="st">"Rex"</span>)</span>
-<span id="cb33-17"><a href="#cb33-17"></a>chat <span class="op">=</span> Chat(<span class="st">"Miaou"</span>)</span>
-<span id="cb33-18"><a href="#cb33-18"></a><span class="bu">print</span>(chien.parler())  <span class="co"># Affiche : Woof</span></span>
-<span id="cb33-19"><a href="#cb33-19"></a><span class="bu">print</span>(chat.parler())  <span class="co"># Affiche : Meow</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>L’héritage permet à une classe d’hériter des attributs et des méthodes d’une autre classe. Cela favorise la réutilisation du code.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom):</span>
+<span id="cb32-3"><a href="#cb32-3"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb32-4"><a href="#cb32-4"></a></span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb32-6"><a href="#cb32-6"></a>        <span class="cf">pass</span>  <span class="co"># Méthode à redéfinir</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a></span>
+<span id="cb32-8"><a href="#cb32-8"></a><span class="kw">class</span> Chien(Animal):</span>
+<span id="cb32-9"><a href="#cb32-9"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb32-10"><a href="#cb32-10"></a>        <span class="cf">return</span> <span class="st">"Woof"</span></span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="kw">class</span> Chat(Animal):</span>
+<span id="cb32-13"><a href="#cb32-13"></a>    <span class="kw">def</span> parler(<span class="va">self</span>):</span>
+<span id="cb32-14"><a href="#cb32-14"></a>        <span class="cf">return</span> <span class="st">"Meow"</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a></span>
+<span id="cb32-16"><a href="#cb32-16"></a>chien <span class="op">=</span> Chien(<span class="st">"Rex"</span>)</span>
+<span id="cb32-17"><a href="#cb32-17"></a>chat <span class="op">=</span> Chat(<span class="st">"Miaou"</span>)</span>
+<span id="cb32-18"><a href="#cb32-18"></a><span class="bu">print</span>(chien.parler())  <span class="co"># Affiche : Woof</span></span>
+<span id="cb32-19"><a href="#cb32-19"></a><span class="bu">print</span>(chat.parler())  <span class="co"># Affiche : Meow</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="polymorphisme" class="level3">
 <h3 class="anchored" data-anchor-id="polymorphisme">Polymorphisme</h3>
-<p>Le polymorphisme permet d’utiliser une même méthode définie dans plusieurs classes différentes :</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>animaux <span class="op">=</span> [Chien(<span class="st">"Rex"</span>), Chat(<span class="st">"Miaou"</span>)]</span>
-<span id="cb34-2"><a href="#cb34-2"></a></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="cf">for</span> animal <span class="kw">in</span> animaux:</span>
-<span id="cb34-4"><a href="#cb34-4"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>animal<span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> dit </span><span class="sc">{</span>animal<span class="sc">.</span>parler()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Le polymorphisme permet d’utiliser une même méthode définie dans plusieurs classes différentes.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>animaux <span class="op">=</span> [Chien(<span class="st">"Rex"</span>), Chat(<span class="st">"Miaou"</span>)]</span>
+<span id="cb33-2"><a href="#cb33-2"></a></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="cf">for</span> animal <span class="kw">in</span> animaux:</span>
+<span id="cb33-4"><a href="#cb33-4"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>animal<span class="sc">.</span>nom<span class="sc">}</span><span class="ss"> dit </span><span class="sc">{</span>animal<span class="sc">.</span>parler()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="encapsulation-et-propriétés" class="level3">
 <h3 class="anchored" data-anchor-id="encapsulation-et-propriétés">Encapsulation et propriétés</h3>
-<p>L’encapsulation permet de contrôler l’accès et la modification des attributs d’une classe en utilisant des propriétés.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">class</span> CompteBancaire:</span>
-<span id="cb35-2"><a href="#cb35-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titulaire, solde):</span>
-<span id="cb35-3"><a href="#cb35-3"></a>        <span class="va">self</span>.titulaire <span class="op">=</span> titulaire</span>
-<span id="cb35-4"><a href="#cb35-4"></a>        <span class="va">self</span>.__solde <span class="op">=</span> solde  <span class="co"># Attribut privé</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a></span>
-<span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">@property</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a>    <span class="kw">def</span> solde(<span class="va">self</span>):</span>
-<span id="cb35-8"><a href="#cb35-8"></a>        <span class="cf">return</span> <span class="va">self</span>.__solde</span>
-<span id="cb35-9"><a href="#cb35-9"></a></span>
-<span id="cb35-10"><a href="#cb35-10"></a>    <span class="at">@solde.setter</span></span>
-<span id="cb35-11"><a href="#cb35-11"></a>    <span class="kw">def</span> solde(<span class="va">self</span>, montant):</span>
-<span id="cb35-12"><a href="#cb35-12"></a>        <span class="cf">if</span> montant <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="cb35-13"><a href="#cb35-13"></a>            <span class="va">self</span>.__solde <span class="op">=</span> montant</span>
-<span id="cb35-14"><a href="#cb35-14"></a>        <span class="cf">else</span>:</span>
-<span id="cb35-15"><a href="#cb35-15"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Le solde ne peut pas être négatif"</span>)</span>
-<span id="cb35-16"><a href="#cb35-16"></a></span>
-<span id="cb35-17"><a href="#cb35-17"></a>compte <span class="op">=</span> CompteBancaire(<span class="st">"Alice"</span>, <span class="dv">1000</span>)</span>
-<span id="cb35-18"><a href="#cb35-18"></a><span class="bu">print</span>(compte.solde)  <span class="co"># Accès au solde</span></span>
-<span id="cb35-19"><a href="#cb35-19"></a>compte.solde <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># Modification du solde</span></span>
-<span id="cb35-20"><a href="#cb35-20"></a><span class="bu">print</span>(compte.solde)  <span class="co"># Affiche : 2000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>L’encapsulation permet de contrôler l’accès et la modification des attributs d’une classe. Cela se fait généralement à l’aide des propriétés.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">class</span> CompteBancaire:</span>
+<span id="cb34-2"><a href="#cb34-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titulaire, solde):</span>
+<span id="cb34-3"><a href="#cb34-3"></a>        <span class="va">self</span>.titulaire <span class="op">=</span> titulaire</span>
+<span id="cb34-4"><a href="#cb34-4"></a>        <span class="va">self</span>.__solde <span class="op">=</span> solde  <span class="co"># Attribut privé</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a></span>
+<span id="cb34-6"><a href="#cb34-6"></a>    <span class="at">@property</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a>    <span class="kw">def</span> solde(<span class="va">self</span>):</span>
+<span id="cb34-8"><a href="#cb34-8"></a>        <span class="cf">return</span> <span class="va">self</span>.__solde</span>
+<span id="cb34-9"><a href="#cb34-9"></a></span>
+<span id="cb34-10"><a href="#cb34-10"></a>    <span class="at">@solde.setter</span></span>
+<span id="cb34-11"><a href="#cb34-11"></a>    <span class="kw">def</span> solde(<span class="va">self</span>, montant):</span>
+<span id="cb34-12"><a href="#cb34-12"></a>        <span class="cf">if</span> montant <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb34-13"><a href="#cb34-13"></a>            <span class="va">self</span>.__solde <span class="op">=</span> montant</span>
+<span id="cb34-14"><a href="#cb34-14"></a>        <span class="cf">else</span>:</span>
+<span id="cb34-15"><a href="#cb34-15"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Le solde ne peut pas être négatif"</span>)</span>
+<span id="cb34-16"><a href="#cb34-16"></a></span>
+<span id="cb34-17"><a href="#cb34-17"></a>compte <span class="op">=</span> CompteBancaire(<span class="st">"Alice"</span>, <span class="dv">1000</span>)</span>
+<span id="cb34-18"><a href="#cb34-18"></a><span class="bu">print</span>(compte.solde)  <span class="co"># Accès au solde</span></span>
+<span id="cb34-19"><a href="#cb34-19"></a>compte.solde <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># Modification du solde</span></span>
+<span id="cb34-20"><a href="#cb34-20"></a><span class="bu">print</span>(compte.solde)  <span class="co"># Affiche : 2000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="abstraction" class="level3">
+<h3 class="anchored" data-anchor-id="abstraction">Abstraction</h3>
+<p>L’abstraction consiste à définir des classes ou des méthodes génériques qui servent de base pour les classes spécifiques. Cela se fait avec des classes ou méthodes abstraites.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="im">from</span> abc <span class="im">import</span> ABC, abstractmethod</span>
+<span id="cb35-2"><a href="#cb35-2"></a></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="kw">class</span> Forme(ABC):</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">@abstractmethod</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>    <span class="kw">def</span> aire(<span class="va">self</span>):</span>
+<span id="cb35-6"><a href="#cb35-6"></a>        <span class="cf">pass</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a></span>
+<span id="cb35-8"><a href="#cb35-8"></a><span class="kw">class</span> Rectangle(Forme):</span>
+<span id="cb35-9"><a href="#cb35-9"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, largeur, hauteur):</span>
+<span id="cb35-10"><a href="#cb35-10"></a>        <span class="va">self</span>.largeur <span class="op">=</span> largeur</span>
+<span id="cb35-11"><a href="#cb35-11"></a>        <span class="va">self</span>.hauteur <span class="op">=</span> hauteur</span>
+<span id="cb35-12"><a href="#cb35-12"></a></span>
+<span id="cb35-13"><a href="#cb35-13"></a>    <span class="kw">def</span> aire(<span class="va">self</span>):</span>
+<span id="cb35-14"><a href="#cb35-14"></a>        <span class="cf">return</span> <span class="va">self</span>.largeur <span class="op">*</span> <span class="va">self</span>.hauteur</span>
+<span id="cb35-15"><a href="#cb35-15"></a></span>
+<span id="cb35-16"><a href="#cb35-16"></a>rectangle <span class="op">=</span> Rectangle(<span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb35-17"><a href="#cb35-17"></a><span class="bu">print</span>(rectangle.aire())  <span class="co"># Affiche : 50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="exercices-pratiques-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercices-pratiques-1">Exercices pratiques</h3>
 <ol type="1">
-<li><strong>Fonctions :</strong>
+<li><strong>Créer une classe <code>Livre</code> :</strong>
 <ul>
-<li>Créez une fonction qui calcule le carré de chaque élément d’une liste.</li>
-<li>Implémentez une fonction lambda pour trier une liste de tuples par leur second élément.</li>
+<li>Attributs : <code>titre</code>, <code>auteur</code>, <code>pages</code>.</li>
+<li>Méthode : <code>afficher_informations</code> qui affiche les détails du livre.</li>
 </ul></li>
-<li><strong>Modules :</strong>
+<li><strong>Créer une classe <code>Bibliotheque</code> :</strong>
 <ul>
-<li>Créez un module contenant des fonctions pour des opérations de base (addition, multiplication).</li>
-<li>Importez ce module et utilisez ses fonctions dans un fichier principal.</li>
+<li>Attributs : liste de livres.</li>
+<li>Méthodes : ajouter un livre, retirer un livre, afficher tous les livres.</li>
 </ul></li>
-<li><strong>POO :</strong>
+<li><strong>Créer une hiérarchie d’héritage :</strong>
 <ul>
-<li>Créez une classe <code>Voiture</code> avec des attributs <code>marque</code>, <code>modele</code> et une méthode <code>afficher_details</code>.</li>
-<li>Implémentez une classe <code>VoitureElectrique</code> héritant de <code>Voiture</code>, avec un attribut supplémentaire pour l’autonomie.</li>
+<li>Classe de base <code>Vehicule</code>.</li>
+<li>Classes dérivées : <code>Voiture</code>, <code>Moto</code> avec des méthodes spécifiques comme <code>afficher_type</code>.</li>
+</ul></li>
+<li><strong>Créer une classe abstraite <code>Forme</code> :</strong>
+<ul>
+<li>Méthodes abstraites : <code>aire</code> et <code>perimetre</code>.</li>
+<li>Implémenter les classes <code>Cercle</code> et <code>Rectangle</code>.</li>
 </ul></li>
 </ol>
-<hr>
 
 
 </section>

@@ -211,6 +211,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exemple" id="toc-exemple" class="nav-link" data-scroll-target="#exemple">Exemple :</a></li>
   <li><a href="#avec-un-type-mutable-liste" id="toc-avec-un-type-mutable-liste" class="nav-link" data-scroll-target="#avec-un-type-mutable-liste">Avec un type mutable (liste) :</a></li>
   </ul></li>
+  <li><a href="#variable-localevariable-globale" id="toc-variable-localevariable-globale" class="nav-link" data-scroll-target="#variable-localevariable-globale"><span class="header-section-number">2.8</span> Variable locale/variable globale</a>
+  <ul class="collapse">
+  <li><a href="#exemple-1" id="toc-exemple-1" class="nav-link" data-scroll-target="#exemple-1">Exemple :</a></li>
+  <li><a href="#modifier-une-variable-globale" id="toc-modifier-une-variable-globale" class="nav-link" data-scroll-target="#modifier-une-variable-globale">Modifier une variable globale :</a></li>
+  </ul></li>
+  <li><a href="#fonction-anonyme-lambda-function" id="toc-fonction-anonyme-lambda-function" class="nav-link" data-scroll-target="#fonction-anonyme-lambda-function"><span class="header-section-number">2.9</span> Fonction anonyme (lambda function)</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fonctions-modules-poo-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -344,9 +350,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4"></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb8-5"><a href="#cb8-5"></a>ajouter_element(ma_liste)</span>
 <span id="cb8-6"><a href="#cb8-6"></a><span class="bu">print</span>(ma_liste)  <span class="co"># Affiche : [1, 2, 3, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
 </section>
+</section>
+<section id="variable-localevariable-globale" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="variable-localevariable-globale"><span class="header-section-number">2.8</span> Variable locale/variable globale</h2>
+<ul>
+<li><strong>Variable locale</strong> : Définie à l’intérieur d’une fonction et inaccessible en dehors.</li>
+<li><strong>Variable globale</strong> : Accessible partout dans le programme.</li>
+</ul>
+<section id="exemple-1" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-1">Exemple :</h3>
+<section id="variables-locale" class="level4">
+<h4 class="anchored" data-anchor-id="variables-locale">Variables locale :</h4>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Variable globale</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">def</span> afficher_variables():</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    y <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Variable locale</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="bu">print</span>(<span class="st">"x ="</span>, x)  <span class="co"># Accède à la variable globale</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="bu">print</span>(<span class="st">"y ="</span>, y)  <span class="co"># Accède à la variable locale</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a>afficher_variables()</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># print(y)  # Provoque une erreur : y n'est pas défini en dehors de la fonction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="modifier-une-variable-globale" class="level3">
+<h3 class="anchored" data-anchor-id="modifier-une-variable-globale">Modifier une variable globale :</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>z <span class="op">=</span> <span class="dv">20</span>  <span class="co"># Variable globale</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">def</span> modifier_globale():</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="kw">global</span> z  <span class="co"># Permet de modifier la variable globale</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>    z <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a>modifier_globale()</span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="bu">print</span>(z)  <span class="co"># Affiche : 30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="fonction-anonyme-lambda-function" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="fonction-anonyme-lambda-function"><span class="header-section-number">2.9</span> Fonction anonyme (lambda function)</h2>
+<p>Les fonctions lambda sont définies en une seule ligne pour des opérations simples :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Exemple : Calculer le carré d'un nombre</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>carre <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="bu">print</span>(carre(<span class="dv">4</span>))  <span class="co"># Affiche : 16</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co"># Trier une liste de tuples selon le deuxième élément</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>nombres <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">1</span>), (<span class="dv">5</span>, <span class="dv">0</span>)]</span>
+<span id="cb11-7"><a href="#cb11-7"></a>nombres_tries <span class="op">=</span> <span class="bu">sorted</span>(nombres, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="bu">print</span>(nombres_tries)  <span class="co"># Affiche : [(5, 0), (3, 1), (1, 2)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 </section>
 

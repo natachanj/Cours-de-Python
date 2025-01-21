@@ -294,6 +294,20 @@
     "text": "Passage des paramètres : immuable et non immuable\nLes types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être."
   },
   {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#variable-localevariable-globale",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#variable-localevariable-globale",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Variable locale/variable globale",
+    "text": "Variable locale/variable globale\n\nVariable locale : Définie à l’intérieur d’une fonction et inaccessible en dehors.\nVariable globale : Accessible partout dans le programme."
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-anonyme-lambda-function",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-anonyme-lambda-function",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction anonyme (lambda function)",
+    "text": "Fonction anonyme (lambda function)\nLes fonctions lambda sont définies en une seule ligne pour des opérations simples :\n# Exemple : Calculer le carré d'un nombre\ncarre = lambda x: x ** 2\nprint(carre(4))  # Affiche : 16\n\n# Trier une liste de tuples selon le deuxième élément\nnombres = [(1, 2), (3, 1), (5, 0)]\nnombres_tries = sorted(nombres, key=lambda x: x[1])\nprint(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]"
+  },
+  {
     "objectID": "doc/cours/fonctionsmodules.html",
     "href": "doc/cours/fonctionsmodules.html",
     "title": "Fonctions, Modules et POO en Python",
@@ -348,6 +362,20 @@
     "title": "Fonctions, Modules et POO en Python",
     "section": "2.7 Passage des paramètres : immuable et non immuable",
     "text": "2.7 Passage des paramètres : immuable et non immuable\nLes types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être.\n\nExemple :\n\nAvec un type immuable (chaîne) :\ndef modifier_chaine(chaine):\n    chaine += \" modifié\"\n    return chaine\n\ntexte = \"Texte original\"\nprint(modifier_chaine(texte))  # Affiche : Texte original modifié\nprint(texte)  # Affiche : Texte original\n\n\n\nAvec un type mutable (liste) :\ndef ajouter_element(liste):\n    liste.append(5)\n\nma_liste = [1, 2, 3]\najouter_element(ma_liste)\nprint(ma_liste)  # Affiche : [1, 2, 3, 5]"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#variable-localevariable-globale",
+    "href": "doc/cours/fonctionsmodules.html#variable-localevariable-globale",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.8 Variable locale/variable globale",
+    "text": "2.8 Variable locale/variable globale\n\nVariable locale : Définie à l’intérieur d’une fonction et inaccessible en dehors.\nVariable globale : Accessible partout dans le programme.\n\n\nExemple :\n\nVariables locale :\nx = 10  # Variable globale\n\ndef afficher_variables():\n    y = 5  # Variable locale\n    print(\"x =\", x)  # Accède à la variable globale\n    print(\"y =\", y)  # Accède à la variable locale\n\nafficher_variables()\n# print(y)  # Provoque une erreur : y n'est pas défini en dehors de la fonction\n\n\n\nModifier une variable globale :\nz = 20  # Variable globale\n\ndef modifier_globale():\n    global z  # Permet de modifier la variable globale\n    z = 30\n\nmodifier_globale()\nprint(z)  # Affiche : 30"
+  },
+  {
+    "objectID": "doc/cours/fonctionsmodules.html#fonction-anonyme-lambda-function",
+    "href": "doc/cours/fonctionsmodules.html#fonction-anonyme-lambda-function",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "2.9 Fonction anonyme (lambda function)",
+    "text": "2.9 Fonction anonyme (lambda function)\nLes fonctions lambda sont définies en une seule ligne pour des opérations simples :\n# Exemple : Calculer le carré d'un nombre\ncarre = lambda x: x ** 2\nprint(carre(4))  # Affiche : 16\n\n# Trier une liste de tuples selon le deuxième élément\nnombres = [(1, 2), (3, 1), (5, 0)]\nnombres_tries = sorted(nombres, key=lambda x: x[1])\nprint(nombres_tries)  # Affiche : [(5, 0), (3, 1), (1, 2)]"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

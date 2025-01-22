@@ -25,7 +25,7 @@ website:
             text: "Les types de données en Python"
           - href: doc/cours/fonctionsmodules.qmd
             text: "Fonctions, Modules et POO en Python"
-          - href: doc/cours/fonctionsmodules.qmd
+          - href: doc/cours/analysedonneesnumpy.qmd
             text: "Manipulation des données avec Numpy"
      
       - text: TP

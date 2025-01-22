@@ -1,0 +1,30 @@
+---
+title: "Analyse de données avec numpy
+description: "[Slides](analyse-donnees-numpy-slides.html)"
+author: "Natacha Njongwa Yepnga"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Analyse de données avec Numpy](analyse-donnees-numpy.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: analyse-donnees-numpy-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: true
+from: markdown+emoji
+---
+
+
+
+## Objectifs pédagogiques
+- Comprendre les bases de l'utilisation de NumPy.
+- Manipuler efficacement des tableaux `array` pour optimiser les calculs.
+- Explorer les concepts avancés comme les masques booléens et les opérations mathématiques sur tableaux.

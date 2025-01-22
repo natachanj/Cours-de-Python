@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,8 +41,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-957390e16f8056bf57452af51c800dd0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0e737baddcd55aaef238ba6a7f21118c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-120d9ffdb366f80f4be3d8d4b9ab4133.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-433c775cf9d4f89e97061b8f24aee672.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -152,6 +118,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../doc/cours/fonctionsmodules.html">
  <span class="dropdown-text">Fonctions, Modules et POO en Python</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/cours/fonctionsmodules.html">
+ <span class="dropdown-text">Manipulation des données avec Numpy</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -209,16 +179,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cours-numpy-201" id="toc-cours-numpy-201" class="nav-link" data-scroll-target="#cours-numpy-201"><span class="header-section-number">2</span> Cours : NumPy 201</a>
   <ul class="collapse">
   <li><a href="#objectifs-pédagogiques" id="toc-objectifs-pédagogiques" class="nav-link" data-scroll-target="#objectifs-pédagogiques"><span class="header-section-number">2.1</span> Objectifs pédagogiques</a></li>
-  <li><a href="#plan-du-cours-détaillé-première-partie" id="toc-plan-du-cours-détaillé-première-partie" class="nav-link" data-scroll-target="#plan-du-cours-détaillé-première-partie"><span class="header-section-number">2.2</span> Plan du cours détaillé (Première partie)</a>
-  <ul class="collapse">
-  <li><a href="#introduction-à-numpy" id="toc-introduction-à-numpy" class="nav-link" data-scroll-target="#introduction-à-numpy">Introduction à NumPy</a></li>
-  <li><a href="#installation-et-configuration" id="toc-installation-et-configuration" class="nav-link" data-scroll-target="#installation-et-configuration">Installation et configuration</a></li>
-  <li><a href="#création-et-manipulation-des-tableaux-numériques" id="toc-création-et-manipulation-des-tableaux-numériques" class="nav-link" data-scroll-target="#création-et-manipulation-des-tableaux-numériques">Création et manipulation des tableaux numériques</a></li>
-  <li><a href="#indexation-et-opérations-sur-les-tableaux" id="toc-indexation-et-opérations-sur-les-tableaux" class="nav-link" data-scroll-target="#indexation-et-opérations-sur-les-tableaux">Indexation et opérations sur les tableaux</a></li>
-  <li><a href="#opérations-mathématiques-sur-les-tableaux" id="toc-opérations-mathématiques-sur-les-tableaux" class="nav-link" data-scroll-target="#opérations-mathématiques-sur-les-tableaux">Opérations mathématiques sur les tableaux</a></li>
-  <li><a href="#exercices-pratiques" id="toc-exercices-pratiques" class="nav-link" data-scroll-target="#exercices-pratiques">Exercices pratiques</a></li>
-  <li><a href="#conseils-pratiques" id="toc-conseils-pratiques" class="nav-link" data-scroll-target="#conseils-pratiques">Conseils pratiques</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="analyse-donnees-numpy-pandas-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -280,173 +240,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Manipuler efficacement des tableaux <code>array</code> pour optimiser les calculs.</li>
 <li>Explorer les concepts avancés comme les masques booléens et les opérations mathématiques sur tableaux.</li>
 </ul>
-</section>
-<section id="plan-du-cours-détaillé-première-partie" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="plan-du-cours-détaillé-première-partie"><span class="header-section-number">2.2</span> Plan du cours détaillé (Première partie)</h2>
-<section id="introduction-à-numpy" class="level3">
-<h3 class="anchored" data-anchor-id="introduction-à-numpy">Introduction à NumPy</h3>
-<section id="quest-ce-que-numpy" class="level4">
-<h4 class="anchored" data-anchor-id="quest-ce-que-numpy">Qu’est-ce que NumPy ?</h4>
-<ul>
-<li>NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python.</li>
-<li>Permet de manipuler des tableaux multidimensionnels et d’exécuter des calculs rapides grâce à ses implémentations optimisées.</li>
-</ul>
-</section>
-<section id="pourquoi-utiliser-numpy" class="level4">
-<h4 class="anchored" data-anchor-id="pourquoi-utiliser-numpy">Pourquoi utiliser NumPy ?</h4>
-<ul>
-<li><strong>Performance :</strong> Manipulation rapide des données grâce à des tableaux homogènes.</li>
-<li><strong>Fonctionnalités :</strong> Offre des outils pour les statistiques, algèbre linéaire, transformations, etc.</li>
-</ul>
-</section>
-</section>
-<section id="installation-et-configuration" class="level3">
-<h3 class="anchored" data-anchor-id="installation-et-configuration">Installation et configuration</h3>
-<ol type="1">
-<li><strong>Installation de NumPy :</strong>
-<ul>
-<li><p>Via pip :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Tester l’installation :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">print</span>(np.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Convention d’importation :</strong>
-<ul>
-<li><p>Par convention :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Configuration de l’environnement :</strong>
-<ul>
-<li>IDE recommandés : Jupyter Notebook, PyCharm, VS Code.</li>
-</ul></li>
-</ol>
-<hr>
-</section>
-<section id="création-et-manipulation-des-tableaux-numériques" class="level3">
-<h3 class="anchored" data-anchor-id="création-et-manipulation-des-tableaux-numériques">Création et manipulation des tableaux numériques</h3>
-<section id="création-de-tableaux-create" class="level4">
-<h4 class="anchored" data-anchor-id="création-de-tableaux-create"><strong>1. Création de tableaux (Create)</strong></h4>
-<ol type="1">
-<li><p><strong>Créer un tableau 1D ou 2D :</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Tableau 1D</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Tableau 2D</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>b <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Créer des tableaux automatiquement :</strong></p>
-<ul>
-<li><p><strong>Zeros et Ones :</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>zeros <span class="op">=</span> np.zeros((<span class="dv">2</span>, <span class="dv">3</span>))  <span class="co"># Matrice 2x3 remplie de zéros</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>ones <span class="op">=</span> np.ones((<span class="dv">3</span>, <span class="dv">3</span>))   <span class="co"># Matrice 3x3 remplie de uns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Plages de valeurs :</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>arange <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)  <span class="co"># De 0 à 10 avec un pas de 2</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>linspace <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>)  <span class="co"># 5 valeurs entre 0 et 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Valeurs aléatoires :</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>random <span class="op">=</span> np.random.random((<span class="dv">2</span>, <span class="dv">3</span>))  <span class="co"># Matrice 2x3 de valeurs uniformes [0, 1[</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>normal <span class="op">=</span> np.random.randn(<span class="dv">3</span>, <span class="dv">3</span>)  <span class="co"># Matrice 3x3 selon une distribution normale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-</ol>
-</section>
-<section id="lecture-des-tableaux-read" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-des-tableaux-read"><strong>2. Lecture des tableaux (Read)</strong></h4>
-<ol type="1">
-<li><p><strong>Accéder à un élément :</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>])  <span class="co"># Premier élément du tableau 1D</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(b[<span class="dv">1</span>, <span class="dv">1</span>])  <span class="co"># Deuxième ligne, deuxième colonne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Slicing :</strong></p>
-<ul>
-<li><p>Extraction de sous-parties :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="bu">print</span>(a[:<span class="dv">2</span>])  <span class="co"># Les deux premiers éléments</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(b[:, <span class="dv">1</span>])  <span class="co"># Deuxième colonne</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="bu">print</span>(b[<span class="dv">0</span>, :])  <span class="co"># Première ligne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><p><strong>Informations générales :</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">print</span>(b.shape)  <span class="co"># Dimensions du tableau</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(b.size)   <span class="co"># Nombre total d'éléments</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="bu">print</span>(b.ndim)   <span class="co"># Nombre de dimensions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<hr>
-</section>
-</section>
-<section id="indexation-et-opérations-sur-les-tableaux" class="level3">
-<h3 class="anchored" data-anchor-id="indexation-et-opérations-sur-les-tableaux">Indexation et opérations sur les tableaux</h3>
-<section id="modification-des-tableaux-update" class="level4">
-<h4 class="anchored" data-anchor-id="modification-des-tableaux-update"><strong>1. Modification des tableaux (Update)</strong></h4>
-<ol type="1">
-<li><p><strong>Changer un ou plusieurs éléments :</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Remplacer le premier élément par 10</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>b[:, <span class="dv">1</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>]  <span class="co"># Remplacer la deuxième colonne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Modification conditionnelle :</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>a[a <span class="op">&gt;</span> <span class="dv">2</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>  <span class="co"># Remplacer les valeurs &gt; 2 par -1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</section>
-<section id="suppression-des-éléments-delete" class="level4">
-<h4 class="anchored" data-anchor-id="suppression-des-éléments-delete"><strong>2. Suppression des éléments (Delete)</strong></h4>
-<ol type="1">
-<li><p><strong>Supprimer des éléments (copie) :</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>c <span class="op">=</span> np.delete(a, [<span class="dv">0</span>, <span class="dv">1</span>])  <span class="co"># Supprimer les deux premiers éléments</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Supprimer des lignes ou colonnes :</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>b <span class="op">=</span> np.delete(b, <span class="dv">0</span>, axis<span class="op">=</span><span class="dv">0</span>)  <span class="co"># Supprimer la première ligne</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>b <span class="op">=</span> np.delete(b, <span class="dv">1</span>, axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># Supprimer la deuxième colonne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<hr>
-</section>
-</section>
-<section id="opérations-mathématiques-sur-les-tableaux" class="level3">
-<h3 class="anchored" data-anchor-id="opérations-mathématiques-sur-les-tableaux">Opérations mathématiques sur les tableaux</h3>
-<ol type="1">
-<li><p><strong>Opérations élémentaires :</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>d <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(d <span class="op">+</span> <span class="dv">10</span>)  <span class="co"># Ajouter 10 à chaque élément</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="bu">print</span>(d <span class="op">*</span> <span class="dv">2</span>)   <span class="co"># Multiplier chaque élément par 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Statistiques :</strong></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="bu">print</span>(np.<span class="bu">sum</span>(d))  <span class="co"># Somme des éléments</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(np.mean(d))  <span class="co"># Moyenne</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="bu">print</span>(np.<span class="bu">max</span>(d))   <span class="co"># Valeur maximale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Produits matriciels :</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>e <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb17-2"><a href="#cb17-2"></a>f <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
-<span id="cb17-3"><a href="#cb17-3"></a>product <span class="op">=</span> np.dot(e, f)  <span class="co"># Produit matriciel</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="bu">print</span>(product)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Masques booléens :</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>mask <span class="op">=</span> d <span class="op">&gt;</span> <span class="dv">1</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="bu">print</span>(d[mask])  <span class="co"># Affiche les éléments &gt; 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<hr>
-</section>
-<section id="exercices-pratiques" class="level3">
-<h3 class="anchored" data-anchor-id="exercices-pratiques">Exercices pratiques</h3>
-<ol type="1">
-<li><strong>Création de tableaux :</strong>
-<ul>
-<li>Créez un tableau 2D contenant les valeurs de 1 à 9, organisées en une matrice 3x3.</li>
-<li>Ajoutez 5 à chaque élément de la matrice.</li>
-</ul></li>
-<li><strong>Indexation et slicing :</strong>
-<ul>
-<li>Accédez à la deuxième ligne de la matrice créée.</li>
-<li>Remplacez toutes les valeurs supérieures à 7 par 0.</li>
-</ul></li>
-<li><strong>Opérations :</strong>
-<ul>
-<li>Créez deux matrices aléatoires 3x3.</li>
-<li>Calculez leur produit matriciel.</li>
-</ul></li>
-</ol>
-<hr>
-</section>
-<section id="conseils-pratiques" class="level3">
-<h3 class="anchored" data-anchor-id="conseils-pratiques">Conseils pratiques</h3>
-<ul>
-<li><strong>Préférez les calculs vectoriels :</strong> Les boucles <code>for</code> classiques sont plus lentes que les opérations optimisées de NumPy.</li>
-<li><strong>Documentation officielle :</strong> <a href="https://numpy.org/doc/">Documentation NumPy</a>.</li>
-</ul>
-<hr>
-<p>Cette première partie du cours couvre les bases de NumPy et prépare les étudiant·e·s à la manipulation avancée des tableaux dans les étapes suivantes.</p>
 
 
-</section>
 </section>
 </section>
 

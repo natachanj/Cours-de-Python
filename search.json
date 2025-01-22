@@ -1,180 +1,5 @@
 [
   {
-    "objectID": "doc/tp/tp1.html",
-    "href": "doc/tp/tp1.html",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données.\n\n\nCe fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python\n\n\n\n\nDans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données\n\n\n\n\nÀ la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
-    "href": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Ce fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
-    "href": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#objectif",
-    "href": "doc/tp/tp1.html#objectif",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
-  },
-  {
-    "objectID": "doc/tp/tp2.html",
-    "href": "doc/tp/tp2.html",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\n\n\nÉcrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré.\n\n\n\n\n\n\n\n\nDéfinissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#objectifs",
-    "href": "doc/tp/tp2.html#objectifs",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#partie-1-fonctions",
-    "href": "doc/tp/tp2.html#partie-1-fonctions",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré."
-  },
-  {
-    "objectID": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
-    "href": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
-  },
-  {
-    "objectID": "doc/cours/intro.html",
-    "href": "doc/cours/intro.html",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "",
-    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
-  },
-  {
-    "objectID": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
-    "href": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "",
-    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
-  },
-  {
-    "objectID": "doc/cours/intro.html#objectifs",
-    "href": "doc/cours/intro.html#objectifs",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Objectifs",
-    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
-  },
-  {
-    "objectID": "doc/cours/intro.html#python",
-    "href": "doc/cours/intro.html#python",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Python",
-    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
-  },
-  {
-    "objectID": "doc/cours/intro.html#organisation-des-tp",
-    "href": "doc/cours/intro.html#organisation-des-tp",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Organisation des TP",
-    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
-  },
-  {
-    "objectID": "doc/cours/intro.html#ce-quil-faut-faire",
-    "href": "doc/cours/intro.html#ce-quil-faut-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Ce qu’il faut faire",
-    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
-  },
-  {
-    "objectID": "doc/cours/intro.html#à-ne-pas-faire",
-    "href": "doc/cours/intro.html#à-ne-pas-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "À ne pas faire",
-    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
-  },
-  {
-    "objectID": "doc/cours/intro.html#évaluation",
-    "href": "doc/cours/intro.html#évaluation",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Évaluation",
-    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations.\n\n\n\n\n\nPartie 2 : QCM.\n\nDurée : 2h.\nQuestions portant sur les concepts abordés pendant le cours et les TP.\nLa date sera définie à l’avance."
-  },
-  {
-    "objectID": "doc/cours/intro.html#bibliographie",
-    "href": "doc/cours/intro.html#bibliographie",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Bibliographie",
-    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012\n\n\n\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\n\n\n\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010\nCours Python de l’École Polytechnique Universitaire UMPC\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
-    "href": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Programmation avec Python : Bases et Applications",
-    "text": "Programmation avec Python : Bases et Applications\n\n18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#objectifs",
-    "href": "doc/cours/intro-python-slides.html#objectifs",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Objectifs",
-    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#python",
-    "href": "doc/cours/intro-python-slides.html#python",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Python",
-    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#organisation-des-tp",
-    "href": "doc/cours/intro-python-slides.html#organisation-des-tp",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Organisation des TP",
-    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
-    "href": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Ce qu’il faut faire",
-    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
-    "href": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "À ne pas faire",
-    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#évaluation",
-    "href": "doc/cours/intro-python-slides.html#évaluation",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Évaluation",
-    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#bibliographie",
-    "href": "doc/cours/intro-python-slides.html#bibliographie",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Bibliographie",
-    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012"
-  },
-  {
     "objectID": "doc/cours/analysedonneesnumpypandas.html",
     "href": "doc/cours/analysedonneesnumpypandas.html",
     "title": "Séance 3 : Analyse des données avec NumPy et Pandas",
@@ -189,13 +14,6 @@
     "text": "2.1 Objectifs pédagogiques\n\nComprendre les bases de l’utilisation de NumPy.\nManipuler efficacement des tableaux array pour optimiser les calculs.\nExplorer les concepts avancés comme les masques booléens et les opérations mathématiques sur tableaux."
   },
   {
-    "objectID": "doc/cours/analysedonneesnumpypandas.html#plan-du-cours-détaillé-première-partie",
-    "href": "doc/cours/analysedonneesnumpypandas.html#plan-du-cours-détaillé-première-partie",
-    "title": "Séance 3 : Analyse des données avec NumPy et Pandas",
-    "section": "2.2 Plan du cours détaillé (Première partie)",
-    "text": "2.2 Plan du cours détaillé (Première partie)\n\nIntroduction à NumPy\n\nQu’est-ce que NumPy ?\n\nNumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python.\nPermet de manipuler des tableaux multidimensionnels et d’exécuter des calculs rapides grâce à ses implémentations optimisées.\n\n\n\nPourquoi utiliser NumPy ?\n\nPerformance : Manipulation rapide des données grâce à des tableaux homogènes.\nFonctionnalités : Offre des outils pour les statistiques, algèbre linéaire, transformations, etc.\n\n\n\n\nInstallation et configuration\n\nInstallation de NumPy :\n\nVia pip :\npip install numpy\nTester l’installation :\nimport numpy as np\nprint(np.__version__)\n\nConvention d’importation :\n\nPar convention :\nimport numpy as np\n\nConfiguration de l’environnement :\n\nIDE recommandés : Jupyter Notebook, PyCharm, VS Code.\n\n\n\n\n\nCréation et manipulation des tableaux numériques\n\n1. Création de tableaux (Create)\n\nCréer un tableau 1D ou 2D :\n# Tableau 1D\na = np.array([1, 2, 3])\n\n# Tableau 2D\nb = np.array([[1, 2], [3, 4]])\nCréer des tableaux automatiquement :\n\nZeros et Ones :\nzeros = np.zeros((2, 3))  # Matrice 2x3 remplie de zéros\nones = np.ones((3, 3))   # Matrice 3x3 remplie de uns\nPlages de valeurs :\narange = np.arange(0, 10, 2)  # De 0 à 10 avec un pas de 2\nlinspace = np.linspace(0, 1, 5)  # 5 valeurs entre 0 et 1\nValeurs aléatoires :\nrandom = np.random.random((2, 3))  # Matrice 2x3 de valeurs uniformes [0, 1[\nnormal = np.random.randn(3, 3)  # Matrice 3x3 selon une distribution normale\n\n\n\n\n2. Lecture des tableaux (Read)\n\nAccéder à un élément :\nprint(a[0])  # Premier élément du tableau 1D\nprint(b[1, 1])  # Deuxième ligne, deuxième colonne\nSlicing :\n\nExtraction de sous-parties :\nprint(a[:2])  # Les deux premiers éléments\nprint(b[:, 1])  # Deuxième colonne\nprint(b[0, :])  # Première ligne\n\nInformations générales :\nprint(b.shape)  # Dimensions du tableau\nprint(b.size)   # Nombre total d'éléments\nprint(b.ndim)   # Nombre de dimensions\n\n\n\n\n\nIndexation et opérations sur les tableaux\n\n1. Modification des tableaux (Update)\n\nChanger un ou plusieurs éléments :\na[0] = 10  # Remplacer le premier élément par 10\nb[:, 1] = [7, 8]  # Remplacer la deuxième colonne\nModification conditionnelle :\na[a &gt; 2] = -1  # Remplacer les valeurs &gt; 2 par -1\n\n\n\n2. Suppression des éléments (Delete)\n\nSupprimer des éléments (copie) :\nc = np.delete(a, [0, 1])  # Supprimer les deux premiers éléments\nSupprimer des lignes ou colonnes :\nb = np.delete(b, 0, axis=0)  # Supprimer la première ligne\nb = np.delete(b, 1, axis=1)  # Supprimer la deuxième colonne\n\n\n\n\n\nOpérations mathématiques sur les tableaux\n\nOpérations élémentaires :\nd = np.array([1, 2, 3])\nprint(d + 10)  # Ajouter 10 à chaque élément\nprint(d * 2)   # Multiplier chaque élément par 2\nStatistiques :\nprint(np.sum(d))  # Somme des éléments\nprint(np.mean(d))  # Moyenne\nprint(np.max(d))   # Valeur maximale\nProduits matriciels :\ne = np.array([[1, 2], [3, 4]])\nf = np.array([[5, 6], [7, 8]])\nproduct = np.dot(e, f)  # Produit matriciel\nprint(product)\nMasques booléens :\nmask = d &gt; 1\nprint(d[mask])  # Affiche les éléments &gt; 1\n\n\n\n\nExercices pratiques\n\nCréation de tableaux :\n\nCréez un tableau 2D contenant les valeurs de 1 à 9, organisées en une matrice 3x3.\nAjoutez 5 à chaque élément de la matrice.\n\nIndexation et slicing :\n\nAccédez à la deuxième ligne de la matrice créée.\nRemplacez toutes les valeurs supérieures à 7 par 0.\n\nOpérations :\n\nCréez deux matrices aléatoires 3x3.\nCalculez leur produit matriciel.\n\n\n\n\n\nConseils pratiques\n\nPréférez les calculs vectoriels : Les boucles for classiques sont plus lentes que les opérations optimisées de NumPy.\nDocumentation officielle : Documentation NumPy.\n\n\nCette première partie du cours couvre les bases de NumPy et prépare les étudiant·e·s à la manipulation avancée des tableaux dans les étapes suivantes."
-  },
-  {
     "objectID": "doc/cours/analyse-donnees-numpy-pandas-slides.html#objectifs-pédagogiques",
     "href": "doc/cours/analyse-donnees-numpy-pandas-slides.html#objectifs-pédagogiques",
     "title": "Séance 3 : Analyse des données avec NumPy et Pandas",
@@ -203,11 +21,207 @@
     "text": "Objectifs pédagogiques\n\nComprendre les bases de l’utilisation de NumPy.\nManipuler efficacement des tableaux array pour optimiser les calculs.\nExplorer les concepts avancés comme les masques booléens et les opérations mathématiques sur tableaux."
   },
   {
-    "objectID": "doc/cours/analyse-donnees-numpy-pandas-slides.html#plan-du-cours-détaillé-première-partie",
-    "href": "doc/cours/analyse-donnees-numpy-pandas-slides.html#plan-du-cours-détaillé-première-partie",
-    "title": "Séance 3 : Analyse des données avec NumPy et Pandas",
-    "section": "Plan du cours détaillé (Première partie)",
-    "text": "Plan du cours détaillé (Première partie)"
+    "objectID": "doc/cours/introduction.html",
+    "href": "doc/cours/introduction.html",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "",
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).\n\n\n\n\n\n\n\n\nPython est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.\n\n\nUne variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d’y attribuer une valeur :\nx = 5\ny = \"Python\"\nprint(x, y)\n\n\n\n\nDans un script Python, tout ce qui suit le caractère # est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées commentaires et sont destinées à expliquer le code dans un langage humain.\n\n\n\n\nClarifier le code : Expliquez des portions complexes pour vous ou d’autres développeurs.\nDocumenter le fonctionnement : Fournir des indications sur le rôle d’un morceau de code ou d’une fonction.\nFaciliter la maintenance : Les commentaires rendent votre code plus compréhensible à long terme.\n\nLes commentaires ne sont pas exécutés par Python et n’affectent donc pas les performances du programme.\n\nPour ajouter un commentaire, commencez la ligne avec un #. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.\nExemple simple :\n# Ceci est un commentaire simple\nprint(\"Hello world!\")  # Affiche un message à l'écran\n\n# Déclaration de variables\nnom = \"Alice\"  # Nom de l'utilisateur\nage = 25       # Âge de l'utilisateur\n\n# Affichage des informations\nprint(f\"Nom : {nom}\")\nprint(f\"Âge : {age}\")\n\n# Cette partie affiche une salutation\nprint(\"Bonjour et bienvenue dans le cours de Python !\")\n\n\n\n\n\nSoyez concis et clair Vos commentaires doivent aller à l’essentiel et être compréhensibles.\n\n# Calcule la somme des éléments de la liste\ntotal = sum([1, 2, 3, 4])\n\n\nÉvitez les commentaires inutiles\n\nNe commentez pas des choses évidentes que le code lui-même exprime clairement.\nExemple inutile :\n# Attribue la valeur 5 à la variable x\nx = 5\n\nMettez à jour vos commentaires\n\nAssurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.\n\n\n\n\n\nCommentaires sur une ligne\n\nIls s’écrivent avec # au début de la ligne.\n# Ce programme affiche un message\nprint(\"Bienvenue en Python !\")\n\n\nCommentaires multilignes\n\nPour commenter plusieurs lignes, vous pouvez utiliser # au début de chaque ligne ou une chaîne de caractères triple (\"\"\" ou ''') si le commentaire est temporaire.\n# Début du programme\n# Ce script montre un exemple\n# avec des commentaires multilignes.\nOu avec une chaîne triple :\n\"\"\"\nCe script illustre :\n- L'utilisation de variables\n- L'utilisation des commentaires\n\"\"\""
+  },
+  {
+    "objectID": "doc/cours/introduction.html#introduction",
+    "href": "doc/cours/introduction.html#introduction",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "",
+    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#premiers-pas-avec-python",
+    "href": "doc/cours/introduction.html#premiers-pas-avec-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "",
+    "text": "Python est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.\n\n\nUne variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d’y attribuer une valeur :\nx = 5\ny = \"Python\"\nprint(x, y)\n\n\n\n\nDans un script Python, tout ce qui suit le caractère # est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées commentaires et sont destinées à expliquer le code dans un langage humain.\n\n\n\n\nClarifier le code : Expliquez des portions complexes pour vous ou d’autres développeurs.\nDocumenter le fonctionnement : Fournir des indications sur le rôle d’un morceau de code ou d’une fonction.\nFaciliter la maintenance : Les commentaires rendent votre code plus compréhensible à long terme.\n\nLes commentaires ne sont pas exécutés par Python et n’affectent donc pas les performances du programme.\n\nPour ajouter un commentaire, commencez la ligne avec un #. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.\nExemple simple :\n# Ceci est un commentaire simple\nprint(\"Hello world!\")  # Affiche un message à l'écran\n\n# Déclaration de variables\nnom = \"Alice\"  # Nom de l'utilisateur\nage = 25       # Âge de l'utilisateur\n\n# Affichage des informations\nprint(f\"Nom : {nom}\")\nprint(f\"Âge : {age}\")\n\n# Cette partie affiche une salutation\nprint(\"Bonjour et bienvenue dans le cours de Python !\")\n\n\n\n\n\nSoyez concis et clair Vos commentaires doivent aller à l’essentiel et être compréhensibles.\n\n# Calcule la somme des éléments de la liste\ntotal = sum([1, 2, 3, 4])\n\n\nÉvitez les commentaires inutiles\n\nNe commentez pas des choses évidentes que le code lui-même exprime clairement.\nExemple inutile :\n# Attribue la valeur 5 à la variable x\nx = 5\n\nMettez à jour vos commentaires\n\nAssurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.\n\n\n\n\n\nCommentaires sur une ligne\n\nIls s’écrivent avec # au début de la ligne.\n# Ce programme affiche un message\nprint(\"Bienvenue en Python !\")\n\n\nCommentaires multilignes\n\nPour commenter plusieurs lignes, vous pouvez utiliser # au début de chaque ligne ou une chaîne de caractères triple (\"\"\" ou ''') si le commentaire est temporaire.\n# Début du programme\n# Ce script montre un exemple\n# avec des commentaires multilignes.\nOu avec une chaîne triple :\n\"\"\"\nCe script illustre :\n- L'utilisation de variables\n- L'utilisation des commentaires\n\"\"\""
+  },
+  {
+    "objectID": "doc/cours/introduction.html#quest-ce-quune-variable",
+    "href": "doc/cours/introduction.html#quest-ce-quune-variable",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "2.1 Qu’est-ce qu’une variable ?",
+    "text": "2.1 Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#déclaration-dune-variable",
+    "href": "doc/cours/introduction.html#déclaration-dune-variable",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "2.2 Déclaration d’une variable",
+    "text": "2.2 Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#les-types-de-base-en-python",
+    "href": "doc/cours/introduction.html#les-types-de-base-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "2.3 Les Types de Base en Python",
+    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\nComment connaître le type d’une variable en Python ?\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique\n\nCes types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.\n\n\nChaînes de caractères (str)\nLes chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\ntype(nom)\n\n\n\n\nEntiers (int)\nLes entiers représentent des nombres sans décimales, qu’ils soient positifs ou négatifs.\nExemple :\n# Déclaration de variables\nage = 25        # Entier\ntype(age)\n\n\n\nFlottants (float)\nLes flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions. Exemple :\n# Déclaration de variables\npi = 3.14       # Nombre flottant\ntype(pi)\n\n\n\nBooléens (bool)\nLes booléens sont des valeurs logiques, pouvant être True (vrai) ou False (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d’un programme. Exemple :\n# Déclaration de variables\nest_actif = True  # Booléen\ntype(est_actif)\n\n\n\nRésumé des types de base\n\n\n\nType\nDescription\n\n\n\n\nstr\nChaîne de caractères\n\n\nint\nNombres entiers\n\n\nfloat\nNombres décimaux\n\n\nbool\nValeurs logiques (True/False)"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#la-fonction-print",
+    "href": "doc/cours/introduction.html#la-fonction-print",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.1 La fonction print()",
+    "text": "3.1 La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#afficher-plusieurs-éléments",
+    "href": "doc/cours/introduction.html#afficher-plusieurs-éléments",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.2 Afficher plusieurs éléments",
+    "text": "3.2 Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#formatage-des-chaînes",
+    "href": "doc/cours/introduction.html#formatage-des-chaînes",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.3 Formatage des chaînes",
+    "text": "3.3 Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#caractères-spéciaux",
+    "href": "doc/cours/introduction.html#caractères-spéciaux",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.4 Caractères spéciaux",
+    "text": "3.4 Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#contrôler-la-fin-de-laffichage",
+    "href": "doc/cours/introduction.html#contrôler-la-fin-de-laffichage",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.5 Contrôler la fin de l’affichage",
+    "text": "3.5 Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
+  },
+  {
+    "objectID": "doc/cours/introduction.html#résumé",
+    "href": "doc/cours/introduction.html#résumé",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "3.6 Résumé",
+    "text": "3.6 Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#les-structures-conditionnelles",
+    "href": "doc/cours/introduction.html#les-structures-conditionnelles",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "4.1 Les Structures conditionnelles",
+    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie\n\n\n\nExemple simple\nnombre = 10\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\n\n\n\nAjout de else\nL’instruction else permet d’exécuter un bloc de code si la condition est fausse.\nnombre = -5\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelse:\n    print(\"Le nombre est négatif ou nul.\")\n\n\n\nAjout de elif\nL’instruction elif permet de vérifier plusieurs conditions successives.\nnombre = 0\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelif nombre == 0:\n    print(\"Le nombre est nul.\")\nelse:\n    print(\"Le nombre est négatif.\")\n\n\n\n\nConditions imbriquées\nLes if peuvent être imbriqués pour vérifier des conditions multiples.\nage = 20\ncitoyen = True\n\nif age &gt;= 18:\n    if citoyen:\n        print(\"Vous pouvez voter.\")\n    else:\n        print(\"Vous ne pouvez pas voter, même si vous êtes majeur.\")\nelse:\n    print(\"Vous êtes mineur.\")\n\n\n\nComparaisons en Python\nLes opérateurs de comparaison permettent d’évaluer des expressions.\n\n\n\nOpérateur\nDescription\n\n\n\n\n==\nÉgalité\n\n\n!=\nDifférence\n\n\n&lt;\nInférieur à\n\n\n&lt;=\nInférieur ou égal à\n\n\n&gt;\nSupérieur à\n\n\n&gt;=\nSupérieur ou égal à\n\n\n\n\n\n\nOpérateurs logiques\nLes opérateurs logiques permettent de combiner plusieurs conditions.\n\n\n\nOpérateur\nDescription\n\n\n\n\nand\nToutes les conditions doivent être vraies.\n\n\nor\nAu moins une des conditions doit être vraie.\n\n\nnot\nInverse le résultat de la condition."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#les-boucles-en-python",
+    "href": "doc/cours/introduction.html#les-boucles-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "4.2 Les Boucles en Python",
+    "text": "4.2 Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations.\n\n\nLa boucle for\n\nLa boucle for est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).\nChaque élément de la séquence est traité successivement.\n\n\n\n\nLa boucle while\n\nLa boucle while répète un bloc de code tant qu’une condition est vraie.\nAttention aux boucles infinies : assurez-vous que la condition de sortie est atteinte.\n\n\n\n\nContrôle des boucles\n\n\n\n\n\n\n\nInstruction\nDescription\n\n\n\n\nbreak\nInterrompt la boucle immédiatement, même si la condition n’est pas terminée.\n\n\ncontinue\nPasse à l’itération suivante sans exécuter le reste du bloc de code actuel.\n\n\npass\nNe fait rien. Utilisé comme espace réservé dans une boucle ou une condition."
+  },
+  {
+    "objectID": "doc/cours/introduction.html#résumé-1",
+    "href": "doc/cours/introduction.html#résumé-1",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "4.3 Résumé",
+    "text": "4.3 Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#introduction",
+    "href": "doc/cours/introduction-slides.html#introduction",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Introduction",
+    "text": "Introduction\nPython est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#premiers-pas-avec-python",
+    "href": "doc/cours/introduction-slides.html#premiers-pas-avec-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Premiers pas avec Python",
+    "text": "Premiers pas avec Python\nPython est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#quest-ce-quune-variable",
+    "href": "doc/cours/introduction-slides.html#quest-ce-quune-variable",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Qu’est-ce qu’une variable ?",
+    "text": "Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#déclaration-dune-variable",
+    "href": "doc/cours/introduction-slides.html#déclaration-dune-variable",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Déclaration d’une variable",
+    "text": "Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#les-types-de-base-en-python",
+    "href": "doc/cours/introduction-slides.html#les-types-de-base-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Les Types de Base en Python",
+    "text": "Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#la-fonction-print",
+    "href": "doc/cours/introduction-slides.html#la-fonction-print",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "La fonction print()",
+    "text": "La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#afficher-plusieurs-éléments",
+    "href": "doc/cours/introduction-slides.html#afficher-plusieurs-éléments",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Afficher plusieurs éléments",
+    "text": "Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#formatage-des-chaînes",
+    "href": "doc/cours/introduction-slides.html#formatage-des-chaînes",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Formatage des chaînes",
+    "text": "Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#caractères-spéciaux",
+    "href": "doc/cours/introduction-slides.html#caractères-spéciaux",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Caractères spéciaux",
+    "text": "Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#contrôler-la-fin-de-laffichage",
+    "href": "doc/cours/introduction-slides.html#contrôler-la-fin-de-laffichage",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Contrôler la fin de l’affichage",
+    "text": "Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#résumé",
+    "href": "doc/cours/introduction-slides.html#résumé",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Résumé",
+    "text": "Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#les-structures-conditionnelles",
+    "href": "doc/cours/introduction-slides.html#les-structures-conditionnelles",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Les Structures conditionnelles",
+    "text": "Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#les-boucles-en-python",
+    "href": "doc/cours/introduction-slides.html#les-boucles-en-python",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Les Boucles en Python",
+    "text": "Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations."
+  },
+  {
+    "objectID": "doc/cours/introduction-slides.html#résumé-1",
+    "href": "doc/cours/introduction-slides.html#résumé-1",
+    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "section": "Résumé",
+    "text": "Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html",
@@ -413,6 +427,90 @@
     "text": "Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction"
   },
   {
+    "objectID": "doc/tp/tp1.html",
+    "href": "doc/tp/tp1.html",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données.\n\n\nCe fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python\n\n\n\n\nDans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données\n\n\n\n\nÀ la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
+    "href": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Ce fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
+    "href": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#objectif",
+    "href": "doc/tp/tp1.html#objectif",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
+  },
+  {
+    "objectID": "doc/tp/tp3.html",
+    "href": "doc/tp/tp3.html",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
+    "href": "doc/tp/tp3.html#objectifs-du-tp",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
+    "href": "doc/tp/tp3.html#introduction-à-numpy",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#création-de-tableaux",
+    "href": "doc/tp/tp3.html#création-de-tableaux",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#accès-et-modifications",
+    "href": "doc/tp/tp3.html#accès-et-modifications",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#exercices-pratiques",
+    "href": "doc/tp/tp3.html#exercices-pratiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#récapitulatif",
+    "href": "doc/tp/tp3.html#récapitulatif",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Programmation avec Python: Analyse de données et Data visualisation",
@@ -427,207 +525,53 @@
     "text": "Contenu du cours\n\nIntroduction à Python\n\nPrésentation et installation\nVariables, types de données, opérateurs\n\nStructures de contrôle\n\nConditions (if, elif, else)\nBoucles (for, while)\nGestion des erreurs (try, except)\n\nLes fonctions\n\nDéfinir et appeler des fonctions\nParamètres, valeurs de retour\n\nManipulation de données avec pandas\n\nChargement de fichiers CSV/Excel\nNettoyage des données (valeurs manquantes, transformations)\nSélection et filtrage des données\n\nVisualisation des données\n\nGraphiques avec Matplotlib\nVisualisation avancée avec Seaborn\n\nProgrammation orientée objet (POO)\n\nDéfinition de classes, objets, méthodes\n\nIntroduction au Machine Learning avec Python\n\nBibliothèques essentielles : scikit-learn\nPréparation des données pour le ML (normalisation, division en train/test)\nModèles supervisés : régression linéaire et classification (KNN)\nÉvaluation des modèles : métriques (MAE, R², précision, rappel)\nNotions de surapprentissage et régularisation\n\nProjet final\n\nNettoyage, exploration, visualisation et modélisation d’un dataset"
   },
   {
-    "objectID": "doc/cours/introduction-slides.html#introduction",
-    "href": "doc/cours/introduction-slides.html#introduction",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Introduction",
-    "text": "Introduction\nPython est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#premiers-pas-avec-python",
-    "href": "doc/cours/introduction-slides.html#premiers-pas-avec-python",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Premiers pas avec Python",
-    "text": "Premiers pas avec Python\nPython est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#quest-ce-quune-variable",
-    "href": "doc/cours/introduction-slides.html#quest-ce-quune-variable",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Qu’est-ce qu’une variable ?",
-    "text": "Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#déclaration-dune-variable",
-    "href": "doc/cours/introduction-slides.html#déclaration-dune-variable",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Déclaration d’une variable",
-    "text": "Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#les-types-de-base-en-python",
-    "href": "doc/cours/introduction-slides.html#les-types-de-base-en-python",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Les Types de Base en Python",
-    "text": "Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#la-fonction-print",
-    "href": "doc/cours/introduction-slides.html#la-fonction-print",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "La fonction print()",
-    "text": "La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#afficher-plusieurs-éléments",
-    "href": "doc/cours/introduction-slides.html#afficher-plusieurs-éléments",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Afficher plusieurs éléments",
-    "text": "Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#formatage-des-chaînes",
-    "href": "doc/cours/introduction-slides.html#formatage-des-chaînes",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Formatage des chaînes",
-    "text": "Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#caractères-spéciaux",
-    "href": "doc/cours/introduction-slides.html#caractères-spéciaux",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Caractères spéciaux",
-    "text": "Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#contrôler-la-fin-de-laffichage",
-    "href": "doc/cours/introduction-slides.html#contrôler-la-fin-de-laffichage",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Contrôler la fin de l’affichage",
-    "text": "Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#résumé",
-    "href": "doc/cours/introduction-slides.html#résumé",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Résumé",
-    "text": "Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#les-structures-conditionnelles",
-    "href": "doc/cours/introduction-slides.html#les-structures-conditionnelles",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Les Structures conditionnelles",
-    "text": "Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#les-boucles-en-python",
-    "href": "doc/cours/introduction-slides.html#les-boucles-en-python",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Les Boucles en Python",
-    "text": "Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations."
-  },
-  {
-    "objectID": "doc/cours/introduction-slides.html#résumé-1",
-    "href": "doc/cours/introduction-slides.html#résumé-1",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "Résumé",
-    "text": "Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
-  },
-  {
-    "objectID": "doc/cours/introduction.html",
-    "href": "doc/cours/introduction.html",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "objectID": "doc/tp/tp2.html",
+    "href": "doc/tp/tp2.html",
+    "title": "Fonctions, Modules et POO",
     "section": "",
-    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.).\n\n\n\n\n\n\n\n\nPython est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.\n\n\nUne variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d’y attribuer une valeur :\nx = 5\ny = \"Python\"\nprint(x, y)\n\n\n\n\nDans un script Python, tout ce qui suit le caractère # est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées commentaires et sont destinées à expliquer le code dans un langage humain.\n\n\n\n\nClarifier le code : Expliquez des portions complexes pour vous ou d’autres développeurs.\nDocumenter le fonctionnement : Fournir des indications sur le rôle d’un morceau de code ou d’une fonction.\nFaciliter la maintenance : Les commentaires rendent votre code plus compréhensible à long terme.\n\nLes commentaires ne sont pas exécutés par Python et n’affectent donc pas les performances du programme.\n\nPour ajouter un commentaire, commencez la ligne avec un #. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.\nExemple simple :\n# Ceci est un commentaire simple\nprint(\"Hello world!\")  # Affiche un message à l'écran\n\n# Déclaration de variables\nnom = \"Alice\"  # Nom de l'utilisateur\nage = 25       # Âge de l'utilisateur\n\n# Affichage des informations\nprint(f\"Nom : {nom}\")\nprint(f\"Âge : {age}\")\n\n# Cette partie affiche une salutation\nprint(\"Bonjour et bienvenue dans le cours de Python !\")\n\n\n\n\n\nSoyez concis et clair Vos commentaires doivent aller à l’essentiel et être compréhensibles.\n\n# Calcule la somme des éléments de la liste\ntotal = sum([1, 2, 3, 4])\n\n\nÉvitez les commentaires inutiles\n\nNe commentez pas des choses évidentes que le code lui-même exprime clairement.\nExemple inutile :\n# Attribue la valeur 5 à la variable x\nx = 5\n\nMettez à jour vos commentaires\n\nAssurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.\n\n\n\n\n\nCommentaires sur une ligne\n\nIls s’écrivent avec # au début de la ligne.\n# Ce programme affiche un message\nprint(\"Bienvenue en Python !\")\n\n\nCommentaires multilignes\n\nPour commenter plusieurs lignes, vous pouvez utiliser # au début de chaque ligne ou une chaîne de caractères triple (\"\"\" ou ''') si le commentaire est temporaire.\n# Début du programme\n# Ce script montre un exemple\n# avec des commentaires multilignes.\nOu avec une chaîne triple :\n\"\"\"\nCe script illustre :\n- L'utilisation de variables\n- L'utilisation des commentaires\n\"\"\""
+    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\n\n\nÉcrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré.\n\n\n\n\n\n\n\n\nDéfinissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
   },
   {
-    "objectID": "doc/cours/introduction.html#introduction",
-    "href": "doc/cours/introduction.html#introduction",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "objectID": "doc/tp/tp2.html#objectifs",
+    "href": "doc/tp/tp2.html#objectifs",
+    "title": "Fonctions, Modules et POO",
     "section": "",
-    "text": "Python est un langage de programmation polyvalent, apprécié pour sa simplicité et sa lisibilité. Il est utilisé dans des domaines variés comme le développement web, la data science, et l’intelligence artificielle.\n\n\n\n\nPython est un langage interprété, open source, et multiplateforme.\nCréé par Guido van Rossum en 1989 (première version en 1991).\nPoints forts :\n\nSyntaxe simple et lisible.\nLarge écosystème de bibliothèques.\n\n\n\n\n\n\n\nPratique régulière : Codez régulièrement pour solidifier vos bases.\nExplorez des projets simples : Calculatrice, jeu de devinettes, gestion d’inventaire.\nUtilisez les ressources disponibles :\n\nDocumentation officielle : python.org/doc.\nPlateformes d’exercices : LeetCode, Hackerrank.\n\n\n\n\n\n\n\n\n\nTéléchargez Python depuis python.org.\n\n\n\n\n\n\n\n\nQu’est-ce que VS Code ?\n\nUn éditeur de code léger, puissant et extensible, développé par Microsoft.\n\nIdéal pour écrire et exécuter des scripts Python grâce à ses extensions.\n\nInstaller VS Code :\n\nTéléchargez-le sur code.visualstudio.com.\n\nInstallez l’extension Python via le Visual Studio Code Marketplace :\n\nOuvrez VS Code.\nAllez dans l’onglet des extensions (icône avec des blocs).\nRecherchez Python et cliquez sur “Installer”.\n\n\n\n\n\n\n\n\nQu’est-ce qu’Anaconda ?\n\nUne distribution Python incluant Jupyter Notebook, des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.) et un gestionnaire d’environnements.\n\nIdéal pour la data science et le machine learning.\n\nInstaller Anaconda :\n\nTéléchargez-le depuis anaconda.com.\n\nSuivez les instructions pour votre système d’exploitation (Windows, macOS, Linux).\n\nAvantages :\n\nConfiguration simplifiée pour débuter.\n\nGestion facile des environnements virtuels avec conda.\n\n\n\n\n\n\n\nQu’est-ce que Jupyter Notebook ?\n\nUn environnement interactif où vous pouvez écrire et exécuter du code Python dans des blocs (appelés “cellules”).\n\nIdéal pour la data science et les visualisations.\n\nInstaller Jupyter Notebook :\n\nSi vous avez Anaconda, Jupyter est préinstallé.\n\nSinon, installez-le avec pip :\npip install notebook\n\n\n\n\n\n\n\nQu’est-ce que Google Colab ?\n\nUn environnement en ligne gratuit pour coder en Python, développé par Google.\n\nAucun besoin d’installer Python ou Jupyter : tout fonctionne dans votre navigateur.\n\nAvantage : accès à des GPU gratuits pour le machine learning.\n\nAccéder à Google Colab :\n\nRendez-vous sur colab.research.google.com.\n\nConnectez-vous avec un compte Google.\n\nCréez un nouveau notebook en cliquant sur New Notebook.\n\nFonctionnalités clés :\n\nSauvegarde automatique sur Google Drive.\n\nSupport intégré des bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)."
+    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
   },
   {
-    "objectID": "doc/cours/introduction.html#premiers-pas-avec-python",
-    "href": "doc/cours/introduction.html#premiers-pas-avec-python",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
+    "objectID": "doc/tp/tp2.html#partie-1-fonctions",
+    "href": "doc/tp/tp2.html#partie-1-fonctions",
+    "title": "Fonctions, Modules et POO",
     "section": "",
-    "text": "Python est un langage polyvalent, lisible et largement utilisé. Cette section vous guide à travers les bases essentielles pour bien commencer avec Python.\n\n\nUne variable est un conteneur permettant de stocker des données. En Python, il suffit de nommer la variable et d’y attribuer une valeur :\nx = 5\ny = \"Python\"\nprint(x, y)\n\n\n\n\nDans un script Python, tout ce qui suit le caractère # est ignoré par l’interpréteur jusqu’à la fin de la ligne. Ces lignes sont appelées commentaires et sont destinées à expliquer le code dans un langage humain.\n\n\n\n\nClarifier le code : Expliquez des portions complexes pour vous ou d’autres développeurs.\nDocumenter le fonctionnement : Fournir des indications sur le rôle d’un morceau de code ou d’une fonction.\nFaciliter la maintenance : Les commentaires rendent votre code plus compréhensible à long terme.\n\nLes commentaires ne sont pas exécutés par Python et n’affectent donc pas les performances du programme.\n\nPour ajouter un commentaire, commencez la ligne avec un #. Python ignorera tout ce qui suit ce caractère jusqu’à la fin de la ligne.\nExemple simple :\n# Ceci est un commentaire simple\nprint(\"Hello world!\")  # Affiche un message à l'écran\n\n# Déclaration de variables\nnom = \"Alice\"  # Nom de l'utilisateur\nage = 25       # Âge de l'utilisateur\n\n# Affichage des informations\nprint(f\"Nom : {nom}\")\nprint(f\"Âge : {age}\")\n\n# Cette partie affiche une salutation\nprint(\"Bonjour et bienvenue dans le cours de Python !\")\n\n\n\n\n\nSoyez concis et clair Vos commentaires doivent aller à l’essentiel et être compréhensibles.\n\n# Calcule la somme des éléments de la liste\ntotal = sum([1, 2, 3, 4])\n\n\nÉvitez les commentaires inutiles\n\nNe commentez pas des choses évidentes que le code lui-même exprime clairement.\nExemple inutile :\n# Attribue la valeur 5 à la variable x\nx = 5\n\nMettez à jour vos commentaires\n\nAssurez-vous que vos commentaires reflètent toujours le fonctionnement réel du code, surtout après des modifications.\n\n\n\n\n\nCommentaires sur une ligne\n\nIls s’écrivent avec # au début de la ligne.\n# Ce programme affiche un message\nprint(\"Bienvenue en Python !\")\n\n\nCommentaires multilignes\n\nPour commenter plusieurs lignes, vous pouvez utiliser # au début de chaque ligne ou une chaîne de caractères triple (\"\"\" ou ''') si le commentaire est temporaire.\n# Début du programme\n# Ce script montre un exemple\n# avec des commentaires multilignes.\nOu avec une chaîne triple :\n\"\"\"\nCe script illustre :\n- L'utilisation de variables\n- L'utilisation des commentaires\n\"\"\""
+    "text": "Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré."
   },
   {
-    "objectID": "doc/cours/introduction.html#quest-ce-quune-variable",
-    "href": "doc/cours/introduction.html#quest-ce-quune-variable",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "2.1 Qu’est-ce qu’une variable ?",
-    "text": "2.1 Qu’est-ce qu’une variable ?\nUne variable est un conteneur permettant de stocker une valeur ou des données. En Python, une variable peut contenir différents types de données comme des nombres, du texte, ou des structures complexes."
+    "objectID": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
+    "href": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
   },
   {
-    "objectID": "doc/cours/introduction.html#déclaration-dune-variable",
-    "href": "doc/cours/introduction.html#déclaration-dune-variable",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "2.2 Déclaration d’une variable",
-    "text": "2.2 Déclaration d’une variable\nEn Python, il suffit d’utiliser un nom valide et de lui assigner une valeur avec le symbole =.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\nage = 25        # Entier\npi = 3.14       # Nombre flottant\nest_actif = True  # Booléen"
+    "objectID": "doc/glossaire.html",
+    "href": "doc/glossaire.html",
+    "title": "Glossaire",
+    "section": "",
+    "text": "🚧"
   },
   {
-    "objectID": "doc/cours/introduction.html#les-types-de-base-en-python",
-    "href": "doc/cours/introduction.html#les-types-de-base-en-python",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "2.3 Les Types de Base en Python",
-    "text": "2.3 Les Types de Base en Python\nPython propose plusieurs types de données de base, essentiels pour la manipulation des informations.\n\n\nComment connaître le type d’une variable en Python ?\nPython propose une fonction intégrée appelée type() pour déterminer le type de données d’une variable.\n\n\nUtilisation de type()\nLa fonction type() prend une variable en argument et retourne son type.\nExemples de types que vous pourriez rencontrer : - str : Chaîne de caractères - int : Entier - float : Nombre décimal - bool : Valeur logique\n\nCes types de base constituent les fondations des programmes en Python et sont utilisés dans presque tous les scripts.\n\n\nChaînes de caractères (str)\nLes chaînes de caractères permettent de stocker du texte. Elles peuvent être utilisées pour manipuler des mots, des phrases ou des caractères individuels.\nExemple :\n# Déclaration de variables\nnom = \"Alice\"   # Chaîne de caractères\ntype(nom)\n\n\n\n\nEntiers (int)\nLes entiers représentent des nombres sans décimales, qu’ils soient positifs ou négatifs.\nExemple :\n# Déclaration de variables\nage = 25        # Entier\ntype(age)\n\n\n\nFlottants (float)\nLes flottants représentent des nombres avec des décimales, idéaux pour des calculs nécessitant des fractions. Exemple :\n# Déclaration de variables\npi = 3.14       # Nombre flottant\ntype(pi)\n\n\n\nBooléens (bool)\nLes booléens sont des valeurs logiques, pouvant être True (vrai) ou False (faux). Ils sont souvent utilisés pour effectuer des comparaisons ou contrôler le flux d’un programme. Exemple :\n# Déclaration de variables\nest_actif = True  # Booléen\ntype(est_actif)\n\n\n\nRésumé des types de base\n\n\n\nType\nDescription\n\n\n\n\nstr\nChaîne de caractères\n\n\nint\nNombres entiers\n\n\nfloat\nNombres décimaux\n\n\nbool\nValeurs logiques (True/False)"
+    "objectID": "doc/glossaire.html#python",
+    "href": "doc/glossaire.html#python",
+    "title": "Glossaire",
+    "section": "Python",
+    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
   },
   {
-    "objectID": "doc/cours/introduction.html#la-fonction-print",
-    "href": "doc/cours/introduction.html#la-fonction-print",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "3.1 La fonction print()",
-    "text": "3.1 La fonction print()\nprint() est utilisée pour afficher des informations dans la console. Elle permet de montrer le contenu de variables, des messages, ou des résultats de calcul.\nExemple :\nprint(valeur)"
-  },
-  {
-    "objectID": "doc/cours/introduction.html#afficher-plusieurs-éléments",
-    "href": "doc/cours/introduction.html#afficher-plusieurs-éléments",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "3.2 Afficher plusieurs éléments",
-    "text": "3.2 Afficher plusieurs éléments\nVous pouvez afficher plusieurs éléments en même temps en les séparant par des virgules. Python ajoute automatiquement un espace entre ces éléments.\nExemple :\nprint(\"Bonjour\", \"Python\", 3.10)"
-  },
-  {
-    "objectID": "doc/cours/introduction.html#formatage-des-chaînes",
-    "href": "doc/cours/introduction.html#formatage-des-chaînes",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "3.3 Formatage des chaînes",
-    "text": "3.3 Formatage des chaînes\nPour des affichages dynamiques et lisibles, plusieurs méthodes de formatage sont disponibles :\n\nConcaténation avec + : Combine des chaînes de caractères.\n\nnom = \"Alice\"\nprint(\"Bonjour, \" + nom)\n\nSubstitution avec f-strings : Insère directement des variables dans une chaîne avec une syntaxe claire.\n\nnom = \"Alice\"\nage = 25\nprint(f\"Bonjour, je m'appelle {nom} et j'ai {age} ans.\")\n\nMéthode format() : Insère des variables dans une chaîne avec des positions spécifiques.\n\nnom = \"Alice\"\nage = 25\nprint(\"Bonjour, je m'appelle {} et j'ai {} ans.\".format(nom, age))"
-  },
-  {
-    "objectID": "doc/cours/introduction.html#caractères-spéciaux",
-    "href": "doc/cours/introduction.html#caractères-spéciaux",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "3.4 Caractères spéciaux",
-    "text": "3.4 Caractères spéciaux\nCertaines séquences spéciales permettent de modifier l’affichage : - \\\\n : Effectue un saut de ligne. - \\\\t : Ajoute une tabulation.\nCes caractères sont utiles pour structurer l’affichage dans la console.\nprint(\"Bonjour\\\\nPython\")\nprint(\"Nom:\\\\tAlice\")"
-  },
-  {
-    "objectID": "doc/cours/introduction.html#contrôler-la-fin-de-laffichage",
-    "href": "doc/cours/introduction.html#contrôler-la-fin-de-laffichage",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "3.5 Contrôler la fin de l’affichage",
-    "text": "3.5 Contrôler la fin de l’affichage\nPar défaut, chaque appel à print() termine par un saut de ligne. Il est possible de modifier ce comportement pour afficher plusieurs éléments sur la même ligne.\nprint(\"Bonjour\", end=\" \")\nprint(\"Python !\")"
-  },
-  {
-    "objectID": "doc/cours/introduction.html#résumé",
-    "href": "doc/cours/introduction.html#résumé",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "3.6 Résumé",
-    "text": "3.6 Résumé\n\n\n\n\n\n\n\nMéthode\nDescription\n\n\n\n\nprint()\nAffiche des données dans la console.\n\n\nConcaténation\nCombine plusieurs chaînes de caractères.\n\n\nf-strings\nInsère des variables directement dans une chaîne.\n\n\n.format()\nFormate une chaîne avec des variables.\n\n\nCaractères spéciaux\nModifie l’apparence (nouvelle ligne, tabulation)."
-  },
-  {
-    "objectID": "doc/cours/introduction.html#les-structures-conditionnelles",
-    "href": "doc/cours/introduction.html#les-structures-conditionnelles",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "4.1 Les Structures conditionnelles",
-    "text": "4.1 Les Structures conditionnelles\nLes structures conditionnelles permettent d’exécuter des blocs de code uniquement si une condition est remplie.\n\n\nLa condition if\nLa condition if est utilisée pour vérifier si une expression est vraie. Si c’est le cas, le bloc de code associé est exécuté.\n\nSyntaxe de base\nif condition:\n    # Code à exécuter si la condition est vraie\n\n\n\nExemple simple\nnombre = 10\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\n\n\n\nAjout de else\nL’instruction else permet d’exécuter un bloc de code si la condition est fausse.\nnombre = -5\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelse:\n    print(\"Le nombre est négatif ou nul.\")\n\n\n\nAjout de elif\nL’instruction elif permet de vérifier plusieurs conditions successives.\nnombre = 0\n\nif nombre &gt; 0:\n    print(\"Le nombre est positif.\")\nelif nombre == 0:\n    print(\"Le nombre est nul.\")\nelse:\n    print(\"Le nombre est négatif.\")\n\n\n\n\nConditions imbriquées\nLes if peuvent être imbriqués pour vérifier des conditions multiples.\nage = 20\ncitoyen = True\n\nif age &gt;= 18:\n    if citoyen:\n        print(\"Vous pouvez voter.\")\n    else:\n        print(\"Vous ne pouvez pas voter, même si vous êtes majeur.\")\nelse:\n    print(\"Vous êtes mineur.\")\n\n\n\nComparaisons en Python\nLes opérateurs de comparaison permettent d’évaluer des expressions.\n\n\n\nOpérateur\nDescription\n\n\n\n\n==\nÉgalité\n\n\n!=\nDifférence\n\n\n&lt;\nInférieur à\n\n\n&lt;=\nInférieur ou égal à\n\n\n&gt;\nSupérieur à\n\n\n&gt;=\nSupérieur ou égal à\n\n\n\n\n\n\nOpérateurs logiques\nLes opérateurs logiques permettent de combiner plusieurs conditions.\n\n\n\nOpérateur\nDescription\n\n\n\n\nand\nToutes les conditions doivent être vraies.\n\n\nor\nAu moins une des conditions doit être vraie.\n\n\nnot\nInverse le résultat de la condition."
-  },
-  {
-    "objectID": "doc/cours/introduction.html#les-boucles-en-python",
-    "href": "doc/cours/introduction.html#les-boucles-en-python",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "4.2 Les Boucles en Python",
-    "text": "4.2 Les Boucles en Python\nLes boucles permettent de répéter des actions tant qu’une condition est vraie ou pour un nombre fixe d’itérations.\n\n\nLa boucle for\n\nLa boucle for est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).\nChaque élément de la séquence est traité successivement.\n\n\n\n\nLa boucle while\n\nLa boucle while répète un bloc de code tant qu’une condition est vraie.\nAttention aux boucles infinies : assurez-vous que la condition de sortie est atteinte.\n\n\n\n\nContrôle des boucles\n\n\n\n\n\n\n\nInstruction\nDescription\n\n\n\n\nbreak\nInterrompt la boucle immédiatement, même si la condition n’est pas terminée.\n\n\ncontinue\nPasse à l’itération suivante sans exécuter le reste du bloc de code actuel.\n\n\npass\nNe fait rien. Utilisé comme espace réservé dans une boucle ou une condition."
-  },
-  {
-    "objectID": "doc/cours/introduction.html#résumé-1",
-    "href": "doc/cours/introduction.html#résumé-1",
-    "title": "Introduction à Python : Bases et Structures Fondamentales",
-    "section": "4.3 Résumé",
-    "text": "4.3 Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
+    "objectID": "doc/glossaire.html#structures-de-contrôle",
+    "href": "doc/glossaire.html#structures-de-contrôle",
+    "title": "Glossaire",
+    "section": "Structures de contrôle",
+    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
   },
   {
     "objectID": "doc/cours/typedonnees-slides.html#les-listes-list",
@@ -693,80 +637,122 @@
     "text": "4 Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc.\n\n\nCréation d’Ensembles\nUn ensemble peut être créé en utilisant la fonction set() ou en plaçant des éléments entre accolades {}.\nExemple :\nmon_set = {1, 2, 3, 4}\nprint(mon_set)  # Affiche : {1, 2, 3, 4}\n\n# Création d'un ensemble à partir d'une liste\nmon_set = set([1, 2, 2, 3])\nprint(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)\n\n\nOpérations CRUD sur les Ensembles\nLes ensembles prennent en charge les opérations fondamentales CRUD (Create, Read, Update, Delete) :\n\nCreate (Créer) : Ajouter de nouveaux éléments.\nRead (Lire) : Vérifier la présence d’un élément.\nUpdate (Mettre à jour) : Ajouter ou supprimer des éléments.\nDelete (Supprimer) : Supprimer des éléments ou réinitialiser l’ensemble.\n\n\nCréer un Ensemble (Create)\nExemple :\n# Créer un ensemble vide\nmon_set = set()\n\n# Ajouter des éléments\nmon_set.add(1)\nmon_set.add(2)\nprint(mon_set)  # Affiche : {1, 2}\n\n\nLire les Données (Read)\nVérifier la présence d’un élément :\nmon_set = {1, 2, 3}\nprint(1 in mon_set)  # Affiche : True\nprint(4 in mon_set)  # Affiche : False\nParcourir un ensemble avec une boucle :\nfor element in mon_set:\n    print(element)\nTaille de l’ensemble :\nprint(len(mon_set))  # Affiche : 3\n\n\nMettre à Jour un Ensemble (Update)\nAjouter des éléments :\nmon_set = {1, 2}\nmon_set.add(3)  # Ajoute un seul élément\nmon_set.update([4, 5])  # Ajoute plusieurs éléments\nprint(mon_set)  # Affiche : {1, 2, 3, 4, 5}\nSupprimer des éléments :\nAvec remove() :\nmon_set.remove(2)  # Supprime 2 de l'ensemble\nprint(mon_set)  # Affiche : {1, 3, 4, 5}\nAvec discard() (ne lève pas d’erreur si l’élément n’existe pas) :\nmon_set.discard(10)  # Aucun effet si 10 n'est pas présent\n\n\nSupprimer des Éléments (Delete)\nSupprimer un élément avec pop() :\nmon_set = {1, 2, 3}\nelement = mon_set.pop()  # Supprime et retourne un élément aléatoire\nprint(element)  # Affiche : 1 (ou un autre élément)\nprint(mon_set)  # Affiche : {2, 3}\nSupprimer tous les éléments avec clear() :\nmon_set.clear()\nprint(mon_set)  # Affiche : set()\n\n\n\nOpérations Mathématiques avec les Ensembles\nLes ensembles permettent des opérations mathématiques classiques :\nUnion : Combine tous les éléments des deux ensembles.\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\nprint(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}\nIntersection : Récupère les éléments communs aux deux ensembles.\nprint(set1 & set2)  # Affiche : {3}\nDifférence : Récupère les éléments présents dans le premier ensemble mais pas dans le second.\nprint(set1 - set2)  # Affiche : {1, 2}\nDifférence Symétrique : Récupère les éléments présents dans un seul des deux ensembles.\nprint(set1 ^ set2)  # Affiche : {1, 2, 4, 5}"
   },
   {
-    "objectID": "doc/glossaire.html",
-    "href": "doc/glossaire.html",
-    "title": "Glossaire",
-    "section": "",
-    "text": "🚧"
+    "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
+    "href": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Programmation avec Python : Bases et Applications",
+    "text": "Programmation avec Python : Bases et Applications\n\n18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
   },
   {
-    "objectID": "doc/glossaire.html#python",
-    "href": "doc/glossaire.html#python",
-    "title": "Glossaire",
+    "objectID": "doc/cours/intro-python-slides.html#objectifs",
+    "href": "doc/cours/intro-python-slides.html#objectifs",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#python",
+    "href": "doc/cours/intro-python-slides.html#python",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "Python",
-    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
+    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
   },
   {
-    "objectID": "doc/glossaire.html#structures-de-contrôle",
-    "href": "doc/glossaire.html#structures-de-contrôle",
-    "title": "Glossaire",
-    "section": "Structures de contrôle",
-    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
+    "objectID": "doc/cours/intro-python-slides.html#organisation-des-tp",
+    "href": "doc/cours/intro-python-slides.html#organisation-des-tp",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Organisation des TP",
+    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
   },
   {
-    "objectID": "doc/tp/tp3.html",
-    "href": "doc/tp/tp3.html",
-    "title": "Manipulation de données avec Numpy",
+    "objectID": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
+    "href": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ce qu’il faut faire",
+    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
+    "href": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "À ne pas faire",
+    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#évaluation",
+    "href": "doc/cours/intro-python-slides.html#évaluation",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Évaluation",
+    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#bibliographie",
+    "href": "doc/cours/intro-python-slides.html#bibliographie",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012"
+  },
+  {
+    "objectID": "doc/cours/intro.html",
+    "href": "doc/cours/intro.html",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "",
-    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
   },
   {
-    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
-    "href": "doc/tp/tp3.html#objectifs-du-tp",
-    "title": "Manipulation de données avec Numpy",
+    "objectID": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
+    "href": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
+    "title": "Programmation avec Python : Bases et Applications",
     "section": "",
-    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
   },
   {
-    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
-    "href": "doc/tp/tp3.html#introduction-à-numpy",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
+    "objectID": "doc/cours/intro.html#objectifs",
+    "href": "doc/cours/intro.html#objectifs",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
   },
   {
-    "objectID": "doc/tp/tp3.html#création-de-tableaux",
-    "href": "doc/tp/tp3.html#création-de-tableaux",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
+    "objectID": "doc/cours/intro.html#python",
+    "href": "doc/cours/intro.html#python",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Python",
+    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
   },
   {
-    "objectID": "doc/tp/tp3.html#accès-et-modifications",
-    "href": "doc/tp/tp3.html#accès-et-modifications",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
+    "objectID": "doc/cours/intro.html#organisation-des-tp",
+    "href": "doc/cours/intro.html#organisation-des-tp",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Organisation des TP",
+    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
   },
   {
-    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
-    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
+    "objectID": "doc/cours/intro.html#ce-quil-faut-faire",
+    "href": "doc/cours/intro.html#ce-quil-faut-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ce qu’il faut faire",
+    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
   },
   {
-    "objectID": "doc/tp/tp3.html#exercices-pratiques",
-    "href": "doc/tp/tp3.html#exercices-pratiques",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
+    "objectID": "doc/cours/intro.html#à-ne-pas-faire",
+    "href": "doc/cours/intro.html#à-ne-pas-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "À ne pas faire",
+    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
   },
   {
-    "objectID": "doc/tp/tp3.html#récapitulatif",
-    "href": "doc/tp/tp3.html#récapitulatif",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+    "objectID": "doc/cours/intro.html#évaluation",
+    "href": "doc/cours/intro.html#évaluation",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Évaluation",
+    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations.\n\n\n\n\n\nPartie 2 : QCM.\n\nDurée : 2h.\nQuestions portant sur les concepts abordés pendant le cours et les TP.\nLa date sera définie à l’avance."
+  },
+  {
+    "objectID": "doc/cours/intro.html#bibliographie",
+    "href": "doc/cours/intro.html#bibliographie",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012\n\n\n\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\n\n\n\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010\nCours Python de l’École Polytechnique Universitaire UMPC\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
   }
 ]

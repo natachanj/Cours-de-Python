@@ -25,60 +25,56 @@ from: markdown+emoji
 
 # Objectifs du cours
 
-- Comprendre les concepts des fonctions en Python : définition, paramètres et valeurs de retour.
-- Explorer les fonctions anonymes (lambda) et leur utilisation pratique.
-- Différencier les variables locales et globales.
-- Maîtriser les listes en compréhension et les dictionnaires en compréhension.
-- Structurer un projet Python avec des modules.
-- Introduire les bases de la Programmation Orientée Objet (POO).
+- Comprendre les bases de l'utilisation de NumPy pour manipuler des données numériques.
+- Créer, lire, mettre à jour et supprimer des données dans des tableaux multidimensionnels.
+- Maîtriser les concepts d'indexation, de slicing et de masques booléens pour extraire des données spécifiques.
+- Effectuer des opérations mathématiques et statistiques sur des tableaux pour analyser des données.
+- Découvrir la bibliothèque Pandas pour manipuler des données tabulaires de manière efficace.
+- Charger, nettoyer et explorer des ensembles de données en utilisant Pandas.
+- Comprendre comment combiner NumPy et Pandas pour une analyse de données avancée.
 
-# Cours : NumPy 201
 
-## Objectifs pédagogiques
-- Comprendre les bases de l'utilisation de NumPy.
-- Manipuler efficacement des tableaux `array` pour optimiser les calculs.
-- Explorer les concepts avancés comme les masques booléens et les opérations mathématiques sur tableaux.
+# Objectifs du cours
 
-## Plan du cours détaillé (Première partie)
-
-### Introduction à NumPy
-
-#### Qu'est-ce que NumPy ?
-- NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python.
-- Permet de manipuler des tableaux multidimensionnels et d'exécuter des calculs rapides grâce à ses implémentations optimisées.
-
-#### Pourquoi utiliser NumPy ?
-- **Performance :** Manipulation rapide des données grâce à des tableaux homogènes.
-- **Fonctionnalités :** Offre des outils pour les statistiques, algèbre linéaire, transformations, etc.
-
-### Installation et configuration
-1. **Installation de NumPy :**
-   - Via pip :
-     ```bash
-     pip install numpy
-     ```
-   - Tester l'installation :
-     ```python
-     import numpy as np
-     print(np.__version__)
-     ```
-
-2. **Convention d'importation :**
-   - Par convention :
-     ```python
-     import numpy as np
-     ```
-
-3. **Configuration de l'environnement :**
-   - IDE recommandés : Jupyter Notebook, PyCharm, VS Code.
+- Comprendre les bases de l'utilisation de NumPy pour manipuler des données numériques.
+- Créer, lire, mettre à jour et supprimer des données dans des tableaux multidimensionnels.
+- Maîtriser les concepts d'indexation, de slicing et de masques booléens pour extraire des données spécifiques.
+- Effectuer des opérations mathématiques et statistiques sur des tableaux pour analyser des données.
+- Découvrir la bibliothèque Pandas pour manipuler des données tabulaires de manière efficace.
+- Charger, nettoyer et explorer des ensembles de données en utilisant Pandas.
+- Comprendre comment combiner NumPy et Pandas pour une analyse de données avancée.
 
 ---
 
-### Création et manipulation des tableaux numériques
+# Première partie : Analyse des données avec NumPy
 
-#### **1. Création de tableaux (Create)**
-1. **Créer un tableau 1D ou 2D :**
+## Introduction
+
+Dans cette section, nous allons explorer NumPy, une bibliothèque puissante pour le calcul scientifique en Python. En suivant l'approche **CRUD** (Create, Read, Update, Delete), nous apprendrons à manipuler des tableaux multidimensionnels pour réaliser des opérations efficaces sur les données.
+
+L'approche CRUD est un cadre logique utilisé dans de nombreux domaines pour organiser les opérations :
+- **Create (Créer) :** Générer de nouveaux tableaux ou structures de données.
+- **Read (Lire) :** Accéder aux informations ou explorer des données existantes.
+- **Update (Mettre à jour) :** Modifier les éléments de tableaux ou ajuster des valeurs.
+- **Delete (Supprimer) :** Retirer des éléments ou réduire des structures pour obtenir des résultats spécifiques.
+
+### Pourquoi utiliser NumPy ?
+NumPy est essentiel pour l'analyse de données grâce à :
+- **Performance :** Calculs rapides via une implémentation en C.
+- **Simplicité :** Opérations optimisées pour manipuler des tableaux multidimensionnels.
+- **Richesse fonctionnelle :** Fonctions mathématiques, statistiques, et algébriques avancées.
+
+---
+
+## CRUD avec NumPy
+
+### 1. Create (Créer)
+La création de tableaux est le point de départ pour travailler avec NumPy. Voici différentes manières de créer des tableaux :
+
+1. **À partir de listes Python :**
    ```python
+   import numpy as np
+
    # Tableau 1D
    a = np.array([1, 2, 3])
 
@@ -86,37 +82,40 @@ from: markdown+emoji
    b = np.array([[1, 2], [3, 4]])
    ```
 
-2. **Créer des tableaux automatiquement :**
-   - **Zeros et Ones :**
+2. **Création de tableaux automatiques :**
+   - **Zéros et Uns :**
      ```python
-     zeros = np.zeros((2, 3))  # Matrice 2x3 remplie de zéros
-     ones = np.ones((3, 3))   # Matrice 3x3 remplie de uns
+     zeros = np.zeros((3, 3))  # Matrice 3x3 de zéros
+     ones = np.ones((2, 4))   # Matrice 2x4 de uns
      ```
    - **Plages de valeurs :**
      ```python
-     arange = np.arange(0, 10, 2)  # De 0 à 10 avec un pas de 2
+     arange = np.arange(0, 10, 2)  # De 0 à 10 par pas de 2
      linspace = np.linspace(0, 1, 5)  # 5 valeurs entre 0 et 1
      ```
    - **Valeurs aléatoires :**
      ```python
-     random = np.random.random((2, 3))  # Matrice 2x3 de valeurs uniformes [0, 1[
-     normal = np.random.randn(3, 3)  # Matrice 3x3 selon une distribution normale
+     random = np.random.random((2, 3))  # Matrice 2x3 uniforme [0, 1[
+     normal = np.random.randn(3, 3)  # Distribution normale centrée sur 0
      ```
 
-#### **2. Lecture des tableaux (Read)**
-1. **Accéder à un élément :**
+---
+
+### 2. Read (Lire)
+Lire ou accéder aux données dans un tableau est essentiel pour les analyser :
+
+1. **Accès par index :**
    ```python
    print(a[0])  # Premier élément du tableau 1D
-   print(b[1, 1])  # Deuxième ligne, deuxième colonne
+   print(b[1, 1])  # Élément à la deuxième ligne, deuxième colonne
    ```
 
-2. **Slicing :**
-   - Extraction de sous-parties :
-     ```python
-     print(a[:2])  # Les deux premiers éléments
-     print(b[:, 1])  # Deuxième colonne
-     print(b[0, :])  # Première ligne
-     ```
+2. **Slicing (découpage) :**
+   ```python
+   print(a[:2])  # Les deux premiers éléments
+   print(b[:, 1])  # Deuxième colonne
+   print(b[0, :])  # Première ligne
+   ```
 
 3. **Informations générales :**
    ```python
@@ -127,13 +126,13 @@ from: markdown+emoji
 
 ---
 
-### Indexation et opérations sur les tableaux
+### 3. Update (Mettre à jour)
+Modifier les données dans un tableau permet de répondre à des besoins d’analyse spécifiques :
 
-#### **1. Modification des tableaux (Update)**
-1. **Changer un ou plusieurs éléments :**
+1. **Changer un élément :**
    ```python
-   a[0] = 10  # Remplacer le premier élément par 10
-   b[:, 1] = [7, 8]  # Remplacer la deuxième colonne
+   a[0] = 10  # Modifier le premier élément
+   b[1, 1] = 99  # Modifier un élément spécifique
    ```
 
 2. **Modification conditionnelle :**
@@ -141,71 +140,97 @@ from: markdown+emoji
    a[a > 2] = -1  # Remplacer les valeurs > 2 par -1
    ```
 
-#### **2. Suppression des éléments (Delete)**
-1. **Supprimer des éléments (copie) :**
+3. **Ajout d’éléments :** Bien que NumPy ne supporte pas directement l’ajout d’éléments, vous pouvez utiliser des fonctions comme `np.append` :
    ```python
-   c = np.delete(a, [0, 1])  # Supprimer les deux premiers éléments
+   a = np.append(a, [4, 5])
+   print(a)  # Nouveau tableau : [10, -1, -1, 4, 5]
+   ```
+
+---
+
+### 4. Delete (Supprimer)
+Retirer des éléments ou réduire un tableau est utile pour affiner les données :
+
+1. **Supprimer des éléments :**
+   ```python
+   c = np.delete(a, [0, 1])  # Supprime les deux premiers éléments
+   print(c)
    ```
 
 2. **Supprimer des lignes ou colonnes :**
    ```python
    b = np.delete(b, 0, axis=0)  # Supprimer la première ligne
    b = np.delete(b, 1, axis=1)  # Supprimer la deuxième colonne
+   print(b)
    ```
 
 ---
 
-### Opérations mathématiques sur les tableaux
-1. **Opérations élémentaires :**
+## Opérations mathématiques et statistiques
+
+### 1. Opérations élémentaires
+1. **Calculs simples :**
    ```python
    d = np.array([1, 2, 3])
    print(d + 10)  # Ajouter 10 à chaque élément
    print(d * 2)   # Multiplier chaque élément par 2
    ```
 
-2. **Statistiques :**
+2. **Entre tableaux :**
+   ```python
+   e = np.array([1, 2, 3])
+   f = np.array([4, 5, 6])
+   print(e + f)  # Addition
+   print(e * f)  # Multiplication
+   ```
+
+### 2. Statistiques sur les tableaux
+1. **Statistiques globales :**
    ```python
    print(np.sum(d))  # Somme des éléments
    print(np.mean(d))  # Moyenne
-   print(np.max(d))   # Valeur maximale
+   print(np.std(d))   # Écart type
    ```
 
-3. **Produits matriciels :**
+2. **Statistiques par axes :**
    ```python
-   e = np.array([[1, 2], [3, 4]])
-   f = np.array([[5, 6], [7, 8]])
-   product = np.dot(e, f)  # Produit matriciel
-   print(product)
+   g = np.array([[1, 2], [3, 4]])
+   print(np.sum(g, axis=0))  # Somme par colonne
+   print(np.mean(g, axis=1))  # Moyenne par ligne
    ```
 
-4. **Masques booléens :**
+### 3. Masques booléens
+1. **Création de masques :**
    ```python
    mask = d > 1
-   print(d[mask])  # Affiche les éléments > 1
+   print(mask)  # [False, True, True]
+   print(d[mask])  # Éléments > 1
+   ```
+
+2. **Modification conditionnelle :**
+   ```python
+   d[d > 1] = 0
+   print(d)
    ```
 
 ---
 
-### Exercices pratiques
-1. **Création de tableaux :**
-   - Créez un tableau 2D contenant les valeurs de 1 à 9, organisées en une matrice 3x3.
-   - Ajoutez 5 à chaque élément de la matrice.
+## Exercices pratiques
 
-2. **Indexation et slicing :**
-   - Accédez à la deuxième ligne de la matrice créée.
-   - Remplacez toutes les valeurs supérieures à 7 par 0.
+1. **Créer un tableau 2D :**
+   - Créez une matrice 3x3 contenant des valeurs aléatoires entre 0 et 1.
+   - Calculez la moyenne et remplacez les valeurs inférieures à la moyenne par 0.
 
-3. **Opérations :**
-   - Créez deux matrices aléatoires 3x3.
-   - Calculez leur produit matriciel.
+2. **Manipulation :**
+   - Créez un tableau 1D de 10 éléments.
+   - Supprimez les trois derniers éléments et ajoutez deux nouveaux.
+
+3. **Opérations mathématiques :**
+   - Créez deux matrices 2x2 et calculez leur produit matriciel.
 
 ---
 
 ### Conseils pratiques
-- **Préférez les calculs vectoriels :** Les boucles `for` classiques sont plus lentes que les opérations optimisées de NumPy.
-- **Documentation officielle :** [Documentation NumPy](https://numpy.org/doc/).
-
----
-
-Cette première partie du cours couvre les bases de NumPy et prépare les étudiant·e·s à la manipulation avancée des tableaux dans les étapes suivantes.
+- **Utilisez les masques :** Simplifiez vos conditions d’analyse.
+- **Documentation officielle :** [NumPy Documentation](https://numpy.org/doc/).
 

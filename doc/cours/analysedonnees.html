@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cours-complet-analyse-de-données-avec-pandas" id="toc-cours-complet-analyse-de-données-avec-pandas" class="nav-link active" data-scroll-target="#cours-complet-analyse-de-données-avec-pandas"><span class="header-section-number">1</span> Cours Complet : Analyse de Données avec Pandas</a>
+  <li><a href="#analyse-de-données-avec-pandas" id="toc-analyse-de-données-avec-pandas" class="nav-link active" data-scroll-target="#analyse-de-données-avec-pandas"><span class="header-section-number">1</span> Analyse de Données avec Pandas</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a>
   <ul class="collapse">
@@ -225,10 +225,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#création-dun-dataframe" id="toc-création-dun-dataframe" class="nav-link" data-scroll-target="#création-dun-dataframe">2.1 Création d’un DataFrame</a></li>
   <li><a href="#chargement-des-données-à-partir-de-fichiers" id="toc-chargement-des-données-à-partir-de-fichiers" class="nav-link" data-scroll-target="#chargement-des-données-à-partir-de-fichiers">2.2 Chargement des Données à partir de Fichiers</a></li>
   </ul></li>
-  <li><a href="#exploration-et-manipulation-des-données" id="toc-exploration-et-manipulation-des-données" class="nav-link" data-scroll-target="#exploration-et-manipulation-des-données"><span class="header-section-number">1.4</span> 3. Exploration et Manipulation des Données</a>
+  <li><a href="#sélection-et-filtrage-des-données" id="toc-sélection-et-filtrage-des-données" class="nav-link" data-scroll-target="#sélection-et-filtrage-des-données"><span class="header-section-number">1.4</span> 3. Sélection et Filtrage des Données</a>
   <ul class="collapse">
-  <li><a href="#exploration-de-base" id="toc-exploration-de-base" class="nav-link" data-scroll-target="#exploration-de-base">3.1 Exploration de Base</a></li>
-  <li><a href="#sélection-et-filtrage" id="toc-sélection-et-filtrage" class="nav-link" data-scroll-target="#sélection-et-filtrage">3.2 Sélection et Filtrage</a></li>
+  <li><a href="#sélection-des-colonnes" id="toc-sélection-des-colonnes" class="nav-link" data-scroll-target="#sélection-des-colonnes">3.1 Sélection des Colonnes</a></li>
+  <li><a href="#sélection-des-lignes-avec-.loc-et-.iloc" id="toc-sélection-des-lignes-avec-.loc-et-.iloc" class="nav-link" data-scroll-target="#sélection-des-lignes-avec-.loc-et-.iloc">3.2 Sélection des Lignes avec <code>.loc</code> et <code>.iloc</code></a></li>
   </ul></li>
   <li><a href="#transformation-et-nettoyage-des-données" id="toc-transformation-et-nettoyage-des-données" class="nav-link" data-scroll-target="#transformation-et-nettoyage-des-données"><span class="header-section-number">1.5</span> 4. Transformation et Nettoyage des Données</a>
   <ul class="collapse">
@@ -240,7 +240,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#agrégation-par-groupby" id="toc-agrégation-par-groupby" class="nav-link" data-scroll-target="#agrégation-par-groupby">5.1 Agrégation par GroupBy</a></li>
   <li><a href="#statistiques-avancées" id="toc-statistiques-avancées" class="nav-link" data-scroll-target="#statistiques-avancées">5.2 Statistiques Avancées</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">1.7</span> Conclusion</a></li>
+  <li><a href="#jointures-et-fusion-de-données" id="toc-jointures-et-fusion-de-données" class="nav-link" data-scroll-target="#jointures-et-fusion-de-données"><span class="header-section-number">1.7</span> 6. Jointures et Fusion de Données</a>
+  <ul class="collapse">
+  <li><a href="#la-méthode-merge" id="toc-la-méthode-merge" class="nav-link" data-scroll-target="#la-méthode-merge">6.1 La méthode <code>merge()</code></a></li>
+  <li><a href="#types-de-jointures" id="toc-types-de-jointures" class="nav-link" data-scroll-target="#types-de-jointures">6.2 Types de Jointures</a></li>
+  <li><a href="#concaténation-de-dataframes" id="toc-concaténation-de-dataframes" class="nav-link" data-scroll-target="#concaténation-de-dataframes">6.3 Concaténation de DataFrames</a></li>
+  <li><a href="#jointure-multi-index" id="toc-jointure-multi-index" class="nav-link" data-scroll-target="#jointure-multi-index">6.4 Jointure Multi-index</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">1.8</span> Conclusion</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="analysedonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -282,8 +289,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="cours-complet-analyse-de-données-avec-pandas" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Cours Complet : Analyse de Données avec Pandas</h1>
+<section id="analyse-de-données-avec-pandas" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Analyse de Données avec Pandas</h1>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
 <p><strong>Pandas</strong> est une bibliothèque open-source essentielle en Python pour la manipulation et l’analyse de données. Elle permet de travailler avec des ensembles de données sous forme de <strong>tableaux</strong> en offrant des outils puissants pour <strong>nettoyer, transformer et analyser</strong> les données efficacement.</p>
@@ -334,29 +341,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="exploration-et-manipulation-des-données" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="exploration-et-manipulation-des-données"><span class="header-section-number">1.4</span> 3. Exploration et Manipulation des Données</h2>
-<p>Avant toute analyse, il est essentiel de <strong>comprendre et explorer</strong> les données pour identifier les éventuels problèmes.</p>
-<section id="exploration-de-base" class="level3">
-<h3 class="anchored" data-anchor-id="exploration-de-base">3.1 Exploration de Base</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">print</span>(df.head())  <span class="co"># Afficher les premières lignes</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>df.info()  <span class="co"># Résumé des types de données et valeurs manquantes</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>df.describe()  <span class="co"># Statistiques descriptives des colonnes numériques</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi explorer les données ? - Permet de détecter <strong>les valeurs aberrantes, manquantes ou incohérentes</strong>. - Aide à <strong>comprendre la structure des données</strong>.</p>
+<section id="sélection-et-filtrage-des-données" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sélection-et-filtrage-des-données"><span class="header-section-number">1.4</span> 3. Sélection et Filtrage des Données</h2>
+<p>L’accès aux données est une étape essentielle pour manipuler efficacement un DataFrame.</p>
+<section id="sélection-des-colonnes" class="level3">
+<h3 class="anchored" data-anchor-id="sélection-des-colonnes">3.1 Sélection des Colonnes</h3>
+<p>Vous pouvez sélectionner une colonne spécifique comme suit :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df[<span class="st">'Nom'</span>]  <span class="co"># Retourne une Series</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pour sélectionner plusieurs colonnes :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df[[<span class="st">'Nom'</span>, <span class="st">'Salaire'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="sélection-et-filtrage" class="level3">
-<h3 class="anchored" data-anchor-id="sélection-et-filtrage">3.2 Sélection et Filtrage</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Sélection d'une colonne</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>df[<span class="st">'Nom'</span>]</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Sélection de plusieurs colonnes</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>df[[<span class="st">'Nom'</span>, <span class="st">'Salaire'</span>]]</span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># Filtrage des données (exemple : afficher les employés de plus de 30 ans)</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>df[df[<span class="st">'Âge'</span>] <span class="op">&gt;</span> <span class="dv">30</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi filtrer les données ? - Facilite l’extraction des <strong>informations pertinentes</strong>. - Permet de <strong>segmenter et regrouper</strong> les données selon des critères spécifiques.</p>
+<section id="sélection-des-lignes-avec-.loc-et-.iloc" class="level3">
+<h3 class="anchored" data-anchor-id="sélection-des-lignes-avec-.loc-et-.iloc">3.2 Sélection des Lignes avec <code>.loc</code> et <code>.iloc</code></h3>
+<section id="différence-entre-.loc-et-.iloc" class="level4">
+<h4 class="anchored" data-anchor-id="différence-entre-.loc-et-.iloc"><strong>Différence entre <code>.loc</code> et <code>.iloc</code></strong></h4>
+<ul>
+<li><code>.loc</code> sélectionne les données par <strong>étiquette</strong> (nom des lignes ou colonnes).</li>
+<li><code>.iloc</code> sélectionne les données par <strong>indice numérique</strong>.</li>
+</ul>
+<p><strong>Exemples :</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Sélection par étiquette avec loc</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>df.loc[<span class="dv">0</span>]  <span class="co"># Sélectionne la première ligne</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Sélection par index numérique avec iloc</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>df.iloc[<span class="dv">0</span>]  <span class="co"># Sélectionne la première ligne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Sélection de plusieurs lignes :</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>]  <span class="co"># Sélectionne les lignes 1 à 2 (inclus)</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>df.iloc[<span class="dv">0</span>:<span class="dv">2</span>]  <span class="co"># Sélectionne les deux premières lignes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Exercice 2 :</strong> - Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000. - Affichez uniquement les colonnes ‘Nom’ et ‘Âge’.</p>
 <hr>
+</section>
 </section>
 </section>
 <section id="transformation-et-nettoyage-des-données" class="level2" data-number="1.5">
@@ -364,14 +378,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Les jeux de données réels sont souvent <strong>incomplets</strong> ou <strong>mal structurés</strong>. Pandas offre des outils pour les corriger.</p>
 <section id="gestion-des-valeurs-manquantes" class="level3">
 <h3 class="anchored" data-anchor-id="gestion-des-valeurs-manquantes">4.1 Gestion des Valeurs Manquantes</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>df.isnull().<span class="bu">sum</span>()  <span class="co"># Compter les valeurs manquantes</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>df.fillna(df.mean(), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Remplacer les NaN par la moyenne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df.isnull().<span class="bu">sum</span>()  <span class="co"># Compter les valeurs manquantes</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>df.fillna(df.mean(), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Remplacer les NaN par la moyenne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Pourquoi gérer les valeurs manquantes ? - Les valeurs manquantes peuvent <strong>fausser les résultats</strong> d’analyse. - Pandas permet de <strong>les remplacer ou les supprimer intelligemment</strong>.</p>
 </section>
 <section id="ajout-et-suppression-de-colonnes" class="level3">
 <h3 class="anchored" data-anchor-id="ajout-et-suppression-de-colonnes">4.2 Ajout et Suppression de Colonnes</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df[<span class="st">'Revenu Annuel'</span>] <span class="op">=</span> df[<span class="st">'Salaire'</span>] <span class="op">*</span> <span class="dv">12</span>  <span class="co"># Ajouter une colonne</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>df.drop(columns<span class="op">=</span>[<span class="st">'Âge'</span>], inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Supprimer une colonne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>df[<span class="st">'Revenu Annuel'</span>] <span class="op">=</span> df[<span class="st">'Salaire'</span>] <span class="op">*</span> <span class="dv">12</span>  <span class="co"># Ajouter une colonne</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>df.drop(columns<span class="op">=</span>[<span class="st">'Âge'</span>], inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Supprimer une colonne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Pourquoi manipuler les colonnes ? - Permet de <strong>calculer de nouvelles métriques</strong>. - Aide à <strong>nettoyer les données</strong> pour faciliter l’analyse.</p>
 <p><strong>Exercice 3 :</strong> - Remplacez les valeurs NaN par la médiane. - Ajoutez une colonne calculant le double du salaire.</p>
 <hr>
@@ -382,22 +396,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Pandas facilite le <strong>regroupement des données</strong> et leur analyse statistique.</p>
 <section id="agrégation-par-groupby" class="level3">
 <h3 class="anchored" data-anchor-id="agrégation-par-groupby">5.1 Agrégation par GroupBy</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df.groupby(<span class="st">'Nom'</span>)[<span class="st">'Salaire'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>df.groupby(<span class="st">'Nom'</span>)[<span class="st">'Salaire'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Pourquoi utiliser GroupBy ? - Permet d’analyser <strong>des tendances</strong> et de <strong>comparer des groupes</strong>.</p>
 </section>
 <section id="statistiques-avancées" class="level3">
 <h3 class="anchored" data-anchor-id="statistiques-avancées">5.2 Statistiques Avancées</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>df[<span class="st">'Salaire'</span>].mean()  <span class="co"># Moyenne</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>df[<span class="st">'Salaire'</span>].median()  <span class="co"># Médiane</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>df[<span class="st">'Salaire'</span>].std()  <span class="co"># Écart-type</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>df[<span class="st">'Salaire'</span>].mean()  <span class="co"># Moyenne</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>df[<span class="st">'Salaire'</span>].median()  <span class="co"># Médiane</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>df[<span class="st">'Salaire'</span>].std()  <span class="co"># Écart-type</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Pourquoi les statistiques sont utiles ? - Aident à <strong>détecter les tendances et anomalies</strong>.</p>
 <p><strong>Exercice 4 :</strong> - Trouvez la moyenne des salaires par groupe. - Identifiez la personne ayant le salaire le plus élevé.</p>
 <hr>
 </section>
 </section>
-<section id="conclusion" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.7</span> Conclusion</h2>
-<p>Ce cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées.</p>
+<section id="jointures-et-fusion-de-données" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="jointures-et-fusion-de-données"><span class="header-section-number">1.7</span> 6. Jointures et Fusion de Données</h2>
+<p>Lorsqu’on travaille avec plusieurs ensembles de données, il est souvent nécessaire de <strong>les fusionner</strong> pour obtenir une vue d’ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.</p>
+<section id="la-méthode-merge" class="level3">
+<h3 class="anchored" data-anchor-id="la-méthode-merge">6.1 La méthode <code>merge()</code></h3>
+<p>La méthode <code>merge()</code> permet de fusionner deux DataFrames sur une colonne commune.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'Nom'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]})</span>
+<span id="cb13-2"><a href="#cb13-2"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'Salaire'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>]})</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>fusion <span class="op">=</span> pd.merge(df1, df2, on<span class="op">=</span><span class="st">'ID'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="bu">print</span>(fusion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="types-de-jointures" class="level3">
+<h3 class="anchored" data-anchor-id="types-de-jointures">6.2 Types de Jointures</h3>
+<p>Pandas permet plusieurs types de jointures similaires aux bases de données SQL :</p>
+<ul>
+<li><strong>Inner Join (Intersection)</strong> : Ne garde que les valeurs communes aux deux DataFrames.</li>
+<li><strong>Left Join (Jointure à gauche)</strong> : Conserve toutes les lignes du premier DataFrame et ajoute les correspondances du second.</li>
+<li><strong>Right Join (Jointure à droite)</strong> : Conserve toutes les lignes du second DataFrame et ajoute les correspondances du premier.</li>
+<li><strong>Outer Join (Jointure complète)</strong> : Conserve toutes les données des deux DataFrames, même celles sans correspondance.</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Inner Join (par défaut)</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>pd.merge(df1, df2, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># Left Join</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>pd.merge(df1, df2, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Right Join</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>pd.merge(df1, df2, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># Outer Join</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>pd.merge(df1, df2, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="concaténation-de-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="concaténation-de-dataframes">6.3 Concaténation de DataFrames</h3>
+<p>Parfois, il est nécessaire de <strong>concaténer</strong> des DataFrames, c’est-à-dire les empiler verticalement ou horizontalement.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">4</span>, <span class="dv">5</span>], <span class="st">'Nom'</span>: [<span class="st">'David'</span>, <span class="st">'Emma'</span>]})</span>
+<span id="cb15-2"><a href="#cb15-2"></a>concat_vertical <span class="op">=</span> pd.concat([df1, df3], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="bu">print</span>(concat_vertical)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi utiliser <code>concat()</code> ? - Utile lorsqu’on dispose de plusieurs fichiers contenant des données similaires et qu’on souhaite les regrouper. - Permet de fusionner facilement des ensembles de données de manière efficace.</p>
+</section>
+<section id="jointure-multi-index" class="level3">
+<h3 class="anchored" data-anchor-id="jointure-multi-index">6.4 Jointure Multi-index</h3>
+<p>Dans certains cas, la fusion se fait sur plusieurs colonnes :</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'Nom'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>], <span class="st">'Ville'</span>: [<span class="st">'Paris'</span>, <span class="st">'Lyon'</span>, <span class="st">'Marseille'</span>]})</span>
+<span id="cb16-2"><a href="#cb16-2"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'Ville'</span>: [<span class="st">'Paris'</span>, <span class="st">'Lyon'</span>, <span class="st">'Marseille'</span>], <span class="st">'Salaire'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>]})</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a>fusion_multi <span class="op">=</span> pd.merge(df1, df2, on<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'Ville'</span>])</span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="bu">print</span>(fusion_multi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Exercice 5 :</strong> - Créez deux DataFrames et appliquez différents types de jointures. - Testez la concaténation avec des DataFrames ayant des colonnes différentes.</p>
+<hr>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.8</span> Conclusion</h2>
+<p>Ce cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées. - Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète.</p>
 
 
 </section>

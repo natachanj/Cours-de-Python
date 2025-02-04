@@ -514,43 +514,92 @@
     "objectID": "doc/cours/analysedonnees-slides.html#installation-et-importation",
     "href": "doc/cours/analysedonnees-slides.html#installation-et-importation",
     "title": "Analyse de données avec Pandas",
-    "section": "1. Installation et Importation",
-    "text": "1. Installation et Importation\nSi Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :\npip install pandas\nUne fois installé, importez Pandas :\nimport pandas as pd\nL’alias pd est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque."
+    "section": "Installation et Importation",
+    "text": "Installation et Importation\nSi Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :\npip install pandas\nUne fois installé, importez Pandas :\nimport pandas as pd\nL’alias pd est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque."
   },
   {
     "objectID": "doc/cours/analysedonnees-slides.html#création-et-chargement-des-données",
     "href": "doc/cours/analysedonnees-slides.html#création-et-chargement-des-données",
     "title": "Analyse de données avec Pandas",
-    "section": "2. Création et Chargement des Données",
-    "text": "2. Création et Chargement des Données\nPandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats."
+    "section": "Création et Chargement des Données",
+    "text": "Création et Chargement des Données\nPandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats."
   },
   {
     "objectID": "doc/cours/analysedonnees-slides.html#sélection-et-filtrage-des-données",
     "href": "doc/cours/analysedonnees-slides.html#sélection-et-filtrage-des-données",
     "title": "Analyse de données avec Pandas",
-    "section": "3. Sélection et Filtrage des Données",
-    "text": "3. Sélection et Filtrage des Données\nL’accès aux données est une étape essentielle pour manipuler efficacement un DataFrame."
+    "section": "Sélection et Filtrage des Données",
+    "text": "Sélection et Filtrage des Données\nL’accès aux données est une étape essentielle pour manipuler efficacement un DataFrame."
   },
   {
     "objectID": "doc/cours/analysedonnees-slides.html#transformation-et-nettoyage-des-données",
     "href": "doc/cours/analysedonnees-slides.html#transformation-et-nettoyage-des-données",
     "title": "Analyse de données avec Pandas",
-    "section": "4. Transformation et Nettoyage des Données",
-    "text": "4. Transformation et Nettoyage des Données\nLes jeux de données réels sont souvent incomplets ou mal structurés. Pandas offre des outils pour les corriger."
+    "section": "Transformation et Nettoyage des Données",
+    "text": "Transformation et Nettoyage des Données\nLes jeux de données réels sont souvent incomplets ou mal structurés. Pandas offre des outils pour les corriger."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#introduction-1",
+    "href": "doc/cours/analysedonnees-slides.html#introduction-1",
+    "title": "Analyse de données avec Pandas",
+    "section": "Introduction",
+    "text": "Introduction\nPandas est une bibliothèque open-source essentielle en Python pour la manipulation et l’analyse de données. Elle permet de travailler avec des ensembles de données sous forme de tableaux en offrant des outils puissants pour nettoyer, transformer et analyser les données efficacement."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#installation-et-importation-1",
+    "href": "doc/cours/analysedonnees-slides.html#installation-et-importation-1",
+    "title": "Analyse de données avec Pandas",
+    "section": "1. Installation et Importation",
+    "text": "1. Installation et Importation\nSi Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :\npip install pandas\nUne fois installé, importez Pandas :\nimport pandas as pd\nL’alias pd est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#création-dun-dataframe-à-partir-dun-dictionnaire",
+    "href": "doc/cours/analysedonnees-slides.html#création-dun-dataframe-à-partir-dun-dictionnaire",
+    "title": "Analyse de données avec Pandas",
+    "section": "2. Création d’un DataFrame à partir d’un Dictionnaire",
+    "text": "2. Création d’un DataFrame à partir d’un Dictionnaire\nUn DataFrame est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL. L’une des façons les plus courantes de créer un DataFrame est d’utiliser un dictionnaire Python.\ndata = {\n    'Nom': ['Alice', 'Bob', 'Charlie'],\n    'Âge': [25, 30, 35],\n    'Salaire': [50000, 60000, 70000]\n}\ndf = pd.DataFrame(data)\nprint(df)\nPourquoi utiliser un DataFrame ? - Il permet de manipuler facilement des données hétérogènes. - Il est conçu pour des opérations analytiques rapides et intuitives. - Il facilite la conversion et l’import/export de données dans divers formats (CSV, Excel, SQL, etc.)."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#gestion-des-indices",
+    "href": "doc/cours/analysedonnees-slides.html#gestion-des-indices",
+    "title": "Analyse de données avec Pandas",
+    "section": "Gestion des indices",
+    "text": "Gestion des indices\nPandas permet de manipuler et personnaliser les indices d’un DataFrame pour optimiser l’analyse des données."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#tri-et-ordonnancement-des-données",
+    "href": "doc/cours/analysedonnees-slides.html#tri-et-ordonnancement-des-données",
+    "title": "Analyse de données avec Pandas",
+    "section": "Tri et ordonnancement des données",
+    "text": "Tri et ordonnancement des données\nPandas permet de trier les données selon différentes colonnes."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#optimisation-et-performances",
+    "href": "doc/cours/analysedonnees-slides.html#optimisation-et-performances",
+    "title": "Analyse de données avec Pandas",
+    "section": "Optimisation et performances",
+    "text": "Optimisation et performances\nPandas permet d’améliorer les performances des manipulations de données."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#exportation-des-données",
+    "href": "doc/cours/analysedonnees-slides.html#exportation-des-données",
+    "title": "Analyse de données avec Pandas",
+    "section": "Exportation des données",
+    "text": "Exportation des données\nPandas permet d’exporter facilement les résultats de l’analyse sous différents formats.\ndf.to_csv('output.csv', index=False)  # Sauvegarde en CSV\ndf.to_excel('output.xlsx', index=False)  # Sauvegarde en Excel\ndf.to_json('output.json')  # Sauvegarde en JSON\nPourquoi exporter les données ? - Facilite le partage et la réutilisation des résultats. - Permet de documenter le travail réalisé."
   },
   {
     "objectID": "doc/cours/analysedonnees-slides.html#groupby-et-agrégations",
     "href": "doc/cours/analysedonnees-slides.html#groupby-et-agrégations",
     "title": "Analyse de données avec Pandas",
-    "section": "5. GroupBy et Agrégations",
-    "text": "5. GroupBy et Agrégations\nPandas facilite le regroupement des données et leur analyse statistique."
+    "section": "GroupBy et Agrégations",
+    "text": "GroupBy et Agrégations\nPandas facilite le regroupement des données et leur analyse statistique."
   },
   {
     "objectID": "doc/cours/analysedonnees-slides.html#jointures-et-fusion-de-données",
     "href": "doc/cours/analysedonnees-slides.html#jointures-et-fusion-de-données",
     "title": "Analyse de données avec Pandas",
-    "section": "6. Jointures et Fusion de Données",
-    "text": "6. Jointures et Fusion de Données\nLorsqu’on travaille avec plusieurs ensembles de données, il est souvent nécessaire de les fusionner pour obtenir une vue d’ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames."
+    "section": "Jointures et Fusion de Données",
+    "text": "Jointures et Fusion de Données\nLorsqu’on travaille avec plusieurs ensembles de données, il est souvent nécessaire de les fusionner pour obtenir une vue d’ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames."
   },
   {
     "objectID": "doc/cours/analysedonnees-slides.html#conclusion",
@@ -564,7 +613,7 @@
     "href": "doc/cours/analysedonnees.html",
     "title": "Analyse de données avec Pandas",
     "section": "",
-    "text": "Pandas est une bibliothèque open-source essentielle en Python pour la manipulation et l’analyse de données. Elle permet de travailler avec des ensembles de données sous forme de tableaux en offrant des outils puissants pour nettoyer, transformer et analyser les données efficacement.\n\n\n\nFacilité de manipulation : Pandas simplifie la manipulation des données tabulaires (issues de fichiers CSV, Excel, bases de données, etc.).\nPerformance : Pandas est optimisé pour gérer de grandes quantités de données bien plus rapidement que les structures classiques comme les listes Python.\nInteropérabilité : Compatible avec NumPy, Matplotlib, SQL, et d’autres bibliothèques de data science.\n\nObjectifs du cours : - Comprendre les structures de Pandas : Series et DataFrame. - Apprendre à charger, explorer et manipuler des données. - Effectuer des analyses et transformations avancées.\n\n\n\n\n\nSi Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :\npip install pandas\nUne fois installé, importez Pandas :\nimport pandas as pd\nL’alias pd est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque.\n\n\n\n\nPandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats.\n\n\nUn DataFrame est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL.\ndata = {\n    'Nom': ['Alice', 'Bob', 'Charlie'],\n    'Âge': [25, 30, 35],\n    'Salaire': [50000, 60000, 70000]\n}\ndf = pd.DataFrame(data)\nprint(df)\nPourquoi utiliser un DataFrame ? - Il permet de manipuler facilement des données hétérogènes. - Il est conçu pour des opérations analytiques rapides et intuitives.\n\n\n\nPandas permet de lire des fichiers de différents formats : CSV, Excel, JSON, SQL, etc.\n# Charger un fichier CSV\ndf = pd.read_csv(\"data.csv\")\n\n# Charger un fichier Excel\ndf = pd.read_excel(\"data.xlsx\")\nExercice 1 : - Chargez un fichier CSV et affichez ses premières lignes. - Affichez le nombre total de lignes et de colonnes.\n\n\n\n\n\nL’accès aux données est une étape essentielle pour manipuler efficacement un DataFrame.\n\n\nVous pouvez sélectionner une colonne spécifique comme suit :\ndf['Nom']  # Retourne une Series\nPour sélectionner plusieurs colonnes :\ndf[['Nom', 'Salaire']]\n\n\n\n\n\n\n.loc sélectionne les données par étiquette (nom des lignes ou colonnes).\n.iloc sélectionne les données par indice numérique.\n\nExemples :\n# Sélection par étiquette avec loc\ndf.loc[0]  # Sélectionne la première ligne\n\n# Sélection par index numérique avec iloc\ndf.iloc[0]  # Sélectionne la première ligne\nSélection de plusieurs lignes :\ndf.loc[1:2]  # Sélectionne les lignes 1 à 2 (inclus)\ndf.iloc[0:2]  # Sélectionne les deux premières lignes\nExercice 2 : - Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000. - Affichez uniquement les colonnes ‘Nom’ et ‘Âge’.\n\n\n\n\n\n\nLes jeux de données réels sont souvent incomplets ou mal structurés. Pandas offre des outils pour les corriger.\n\n\ndf.isnull().sum()  # Compter les valeurs manquantes\ndf.fillna(df.mean(), inplace=True)  # Remplacer les NaN par la moyenne\nPourquoi gérer les valeurs manquantes ? - Les valeurs manquantes peuvent fausser les résultats d’analyse. - Pandas permet de les remplacer ou les supprimer intelligemment.\n\n\n\ndf['Revenu Annuel'] = df['Salaire'] * 12  # Ajouter une colonne\ndf.drop(columns=['Âge'], inplace=True)  # Supprimer une colonne\nPourquoi manipuler les colonnes ? - Permet de calculer de nouvelles métriques. - Aide à nettoyer les données pour faciliter l’analyse.\nExercice 3 : - Remplacez les valeurs NaN par la médiane. - Ajoutez une colonne calculant le double du salaire.\n\n\n\n\n\nPandas facilite le regroupement des données et leur analyse statistique.\n\n\ndf.groupby('Nom')['Salaire'].sum()\nPourquoi utiliser GroupBy ? - Permet d’analyser des tendances et de comparer des groupes.\n\n\n\ndf['Salaire'].mean()  # Moyenne\ndf['Salaire'].median()  # Médiane\ndf['Salaire'].std()  # Écart-type\nPourquoi les statistiques sont utiles ? - Aident à détecter les tendances et anomalies.\nExercice 4 : - Trouvez la moyenne des salaires par groupe. - Identifiez la personne ayant le salaire le plus élevé.\n\n\n\n\n\nLorsqu’on travaille avec plusieurs ensembles de données, il est souvent nécessaire de les fusionner pour obtenir une vue d’ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.\n\n\nLa méthode merge() permet de fusionner deux DataFrames sur une colonne commune.\ndf1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie']})\ndf2 = pd.DataFrame({'ID': [1, 2, 3], 'Salaire': [50000, 60000, 70000]})\n\nfusion = pd.merge(df1, df2, on='ID')\nprint(fusion)\n\n\n\nPandas permet plusieurs types de jointures similaires aux bases de données SQL :\n\nInner Join (Intersection) : Ne garde que les valeurs communes aux deux DataFrames.\nLeft Join (Jointure à gauche) : Conserve toutes les lignes du premier DataFrame et ajoute les correspondances du second.\nRight Join (Jointure à droite) : Conserve toutes les lignes du second DataFrame et ajoute les correspondances du premier.\nOuter Join (Jointure complète) : Conserve toutes les données des deux DataFrames, même celles sans correspondance.\n\n# Inner Join (par défaut)\npd.merge(df1, df2, on='ID', how='inner')\n\n# Left Join\npd.merge(df1, df2, on='ID', how='left')\n\n# Right Join\npd.merge(df1, df2, on='ID', how='right')\n\n# Outer Join\npd.merge(df1, df2, on='ID', how='outer')\n\n\n\nParfois, il est nécessaire de concaténer des DataFrames, c’est-à-dire les empiler verticalement ou horizontalement.\ndf3 = pd.DataFrame({'ID': [4, 5], 'Nom': ['David', 'Emma']})\nconcat_vertical = pd.concat([df1, df3], ignore_index=True)\nprint(concat_vertical)\nPourquoi utiliser concat() ? - Utile lorsqu’on dispose de plusieurs fichiers contenant des données similaires et qu’on souhaite les regrouper. - Permet de fusionner facilement des ensembles de données de manière efficace.\n\n\n\nDans certains cas, la fusion se fait sur plusieurs colonnes :\ndf1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie'], 'Ville': ['Paris', 'Lyon', 'Marseille']})\ndf2 = pd.DataFrame({'ID': [1, 2, 3], 'Ville': ['Paris', 'Lyon', 'Marseille'], 'Salaire': [50000, 60000, 70000]})\n\nfusion_multi = pd.merge(df1, df2, on=['ID', 'Ville'])\nprint(fusion_multi)\nExercice 5 : - Créez deux DataFrames et appliquez différents types de jointures. - Testez la concaténation avec des DataFrames ayant des colonnes différentes.\n\n\n\n\n\nCe cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées. - Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète."
+    "text": "Pandas est une bibliothèque open-source essentielle en Python pour la manipulation et l’analyse de données. Elle permet de travailler avec des ensembles de données sous forme de tableaux en offrant des outils puissants pour nettoyer, transformer et analyser les données efficacement.\n\n\n\nFacilité de manipulation : Pandas simplifie la manipulation des données tabulaires (issues de fichiers CSV, Excel, bases de données, etc.).\nPerformance : Pandas est optimisé pour gérer de grandes quantités de données bien plus rapidement que les structures classiques comme les listes Python.\nInteropérabilité : Compatible avec NumPy, Matplotlib, SQL, et d’autres bibliothèques de data science.\n\nObjectifs du cours : - Comprendre les structures de Pandas : Series et DataFrame. - Apprendre à charger, explorer et manipuler des données. - Effectuer des analyses et transformations avancées.\n\n\n\n\n\nSi Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :\npip install pandas\nUne fois installé, importez Pandas :\nimport pandas as pd\nL’alias pd est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque.\n\n\n\n\nPandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats.\n\n\nUn DataFrame est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL.\ndata = {\n    'Nom': ['Alice', 'Bob', 'Charlie'],\n    'Âge': [25, 30, 35],\n    'Salaire': [50000, 60000, 70000]\n}\ndf = pd.DataFrame(data)\nprint(df)\nPourquoi utiliser un DataFrame ? - Il permet de manipuler facilement des données hétérogènes. - Il est conçu pour des opérations analytiques rapides et intuitives.\n\n\n\nPandas permet de lire des fichiers de différents formats : CSV, Excel, JSON, SQL, etc.\n# Charger un fichier CSV\ndf = pd.read_csv(\"data.csv\")\n\n# Charger un fichier Excel\ndf = pd.read_excel(\"data.xlsx\")\nExercice 1 : - Chargez un fichier CSV et affichez ses premières lignes. - Affichez le nombre total de lignes et de colonnes.\n\n\n\n\n\nL’accès aux données est une étape essentielle pour manipuler efficacement un DataFrame.\n\n\nVous pouvez sélectionner une colonne spécifique comme suit :\ndf['Nom']  # Retourne une Series\nPour sélectionner plusieurs colonnes :\ndf[['Nom', 'Salaire']]\n\n\n\n\n\n\n.loc sélectionne les données par étiquette (nom des lignes ou colonnes).\n.iloc sélectionne les données par indice numérique.\n\nExemples :\n# Sélection par étiquette avec loc\ndf.loc[0]  # Sélectionne la première ligne\n\n# Sélection par index numérique avec iloc\ndf.iloc[0]  # Sélectionne la première ligne\nSélection de plusieurs lignes :\ndf.loc[1:2]  # Sélectionne les lignes 1 à 2 (inclus)\ndf.iloc[0:2]  # Sélectionne les deux premières lignes\nExercice 2 : - Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000. - Affichez uniquement les colonnes ‘Nom’ et ‘Âge’.\n\n\n\n\n\n\nLes jeux de données réels sont souvent incomplets ou mal structurés. Pandas offre des outils pour les corriger.\n\n\ndf.isnull().sum()  # Compter les valeurs manquantes\ndf.fillna(df.mean(), inplace=True)  # Remplacer les NaN par la moyenne\nPourquoi gérer les valeurs manquantes ? - Les valeurs manquantes peuvent fausser les résultats d’analyse. - Pandas permet de les remplacer ou les supprimer intelligemment.\n\n\n\ndf['Revenu Annuel'] = df['Salaire'] * 12  # Ajouter une colonne\ndf.drop(columns=['Âge'], inplace=True)  # Supprimer une colonne\nPourquoi manipuler les colonnes ? - Permet de calculer de nouvelles métriques. - Aide à nettoyer les données pour faciliter l’analyse.\nExercice 3 : - Remplacez les valeurs NaN par la médiane. - Ajoutez une colonne calculant le double du salaire."
   },
   {
     "objectID": "doc/cours/analysedonnees.html#introduction",
@@ -602,25 +651,74 @@
     "text": "Les jeux de données réels sont souvent incomplets ou mal structurés. Pandas offre des outils pour les corriger.\n\n\ndf.isnull().sum()  # Compter les valeurs manquantes\ndf.fillna(df.mean(), inplace=True)  # Remplacer les NaN par la moyenne\nPourquoi gérer les valeurs manquantes ? - Les valeurs manquantes peuvent fausser les résultats d’analyse. - Pandas permet de les remplacer ou les supprimer intelligemment.\n\n\n\ndf['Revenu Annuel'] = df['Salaire'] * 12  # Ajouter une colonne\ndf.drop(columns=['Âge'], inplace=True)  # Supprimer une colonne\nPourquoi manipuler les colonnes ? - Permet de calculer de nouvelles métriques. - Aide à nettoyer les données pour faciliter l’analyse.\nExercice 3 : - Remplacez les valeurs NaN par la médiane. - Ajoutez une colonne calculant le double du salaire."
   },
   {
+    "objectID": "doc/cours/analysedonnees.html#introduction-1",
+    "href": "doc/cours/analysedonnees.html#introduction-1",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.1 Introduction",
+    "text": "2.1 Introduction\nPandas est une bibliothèque open-source essentielle en Python pour la manipulation et l’analyse de données. Elle permet de travailler avec des ensembles de données sous forme de tableaux en offrant des outils puissants pour nettoyer, transformer et analyser les données efficacement.\n\nPourquoi utiliser Pandas ?\n\nFacilité de manipulation : Pandas simplifie la manipulation des données tabulaires (issues de fichiers CSV, Excel, bases de données, etc.).\nPerformance : Pandas est optimisé pour gérer de grandes quantités de données bien plus rapidement que les structures classiques comme les listes Python.\nInteropérabilité : Compatible avec NumPy, Matplotlib, SQL, et d’autres bibliothèques de data science.\n\nObjectifs du cours : - Comprendre les structures de Pandas : Series et DataFrame. - Apprendre à charger, explorer et manipuler des données. - Effectuer des analyses et transformations avancées."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#installation-et-importation-1",
+    "href": "doc/cours/analysedonnees.html#installation-et-importation-1",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.2 1. Installation et Importation",
+    "text": "2.2 1. Installation et Importation\nSi Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :\npip install pandas\nUne fois installé, importez Pandas :\nimport pandas as pd\nL’alias pd est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#création-dun-dataframe-à-partir-dun-dictionnaire",
+    "href": "doc/cours/analysedonnees.html#création-dun-dataframe-à-partir-dun-dictionnaire",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.3 2. Création d’un DataFrame à partir d’un Dictionnaire",
+    "text": "2.3 2. Création d’un DataFrame à partir d’un Dictionnaire\nUn DataFrame est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL. L’une des façons les plus courantes de créer un DataFrame est d’utiliser un dictionnaire Python.\ndata = {\n    'Nom': ['Alice', 'Bob', 'Charlie'],\n    'Âge': [25, 30, 35],\n    'Salaire': [50000, 60000, 70000]\n}\ndf = pd.DataFrame(data)\nprint(df)\nPourquoi utiliser un DataFrame ? - Il permet de manipuler facilement des données hétérogènes. - Il est conçu pour des opérations analytiques rapides et intuitives. - Il facilite la conversion et l’import/export de données dans divers formats (CSV, Excel, SQL, etc.).\n\nAccéder aux informations du DataFrame\nUne fois le DataFrame créé, il est essentiel d’explorer ses informations :\nprint(df.head())  # Afficher les premières lignes\ndf.info()  # Afficher un résumé des données\ndf.describe()  # Statistiques descriptives des colonnes numériques\nPourquoi explorer les données ? - Permet de détecter les valeurs aberrantes, manquantes ou incohérentes. - Aide à comprendre la structure des données avant d’appliquer des transformations.\nExercice : - Créez un DataFrame à partir d’un dictionnaire contenant au moins 4 colonnes. - Affichez les informations de base du DataFrame."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#gestion-des-indices",
+    "href": "doc/cours/analysedonnees.html#gestion-des-indices",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.4 Gestion des indices",
+    "text": "2.4 Gestion des indices\nPandas permet de manipuler et personnaliser les indices d’un DataFrame pour optimiser l’analyse des données.\n\nModification de l’index\ndf.set_index('Nom', inplace=True)  # Définir la colonne \"Nom\" comme index\nprint(df)\n\n\nRéinitialisation de l’index\ndf.reset_index(inplace=True)  # Restaurer l'index par défaut\nprint(df)\nPourquoi utiliser des indices personnalisés ? - Permet d’accéder plus rapidement aux lignes spécifiques. - Facilite les jointures et les regroupements de données."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#tri-et-ordonnancement-des-données",
+    "href": "doc/cours/analysedonnees.html#tri-et-ordonnancement-des-données",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.5 Tri et ordonnancement des données",
+    "text": "2.5 Tri et ordonnancement des données\nPandas permet de trier les données selon différentes colonnes.\n\nTrier selon une colonne\ndf.sort_values(by='Salaire', ascending=False)\n\n\nTrier selon l’index\ndf.sort_index()\nPourquoi trier les données ? - Facilite l’interprétation des résultats. - Permet d’optimiser certaines analyses."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#optimisation-et-performances",
+    "href": "doc/cours/analysedonnees.html#optimisation-et-performances",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.6 Optimisation et performances",
+    "text": "2.6 Optimisation et performances\nPandas permet d’améliorer les performances des manipulations de données.\n\nUtilisation des types category\ndf['Nom'] = df['Nom'].astype('category')\nPourquoi utiliser category ? - Permet de réduire la mémoire utilisée. - Optimise les opérations de regroupement.\n\n\nChargement efficace de fichiers volumineux\npd.read_csv('data.csv', chunksize=1000)  # Charger par blocs de 1000 lignes\nPourquoi charger en morceaux ? - Évite de saturer la mémoire RAM. - Facilite le traitement de très gros fichiers."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#exportation-des-données",
+    "href": "doc/cours/analysedonnees.html#exportation-des-données",
+    "title": "Analyse de données avec Pandas",
+    "section": "2.7 Exportation des données",
+    "text": "2.7 Exportation des données\nPandas permet d’exporter facilement les résultats de l’analyse sous différents formats.\ndf.to_csv('output.csv', index=False)  # Sauvegarde en CSV\ndf.to_excel('output.xlsx', index=False)  # Sauvegarde en Excel\ndf.to_json('output.json')  # Sauvegarde en JSON\nPourquoi exporter les données ? - Facilite le partage et la réutilisation des résultats. - Permet de documenter le travail réalisé."
+  },
+  {
     "objectID": "doc/cours/analysedonnees.html#groupby-et-agrégations",
     "href": "doc/cours/analysedonnees.html#groupby-et-agrégations",
     "title": "Analyse de données avec Pandas",
-    "section": "",
-    "text": "Pandas facilite le regroupement des données et leur analyse statistique.\n\n\ndf.groupby('Nom')['Salaire'].sum()\nPourquoi utiliser GroupBy ? - Permet d’analyser des tendances et de comparer des groupes.\n\n\n\ndf['Salaire'].mean()  # Moyenne\ndf['Salaire'].median()  # Médiane\ndf['Salaire'].std()  # Écart-type\nPourquoi les statistiques sont utiles ? - Aident à détecter les tendances et anomalies.\nExercice 4 : - Trouvez la moyenne des salaires par groupe. - Identifiez la personne ayant le salaire le plus élevé."
+    "section": "2.8 GroupBy et Agrégations",
+    "text": "2.8 GroupBy et Agrégations\nPandas facilite le regroupement des données et leur analyse statistique.\n\nAgrégation par GroupBy\ndf.groupby('Nom')['Salaire'].sum()\nPourquoi utiliser GroupBy ? - Permet d’analyser des tendances et de comparer des groupes.\n\n\nStatistiques Avancées\ndf['Salaire'].mean()  # Moyenne\ndf['Salaire'].median()  # Médiane\ndf['Salaire'].std()  # Écart-type\nPourquoi les statistiques sont utiles ? - Aident à détecter les tendances et anomalies.\nExercice 4 : - Trouvez la moyenne des salaires par groupe. - Identifiez la personne ayant le salaire le plus élevé."
   },
   {
     "objectID": "doc/cours/analysedonnees.html#jointures-et-fusion-de-données",
     "href": "doc/cours/analysedonnees.html#jointures-et-fusion-de-données",
     "title": "Analyse de données avec Pandas",
-    "section": "",
-    "text": "Lorsqu’on travaille avec plusieurs ensembles de données, il est souvent nécessaire de les fusionner pour obtenir une vue d’ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.\n\n\nLa méthode merge() permet de fusionner deux DataFrames sur une colonne commune.\ndf1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie']})\ndf2 = pd.DataFrame({'ID': [1, 2, 3], 'Salaire': [50000, 60000, 70000]})\n\nfusion = pd.merge(df1, df2, on='ID')\nprint(fusion)\n\n\n\nPandas permet plusieurs types de jointures similaires aux bases de données SQL :\n\nInner Join (Intersection) : Ne garde que les valeurs communes aux deux DataFrames.\nLeft Join (Jointure à gauche) : Conserve toutes les lignes du premier DataFrame et ajoute les correspondances du second.\nRight Join (Jointure à droite) : Conserve toutes les lignes du second DataFrame et ajoute les correspondances du premier.\nOuter Join (Jointure complète) : Conserve toutes les données des deux DataFrames, même celles sans correspondance.\n\n# Inner Join (par défaut)\npd.merge(df1, df2, on='ID', how='inner')\n\n# Left Join\npd.merge(df1, df2, on='ID', how='left')\n\n# Right Join\npd.merge(df1, df2, on='ID', how='right')\n\n# Outer Join\npd.merge(df1, df2, on='ID', how='outer')\n\n\n\nParfois, il est nécessaire de concaténer des DataFrames, c’est-à-dire les empiler verticalement ou horizontalement.\ndf3 = pd.DataFrame({'ID': [4, 5], 'Nom': ['David', 'Emma']})\nconcat_vertical = pd.concat([df1, df3], ignore_index=True)\nprint(concat_vertical)\nPourquoi utiliser concat() ? - Utile lorsqu’on dispose de plusieurs fichiers contenant des données similaires et qu’on souhaite les regrouper. - Permet de fusionner facilement des ensembles de données de manière efficace.\n\n\n\nDans certains cas, la fusion se fait sur plusieurs colonnes :\ndf1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie'], 'Ville': ['Paris', 'Lyon', 'Marseille']})\ndf2 = pd.DataFrame({'ID': [1, 2, 3], 'Ville': ['Paris', 'Lyon', 'Marseille'], 'Salaire': [50000, 60000, 70000]})\n\nfusion_multi = pd.merge(df1, df2, on=['ID', 'Ville'])\nprint(fusion_multi)\nExercice 5 : - Créez deux DataFrames et appliquez différents types de jointures. - Testez la concaténation avec des DataFrames ayant des colonnes différentes."
+    "section": "2.9 Jointures et Fusion de Données",
+    "text": "2.9 Jointures et Fusion de Données\nLorsqu’on travaille avec plusieurs ensembles de données, il est souvent nécessaire de les fusionner pour obtenir une vue d’ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.\n\nLa méthode merge()\nLa méthode merge() permet de fusionner deux DataFrames sur une colonne commune.\ndf1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie']})\ndf2 = pd.DataFrame({'ID': [1, 2, 3], 'Salaire': [50000, 60000, 70000]})\n\nfusion = pd.merge(df1, df2, on='ID')\nprint(fusion)\n\n\nTypes de Jointures\nPandas permet plusieurs types de jointures similaires aux bases de données SQL :\n\nInner Join (Intersection) : Ne garde que les valeurs communes aux deux DataFrames.\nLeft Join (Jointure à gauche) : Conserve toutes les lignes du premier DataFrame et ajoute les correspondances du second.\nRight Join (Jointure à droite) : Conserve toutes les lignes du second DataFrame et ajoute les correspondances du premier.\nOuter Join (Jointure complète) : Conserve toutes les données des deux DataFrames, même celles sans correspondance.\n\n# Inner Join (par défaut)\npd.merge(df1, df2, on='ID', how='inner')\n\n# Left Join\npd.merge(df1, df2, on='ID', how='left')\n\n# Right Join\npd.merge(df1, df2, on='ID', how='right')\n\n# Outer Join\npd.merge(df1, df2, on='ID', how='outer')\n\n\nConcaténation de DataFrames\nParfois, il est nécessaire de concaténer des DataFrames, c’est-à-dire les empiler verticalement ou horizontalement.\ndf3 = pd.DataFrame({'ID': [4, 5], 'Nom': ['David', 'Emma']})\nconcat_vertical = pd.concat([df1, df3], ignore_index=True)\nprint(concat_vertical)\nPourquoi utiliser concat() ? - Utile lorsqu’on dispose de plusieurs fichiers contenant des données similaires et qu’on souhaite les regrouper. - Permet de fusionner facilement des ensembles de données de manière efficace.\n\n\nJointure Multi-index\nDans certains cas, la fusion se fait sur plusieurs colonnes :\ndf1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie'], 'Ville': ['Paris', 'Lyon', 'Marseille']})\ndf2 = pd.DataFrame({'ID': [1, 2, 3], 'Ville': ['Paris', 'Lyon', 'Marseille'], 'Salaire': [50000, 60000, 70000]})\n\nfusion_multi = pd.merge(df1, df2, on=['ID', 'Ville'])\nprint(fusion_multi)\nExercice 5 : - Créez deux DataFrames et appliquez différents types de jointures. - Testez la concaténation avec des DataFrames ayant des colonnes différentes."
   },
   {
     "objectID": "doc/cours/analysedonnees.html#conclusion",
     "href": "doc/cours/analysedonnees.html#conclusion",
     "title": "Analyse de données avec Pandas",
-    "section": "",
-    "text": "Ce cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées. - Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète."
+    "section": "2.10 Conclusion",
+    "text": "2.10 Conclusion\nCe cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées. - Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète."
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

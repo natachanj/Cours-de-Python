@@ -385,11 +385,67 @@
     "text": "3. Indexation et Slicing\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires."
   },
   {
+    "objectID": "doc/cours/manipdonnees-slides.html#introduction-1",
+    "href": "doc/cours/manipdonnees-slides.html#introduction-1",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Introduction",
+    "text": "Introduction\nNumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#installation-et-importation-1",
+    "href": "doc/cours/manipdonnees-slides.html#installation-et-importation-1",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1. Installation et Importation",
+    "text": "1. Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/cours/manipdonnees-slides.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "4. Opérations Mathématiques et Statistiques",
+    "text": "4. Opérations Mathématiques et Statistiques\nNumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.\narr = np.array([1, 2, 3, 4, 5])\nprint(arr + 10)  # Ajouter 10 à chaque élément\nprint(arr ** 2)  # Élever chaque élément au carré\nPourquoi ces opérations sont-elles utiles ? - Elles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances. - Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.\nNumPy fournit également des fonctions statistiques :\nprint(arr.mean())  # Moyenne\nprint(arr.sum())   # Somme\nprint(arr.std())   # Écart-type\nExercice 3 : - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#reshaping-et-manipulation-des-formes",
+    "href": "doc/cours/manipdonnees-slides.html#reshaping-et-manipulation-des-formes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "5. Reshaping et Manipulation des Formes",
+    "text": "5. Reshaping et Manipulation des Formes\nLe reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.\narr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes\nprint(arr)\nLa transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :\nprint(arr.T)  # Transpose la matrice\nExercice 4 : - Créez une matrice 3x3 et affichez sa transposée."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#broadcasting-et-vectorisation",
+    "href": "doc/cours/manipdonnees-slides.html#broadcasting-et-vectorisation",
+    "title": "Manipulation des données avec Numpy",
+    "section": "6. Broadcasting et Vectorisation",
+    "text": "6. Broadcasting et Vectorisation\nLe broadcasting est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr + np.array([10, 20, 30]))  # Broadcasting\nPourquoi le broadcasting est important ? - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.\nExercice 5 : - Multipliez une matrice par un vecteur ligne avec broadcasting."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#gestion-des-valeurs-manquantes",
+    "href": "doc/cours/manipdonnees-slides.html#gestion-des-valeurs-manquantes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "7. Gestion des Valeurs Manquantes",
+    "text": "7. Gestion des Valeurs Manquantes\nNumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.\narr = np.array([1, 2, np.nan, 4, 5])\nprint(np.isnan(arr))  # Détecter les NaN\nprint(np.nanmean(arr))  # Moyenne en ignorant NaN\nPourquoi est-ce utile ? - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.\nExercice 6 : - Remplacez les valeurs NaN par la moyenne du tableau."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#applications-pratiques",
+    "href": "doc/cours/manipdonnees-slides.html#applications-pratiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "8. Applications Pratiques",
+    "text": "8. Applications Pratiques\nNumPy est souvent utilisé pour des applications pratiques en science des données et en intelligence artificielle."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#conclusion",
+    "href": "doc/cours/manipdonnees-slides.html#conclusion",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Conclusion",
+    "text": "Conclusion\nCe cours vous a permis de maîtriser :\n\nLa manipulation et la création de tableaux NumPy\nLes opérations mathématiques et statistiques\nLes techniques avancées de reshaping et broadcasting"
+  },
+  {
     "objectID": "doc/cours/manipulationdonnees.html",
     "href": "doc/cours/manipulationdonnees.html",
     "title": "Manipulation des données avec Numpy",
     "section": "",
-    "text": "NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\n\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement\n\n\n\n\n\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois.\n\n\n\n\nNumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.\n\n\nLes tableaux NumPy peuvent être créés à partir de listes Python, de valeurs prédéfinies ou de valeurs générées automatiquement :\n# Création d'un tableau à partir d'une liste\narr1 = np.array([1, 2, 3, 4, 5])\nprint(arr1)\n\n# Tableau multidimensionnel\narr2 = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr2)\nD’autres méthodes permettent de générer rapidement des tableaux :\nnp.zeros((3, 3))    # Matrice 3x3 remplie de 0\nnp.ones((2, 4))     # Matrice 2x4 remplie de 1\nnp.full((3, 3), 7)  # Matrice 3x3 remplie de 7\nnp.eye(4)           # Matrice identité 4x4\nnp.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10\nPourquoi ces méthodes sont utiles ? - zeros et ones permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une. - eye est très utilisé en algèbre linéaire pour les calculs de matrices identité. - linspace est idéal pour générer des valeurs numériques espacées uniformément.\nExercice 1 : - Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1. - Générer une séquence de 10 nombres entre 1 et 100.\n\n\n\n\n\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires.\n\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[2])  # Accéder au 3e élément\nL’indexation commence toujours à 0 en Python, donc arr[2] retourne 30.\n\n\n\nNumPy permet d’accéder à des sous-ensembles de tableaux plus facilement :\narr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(arr2d[1, 2])  # 6 (ligne 2, colonne 3)\n\n\n\nAvec NumPy, on peut extraire plusieurs valeurs avec des tranches (slices) :\nsub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau\nprint(sub_arr)\nPourquoi utiliser le slicing ? - Permet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement. - Très utile en analyse de données pour filtrer des valeurs selon des conditions spécifiques.\nExercice 2 : - Extraire la première colonne d’une matrice 3x3. - Modifier les valeurs d’une portion spécifique d’un tableau."
+    "text": "NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\n\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement"
   },
   {
     "objectID": "doc/cours/manipulationdonnees.html#introduction",
@@ -402,22 +458,78 @@
     "objectID": "doc/cours/manipulationdonnees.html#installation-et-importation",
     "href": "doc/cours/manipulationdonnees.html#installation-et-importation",
     "title": "Manipulation des données avec Numpy",
-    "section": "",
-    "text": "NumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
+    "section": "0.2 1. Installation et Importation",
+    "text": "0.2 1. Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
   },
   {
     "objectID": "doc/cours/manipulationdonnees.html#création-et-manipulation-des-tableaux-numpy",
     "href": "doc/cours/manipulationdonnees.html#création-et-manipulation-des-tableaux-numpy",
     "title": "Manipulation des données avec Numpy",
-    "section": "",
-    "text": "NumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.\n\n\nLes tableaux NumPy peuvent être créés à partir de listes Python, de valeurs prédéfinies ou de valeurs générées automatiquement :\n# Création d'un tableau à partir d'une liste\narr1 = np.array([1, 2, 3, 4, 5])\nprint(arr1)\n\n# Tableau multidimensionnel\narr2 = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr2)\nD’autres méthodes permettent de générer rapidement des tableaux :\nnp.zeros((3, 3))    # Matrice 3x3 remplie de 0\nnp.ones((2, 4))     # Matrice 2x4 remplie de 1\nnp.full((3, 3), 7)  # Matrice 3x3 remplie de 7\nnp.eye(4)           # Matrice identité 4x4\nnp.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10\nPourquoi ces méthodes sont utiles ? - zeros et ones permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une. - eye est très utilisé en algèbre linéaire pour les calculs de matrices identité. - linspace est idéal pour générer des valeurs numériques espacées uniformément.\nExercice 1 : - Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1. - Générer une séquence de 10 nombres entre 1 et 100."
+    "section": "0.3 2. Création et Manipulation des Tableaux NumPy",
+    "text": "0.3 2. Création et Manipulation des Tableaux NumPy\nNumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.\n\n2.1 Création de Tableaux (ndarray)\nLes tableaux NumPy peuvent être créés à partir de listes Python, de valeurs prédéfinies ou de valeurs générées automatiquement :\n# Création d'un tableau à partir d'une liste\narr1 = np.array([1, 2, 3, 4, 5])\nprint(arr1)\n\n# Tableau multidimensionnel\narr2 = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr2)\nD’autres méthodes permettent de générer rapidement des tableaux :\nnp.zeros((3, 3))    # Matrice 3x3 remplie de 0\nnp.ones((2, 4))     # Matrice 2x4 remplie de 1\nnp.full((3, 3), 7)  # Matrice 3x3 remplie de 7\nnp.eye(4)           # Matrice identité 4x4\nnp.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10\nPourquoi ces méthodes sont utiles ? - zeros et ones permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une. - eye est très utilisé en algèbre linéaire pour les calculs de matrices identité. - linspace est idéal pour générer des valeurs numériques espacées uniformément.\nExercice 1 : - Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1. - Générer une séquence de 10 nombres entre 1 et 100."
   },
   {
     "objectID": "doc/cours/manipulationdonnees.html#indexation-et-slicing",
     "href": "doc/cours/manipulationdonnees.html#indexation-et-slicing",
     "title": "Manipulation des données avec Numpy",
-    "section": "",
-    "text": "L’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires.\n\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[2])  # Accéder au 3e élément\nL’indexation commence toujours à 0 en Python, donc arr[2] retourne 30.\n\n\n\nNumPy permet d’accéder à des sous-ensembles de tableaux plus facilement :\narr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(arr2d[1, 2])  # 6 (ligne 2, colonne 3)\n\n\n\nAvec NumPy, on peut extraire plusieurs valeurs avec des tranches (slices) :\nsub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau\nprint(sub_arr)\nPourquoi utiliser le slicing ? - Permet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement. - Très utile en analyse de données pour filtrer des valeurs selon des conditions spécifiques.\nExercice 2 : - Extraire la première colonne d’une matrice 3x3. - Modifier les valeurs d’une portion spécifique d’un tableau."
+    "section": "0.4 3. Indexation et Slicing",
+    "text": "0.4 3. Indexation et Slicing\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires.\n\n3.1 Sélection d’éléments\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[2])  # Accéder au 3e élément\nL’indexation commence toujours à 0 en Python, donc arr[2] retourne 30.\n\n\n3.2 Indexation avancée\nNumPy permet d’accéder à des sous-ensembles de tableaux plus facilement :\narr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(arr2d[1, 2])  # 6 (ligne 2, colonne 3)\n\n\n3.3 Slicing (Découpage d’un tableau)\nAvec NumPy, on peut extraire plusieurs valeurs avec des tranches (slices) :\nsub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau\nprint(sub_arr)\nPourquoi utiliser le slicing ? - Permet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement. - Très utile en analyse de données pour filtrer des valeurs selon des conditions spécifiques.\nExercice 2 : - Extraire la première colonne d’une matrice 3x3. - Modifier les valeurs d’une portion spécifique d’un tableau."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#introduction-1",
+    "href": "doc/cours/manipulationdonnees.html#introduction-1",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.1 Introduction",
+    "text": "1.1 Introduction\nNumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\nPourquoi utiliser NumPy ?\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement"
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#installation-et-importation-1",
+    "href": "doc/cours/manipulationdonnees.html#installation-et-importation-1",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.2 1. Installation et Importation",
+    "text": "1.2 1. Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/cours/manipulationdonnees.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.3 4. Opérations Mathématiques et Statistiques",
+    "text": "1.3 4. Opérations Mathématiques et Statistiques\nNumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.\narr = np.array([1, 2, 3, 4, 5])\nprint(arr + 10)  # Ajouter 10 à chaque élément\nprint(arr ** 2)  # Élever chaque élément au carré\nPourquoi ces opérations sont-elles utiles ? - Elles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances. - Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.\nNumPy fournit également des fonctions statistiques :\nprint(arr.mean())  # Moyenne\nprint(arr.sum())   # Somme\nprint(arr.std())   # Écart-type\nExercice 3 : - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#reshaping-et-manipulation-des-formes",
+    "href": "doc/cours/manipulationdonnees.html#reshaping-et-manipulation-des-formes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.4 5. Reshaping et Manipulation des Formes",
+    "text": "1.4 5. Reshaping et Manipulation des Formes\nLe reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.\narr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes\nprint(arr)\nLa transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :\nprint(arr.T)  # Transpose la matrice\nExercice 4 : - Créez une matrice 3x3 et affichez sa transposée."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#broadcasting-et-vectorisation",
+    "href": "doc/cours/manipulationdonnees.html#broadcasting-et-vectorisation",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.5 6. Broadcasting et Vectorisation",
+    "text": "1.5 6. Broadcasting et Vectorisation\nLe broadcasting est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr + np.array([10, 20, 30]))  # Broadcasting\nPourquoi le broadcasting est important ? - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.\nExercice 5 : - Multipliez une matrice par un vecteur ligne avec broadcasting."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#gestion-des-valeurs-manquantes",
+    "href": "doc/cours/manipulationdonnees.html#gestion-des-valeurs-manquantes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.6 7. Gestion des Valeurs Manquantes",
+    "text": "1.6 7. Gestion des Valeurs Manquantes\nNumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.\narr = np.array([1, 2, np.nan, 4, 5])\nprint(np.isnan(arr))  # Détecter les NaN\nprint(np.nanmean(arr))  # Moyenne en ignorant NaN\nPourquoi est-ce utile ? - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.\nExercice 6 : - Remplacez les valeurs NaN par la moyenne du tableau."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#applications-pratiques",
+    "href": "doc/cours/manipulationdonnees.html#applications-pratiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.7 8. Applications Pratiques",
+    "text": "1.7 8. Applications Pratiques\nNumPy est souvent utilisé pour des applications pratiques en science des données et en intelligence artificielle.\n\nProduit Matriciel\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nprint(np.dot(A, B))  # Produit matriciel\n\n\nSimulation de Données\nsim_data = np.random.randn(1000)\nprint(np.histogram(sim_data, bins=10))  # Histogramme des valeurs simulées\nExercice 7 : - Simulez une série de valeurs et tracez son histogramme."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#conclusion",
+    "href": "doc/cours/manipulationdonnees.html#conclusion",
+    "title": "Manipulation des données avec Numpy",
+    "section": "1.8 Conclusion",
+    "text": "1.8 Conclusion\nCe cours vous a permis de maîtriser :\n\nLa manipulation et la création de tableaux NumPy\nLes opérations mathématiques et statistiques\nLes techniques avancées de reshaping et broadcasting"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",

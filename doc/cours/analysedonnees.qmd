@@ -41,7 +41,7 @@ from: markdown+emoji
 
 ---
 
-## 1. Installation et Importation
+##  Installation et Importation
 
 Si Pandas n'est pas encore installé, vous pouvez l'ajouter à votre environnement Python avec la commande suivante :
 ```bash
@@ -57,11 +57,11 @@ L'alias `pd` est une convention utilisée pour simplifier l'appel aux fonctions 
 
 ---
 
-## 2. Création et Chargement des Données
+##  Création et Chargement des Données
 
 Pandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats.
 
-### 2.1 Création d'un DataFrame
+###  Création d'un DataFrame
 
 Un **DataFrame** est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL.
 
@@ -79,7 +79,7 @@ Pourquoi utiliser un DataFrame ?
 - Il permet de manipuler facilement **des données hétérogènes**.
 - Il est conçu pour des **opérations analytiques rapides et intuitives**.
 
-### 2.2 Chargement des Données à partir de Fichiers
+### Chargement des Données à partir de Fichiers
 
 Pandas permet de lire des fichiers de différents formats : CSV, Excel, JSON, SQL, etc.
 
@@ -97,11 +97,11 @@ df = pd.read_excel("data.xlsx")
 
 ---
 
-## 3. Sélection et Filtrage des Données
+##  Sélection et Filtrage des Données
 
 L'accès aux données est une étape essentielle pour manipuler efficacement un DataFrame.
 
-### 3.1 Sélection des Colonnes
+###  Sélection des Colonnes
 
 Vous pouvez sélectionner une colonne spécifique comme suit :
 ```python
@@ -112,7 +112,7 @@ Pour sélectionner plusieurs colonnes :
 df[['Nom', 'Salaire']]
 ```
 
-### 3.2 Sélection des Lignes avec `.loc` et `.iloc`
+###  Sélection des Lignes avec `.loc` et `.iloc`
 
 #### **Différence entre `.loc` et `.iloc`**
 - `.loc` sélectionne les données par **étiquette** (nom des lignes ou colonnes).
@@ -139,11 +139,11 @@ df.iloc[0:2]  # Sélectionne les deux premières lignes
 
 ---
 
-## 4. Transformation et Nettoyage des Données
+## Transformation et Nettoyage des Données
 
 Les jeux de données réels sont souvent **incomplets** ou **mal structurés**. Pandas offre des outils pour les corriger.
 
-### 4.1 Gestion des Valeurs Manquantes
+### Gestion des Valeurs Manquantes
 
 ```python
 df.isnull().sum()  # Compter les valeurs manquantes
@@ -154,7 +154,7 @@ Pourquoi gérer les valeurs manquantes ?
 - Les valeurs manquantes peuvent **fausser les résultats** d'analyse.
 - Pandas permet de **les remplacer ou les supprimer intelligemment**.
 
-### 4.2 Ajout et Suppression de Colonnes
+### Ajout et Suppression de Colonnes
 
 ```python
 df['Revenu Annuel'] = df['Salaire'] * 12  # Ajouter une colonne
@@ -171,11 +171,174 @@ Pourquoi manipuler les colonnes ?
 
 ---
 
-## 5. GroupBy et Agrégations
+# Cours Complet : Analyse de Données avec Pandas
+
+## Introduction
+
+**Pandas** est une bibliothèque open-source essentielle en Python pour la manipulation et l'analyse de données. Elle permet de travailler avec des ensembles de données sous forme de **tableaux** en offrant des outils puissants pour **nettoyer, transformer et analyser** les données efficacement.
+
+### Pourquoi utiliser Pandas ?
+
+- **Facilité de manipulation** : Pandas simplifie la manipulation des **données tabulaires** (issues de fichiers CSV, Excel, bases de données, etc.).
+- **Performance** : Pandas est optimisé pour gérer de **grandes quantités de données** bien plus rapidement que les structures classiques comme les listes Python.
+- **Interopérabilité** : Compatible avec **NumPy**, **Matplotlib**, **SQL**, et d'autres bibliothèques de data science.
+
+**Objectifs du cours :**
+- Comprendre les structures de Pandas : **Series** et **DataFrame**.
+- Apprendre à charger, explorer et manipuler des données.
+- Effectuer des analyses et transformations avancées.
+
+---
+
+## 1. Installation et Importation
+
+Si Pandas n'est pas encore installé, vous pouvez l'ajouter à votre environnement Python avec la commande suivante :
+```bash
+pip install pandas
+```
+
+Une fois installé, importez Pandas :
+```python
+import pandas as pd
+```
+
+L'alias `pd` est une convention utilisée pour simplifier l'appel aux fonctions de la bibliothèque.
+
+---
+
+## 2. Création d'un DataFrame à partir d'un Dictionnaire
+
+Un **DataFrame** est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL. L'une des façons les plus courantes de créer un DataFrame est d'utiliser un **dictionnaire Python**.
+
+```python
+data = {
+    'Nom': ['Alice', 'Bob', 'Charlie'],
+    'Âge': [25, 30, 35],
+    'Salaire': [50000, 60000, 70000]
+}
+df = pd.DataFrame(data)
+print(df)
+```
+
+Pourquoi utiliser un DataFrame ?
+- Il permet de manipuler facilement **des données hétérogènes**.
+- Il est conçu pour des **opérations analytiques rapides et intuitives**.
+- Il facilite la conversion et l'import/export de données dans divers formats (CSV, Excel, SQL, etc.).
+
+### Accéder aux informations du DataFrame
+
+Une fois le DataFrame créé, il est essentiel d'explorer ses informations :
+
+```python
+print(df.head())  # Afficher les premières lignes
+df.info()  # Afficher un résumé des données
+df.describe()  # Statistiques descriptives des colonnes numériques
+```
+
+Pourquoi explorer les données ?
+- Permet de détecter **les valeurs aberrantes, manquantes ou incohérentes**.
+- Aide à **comprendre la structure des données** avant d'appliquer des transformations.
+
+**Exercice :**
+- Créez un DataFrame à partir d'un dictionnaire contenant au moins 4 colonnes.
+- Affichez les informations de base du DataFrame.
+
+---
+
+## Gestion des indices
+
+Pandas permet de manipuler et personnaliser les indices d'un DataFrame pour optimiser l'analyse des données.
+
+### Modification de l'index
+
+```python
+df.set_index('Nom', inplace=True)  # Définir la colonne "Nom" comme index
+print(df)
+```
+
+### Réinitialisation de l'index
+
+```python
+df.reset_index(inplace=True)  # Restaurer l'index par défaut
+print(df)
+```
+
+Pourquoi utiliser des indices personnalisés ?
+- Permet d'accéder plus rapidement aux lignes spécifiques.
+- Facilite les jointures et les regroupements de données.
+
+---
+
+## Tri et ordonnancement des données
+
+Pandas permet de trier les données selon différentes colonnes.
+
+### Trier selon une colonne
+
+```python
+df.sort_values(by='Salaire', ascending=False)
+```
+
+### Trier selon l'index
+
+```python
+df.sort_index()
+```
+
+Pourquoi trier les données ?
+- Facilite l'interprétation des résultats.
+- Permet d'optimiser certaines analyses.
+
+---
+
+## Optimisation et performances
+
+Pandas permet d'améliorer les performances des manipulations de données.
+
+### Utilisation des types `category`
+
+```python
+df['Nom'] = df['Nom'].astype('category')
+```
+
+Pourquoi utiliser `category` ?
+- Permet de réduire la mémoire utilisée.
+- Optimise les opérations de regroupement.
+
+### Chargement efficace de fichiers volumineux
+
+```python
+pd.read_csv('data.csv', chunksize=1000)  # Charger par blocs de 1000 lignes
+```
+
+Pourquoi charger en morceaux ?
+- Évite de saturer la mémoire RAM.
+- Facilite le traitement de très gros fichiers.
+
+---
+
+## Exportation des données
+
+Pandas permet d'exporter facilement les résultats de l'analyse sous différents formats.
+
+```python
+df.to_csv('output.csv', index=False)  # Sauvegarde en CSV
+df.to_excel('output.xlsx', index=False)  # Sauvegarde en Excel
+df.to_json('output.json')  # Sauvegarde en JSON
+```
+
+Pourquoi exporter les données ?
+- Facilite le partage et la réutilisation des résultats.
+- Permet de documenter le travail réalisé.
+
+---
+
+
+## GroupBy et Agrégations
 
 Pandas facilite le **regroupement des données** et leur analyse statistique.
 
-### 5.1 Agrégation par GroupBy
+### Agrégation par GroupBy
 
 ```python
 df.groupby('Nom')['Salaire'].sum()
@@ -184,7 +347,7 @@ df.groupby('Nom')['Salaire'].sum()
 Pourquoi utiliser GroupBy ?
 - Permet d’analyser **des tendances** et de **comparer des groupes**.
 
-### 5.2 Statistiques Avancées
+### Statistiques Avancées
 
 ```python
 df['Salaire'].mean()  # Moyenne
@@ -202,11 +365,11 @@ Pourquoi les statistiques sont utiles ?
 ---
 
 
-## 6. Jointures et Fusion de Données
+## Jointures et Fusion de Données
 
 Lorsqu'on travaille avec plusieurs ensembles de données, il est souvent nécessaire de **les fusionner** pour obtenir une vue d'ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.
 
-### 6.1 La méthode `merge()`
+### La méthode `merge()`
 
 La méthode `merge()` permet de fusionner deux DataFrames sur une colonne commune.
 
@@ -218,7 +381,7 @@ fusion = pd.merge(df1, df2, on='ID')
 print(fusion)
 ```
 
-### 6.2 Types de Jointures
+### Types de Jointures
 
 Pandas permet plusieurs types de jointures similaires aux bases de données SQL :
 
@@ -241,7 +404,7 @@ pd.merge(df1, df2, on='ID', how='right')
 pd.merge(df1, df2, on='ID', how='outer')
 ```
 
-### 6.3 Concaténation de DataFrames
+### Concaténation de DataFrames
 
 Parfois, il est nécessaire de **concaténer** des DataFrames, c'est-à-dire les empiler verticalement ou horizontalement.
 
@@ -255,7 +418,7 @@ Pourquoi utiliser `concat()` ?
 - Utile lorsqu'on dispose de plusieurs fichiers contenant des données similaires et qu'on souhaite les regrouper.
 - Permet de fusionner facilement des ensembles de données de manière efficace.
 
-### 6.4 Jointure Multi-index
+### Jointure Multi-index
 
 Dans certains cas, la fusion se fait sur plusieurs colonnes :
 

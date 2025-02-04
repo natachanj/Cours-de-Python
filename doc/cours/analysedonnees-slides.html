@@ -205,195 +205,134 @@ Natacha Njongwa Yepnga
 
 </section>
 <section>
+<section id="cours-complet-analyse-de-données-avec-pandas" class="title-slide slide level1 center">
+<h1>Cours Complet : Analyse de Données avec Pandas</h1>
+
+</section>
 <section id="introduction" class="title-slide slide level2 center">
 <h2>Introduction</h2>
-<p><strong>NumPy</strong> (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.</p>
-<p>L’intérêt principal de NumPy est sa capacité à effectuer des calculs <strong>beaucoup plus rapidement</strong> que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.</p>
+<p><strong>Pandas</strong> est une bibliothèque open-source essentielle en Python pour la manipulation et l’analyse de données. Elle permet de travailler avec des ensembles de données sous forme de <strong>tableaux</strong> en offrant des outils puissants pour <strong>nettoyer, transformer et analyser</strong> les données efficacement.</p>
 </section>
-<section id="pourquoi-utiliser-numpy" class="slide level3">
-<h3>Pourquoi utiliser NumPy ?</h3>
+<section id="pourquoi-utiliser-pandas" class="slide level3">
+<h3>Pourquoi utiliser Pandas ?</h3>
 <ul>
-<li><strong>Efficacité et rapidité</strong> : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.</li>
-<li><strong>Gestion de données complexes</strong> : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.</li>
-<li><strong>Compatibilité avec d’autres bibliothèques</strong> : NumPy est souvent utilisé avec <strong>Pandas</strong>, <strong>Matplotlib</strong>, et <strong>Scikit-learn</strong> pour l’analyse et la modélisation des données.</li>
+<li><strong>Facilité de manipulation</strong> : Pandas simplifie la manipulation des <strong>données tabulaires</strong> (issues de fichiers CSV, Excel, bases de données, etc.).</li>
+<li><strong>Performance</strong> : Pandas est optimisé pour gérer de <strong>grandes quantités de données</strong> bien plus rapidement que les structures classiques comme les listes Python.</li>
+<li><strong>Interopérabilité</strong> : Compatible avec <strong>NumPy</strong>, <strong>Matplotlib</strong>, <strong>SQL</strong>, et d’autres bibliothèques de data science.</li>
 </ul>
-<p><strong>Objectifs de ce cours :</strong> - Comprendre et manipuler les tableaux (<code>ndarray</code>) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement</p>
+<p><strong>Objectifs du cours :</strong> - Comprendre les structures de Pandas : <strong>Series</strong> et <strong>DataFrame</strong>. - Apprendre à charger, explorer et manipuler des données. - Effectuer des analyses et transformations avancées.</p>
 </section>
 <section class="slide level3">
 
-</section></section>
-<section>
+</section>
+
 <section id="installation-et-importation" class="title-slide slide level2 center">
 <h2>1. Installation et Importation</h2>
-<p>NumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ensuite, importez NumPy dans votre script Python :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>L’alias <code>np</code> est utilisé par convention pour éviter d’avoir à taper <code>numpy</code> en entier à chaque fois.</p>
-</section>
-<section class="slide level3">
-
-</section></section>
-<section>
-<section id="création-et-manipulation-des-tableaux-numpy" class="title-slide slide level2 center">
-<h2>2. Création et Manipulation des Tableaux NumPy</h2>
-<p>NumPy repose sur une structure de données appelée <strong>ndarray</strong> (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.</p>
-</section>
-<section id="création-de-tableaux-ndarray" class="slide level3">
-<h3>2.1 Création de Tableaux (<code>ndarray</code>)</h3>
-<p>Les tableaux NumPy peuvent être créés à partir de <strong>listes Python</strong>, de <strong>valeurs prédéfinies</strong> ou de <strong>valeurs générées automatiquement</strong> :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Création d'un tableau à partir d'une liste</span></span>
-<span id="cb3-2"><a></a>arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb3-3"><a></a><span class="bu">print</span>(arr1)</span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a><span class="co"># Tableau multidimensionnel</span></span>
-<span id="cb3-6"><a></a>arr2 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
-<span id="cb3-7"><a></a><span class="bu">print</span>(arr2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>D’autres méthodes permettent de générer rapidement des tableaux :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>np.zeros((<span class="dv">3</span>, <span class="dv">3</span>))    <span class="co"># Matrice 3x3 remplie de 0</span></span>
-<span id="cb4-2"><a></a>np.ones((<span class="dv">2</span>, <span class="dv">4</span>))     <span class="co"># Matrice 2x4 remplie de 1</span></span>
-<span id="cb4-3"><a></a>np.full((<span class="dv">3</span>, <span class="dv">3</span>), <span class="dv">7</span>)  <span class="co"># Matrice 3x3 remplie de 7</span></span>
-<span id="cb4-4"><a></a>np.eye(<span class="dv">4</span>)           <span class="co"># Matrice identité 4x4</span></span>
-<span id="cb4-5"><a></a>np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">5</span>)  <span class="co"># 5 valeurs espacées entre 0 et 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi ces méthodes sont utiles ?</strong> - <code>zeros</code> et <code>ones</code> permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une. - <code>eye</code> est très utilisé en <strong>algèbre linéaire</strong> pour les calculs de matrices identité. - <code>linspace</code> est idéal pour générer des valeurs numériques espacées uniformément.</p>
-<p><strong>Exercice 1 :</strong> - Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1. - Générer une séquence de 10 nombres entre 1 et 100.</p>
-</section>
-<section class="slide level3">
-
-</section></section>
-<section>
-<section id="indexation-et-slicing" class="title-slide slide level2 center">
-<h2>3. Indexation et Slicing</h2>
-<p>L’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des <strong>fonctionnalités supplémentaires</strong>.</p>
-</section>
-<section id="sélection-déléments" class="slide level3">
-<h3>3.1 Sélection d’éléments</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(arr[<span class="dv">2</span>])  <span class="co"># Accéder au 3e élément</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>L’indexation commence toujours à <strong>0</strong> en Python, donc <code>arr[2]</code> retourne <strong>30</strong>.</p>
-</section>
-<section id="indexation-avancée" class="slide level3">
-<h3>3.2 Indexation avancée</h3>
-<p>NumPy permet d’accéder à des <strong>sous-ensembles</strong> de tableaux plus facilement :</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>arr2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(arr2d[<span class="dv">1</span>, <span class="dv">2</span>])  <span class="co"># 6 (ligne 2, colonne 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="slicing-découpage-dun-tableau" class="slide level3">
-<h3>3.3 Slicing (Découpage d’un tableau)</h3>
-<p>Avec NumPy, on peut extraire plusieurs valeurs avec des <strong>tranches (slices)</strong> :</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>sub_arr <span class="op">=</span> arr2d[:<span class="dv">2</span>, <span class="dv">1</span>:]  <span class="co"># Extraction de sous-tableau</span></span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(sub_arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi utiliser le slicing ?</strong> - Permet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement. - Très utile en <strong>analyse de données</strong> pour filtrer des valeurs selon des conditions spécifiques.</p>
-<p><strong>Exercice 2 :</strong> - Extraire la première colonne d’une matrice 3x3. - Modifier les valeurs d’une portion spécifique d’un tableau.</p>
-</section>
-<section class="slide level3">
-
-</section></section>
-<section>
-<section id="cours-complet-manipulation-des-données-avec-numpy" class="title-slide slide level1 center">
-<h1>Cours Complet : Manipulation des Données avec NumPy</h1>
-
-</section>
-<section id="introduction-1" class="title-slide slide level2 center">
-<h2>Introduction</h2>
-<p><strong>NumPy</strong> (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.</p>
-<p>L’intérêt principal de NumPy est sa capacité à effectuer des calculs <strong>beaucoup plus rapidement</strong> que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.</p>
-</section>
-<section id="pourquoi-utiliser-numpy-1" class="slide level3">
-<h3>Pourquoi utiliser NumPy ?</h3>
-<ul>
-<li><strong>Efficacité et rapidité</strong> : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.</li>
-<li><strong>Gestion de données complexes</strong> : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.</li>
-<li><strong>Compatibilité avec d’autres bibliothèques</strong> : NumPy est souvent utilisé avec <strong>Pandas</strong>, <strong>Matplotlib</strong>, et <strong>Scikit-learn</strong> pour l’analyse et la modélisation des données.</li>
-</ul>
-<p><strong>Objectifs de ce cours :</strong> - Comprendre et manipuler les tableaux (<code>ndarray</code>) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement</p>
+<p>Si Pandas n’est pas encore installé, vous pouvez l’ajouter à votre environnement Python avec la commande suivante :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une fois installé, importez Pandas :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>L’alias <code>pd</code> est une convention utilisée pour simplifier l’appel aux fonctions de la bibliothèque.</p>
 </section>
 <section class="slide level3">
 
 </section>
 
-<section id="installation-et-importation-1" class="title-slide slide level2 center">
-<h2>1. Installation et Importation</h2>
-<p>NumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ensuite, importez NumPy dans votre script Python :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>L’alias <code>np</code> est utilisé par convention pour éviter d’avoir à taper <code>numpy</code> en entier à chaque fois.</p>
+<section id="création-et-chargement-des-données" class="title-slide slide level2 center">
+<h2>2. Création et Chargement des Données</h2>
+<p>Pandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats.</p>
+</section>
+<section id="création-dun-dataframe" class="slide level3">
+<h3>2.1 Création d’un DataFrame</h3>
+<p>Un <strong>DataFrame</strong> est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>data <span class="op">=</span> {</span>
+<span id="cb3-2"><a></a>    <span class="st">'Nom'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
+<span id="cb3-3"><a></a>    <span class="st">'Âge'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
+<span id="cb3-4"><a></a>    <span class="st">'Salaire'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>]</span>
+<span id="cb3-5"><a></a>}</span>
+<span id="cb3-6"><a></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb3-7"><a></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi utiliser un DataFrame ? - Il permet de manipuler facilement <strong>des données hétérogènes</strong>. - Il est conçu pour des <strong>opérations analytiques rapides et intuitives</strong>.</p>
+</section>
+<section id="chargement-des-données-à-partir-de-fichiers" class="slide level3">
+<h3>2.2 Chargement des Données à partir de Fichiers</h3>
+<p>Pandas permet de lire des fichiers de différents formats : CSV, Excel, JSON, SQL, etc.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Charger un fichier CSV</span></span>
+<span id="cb4-2"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data.csv"</span>)</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="co"># Charger un fichier Excel</span></span>
+<span id="cb4-5"><a></a>df <span class="op">=</span> pd.read_excel(<span class="st">"data.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Exercice 1 :</strong> - Chargez un fichier CSV et affichez ses premières lignes. - Affichez le nombre total de lignes et de colonnes.</p>
 </section>
 <section class="slide level3">
 
 </section>
 
-<section id="opérations-mathématiques-et-statistiques" class="title-slide slide level2 center">
-<h2>4. Opérations Mathématiques et Statistiques</h2>
-<p>NumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb10-2"><a></a><span class="bu">print</span>(arr <span class="op">+</span> <span class="dv">10</span>)  <span class="co"># Ajouter 10 à chaque élément</span></span>
-<span id="cb10-3"><a></a><span class="bu">print</span>(arr <span class="op">**</span> <span class="dv">2</span>)  <span class="co"># Élever chaque élément au carré</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi ces opérations sont-elles utiles ?</strong> - Elles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances. - Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.</p>
-<p>NumPy fournit également des fonctions statistiques :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">print</span>(arr.mean())  <span class="co"># Moyenne</span></span>
-<span id="cb11-2"><a></a><span class="bu">print</span>(arr.<span class="bu">sum</span>())   <span class="co"># Somme</span></span>
-<span id="cb11-3"><a></a><span class="bu">print</span>(arr.std())   <span class="co"># Écart-type</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Exercice 3 :</strong> - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type.</p>
+<section id="exploration-et-manipulation-des-données" class="title-slide slide level2 center">
+<h2>3. Exploration et Manipulation des Données</h2>
+<p>Avant toute analyse, il est essentiel de <strong>comprendre et explorer</strong> les données pour identifier les éventuels problèmes.</p>
+</section>
+<section id="exploration-de-base" class="slide level3">
+<h3>3.1 Exploration de Base</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>(df.head())  <span class="co"># Afficher les premières lignes</span></span>
+<span id="cb5-2"><a></a>df.info()  <span class="co"># Résumé des types de données et valeurs manquantes</span></span>
+<span id="cb5-3"><a></a>df.describe()  <span class="co"># Statistiques descriptives des colonnes numériques</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi explorer les données ? - Permet de détecter <strong>les valeurs aberrantes, manquantes ou incohérentes</strong>. - Aide à <strong>comprendre la structure des données</strong>.</p>
+</section>
+<section id="sélection-et-filtrage" class="slide level3">
+<h3>3.2 Sélection et Filtrage</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Sélection d'une colonne</span></span>
+<span id="cb6-2"><a></a>df[<span class="st">'Nom'</span>]</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="co"># Sélection de plusieurs colonnes</span></span>
+<span id="cb6-5"><a></a>df[[<span class="st">'Nom'</span>, <span class="st">'Salaire'</span>]]</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a><span class="co"># Filtrage des données (exemple : afficher les employés de plus de 30 ans)</span></span>
+<span id="cb6-8"><a></a>df[df[<span class="st">'Âge'</span>] <span class="op">&gt;</span> <span class="dv">30</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi filtrer les données ? - Facilite l’extraction des <strong>informations pertinentes</strong>. - Permet de <strong>segmenter et regrouper</strong> les données selon des critères spécifiques.</p>
+<p><strong>Exercice 2 :</strong> - Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000. - Affichez uniquement les colonnes ‘Nom’ et ‘Âge’.</p>
 </section>
 <section class="slide level3">
 
 </section>
 
-<section id="reshaping-et-manipulation-des-formes" class="title-slide slide level2 center">
-<h2>5. Reshaping et Manipulation des Formes</h2>
-<p>Le reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>arr <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape(<span class="dv">3</span>, <span class="dv">4</span>)  <span class="co"># Transformation en 3 lignes, 4 colonnes</span></span>
-<span id="cb12-2"><a></a><span class="bu">print</span>(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="bu">print</span>(arr.T)  <span class="co"># Transpose la matrice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Exercice 4 :</strong> - Créez une matrice 3x3 et affichez sa transposée.</p>
+<section id="transformation-et-nettoyage-des-données" class="title-slide slide level2 center">
+<h2>4. Transformation et Nettoyage des Données</h2>
+<p>Les jeux de données réels sont souvent <strong>incomplets</strong> ou <strong>mal structurés</strong>. Pandas offre des outils pour les corriger.</p>
+</section>
+<section id="gestion-des-valeurs-manquantes" class="slide level3">
+<h3>4.1 Gestion des Valeurs Manquantes</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>df.isnull().<span class="bu">sum</span>()  <span class="co"># Compter les valeurs manquantes</span></span>
+<span id="cb7-2"><a></a>df.fillna(df.mean(), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Remplacer les NaN par la moyenne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi gérer les valeurs manquantes ? - Les valeurs manquantes peuvent <strong>fausser les résultats</strong> d’analyse. - Pandas permet de <strong>les remplacer ou les supprimer intelligemment</strong>.</p>
+</section>
+<section id="ajout-et-suppression-de-colonnes" class="slide level3">
+<h3>4.2 Ajout et Suppression de Colonnes</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>df[<span class="st">'Revenu Annuel'</span>] <span class="op">=</span> df[<span class="st">'Salaire'</span>] <span class="op">*</span> <span class="dv">12</span>  <span class="co"># Ajouter une colonne</span></span>
+<span id="cb8-2"><a></a>df.drop(columns<span class="op">=</span>[<span class="st">'Âge'</span>], inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Supprimer une colonne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi manipuler les colonnes ? - Permet de <strong>calculer de nouvelles métriques</strong>. - Aide à <strong>nettoyer les données</strong> pour faciliter l’analyse.</p>
+<p><strong>Exercice 3 :</strong> - Remplacez les valeurs NaN par la médiane. - Ajoutez une colonne calculant le double du salaire.</p>
 </section>
 <section class="slide level3">
 
 </section>
 
-<section id="broadcasting-et-vectorisation" class="title-slide slide level2 center">
-<h2>6. Broadcasting et Vectorisation</h2>
-<p>Le <strong>broadcasting</strong> est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
-<span id="cb14-2"><a></a><span class="bu">print</span>(arr <span class="op">+</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]))  <span class="co"># Broadcasting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi le broadcasting est important ?</strong> - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.</p>
-<p><strong>Exercice 5 :</strong> - Multipliez une matrice par un vecteur ligne avec broadcasting.</p>
+<section id="groupby-et-agrégations" class="title-slide slide level2 center">
+<h2>5. GroupBy et Agrégations</h2>
+<p>Pandas facilite le <strong>regroupement des données</strong> et leur analyse statistique.</p>
 </section>
-<section class="slide level3">
-
+<section id="agrégation-par-groupby" class="slide level3">
+<h3>5.1 Agrégation par GroupBy</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>df.groupby(<span class="st">'Nom'</span>)[<span class="st">'Salaire'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi utiliser GroupBy ? - Permet d’analyser <strong>des tendances</strong> et de <strong>comparer des groupes</strong>.</p>
 </section>
-
-<section id="gestion-des-valeurs-manquantes" class="title-slide slide level2 center">
-<h2>7. Gestion des Valeurs Manquantes</h2>
-<p>NumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, np.nan, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb15-2"><a></a><span class="bu">print</span>(np.isnan(arr))  <span class="co"># Détecter les NaN</span></span>
-<span id="cb15-3"><a></a><span class="bu">print</span>(np.nanmean(arr))  <span class="co"># Moyenne en ignorant NaN</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi est-ce utile ?</strong> - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.</p>
-<p><strong>Exercice 6 :</strong> - Remplacez les valeurs NaN par la moyenne du tableau.</p>
-</section>
-<section class="slide level3">
-
-</section>
-
-<section id="applications-pratiques" class="title-slide slide level2 center">
-<h2>8. Applications Pratiques</h2>
-<p>NumPy est souvent utilisé pour des <strong>applications pratiques</strong> en science des données et en intelligence artificielle.</p>
-</section>
-<section id="produit-matriciel" class="slide level3">
-<h3>Produit Matriciel</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb16-2"><a></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
-<span id="cb16-3"><a></a><span class="bu">print</span>(np.dot(A, B))  <span class="co"># Produit matriciel</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="simulation-de-données" class="slide level3">
-<h3>Simulation de Données</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>sim_data <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</span>
-<span id="cb17-2"><a></a><span class="bu">print</span>(np.histogram(sim_data, bins<span class="op">=</span><span class="dv">10</span>))  <span class="co"># Histogramme des valeurs simulées</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Exercice 7 :</strong> - Simulez une série de valeurs et tracez son histogramme.</p>
+<section id="statistiques-avancées" class="slide level3">
+<h3>5.2 Statistiques Avancées</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>df[<span class="st">'Salaire'</span>].mean()  <span class="co"># Moyenne</span></span>
+<span id="cb10-2"><a></a>df[<span class="st">'Salaire'</span>].median()  <span class="co"># Médiane</span></span>
+<span id="cb10-3"><a></a>df[<span class="st">'Salaire'</span>].std()  <span class="co"># Écart-type</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pourquoi les statistiques sont utiles ? - Aident à <strong>détecter les tendances et anomalies</strong>.</p>
+<p><strong>Exercice 4 :</strong> - Trouvez la moyenne des salaires par groupe. - Identifiez la personne ayant le salaire le plus élevé.</p>
 </section>
 <section class="slide level3">
 
@@ -401,12 +340,7 @@ Natacha Njongwa Yepnga
 
 <section id="conclusion" class="title-slide slide level2 center">
 <h2>Conclusion</h2>
-<p>Ce cours vous a permis de maîtriser :</p>
-<ul>
-<li>La manipulation et la création de tableaux NumPy</li>
-<li>Les opérations mathématiques et statistiques</li>
-<li>Les techniques avancées de reshaping et broadcasting</li>
-</ul>
+<p>Ce cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées.</p>
 
 
 </section>

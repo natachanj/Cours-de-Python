@@ -115,6 +115,7 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 
 Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.
 
+La base de données est disponible ici: https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download
 ### Description des Colonnes de la Base de Données
 
 | **Nom de la Colonne**             | **Description**                         |

@@ -22,7 +22,7 @@ code-line-numbers: true
 from: markdown+emoji
 ---
 
-# Cours Complet : Analyse de Données avec Pandas
+# Analyse de Données avec Pandas
 
 ## Introduction
 
@@ -97,38 +97,41 @@ df = pd.read_excel("data.xlsx")
 
 ---
 
-## 3. Exploration et Manipulation des Données
+## 3. Sélection et Filtrage des Données
 
-Avant toute analyse, il est essentiel de **comprendre et explorer** les données pour identifier les éventuels problèmes.
+L'accès aux données est une étape essentielle pour manipuler efficacement un DataFrame.
 
-### 3.1 Exploration de Base
+### 3.1 Sélection des Colonnes
 
+Vous pouvez sélectionner une colonne spécifique comme suit :
 ```python
-print(df.head())  # Afficher les premières lignes
-df.info()  # Résumé des types de données et valeurs manquantes
-df.describe()  # Statistiques descriptives des colonnes numériques
+df['Nom']  # Retourne une Series
 ```
-
-Pourquoi explorer les données ?
-- Permet de détecter **les valeurs aberrantes, manquantes ou incohérentes**.
-- Aide à **comprendre la structure des données**.
-
-### 3.2 Sélection et Filtrage
-
+Pour sélectionner plusieurs colonnes :
 ```python
-# Sélection d'une colonne
-df['Nom']
-
-# Sélection de plusieurs colonnes
 df[['Nom', 'Salaire']]
-
-# Filtrage des données (exemple : afficher les employés de plus de 30 ans)
-df[df['Âge'] > 30]
 ```
 
-Pourquoi filtrer les données ?
-- Facilite l’extraction des **informations pertinentes**.
-- Permet de **segmenter et regrouper** les données selon des critères spécifiques.
+### 3.2 Sélection des Lignes avec `.loc` et `.iloc`
+
+#### **Différence entre `.loc` et `.iloc`**
+- `.loc` sélectionne les données par **étiquette** (nom des lignes ou colonnes).
+- `.iloc` sélectionne les données par **indice numérique**.
+
+**Exemples :**
+```python
+# Sélection par étiquette avec loc
+df.loc[0]  # Sélectionne la première ligne
+
+# Sélection par index numérique avec iloc
+df.iloc[0]  # Sélectionne la première ligne
+```
+
+**Sélection de plusieurs lignes :**
+```python
+df.loc[1:2]  # Sélectionne les lignes 1 à 2 (inclus)
+df.iloc[0:2]  # Sélectionne les deux premières lignes
+```
 
 **Exercice 2 :**
 - Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000.
@@ -198,11 +201,85 @@ Pourquoi les statistiques sont utiles ?
 
 ---
 
+
+## 6. Jointures et Fusion de Données
+
+Lorsqu'on travaille avec plusieurs ensembles de données, il est souvent nécessaire de **les fusionner** pour obtenir une vue d'ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.
+
+### 6.1 La méthode `merge()`
+
+La méthode `merge()` permet de fusionner deux DataFrames sur une colonne commune.
+
+```python
+df1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie']})
+df2 = pd.DataFrame({'ID': [1, 2, 3], 'Salaire': [50000, 60000, 70000]})
+
+fusion = pd.merge(df1, df2, on='ID')
+print(fusion)
+```
+
+### 6.2 Types de Jointures
+
+Pandas permet plusieurs types de jointures similaires aux bases de données SQL :
+
+- **Inner Join (Intersection)** : Ne garde que les valeurs communes aux deux DataFrames.
+- **Left Join (Jointure à gauche)** : Conserve toutes les lignes du premier DataFrame et ajoute les correspondances du second.
+- **Right Join (Jointure à droite)** : Conserve toutes les lignes du second DataFrame et ajoute les correspondances du premier.
+- **Outer Join (Jointure complète)** : Conserve toutes les données des deux DataFrames, même celles sans correspondance.
+
+```python
+# Inner Join (par défaut)
+pd.merge(df1, df2, on='ID', how='inner')
+
+# Left Join
+pd.merge(df1, df2, on='ID', how='left')
+
+# Right Join
+pd.merge(df1, df2, on='ID', how='right')
+
+# Outer Join
+pd.merge(df1, df2, on='ID', how='outer')
+```
+
+### 6.3 Concaténation de DataFrames
+
+Parfois, il est nécessaire de **concaténer** des DataFrames, c'est-à-dire les empiler verticalement ou horizontalement.
+
+```python
+df3 = pd.DataFrame({'ID': [4, 5], 'Nom': ['David', 'Emma']})
+concat_vertical = pd.concat([df1, df3], ignore_index=True)
+print(concat_vertical)
+```
+
+Pourquoi utiliser `concat()` ?
+- Utile lorsqu'on dispose de plusieurs fichiers contenant des données similaires et qu'on souhaite les regrouper.
+- Permet de fusionner facilement des ensembles de données de manière efficace.
+
+### 6.4 Jointure Multi-index
+
+Dans certains cas, la fusion se fait sur plusieurs colonnes :
+
+```python
+df1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie'], 'Ville': ['Paris', 'Lyon', 'Marseille']})
+df2 = pd.DataFrame({'ID': [1, 2, 3], 'Ville': ['Paris', 'Lyon', 'Marseille'], 'Salaire': [50000, 60000, 70000]})
+
+fusion_multi = pd.merge(df1, df2, on=['ID', 'Ville'])
+print(fusion_multi)
+```
+
+**Exercice 5 :**
+- Créez deux DataFrames et appliquez différents types de jointures.
+- Testez la concaténation avec des DataFrames ayant des colonnes différentes.
+
+---
+
 ## Conclusion
 
 Ce cours vous a permis d'apprendre à :
 - Charger et manipuler des ensembles de données.
 - Effectuer des analyses exploratoires et des transformations.
 - Nettoyer les données et appliquer des techniques avancées.
+- Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète.
+
 
 

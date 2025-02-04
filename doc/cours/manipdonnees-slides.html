@@ -224,7 +224,7 @@ Natacha Njongwa Yepnga
 </section></section>
 <section>
 <section id="installation-et-importation" class="title-slide slide level2 center">
-<h2>1. Installation et Importation</h2>
+<h2>Installation et Importation</h2>
 <p>NumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ensuite, importez NumPy dans votre script Python :</p>
@@ -236,11 +236,11 @@ Natacha Njongwa Yepnga
 </section></section>
 <section>
 <section id="création-et-manipulation-des-tableaux-numpy" class="title-slide slide level2 center">
-<h2>2. Création et Manipulation des Tableaux NumPy</h2>
+<h2>Création et Manipulation des Tableaux NumPy</h2>
 <p>NumPy repose sur une structure de données appelée <strong>ndarray</strong> (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.</p>
 </section>
 <section id="création-de-tableaux-ndarray" class="slide level3">
-<h3>2.1 Création de Tableaux (<code>ndarray</code>)</h3>
+<h3>Création de Tableaux (<code>ndarray</code>)</h3>
 <p>Les tableaux NumPy peuvent être créés à partir de <strong>listes Python</strong>, de <strong>valeurs prédéfinies</strong> ou de <strong>valeurs générées automatiquement</strong> :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Création d'un tableau à partir d'une liste</span></span>
 <span id="cb3-2"><a></a>arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
@@ -255,48 +255,69 @@ Natacha Njongwa Yepnga
 <span id="cb4-3"><a></a>np.full((<span class="dv">3</span>, <span class="dv">3</span>), <span class="dv">7</span>)  <span class="co"># Matrice 3x3 remplie de 7</span></span>
 <span id="cb4-4"><a></a>np.eye(<span class="dv">4</span>)           <span class="co"># Matrice identité 4x4</span></span>
 <span id="cb4-5"><a></a>np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">5</span>)  <span class="co"># 5 valeurs espacées entre 0 et 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi ces méthodes sont utiles ?</strong> - <code>zeros</code> et <code>ones</code> permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une. - <code>eye</code> est très utilisé en <strong>algèbre linéaire</strong> pour les calculs de matrices identité. - <code>linspace</code> est idéal pour générer des valeurs numériques espacées uniformément.</p>
-<p><strong>Exercice 1 :</strong> - Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1. - Générer une séquence de 10 nombres entre 1 et 100.</p>
+<p><strong>Pourquoi ces méthodes sont utiles ?</strong></p>
+<ul>
+<li><code>zeros</code> et <code>ones</code> permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.</li>
+<li><code>eye</code> est très utilisé en <strong>algèbre linéaire</strong> pour les calculs de matrices identité.</li>
+<li><code>linspace</code> est idéal pour générer des valeurs numériques espacées uniformément.</li>
+</ul>
+<p><strong>Exercice 1 :</strong></p>
+<ul>
+<li>Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.</li>
+<li>Générer une séquence de 10 nombres entre 1 et 100.</li>
+</ul>
 </section>
 <section class="slide level3">
 
 </section></section>
 <section>
 <section id="indexation-et-slicing" class="title-slide slide level2 center">
-<h2>3. Indexation et Slicing</h2>
+<h2>Indexation et Slicing</h2>
 <p>L’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des <strong>fonctionnalités supplémentaires</strong>.</p>
 </section>
 <section id="sélection-déléments" class="slide level3">
-<h3>3.1 Sélection d’éléments</h3>
+<h3>Sélection d’éléments</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
 <span id="cb5-2"><a></a><span class="bu">print</span>(arr[<span class="dv">2</span>])  <span class="co"># Accéder au 3e élément</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>L’indexation commence toujours à <strong>0</strong> en Python, donc <code>arr[2]</code> retourne <strong>30</strong>.</p>
 </section>
 <section id="indexation-avancée" class="slide level3">
-<h3>3.2 Indexation avancée</h3>
+<h3>Indexation avancée</h3>
 <p>NumPy permet d’accéder à des <strong>sous-ensembles</strong> de tableaux plus facilement :</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>arr2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
 <span id="cb6-2"><a></a><span class="bu">print</span>(arr2d[<span class="dv">1</span>, <span class="dv">2</span>])  <span class="co"># 6 (ligne 2, colonne 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="slicing-découpage-dun-tableau" class="slide level3">
-<h3>3.3 Slicing (Découpage d’un tableau)</h3>
+<h3>Slicing (Découpage d’un tableau)</h3>
 <p>Avec NumPy, on peut extraire plusieurs valeurs avec des <strong>tranches (slices)</strong> :</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>sub_arr <span class="op">=</span> arr2d[:<span class="dv">2</span>, <span class="dv">1</span>:]  <span class="co"># Extraction de sous-tableau</span></span>
 <span id="cb7-2"><a></a><span class="bu">print</span>(sub_arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi utiliser le slicing ?</strong> - Permet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement. - Très utile en <strong>analyse de données</strong> pour filtrer des valeurs selon des conditions spécifiques.</p>
-<p><strong>Exercice 2 :</strong> - Extraire la première colonne d’une matrice 3x3. - Modifier les valeurs d’une portion spécifique d’un tableau.</p>
+<p><strong>Pourquoi utiliser le slicing ?</strong></p>
+<ul>
+<li>Permet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement.</li>
+<li>Très utile en <strong>analyse de données</strong> pour filtrer des valeurs selon des conditions spécifiques.</li>
+</ul>
+<p><strong>Exercice 2 :</strong></p>
+<ul>
+<li>Extraire la première colonne d’une matrice 3x3.</li>
+<li>Modifier les valeurs d’une portion spécifique d’un tableau.</li>
+</ul>
 </section>
 <section class="slide level3">
 
 </section></section>
 <section>
 <section id="opérations-mathématiques-et-statistiques" class="title-slide slide level2 center">
-<h2>4. Opérations Mathématiques et Statistiques</h2>
+<h2>Opérations Mathématiques et Statistiques</h2>
 <p>NumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb8-2"><a></a><span class="bu">print</span>(arr <span class="op">+</span> <span class="dv">10</span>)  <span class="co"># Ajouter 10 à chaque élément</span></span>
 <span id="cb8-3"><a></a><span class="bu">print</span>(arr <span class="op">**</span> <span class="dv">2</span>)  <span class="co"># Élever chaque élément au carré</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Pourquoi ces opérations sont-elles utiles ?</strong> - Elles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances. - Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.</p>
+<p><strong>Pourquoi ces opérations sont-elles utiles ?</strong></p>
+<ul>
+<li>Elles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances.</li>
+<li>Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.</li>
+</ul>
 <p>NumPy fournit également des fonctions statistiques :</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">print</span>(arr.mean())  <span class="co"># Moyenne</span></span>
 <span id="cb9-2"><a></a><span class="bu">print</span>(arr.<span class="bu">sum</span>())   <span class="co"># Somme</span></span>
@@ -308,7 +329,7 @@ Natacha Njongwa Yepnga
 </section></section>
 <section>
 <section id="reshaping-et-manipulation-des-formes" class="title-slide slide level2 center">
-<h2>5. Reshaping et Manipulation des Formes</h2>
+<h2>Reshaping et Manipulation des Formes</h2>
 <p>Le reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>arr <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape(<span class="dv">3</span>, <span class="dv">4</span>)  <span class="co"># Transformation en 3 lignes, 4 colonnes</span></span>
 <span id="cb10-2"><a></a><span class="bu">print</span>(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -321,7 +342,7 @@ Natacha Njongwa Yepnga
 </section></section>
 <section>
 <section id="broadcasting-et-vectorisation" class="title-slide slide level2 center">
-<h2>6. Broadcasting et Vectorisation</h2>
+<h2>Broadcasting et Vectorisation</h2>
 <p>Le <strong>broadcasting</strong> est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb12-2"><a></a><span class="bu">print</span>(arr <span class="op">+</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]))  <span class="co"># Broadcasting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -333,7 +354,7 @@ Natacha Njongwa Yepnga
 </section></section>
 <section>
 <section id="gestion-des-valeurs-manquantes" class="title-slide slide level2 center">
-<h2>7. Gestion des Valeurs Manquantes</h2>
+<h2>Gestion des Valeurs Manquantes</h2>
 <p>NumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, np.nan, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb13-2"><a></a><span class="bu">print</span>(np.isnan(arr))  <span class="co"># Détecter les NaN</span></span>
@@ -346,7 +367,7 @@ Natacha Njongwa Yepnga
 </section></section>
 <section>
 <section id="applications-pratiques" class="title-slide slide level2 center">
-<h2>8. Applications Pratiques</h2>
+<h2>Applications Pratiques</h2>
 <p>NumPy est souvent utilisé pour des <strong>applications pratiques</strong> en science des données et en intelligence artificielle.</p>
 </section>
 <section id="produit-matriciel" class="slide level3">

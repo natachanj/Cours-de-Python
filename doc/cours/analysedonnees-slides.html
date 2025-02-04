@@ -352,7 +352,11 @@ Natacha Njongwa Yepnga
 <section id="trier-selon-lindex" class="slide level3">
 <h3>Trier selon l’index</h3>
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>df.sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi trier les données ? - Facilite l’interprétation des résultats. - Permet d’optimiser certaines analyses.</p>
+<p>Pourquoi trier les données ?</p>
+<ul>
+<li>Facilite l’interprétation des résultats.</li>
+<li>Permet d’optimiser certaines analyses.</li>
+</ul>
 </section>
 <section class="slide level3">
 
@@ -365,12 +369,20 @@ Natacha Njongwa Yepnga
 <section id="utilisation-des-types-category" class="slide level3">
 <h3>Utilisation des types <code>category</code></h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>df[<span class="st">'Nom'</span>] <span class="op">=</span> df[<span class="st">'Nom'</span>].astype(<span class="st">'category'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi utiliser <code>category</code> ? - Permet de réduire la mémoire utilisée. - Optimise les opérations de regroupement.</p>
+<p>Pourquoi utiliser <code>category</code> ?</p>
+<ul>
+<li>Permet de réduire la mémoire utilisée.</li>
+<li>Optimise les opérations de regroupement.</li>
+</ul>
 </section>
 <section id="chargement-efficace-de-fichiers-volumineux" class="slide level3">
 <h3>Chargement efficace de fichiers volumineux</h3>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>pd.read_csv(<span class="st">'data.csv'</span>, chunksize<span class="op">=</span><span class="dv">1000</span>)  <span class="co"># Charger par blocs de 1000 lignes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi charger en morceaux ? - Évite de saturer la mémoire RAM. - Facilite le traitement de très gros fichiers.</p>
+<p>Pourquoi charger en morceaux ?</p>
+<ul>
+<li>Évite de saturer la mémoire RAM.</li>
+<li>Facilite le traitement de très gros fichiers.</li>
+</ul>
 </section>
 <section class="slide level3">
 
@@ -382,7 +394,11 @@ Natacha Njongwa Yepnga
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>df.to_csv(<span class="st">'output.csv'</span>, index<span class="op">=</span><span class="va">False</span>)  <span class="co"># Sauvegarde en CSV</span></span>
 <span id="cb17-2"><a></a>df.to_excel(<span class="st">'output.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)  <span class="co"># Sauvegarde en Excel</span></span>
 <span id="cb17-3"><a></a>df.to_json(<span class="st">'output.json'</span>)  <span class="co"># Sauvegarde en JSON</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi exporter les données ? - Facilite le partage et la réutilisation des résultats. - Permet de documenter le travail réalisé.</p>
+<p>Pourquoi exporter les données ?</p>
+<ul>
+<li>Facilite le partage et la réutilisation des résultats.</li>
+<li>Permet de documenter le travail réalisé.</li>
+</ul>
 </section>
 <section class="slide level3">
 
@@ -395,15 +411,25 @@ Natacha Njongwa Yepnga
 <section id="agrégation-par-groupby" class="slide level3">
 <h3>Agrégation par GroupBy</h3>
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>df.groupby(<span class="st">'Nom'</span>)[<span class="st">'Salaire'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi utiliser GroupBy ? - Permet d’analyser <strong>des tendances</strong> et de <strong>comparer des groupes</strong>.</p>
+<p>Pourquoi utiliser GroupBy ?</p>
+<ul>
+<li>Permet d’analyser <strong>des tendances</strong> et de <strong>comparer des groupes</strong>.</li>
+</ul>
 </section>
 <section id="statistiques-avancées" class="slide level3">
 <h3>Statistiques Avancées</h3>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>df[<span class="st">'Salaire'</span>].mean()  <span class="co"># Moyenne</span></span>
 <span id="cb19-2"><a></a>df[<span class="st">'Salaire'</span>].median()  <span class="co"># Médiane</span></span>
 <span id="cb19-3"><a></a>df[<span class="st">'Salaire'</span>].std()  <span class="co"># Écart-type</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi les statistiques sont utiles ? - Aident à <strong>détecter les tendances et anomalies</strong>.</p>
-<p><strong>Exercice 4 :</strong> - Trouvez la moyenne des salaires par groupe. - Identifiez la personne ayant le salaire le plus élevé.</p>
+<p>Pourquoi les statistiques sont utiles ?</p>
+<ul>
+<li>Aident à <strong>détecter les tendances et anomalies</strong>.</li>
+</ul>
+<p><strong>Exercice 4 :</strong></p>
+<ul>
+<li>Trouvez la moyenne des salaires par groupe.</li>
+<li>Identifiez la personne ayant le salaire le plus élevé.</li>
+</ul>
 </section>
 <section class="slide level3">
 
@@ -449,7 +475,11 @@ Natacha Njongwa Yepnga
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">4</span>, <span class="dv">5</span>], <span class="st">'Nom'</span>: [<span class="st">'David'</span>, <span class="st">'Emma'</span>]})</span>
 <span id="cb22-2"><a></a>concat_vertical <span class="op">=</span> pd.concat([df1, df3], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb22-3"><a></a><span class="bu">print</span>(concat_vertical)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pourquoi utiliser <code>concat()</code> ? - Utile lorsqu’on dispose de plusieurs fichiers contenant des données similaires et qu’on souhaite les regrouper. - Permet de fusionner facilement des ensembles de données de manière efficace.</p>
+<p>Pourquoi utiliser <code>concat()</code> ?</p>
+<ul>
+<li>Utile lorsqu’on dispose de plusieurs fichiers contenant des données similaires et qu’on souhaite les regrouper.</li>
+<li>Permet de fusionner facilement des ensembles de données de manière efficace.</li>
+</ul>
 </section>
 <section id="jointure-multi-index" class="slide level3">
 <h3>Jointure Multi-index</h3>
@@ -459,7 +489,11 @@ Natacha Njongwa Yepnga
 <span id="cb23-3"><a></a></span>
 <span id="cb23-4"><a></a>fusion_multi <span class="op">=</span> pd.merge(df1, df2, on<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'Ville'</span>])</span>
 <span id="cb23-5"><a></a><span class="bu">print</span>(fusion_multi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Exercice 5 :</strong> - Créez deux DataFrames et appliquez différents types de jointures. - Testez la concaténation avec des DataFrames ayant des colonnes différentes.</p>
+<p><strong>Exercice 5 :</strong></p>
+<ul>
+<li>Créez deux DataFrames et appliquez différents types de jointures.</li>
+<li>Testez la concaténation avec des DataFrames ayant des colonnes différentes.</li>
+</ul>
 </section>
 <section class="slide level3">
 
@@ -467,7 +501,13 @@ Natacha Njongwa Yepnga
 
 <section id="conclusion" class="title-slide slide level2 center">
 <h2>Conclusion</h2>
-<p>Ce cours vous a permis d’apprendre à : - Charger et manipuler des ensembles de données. - Effectuer des analyses exploratoires et des transformations. - Nettoyer les données et appliquer des techniques avancées. - Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète.</p>
+<p>Ce cours vous a permis d’apprendre à :</p>
+<ul>
+<li>Charger et manipuler des ensembles de données.</li>
+<li>Effectuer des analyses exploratoires et des transformations.</li>
+<li>Nettoyer les données et appliquer des techniques avancées.</li>
+<li>Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète.</li>
+</ul>
 
 
 </section>

@@ -127,39 +127,6 @@ print(sub_arr)
 
 ---
 
-# Cours Complet : Manipulation des Données avec NumPy
-
-## Introduction
-**NumPy** (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d'opérations mathématiques optimisées. 
-
-L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beaucoup plus rapidement** que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.
-
-### Pourquoi utiliser NumPy ?
-- **Efficacité et rapidité** : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.
-- **Gestion de données complexes** : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.
-- **Compatibilité avec d'autres bibliothèques** : NumPy est souvent utilisé avec **Pandas**, **Matplotlib**, et **Scikit-learn** pour l'analyse et la modélisation des données.
-
-**Objectifs de ce cours :**
-- Comprendre et manipuler les tableaux (`ndarray`) de NumPy
-- Appliquer des opérations mathématiques et statistiques
-- Optimiser les calculs avec le broadcasting et la vectorisation
-- Transformer et structurer les données efficacement
-
----
-
-## 1. Installation et Importation
-NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
-```bash
-pip install numpy
-```
-
-Ensuite, importez NumPy dans votre script Python :
-```python
-import numpy as np
-```
-L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` en entier à chaque fois.
-
----
 
 ## 4. Opérations Mathématiques et Statistiques
 

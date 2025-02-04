@@ -38,6 +38,8 @@ website:
             text: "TP2 - Fonctions, Modules et POO"
           - href: doc/tp/tp3.qmd
             text: "TP3 - Manipulation des données avec Numpy"
+          - href: doc/tp/tp4.qmd
+            text: "TP4 - Analyse de données avec Pandas"
     right:
       - href: doc/glossaire.qmd
         text: Glossaire

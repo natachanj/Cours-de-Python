@@ -1,6 +1,6 @@
 ---
-title: "Manipulation de données avec Numpy"
-description: Manipulation de données avec Numpy
+title: "TP Analyse de Données avec Pandas"
+description: TP Analyse de Données avec Pandas
 author: "Natacha NJONGWA YEPNGA"
 format: 
   html:
@@ -11,134 +11,198 @@ from: markdown+emoji
 number-sections: true
 number-depth: 3
 ---
+# TP Analyse de Données avec Pandas
 
+## Partie 1 : Analyse des Données Financières
 
-# TP : Manipulation de données avec Numpy
+Ce TP a pour objectif d'explorer et d'analyser les données financières de plusieurs grandes entreprises cotées en bourse : **NVIDIA, OpenAI, Amazon et Apple**. Nous allons récupérer ces données directement depuis Yahoo Finance et les manipuler avec Pandas.
 
-## Objectifs du TP
-
-- Comprendre l'utilisation du module NumPy pour le calcul scientifique.
-- Créer et manipuler des tableaux multidimensionnels.
-- Appliquer des opérations mathématiques et statistiques sur des données.
-- Explorer les masques booléens pour des filtrages avancés.
-
-
-Vous pouvez télécharger le fichier .ipynb en cliquant [ici](https://drive.google.com/file/d/1fIvIhdF7norgZ5y_FdIh43YhQt3NQhJt/view?usp=drive_link)
-
-
-## 1. Introduction à NumPy
-
-NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l'analyse de données.
-
-### Pourquoi utiliser NumPy ?
-- **Performance :** Calculs rapides grâce à une implémentation en C.
-- **Simplicité :** Manipulation intuitive des tableaux multidimensionnels.
-- **Richesse fonctionnelle :** Nombreuses fonctions mathématiques, algébriques, et statistiques.
-
-## 2. Création de tableaux
+### 1. Récupération et Exploration des Données
 
 ```python
-import numpy as np
+import pandas as pd
+import yfinance as yf
 
-# Tableau 1D
-A = np.array([1, 2, 3])
+# Liste des tickers des entreprises étudiées
+tickers = ['NVDA', 'AAPL', 'AMZN', 'MSFT']
 
-# Tableau 2D
-B = np.array([[1, 2], [3, 4]])
-print(A)
-print(B)
-
-# Zéros et Uns
-zeros = np.zeros((3, 3))
-ones = np.ones((2, 4))
-print(zeros)
-print(ones)
-
-# Valeurs aléatoires
-random = np.random.random((3, 3))
-print(random)
-
-# Plages de valeurs
-arange = np.arange(0, 10, 2)
-linspace = np.linspace(0, 1, 5)
-print(arange)
-print(linspace)
-
-# Informations sur un tableau
-print(B.shape)  # Dimensions
-print(B.size)   # Nombre d'éléments
-print(B.dtype)  # Type des éléments
+# Téléchargement des données
+df = yf.download(tickers, start='2020-01-01', end='2024-01-01', group_by='ticker')
+print(df.head())
 ```
 
-## 3. Accès et modifications
+📌 **Questions** :
+1. Quelles sont les colonnes disponibles dans le DataFrame ?
+2. Quel est le nombre total de lignes et de colonnes ?
+3. Vérifiez s'il y a des valeurs manquantes et expliquez comment les gérer.
+
+### 2. Nettoyage et Préparation des Données
+
+📌 **Questions** :
+1. Supprimez les lignes contenant des valeurs manquantes.
+2. Définissez la colonne Date comme index du DataFrame.
+3. Vérifiez les types de données des colonnes et convertissez-les si nécessaire.
+
+### 3. Analyse des Tendances du Marché
+
+#### Formule du Rendement
+
+$$
+R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
+$$
+
+où :
+- \( P_t \) est le prix de clôture au jour \( t \)
+- \( P_{t-1} \) est le prix de clôture du jour précédent
+
+📌 **Questions** :
+0. Calculer le rendement de chaque action disponible dans la base
+1. Quelle est la tendance des prix des actions pour chaque entreprise ?
+2. Quel jour chaque action a-t-elle atteint son plus haut prix ?
+3. Calculez le rendement quotidien de chaque action et affichez sa moyenne.
+
+### 4. Comparaison des Performances
+
+📌 **Questions** :
+1. Quelle entreprise a eu la meilleure croissance sur la période analysée ?
+2. Quel est le rendement moyen mensuel de chaque action ?
+3. Comparez la volatilité des différentes actions.
+
+---
+
+## Partie 2 : Analyse du Risque de Défaut
+
+Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.
+
+### Description des Colonnes de la Base de Données
+
+| **Nom de la Colonne**             | **Description**                         |
+|-----------------------------------|-----------------------------------------|
+| `person_age`                      | Âge                                    |
+| `person_income`                   | Revenu annuel                          |
+| `person_home_ownership`           | Type de propriété                      |
+| `person_emp_length`               | Ancienneté professionnelle (années)    |
+| `loan_intent`                     | But du prêt                            |
+| `loan_grade`                      | Grade du prêt                          |
+| `loan_amnt`                       | Montant du prêt                        |
+| `loan_int_rate`                   | Taux d'intérêt                         |
+| `loan_status`                     | Statut du prêt (0: non défaut, 1: défaut) |
+| `loan_percent_income`             | Pourcentage du revenu                  |
+| `cb_person_default_on_file`       | Historique de défaut                   |
+| `cb_person_cred_hist_length`      | Longueur de l'historique de crédit     |
+
+### 1. Chargement et Exploration des Données
 
 ```python
-# Accéder aux éléments
-print(B[0, 1])
-print(B[:, 1])
-print(B[1, :])
-
-# Modifier des éléments
-B[0, 0] = 100
-print(B)
-
-# Ajouter des éléments
-A = np.append(A, [4, 5])
-print(A)
-
-# Supprimer des éléments
-C = np.delete(A, [0, 1])
-print(C)
+df_credit = pd.read_csv('credit_risk_data.csv')
+print(df_credit.head())
+df_credit.info()
+df_credit.describe()
 ```
 
-## 4. Opérations mathématiques et statistiques
+📌 **Questions** :
+1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ?
+2. Quelle est la répartition des clients en défaut et non en défaut ?
+3. Identifiez les valeurs manquantes et proposez une méthode de traitement.
 
-```python
-# Opérations arithmétiques
-D = B + 10
-print(D)
+### 2. Nettoyage et Préparation des Données
 
-E = B * 2
-print(E)
+📌 **Questions** :
+1. Convertissez les variables catégoriques en variables numériques.
+2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.
 
-# Statistiques
-print(np.sum(B))
-print(np.mean(B))
-print(np.std(B))
+### 3. Analyse des Facteurs de Risque
 
-# Masques booléens
-mask = B > 2
-print(mask)
-print(B[mask])
+📌 **Questions** :
+Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant **pandas** et en réalisant des analyses numériques.  
 
-# Modification conditionnelle
-B[B > 2] = -1
-print(B)
-```
+## Objectifs  
+- Manipuler des **DataFrames pandas** pour explorer les relations entre les variables.  
+- Utiliser des statistiques descriptives et des mesures de corrélation.  
+- Comprendre comment les facteurs influencent le risque de défaut et interpréter les résultats.  
 
-## Exercices pratiques
+## Questions et Analyses  
 
-### Exercice 1 : Création et manipulation
-1. Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.
-2. Remplacez les valeurs inférieures à 0.5 par 0.
-3. Calculez la somme et la moyenne des éléments du tableau.
+### 1. Impact du revenu annuel sur le risque de défaut  
 
-### Exercice 2 : Manipulation avancée
-1. Créez un tableau 1D de 10 éléments entre 1 et 100.
-2. Supprimez les trois derniers éléments et ajoutez deux nouveaux.
-3. Remplacez les valeurs paires par -1.
+**Analyse numérique**  
+- Afficher les statistiques descriptives du revenu annuel en fonction du statut de défaut.  
+- Comparer les moyennes et médianes des revenus des clients en défaut et non en défaut.  
+- Calculer l'écart-type et la variance du revenu annuel pour chaque groupe.  
 
-### Exercice 3 : Statistiques et masques
-1. Créez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.
-2. Utilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.
-3. Calculez la moyenne des valeurs finales.
+**Étapes**  
+1. Charger les données dans un DataFrame pandas.  
+2. Utiliser `.describe()` pour obtenir des statistiques globales sur le revenu annuel.  
+3. Utiliser `.groupby('Défaut')` et `.agg(['mean', 'median', 'std', 'var'])` pour comparer les groupes.  
+4. Interpréter les résultats et voir si une tendance se dégage.  
 
-## Récapitulatif
+---
 
-- NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.
-- Les masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.
-- L'utilisation des opérations vectorisées améliore grandement les performances.
+### 2. Influence de l’historique des paiements sur le risque de défaut  
 
-### Ressources supplémentaires
-- [Documentation officielle NumPy](https://numpy.org/doc/)
+**Analyse numérique**  
+- Calculer le nombre moyen de paiements en retard pour chaque statut de défaut.  
+- Analyser la médiane et l'écart-type du nombre de paiements en retard.  
+- Déterminer si les clients en défaut ont un historique de paiements significativement différent des autres.  
+
+**Étapes**  
+1. Utiliser `.groupby('Défaut')['Nb_Paiements_Retard'].agg(['mean', 'median', 'std'])`.  
+2. Comparer les valeurs moyennes et médianes pour identifier les différences entre les groupes.  
+3. Vérifier si la dispersion des retards de paiement est plus élevée chez les clients en défaut.  
+
+---
+
+### 3. Identification des facteurs les plus corrélés au risque de défaut  
+
+**Analyse numérique**  
+- Calculer la matrice de corrélation entre les variables.  
+- Identifier les trois facteurs les plus corrélés avec le risque de défaut.  
+- Vérifier si ces corrélations sont significatives.  
+
+**Étapes**  
+1. Utiliser `.corr()` pour calculer la matrice de corrélation du DataFrame.  
+2. Extraire les valeurs de corrélation associées à la colonne "Défaut".  
+3. Trier ces valeurs par ordre décroissant et sélectionner les trois variables les plus influentes.  
+4. Interpréter les résultats et vérifier si ces facteurs sont cohérents avec les analyses précédentes.  
+
+### Synthèse
+Dans cette section, nous allons approfondir l’étude des facteurs influençant le risque de défaut en réalisant des analyses numériques sur la répartition des âges et l'impact du statut d’emploi.  
+
+## Objectifs  
+- Analyser la distribution des âges des clients à l'aide de statistiques descriptives.  
+- Examiner l'influence du statut d'emploi sur le risque de défaut à travers des mesures numériques.  
+- Synthétiser les résultats obtenus et proposer des interprétations.  
+
+## Questions et Analyses  
+
+###  Analyse de la distribution des âges des clients  
+
+**Analyse numérique**  
+- Calculer les statistiques descriptives générales sur l'âge des clients.  
+- Identifier l'âge moyen, la médiane, l'écart-type et les valeurs minimales/maximales.  
+- Déterminer s'il y a des valeurs aberrantes en comparant l’écart interquartile.  
+
+**Étapes**  
+1. Utiliser `.describe()` sur la colonne **Âge** pour obtenir les principales statistiques.  
+2. Vérifier les bornes des quartiles avec `.quantile([0.25, 0.5, 0.75])`.  
+3. Déterminer les valeurs aberrantes potentielles en utilisant la règle des **1,5 IQR** (Interquartile Range).  
+4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.  
+
+---
+
+###  Influence du statut d’emploi sur le risque de défaut  
+
+**Analyse numérique**  
+- Compter le nombre de clients par catégorie de statut d'emploi.  
+- Calculer la proportion de clients en défaut dans chaque catégorie de statut d'emploi.  
+- Identifier si certaines catégories ont un taux de défaut significativement plus élevé.  
+
+**Étapes**  
+1. Utiliser `.value_counts()` sur la colonne **Statut_Emploi** pour connaître la répartition des clients par catégorie.  
+2. Grouper les données par **Statut_Emploi** et calculer le **taux de défaut** dans chaque groupe avec `.groupby('Statut_Emploi')['Défaut'].mean()`.  
+3. Comparer ces taux et identifier les catégories ayant une probabilité plus élevée de défaut.  
+4. Interpréter les résultats en lien avec les analyses précédentes (ex. une catégorie d’emploi avec des revenus plus faibles pourrait avoir un taux de défaut plus élevé).  
+
+
+---
 

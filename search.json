@@ -1,122 +1,80 @@
 [
   {
-    "objectID": "doc/cours/intro.html",
-    "href": "doc/cours/intro.html",
-    "title": "Programmation avec Python : Bases et Applications",
+    "objectID": "doc/tp/tp1.html",
+    "href": "doc/tp/tp1.html",
+    "title": "Bien Démarrer Avec Python",
     "section": "",
-    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
+    "text": "Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données.\n\n\nCe fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python\n\n\n\n\nDans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données\n\n\n\n\nÀ la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
   },
   {
-    "objectID": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
-    "href": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
-    "title": "Programmation avec Python : Bases et Applications",
+    "objectID": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
+    "href": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
+    "title": "Bien Démarrer Avec Python",
     "section": "",
-    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
+    "text": "Ce fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python"
   },
   {
-    "objectID": "doc/cours/intro.html#objectifs",
-    "href": "doc/cours/intro.html#objectifs",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Objectifs",
-    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
+    "objectID": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
+    "href": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données"
   },
   {
-    "objectID": "doc/cours/intro.html#python",
-    "href": "doc/cours/intro.html#python",
-    "title": "Programmation avec Python : Bases et Applications",
+    "objectID": "doc/tp/tp1.html#objectif",
+    "href": "doc/tp/tp1.html#objectif",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
+  },
+  {
+    "objectID": "doc/tp/tp2.html",
+    "href": "doc/tp/tp2.html",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\n\n\nÉcrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré.\n\n\n\n\n\n\n\n\nDéfinissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#objectifs",
+    "href": "doc/tp/tp2.html#objectifs",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#partie-1-fonctions",
+    "href": "doc/tp/tp2.html#partie-1-fonctions",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré."
+  },
+  {
+    "objectID": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
+    "href": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
+  },
+  {
+    "objectID": "doc/glossaire.html",
+    "href": "doc/glossaire.html",
+    "title": "Glossaire",
+    "section": "",
+    "text": "🚧"
+  },
+  {
+    "objectID": "doc/glossaire.html#python",
+    "href": "doc/glossaire.html#python",
+    "title": "Glossaire",
     "section": "Python",
-    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
+    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
   },
   {
-    "objectID": "doc/cours/intro.html#organisation-des-tp",
-    "href": "doc/cours/intro.html#organisation-des-tp",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Organisation des TP",
-    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
-  },
-  {
-    "objectID": "doc/cours/intro.html#ce-quil-faut-faire",
-    "href": "doc/cours/intro.html#ce-quil-faut-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Ce qu’il faut faire",
-    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
-  },
-  {
-    "objectID": "doc/cours/intro.html#à-ne-pas-faire",
-    "href": "doc/cours/intro.html#à-ne-pas-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "À ne pas faire",
-    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
-  },
-  {
-    "objectID": "doc/cours/intro.html#évaluation",
-    "href": "doc/cours/intro.html#évaluation",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Évaluation",
-    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations.\n\n\n\n\n\nPartie 2 : QCM.\n\nDurée : 2h.\nQuestions portant sur les concepts abordés pendant le cours et les TP.\nLa date sera définie à l’avance."
-  },
-  {
-    "objectID": "doc/cours/intro.html#bibliographie",
-    "href": "doc/cours/intro.html#bibliographie",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Bibliographie",
-    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012\n\n\n\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\n\n\n\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010\nCours Python de l’École Polytechnique Universitaire UMPC\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
-    "href": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Programmation avec Python : Bases et Applications",
-    "text": "Programmation avec Python : Bases et Applications\n\n18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#objectifs",
-    "href": "doc/cours/intro-python-slides.html#objectifs",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Objectifs",
-    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#python",
-    "href": "doc/cours/intro-python-slides.html#python",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Python",
-    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#organisation-des-tp",
-    "href": "doc/cours/intro-python-slides.html#organisation-des-tp",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Organisation des TP",
-    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
-    "href": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Ce qu’il faut faire",
-    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
-    "href": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "À ne pas faire",
-    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#évaluation",
-    "href": "doc/cours/intro-python-slides.html#évaluation",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Évaluation",
-    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations."
-  },
-  {
-    "objectID": "doc/cours/intro-python-slides.html#bibliographie",
-    "href": "doc/cours/intro-python-slides.html#bibliographie",
-    "title": "Programmation avec Python : Bases et Applications",
-    "section": "Bibliographie",
-    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012"
+    "objectID": "doc/glossaire.html#structures-de-contrôle",
+    "href": "doc/glossaire.html#structures-de-contrôle",
+    "title": "Glossaire",
+    "section": "Structures de contrôle",
+    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
   },
   {
     "objectID": "doc/cours/typedonnees.html",
@@ -180,251 +138,6 @@
     "title": "Les Types de données en Python",
     "section": "Les Ensembles (set)",
     "text": "Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc."
-  },
-  {
-    "objectID": "doc/glossaire.html",
-    "href": "doc/glossaire.html",
-    "title": "Glossaire",
-    "section": "",
-    "text": "🚧"
-  },
-  {
-    "objectID": "doc/glossaire.html#python",
-    "href": "doc/glossaire.html#python",
-    "title": "Glossaire",
-    "section": "Python",
-    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
-  },
-  {
-    "objectID": "doc/glossaire.html#structures-de-contrôle",
-    "href": "doc/glossaire.html#structures-de-contrôle",
-    "title": "Glossaire",
-    "section": "Structures de contrôle",
-    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
-  },
-  {
-    "objectID": "doc/tp/tp2.html",
-    "href": "doc/tp/tp2.html",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\n\n\nÉcrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré.\n\n\n\n\n\n\n\n\nDéfinissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#objectifs",
-    "href": "doc/tp/tp2.html#objectifs",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#partie-1-fonctions",
-    "href": "doc/tp/tp2.html#partie-1-fonctions",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré."
-  },
-  {
-    "objectID": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
-    "href": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Programmation avec Python: Analyse de données et Data visualisation",
-    "section": "",
-    "text": "6 sessions de 3 heures (18 heures au total)"
-  },
-  {
-    "objectID": "index.html#contenu-du-cours",
-    "href": "index.html#contenu-du-cours",
-    "title": "Programmation avec Python: Analyse de données et Data visualisation",
-    "section": "Contenu du cours",
-    "text": "Contenu du cours\n\nIntroduction à Python\n\nPrésentation et installation\nVariables, types de données, opérateurs\n\nStructures de contrôle\n\nConditions (if, elif, else)\nBoucles (for, while)\nGestion des erreurs (try, except)\n\nLes fonctions\n\nDéfinir et appeler des fonctions\nParamètres, valeurs de retour\n\nManipulation de données avec pandas\n\nChargement de fichiers CSV/Excel\nNettoyage des données (valeurs manquantes, transformations)\nSélection et filtrage des données\n\nVisualisation des données\n\nGraphiques avec Matplotlib\nVisualisation avancée avec Seaborn\n\nProgrammation orientée objet (POO)\n\nDéfinition de classes, objets, méthodes\n\nIntroduction au Machine Learning avec Python\n\nBibliothèques essentielles : scikit-learn\nPréparation des données pour le ML (normalisation, division en train/test)\nModèles supervisés : régression linéaire et classification (KNN)\nÉvaluation des modèles : métriques (MAE, R², précision, rappel)\nNotions de surapprentissage et régularisation\n\nProjet final\n\nNettoyage, exploration, visualisation et modélisation d’un dataset"
-  },
-  {
-    "objectID": "doc/tp/tp3.html",
-    "href": "doc/tp/tp3.html",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
-    "href": "doc/tp/tp3.html#objectifs-du-tp",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
-    "href": "doc/tp/tp3.html#introduction-à-numpy",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
-  },
-  {
-    "objectID": "doc/tp/tp3.html#création-de-tableaux",
-    "href": "doc/tp/tp3.html#création-de-tableaux",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#accès-et-modifications",
-    "href": "doc/tp/tp3.html#accès-et-modifications",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
-    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#exercices-pratiques",
-    "href": "doc/tp/tp3.html#exercices-pratiques",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
-  },
-  {
-    "objectID": "doc/tp/tp3.html#récapitulatif",
-    "href": "doc/tp/tp3.html#récapitulatif",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
-  },
-  {
-    "objectID": "doc/tp/tp1.html",
-    "href": "doc/tp/tp1.html",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données.\n\n\nCe fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python\n\n\n\n\nDans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données\n\n\n\n\nÀ la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
-    "href": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Ce fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
-    "href": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#objectif",
-    "href": "doc/tp/tp1.html#objectif",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Les fonctions Python existantes",
-    "text": "Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\nExemples:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Fonction simple sans paramètre",
-    "text": "Fonction simple sans paramètre\nUne fonction sans paramètre exécute toujours les mêmes instructions :\ndef dire_bonjour():\n    return \"Bonjour !\"\n\nprint(dire_bonjour())  # Affiche : Bonjour !"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-paramètres",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-paramètres",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Fonction avec paramètres",
-    "text": "Fonction avec paramètres\nUne fonction avec paramètres peut être personnalisée selon les valeurs passées :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\"\n\nprint(saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#valeur-par-défaut-des-paramètres",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#valeur-par-défaut-des-paramètres",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Valeur par défaut des paramètres",
-    "text": "Valeur par défaut des paramètres\nLes paramètres peuvent avoir des valeurs par défaut :\ndef saluer(nom, message=\"Bonjour\"):\n    return f\"{message}, {nom}!\"\n\n# Exemple d'utilisation\nprint(saluer(\"Jean\"))  # Affiche : Bonjour, Jean!\nprint(saluer(\"Marie\", \"Salut\"))  # Affiche : Salut, Marie!"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#affecter-une-instance-de-fonction-à-une-variable",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#affecter-une-instance-de-fonction-à-une-variable",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Affecter une instance de fonction à une variable",
-    "text": "Affecter une instance de fonction à une variable\nLes fonctions peuvent être assignées à des variables pour être utilisées plus tard :\ndef addition(a, b):\n    return a + b\n\n# Affecter la fonction à une variable\najouter = addition\n\n# Exemple d'utilisation\nprint(ajouter(3, 4))  # Affiche : 7"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-un-nombre-variable-de-paramètres",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-un-nombre-variable-de-paramètres",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Fonction avec un nombre variable de paramètres",
-    "text": "Fonction avec un nombre variable de paramètres\nUne fonction peut accepter un nombre variable d’arguments :\ndef somme(*args):\n    return sum(args)\n\n# Exemple d'utilisation\nprint(somme(1, 2, 3, 4))  # Affiche : 10\nprint(somme(5, 10))       # Affiche : 15"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#passage-des-paramètres-immuable-et-non-immuable",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#passage-des-paramètres-immuable-et-non-immuable",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Passage des paramètres : immuable et non immuable",
-    "text": "Passage des paramètres : immuable et non immuable\nLes types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être."
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#variable-localevariable-globale",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#variable-localevariable-globale",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Variable locale/variable globale",
-    "text": "Variable locale/variable globale\n\nVariable locale : Définie à l’intérieur d’une fonction et inaccessible en dehors.\nVariable globale : Accessible partout dans le programme."
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Introduction aux modules",
-    "text": "Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\nExemple :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Utiliser un module dans un autre fichier",
-    "text": "Utiliser un module dans un autre fichier\nDans un autre fichier, vous pouvez importer et utiliser ce module :\nimport mon_module\n\nprint(mon_module.saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#importation-de-modules",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#importation-de-modules",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Importation de modules",
-    "text": "Importation de modules\nIl existe plusieurs façons d’importer un module ou ses éléments :\n\nImporter un module complet :\n\nimport math\nprint(math.sqrt(16))  # Affiche : 4.0\n\nImporter un élément spécifique d’un module :\n\nfrom math import sqrt\nprint(sqrt(16))  # Affiche : 4.0\n\nRenommer un module ou un élément lors de l’importation :\n\nimport math as m\nprint(m.sqrt(16))  # Affiche : 4.0"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#modules-standards",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#modules-standards",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Modules standards",
-    "text": "Modules standards\nPython fournit une bibliothèque standard riche avec des modules pour diverses tâches :\n\nManipulation de dates :\n\nimport datetime\n\naujourdhui = datetime.date.today()\nprint(aujourdhui)  # Affiche la date d'aujourd'hui\n\nGénération de nombres aléatoires :\n\nimport random\n\nnombre = random.randint(1, 10)\nprint(nombre)  # Affiche un nombre aléatoire entre 1 et 10"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#créer-et-structurer-un-projet-avec-des-modules",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#créer-et-structurer-un-projet-avec-des-modules",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Créer et structurer un projet avec des modules",
-    "text": "Créer et structurer un projet avec des modules\nUn projet Python peut contenir plusieurs fichiers et répertoires pour organiser le code.\nStructure d’exemple :\nmon_projet/\n|-- main.py\n|-- utilitaires.py\n|-- data/\n    |-- __init__.py\n    |-- traitement.py\nDans le fichier main.py, vous pouvez importer les modules comme suit :\nfrom data.traitement import ma_fonction"
-  },
-  {
-    "objectID": "doc/cours/fonctions-modules-poo-slides.html#les-packages",
-    "href": "doc/cours/fonctions-modules-poo-slides.html#les-packages",
-    "title": "Fonctions, Modules et POO en Python",
-    "section": "Les packages",
-    "text": "Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction"
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html",
@@ -530,6 +243,181 @@
     "title": "Fonctions, Modules et POO en Python",
     "section": "3.6 Les packages",
     "text": "3.6 Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction\n\n\nIntroduction à la Programmation Orientée Objet (POO)\nLa programmation orientée objet (POO) est un paradigme de programmation basé sur le concept de “classes” et “objets”, qui permet de structurer le code de manière modulaire et réutilisable.\n\n\n\nConcepts clés\n\nClasse : Modèle ou plan permettant de créer des objets. Elle définit les attributs (données) et les méthodes (fonctions).\nObjet : Instance d’une classe.\nAttributs : Variables associées à une classe ou un objet.\nMéthodes : Fonctions définies dans une classe pour manipuler ses attributs ou accomplir des tâches spécifiques.\n\n\n\n\nCréer une classe simple et instancier des objets\nVoici un exemple de classe simple représentant une “Personne” :\nclass Personne:\n    def __init__(self, nom, age):\n        self.nom = nom\n        self.age = age\n\n    def se_presenter(self):\n        return f\"Je m'appelle {self.nom} et j'ai {self.age} ans.\"\n\n# Instanciation d'objets\npersonne1 = Personne(\"Alice\", 30)\npersonne2 = Personne(\"Bob\", 25)\n\n# Utilisation\nprint(personne1.se_presenter())  # Affiche : Je m'appelle Alice et j'ai 30 ans.\nprint(personne2.se_presenter())  # Affiche : Je m'appelle Bob et j'ai 25 ans.\n\n\n\nObjet complexe\nUne classe peut contenir des attributs qui sont eux-mêmes des objets :\nclass Adresse:\n    def __init__(self, rue, ville):\n        self.rue = rue\n        self.ville = ville\n\nclass Personne:\n    def __init__(self, nom, age, adresse):\n        self.nom = nom\n        self.age = age\n        self.adresse = adresse\n\n    def afficher_adresse(self):\n        return f\"{self.adresse.rue}, {self.adresse.ville}\"\n\nadresse = Adresse(\"123 Rue Principale\", \"Paris\")\npersonne = Personne(\"Alice\", 30, adresse)\nprint(personne.afficher_adresse())  # Affiche : 123 Rue Principale, Paris\n\n\n\nHéritage\nL’héritage permet à une classe d’hériter des attributs et des méthodes d’une autre classe. Cela favorise la réutilisation du code.\nclass Animal:\n    def __init__(self, nom):\n        self.nom = nom\n\n    def parler(self):\n        pass  # Méthode à redéfinir\n\nclass Chien(Animal):\n    def parler(self):\n        return \"Woof\"\n\nclass Chat(Animal):\n    def parler(self):\n        return \"Meow\"\n\nchien = Chien(\"Rex\")\nchat = Chat(\"Miaou\")\nprint(chien.parler())  # Affiche : Woof\nprint(chat.parler())  # Affiche : Meow\n\n\n\nPolymorphisme\nLe polymorphisme permet d’utiliser une même méthode définie dans plusieurs classes différentes.\nanimaux = [Chien(\"Rex\"), Chat(\"Miaou\")]\n\nfor animal in animaux:\n    print(f\"{animal.nom} dit {animal.parler()}\")\n\n\n\nEncapsulation et propriétés\nL’encapsulation permet de contrôler l’accès et la modification des attributs d’une classe. Cela se fait généralement à l’aide des propriétés.\nclass CompteBancaire:\n    def __init__(self, titulaire, solde):\n        self.titulaire = titulaire\n        self.__solde = solde  # Attribut privé\n\n    @property\n    def solde(self):\n        return self.__solde\n\n    @solde.setter\n    def solde(self, montant):\n        if montant &gt;= 0:\n            self.__solde = montant\n        else:\n            raise ValueError(\"Le solde ne peut pas être négatif\")\n\ncompte = CompteBancaire(\"Alice\", 1000)\nprint(compte.solde)  # Accès au solde\ncompte.solde = 2000  # Modification du solde\nprint(compte.solde)  # Affiche : 2000\n\n\n\nAbstraction\nL’abstraction consiste à définir des classes ou des méthodes génériques qui servent de base pour les classes spécifiques. Cela se fait avec des classes ou méthodes abstraites.\nfrom abc import ABC, abstractmethod\n\nclass Forme(ABC):\n    @abstractmethod\n    def aire(self):\n        pass\n\nclass Rectangle(Forme):\n    def __init__(self, largeur, hauteur):\n        self.largeur = largeur\n        self.hauteur = hauteur\n\n    def aire(self):\n        return self.largeur * self.hauteur\n\nrectangle = Rectangle(10, 5)\nprint(rectangle.aire())  # Affiche : 50\n\n\n\nExercices pratiques\n\nCréer une classe Livre :\n\nAttributs : titre, auteur, pages.\nMéthode : afficher_informations qui affiche les détails du livre.\n\nCréer une classe Bibliotheque :\n\nAttributs : liste de livres.\nMéthodes : ajouter un livre, retirer un livre, afficher tous les livres.\n\nCréer une hiérarchie d’héritage :\n\nClasse de base Vehicule.\nClasses dérivées : Voiture, Moto avec des méthodes spécifiques comme afficher_type.\n\nCréer une classe abstraite Forme :\n\nMéthodes abstraites : aire et perimetre.\nImplémenter les classes Cercle et Rectangle."
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#les-fonctions-python-existantes",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Les fonctions Python existantes",
+    "text": "Les fonctions Python existantes\nPython offre une large gamme de fonctions intégrées comme print(), len(), type() ou encore sum(). Ces fonctions permettent de réaliser des opérations courantes sans définir de nouvelles fonctions.\nExemples:\nprint(\"Bonjour\")  # Affiche : Bonjour\nprint(len(\"Python\"))  # Affiche : 6"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-simple-sans-paramètre",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction simple sans paramètre",
+    "text": "Fonction simple sans paramètre\nUne fonction sans paramètre exécute toujours les mêmes instructions :\ndef dire_bonjour():\n    return \"Bonjour !\"\n\nprint(dire_bonjour())  # Affiche : Bonjour !"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-paramètres",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction avec paramètres",
+    "text": "Fonction avec paramètres\nUne fonction avec paramètres peut être personnalisée selon les valeurs passées :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\"\n\nprint(saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#valeur-par-défaut-des-paramètres",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#valeur-par-défaut-des-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Valeur par défaut des paramètres",
+    "text": "Valeur par défaut des paramètres\nLes paramètres peuvent avoir des valeurs par défaut :\ndef saluer(nom, message=\"Bonjour\"):\n    return f\"{message}, {nom}!\"\n\n# Exemple d'utilisation\nprint(saluer(\"Jean\"))  # Affiche : Bonjour, Jean!\nprint(saluer(\"Marie\", \"Salut\"))  # Affiche : Salut, Marie!"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#affecter-une-instance-de-fonction-à-une-variable",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#affecter-une-instance-de-fonction-à-une-variable",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Affecter une instance de fonction à une variable",
+    "text": "Affecter une instance de fonction à une variable\nLes fonctions peuvent être assignées à des variables pour être utilisées plus tard :\ndef addition(a, b):\n    return a + b\n\n# Affecter la fonction à une variable\najouter = addition\n\n# Exemple d'utilisation\nprint(ajouter(3, 4))  # Affiche : 7"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-un-nombre-variable-de-paramètres",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#fonction-avec-un-nombre-variable-de-paramètres",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Fonction avec un nombre variable de paramètres",
+    "text": "Fonction avec un nombre variable de paramètres\nUne fonction peut accepter un nombre variable d’arguments :\ndef somme(*args):\n    return sum(args)\n\n# Exemple d'utilisation\nprint(somme(1, 2, 3, 4))  # Affiche : 10\nprint(somme(5, 10))       # Affiche : 15"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#passage-des-paramètres-immuable-et-non-immuable",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#passage-des-paramètres-immuable-et-non-immuable",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Passage des paramètres : immuable et non immuable",
+    "text": "Passage des paramètres : immuable et non immuable\nLes types immuables comme les nombres ou les chaînes ne peuvent pas être modifiés dans une fonction, alors que les types mutables comme les listes peuvent l’être."
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#variable-localevariable-globale",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#variable-localevariable-globale",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Variable locale/variable globale",
+    "text": "Variable locale/variable globale\n\nVariable locale : Définie à l’intérieur d’une fonction et inaccessible en dehors.\nVariable globale : Accessible partout dans le programme."
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#introduction-aux-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Introduction aux modules",
+    "text": "Introduction aux modules\nUn module est un fichier contenant du code Python (fonctions, classes, variables) que vous pouvez réutiliser dans d’autres fichiers. L’utilisation de modules permet de structurer un projet et d’encapsuler des fonctionnalités spécifiques dans des fichiers distincts.\nExemple :\nCréez un fichier nommé mon_module.py avec le contenu suivant :\ndef saluer(nom):\n    return f\"Bonjour, {nom}!\""
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#utiliser-un-module-dans-un-autre-fichier",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Utiliser un module dans un autre fichier",
+    "text": "Utiliser un module dans un autre fichier\nDans un autre fichier, vous pouvez importer et utiliser ce module :\nimport mon_module\n\nprint(mon_module.saluer(\"Alice\"))  # Affiche : Bonjour, Alice!"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#importation-de-modules",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#importation-de-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Importation de modules",
+    "text": "Importation de modules\nIl existe plusieurs façons d’importer un module ou ses éléments :\n\nImporter un module complet :\n\nimport math\nprint(math.sqrt(16))  # Affiche : 4.0\n\nImporter un élément spécifique d’un module :\n\nfrom math import sqrt\nprint(sqrt(16))  # Affiche : 4.0\n\nRenommer un module ou un élément lors de l’importation :\n\nimport math as m\nprint(m.sqrt(16))  # Affiche : 4.0"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#modules-standards",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#modules-standards",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Modules standards",
+    "text": "Modules standards\nPython fournit une bibliothèque standard riche avec des modules pour diverses tâches :\n\nManipulation de dates :\n\nimport datetime\n\naujourdhui = datetime.date.today()\nprint(aujourdhui)  # Affiche la date d'aujourd'hui\n\nGénération de nombres aléatoires :\n\nimport random\n\nnombre = random.randint(1, 10)\nprint(nombre)  # Affiche un nombre aléatoire entre 1 et 10"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#créer-et-structurer-un-projet-avec-des-modules",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#créer-et-structurer-un-projet-avec-des-modules",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Créer et structurer un projet avec des modules",
+    "text": "Créer et structurer un projet avec des modules\nUn projet Python peut contenir plusieurs fichiers et répertoires pour organiser le code.\nStructure d’exemple :\nmon_projet/\n|-- main.py\n|-- utilitaires.py\n|-- data/\n    |-- __init__.py\n    |-- traitement.py\nDans le fichier main.py, vous pouvez importer les modules comme suit :\nfrom data.traitement import ma_fonction"
+  },
+  {
+    "objectID": "doc/cours/fonctions-modules-poo-slides.html#les-packages",
+    "href": "doc/cours/fonctions-modules-poo-slides.html#les-packages",
+    "title": "Fonctions, Modules et POO en Python",
+    "section": "Les packages",
+    "text": "Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Programmation avec Python: Analyse de données et Data visualisation",
+    "section": "",
+    "text": "6 sessions de 3 heures (18 heures au total)"
+  },
+  {
+    "objectID": "index.html#contenu-du-cours",
+    "href": "index.html#contenu-du-cours",
+    "title": "Programmation avec Python: Analyse de données et Data visualisation",
+    "section": "Contenu du cours",
+    "text": "Contenu du cours\n\nIntroduction à Python\n\nPrésentation et installation\nVariables, types de données, opérateurs\n\nStructures de contrôle\n\nConditions (if, elif, else)\nBoucles (for, while)\nGestion des erreurs (try, except)\n\nLes fonctions\n\nDéfinir et appeler des fonctions\nParamètres, valeurs de retour\n\nManipulation de données avec pandas\n\nChargement de fichiers CSV/Excel\nNettoyage des données (valeurs manquantes, transformations)\nSélection et filtrage des données\n\nVisualisation des données\n\nGraphiques avec Matplotlib\nVisualisation avancée avec Seaborn\n\nProgrammation orientée objet (POO)\n\nDéfinition de classes, objets, méthodes\n\nIntroduction au Machine Learning avec Python\n\nBibliothèques essentielles : scikit-learn\nPréparation des données pour le ML (normalisation, division en train/test)\nModèles supervisés : régression linéaire et classification (KNN)\nÉvaluation des modèles : métriques (MAE, R², précision, rappel)\nNotions de surapprentissage et régularisation\n\nProjet final\n\nNettoyage, exploration, visualisation et modélisation d’un dataset"
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#les-listes-list",
+    "href": "doc/cours/analysedonnees-slides.html#les-listes-list",
+    "title": "Les Types de données en Python",
+    "section": "Les Listes (list)",
+    "text": "Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#les-tuples-tuple",
+    "href": "doc/cours/analysedonnees-slides.html#les-tuples-tuple",
+    "title": "Les Types de données en Python",
+    "section": "Les Tuples (tuple)",
+    "text": "Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#les-dictionnaires-dict",
+    "href": "doc/cours/analysedonnees-slides.html#les-dictionnaires-dict",
+    "title": "Les Types de données en Python",
+    "section": "Les Dictionnaires (dict)",
+    "text": "Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees-slides.html#les-ensembles-set",
+    "href": "doc/cours/analysedonnees-slides.html#les-ensembles-set",
+    "title": "Les Types de données en Python",
+    "section": "Les Ensembles (set)",
+    "text": "Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html",
+    "href": "doc/cours/analysedonnees.html",
+    "title": "Les Types de données en Python",
+    "section": "",
+    "text": "Python propose des types de données avancés pour manipuler des collections de données ou des structures complexes. Ces types sont essentiels pour gérer des informations organisées."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#les-listes-list",
+    "href": "doc/cours/analysedonnees.html#les-listes-list",
+    "title": "Les Types de données en Python",
+    "section": "1 Les Listes (list)",
+    "text": "1 Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types.\n\n\n\nCréation de listes\nLes listes peuvent être créées à partir d’une série d’éléments séparés par des virgules et entourés de crochets [ ].\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)\n\n\n\nOpérations CRUD sur les Listes en Python\nLes opérations CRUD (Create, Read, Update, Delete) représentent les actions fondamentales que l’on peut effectuer sur des données dans une application. Ces actions sont souvent utilisées dans la gestion des bases de données, mais elles s’appliquent également aux structures de données comme les listes en Python :\n\nCreate (Créer) : Ajouter de nouvelles données.\nRead (Lire) : Consulter ou accéder aux données existantes.\nUpdate (Mettre à jour) : Modifier les données existantes.\nDelete (Supprimer) : Effacer les données.\n\n\n\nCréer une Liste (Create)\nPour créer une liste, utilisez des crochets ([]) et séparez les éléments par des virgules.\nExemple :\n# Créer une liste vide\nma_liste = []\n\n# Créer une liste avec des éléments\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(fruits)  # Affiche : ['pomme', 'banane', 'cerise']\n\n\n\n\nLire les Données (Read)\n\nAccéder à un élément par son index\nLes indices commencent à 0.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(fruits[0])  # Affiche : \"pomme\"\nprint(fruits[-1])  # Affiche : \"cerise\" (dernier élément)\n\n\n\nParcourir une liste\nVous pouvez utiliser une boucle pour parcourir tous les éléments.\nExemple :\nfor fruit in fruits:\n    print(fruit)\n\n\n\nLongueur de la liste\nUtilisez la fonction len() pour connaître le nombre d’éléments dans une liste.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(len(fruits))  # Affiche : 3\n\n\n\n\nMettre à Jour une Liste (Update)\n\nModifier un élément existant\nAccédez à l’élément par son index et assignez-lui une nouvelle valeur.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nfruits[1] = \"orange\"  # Remplace \"banane\" par \"orange\"\nprint(fruits)  # Affiche : ['pomme', 'orange', 'cerise']\n\n\n\nAjouter des éléments\n\nÀ la fin de la liste :\nUtilisez la méthode append().\nExemple :\nfruits = [\"pomme\", \"orange\", \"cerise\"]\nfruits.append(\"mangue\")\nprint(fruits)  # Affiche : ['pomme', 'orange', 'cerise', 'mangue']\n\n\n\n\nÀ une position spécifique\nUtilisez la méthode insert() pour insérer un élément à une position spécifique dans une liste.\nExemple :\nfruits = [\"pomme\", \"orange\", \"cerise\", \"mangue\"]\nfruits.insert(1, \"fraise\")  # Ajoute \"fraise\" à l'index 1\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']\n\n\n\nFusionner deux listes\nPour fusionner deux listes, vous pouvez utiliser l’opérateur + ou la méthode extend().\nExemple :\nlegumes = [\"carotte\", \"tomate\"]\nfruits = [\"pomme\", \"fraise\", \"orange\", \"cerise\", \"mangue\"]\n\n# Fusion avec extend()\nfruits.extend(legumes)\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\nFusionner deux listes avec l’opérateur +\nVous pouvez également utiliser l’opérateur + pour créer une nouvelle liste fusionnée.\nExemple :\nlegumes = [\"carotte\", \"tomate\"]\nfruits = [\"pomme\", \"fraise\", \"orange\", \"cerise\", \"mangue\"]\n\n# Fusion avec +\nnouvelle_liste = fruits + legumes\nprint(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nSupprimer des Éléments (Delete)\n\nSupprimer un élément par sa valeur\nUtilisez la méthode remove().\nExemple :\nfruits.remove(\"orange\")  # Supprime \"orange\"\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nSupprimer un élément par son index\nUtilisez l’instruction del ou la méthode pop().\n\nAvec del :\ndel fruits[0]  # Supprime le premier élément\nprint(fruits)  # Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nUtilisation de pop()\nLa méthode pop() supprime un élément d’une liste et le retourne. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.\nExemple :\nfruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n# Supprimer et retourner le dernier élément\ndernier_fruit = fruits.pop()  # Supprime \"tomate\" de la liste\nprint(dernier_fruit)  # Affiche : \"tomate\"\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']\n\n\n\nSupprimer tous les éléments avec clear()\nLa méthode clear() supprime tous les éléments de la liste, laissant une liste vide. Contrairement à pop(), elle ne retourne aucun élément.\nExemple :\nfruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']\n\n# Supprimer tous les éléments\nfruits.clear()\nprint(fruits)  # Affiche : []\n\n\n\nDifférence entre pop() et clear()\n\n\n\n\n\n\n\n\nMéthode\nFonctionnalité\nExemple de résultat\n\n\n\n\npop()\nSupprime et retourne un seul élément de la liste (par défaut, le dernier).\nfruits.pop() -&gt; retourne \"tomate\", modifie la liste.\n\n\nclear()\nSupprime tous les éléments de la liste sans retourner quoi que ce soit.\nfruits.clear() -&gt; retourne None, vide la liste.\n\n\n\n\npop() est utile lorsque vous voulez traiter ou sauvegarder l’élément supprimé.\nclear() est idéal pour réinitialiser une liste sans conserver ses éléments.\n\n\n\n\nRésumé des Méthodes CRUD sur les Listes\n\n\n\n\n\n\n\n\nOpération\nMéthode\nDescription\n\n\n\n\nCreate\n[], append(), insert()\nCréer ou ajouter des éléments.\n\n\nRead\nindex, len(), for loop\nLire ou parcourir les éléments.\n\n\nUpdate\nindex, append(), extend()\nModifier ou ajouter des éléments.\n\n\nDelete\nremove(), pop(), del, clear()\nSupprimer des éléments ou tout vider."
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#les-tuples-tuple",
+    "href": "doc/cours/analysedonnees.html#les-tuples-tuple",
+    "title": "Les Types de données en Python",
+    "section": "2 Les Tuples (tuple)",
+    "text": "2 Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création.\n\n\n\nCréation de Tuples\nUn tuple peut être créé en plaçant une série d’éléments séparés par des virgules dans des parenthèses ().\nExemple :\nmon_tuple = (1, 2, 3)\nprint(mon_tuple)  # Affiche : (1, 2, 3)\n\n\n\nOpérations CRUD sur les Tuples\nComme les tuples sont immuables, les opérations Update et Delete diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :\n\nCreate (Créer) : Ajouter de nouvelles données.\nRead (Lire) : Consulter ou accéder aux données existantes.\nUpdate (Mettre à jour) : Pas directement possible (les tuples sont immuables).\nDelete (Supprimer) : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.\n\n\n\nCréer un Tuple (Create)\nExemple :\n# Créer un tuple avec des éléments\nmon_tuple = (1, 'Python', 3.14)\nprint(mon_tuple)  # Affiche : (1, 'Python', 3.14)\nVous pouvez également créer un tuple sans parenthèses (packing) :\nmon_tuple = 1, 'Python', 3.14\n\n\nLire les Données (Read)\nAccéder à un élément par son index :\nmon_tuple = (1, 'Python', 3.14)\nprint(mon_tuple[1])  # Affiche : 'Python'\nParcourir un tuple avec une boucle :\nfor element in mon_tuple:\n    print(element)\nLongueur du tuple :\nprint(len(mon_tuple))  # Affiche : 3\n\n\nMettre à Jour un Tuple (Update)\nLes tuples sont immutables, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un nouveau tuple basé sur l’ancien.\nExemple :\nmon_tuple = (1, 2, 3)\nnouveau_tuple = mon_tuple + (4, 5)\nprint(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)\n\n\nSupprimer un Tuple (Delete)\nVous ne pouvez pas supprimer un élément spécifique d’un tuple, mais vous pouvez supprimer le tuple entier.\nExemple :\nmon_tuple = (1, 2, 3)\ndel mon_tuple\n\n\n\nAvantages des Tuples\n\nImmutabilité : Protège les données contre les modifications accidentelles.\nPerformance : Les tuples sont plus rapides à traiter que les listes.\nUtilisation dans les clés de dictionnaire : Les tuples peuvent être utilisés comme clés dans un dictionnaire (contrairement aux listes).\n\nExemple :\ncoordonnees = {\n    (0, 0): 'Origine',\n    (1, 2): 'Point A'\n}\nprint(coordonnees[(1, 2)])  # Affiche : 'Point A'\n\n\nDifférences entre Listes et Tuples\n\n\n\nCaractéristique\nListe\nTuple\n\n\n\n\nMutabilité\nMutable\nImmuable\n\n\nSyntaxe\n[ ]\n( )\n\n\nPerformance\nPlus lente\nPlus rapide\n\n\nUtilisation\nDonnées modifiables\nDonnées fixes"
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#les-dictionnaires-dict",
+    "href": "doc/cours/analysedonnees.html#les-dictionnaires-dict",
+    "title": "Les Types de données en Python",
+    "section": "3 Les Dictionnaires (dict)",
+    "text": "3 Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\n\nCréation de Dictionnaires\nUn dictionnaire peut être créé en utilisant des accolades {} et des paires clé-valeur séparées par des deux-points :.\nExemple :\nmon_dict = {\n    'nom': 'Alice',\n    'age': 25,\n    'ville': 'Paris'\n}\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\n\n\nOpérations CRUD sur les Dictionnaires\nLes dictionnaires permettent les opérations fondamentales CRUD (Create, Read, Update, Delete) comme suit :\n\nCreate (Créer) : Ajouter de nouvelles paires clé-valeur.\nRead (Lire) : Accéder à une valeur via sa clé.\nUpdate (Mettre à jour) : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.\nDelete (Supprimer) : Supprimer une paire clé-valeur.\n\n\nCréer un Dictionnaire (Create)\nExemple :\n# Créer un dictionnaire vide\nmon_dict = {}\n\n# Ajouter des paires clé-valeur\nmon_dict['nom'] = 'Alice'\nmon_dict['age'] = 25\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}\n\n\nLire les Données (Read)\nAccéder à une valeur par sa clé :\nmon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\nprint(mon_dict['nom'])  # Affiche : Alice\nUtiliser la méthode get() pour éviter les erreurs :\nprint(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable\nParcourir un dictionnaire :\nfor cle, valeur in mon_dict.items():\n    print(f'{cle} : {valeur}')\nClés et valeurs :\nprint(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville'])\nprint(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])\n\n\nMettre à Jour un Dictionnaire (Update)\nAjouter ou modifier une clé :\nmon_dict = {'nom': 'Alice', 'age': 25}\nmon_dict['ville'] = 'Paris'  # Ajout\nmon_dict['age'] = 26         # Mise à jour\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}\nFusionner deux dictionnaires :\nautre_dict = {'pays': 'France', 'profession': 'Ingénieure'}\nmon_dict.update(autre_dict)\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}\n\n\nSupprimer des Éléments (Delete)\nSupprimer une paire clé-valeur :\nmon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\ndel mon_dict['age']\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}\nSupprimer et retourner une valeur avec pop() :\nville = mon_dict.pop('ville')\nprint(ville)  # Affiche : Paris\nprint(mon_dict)  # Affiche : {'nom': 'Alice'}\nSupprimer tous les éléments avec clear() :\nmon_dict.clear()\nprint(mon_dict)  # Affiche : {}\n\n\n\nAvantages des Dictionnaires\n\nRapidité : Accès direct aux valeurs via les clés.\nFlexible : Peut contenir des données de types variés.\nOrganisation : Idéal pour structurer des données complexes.\n\nExemple :\nutilisateur = {\n    'id': 123,\n    'nom': 'Alice',\n    'contact': {\n        'email': 'alice@example.com',\n        'telephone': '123-456-7890'\n    }\n}\nprint(utilisateur['contact']['email'])  # Affiche : alice@example.com\n\n\nDifférences entre Listes et Dictionnaires\n\n\n\n\n\n\n\n\nCaractéristique\nListe\nDictionnaire\n\n\n\n\nAccès aux données\nPar index numérique\nPar clé\n\n\nStructure\nSéquence ordonnée\nPaires clé-valeur\n\n\nMutabilité\nMutable\nMutable (clés immuables)"
+  },
+  {
+    "objectID": "doc/cours/analysedonnees.html#les-ensembles-set",
+    "href": "doc/cours/analysedonnees.html#les-ensembles-set",
+    "title": "Les Types de données en Python",
+    "section": "4 Les Ensembles (set)",
+    "text": "4 Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc.\n\n\nCréation d’Ensembles\nUn ensemble peut être créé en utilisant la fonction set() ou en plaçant des éléments entre accolades {}.\nExemple :\nmon_set = {1, 2, 3, 4}\nprint(mon_set)  # Affiche : {1, 2, 3, 4}\n\n# Création d'un ensemble à partir d'une liste\nmon_set = set([1, 2, 2, 3])\nprint(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)\n\n\nOpérations CRUD sur les Ensembles\nLes ensembles prennent en charge les opérations fondamentales CRUD (Create, Read, Update, Delete) :\n\nCreate (Créer) : Ajouter de nouveaux éléments.\nRead (Lire) : Vérifier la présence d’un élément.\nUpdate (Mettre à jour) : Ajouter ou supprimer des éléments.\nDelete (Supprimer) : Supprimer des éléments ou réinitialiser l’ensemble.\n\n\nCréer un Ensemble (Create)\nExemple :\n# Créer un ensemble vide\nmon_set = set()\n\n# Ajouter des éléments\nmon_set.add(1)\nmon_set.add(2)\nprint(mon_set)  # Affiche : {1, 2}\n\n\nLire les Données (Read)\nVérifier la présence d’un élément :\nmon_set = {1, 2, 3}\nprint(1 in mon_set)  # Affiche : True\nprint(4 in mon_set)  # Affiche : False\nParcourir un ensemble avec une boucle :\nfor element in mon_set:\n    print(element)\nTaille de l’ensemble :\nprint(len(mon_set))  # Affiche : 3\n\n\nMettre à Jour un Ensemble (Update)\nAjouter des éléments :\nmon_set = {1, 2}\nmon_set.add(3)  # Ajoute un seul élément\nmon_set.update([4, 5])  # Ajoute plusieurs éléments\nprint(mon_set)  # Affiche : {1, 2, 3, 4, 5}\nSupprimer des éléments :\nAvec remove() :\nmon_set.remove(2)  # Supprime 2 de l'ensemble\nprint(mon_set)  # Affiche : {1, 3, 4, 5}\nAvec discard() (ne lève pas d’erreur si l’élément n’existe pas) :\nmon_set.discard(10)  # Aucun effet si 10 n'est pas présent\n\n\nSupprimer des Éléments (Delete)\nSupprimer un élément avec pop() :\nmon_set = {1, 2, 3}\nelement = mon_set.pop()  # Supprime et retourne un élément aléatoire\nprint(element)  # Affiche : 1 (ou un autre élément)\nprint(mon_set)  # Affiche : {2, 3}\nSupprimer tous les éléments avec clear() :\nmon_set.clear()\nprint(mon_set)  # Affiche : set()\n\n\n\nOpérations Mathématiques avec les Ensembles\nLes ensembles permettent des opérations mathématiques classiques :\nUnion : Combine tous les éléments des deux ensembles.\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\nprint(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}\nIntersection : Récupère les éléments communs aux deux ensembles.\nprint(set1 & set2)  # Affiche : {3}\nDifférence : Récupère les éléments présents dans le premier ensemble mais pas dans le second.\nprint(set1 - set2)  # Affiche : {1, 2}\nDifférence Symétrique : Récupère les éléments présents dans un seul des deux ensembles.\nprint(set1 ^ set2)  # Affiche : {1, 2, 4, 5}"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",
@@ -733,5 +621,236 @@
     "title": "Introduction à Python : Bases et Structures Fondamentales",
     "section": "4.3 Résumé",
     "text": "4.3 Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
+    "href": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Programmation avec Python : Bases et Applications",
+    "text": "Programmation avec Python : Bases et Applications\n\n18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#objectifs",
+    "href": "doc/cours/intro-python-slides.html#objectifs",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#python",
+    "href": "doc/cours/intro-python-slides.html#python",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Python",
+    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#organisation-des-tp",
+    "href": "doc/cours/intro-python-slides.html#organisation-des-tp",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Organisation des TP",
+    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
+    "href": "doc/cours/intro-python-slides.html#ce-quil-faut-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ce qu’il faut faire",
+    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
+    "href": "doc/cours/intro-python-slides.html#à-ne-pas-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "À ne pas faire",
+    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#évaluation",
+    "href": "doc/cours/intro-python-slides.html#évaluation",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Évaluation",
+    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations."
+  },
+  {
+    "objectID": "doc/cours/intro-python-slides.html#bibliographie",
+    "href": "doc/cours/intro-python-slides.html#bibliographie",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012"
+  },
+  {
+    "objectID": "doc/cours/intro.html",
+    "href": "doc/cours/intro.html",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "",
+    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
+    "href": "doc/cours/intro.html#programmation-avec-python-bases-et-applications",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "",
+    "text": "18h : CM+TP\nContact : natachayepnga@gmail.com\nOutils recommandés : VS Code, Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/cours/intro.html#objectifs",
+    "href": "doc/cours/intro.html#objectifs",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nComprendre les bases du langage Python.\nManipuler les variables, types de données et structures de contrôle.\nExplorer les bibliothèques populaires : NumPy, Pandas, Matplotlib.\nIntroduire les concepts de machine learning avec Scikit-learn.\nRéaliser un projet intégrant toutes les notions vues."
+  },
+  {
+    "objectID": "doc/cours/intro.html#python",
+    "href": "doc/cours/intro.html#python",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Python",
+    "text": "Python\n\nLangage polyvalent : data science, machine learning, développement web, automatisation.\nAvantages :\n\nSyntaxe simple et claire.\nLarge écosystème de bibliothèques open source.\nUtilisé par des entreprises, start-ups, et dans la recherche académique."
+  },
+  {
+    "objectID": "doc/cours/intro.html#organisation-des-tp",
+    "href": "doc/cours/intro.html#organisation-des-tp",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Organisation des TP",
+    "text": "Organisation des TP\n\n5 TP + 1 projet final\nEnvironnements : VS Code, Jupyter Notebook, Google Colab.\nApproche : Alternance entre exercices guidés et explorations libres.\nLes projets doivent suivre une structuration rigoureuse :\n\nNettoyage des données.\nVisualisation.\nAnalyse et modélisation."
+  },
+  {
+    "objectID": "doc/cours/intro.html#ce-quil-faut-faire",
+    "href": "doc/cours/intro.html#ce-quil-faut-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Ce qu’il faut faire",
+    "text": "Ce qu’il faut faire\n\nLisez attentivement les consignes de chaque TP.\nEssayez de résoudre les exercices par vous-même.\nRecherchez dans les cours et tutoriels en ligne.\nTravaillez en binôme pour échanger des idées.\nPosez des questions à l’enseignante en cas de blocage."
+  },
+  {
+    "objectID": "doc/cours/intro.html#à-ne-pas-faire",
+    "href": "doc/cours/intro.html#à-ne-pas-faire",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "À ne pas faire",
+    "text": "À ne pas faire\n\nUtiliser ChatGPT sans comprendre la solution.\nCopier/coller des réponses sans vérifier leur validité.\nNe pas documenter votre code ou vos démarches.\n\n\nNote : Ces pratiques nuisent à l’apprentissage et à la compréhension."
+  },
+  {
+    "objectID": "doc/cours/intro.html#évaluation",
+    "href": "doc/cours/intro.html#évaluation",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Évaluation",
+    "text": "Évaluation\n\nPartie 1 : Projet à faire à la maison.\n\nSujet distribué une semaine avant la date de l’examen.\nAnalyse et exploration d’un dataset fourni.\nÀ rendre sous forme d’un notebook bien structuré :\n\nExplication des étapes de nettoyage.\nVisualisation des données et interprétation.\nConclusions et recommandations.\n\n\n\n\n\nPartie 2 : QCM.\n\nDurée : 2h.\nQuestions portant sur les concepts abordés pendant le cours et les TP.\nLa date sera définie à l’avance."
+  },
+  {
+    "objectID": "doc/cours/intro.html#bibliographie",
+    "href": "doc/cours/intro.html#bibliographie",
+    "title": "Programmation avec Python : Bases et Applications",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\nDocumentation officielle Python\n[Cours excellent de l’ENSAE] (https://pythonds.linogaliana.fr/)\nPython for Everybody\nPython Crash Course (Livre)\nSite\nMémento Bases Python 3 de Laurent POINTAL, 2012-2013\nAbrégé Dense Python 3.2 de Laurent POINTAL, 2012\n\n\n\nA Quick, Painless Tutorial on the Python Language de Norman Matloff, 2008 (PDF)\nTutoriels Python en ligne\nDernière version de Python et interface IDLE\nOutil IEP (Interactive Editor for Python)\nThink Python - How to Think Like a Computer Scientist d’Allen B. Downey, 2014\nApprendre à programmer avec Python de Gérard Swinnen, 2009\n\n\n\nUne introduction à Python 3 de Robert CORDEAU et Laurent POINTAL, 2010\nCours Python de l’École Polytechnique Universitaire UMPC\nDocumentation sur l’intégration C/C++/Python\nPython Development with PyDev and Eclipse - Tutorial de Lars Vogel, 2011\nApprenez à programmer en Python - Site du Zéro - Vincent Le Goff, 2011\nAssociation francophone Python"
+  },
+  {
+    "objectID": "doc/tp/tp4.html",
+    "href": "doc/tp/tp4.html",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/tp/tp4.html#objectifs-du-tp",
+    "href": "doc/tp/tp4.html#objectifs-du-tp",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp4.html#introduction-à-numpy",
+    "href": "doc/tp/tp4.html#introduction-à-numpy",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
+  },
+  {
+    "objectID": "doc/tp/tp4.html#création-de-tableaux",
+    "href": "doc/tp/tp4.html#création-de-tableaux",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
+  },
+  {
+    "objectID": "doc/tp/tp4.html#accès-et-modifications",
+    "href": "doc/tp/tp4.html#accès-et-modifications",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
+  },
+  {
+    "objectID": "doc/tp/tp4.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/tp/tp4.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
+  },
+  {
+    "objectID": "doc/tp/tp4.html#exercices-pratiques",
+    "href": "doc/tp/tp4.html#exercices-pratiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
+  },
+  {
+    "objectID": "doc/tp/tp4.html#récapitulatif",
+    "href": "doc/tp/tp4.html#récapitulatif",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/tp/tp3.html",
+    "href": "doc/tp/tp3.html",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
+    "href": "doc/tp/tp3.html#objectifs-du-tp",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
+    "href": "doc/tp/tp3.html#introduction-à-numpy",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#création-de-tableaux",
+    "href": "doc/tp/tp3.html#création-de-tableaux",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#accès-et-modifications",
+    "href": "doc/tp/tp3.html#accès-et-modifications",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#exercices-pratiques",
+    "href": "doc/tp/tp3.html#exercices-pratiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#récapitulatif",
+    "href": "doc/tp/tp3.html#récapitulatif",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
   }
 ]

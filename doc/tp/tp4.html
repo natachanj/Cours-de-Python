@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Natacha NJONGWA YEPNGA">
-<meta name="description" content="Manipulation de données avec Numpy">
+<meta name="description" content="TP Analyse de Données avec Pandas">
 
-<title>Manipulation de données avec Numpy – Programmation en Python</title>
+<title>TP Analyse de Données avec Pandas – Programmation en Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -179,6 +208,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../doc/tp/tp3.html">
  <span class="dropdown-text">TP3 - Manipulation des données avec Numpy</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp4.html">
+ <span class="dropdown-text">TP4 - Analyse de données avec Pandas</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -213,25 +246,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tp-manipulation-de-données-avec-numpy" id="toc-tp-manipulation-de-données-avec-numpy" class="nav-link active" data-scroll-target="#tp-manipulation-de-données-avec-numpy"><span class="header-section-number">1</span> TP : Manipulation de données avec Numpy</a>
+  <li><a href="#tp-analyse-de-données-avec-pandas" id="toc-tp-analyse-de-données-avec-pandas" class="nav-link active" data-scroll-target="#tp-analyse-de-données-avec-pandas"><span class="header-section-number">1</span> TP Analyse de Données avec Pandas</a>
   <ul class="collapse">
-  <li><a href="#objectifs-du-tp" id="toc-objectifs-du-tp" class="nav-link" data-scroll-target="#objectifs-du-tp"><span class="header-section-number">1.1</span> Objectifs du TP</a></li>
-  <li><a href="#introduction-à-numpy" id="toc-introduction-à-numpy" class="nav-link" data-scroll-target="#introduction-à-numpy"><span class="header-section-number">1.2</span> 1. Introduction à NumPy</a>
+  <li><a href="#partie-1-analyse-des-données-financières" id="toc-partie-1-analyse-des-données-financières" class="nav-link" data-scroll-target="#partie-1-analyse-des-données-financières"><span class="header-section-number">1.1</span> Partie 1 : Analyse des Données Financières</a>
   <ul class="collapse">
-  <li><a href="#pourquoi-utiliser-numpy" id="toc-pourquoi-utiliser-numpy" class="nav-link" data-scroll-target="#pourquoi-utiliser-numpy"><span class="header-section-number">1.2.1</span> Pourquoi utiliser NumPy ?</a></li>
+  <li><a href="#récupération-et-exploration-des-données" id="toc-récupération-et-exploration-des-données" class="nav-link" data-scroll-target="#récupération-et-exploration-des-données"><span class="header-section-number">1.1.1</span> 1. Récupération et Exploration des Données</a></li>
+  <li><a href="#nettoyage-et-préparation-des-données" id="toc-nettoyage-et-préparation-des-données" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données"><span class="header-section-number">1.1.2</span> 2. Nettoyage et Préparation des Données</a></li>
+  <li><a href="#analyse-des-tendances-du-marché" id="toc-analyse-des-tendances-du-marché" class="nav-link" data-scroll-target="#analyse-des-tendances-du-marché"><span class="header-section-number">1.1.3</span> 3. Analyse des Tendances du Marché</a></li>
+  <li><a href="#comparaison-des-performances" id="toc-comparaison-des-performances" class="nav-link" data-scroll-target="#comparaison-des-performances"><span class="header-section-number">1.1.4</span> 4. Comparaison des Performances</a></li>
   </ul></li>
-  <li><a href="#création-de-tableaux" id="toc-création-de-tableaux" class="nav-link" data-scroll-target="#création-de-tableaux"><span class="header-section-number">1.3</span> 2. Création de tableaux</a></li>
-  <li><a href="#accès-et-modifications" id="toc-accès-et-modifications" class="nav-link" data-scroll-target="#accès-et-modifications"><span class="header-section-number">1.4</span> 3. Accès et modifications</a></li>
-  <li><a href="#opérations-mathématiques-et-statistiques" id="toc-opérations-mathématiques-et-statistiques" class="nav-link" data-scroll-target="#opérations-mathématiques-et-statistiques"><span class="header-section-number">1.5</span> 4. Opérations mathématiques et statistiques</a></li>
-  <li><a href="#exercices-pratiques" id="toc-exercices-pratiques" class="nav-link" data-scroll-target="#exercices-pratiques"><span class="header-section-number">1.6</span> Exercices pratiques</a>
+  <li><a href="#partie-2-analyse-du-risque-de-défaut" id="toc-partie-2-analyse-du-risque-de-défaut" class="nav-link" data-scroll-target="#partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">1.2</span> Partie 2 : Analyse du Risque de Défaut</a>
   <ul class="collapse">
-  <li><a href="#exercice-1-création-et-manipulation" id="toc-exercice-1-création-et-manipulation" class="nav-link" data-scroll-target="#exercice-1-création-et-manipulation"><span class="header-section-number">1.6.1</span> Exercice 1 : Création et manipulation</a></li>
-  <li><a href="#exercice-2-manipulation-avancée" id="toc-exercice-2-manipulation-avancée" class="nav-link" data-scroll-target="#exercice-2-manipulation-avancée"><span class="header-section-number">1.6.2</span> Exercice 2 : Manipulation avancée</a></li>
-  <li><a href="#exercice-3-statistiques-et-masques" id="toc-exercice-3-statistiques-et-masques" class="nav-link" data-scroll-target="#exercice-3-statistiques-et-masques"><span class="header-section-number">1.6.3</span> Exercice 3 : Statistiques et masques</a></li>
+  <li><a href="#description-des-colonnes-de-la-base-de-données" id="toc-description-des-colonnes-de-la-base-de-données" class="nav-link" data-scroll-target="#description-des-colonnes-de-la-base-de-données"><span class="header-section-number">1.2.1</span> Description des Colonnes de la Base de Données</a></li>
+  <li><a href="#chargement-et-exploration-des-données" id="toc-chargement-et-exploration-des-données" class="nav-link" data-scroll-target="#chargement-et-exploration-des-données"><span class="header-section-number">1.2.2</span> 1. Chargement et Exploration des Données</a></li>
+  <li><a href="#nettoyage-et-préparation-des-données-1" id="toc-nettoyage-et-préparation-des-données-1" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données-1"><span class="header-section-number">1.2.3</span> 2. Nettoyage et Préparation des Données</a></li>
+  <li><a href="#analyse-des-facteurs-de-risque" id="toc-analyse-des-facteurs-de-risque" class="nav-link" data-scroll-target="#analyse-des-facteurs-de-risque"><span class="header-section-number">1.2.4</span> 3. Analyse des Facteurs de Risque</a></li>
   </ul></li>
-  <li><a href="#récapitulatif" id="toc-récapitulatif" class="nav-link" data-scroll-target="#récapitulatif"><span class="header-section-number">1.7</span> Récapitulatif</a>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">1.3</span> Objectifs</a></li>
+  <li><a href="#questions-et-analyses" id="toc-questions-et-analyses" class="nav-link" data-scroll-target="#questions-et-analyses"><span class="header-section-number">1.4</span> Questions et Analyses</a>
   <ul class="collapse">
-  <li><a href="#ressources-supplémentaires" id="toc-ressources-supplémentaires" class="nav-link" data-scroll-target="#ressources-supplémentaires"><span class="header-section-number">1.7.1</span> Ressources supplémentaires</a></li>
+  <li><a href="#impact-du-revenu-annuel-sur-le-risque-de-défaut" id="toc-impact-du-revenu-annuel-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">1.4.1</span> 1. Impact du revenu annuel sur le risque de défaut</a></li>
+  <li><a href="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" id="toc-influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">1.4.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</a></li>
+  <li><a href="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" id="toc-identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="nav-link" data-scroll-target="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">1.4.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</a></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse"><span class="header-section-number">1.4.4</span> Synthèse</a></li>
+  </ul></li>
+  <li><a href="#objectifs-1" id="toc-objectifs-1" class="nav-link" data-scroll-target="#objectifs-1"><span class="header-section-number">1.5</span> Objectifs</a></li>
+  <li><a href="#questions-et-analyses-1" id="toc-questions-et-analyses-1" class="nav-link" data-scroll-target="#questions-et-analyses-1"><span class="header-section-number">1.6</span> Questions et Analyses</a>
+  <ul class="collapse">
+  <li><a href="#analyse-de-la-distribution-des-âges-des-clients" id="toc-analyse-de-la-distribution-des-âges-des-clients" class="nav-link" data-scroll-target="#analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">1.6.1</span> Analyse de la distribution des âges des clients</a></li>
+  <li><a href="#influence-du-statut-demploi-sur-le-risque-de-défaut" id="toc-influence-du-statut-demploi-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">1.6.2</span> Influence du statut d’emploi sur le risque de défaut</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -246,12 +289,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Manipulation de données avec Numpy</h1>
+<h1 class="title">TP Analyse de Données avec Pandas</h1>
 </div>
 
 <div>
   <div class="description">
-    Manipulation de données avec Numpy
+    TP Analyse de Données avec Pandas
   </div>
 </div>
 
@@ -274,144 +317,221 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="tp-manipulation-de-données-avec-numpy" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> TP : Manipulation de données avec Numpy</h1>
-<section id="objectifs-du-tp" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objectifs-du-tp"><span class="header-section-number">1.1</span> Objectifs du TP</h2>
+<section id="tp-analyse-de-données-avec-pandas" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> TP Analyse de Données avec Pandas</h1>
+<section id="partie-1-analyse-des-données-financières" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="partie-1-analyse-des-données-financières"><span class="header-section-number">1.1</span> Partie 1 : Analyse des Données Financières</h2>
+<p>Ce TP a pour objectif d’explorer et d’analyser les données financières de plusieurs grandes entreprises cotées en bourse : <strong>NVIDIA, OpenAI, Amazon et Apple</strong>. Nous allons récupérer ces données directement depuis Yahoo Finance et les manipuler avec Pandas.</p>
+<section id="récupération-et-exploration-des-données" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="récupération-et-exploration-des-données"><span class="header-section-number">1.1.1</span> 1. Récupération et Exploration des Données</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste des tickers des entreprises étudiées</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tickers <span class="op">=</span> [<span class="st">'NVDA'</span>, <span class="st">'AAPL'</span>, <span class="st">'AMZN'</span>, <span class="st">'MSFT'</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargement des données</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> yf.download(tickers, start<span class="op">=</span><span class="st">'2020-01-01'</span>, end<span class="op">=</span><span class="st">'2024-01-01'</span>, group_by<span class="op">=</span><span class="st">'ticker'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>📌 <strong>Questions</strong> : 1. Quelles sont les colonnes disponibles dans le DataFrame ? 2. Quel est le nombre total de lignes et de colonnes ? 3. Vérifiez s’il y a des valeurs manquantes et expliquez comment les gérer.</p>
+</section>
+<section id="nettoyage-et-préparation-des-données" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données"><span class="header-section-number">1.1.2</span> 2. Nettoyage et Préparation des Données</h3>
+<p>📌 <strong>Questions</strong> : 1. Supprimez les lignes contenant des valeurs manquantes. 2. Définissez la colonne Date comme index du DataFrame. 3. Vérifiez les types de données des colonnes et convertissez-les si nécessaire.</p>
+</section>
+<section id="analyse-des-tendances-du-marché" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="analyse-des-tendances-du-marché"><span class="header-section-number">1.1.3</span> 3. Analyse des Tendances du Marché</h3>
+<section id="formule-du-rendement" class="level4">
+<h4 class="anchored" data-anchor-id="formule-du-rendement">Formule du Rendement</h4>
+<p><span class="math display">\[
+R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
+\]</span></p>
+<p>où : - ( P_t ) est le prix de clôture au jour ( t ) - ( P_{t-1} ) est le prix de clôture du jour précédent</p>
+<p>📌 <strong>Questions</strong> : 0. Calculer le rendement de chaque action disponible dans la base 1. Quelle est la tendance des prix des actions pour chaque entreprise ? 2. Quel jour chaque action a-t-elle atteint son plus haut prix ? 3. Calculez le rendement quotidien de chaque action et affichez sa moyenne.</p>
+</section>
+</section>
+<section id="comparaison-des-performances" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="comparaison-des-performances"><span class="header-section-number">1.1.4</span> 4. Comparaison des Performances</h3>
+<p>📌 <strong>Questions</strong> : 1. Quelle entreprise a eu la meilleure croissance sur la période analysée ? 2. Quel est le rendement moyen mensuel de chaque action ? 3. Comparez la volatilité des différentes actions.</p>
+<hr>
+</section>
+</section>
+<section id="partie-2-analyse-du-risque-de-défaut" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">1.2</span> Partie 2 : Analyse du Risque de Défaut</h2>
+<p>Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.</p>
+<section id="description-des-colonnes-de-la-base-de-données" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="description-des-colonnes-de-la-base-de-données"><span class="header-section-number">1.2.1</span> Description des Colonnes de la Base de Données</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Nom de la Colonne</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>person_age</code></td>
+<td>Âge</td>
+</tr>
+<tr class="even">
+<td><code>person_income</code></td>
+<td>Revenu annuel</td>
+</tr>
+<tr class="odd">
+<td><code>person_home_ownership</code></td>
+<td>Type de propriété</td>
+</tr>
+<tr class="even">
+<td><code>person_emp_length</code></td>
+<td>Ancienneté professionnelle (années)</td>
+</tr>
+<tr class="odd">
+<td><code>loan_intent</code></td>
+<td>But du prêt</td>
+</tr>
+<tr class="even">
+<td><code>loan_grade</code></td>
+<td>Grade du prêt</td>
+</tr>
+<tr class="odd">
+<td><code>loan_amnt</code></td>
+<td>Montant du prêt</td>
+</tr>
+<tr class="even">
+<td><code>loan_int_rate</code></td>
+<td>Taux d’intérêt</td>
+</tr>
+<tr class="odd">
+<td><code>loan_status</code></td>
+<td>Statut du prêt (0: non défaut, 1: défaut)</td>
+</tr>
+<tr class="even">
+<td><code>loan_percent_income</code></td>
+<td>Pourcentage du revenu</td>
+</tr>
+<tr class="odd">
+<td><code>cb_person_default_on_file</code></td>
+<td>Historique de défaut</td>
+</tr>
+<tr class="even">
+<td><code>cb_person_cred_hist_length</code></td>
+<td>Longueur de l’historique de crédit</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chargement-et-exploration-des-données" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="chargement-et-exploration-des-données"><span class="header-section-number">1.2.2</span> 1. Chargement et Exploration des Données</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_credit <span class="op">=</span> pd.read_csv(<span class="st">'credit_risk_data.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_credit.head())</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_credit.info()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_credit.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>📌 <strong>Questions</strong> : 1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ? 2. Quelle est la répartition des clients en défaut et non en défaut ? 3. Identifiez les valeurs manquantes et proposez une méthode de traitement.</p>
+</section>
+<section id="nettoyage-et-préparation-des-données-1" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données-1"><span class="header-section-number">1.2.3</span> 2. Nettoyage et Préparation des Données</h3>
+<p>📌 <strong>Questions</strong> : 1. Convertissez les variables catégoriques en variables numériques. 2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.</p>
+</section>
+<section id="analyse-des-facteurs-de-risque" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="analyse-des-facteurs-de-risque"><span class="header-section-number">1.2.4</span> 3. Analyse des Facteurs de Risque</h3>
+<p>📌 <strong>Questions</strong> : Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant <strong>pandas</strong> et en réalisant des analyses numériques.</p>
+</section>
+</section>
+<section id="objectifs" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="objectifs"><span class="header-section-number">1.3</span> Objectifs</h2>
 <ul>
-<li>Comprendre l’utilisation du module NumPy pour le calcul scientifique.</li>
-<li>Créer et manipuler des tableaux multidimensionnels.</li>
-<li>Appliquer des opérations mathématiques et statistiques sur des données.</li>
-<li>Explorer les masques booléens pour des filtrages avancés.</li>
+<li>Manipuler des <strong>DataFrames pandas</strong> pour explorer les relations entre les variables.<br>
+</li>
+<li>Utiliser des statistiques descriptives et des mesures de corrélation.<br>
+</li>
+<li>Comprendre comment les facteurs influencent le risque de défaut et interpréter les résultats.</li>
 </ul>
-<p>Vous pouvez télécharger le fichier .ipynb en cliquant <a href="https://drive.google.com/file/d/1fIvIhdF7norgZ5y_FdIh43YhQt3NQhJt/view?usp=drive_link">ici</a></p>
 </section>
-<section id="introduction-à-numpy" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="introduction-à-numpy"><span class="header-section-number">1.2</span> 1. Introduction à NumPy</h2>
-<p>NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.</p>
-<section id="pourquoi-utiliser-numpy" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="pourquoi-utiliser-numpy"><span class="header-section-number">1.2.1</span> Pourquoi utiliser NumPy ?</h3>
+<section id="questions-et-analyses" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="questions-et-analyses"><span class="header-section-number">1.4</span> Questions et Analyses</h2>
+<section id="impact-du-revenu-annuel-sur-le-risque-de-défaut" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">1.4.1</span> 1. Impact du revenu annuel sur le risque de défaut</h3>
+<p><strong>Analyse numérique</strong><br>
+- Afficher les statistiques descriptives du revenu annuel en fonction du statut de défaut.<br>
+- Comparer les moyennes et médianes des revenus des clients en défaut et non en défaut.<br>
+- Calculer l’écart-type et la variance du revenu annuel pour chaque groupe.</p>
+<p><strong>Étapes</strong><br>
+1. Charger les données dans un DataFrame pandas.<br>
+2. Utiliser <code>.describe()</code> pour obtenir des statistiques globales sur le revenu annuel.<br>
+3. Utiliser <code>.groupby('Défaut')</code> et <code>.agg(['mean', 'median', 'std', 'var'])</code> pour comparer les groupes.<br>
+4. Interpréter les résultats et voir si une tendance se dégage.</p>
+<hr>
+</section>
+<section id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">1.4.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</h3>
+<p><strong>Analyse numérique</strong><br>
+- Calculer le nombre moyen de paiements en retard pour chaque statut de défaut.<br>
+- Analyser la médiane et l’écart-type du nombre de paiements en retard.<br>
+- Déterminer si les clients en défaut ont un historique de paiements significativement différent des autres.</p>
+<p><strong>Étapes</strong><br>
+1. Utiliser <code>.groupby('Défaut')['Nb_Paiements_Retard'].agg(['mean', 'median', 'std'])</code>.<br>
+2. Comparer les valeurs moyennes et médianes pour identifier les différences entre les groupes.<br>
+3. Vérifier si la dispersion des retards de paiement est plus élevée chez les clients en défaut.</p>
+<hr>
+</section>
+<section id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">1.4.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</h3>
+<p><strong>Analyse numérique</strong><br>
+- Calculer la matrice de corrélation entre les variables.<br>
+- Identifier les trois facteurs les plus corrélés avec le risque de défaut.<br>
+- Vérifier si ces corrélations sont significatives.</p>
+<p><strong>Étapes</strong><br>
+1. Utiliser <code>.corr()</code> pour calculer la matrice de corrélation du DataFrame.<br>
+2. Extraire les valeurs de corrélation associées à la colonne “Défaut”.<br>
+3. Trier ces valeurs par ordre décroissant et sélectionner les trois variables les plus influentes.<br>
+4. Interpréter les résultats et vérifier si ces facteurs sont cohérents avec les analyses précédentes.</p>
+</section>
+<section id="synthèse" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="synthèse"><span class="header-section-number">1.4.4</span> Synthèse</h3>
+<p>Dans cette section, nous allons approfondir l’étude des facteurs influençant le risque de défaut en réalisant des analyses numériques sur la répartition des âges et l’impact du statut d’emploi.</p>
+</section>
+</section>
+<section id="objectifs-1" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="objectifs-1"><span class="header-section-number">1.5</span> Objectifs</h2>
 <ul>
-<li><strong>Performance :</strong> Calculs rapides grâce à une implémentation en C.</li>
-<li><strong>Simplicité :</strong> Manipulation intuitive des tableaux multidimensionnels.</li>
-<li><strong>Richesse fonctionnelle :</strong> Nombreuses fonctions mathématiques, algébriques, et statistiques.</li>
+<li>Analyser la distribution des âges des clients à l’aide de statistiques descriptives.<br>
+</li>
+<li>Examiner l’influence du statut d’emploi sur le risque de défaut à travers des mesures numériques.<br>
+</li>
+<li>Synthétiser les résultats obtenus et proposer des interprétations.</li>
 </ul>
 </section>
+<section id="questions-et-analyses-1" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="questions-et-analyses-1"><span class="header-section-number">1.6</span> Questions et Analyses</h2>
+<section id="analyse-de-la-distribution-des-âges-des-clients" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">1.6.1</span> Analyse de la distribution des âges des clients</h3>
+<p><strong>Analyse numérique</strong><br>
+- Calculer les statistiques descriptives générales sur l’âge des clients.<br>
+- Identifier l’âge moyen, la médiane, l’écart-type et les valeurs minimales/maximales.<br>
+- Déterminer s’il y a des valeurs aberrantes en comparant l’écart interquartile.</p>
+<p><strong>Étapes</strong><br>
+1. Utiliser <code>.describe()</code> sur la colonne <strong>Âge</strong> pour obtenir les principales statistiques.<br>
+2. Vérifier les bornes des quartiles avec <code>.quantile([0.25, 0.5, 0.75])</code>.<br>
+3. Déterminer les valeurs aberrantes potentielles en utilisant la règle des <strong>1,5 IQR</strong> (Interquartile Range).<br>
+4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.</p>
+<hr>
 </section>
-<section id="création-de-tableaux" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="création-de-tableaux"><span class="header-section-number">1.3</span> 2. Création de tableaux</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tableau 1D</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tableau 2D</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Zéros et Uns</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros((<span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones((<span class="dv">2</span>, <span class="dv">4</span>))</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ones)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Valeurs aléatoires</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>random <span class="op">=</span> np.random.random((<span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plages de valeurs</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>arange <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>linspace <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arange)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(linspace)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Informations sur un tableau</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B.shape)  <span class="co"># Dimensions</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B.size)   <span class="co"># Nombre d'éléments</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B.dtype)  <span class="co"># Type des éléments</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="accès-et-modifications" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="accès-et-modifications"><span class="header-section-number">1.4</span> 3. Accès et modifications</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accéder aux éléments</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B[<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B[:, <span class="dv">1</span>])</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B[<span class="dv">1</span>, :])</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Modifier des éléments</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>B[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter des éléments</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.append(A, [<span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer des éléments</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.delete(A, [<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="opérations-mathématiques-et-statistiques" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="opérations-mathématiques-et-statistiques"><span class="header-section-number">1.5</span> 4. Opérations mathématiques et statistiques</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opérations arithmétiques</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> B <span class="op">+</span> <span class="dv">10</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(D)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> B <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(E)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiques</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">sum</span>(B))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(B))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.std(B))</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Masques booléens</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> B <span class="op">&gt;</span> <span class="dv">2</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mask)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B[mask])</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Modification conditionnelle</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>B[B <span class="op">&gt;</span> <span class="dv">2</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="exercices-pratiques" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="exercices-pratiques"><span class="header-section-number">1.6</span> Exercices pratiques</h2>
-<section id="exercice-1-création-et-manipulation" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="exercice-1-création-et-manipulation"><span class="header-section-number">1.6.1</span> Exercice 1 : Création et manipulation</h3>
-<ol type="1">
-<li>Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.</li>
-<li>Remplacez les valeurs inférieures à 0.5 par 0.</li>
-<li>Calculez la somme et la moyenne des éléments du tableau.</li>
-</ol>
-</section>
-<section id="exercice-2-manipulation-avancée" class="level3" data-number="1.6.2">
-<h3 data-number="1.6.2" class="anchored" data-anchor-id="exercice-2-manipulation-avancée"><span class="header-section-number">1.6.2</span> Exercice 2 : Manipulation avancée</h3>
-<ol type="1">
-<li>Créez un tableau 1D de 10 éléments entre 1 et 100.</li>
-<li>Supprimez les trois derniers éléments et ajoutez deux nouveaux.</li>
-<li>Remplacez les valeurs paires par -1.</li>
-</ol>
-</section>
-<section id="exercice-3-statistiques-et-masques" class="level3" data-number="1.6.3">
-<h3 data-number="1.6.3" class="anchored" data-anchor-id="exercice-3-statistiques-et-masques"><span class="header-section-number">1.6.3</span> Exercice 3 : Statistiques et masques</h3>
-<ol type="1">
-<li>Créez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.</li>
-<li>Utilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.</li>
-<li>Calculez la moyenne des valeurs finales.</li>
-</ol>
-</section>
-</section>
-<section id="récapitulatif" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="récapitulatif"><span class="header-section-number">1.7</span> Récapitulatif</h2>
-<ul>
-<li>NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.</li>
-<li>Les masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.</li>
-<li>L’utilisation des opérations vectorisées améliore grandement les performances.</li>
-</ul>
-<section id="ressources-supplémentaires" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="ressources-supplémentaires"><span class="header-section-number">1.7.1</span> Ressources supplémentaires</h3>
-<ul>
-<li><a href="https://numpy.org/doc/">Documentation officielle NumPy</a></li>
-</ul>
+<section id="influence-du-statut-demploi-sur-le-risque-de-défaut" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">1.6.2</span> Influence du statut d’emploi sur le risque de défaut</h3>
+<p><strong>Analyse numérique</strong><br>
+- Compter le nombre de clients par catégorie de statut d’emploi.<br>
+- Calculer la proportion de clients en défaut dans chaque catégorie de statut d’emploi.<br>
+- Identifier si certaines catégories ont un taux de défaut significativement plus élevé.</p>
+<p><strong>Étapes</strong><br>
+1. Utiliser <code>.value_counts()</code> sur la colonne <strong>Statut_Emploi</strong> pour connaître la répartition des clients par catégorie.<br>
+2. Grouper les données par <strong>Statut_Emploi</strong> et calculer le <strong>taux de défaut</strong> dans chaque groupe avec <code>.groupby('Statut_Emploi')['Défaut'].mean()</code>.<br>
+3. Comparer ces taux et identifier les catégories ayant une probabilité plus élevée de défaut.<br>
+4. Interpréter les résultats en lien avec les analyses précédentes (ex. une catégorie d’emploi avec des revenus plus faibles pourrait avoir un taux de défaut plus élevé).</p>
+<hr>
 
 
 </section>

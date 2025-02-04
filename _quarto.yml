@@ -26,8 +26,9 @@ website:
           - href: doc/cours/fonctionsmodules.qmd
             text: "Fonctions, Modules et POO en Python"
           - href: doc/cours/manipulationdonnees.qmd
-            text: "Numpy pour l'analyse des données"
-
+            text: "Manipulation des données avec Numpy"
+          - href: doc/cours/analysedonnees.qmd
+            text: "Analyse de données avec Pandas"
      
       - text: TP
         menu:

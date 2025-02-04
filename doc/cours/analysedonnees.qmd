@@ -1,0 +1,277 @@
+---
+title: "Analyse de données avec Pandas"
+description: "[Slides](analysedonnees-slides.html)"
+author: "Natacha Njongwa Yepnga"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Analyse des données](analysedonnees.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: analysedonnees-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: true
+from: markdown+emoji
+---
+
+## Introduction
+**NumPy** (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d'opérations mathématiques optimisées. 
+
+L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beaucoup plus rapidement** que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.
+
+### Pourquoi utiliser NumPy ?
+- **Efficacité et rapidité** : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.
+- **Gestion de données complexes** : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.
+- **Compatibilité avec d'autres bibliothèques** : NumPy est souvent utilisé avec **Pandas**, **Matplotlib**, et **Scikit-learn** pour l'analyse et la modélisation des données.
+
+**Objectifs de ce cours :**
+- Comprendre et manipuler les tableaux (`ndarray`) de NumPy
+- Appliquer des opérations mathématiques et statistiques
+- Optimiser les calculs avec le broadcasting et la vectorisation
+- Transformer et structurer les données efficacement
+
+---
+
+## 1. Installation et Importation
+NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
+```bash
+pip install numpy
+```
+
+Ensuite, importez NumPy dans votre script Python :
+```python
+import numpy as np
+```
+L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` en entier à chaque fois.
+
+---
+
+## 2. Création et Manipulation des Tableaux NumPy
+NumPy repose sur une structure de données appelée **ndarray** (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.
+
+### 2.1 Création de Tableaux (`ndarray`)
+
+Les tableaux NumPy peuvent être créés à partir de **listes Python**, de **valeurs prédéfinies** ou de **valeurs générées automatiquement** :
+
+```python
+# Création d'un tableau à partir d'une liste
+arr1 = np.array([1, 2, 3, 4, 5])
+print(arr1)
+
+# Tableau multidimensionnel
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr2)
+```
+
+D'autres méthodes permettent de générer rapidement des tableaux :
+```python
+np.zeros((3, 3))    # Matrice 3x3 remplie de 0
+np.ones((2, 4))     # Matrice 2x4 remplie de 1
+np.full((3, 3), 7)  # Matrice 3x3 remplie de 7
+np.eye(4)           # Matrice identité 4x4
+np.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10
+```
+
+**Pourquoi ces méthodes sont utiles ?**
+- `zeros` et `ones` permettent d'initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.
+- `eye` est très utilisé en **algèbre linéaire** pour les calculs de matrices identité.
+- `linspace` est idéal pour générer des valeurs numériques espacées uniformément.
+
+**Exercice 1 :**
+- Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.
+- Générer une séquence de 10 nombres entre 1 et 100.
+
+---
+
+## 3. Indexation et Slicing
+L'accès aux éléments d'un tableau NumPy se fait de manière similaire aux listes Python, mais avec des **fonctionnalités supplémentaires**.
+
+### 3.1 Sélection d'éléments
+
+```python
+arr = np.array([10, 20, 30, 40, 50])
+print(arr[2])  # Accéder au 3e élément
+```
+
+L’indexation commence toujours à **0** en Python, donc `arr[2]` retourne **30**.
+
+### 3.2 Indexation avancée
+NumPy permet d'accéder à des **sous-ensembles** de tableaux plus facilement :
+```python
+arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(arr2d[1, 2])  # 6 (ligne 2, colonne 3)
+```
+
+### 3.3 Slicing (Découpage d'un tableau)
+Avec NumPy, on peut extraire plusieurs valeurs avec des **tranches (slices)** :
+```python
+sub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau
+print(sub_arr)
+```
+
+**Pourquoi utiliser le slicing ?**
+- Permet d'extraire rapidement des parties spécifiques d'un tableau sans devoir recréer un autre tableau manuellement.
+- Très utile en **analyse de données** pour filtrer des valeurs selon des conditions spécifiques.
+
+**Exercice 2 :**
+- Extraire la première colonne d'une matrice 3x3.
+- Modifier les valeurs d'une portion spécifique d'un tableau.
+
+---
+
+# Cours Complet : Manipulation des Données avec NumPy
+
+## Introduction
+**NumPy** (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d'opérations mathématiques optimisées. 
+
+L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beaucoup plus rapidement** que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.
+
+### Pourquoi utiliser NumPy ?
+- **Efficacité et rapidité** : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.
+- **Gestion de données complexes** : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.
+- **Compatibilité avec d'autres bibliothèques** : NumPy est souvent utilisé avec **Pandas**, **Matplotlib**, et **Scikit-learn** pour l'analyse et la modélisation des données.
+
+**Objectifs de ce cours :**
+- Comprendre et manipuler les tableaux (`ndarray`) de NumPy
+- Appliquer des opérations mathématiques et statistiques
+- Optimiser les calculs avec le broadcasting et la vectorisation
+- Transformer et structurer les données efficacement
+
+---
+
+## 1. Installation et Importation
+NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
+```bash
+pip install numpy
+```
+
+Ensuite, importez NumPy dans votre script Python :
+```python
+import numpy as np
+```
+L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` en entier à chaque fois.
+
+---
+
+## 4. Opérations Mathématiques et Statistiques
+
+NumPy permet d'effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.
+
+```python
+arr = np.array([1, 2, 3, 4, 5])
+print(arr + 10)  # Ajouter 10 à chaque élément
+print(arr ** 2)  # Élever chaque élément au carré
+```
+
+**Pourquoi ces opérations sont-elles utiles ?**
+- Elles permettent d'éviter l'utilisation de boucles explicites en Python, ce qui améliore grandement les performances.
+- Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.
+
+NumPy fournit également des fonctions statistiques :
+```python
+print(arr.mean())  # Moyenne
+print(arr.sum())   # Somme
+print(arr.std())   # Écart-type
+```
+
+**Exercice 3 :**
+- Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type.
+
+---
+
+## 5. Reshaping et Manipulation des Formes
+
+Le reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.
+
+```python
+arr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes
+print(arr)
+```
+
+La transposition est également une technique couramment utilisée pour réarranger les axes d'un tableau :
+```python
+print(arr.T)  # Transpose la matrice
+```
+
+**Exercice 4 :**
+- Créez une matrice 3x3 et affichez sa transposée.
+
+---
+
+## 6. Broadcasting et Vectorisation
+
+Le **broadcasting** est un mécanisme puissant de NumPy qui permet d'effectuer des opérations entre tableaux de tailles différentes sans copier les données.
+
+```python
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr + np.array([10, 20, 30]))  # Broadcasting
+```
+
+**Pourquoi le broadcasting est important ?**
+- Il permet d'optimiser les calculs en évitant la création de copies inutiles.
+- Il est essentiel pour le traitement efficace des images et des séries temporelles.
+
+**Exercice 5 :**
+- Multipliez une matrice par un vecteur ligne avec broadcasting.
+
+---
+
+## 7. Gestion des Valeurs Manquantes
+
+NumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.
+
+```python
+arr = np.array([1, 2, np.nan, 4, 5])
+print(np.isnan(arr))  # Détecter les NaN
+print(np.nanmean(arr))  # Moyenne en ignorant NaN
+```
+
+**Pourquoi est-ce utile ?**
+- En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs.
+- NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.
+
+**Exercice 6 :**
+- Remplacez les valeurs NaN par la moyenne du tableau.
+
+---
+
+## 8. Applications Pratiques
+
+NumPy est souvent utilisé pour des **applications pratiques** en science des données et en intelligence artificielle.
+
+### Produit Matriciel
+
+```python
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+print(np.dot(A, B))  # Produit matriciel
+```
+
+### Simulation de Données
+
+```python
+sim_data = np.random.randn(1000)
+print(np.histogram(sim_data, bins=10))  # Histogramme des valeurs simulées
+```
+
+**Exercice 7 :**
+- Simulez une série de valeurs et tracez son histogramme.
+
+---
+
+## Conclusion
+
+Ce cours vous a permis de maîtriser :
+
+- La manipulation et la création de tableaux NumPy
+- Les opérations mathématiques et statistiques
+- Les techniques avancées de reshaping et broadcasting
+

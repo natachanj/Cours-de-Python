@@ -212,6 +212,7 @@ df.sort_index()
 ```
 
 Pourquoi trier les données ?
+
 - Facilite l'interprétation des résultats.
 - Permet d'optimiser certaines analyses.
 
@@ -228,6 +229,7 @@ df['Nom'] = df['Nom'].astype('category')
 ```
 
 Pourquoi utiliser `category` ?
+
 - Permet de réduire la mémoire utilisée.
 - Optimise les opérations de regroupement.
 
@@ -238,6 +240,7 @@ pd.read_csv('data.csv', chunksize=1000)  # Charger par blocs de 1000 lignes
 ```
 
 Pourquoi charger en morceaux ?
+
 - Évite de saturer la mémoire RAM.
 - Facilite le traitement de très gros fichiers.
 
@@ -254,6 +257,7 @@ df.to_json('output.json')  # Sauvegarde en JSON
 ```
 
 Pourquoi exporter les données ?
+
 - Facilite le partage et la réutilisation des résultats.
 - Permet de documenter le travail réalisé.
 
@@ -271,6 +275,7 @@ df.groupby('Nom')['Salaire'].sum()
 ```
 
 Pourquoi utiliser GroupBy ?
+
 - Permet d’analyser **des tendances** et de **comparer des groupes**.
 
 ### Statistiques Avancées
@@ -282,9 +287,11 @@ df['Salaire'].std()  # Écart-type
 ```
 
 Pourquoi les statistiques sont utiles ?
+
 - Aident à **détecter les tendances et anomalies**.
 
 **Exercice 4 :**
+
 - Trouvez la moyenne des salaires par groupe.
 - Identifiez la personne ayant le salaire le plus élevé.
 
@@ -341,6 +348,7 @@ print(concat_vertical)
 ```
 
 Pourquoi utiliser `concat()` ?
+
 - Utile lorsqu'on dispose de plusieurs fichiers contenant des données similaires et qu'on souhaite les regrouper.
 - Permet de fusionner facilement des ensembles de données de manière efficace.
 
@@ -357,6 +365,7 @@ print(fusion_multi)
 ```
 
 **Exercice 5 :**
+
 - Créez deux DataFrames et appliquez différents types de jointures.
 - Testez la concaténation avec des DataFrames ayant des colonnes différentes.
 
@@ -365,6 +374,7 @@ print(fusion_multi)
 ## Conclusion
 
 Ce cours vous a permis d'apprendre à :
+
 - Charger et manipuler des ensembles de données.
 - Effectuer des analyses exploratoires et des transformations.
 - Nettoyer les données et appliquer des techniques avancées.

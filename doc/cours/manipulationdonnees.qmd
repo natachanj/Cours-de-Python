@@ -40,7 +40,7 @@ L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beauc
 
 ---
 
-## 1. Installation et Importation
+##  Installation et Importation
 NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
 ```bash
 pip install numpy
@@ -54,10 +54,10 @@ L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` e
 
 ---
 
-## 2. Création et Manipulation des Tableaux NumPy
+## Création et Manipulation des Tableaux NumPy
 NumPy repose sur une structure de données appelée **ndarray** (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.
 
-### 2.1 Création de Tableaux (`ndarray`)
+### Création de Tableaux (`ndarray`)
 
 Les tableaux NumPy peuvent être créés à partir de **listes Python**, de **valeurs prédéfinies** ou de **valeurs générées automatiquement** :
 
@@ -81,20 +81,22 @@ np.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10
 ```
 
 **Pourquoi ces méthodes sont utiles ?**
+
 - `zeros` et `ones` permettent d'initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.
 - `eye` est très utilisé en **algèbre linéaire** pour les calculs de matrices identité.
 - `linspace` est idéal pour générer des valeurs numériques espacées uniformément.
 
 **Exercice 1 :**
+
 - Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.
 - Générer une séquence de 10 nombres entre 1 et 100.
 
 ---
 
-## 3. Indexation et Slicing
+## Indexation et Slicing
 L'accès aux éléments d'un tableau NumPy se fait de manière similaire aux listes Python, mais avec des **fonctionnalités supplémentaires**.
 
-### 3.1 Sélection d'éléments
+### Sélection d'éléments
 
 ```python
 arr = np.array([10, 20, 30, 40, 50])
@@ -103,14 +105,14 @@ print(arr[2])  # Accéder au 3e élément
 
 L’indexation commence toujours à **0** en Python, donc `arr[2]` retourne **30**.
 
-### 3.2 Indexation avancée
+### Indexation avancée
 NumPy permet d'accéder à des **sous-ensembles** de tableaux plus facilement :
 ```python
 arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 print(arr2d[1, 2])  # 6 (ligne 2, colonne 3)
 ```
 
-### 3.3 Slicing (Découpage d'un tableau)
+### Slicing (Découpage d'un tableau)
 Avec NumPy, on peut extraire plusieurs valeurs avec des **tranches (slices)** :
 ```python
 sub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau
@@ -118,17 +120,19 @@ print(sub_arr)
 ```
 
 **Pourquoi utiliser le slicing ?**
+
 - Permet d'extraire rapidement des parties spécifiques d'un tableau sans devoir recréer un autre tableau manuellement.
 - Très utile en **analyse de données** pour filtrer des valeurs selon des conditions spécifiques.
 
 **Exercice 2 :**
+
 - Extraire la première colonne d'une matrice 3x3.
 - Modifier les valeurs d'une portion spécifique d'un tableau.
 
 ---
 
 
-## 4. Opérations Mathématiques et Statistiques
+## Opérations Mathématiques et Statistiques
 
 NumPy permet d'effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.
 
@@ -139,6 +143,7 @@ print(arr ** 2)  # Élever chaque élément au carré
 ```
 
 **Pourquoi ces opérations sont-elles utiles ?**
+
 - Elles permettent d'éviter l'utilisation de boucles explicites en Python, ce qui améliore grandement les performances.
 - Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.
 
@@ -154,7 +159,7 @@ print(arr.std())   # Écart-type
 
 ---
 
-## 5. Reshaping et Manipulation des Formes
+## Reshaping et Manipulation des Formes
 
 Le reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.
 
@@ -173,7 +178,7 @@ print(arr.T)  # Transpose la matrice
 
 ---
 
-## 6. Broadcasting et Vectorisation
+## Broadcasting et Vectorisation
 
 Le **broadcasting** est un mécanisme puissant de NumPy qui permet d'effectuer des opérations entre tableaux de tailles différentes sans copier les données.
 
@@ -191,7 +196,7 @@ print(arr + np.array([10, 20, 30]))  # Broadcasting
 
 ---
 
-## 7. Gestion des Valeurs Manquantes
+## Gestion des Valeurs Manquantes
 
 NumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.
 
@@ -210,7 +215,7 @@ print(np.nanmean(arr))  # Moyenne en ignorant NaN
 
 ---
 
-## 8. Applications Pratiques
+## Applications Pratiques
 
 NumPy est souvent utilisé pour des **applications pratiques** en science des données et en intelligence artificielle.
 

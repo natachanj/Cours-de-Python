@@ -12,12 +12,17 @@ number-sections: true
 number-depth: 3
 ---
 # TP Analyse de Données avec Pandas
+# Partie 1 : Analyse des Données Financières  
 
-## Partie 1 : Analyse des Données Financières
+Ce TP a pour objectif d'explorer et d'analyser les données financières de plusieurs grandes entreprises cotées en bourse : **NVIDIA, OpenAI, Amazon et Apple**. Nous allons récupérer ces données directement depuis **Yahoo Finance** et les manipuler avec **pandas**.  
 
-Ce TP a pour objectif d'explorer et d'analyser les données financières de plusieurs grandes entreprises cotées en bourse : **NVIDIA, OpenAI, Amazon et Apple**. Nous allons récupérer ces données directement depuis Yahoo Finance et les manipuler avec Pandas.
+---
 
-### 1. Récupération et Exploration des Données
+## 1. Récupération et Exploration des Données  
+
+### Téléchargement des données depuis Yahoo Finance  
+
+Nous allons utiliser la bibliothèque `yfinance` pour récupérer les prix historiques des actions de plusieurs entreprises technologiques.  
 
 ```python
 import pandas as pd
@@ -26,47 +31,83 @@ import yfinance as yf
 # Liste des tickers des entreprises étudiées
 tickers = ['NVDA', 'AAPL', 'AMZN', 'MSFT']
 
-# Téléchargement des données
+# Téléchargement des données de 2020 à 2024
 df = yf.download(tickers, start='2020-01-01', end='2024-01-01', group_by='ticker')
+
+# Affichage des premières lignes du DataFrame
 print(df.head())
 ```
 
-📌 **Questions** :
-1. Quelles sont les colonnes disponibles dans le DataFrame ?
-2. Quel est le nombre total de lignes et de colonnes ?
-3. Vérifiez s'il y a des valeurs manquantes et expliquez comment les gérer.
+### Analyse exploratoire  
 
-### 2. Nettoyage et Préparation des Données
+📌 **Questions à traiter** :  
 
-📌 **Questions** :
-1. Supprimez les lignes contenant des valeurs manquantes.
-2. Définissez la colonne Date comme index du DataFrame.
-3. Vérifiez les types de données des colonnes et convertissez-les si nécessaire.
+1. **Quelles sont les colonnes disponibles dans le DataFrame ?**  
+2. **Quel est le nombre total de lignes et de colonnes ?**  
+3. **Y a-t-il des valeurs manquantes ? Comment les gérer ?**  
 
-### 3. Analyse des Tendances du Marché
+---
 
-#### Formule du Rendement
+## 2. Nettoyage et Préparation des Données  
 
-$$
+📌 **Questions à traiter** :  
+
+1. **Supprimez les lignes contenant des valeurs manquantes.**  
+2. **Définissez la colonne Date comme index du DataFrame.**  
+3. **Vérifiez les types de données des colonnes et convertissez-les si nécessaire.**  
+
+---
+
+## 3. Analyse des Tendances du Marché  
+
+### Calcul du rendement journalier  
+
+Le rendement journalier d'une action est donné par la formule :  
+
+\[
 R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
-$$
+\]
 
-où :
-- \( P_t \) est le prix de clôture au jour \( t \)
-- \( P_{t-1} \) est le prix de clôture du jour précédent
+📌 **Questions à traiter** :  
 
-📌 **Questions** :
-0. Calculer le rendement de chaque action disponible dans la base
-1. Quelle est la tendance des prix des actions pour chaque entreprise ?
-2. Quel jour chaque action a-t-elle atteint son plus haut prix ?
-3. Calculez le rendement quotidien de chaque action et affichez sa moyenne.
+1. **Quelle est la tendance des prix des actions pour chaque entreprise ?**  
+2. **Quel jour chaque action a-t-elle atteint son plus haut prix ?**  
+3. **Calculez le rendement quotidien de chaque action et affichez sa moyenne.**  
 
-### 4. Comparaison des Performances
+---
 
-📌 **Questions** :
-1. Quelle entreprise a eu la meilleure croissance sur la période analysée ?
-2. Quel est le rendement moyen mensuel de chaque action ?
-3. Comparez la volatilité des différentes actions.
+## 4. Comparaison des Performances  
+
+📌 **Questions à traiter** :  
+
+1. **Quelle entreprise a eu la meilleure croissance sur la période analysée ?**  
+2. **Quel est le rendement moyen mensuel de chaque action ?**  
+3. **Comparez la volatilité des différentes actions.**  
+
+---
+
+## Conclusion  
+
+- Quelle entreprise a eu la meilleure croissance sur la période ?  
+- Quel titre a offert le rendement moyen le plus élevé ?  
+- Quelle action était la plus volatile, indiquant un risque plus élevé ?  
+- Discussion sur les facteurs pouvant expliquer ces résultats (ex. crise, innovations, changements dans l’industrie).  
+
+---
+
+## Résumé des principales manipulations avec pandas  
+
+| Opération | Commande Pandas |
+|-----------|----------------|
+| Télécharger des données financières | `yfinance.download()` |
+| Afficher les colonnes disponibles | `df.columns` |
+| Vérifier la présence de valeurs manquantes | `df.isnull().sum()` |
+| Supprimer les valeurs manquantes | `df.dropna()` |
+| Définir un index de type datetime | `df.index = pd.to_datetime(df.index)` |
+| Calculer le rendement journalier | `.pct_change()` |
+| Calculer la volatilité | `.std()` |
+| Trouver la date du prix maximum | `.idxmax()` |
+| Agréger les données par mois | `.resample('M').mean()` |
 
 ---
 

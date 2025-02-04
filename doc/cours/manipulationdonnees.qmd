@@ -22,3 +22,111 @@ code-line-numbers: true
 from: markdown+emoji
 ---
 
+
+# Cours Complet : Manipulation des Données avec NumPy
+
+## Introduction
+**NumPy** (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d'opérations mathématiques optimisées. 
+
+L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beaucoup plus rapidement** que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.
+
+### Pourquoi utiliser NumPy ?
+- **Efficacité et rapidité** : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.
+- **Gestion de données complexes** : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.
+- **Compatibilité avec d'autres bibliothèques** : NumPy est souvent utilisé avec **Pandas**, **Matplotlib**, et **Scikit-learn** pour l'analyse et la modélisation des données.
+
+**Objectifs de ce cours :**
+- Comprendre et manipuler les tableaux (`ndarray`) de NumPy
+- Appliquer des opérations mathématiques et statistiques
+- Optimiser les calculs avec le broadcasting et la vectorisation
+- Transformer et structurer les données efficacement
+
+---
+
+## 1. Installation et Importation
+NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
+```bash
+pip install numpy
+```
+
+Ensuite, importez NumPy dans votre script Python :
+```python
+import numpy as np
+```
+L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` en entier à chaque fois.
+
+---
+
+## 2. Création et Manipulation des Tableaux NumPy
+NumPy repose sur une structure de données appelée **ndarray** (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.
+
+### 2.1 Création de Tableaux (`ndarray`)
+
+Les tableaux NumPy peuvent être créés à partir de **listes Python**, de **valeurs prédéfinies** ou de **valeurs générées automatiquement** :
+
+```python
+# Création d'un tableau à partir d'une liste
+arr1 = np.array([1, 2, 3, 4, 5])
+print(arr1)
+
+# Tableau multidimensionnel
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr2)
+```
+
+D'autres méthodes permettent de générer rapidement des tableaux :
+```python
+np.zeros((3, 3))    # Matrice 3x3 remplie de 0
+np.ones((2, 4))     # Matrice 2x4 remplie de 1
+np.full((3, 3), 7)  # Matrice 3x3 remplie de 7
+np.eye(4)           # Matrice identité 4x4
+np.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10
+```
+
+**Pourquoi ces méthodes sont utiles ?**
+- `zeros` et `ones` permettent d'initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.
+- `eye` est très utilisé en **algèbre linéaire** pour les calculs de matrices identité.
+- `linspace` est idéal pour générer des valeurs numériques espacées uniformément.
+
+**Exercice 1 :**
+- Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.
+- Générer une séquence de 10 nombres entre 1 et 100.
+
+---
+
+## 3. Indexation et Slicing
+L'accès aux éléments d'un tableau NumPy se fait de manière similaire aux listes Python, mais avec des **fonctionnalités supplémentaires**.
+
+### 3.1 Sélection d'éléments
+
+```python
+arr = np.array([10, 20, 30, 40, 50])
+print(arr[2])  # Accéder au 3e élément
+```
+
+L’indexation commence toujours à **0** en Python, donc `arr[2]` retourne **30**.
+
+### 3.2 Indexation avancée
+NumPy permet d'accéder à des **sous-ensembles** de tableaux plus facilement :
+```python
+arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(arr2d[1, 2])  # 6 (ligne 2, colonne 3)
+```
+
+### 3.3 Slicing (Découpage d'un tableau)
+Avec NumPy, on peut extraire plusieurs valeurs avec des **tranches (slices)** :
+```python
+sub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau
+print(sub_arr)
+```
+
+**Pourquoi utiliser le slicing ?**
+- Permet d'extraire rapidement des parties spécifiques d'un tableau sans devoir recréer un autre tableau manuellement.
+- Très utile en **analyse de données** pour filtrer des valeurs selon des conditions spécifiques.
+
+**Exercice 2 :**
+- Extraire la première colonne d'une matrice 3x3.
+- Modifier les valeurs d'une portion spécifique d'un tableau.
+
+---
+

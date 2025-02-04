@@ -105,35 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -246,35 +217,42 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tp-analyse-de-données-avec-pandas" id="toc-tp-analyse-de-données-avec-pandas" class="nav-link active" data-scroll-target="#tp-analyse-de-données-avec-pandas"><span class="header-section-number">1</span> TP Analyse de Données avec Pandas</a>
+  <li><a href="#tp-analyse-de-données-avec-pandas" id="toc-tp-analyse-de-données-avec-pandas" class="nav-link active" data-scroll-target="#tp-analyse-de-données-avec-pandas"><span class="header-section-number">1</span> TP Analyse de Données avec Pandas</a></li>
+  <li><a href="#partie-1-analyse-des-données-financières" id="toc-partie-1-analyse-des-données-financières" class="nav-link" data-scroll-target="#partie-1-analyse-des-données-financières"><span class="header-section-number">2</span> Partie 1 : Analyse des Données Financières</a>
   <ul class="collapse">
-  <li><a href="#partie-1-analyse-des-données-financières" id="toc-partie-1-analyse-des-données-financières" class="nav-link" data-scroll-target="#partie-1-analyse-des-données-financières"><span class="header-section-number">1.1</span> Partie 1 : Analyse des Données Financières</a>
+  <li><a href="#récupération-et-exploration-des-données" id="toc-récupération-et-exploration-des-données" class="nav-link" data-scroll-target="#récupération-et-exploration-des-données"><span class="header-section-number">2.1</span> 1. Récupération et Exploration des Données</a>
   <ul class="collapse">
-  <li><a href="#récupération-et-exploration-des-données" id="toc-récupération-et-exploration-des-données" class="nav-link" data-scroll-target="#récupération-et-exploration-des-données"><span class="header-section-number">1.1.1</span> 1. Récupération et Exploration des Données</a></li>
-  <li><a href="#nettoyage-et-préparation-des-données" id="toc-nettoyage-et-préparation-des-données" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données"><span class="header-section-number">1.1.2</span> 2. Nettoyage et Préparation des Données</a></li>
-  <li><a href="#analyse-des-tendances-du-marché" id="toc-analyse-des-tendances-du-marché" class="nav-link" data-scroll-target="#analyse-des-tendances-du-marché"><span class="header-section-number">1.1.3</span> 3. Analyse des Tendances du Marché</a></li>
-  <li><a href="#comparaison-des-performances" id="toc-comparaison-des-performances" class="nav-link" data-scroll-target="#comparaison-des-performances"><span class="header-section-number">1.1.4</span> 4. Comparaison des Performances</a></li>
+  <li><a href="#téléchargement-des-données-depuis-yahoo-finance" id="toc-téléchargement-des-données-depuis-yahoo-finance" class="nav-link" data-scroll-target="#téléchargement-des-données-depuis-yahoo-finance"><span class="header-section-number">2.1.1</span> Téléchargement des données depuis Yahoo Finance</a></li>
+  <li><a href="#analyse-exploratoire" id="toc-analyse-exploratoire" class="nav-link" data-scroll-target="#analyse-exploratoire"><span class="header-section-number">2.1.2</span> Analyse exploratoire</a></li>
   </ul></li>
-  <li><a href="#partie-2-analyse-du-risque-de-défaut" id="toc-partie-2-analyse-du-risque-de-défaut" class="nav-link" data-scroll-target="#partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">1.2</span> Partie 2 : Analyse du Risque de Défaut</a>
+  <li><a href="#nettoyage-et-préparation-des-données" id="toc-nettoyage-et-préparation-des-données" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données"><span class="header-section-number">2.2</span> 2. Nettoyage et Préparation des Données</a></li>
+  <li><a href="#analyse-des-tendances-du-marché" id="toc-analyse-des-tendances-du-marché" class="nav-link" data-scroll-target="#analyse-des-tendances-du-marché"><span class="header-section-number">2.3</span> 3. Analyse des Tendances du Marché</a>
   <ul class="collapse">
-  <li><a href="#description-des-colonnes-de-la-base-de-données" id="toc-description-des-colonnes-de-la-base-de-données" class="nav-link" data-scroll-target="#description-des-colonnes-de-la-base-de-données"><span class="header-section-number">1.2.1</span> Description des Colonnes de la Base de Données</a></li>
-  <li><a href="#chargement-et-exploration-des-données" id="toc-chargement-et-exploration-des-données" class="nav-link" data-scroll-target="#chargement-et-exploration-des-données"><span class="header-section-number">1.2.2</span> 1. Chargement et Exploration des Données</a></li>
-  <li><a href="#nettoyage-et-préparation-des-données-1" id="toc-nettoyage-et-préparation-des-données-1" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données-1"><span class="header-section-number">1.2.3</span> 2. Nettoyage et Préparation des Données</a></li>
-  <li><a href="#analyse-des-facteurs-de-risque" id="toc-analyse-des-facteurs-de-risque" class="nav-link" data-scroll-target="#analyse-des-facteurs-de-risque"><span class="header-section-number">1.2.4</span> 3. Analyse des Facteurs de Risque</a></li>
+  <li><a href="#calcul-du-rendement-journalier" id="toc-calcul-du-rendement-journalier" class="nav-link" data-scroll-target="#calcul-du-rendement-journalier"><span class="header-section-number">2.3.1</span> Calcul du rendement journalier</a></li>
   </ul></li>
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">1.3</span> Objectifs</a></li>
-  <li><a href="#questions-et-analyses" id="toc-questions-et-analyses" class="nav-link" data-scroll-target="#questions-et-analyses"><span class="header-section-number">1.4</span> Questions et Analyses</a>
+  <li><a href="#comparaison-des-performances" id="toc-comparaison-des-performances" class="nav-link" data-scroll-target="#comparaison-des-performances"><span class="header-section-number">2.4</span> 4. Comparaison des Performances</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">2.5</span> Conclusion</a></li>
+  <li><a href="#résumé-des-principales-manipulations-avec-pandas" id="toc-résumé-des-principales-manipulations-avec-pandas" class="nav-link" data-scroll-target="#résumé-des-principales-manipulations-avec-pandas"><span class="header-section-number">2.6</span> Résumé des principales manipulations avec pandas</a></li>
+  <li><a href="#partie-2-analyse-du-risque-de-défaut" id="toc-partie-2-analyse-du-risque-de-défaut" class="nav-link" data-scroll-target="#partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">2.7</span> Partie 2 : Analyse du Risque de Défaut</a>
   <ul class="collapse">
-  <li><a href="#impact-du-revenu-annuel-sur-le-risque-de-défaut" id="toc-impact-du-revenu-annuel-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">1.4.1</span> 1. Impact du revenu annuel sur le risque de défaut</a></li>
-  <li><a href="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" id="toc-influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">1.4.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</a></li>
-  <li><a href="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" id="toc-identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="nav-link" data-scroll-target="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">1.4.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse"><span class="header-section-number">1.4.4</span> Synthèse</a></li>
+  <li><a href="#description-des-colonnes-de-la-base-de-données" id="toc-description-des-colonnes-de-la-base-de-données" class="nav-link" data-scroll-target="#description-des-colonnes-de-la-base-de-données"><span class="header-section-number">2.7.1</span> Description des Colonnes de la Base de Données</a></li>
+  <li><a href="#chargement-et-exploration-des-données" id="toc-chargement-et-exploration-des-données" class="nav-link" data-scroll-target="#chargement-et-exploration-des-données"><span class="header-section-number">2.7.2</span> 1. Chargement et Exploration des Données</a></li>
+  <li><a href="#nettoyage-et-préparation-des-données-1" id="toc-nettoyage-et-préparation-des-données-1" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.3</span> 2. Nettoyage et Préparation des Données</a></li>
+  <li><a href="#analyse-des-facteurs-de-risque" id="toc-analyse-des-facteurs-de-risque" class="nav-link" data-scroll-target="#analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.4</span> 3. Analyse des Facteurs de Risque</a></li>
   </ul></li>
-  <li><a href="#objectifs-1" id="toc-objectifs-1" class="nav-link" data-scroll-target="#objectifs-1"><span class="header-section-number">1.5</span> Objectifs</a></li>
-  <li><a href="#questions-et-analyses-1" id="toc-questions-et-analyses-1" class="nav-link" data-scroll-target="#questions-et-analyses-1"><span class="header-section-number">1.6</span> Questions et Analyses</a>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">2.8</span> Objectifs</a></li>
+  <li><a href="#questions-et-analyses" id="toc-questions-et-analyses" class="nav-link" data-scroll-target="#questions-et-analyses"><span class="header-section-number">2.9</span> Questions et Analyses</a>
   <ul class="collapse">
-  <li><a href="#analyse-de-la-distribution-des-âges-des-clients" id="toc-analyse-de-la-distribution-des-âges-des-clients" class="nav-link" data-scroll-target="#analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">1.6.1</span> Analyse de la distribution des âges des clients</a></li>
-  <li><a href="#influence-du-statut-demploi-sur-le-risque-de-défaut" id="toc-influence-du-statut-demploi-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">1.6.2</span> Influence du statut d’emploi sur le risque de défaut</a></li>
+  <li><a href="#impact-du-revenu-annuel-sur-le-risque-de-défaut" id="toc-impact-du-revenu-annuel-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">2.9.1</span> 1. Impact du revenu annuel sur le risque de défaut</a></li>
+  <li><a href="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" id="toc-influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">2.9.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</a></li>
+  <li><a href="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" id="toc-identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="nav-link" data-scroll-target="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">2.9.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</a></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse"><span class="header-section-number">2.9.4</span> Synthèse</a></li>
+  </ul></li>
+  <li><a href="#objectifs-1" id="toc-objectifs-1" class="nav-link" data-scroll-target="#objectifs-1"><span class="header-section-number">2.10</span> Objectifs</a></li>
+  <li><a href="#questions-et-analyses-1" id="toc-questions-et-analyses-1" class="nav-link" data-scroll-target="#questions-et-analyses-1"><span class="header-section-number">2.11</span> Questions et Analyses</a>
+  <ul class="collapse">
+  <li><a href="#analyse-de-la-distribution-des-âges-des-clients" id="toc-analyse-de-la-distribution-des-âges-des-clients" class="nav-link" data-scroll-target="#analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">2.11.1</span> Analyse de la distribution des âges des clients</a></li>
+  <li><a href="#influence-du-statut-demploi-sur-le-risque-de-défaut" id="toc-influence-du-statut-demploi-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">2.11.2</span> Influence du statut d’emploi sur le risque de défaut</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -319,48 +297,154 @@ window.Quarto = {
 
 <section id="tp-analyse-de-données-avec-pandas" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> TP Analyse de Données avec Pandas</h1>
-<section id="partie-1-analyse-des-données-financières" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="partie-1-analyse-des-données-financières"><span class="header-section-number">1.1</span> Partie 1 : Analyse des Données Financières</h2>
-<p>Ce TP a pour objectif d’explorer et d’analyser les données financières de plusieurs grandes entreprises cotées en bourse : <strong>NVIDIA, OpenAI, Amazon et Apple</strong>. Nous allons récupérer ces données directement depuis Yahoo Finance et les manipuler avec Pandas.</p>
-<section id="récupération-et-exploration-des-données" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="récupération-et-exploration-des-données"><span class="header-section-number">1.1.1</span> 1. Récupération et Exploration des Données</h3>
+</section>
+<section id="partie-1-analyse-des-données-financières" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Partie 1 : Analyse des Données Financières</h1>
+<p>Ce TP a pour objectif d’explorer et d’analyser les données financières de plusieurs grandes entreprises cotées en bourse : <strong>NVIDIA, OpenAI, Amazon et Apple</strong>. Nous allons récupérer ces données directement depuis <strong>Yahoo Finance</strong> et les manipuler avec <strong>pandas</strong>.</p>
+<hr>
+<section id="récupération-et-exploration-des-données" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="récupération-et-exploration-des-données"><span class="header-section-number">2.1</span> 1. Récupération et Exploration des Données</h2>
+<section id="téléchargement-des-données-depuis-yahoo-finance" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="téléchargement-des-données-depuis-yahoo-finance"><span class="header-section-number">2.1.1</span> Téléchargement des données depuis Yahoo Finance</h3>
+<p>Nous allons utiliser la bibliothèque <code>yfinance</code> pour récupérer les prix historiques des actions de plusieurs entreprises technologiques.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste des tickers des entreprises étudiées</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tickers <span class="op">=</span> [<span class="st">'NVDA'</span>, <span class="st">'AAPL'</span>, <span class="st">'AMZN'</span>, <span class="st">'MSFT'</span>]</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargement des données</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargement des données de 2020 à 2024</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> yf.download(tickers, start<span class="op">=</span><span class="st">'2020-01-01'</span>, end<span class="op">=</span><span class="st">'2024-01-01'</span>, group_by<span class="op">=</span><span class="st">'ticker'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>📌 <strong>Questions</strong> : 1. Quelles sont les colonnes disponibles dans le DataFrame ? 2. Quel est le nombre total de lignes et de colonnes ? 3. Vérifiez s’il y a des valeurs manquantes et expliquez comment les gérer.</p>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage des premières lignes du DataFrame</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="nettoyage-et-préparation-des-données" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données"><span class="header-section-number">1.1.2</span> 2. Nettoyage et Préparation des Données</h3>
-<p>📌 <strong>Questions</strong> : 1. Supprimez les lignes contenant des valeurs manquantes. 2. Définissez la colonne Date comme index du DataFrame. 3. Vérifiez les types de données des colonnes et convertissez-les si nécessaire.</p>
-</section>
-<section id="analyse-des-tendances-du-marché" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="analyse-des-tendances-du-marché"><span class="header-section-number">1.1.3</span> 3. Analyse des Tendances du Marché</h3>
-<section id="formule-du-rendement" class="level4">
-<h4 class="anchored" data-anchor-id="formule-du-rendement">Formule du Rendement</h4>
-<p><span class="math display">\[
-R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
-\]</span></p>
-<p>où : - ( P_t ) est le prix de clôture au jour ( t ) - ( P_{t-1} ) est le prix de clôture du jour précédent</p>
-<p>📌 <strong>Questions</strong> : 0. Calculer le rendement de chaque action disponible dans la base 1. Quelle est la tendance des prix des actions pour chaque entreprise ? 2. Quel jour chaque action a-t-elle atteint son plus haut prix ? 3. Calculez le rendement quotidien de chaque action et affichez sa moyenne.</p>
-</section>
-</section>
-<section id="comparaison-des-performances" class="level3" data-number="1.1.4">
-<h3 data-number="1.1.4" class="anchored" data-anchor-id="comparaison-des-performances"><span class="header-section-number">1.1.4</span> 4. Comparaison des Performances</h3>
-<p>📌 <strong>Questions</strong> : 1. Quelle entreprise a eu la meilleure croissance sur la période analysée ? 2. Quel est le rendement moyen mensuel de chaque action ? 3. Comparez la volatilité des différentes actions.</p>
+<section id="analyse-exploratoire" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="analyse-exploratoire"><span class="header-section-number">2.1.2</span> Analyse exploratoire</h3>
+<p>📌 <strong>Questions à traiter</strong> :</p>
+<ol type="1">
+<li><strong>Quelles sont les colonnes disponibles dans le DataFrame ?</strong><br>
+</li>
+<li><strong>Quel est le nombre total de lignes et de colonnes ?</strong><br>
+</li>
+<li><strong>Y a-t-il des valeurs manquantes ? Comment les gérer ?</strong></li>
+</ol>
 <hr>
 </section>
 </section>
-<section id="partie-2-analyse-du-risque-de-défaut" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">1.2</span> Partie 2 : Analyse du Risque de Défaut</h2>
+<section id="nettoyage-et-préparation-des-données" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données"><span class="header-section-number">2.2</span> 2. Nettoyage et Préparation des Données</h2>
+<p>📌 <strong>Questions à traiter</strong> :</p>
+<ol type="1">
+<li><strong>Supprimez les lignes contenant des valeurs manquantes.</strong><br>
+</li>
+<li><strong>Définissez la colonne Date comme index du DataFrame.</strong><br>
+</li>
+<li><strong>Vérifiez les types de données des colonnes et convertissez-les si nécessaire.</strong></li>
+</ol>
+<hr>
+</section>
+<section id="analyse-des-tendances-du-marché" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="analyse-des-tendances-du-marché"><span class="header-section-number">2.3</span> 3. Analyse des Tendances du Marché</h2>
+<section id="calcul-du-rendement-journalier" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="calcul-du-rendement-journalier"><span class="header-section-number">2.3.1</span> Calcul du rendement journalier</h3>
+<p>Le rendement journalier d’une action est donné par la formule :</p>
+<p>[ R_t = ]</p>
+<p>📌 <strong>Questions à traiter</strong> :</p>
+<ol type="1">
+<li><strong>Quelle est la tendance des prix des actions pour chaque entreprise ?</strong><br>
+</li>
+<li><strong>Quel jour chaque action a-t-elle atteint son plus haut prix ?</strong><br>
+</li>
+<li><strong>Calculez le rendement quotidien de chaque action et affichez sa moyenne.</strong></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="comparaison-des-performances" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="comparaison-des-performances"><span class="header-section-number">2.4</span> 4. Comparaison des Performances</h2>
+<p>📌 <strong>Questions à traiter</strong> :</p>
+<ol type="1">
+<li><strong>Quelle entreprise a eu la meilleure croissance sur la période analysée ?</strong><br>
+</li>
+<li><strong>Quel est le rendement moyen mensuel de chaque action ?</strong><br>
+</li>
+<li><strong>Comparez la volatilité des différentes actions.</strong></li>
+</ol>
+<hr>
+</section>
+<section id="conclusion" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2.5</span> Conclusion</h2>
+<ul>
+<li>Quelle entreprise a eu la meilleure croissance sur la période ?<br>
+</li>
+<li>Quel titre a offert le rendement moyen le plus élevé ?<br>
+</li>
+<li>Quelle action était la plus volatile, indiquant un risque plus élevé ?<br>
+</li>
+<li>Discussion sur les facteurs pouvant expliquer ces résultats (ex. crise, innovations, changements dans l’industrie).</li>
+</ul>
+<hr>
+</section>
+<section id="résumé-des-principales-manipulations-avec-pandas" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="résumé-des-principales-manipulations-avec-pandas"><span class="header-section-number">2.6</span> Résumé des principales manipulations avec pandas</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Opération</th>
+<th>Commande Pandas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Télécharger des données financières</td>
+<td><code>yfinance.download()</code></td>
+</tr>
+<tr class="even">
+<td>Afficher les colonnes disponibles</td>
+<td><code>df.columns</code></td>
+</tr>
+<tr class="odd">
+<td>Vérifier la présence de valeurs manquantes</td>
+<td><code>df.isnull().sum()</code></td>
+</tr>
+<tr class="even">
+<td>Supprimer les valeurs manquantes</td>
+<td><code>df.dropna()</code></td>
+</tr>
+<tr class="odd">
+<td>Définir un index de type datetime</td>
+<td><code>df.index = pd.to_datetime(df.index)</code></td>
+</tr>
+<tr class="even">
+<td>Calculer le rendement journalier</td>
+<td><code>.pct_change()</code></td>
+</tr>
+<tr class="odd">
+<td>Calculer la volatilité</td>
+<td><code>.std()</code></td>
+</tr>
+<tr class="even">
+<td>Trouver la date du prix maximum</td>
+<td><code>.idxmax()</code></td>
+</tr>
+<tr class="odd">
+<td>Agréger les données par mois</td>
+<td><code>.resample('M').mean()</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="partie-2-analyse-du-risque-de-défaut" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">2.7</span> Partie 2 : Analyse du Risque de Défaut</h2>
 <p>Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.</p>
-<section id="description-des-colonnes-de-la-base-de-données" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="description-des-colonnes-de-la-base-de-données"><span class="header-section-number">1.2.1</span> Description des Colonnes de la Base de Données</h3>
+<section id="description-des-colonnes-de-la-base-de-données" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="description-des-colonnes-de-la-base-de-données"><span class="header-section-number">2.7.1</span> Description des Colonnes de la Base de Données</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 46%">
@@ -424,25 +508,25 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 </tbody>
 </table>
 </section>
-<section id="chargement-et-exploration-des-données" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="chargement-et-exploration-des-données"><span class="header-section-number">1.2.2</span> 1. Chargement et Exploration des Données</h3>
+<section id="chargement-et-exploration-des-données" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="chargement-et-exploration-des-données"><span class="header-section-number">2.7.2</span> 1. Chargement et Exploration des Données</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_credit <span class="op">=</span> pd.read_csv(<span class="st">'credit_risk_data.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_credit.head())</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_credit.info()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_credit.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>📌 <strong>Questions</strong> : 1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ? 2. Quelle est la répartition des clients en défaut et non en défaut ? 3. Identifiez les valeurs manquantes et proposez une méthode de traitement.</p>
 </section>
-<section id="nettoyage-et-préparation-des-données-1" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données-1"><span class="header-section-number">1.2.3</span> 2. Nettoyage et Préparation des Données</h3>
+<section id="nettoyage-et-préparation-des-données-1" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.3</span> 2. Nettoyage et Préparation des Données</h3>
 <p>📌 <strong>Questions</strong> : 1. Convertissez les variables catégoriques en variables numériques. 2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.</p>
 </section>
-<section id="analyse-des-facteurs-de-risque" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="analyse-des-facteurs-de-risque"><span class="header-section-number">1.2.4</span> 3. Analyse des Facteurs de Risque</h3>
+<section id="analyse-des-facteurs-de-risque" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.4</span> 3. Analyse des Facteurs de Risque</h3>
 <p>📌 <strong>Questions</strong> : Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant <strong>pandas</strong> et en réalisant des analyses numériques.</p>
 </section>
 </section>
-<section id="objectifs" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="objectifs"><span class="header-section-number">1.3</span> Objectifs</h2>
+<section id="objectifs" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="objectifs"><span class="header-section-number">2.8</span> Objectifs</h2>
 <ul>
 <li>Manipuler des <strong>DataFrames pandas</strong> pour explorer les relations entre les variables.<br>
 </li>
@@ -451,10 +535,10 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 <li>Comprendre comment les facteurs influencent le risque de défaut et interpréter les résultats.</li>
 </ul>
 </section>
-<section id="questions-et-analyses" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="questions-et-analyses"><span class="header-section-number">1.4</span> Questions et Analyses</h2>
-<section id="impact-du-revenu-annuel-sur-le-risque-de-défaut" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">1.4.1</span> 1. Impact du revenu annuel sur le risque de défaut</h3>
+<section id="questions-et-analyses" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="questions-et-analyses"><span class="header-section-number">2.9</span> Questions et Analyses</h2>
+<section id="impact-du-revenu-annuel-sur-le-risque-de-défaut" class="level3" data-number="2.9.1">
+<h3 data-number="2.9.1" class="anchored" data-anchor-id="impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">2.9.1</span> 1. Impact du revenu annuel sur le risque de défaut</h3>
 <p><strong>Analyse numérique</strong><br>
 - Afficher les statistiques descriptives du revenu annuel en fonction du statut de défaut.<br>
 - Comparer les moyennes et médianes des revenus des clients en défaut et non en défaut.<br>
@@ -466,8 +550,8 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 4. Interpréter les résultats et voir si une tendance se dégage.</p>
 <hr>
 </section>
-<section id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">1.4.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</h3>
+<section id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="level3" data-number="2.9.2">
+<h3 data-number="2.9.2" class="anchored" data-anchor-id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">2.9.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</h3>
 <p><strong>Analyse numérique</strong><br>
 - Calculer le nombre moyen de paiements en retard pour chaque statut de défaut.<br>
 - Analyser la médiane et l’écart-type du nombre de paiements en retard.<br>
@@ -478,8 +562,8 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 3. Vérifier si la dispersion des retards de paiement est plus élevée chez les clients en défaut.</p>
 <hr>
 </section>
-<section id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">1.4.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</h3>
+<section id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="level3" data-number="2.9.3">
+<h3 data-number="2.9.3" class="anchored" data-anchor-id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">2.9.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</h3>
 <p><strong>Analyse numérique</strong><br>
 - Calculer la matrice de corrélation entre les variables.<br>
 - Identifier les trois facteurs les plus corrélés avec le risque de défaut.<br>
@@ -490,13 +574,13 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 3. Trier ces valeurs par ordre décroissant et sélectionner les trois variables les plus influentes.<br>
 4. Interpréter les résultats et vérifier si ces facteurs sont cohérents avec les analyses précédentes.</p>
 </section>
-<section id="synthèse" class="level3" data-number="1.4.4">
-<h3 data-number="1.4.4" class="anchored" data-anchor-id="synthèse"><span class="header-section-number">1.4.4</span> Synthèse</h3>
+<section id="synthèse" class="level3" data-number="2.9.4">
+<h3 data-number="2.9.4" class="anchored" data-anchor-id="synthèse"><span class="header-section-number">2.9.4</span> Synthèse</h3>
 <p>Dans cette section, nous allons approfondir l’étude des facteurs influençant le risque de défaut en réalisant des analyses numériques sur la répartition des âges et l’impact du statut d’emploi.</p>
 </section>
 </section>
-<section id="objectifs-1" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="objectifs-1"><span class="header-section-number">1.5</span> Objectifs</h2>
+<section id="objectifs-1" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="objectifs-1"><span class="header-section-number">2.10</span> Objectifs</h2>
 <ul>
 <li>Analyser la distribution des âges des clients à l’aide de statistiques descriptives.<br>
 </li>
@@ -505,10 +589,10 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 <li>Synthétiser les résultats obtenus et proposer des interprétations.</li>
 </ul>
 </section>
-<section id="questions-et-analyses-1" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="questions-et-analyses-1"><span class="header-section-number">1.6</span> Questions et Analyses</h2>
-<section id="analyse-de-la-distribution-des-âges-des-clients" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">1.6.1</span> Analyse de la distribution des âges des clients</h3>
+<section id="questions-et-analyses-1" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="questions-et-analyses-1"><span class="header-section-number">2.11</span> Questions et Analyses</h2>
+<section id="analyse-de-la-distribution-des-âges-des-clients" class="level3" data-number="2.11.1">
+<h3 data-number="2.11.1" class="anchored" data-anchor-id="analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">2.11.1</span> Analyse de la distribution des âges des clients</h3>
 <p><strong>Analyse numérique</strong><br>
 - Calculer les statistiques descriptives générales sur l’âge des clients.<br>
 - Identifier l’âge moyen, la médiane, l’écart-type et les valeurs minimales/maximales.<br>
@@ -520,8 +604,8 @@ R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
 4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.</p>
 <hr>
 </section>
-<section id="influence-du-statut-demploi-sur-le-risque-de-défaut" class="level3" data-number="1.6.2">
-<h3 data-number="1.6.2" class="anchored" data-anchor-id="influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">1.6.2</span> Influence du statut d’emploi sur le risque de défaut</h3>
+<section id="influence-du-statut-demploi-sur-le-risque-de-défaut" class="level3" data-number="2.11.2">
+<h3 data-number="2.11.2" class="anchored" data-anchor-id="influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">2.11.2</span> Influence du statut d’emploi sur le risque de défaut</h3>
 <p><strong>Analyse numérique</strong><br>
 - Compter le nombre de clients par catégorie de statut d’emploi.<br>
 - Calculer la proportion de clients en défaut dans chaque catégorie de statut d’emploi.<br>

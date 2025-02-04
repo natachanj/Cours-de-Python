@@ -235,10 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#résumé-des-principales-manipulations-avec-pandas" id="toc-résumé-des-principales-manipulations-avec-pandas" class="nav-link" data-scroll-target="#résumé-des-principales-manipulations-avec-pandas"><span class="header-section-number">2.6</span> Résumé des principales manipulations avec pandas</a></li>
   <li><a href="#partie-2-analyse-du-risque-de-défaut" id="toc-partie-2-analyse-du-risque-de-défaut" class="nav-link" data-scroll-target="#partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">2.7</span> Partie 2 : Analyse du Risque de Défaut</a>
   <ul class="collapse">
-  <li><a href="#description-des-colonnes-de-la-base-de-données" id="toc-description-des-colonnes-de-la-base-de-données" class="nav-link" data-scroll-target="#description-des-colonnes-de-la-base-de-données"><span class="header-section-number">2.7.1</span> Description des Colonnes de la Base de Données</a></li>
-  <li><a href="#chargement-et-exploration-des-données" id="toc-chargement-et-exploration-des-données" class="nav-link" data-scroll-target="#chargement-et-exploration-des-données"><span class="header-section-number">2.7.2</span> 1. Chargement et Exploration des Données</a></li>
-  <li><a href="#nettoyage-et-préparation-des-données-1" id="toc-nettoyage-et-préparation-des-données-1" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.3</span> 2. Nettoyage et Préparation des Données</a></li>
-  <li><a href="#analyse-des-facteurs-de-risque" id="toc-analyse-des-facteurs-de-risque" class="nav-link" data-scroll-target="#analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.4</span> 3. Analyse des Facteurs de Risque</a></li>
+  <li><a href="#chargement-et-exploration-des-données" id="toc-chargement-et-exploration-des-données" class="nav-link" data-scroll-target="#chargement-et-exploration-des-données"><span class="header-section-number">2.7.1</span> 1. Chargement et Exploration des Données</a></li>
+  <li><a href="#nettoyage-et-préparation-des-données-1" id="toc-nettoyage-et-préparation-des-données-1" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.2</span> 2. Nettoyage et Préparation des Données</a></li>
+  <li><a href="#analyse-des-facteurs-de-risque" id="toc-analyse-des-facteurs-de-risque" class="nav-link" data-scroll-target="#analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.3</span> 3. Analyse des Facteurs de Risque</a></li>
   </ul></li>
   <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">2.8</span> Objectifs</a></li>
   <li><a href="#questions-et-analyses" id="toc-questions-et-analyses" class="nav-link" data-scroll-target="#questions-et-analyses"><span class="header-section-number">2.9</span> Questions et Analyses</a>
@@ -443,8 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="partie-2-analyse-du-risque-de-défaut" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">2.7</span> Partie 2 : Analyse du Risque de Défaut</h2>
 <p>Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.</p>
-<section id="description-des-colonnes-de-la-base-de-données" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="description-des-colonnes-de-la-base-de-données"><span class="header-section-number">2.7.1</span> Description des Colonnes de la Base de Données</h3>
+<p>La base de données est disponible ici: https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download ### Description des Colonnes de la Base de Données</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 46%">
@@ -507,21 +505,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-</section>
-<section id="chargement-et-exploration-des-données" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="chargement-et-exploration-des-données"><span class="header-section-number">2.7.2</span> 1. Chargement et Exploration des Données</h3>
+<section id="chargement-et-exploration-des-données" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="chargement-et-exploration-des-données"><span class="header-section-number">2.7.1</span> 1. Chargement et Exploration des Données</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_credit <span class="op">=</span> pd.read_csv(<span class="st">'credit_risk_data.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_credit.head())</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_credit.info()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_credit.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>📌 <strong>Questions</strong> : 1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ? 2. Quelle est la répartition des clients en défaut et non en défaut ? 3. Identifiez les valeurs manquantes et proposez une méthode de traitement.</p>
 </section>
-<section id="nettoyage-et-préparation-des-données-1" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.3</span> 2. Nettoyage et Préparation des Données</h3>
+<section id="nettoyage-et-préparation-des-données-1" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.2</span> 2. Nettoyage et Préparation des Données</h3>
 <p>📌 <strong>Questions</strong> : 1. Convertissez les variables catégoriques en variables numériques. 2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.</p>
 </section>
-<section id="analyse-des-facteurs-de-risque" class="level3" data-number="2.7.4">
-<h3 data-number="2.7.4" class="anchored" data-anchor-id="analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.4</span> 3. Analyse des Facteurs de Risque</h3>
+<section id="analyse-des-facteurs-de-risque" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.3</span> 3. Analyse des Facteurs de Risque</h3>
 <p>📌 <strong>Questions</strong> : Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant <strong>pandas</strong> et en réalisant des analyses numériques.</p>
 </section>
 </section>

@@ -22,256 +22,187 @@ code-line-numbers: true
 from: markdown+emoji
 ---
 
+# Cours Complet : Analyse de Données avec Pandas
+
 ## Introduction
-**NumPy** (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d'opérations mathématiques optimisées. 
 
-L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beaucoup plus rapidement** que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.
+**Pandas** est une bibliothèque open-source essentielle en Python pour la manipulation et l'analyse de données. Elle permet de travailler avec des ensembles de données sous forme de **tableaux** en offrant des outils puissants pour **nettoyer, transformer et analyser** les données efficacement.
 
-### Pourquoi utiliser NumPy ?
-- **Efficacité et rapidité** : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.
-- **Gestion de données complexes** : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.
-- **Compatibilité avec d'autres bibliothèques** : NumPy est souvent utilisé avec **Pandas**, **Matplotlib**, et **Scikit-learn** pour l'analyse et la modélisation des données.
+### Pourquoi utiliser Pandas ?
 
-**Objectifs de ce cours :**
-- Comprendre et manipuler les tableaux (`ndarray`) de NumPy
-- Appliquer des opérations mathématiques et statistiques
-- Optimiser les calculs avec le broadcasting et la vectorisation
-- Transformer et structurer les données efficacement
+- **Facilité de manipulation** : Pandas simplifie la manipulation des **données tabulaires** (issues de fichiers CSV, Excel, bases de données, etc.).
+- **Performance** : Pandas est optimisé pour gérer de **grandes quantités de données** bien plus rapidement que les structures classiques comme les listes Python.
+- **Interopérabilité** : Compatible avec **NumPy**, **Matplotlib**, **SQL**, et d'autres bibliothèques de data science.
+
+**Objectifs du cours :**
+- Comprendre les structures de Pandas : **Series** et **DataFrame**.
+- Apprendre à charger, explorer et manipuler des données.
+- Effectuer des analyses et transformations avancées.
 
 ---
 
 ## 1. Installation et Importation
-NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
+
+Si Pandas n'est pas encore installé, vous pouvez l'ajouter à votre environnement Python avec la commande suivante :
 ```bash
-pip install numpy
+pip install pandas
 ```
 
-Ensuite, importez NumPy dans votre script Python :
+Une fois installé, importez Pandas :
 ```python
-import numpy as np
+import pandas as pd
 ```
-L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` en entier à chaque fois.
+
+L'alias `pd` est une convention utilisée pour simplifier l'appel aux fonctions de la bibliothèque.
 
 ---
 
-## 2. Création et Manipulation des Tableaux NumPy
-NumPy repose sur une structure de données appelée **ndarray** (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.
+## 2. Création et Chargement des Données
 
-### 2.1 Création de Tableaux (`ndarray`)
+Pandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats.
 
-Les tableaux NumPy peuvent être créés à partir de **listes Python**, de **valeurs prédéfinies** ou de **valeurs générées automatiquement** :
+### 2.1 Création d'un DataFrame
+
+Un **DataFrame** est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL.
 
 ```python
-# Création d'un tableau à partir d'une liste
-arr1 = np.array([1, 2, 3, 4, 5])
-print(arr1)
-
-# Tableau multidimensionnel
-arr2 = np.array([[1, 2, 3], [4, 5, 6]])
-print(arr2)
+data = {
+    'Nom': ['Alice', 'Bob', 'Charlie'],
+    'Âge': [25, 30, 35],
+    'Salaire': [50000, 60000, 70000]
+}
+df = pd.DataFrame(data)
+print(df)
 ```
 
-D'autres méthodes permettent de générer rapidement des tableaux :
+Pourquoi utiliser un DataFrame ?
+- Il permet de manipuler facilement **des données hétérogènes**.
+- Il est conçu pour des **opérations analytiques rapides et intuitives**.
+
+### 2.2 Chargement des Données à partir de Fichiers
+
+Pandas permet de lire des fichiers de différents formats : CSV, Excel, JSON, SQL, etc.
+
 ```python
-np.zeros((3, 3))    # Matrice 3x3 remplie de 0
-np.ones((2, 4))     # Matrice 2x4 remplie de 1
-np.full((3, 3), 7)  # Matrice 3x3 remplie de 7
-np.eye(4)           # Matrice identité 4x4
-np.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10
-```
+# Charger un fichier CSV
+df = pd.read_csv("data.csv")
 
-**Pourquoi ces méthodes sont utiles ?**
-- `zeros` et `ones` permettent d'initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.
-- `eye` est très utilisé en **algèbre linéaire** pour les calculs de matrices identité.
-- `linspace` est idéal pour générer des valeurs numériques espacées uniformément.
+# Charger un fichier Excel
+df = pd.read_excel("data.xlsx")
+```
 
 **Exercice 1 :**
-- Créez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.
-- Générer une séquence de 10 nombres entre 1 et 100.
+- Chargez un fichier CSV et affichez ses premières lignes.
+- Affichez le nombre total de lignes et de colonnes.
 
 ---
 
-## 3. Indexation et Slicing
-L'accès aux éléments d'un tableau NumPy se fait de manière similaire aux listes Python, mais avec des **fonctionnalités supplémentaires**.
+## 3. Exploration et Manipulation des Données
 
-### 3.1 Sélection d'éléments
+Avant toute analyse, il est essentiel de **comprendre et explorer** les données pour identifier les éventuels problèmes.
+
+### 3.1 Exploration de Base
 
 ```python
-arr = np.array([10, 20, 30, 40, 50])
-print(arr[2])  # Accéder au 3e élément
+print(df.head())  # Afficher les premières lignes
+df.info()  # Résumé des types de données et valeurs manquantes
+df.describe()  # Statistiques descriptives des colonnes numériques
 ```
 
-L’indexation commence toujours à **0** en Python, donc `arr[2]` retourne **30**.
+Pourquoi explorer les données ?
+- Permet de détecter **les valeurs aberrantes, manquantes ou incohérentes**.
+- Aide à **comprendre la structure des données**.
 
-### 3.2 Indexation avancée
-NumPy permet d'accéder à des **sous-ensembles** de tableaux plus facilement :
+### 3.2 Sélection et Filtrage
+
 ```python
-arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-print(arr2d[1, 2])  # 6 (ligne 2, colonne 3)
+# Sélection d'une colonne
+df['Nom']
+
+# Sélection de plusieurs colonnes
+df[['Nom', 'Salaire']]
+
+# Filtrage des données (exemple : afficher les employés de plus de 30 ans)
+df[df['Âge'] > 30]
 ```
 
-### 3.3 Slicing (Découpage d'un tableau)
-Avec NumPy, on peut extraire plusieurs valeurs avec des **tranches (slices)** :
-```python
-sub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau
-print(sub_arr)
-```
-
-**Pourquoi utiliser le slicing ?**
-- Permet d'extraire rapidement des parties spécifiques d'un tableau sans devoir recréer un autre tableau manuellement.
-- Très utile en **analyse de données** pour filtrer des valeurs selon des conditions spécifiques.
+Pourquoi filtrer les données ?
+- Facilite l’extraction des **informations pertinentes**.
+- Permet de **segmenter et regrouper** les données selon des critères spécifiques.
 
 **Exercice 2 :**
-- Extraire la première colonne d'une matrice 3x3.
-- Modifier les valeurs d'une portion spécifique d'un tableau.
+- Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000.
+- Affichez uniquement les colonnes 'Nom' et 'Âge'.
 
 ---
 
-# Cours Complet : Manipulation des Données avec NumPy
+## 4. Transformation et Nettoyage des Données
 
-## Introduction
-**NumPy** (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d'opérations mathématiques optimisées. 
+Les jeux de données réels sont souvent **incomplets** ou **mal structurés**. Pandas offre des outils pour les corriger.
 
-L'intérêt principal de NumPy est sa capacité à effectuer des calculs **beaucoup plus rapidement** que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.
-
-### Pourquoi utiliser NumPy ?
-- **Efficacité et rapidité** : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.
-- **Gestion de données complexes** : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.
-- **Compatibilité avec d'autres bibliothèques** : NumPy est souvent utilisé avec **Pandas**, **Matplotlib**, et **Scikit-learn** pour l'analyse et la modélisation des données.
-
-**Objectifs de ce cours :**
-- Comprendre et manipuler les tableaux (`ndarray`) de NumPy
-- Appliquer des opérations mathématiques et statistiques
-- Optimiser les calculs avec le broadcasting et la vectorisation
-- Transformer et structurer les données efficacement
-
----
-
-## 1. Installation et Importation
-NumPy est inclus dans de nombreuses distributions Python, mais s'il n'est pas installé, utilisez la commande suivante :
-```bash
-pip install numpy
-```
-
-Ensuite, importez NumPy dans votre script Python :
-```python
-import numpy as np
-```
-L'alias `np` est utilisé par convention pour éviter d'avoir à taper `numpy` en entier à chaque fois.
-
----
-
-## 4. Opérations Mathématiques et Statistiques
-
-NumPy permet d'effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.
+### 4.1 Gestion des Valeurs Manquantes
 
 ```python
-arr = np.array([1, 2, 3, 4, 5])
-print(arr + 10)  # Ajouter 10 à chaque élément
-print(arr ** 2)  # Élever chaque élément au carré
+df.isnull().sum()  # Compter les valeurs manquantes
+df.fillna(df.mean(), inplace=True)  # Remplacer les NaN par la moyenne
 ```
 
-**Pourquoi ces opérations sont-elles utiles ?**
-- Elles permettent d'éviter l'utilisation de boucles explicites en Python, ce qui améliore grandement les performances.
-- Elles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.
+Pourquoi gérer les valeurs manquantes ?
+- Les valeurs manquantes peuvent **fausser les résultats** d'analyse.
+- Pandas permet de **les remplacer ou les supprimer intelligemment**.
 
-NumPy fournit également des fonctions statistiques :
+### 4.2 Ajout et Suppression de Colonnes
+
 ```python
-print(arr.mean())  # Moyenne
-print(arr.sum())   # Somme
-print(arr.std())   # Écart-type
+df['Revenu Annuel'] = df['Salaire'] * 12  # Ajouter une colonne
+df.drop(columns=['Âge'], inplace=True)  # Supprimer une colonne
 ```
+
+Pourquoi manipuler les colonnes ?
+- Permet de **calculer de nouvelles métriques**.
+- Aide à **nettoyer les données** pour faciliter l’analyse.
 
 **Exercice 3 :**
-- Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type.
+- Remplacez les valeurs NaN par la médiane.
+- Ajoutez une colonne calculant le double du salaire.
 
 ---
 
-## 5. Reshaping et Manipulation des Formes
+## 5. GroupBy et Agrégations
 
-Le reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.
+Pandas facilite le **regroupement des données** et leur analyse statistique.
+
+### 5.1 Agrégation par GroupBy
 
 ```python
-arr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes
-print(arr)
+df.groupby('Nom')['Salaire'].sum()
 ```
 
-La transposition est également une technique couramment utilisée pour réarranger les axes d'un tableau :
+Pourquoi utiliser GroupBy ?
+- Permet d’analyser **des tendances** et de **comparer des groupes**.
+
+### 5.2 Statistiques Avancées
+
 ```python
-print(arr.T)  # Transpose la matrice
+df['Salaire'].mean()  # Moyenne
+df['Salaire'].median()  # Médiane
+df['Salaire'].std()  # Écart-type
 ```
+
+Pourquoi les statistiques sont utiles ?
+- Aident à **détecter les tendances et anomalies**.
 
 **Exercice 4 :**
-- Créez une matrice 3x3 et affichez sa transposée.
-
----
-
-## 6. Broadcasting et Vectorisation
-
-Le **broadcasting** est un mécanisme puissant de NumPy qui permet d'effectuer des opérations entre tableaux de tailles différentes sans copier les données.
-
-```python
-arr = np.array([[1, 2, 3], [4, 5, 6]])
-print(arr + np.array([10, 20, 30]))  # Broadcasting
-```
-
-**Pourquoi le broadcasting est important ?**
-- Il permet d'optimiser les calculs en évitant la création de copies inutiles.
-- Il est essentiel pour le traitement efficace des images et des séries temporelles.
-
-**Exercice 5 :**
-- Multipliez une matrice par un vecteur ligne avec broadcasting.
-
----
-
-## 7. Gestion des Valeurs Manquantes
-
-NumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.
-
-```python
-arr = np.array([1, 2, np.nan, 4, 5])
-print(np.isnan(arr))  # Détecter les NaN
-print(np.nanmean(arr))  # Moyenne en ignorant NaN
-```
-
-**Pourquoi est-ce utile ?**
-- En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs.
-- NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.
-
-**Exercice 6 :**
-- Remplacez les valeurs NaN par la moyenne du tableau.
-
----
-
-## 8. Applications Pratiques
-
-NumPy est souvent utilisé pour des **applications pratiques** en science des données et en intelligence artificielle.
-
-### Produit Matriciel
-
-```python
-A = np.array([[1, 2], [3, 4]])
-B = np.array([[5, 6], [7, 8]])
-print(np.dot(A, B))  # Produit matriciel
-```
-
-### Simulation de Données
-
-```python
-sim_data = np.random.randn(1000)
-print(np.histogram(sim_data, bins=10))  # Histogramme des valeurs simulées
-```
-
-**Exercice 7 :**
-- Simulez une série de valeurs et tracez son histogramme.
+- Trouvez la moyenne des salaires par groupe.
+- Identifiez la personne ayant le salaire le plus élevé.
 
 ---
 
 ## Conclusion
 
-Ce cours vous a permis de maîtriser :
+Ce cours vous a permis d'apprendre à :
+- Charger et manipuler des ensembles de données.
+- Effectuer des analyses exploratoires et des transformations.
+- Nettoyer les données et appliquer des techniques avancées.
 
-- La manipulation et la création de tableaux NumPy
-- Les opérations mathématiques et statistiques
-- Les techniques avancées de reshaping et broadcasting
 

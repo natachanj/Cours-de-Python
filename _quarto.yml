@@ -29,6 +29,8 @@ website:
             text: "Manipulation des données avec Numpy"
           - href: doc/cours/analysedonnees.qmd
             text: "Analyse de données avec Pandas"
+          - href: doc/cours/dataviz.qmd
+            text: "Visualisation des Données avec Matplotlib et Seaborn"
      
       - text: TP
         menu:

@@ -324,3 +324,48 @@ Avec ces options, vous obtenez un graphique professionnel prêt à être utilis�
 ---
 
 
+
+
+# Organisation des Graphiques avec les Subplots
+## Utilisation de plt.subplot()
+
+La fonction `plt.subplot(nrows, ncols, index)` permet de créer une grille simple de sous-graphes. Elle divise la figure en une matrice de `nrows` lignes et `ncols` colonnes, puis sélectionne le subplot à modifier à l'aide de l'`index`.
+
+### Exemple : Deux graphiques côte à côte (sin(x) et cos(x))
+
+Dans cet exemple, nous allons afficher côte à côte les courbes des fonctions `sin(x)` et `cos(x)`.
+
+```python
+# Importation des bibliothèques
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Données
+x = np.linspace(0, 2 * np.pi, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+plt.figure(figsize=(10, 4))
+
+# Premier subplot : sin(x)
+plt.subplot(1, 2, 1)  # 1 ligne, 2 colonnes, 1er subplot
+plt.plot(x, y1, color='blue', label='sin(x)')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Courbe sin(x)")
+plt.legend()
+
+# Deuxième subplot : cos(x)
+plt.subplot(1, 2, 2)  # 1 ligne, 2 colonnes, 2e subplot
+plt.plot(x, y2, color='red', label='cos(x)')
+plt.xlabel("x")
+plt.ylabel("cos(x)")
+plt.title("Courbe cos(x)")
+plt.legend()
+
+# Ajustement de l'affichage
+plt.tight_layout()
+plt.show()
+```
+
+---

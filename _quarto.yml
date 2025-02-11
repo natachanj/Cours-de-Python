@@ -44,9 +44,6 @@ website:
             text: "TP4 - Analyse de données avec Pandas"
           - href: doc/tp/tp5.qmd
             text: "TP5 - Visualisation des données avec Matplotlib et Seaborn"
-          - href: doc/tp/tp5.qmd
-            text: "TP5 - Visualisation des données avec Matplotlib et Seaborn"
- 
     right:
       - href: doc/glossaire.qmd
         text: Glossaire

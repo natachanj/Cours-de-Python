@@ -183,12 +183,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-à-la-visualisation-des-données" id="toc-introduction-à-la-visualisation-des-données" class="nav-link active" data-scroll-target="#introduction-à-la-visualisation-des-données"><span class="header-section-number">1</span> Introduction à la Visualisation des Données</a>
+  <ul class="collapse">
+  <li><a href="#objectifs-de-la-visualisation" id="toc-objectifs-de-la-visualisation" class="nav-link" data-scroll-target="#objectifs-de-la-visualisation">Objectifs de la visualisation :</a></li>
+  <li><a href="#bibliothèques-principales-en-python" id="toc-bibliothèques-principales-en-python" class="nav-link" data-scroll-target="#bibliothèques-principales-en-python"><span class="header-section-number">1.1</span> Bibliothèques principales en Python :</a></li>
+  <li><a href="#choix-du-type-de-graphique-selon-la-nature-des-données" id="toc-choix-du-type-de-graphique-selon-la-nature-des-données" class="nav-link" data-scroll-target="#choix-du-type-de-graphique-selon-la-nature-des-données"><span class="header-section-number">1.2</span> Choix du Type de Graphique selon la Nature des Données</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="visualisationdonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="visualisationdonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -222,8 +233,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-à-la-visualisation-des-données" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction à la Visualisation des Données</h1>
+<p>La visualisation des données est une étape cruciale en science des données. Elle permet de mieux comprendre la structure des données, d’identifier des tendances, des anomalies et de communiquer efficacement les résultats de l’analyse.</p>
+<section id="objectifs-de-la-visualisation" class="level3">
+<h3 class="anchored" data-anchor-id="objectifs-de-la-visualisation">Objectifs de la visualisation :</h3>
+<ul>
+<li><strong>Compréhension</strong> : Transformer des données brutes en graphiques clairs et lisibles.</li>
+<li><strong>Communication</strong> : Présenter des résultats analytiques de manière percutante et accessible.</li>
+<li><strong>Analyse exploratoire</strong> : Détecter rapidement des corrélations, des patterns ou des valeurs aberrantes.</li>
+</ul>
+</section>
+<section id="bibliothèques-principales-en-python" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="bibliothèques-principales-en-python"><span class="header-section-number">1.1</span> Bibliothèques principales en Python :</h2>
+<ul>
+<li><strong>Matplotlib</strong> : Outil puissant pour créer des graphiques personnalisables.</li>
+<li><strong>Seaborn</strong> : Extension de Matplotlib qui simplifie la création de graphiques statistiques avec des styles améliorés.</li>
+</ul>
+</section>
+<section id="choix-du-type-de-graphique-selon-la-nature-des-données" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="choix-du-type-de-graphique-selon-la-nature-des-données"><span class="header-section-number">1.2</span> Choix du Type de Graphique selon la Nature des Données</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 32%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type de Graphique</th>
+<th>Type de Données</th>
+<th>Utilisation principale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Courbe linéaire</td>
+<td>Variable continue</td>
+<td>Suivi d’une tendance</td>
+</tr>
+<tr class="even">
+<td>Histogramme</td>
+<td>Variable numérique continue</td>
+<td>Distribution d’une variable</td>
+</tr>
+<tr class="odd">
+<td>Diagramme en barres</td>
+<td>Variable catégorielle</td>
+<td>Comparaison entre différentes catégories</td>
+</tr>
+<tr class="even">
+<td>Nuage de points</td>
+<td>Deux variables numériques</td>
+<td>Relation entre deux variables</td>
+</tr>
+<tr class="odd">
+<td>Boxplot</td>
+<td>Variable numérique / catégorielle</td>
+<td>Comparaison de distributions</td>
+</tr>
+<tr class="even">
+<td>Violin plot</td>
+<td>Variable numérique / catégorielle</td>
+<td>Visualisation de la distribution</td>
+</tr>
+<tr class="odd">
+<td>Heatmap</td>
+<td>Matrice de valeurs numériques</td>
+<td>Corrélation entre variables</td>
+</tr>
+<tr class="even">
+<td>Pie chart (camembert)</td>
+<td>Variables catégoriques</td>
+<td>Répartition proportionnelle</td>
+</tr>
+</tbody>
+</table>
+<hr>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -230,3 +230,25 @@ plt.show()
 ```
 
 ---
+
+
+### Changer le style global
+
+```python
+sns.set_style("ticks")
+sns.boxplot(x="day", y="total_bill", data=tips)
+sns.despine()  # Supprime les bordures supérieures et droites
+plt.title("Boxplot avec style 'ticks'")
+plt.show()
+```
+
+### Ajuster le contexte (taille des éléments)
+
+```python
+sns.set_context("talk")
+sns.violinplot(x="smoker", y="tip", data=tips, palette="muted")
+plt.title("Violin plot avec contexte 'talk'")
+plt.show()
+```
+
+---

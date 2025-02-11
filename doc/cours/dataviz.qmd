@@ -320,3 +320,4 @@ plt.show()
 
 Avec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations.
 ---
+

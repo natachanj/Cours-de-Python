@@ -424,9 +424,11 @@ plt.show()
 ---
 
 #Conclusion
+
 Ce guide vous offre une base solide pour utiliser Matplotlib et Seaborn en Python. Vous avez appris à :
 - Choisir le bon type de graphique selon vos données.
 - Créer et personnaliser des graphiques avec Matplotlib.
 - Explorer des visualisations avancées avec Seaborn.
 - Organiser plusieurs visualisations dans une même figure.
+
 ---

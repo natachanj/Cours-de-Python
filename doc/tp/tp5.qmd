@@ -12,239 +12,84 @@ number-sections: true
 number-depth: 3
 ---
 # Visualisation des Données avec Matplotlib et Seaborn
-# Partie 1 : Analyse des Données Financières  
 
-Ce TP a pour objectif d'explorer et d'analyser les données financières de plusieurs grandes entreprises cotées en bourse : **NVIDIA, OpenAI, Amazon et Apple**. Nous allons récupérer ces données directement depuis **Yahoo Finance** et les manipuler avec **pandas**.  
+## Exercice 1 : Courbe linéaire
+Tracez la courbe de la fonction $f(x) = x^2$ pour $x$ allant de 0 à 10. Utilisez 100 points pour $x$ afin d’obtenir une courbe lisse. Ajoutez un titre "Courbe parabole" et nommez les axes "x" et "f(x)".
 
----
+## Exercice 2 : Nuage de points
+Générez deux listes de 50 valeurs aléatoires chacune entre 0 et 1. Affichez le nuage de points correspondant. Personnalisez les points avec une couleur et un style de votre choix.
 
-## 1. Récupération et Exploration des Données  
+## Exercice 3 : Histogramme
+Créez un tableau de 1000 valeurs aléatoires suivant une distribution normale de moyenne 5 et d’écart-type 2. Réalisez l’histogramme de ces données avec 30 bins et affichez un titre "Distribution normale simulée".
 
-### Téléchargement des données depuis Yahoo Finance  
-
-Nous allons utiliser la bibliothèque `yfinance` pour récupérer les prix historiques des actions de plusieurs entreprises technologiques.  
+## Exercice 4 : Diagramme en barres
+On dispose du nombre d’élèves inscrits dans différents clubs d’une école. Créez un DataFrame avec ces données et affichez un diagramme en barres.
 
 ```python
 import pandas as pd
-import yfinance as yf
+import matplotlib.pyplot as plt
 
-# Liste des tickers des entreprises étudiées
-tickers = ['NVDA', 'AAPL', 'AMZN', 'MSFT']
+# Création du DataFrame
+df_clubs = pd.DataFrame({
+    "Club": ["Théâtre", "Musique", "Sport", "Art"],
+    "Nombre d'élèves": [25, 30, 15, 10]
+})
 
-# Téléchargement des données de 2020 à 2024
-df = yf.download(tickers, start='2020-01-01', end='2024-01-01', group_by='ticker')
-
-# Affichage des premières lignes du DataFrame
-print(df.head())
+# Affichage du diagramme en barres
+plt.bar(df_clubs["Club"], df_clubs["Nombre d'élèves"], color='mediumseagreen')
+plt.xlabel("Clubs")
+plt.ylabel("Nombre d'élèves")
+plt.title("Inscriptions par club")
+plt.show()
 ```
 
-### Analyse exploratoire  
+## Exercice 5 : Diagramme circulaire
+Reprenez les données de l’exercice précédent et représentez-les sous forme de camembert avec les pourcentages affichés.
 
-📌 **Questions à traiter** :  
+## Exercice 6 : Boxplot
+Simulez deux séries de 50 notes (sur 20) pour deux classes (classe A et classe B). Créez un DataFrame Pandas contenant ces données et réalisez un boxplot comparant les distributions.
 
-1. **Quelles sont les colonnes disponibles dans le DataFrame ?**  
-2. **Quel est le nombre total de lignes et de colonnes ?**  
-3. **Y a-t-il des valeurs manquantes ? Comment les gérer ?**  
+## Exercice 7 : Violin plot
+Reprenez le DataFrame de l’exercice précédent et tracez un violin plot comparatif des deux distributions.
 
----
+## Exercice 8 : Pairplot (analyse multivariée)
+Utilisez le dataset Iris (`sns.load_dataset("iris")`). Réalisez un pairplot de l’ensemble des variables en utilisant "species" pour la couleur.
 
-## 2. Nettoyage et Préparation des Données  
+## Exercice 9 : Heatmap de corrélation
+Toujours avec le dataset Iris, calculez la matrice de corrélation et affichez une heatmap de cette matrice avec les valeurs annotées.
 
-📌 **Questions à traiter** :  
+## Exercice 10 : Analyse univariée
+Utilisez la base de données [Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download).
+- Chargez les données et affichez les premières lignes.
+- Faites une analyse univariée des variables `person_age`, `person_income`, et `loan_amnt` en utilisant des histogrammes et des boxplots.
+- Identifiez les valeurs aberrantes dans `loan_int_rate`.
 
-1. **Supprimez les lignes contenant des valeurs manquantes.**  
-2. **Définissez la colonne Date comme index du DataFrame.**  
-3. **Vérifiez les types de données des colonnes et convertissez-les si nécessaire.**  
+## Exercice 11 : Analyse bivariée
+- Étudiez la relation entre `person_income` et `loan_amnt` à l’aide d’un scatter plot (quanti-quanti).
+- Étudiez l’influence de `person_home_ownership` sur `loan_amnt` via un boxplot (quanti-quali).
+- Étudiez la relation entre `loan_intent` et `loan_grade` via un countplot (quali-quali).
 
----
+## Exercice 12 : Tests statistiques en Python
+- Testez s’il y a une différence significative de revenu (`person_income`) entre les propriétaires et non-propriétaires (`person_home_ownership`) avec un test t de Student.
+- Testez si la distribution des taux d’intérêt (`loan_int_rate`) suit une loi normale.
+- Testez l’indépendance entre `loan_intent` et `loan_status` avec un test du chi².
+- Réalisez une ANOVA pour comparer le revenu (`person_income`) entre plusieurs catégories de but du prêt (`loan_intent`).
 
-## 3. Analyse des Tendances du Marché  
+## Exercice 13 : Organisation en subplots
+Créez une figure comportant 4 subplots organisés en 2 lignes × 2 colonnes contenant :
+- Un graphique linéaire représentant une fonction de votre choix.
+- Un scatter plot illustrant une relation entre deux variables quantitatives.
+- Un histogramme d’une variable de votre choix.
+- Un camembert illustrant la répartition d’une variable catégorielle.
 
-### Calcul du rendement journalier  
+Ajoutez un titre à chaque subplot et ajustez la disposition pour éviter le chevauchement.
 
-Le rendement journalier d'une action est donné par la formule :  
+## Exercice 14 : Tests statistiques avancés
+- Effectuez un test de corrélation de Pearson et de Spearman entre `person_income` et `loan_amnt` (quanti-quanti).
+- Réalisez un test du chi² pour tester l’indépendance entre `cb_person_default_on_file` et `loan_status` (quali-quali).
+- Effectuez une comparaison de moyennes (`t-test indépendant`) entre `loan_int_rate` pour les individus ayant un historique de défaut (`cb_person_default_on_file`) et ceux qui n’en ont pas.
+- Effectuez une ANOVA pour comparer `loan_amnt` entre plusieurs catégories (`loan_grade`).
 
-\[
-R_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100
-\]
+**Bonus** : Expérimentez avec d'autres types de graphiques et tests statistiques pour approfondir l'analyse.
 
-📌 **Questions à traiter** :  
-
-1. **Quelle est la tendance des prix des actions pour chaque entreprise ?**  
-2. **Quel jour chaque action a-t-elle atteint son plus haut prix ?**  
-3. **Calculez le rendement quotidien de chaque action et affichez sa moyenne.**  
-
----
-
-## 4. Comparaison des Performances  
-
-📌 **Questions à traiter** :  
-
-1. **Quelle entreprise a eu la meilleure croissance sur la période analysée ?**  
-2. **Quel est le rendement moyen mensuel de chaque action ?**  
-3. **Comparez la volatilité des différentes actions.**  
-
----
-
-## Conclusion  
-
-- Quelle entreprise a eu la meilleure croissance sur la période ?  
-- Quel titre a offert le rendement moyen le plus élevé ?  
-- Quelle action était la plus volatile, indiquant un risque plus élevé ?  
-- Discussion sur les facteurs pouvant expliquer ces résultats (ex. crise, innovations, changements dans l’industrie).  
-
----
-
-## Résumé des principales manipulations avec pandas  
-
-| Opération | Commande Pandas |
-|-----------|----------------|
-| Télécharger des données financières | `yfinance.download()` |
-| Afficher les colonnes disponibles | `df.columns` |
-| Vérifier la présence de valeurs manquantes | `df.isnull().sum()` |
-| Supprimer les valeurs manquantes | `df.dropna()` |
-| Définir un index de type datetime | `df.index = pd.to_datetime(df.index)` |
-| Calculer le rendement journalier | `.pct_change()` |
-| Calculer la volatilité | `.std()` |
-| Trouver la date du prix maximum | `.idxmax()` |
-| Agréger les données par mois | `.resample('M').mean()` |
-
----
-
-## Partie 2 : Analyse du Risque de Défaut
-
-Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.
-
-La base de données est disponible ici: https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download
-### Description des Colonnes de la Base de Données
-
-| **Nom de la Colonne**             | **Description**                         |
-|-----------------------------------|-----------------------------------------|
-| `person_age`                      | Âge                                    |
-| `person_income`                   | Revenu annuel                          |
-| `person_home_ownership`           | Type de propriété                      |
-| `person_emp_length`               | Ancienneté professionnelle (années)    |
-| `loan_intent`                     | But du prêt                            |
-| `loan_grade`                      | Grade du prêt                          |
-| `loan_amnt`                       | Montant du prêt                        |
-| `loan_int_rate`                   | Taux d'intérêt                         |
-| `loan_status`                     | Statut du prêt (0: non défaut, 1: défaut) |
-| `loan_percent_income`             | Pourcentage du revenu                  |
-| `cb_person_default_on_file`       | Historique de défaut                   |
-| `cb_person_cred_hist_length`      | Longueur de l'historique de crédit     |
-
-### 1. Chargement et Exploration des Données
-
-```python
-df_credit = pd.read_csv('credit_risk_data.csv')
-print(df_credit.head())
-df_credit.info()
-df_credit.describe()
-```
-
-📌 **Questions** :
-1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ?
-2. Quelle est la répartition des clients en défaut et non en défaut ?
-3. Identifiez les valeurs manquantes et proposez une méthode de traitement.
-
-### 2. Nettoyage et Préparation des Données
-
-📌 **Questions** :
-1. Convertissez les variables catégoriques en variables numériques.
-2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.
-
-### 3. Analyse des Facteurs de Risque
-
-📌 **Questions** :
-Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant **pandas** et en réalisant des analyses numériques.  
-
-## Objectifs  
-- Manipuler des **DataFrames pandas** pour explorer les relations entre les variables.  
-- Utiliser des statistiques descriptives et des mesures de corrélation.  
-- Comprendre comment les facteurs influencent le risque de défaut et interpréter les résultats.  
-
-## Questions et Analyses  
-
-### 1. Impact du revenu annuel sur le risque de défaut  
-
-**Analyse numérique**  
-- Afficher les statistiques descriptives du revenu annuel en fonction du statut de défaut.  
-- Comparer les moyennes et médianes des revenus des clients en défaut et non en défaut.  
-- Calculer l'écart-type et la variance du revenu annuel pour chaque groupe.  
-
-**Étapes**  
-1. Charger les données dans un DataFrame pandas.  
-2. Utiliser `.describe()` pour obtenir des statistiques globales sur le revenu annuel.  
-3. Utiliser `.groupby('Défaut')` et `.agg(['mean', 'median', 'std', 'var'])` pour comparer les groupes.  
-4. Interpréter les résultats et voir si une tendance se dégage.  
-
----
-
-### 2. Influence de l’historique des paiements sur le risque de défaut  
-
-**Analyse numérique**  
-- Calculer le nombre moyen de paiements en retard pour chaque statut de défaut.  
-- Analyser la médiane et l'écart-type du nombre de paiements en retard.  
-- Déterminer si les clients en défaut ont un historique de paiements significativement différent des autres.  
-
-**Étapes**  
-1. Utiliser `.groupby('Défaut')['Nb_Paiements_Retard'].agg(['mean', 'median', 'std'])`.  
-2. Comparer les valeurs moyennes et médianes pour identifier les différences entre les groupes.  
-3. Vérifier si la dispersion des retards de paiement est plus élevée chez les clients en défaut.  
-
----
-
-### 3. Identification des facteurs les plus corrélés au risque de défaut  
-
-**Analyse numérique**  
-- Calculer la matrice de corrélation entre les variables.  
-- Identifier les trois facteurs les plus corrélés avec le risque de défaut.  
-- Vérifier si ces corrélations sont significatives.  
-
-**Étapes**  
-1. Utiliser `.corr()` pour calculer la matrice de corrélation du DataFrame.  
-2. Extraire les valeurs de corrélation associées à la colonne "Défaut".  
-3. Trier ces valeurs par ordre décroissant et sélectionner les trois variables les plus influentes.  
-4. Interpréter les résultats et vérifier si ces facteurs sont cohérents avec les analyses précédentes.  
-
-### Synthèse
-Dans cette section, nous allons approfondir l’étude des facteurs influençant le risque de défaut en réalisant des analyses numériques sur la répartition des âges et l'impact du statut d’emploi.  
-
-## Objectifs  
-- Analyser la distribution des âges des clients à l'aide de statistiques descriptives.  
-- Examiner l'influence du statut d'emploi sur le risque de défaut à travers des mesures numériques.  
-- Synthétiser les résultats obtenus et proposer des interprétations.  
-
-## Questions et Analyses  
-
-###  Analyse de la distribution des âges des clients  
-
-**Analyse numérique**  
-- Calculer les statistiques descriptives générales sur l'âge des clients.  
-- Identifier l'âge moyen, la médiane, l'écart-type et les valeurs minimales/maximales.  
-- Déterminer s'il y a des valeurs aberrantes en comparant l’écart interquartile.  
-
-**Étapes**  
-1. Utiliser `.describe()` sur la colonne **Âge** pour obtenir les principales statistiques.  
-2. Vérifier les bornes des quartiles avec `.quantile([0.25, 0.5, 0.75])`.  
-3. Déterminer les valeurs aberrantes potentielles en utilisant la règle des **1,5 IQR** (Interquartile Range).  
-4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.  
-
----
-
-###  Influence du statut d’emploi sur le risque de défaut  
-
-**Analyse numérique**  
-- Compter le nombre de clients par catégorie de statut d'emploi.  
-- Calculer la proportion de clients en défaut dans chaque catégorie de statut d'emploi.  
-- Identifier si certaines catégories ont un taux de défaut significativement plus élevé.  
-
-**Étapes**  
-1. Utiliser `.value_counts()` sur la colonne **Statut_Emploi** pour connaître la répartition des clients par catégorie.  
-2. Grouper les données par **Statut_Emploi** et calculer le **taux de défaut** dans chaque groupe avec `.groupby('Statut_Emploi')['Défaut'].mean()`.  
-3. Comparer ces taux et identifier les catégories ayant une probabilité plus élevée de défaut.  
-4. Interpréter les résultats en lien avec les analyses précédentes (ex. une catégorie d’emploi avec des revenus plus faibles pourrait avoir un taux de défaut plus élevé).  
-
-
----
 

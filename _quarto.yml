@@ -42,6 +42,8 @@ website:
             text: "TP3 - Manipulation des données avec Numpy"
           - href: doc/tp/tp4.qmd
             text: "TP4 - Analyse de données avec Pandas"
+          - href: doc/tp/tp5.qmd
+            text: "TP5 - Visualisation des données avec Matplotlib et Seaborn"
     right:
       - href: doc/glossaire.qmd
         text: Glossaire

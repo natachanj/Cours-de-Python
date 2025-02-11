@@ -279,3 +279,25 @@ plt.legend(fontsize=10)  # Taille de la police de la légende
 plt.show()
 ```
 ---
+
+
+## Annotations Avancées
+
+Les annotations permettent de mettre en évidence des points d'intérêt dans un graphique. Vous pouvez personnaliser le texte et la flèche de l'annotation.
+
+```python
+# Définition du point maximum
+x_max = np.pi / 2
+y_max = np.sin(x_max)
+
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.scatter([x_max], [y_max], color='red')
+plt.annotate("Point max", xy=(x_max, y_max), xytext=(x_max + 1, y_max + 0.3),
+             arrowprops=dict(facecolor='black', shrink=0.05), fontsize=12)
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Annotation avancée sur sin(x)", fontsize=16)
+plt.legend()
+plt.show()
+```
+---

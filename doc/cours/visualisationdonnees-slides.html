@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ab7a322b4ca39adb1086c9e0171297e3.css">
   <link rel="stylesheet" href="../../styles-reveal.css">
@@ -218,6 +283,83 @@ Natacha Njongwa Yepnga
 </tr>
 </tbody>
 </table>
+</section>
+<section class="slide level3">
+
+</section>
+</section>
+<section>
+<section id="visualisation-avec-matplotlib" class="title-slide slide level1 center">
+<h1>Visualisation avec Matplotlib</h1>
+
+</section>
+<section id="installation-et-importation" class="title-slide slide level2 center">
+<h2>Installation et Importation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install matplotlib numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>##Graphiques de Base avec Matplotlib</p>
+</section>
+
+<section id="courbe-linéaire-line-plot" class="title-slide slide level2 center">
+<h2>Courbe Linéaire (Line Plot)</h2>
+<p>Les courbes permettent d’observer l’évolution d’une variable sur un axe donné.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">100</span>)</span>
+<span id="cb3-2"><a></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb3-3"><a></a>plt.plot(x, y, label<span class="op">=</span><span class="st">"sin(x)"</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb3-4"><a></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb3-5"><a></a>plt.ylabel(<span class="st">"sin(x)"</span>)</span>
+<span id="cb3-6"><a></a>plt.title(<span class="st">"Courbe de la fonction sin(x)"</span>)</span>
+<span id="cb3-7"><a></a>plt.legend()</span>
+<span id="cb3-8"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="nuage-de-points-scatter-plot" class="title-slide slide level2 center">
+<h2>Nuage de Points (Scatter Plot)</h2>
+<p>Permet d’analyser la relation entre deux variables numériques.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>heures_etude <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">5</span>]</span>
+<span id="cb4-2"><a></a>notes <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">80</span>, <span class="dv">40</span>, <span class="dv">90</span>, <span class="dv">70</span>, <span class="dv">85</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">95</span>, <span class="dv">78</span>]</span>
+<span id="cb4-3"><a></a>plt.scatter(heures_etude, notes, color<span class="op">=</span><span class="st">'purple'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb4-4"><a></a>plt.xlabel(<span class="st">"Heures d'étude par semaine"</span>)</span>
+<span id="cb4-5"><a></a>plt.ylabel(<span class="st">"Note à l'examen"</span>)</span>
+<span id="cb4-6"><a></a>plt.title(<span class="st">"Relation entre temps d'étude et performance"</span>)</span>
+<span id="cb4-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="histogramme" class="title-slide slide level2 center">
+<h2>Histogramme</h2>
+<p>Utilisé pour représenter la distribution des valeurs d’une variable continue.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb5-2"><a></a>ages <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb5-3"><a></a>plt.hist(ages, bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb5-4"><a></a>plt.xlabel(<span class="st">"Âge"</span>)</span>
+<span id="cb5-5"><a></a>plt.ylabel(<span class="st">"Fréquence"</span>)</span>
+<span id="cb5-6"><a></a>plt.title(<span class="st">"Histogramme des âges (200 personnes)"</span>)</span>
+<span id="cb5-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="diagramme-en-barres-bar-chart" class="title-slide slide level2 center">
+<h2>Diagramme en Barres (Bar Chart)</h2>
+<p>Comparaison des quantités entre différentes catégories.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>produits <span class="op">=</span> [<span class="st">'Produit A'</span>, <span class="st">'Produit B'</span>, <span class="st">'Produit C'</span>, <span class="st">'Produit D'</span>]</span>
+<span id="cb6-2"><a></a>ventes <span class="op">=</span> [<span class="dv">250</span>, <span class="dv">400</span>, <span class="dv">150</span>, <span class="dv">300</span>]</span>
+<span id="cb6-3"><a></a>plt.bar(produits, ventes, color<span class="op">=</span><span class="st">'mediumseagreen'</span>)</span>
+<span id="cb6-4"><a></a>plt.xlabel(<span class="st">"Produits"</span>)</span>
+<span id="cb6-5"><a></a>plt.ylabel(<span class="st">"Nombre de ventes"</span>)</span>
+<span id="cb6-6"><a></a>plt.title(<span class="st">"Ventes par produit"</span>)</span>
+<span id="cb6-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="diagramme-circulaire-pie-chart" class="title-slide slide level2 center">
+<h2>Diagramme Circulaire (Pie Chart)</h2>
+<p>Montre la répartition d’un ensemble sous forme de pourcentages.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>parts <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">20</span>]</span>
+<span id="cb7-2"><a></a>labels <span class="op">=</span> [<span class="st">'Marque A'</span>, <span class="st">'Marque B'</span>, <span class="st">'Marque C'</span>, <span class="st">'Marque D'</span>]</span>
+<span id="cb7-3"><a></a>colors <span class="op">=</span> [<span class="st">'gold'</span>, <span class="st">'lightcoral'</span>, <span class="st">'lightskyblue'</span>, <span class="st">'yellowgreen'</span>]</span>
+<span id="cb7-4"><a></a>plt.pie(parts, labels<span class="op">=</span>labels, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
+<span id="cb7-5"><a></a>plt.title(<span class="st">"Répartition des parts de marché"</span>)</span>
+<span id="cb7-6"><a></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb7-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level3">
 

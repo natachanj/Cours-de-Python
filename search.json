@@ -896,6 +896,48 @@
     "text": "Choix du Type de Graphique selon la Nature des Données\n\n\n\n\n\n\n\n\nType de Graphique\nType de Données\nUtilisation principale\n\n\n\n\nCourbe linéaire\nVariable continue\nSuivi d’une tendance\n\n\nHistogramme\nVariable numérique continue\nDistribution d’une variable\n\n\nDiagramme en barres\nVariable catégorielle\nComparaison entre différentes catégories\n\n\nNuage de points\nDeux variables numériques\nRelation entre deux variables\n\n\nBoxplot\nVariable numérique / catégorielle\nComparaison de distributions\n\n\nViolin plot\nVariable numérique / catégorielle\nVisualisation de la distribution\n\n\nHeatmap\nMatrice de valeurs numériques\nCorrélation entre variables\n\n\nPie chart (camembert)\nVariables catégoriques\nRépartition proportionnelle"
   },
   {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#installation-et-importation",
+    "href": "doc/cours/visualisationdonnees-slides.html#installation-et-importation",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Installation et Importation",
+    "text": "Installation et Importation\npip install matplotlib numpy\nimport matplotlib.pyplot as plt\nimport numpy as np\n##Graphiques de Base avec Matplotlib"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#courbe-linéaire-line-plot",
+    "href": "doc/cours/visualisationdonnees-slides.html#courbe-linéaire-line-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Courbe Linéaire (Line Plot)",
+    "text": "Courbe Linéaire (Line Plot)\nLes courbes permettent d’observer l’évolution d’une variable sur un axe donné.\nx = np.linspace(0, 2*np.pi, 100)\ny = np.sin(x)\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Courbe de la fonction sin(x)\")\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#nuage-de-points-scatter-plot",
+    "href": "doc/cours/visualisationdonnees-slides.html#nuage-de-points-scatter-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Nuage de Points (Scatter Plot)",
+    "text": "Nuage de Points (Scatter Plot)\nPermet d’analyser la relation entre deux variables numériques.\nheures_etude = [2, 5, 1, 8, 4, 7, 3, 6, 9, 5]\nnotes = [50, 80, 40, 90, 70, 85, 60, 75, 95, 78]\nplt.scatter(heures_etude, notes, color='purple', marker='o')\nplt.xlabel(\"Heures d'étude par semaine\")\nplt.ylabel(\"Note à l'examen\")\nplt.title(\"Relation entre temps d'étude et performance\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#histogramme",
+    "href": "doc/cours/visualisationdonnees-slides.html#histogramme",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Histogramme",
+    "text": "Histogramme\nUtilisé pour représenter la distribution des valeurs d’une variable continue.\nnp.random.seed(0)\nages = np.random.randint(1, 101, size=200)\nplt.hist(ages, bins=10, color='skyblue', edgecolor='black')\nplt.xlabel(\"Âge\")\nplt.ylabel(\"Fréquence\")\nplt.title(\"Histogramme des âges (200 personnes)\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#diagramme-en-barres-bar-chart",
+    "href": "doc/cours/visualisationdonnees-slides.html#diagramme-en-barres-bar-chart",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Diagramme en Barres (Bar Chart)",
+    "text": "Diagramme en Barres (Bar Chart)\nComparaison des quantités entre différentes catégories.\nproduits = ['Produit A', 'Produit B', 'Produit C', 'Produit D']\nventes = [250, 400, 150, 300]\nplt.bar(produits, ventes, color='mediumseagreen')\nplt.xlabel(\"Produits\")\nplt.ylabel(\"Nombre de ventes\")\nplt.title(\"Ventes par produit\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#diagramme-circulaire-pie-chart",
+    "href": "doc/cours/visualisationdonnees-slides.html#diagramme-circulaire-pie-chart",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Diagramme Circulaire (Pie Chart)",
+    "text": "Diagramme Circulaire (Pie Chart)\nMontre la répartition d’un ensemble sous forme de pourcentages.\nparts = [35, 25, 20, 20]\nlabels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']\ncolors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']\nplt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)\nplt.title(\"Répartition des parts de marché\")\nplt.axis('equal')\nplt.show()"
+  },
+  {
     "objectID": "doc/cours/dataviz.html",
     "href": "doc/cours/dataviz.html",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
@@ -915,6 +957,48 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "",
     "text": "Type de Graphique\nType de Données\nUtilisation principale\n\n\n\n\nCourbe linéaire\nVariable continue\nSuivi d’une tendance\n\n\nHistogramme\nVariable numérique continue\nDistribution d’une variable\n\n\nDiagramme en barres\nVariable catégorielle\nComparaison entre différentes catégories\n\n\nNuage de points\nDeux variables numériques\nRelation entre deux variables\n\n\nBoxplot\nVariable numérique / catégorielle\nComparaison de distributions\n\n\nViolin plot\nVariable numérique / catégorielle\nVisualisation de la distribution\n\n\nHeatmap\nMatrice de valeurs numériques\nCorrélation entre variables\n\n\nPie chart (camembert)\nVariables catégoriques\nRépartition proportionnelle"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#installation-et-importation",
+    "href": "doc/cours/dataviz.html#installation-et-importation",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "2.1 Installation et Importation",
+    "text": "2.1 Installation et Importation\npip install matplotlib numpy\nimport matplotlib.pyplot as plt\nimport numpy as np\n##Graphiques de Base avec Matplotlib"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#courbe-linéaire-line-plot",
+    "href": "doc/cours/dataviz.html#courbe-linéaire-line-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "2.2 Courbe Linéaire (Line Plot)",
+    "text": "2.2 Courbe Linéaire (Line Plot)\nLes courbes permettent d’observer l’évolution d’une variable sur un axe donné.\nx = np.linspace(0, 2*np.pi, 100)\ny = np.sin(x)\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Courbe de la fonction sin(x)\")\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#nuage-de-points-scatter-plot",
+    "href": "doc/cours/dataviz.html#nuage-de-points-scatter-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "2.3 Nuage de Points (Scatter Plot)",
+    "text": "2.3 Nuage de Points (Scatter Plot)\nPermet d’analyser la relation entre deux variables numériques.\nheures_etude = [2, 5, 1, 8, 4, 7, 3, 6, 9, 5]\nnotes = [50, 80, 40, 90, 70, 85, 60, 75, 95, 78]\nplt.scatter(heures_etude, notes, color='purple', marker='o')\nplt.xlabel(\"Heures d'étude par semaine\")\nplt.ylabel(\"Note à l'examen\")\nplt.title(\"Relation entre temps d'étude et performance\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#histogramme",
+    "href": "doc/cours/dataviz.html#histogramme",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "2.4 Histogramme",
+    "text": "2.4 Histogramme\nUtilisé pour représenter la distribution des valeurs d’une variable continue.\nnp.random.seed(0)\nages = np.random.randint(1, 101, size=200)\nplt.hist(ages, bins=10, color='skyblue', edgecolor='black')\nplt.xlabel(\"Âge\")\nplt.ylabel(\"Fréquence\")\nplt.title(\"Histogramme des âges (200 personnes)\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#diagramme-en-barres-bar-chart",
+    "href": "doc/cours/dataviz.html#diagramme-en-barres-bar-chart",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "2.5 Diagramme en Barres (Bar Chart)",
+    "text": "2.5 Diagramme en Barres (Bar Chart)\nComparaison des quantités entre différentes catégories.\nproduits = ['Produit A', 'Produit B', 'Produit C', 'Produit D']\nventes = [250, 400, 150, 300]\nplt.bar(produits, ventes, color='mediumseagreen')\nplt.xlabel(\"Produits\")\nplt.ylabel(\"Nombre de ventes\")\nplt.title(\"Ventes par produit\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#diagramme-circulaire-pie-chart",
+    "href": "doc/cours/dataviz.html#diagramme-circulaire-pie-chart",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "2.6 Diagramme Circulaire (Pie Chart)",
+    "text": "2.6 Diagramme Circulaire (Pie Chart)\nMontre la répartition d’un ensemble sous forme de pourcentages.\nparts = [35, 25, 20, 20]\nlabels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']\ncolors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']\nplt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)\nplt.title(\"Répartition des parts de marché\")\nplt.axis('equal')\nplt.show()"
   },
   {
     "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",

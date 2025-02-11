@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -193,6 +227,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bibliothèques-principales-en-python" id="toc-bibliothèques-principales-en-python" class="nav-link" data-scroll-target="#bibliothèques-principales-en-python"><span class="header-section-number">1.1</span> Bibliothèques principales en Python :</a></li>
   <li><a href="#choix-du-type-de-graphique-selon-la-nature-des-données" id="toc-choix-du-type-de-graphique-selon-la-nature-des-données" class="nav-link" data-scroll-target="#choix-du-type-de-graphique-selon-la-nature-des-données"><span class="header-section-number">1.2</span> Choix du Type de Graphique selon la Nature des Données</a></li>
   </ul></li>
+  <li><a href="#visualisation-avec-matplotlib" id="toc-visualisation-avec-matplotlib" class="nav-link" data-scroll-target="#visualisation-avec-matplotlib"><span class="header-section-number">2</span> Visualisation avec Matplotlib</a>
+  <ul class="collapse">
+  <li><a href="#installation-et-importation" id="toc-installation-et-importation" class="nav-link" data-scroll-target="#installation-et-importation"><span class="header-section-number">2.1</span> Installation et Importation</a></li>
+  <li><a href="#courbe-linéaire-line-plot" id="toc-courbe-linéaire-line-plot" class="nav-link" data-scroll-target="#courbe-linéaire-line-plot"><span class="header-section-number">2.2</span> Courbe Linéaire (Line Plot)</a></li>
+  <li><a href="#nuage-de-points-scatter-plot" id="toc-nuage-de-points-scatter-plot" class="nav-link" data-scroll-target="#nuage-de-points-scatter-plot"><span class="header-section-number">2.3</span> Nuage de Points (Scatter Plot)</a></li>
+  <li><a href="#histogramme" id="toc-histogramme" class="nav-link" data-scroll-target="#histogramme"><span class="header-section-number">2.4</span> Histogramme</a></li>
+  <li><a href="#diagramme-en-barres-bar-chart" id="toc-diagramme-en-barres-bar-chart" class="nav-link" data-scroll-target="#diagramme-en-barres-bar-chart"><span class="header-section-number">2.5</span> Diagramme en Barres (Bar Chart)</a></li>
+  <li><a href="#diagramme-circulaire-pie-chart" id="toc-diagramme-circulaire-pie-chart" class="nav-link" data-scroll-target="#diagramme-circulaire-pie-chart"><span class="header-section-number">2.6</span> Diagramme Circulaire (Pie Chart)</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="visualisationdonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
@@ -309,6 +352,73 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<hr>
+</section>
+</section>
+<section id="visualisation-avec-matplotlib" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Visualisation avec Matplotlib</h1>
+<section id="installation-et-importation" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="installation-et-importation"><span class="header-section-number">2.1</span> Installation et Importation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">pip</span> install matplotlib numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>##Graphiques de Base avec Matplotlib</p>
+</section>
+<section id="courbe-linéaire-line-plot" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="courbe-linéaire-line-plot"><span class="header-section-number">2.2</span> Courbe Linéaire (Line Plot)</h2>
+<p>Les courbes permettent d’observer l’évolution d’une variable sur un axe donné.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">100</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">"sin(x)"</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>plt.ylabel(<span class="st">"sin(x)"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>plt.title(<span class="st">"Courbe de la fonction sin(x)"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a>plt.legend()</span>
+<span id="cb3-8"><a href="#cb3-8"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nuage-de-points-scatter-plot" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="nuage-de-points-scatter-plot"><span class="header-section-number">2.3</span> Nuage de Points (Scatter Plot)</h2>
+<p>Permet d’analyser la relation entre deux variables numériques.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>heures_etude <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">5</span>]</span>
+<span id="cb4-2"><a href="#cb4-2"></a>notes <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">80</span>, <span class="dv">40</span>, <span class="dv">90</span>, <span class="dv">70</span>, <span class="dv">85</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">95</span>, <span class="dv">78</span>]</span>
+<span id="cb4-3"><a href="#cb4-3"></a>plt.scatter(heures_etude, notes, color<span class="op">=</span><span class="st">'purple'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>plt.xlabel(<span class="st">"Heures d'étude par semaine"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>plt.ylabel(<span class="st">"Note à l'examen"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>plt.title(<span class="st">"Relation entre temps d'étude et performance"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="histogramme" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="histogramme"><span class="header-section-number">2.4</span> Histogramme</h2>
+<p>Utilisé pour représenter la distribution des valeurs d’une variable continue.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>ages <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>plt.hist(ages, bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>plt.xlabel(<span class="st">"Âge"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>plt.ylabel(<span class="st">"Fréquence"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>plt.title(<span class="st">"Histogramme des âges (200 personnes)"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="diagramme-en-barres-bar-chart" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="diagramme-en-barres-bar-chart"><span class="header-section-number">2.5</span> Diagramme en Barres (Bar Chart)</h2>
+<p>Comparaison des quantités entre différentes catégories.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>produits <span class="op">=</span> [<span class="st">'Produit A'</span>, <span class="st">'Produit B'</span>, <span class="st">'Produit C'</span>, <span class="st">'Produit D'</span>]</span>
+<span id="cb6-2"><a href="#cb6-2"></a>ventes <span class="op">=</span> [<span class="dv">250</span>, <span class="dv">400</span>, <span class="dv">150</span>, <span class="dv">300</span>]</span>
+<span id="cb6-3"><a href="#cb6-3"></a>plt.bar(produits, ventes, color<span class="op">=</span><span class="st">'mediumseagreen'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>plt.xlabel(<span class="st">"Produits"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a>plt.ylabel(<span class="st">"Nombre de ventes"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>plt.title(<span class="st">"Ventes par produit"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="diagramme-circulaire-pie-chart" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="diagramme-circulaire-pie-chart"><span class="header-section-number">2.6</span> Diagramme Circulaire (Pie Chart)</h2>
+<p>Montre la répartition d’un ensemble sous forme de pourcentages.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>parts <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">20</span>]</span>
+<span id="cb7-2"><a href="#cb7-2"></a>labels <span class="op">=</span> [<span class="st">'Marque A'</span>, <span class="st">'Marque B'</span>, <span class="st">'Marque C'</span>, <span class="st">'Marque D'</span>]</span>
+<span id="cb7-3"><a href="#cb7-3"></a>colors <span class="op">=</span> [<span class="st">'gold'</span>, <span class="st">'lightcoral'</span>, <span class="st">'lightskyblue'</span>, <span class="st">'yellowgreen'</span>]</span>
+<span id="cb7-4"><a href="#cb7-4"></a>plt.pie(parts, labels<span class="op">=</span>labels, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>plt.title(<span class="st">"Répartition des parts de marché"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 
 

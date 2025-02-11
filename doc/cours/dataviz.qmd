@@ -301,3 +301,26 @@ plt.legend()
 plt.show()
 ```
 ---
+
+## Sauvegarde des Figures
+
+Pour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :
+
+```python
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Graphique sauvegardé")
+plt.legend()
+plt.savefig("graphique_sin.png", dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+### Explications :
+- `dpi=300` : Définit une haute résolution pour l’image exportée.
+- `bbox_inches='tight'` : Ajuste les marges pour éviter que des éléments soient coupés.
+
+Avec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations.
+---
+
+

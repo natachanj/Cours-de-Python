@@ -21,3 +21,29 @@ mermaid:
 code-line-numbers: true
 from: markdown+emoji
 ---
+# Introduction à la Visualisation des Données
+La visualisation des données est une étape cruciale en science des données. Elle permet de mieux comprendre la structure des données, d'identifier des tendances, des anomalies et de communiquer efficacement les résultats de l'analyse.
+
+### Objectifs de la visualisation :
+- **Compréhension** : Transformer des données brutes en graphiques clairs et lisibles.
+- **Communication** : Présenter des résultats analytiques de manière percutante et accessible.
+- **Analyse exploratoire** : Détecter rapidement des corrélations, des patterns ou des valeurs aberrantes.
+
+## Bibliothèques principales en Python :
+- **Matplotlib** : Outil puissant pour créer des graphiques personnalisables.
+- **Seaborn** : Extension de Matplotlib qui simplifie la création de graphiques statistiques avec des styles améliorés.
+
+## Choix du Type de Graphique selon la Nature des Données
+
+| Type de Graphique      | Type de Données                | Utilisation principale                      |
+|------------------------|--------------------------------|-------------------------------------------|
+| Courbe linéaire       | Variable continue              | Suivi d'une tendance                      |
+| Histogramme           | Variable numérique continue    | Distribution d'une variable               |
+| Diagramme en barres   | Variable catégorielle          | Comparaison entre différentes catégories  |
+| Nuage de points       | Deux variables numériques      | Relation entre deux variables             |
+| Boxplot               | Variable numérique / catégorielle | Comparaison de distributions            |
+| Violin plot           | Variable numérique / catégorielle | Visualisation de la distribution        |
+| Heatmap               | Matrice de valeurs numériques  | Corrélation entre variables              |
+| Pie chart (camembert) | Variables catégoriques         | Répartition proportionnelle              |
+
+---

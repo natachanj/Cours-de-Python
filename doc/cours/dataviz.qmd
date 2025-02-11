@@ -124,3 +124,56 @@ plt.show()
 ```
 
 ---
+
+# Visualisation Avancée avec Seaborn
+
+Seaborn simplifie la création de graphiques statistiques et esthétiques, en particulier pour des DataFrames issus de Pandas.
+
+## Installation et Importation
+Si nécessaire, installez Seaborn :
+
+```bash
+pip install seaborn
+```
+Puis importez-le :
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+---
+
+## Boxplot
+Le boxplot visualise la distribution d'une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.
+
+Exemple : Distribution des additions par jour avec le dataset "tips"
+
+```python
+# Chargement des données
+tips = sns.load_dataset("tips")
+
+# Création du boxplot
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.xlabel("Jour de la semaine")
+plt.ylabel("Addition totale ($)")
+plt.title("Distribution des additions par jour")
+plt.show()
+```
+---
+
+## Heatmap
+La heatmap représente une matrice de données à l’aide de codes couleur.
+
+Exemple : Matrice de corrélation du dataset "tips"
+
+```python
+# Calcul de la matrice de corrélation
+corr = tips.corr()
+
+# Affichage de la heatmap
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Matrice de corrélation (dataset Tips)")
+plt.show()
+```
+---

@@ -47,3 +47,80 @@ La visualisation des données est une étape cruciale en science des données. E
 | Pie chart (camembert) | Variables catégoriques         | Répartition proportionnelle              |
 
 ---
+
+
+# Visualisation avec Matplotlib
+
+## Installation et Importation
+```bash
+pip install matplotlib numpy
+```
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+##Graphiques de Base avec Matplotlib
+
+## Courbe Linéaire (Line Plot)
+Les courbes permettent d'observer l'évolution d'une variable sur un axe donné.
+```python
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Courbe de la fonction sin(x)")
+plt.legend()
+plt.show()
+```
+
+## Nuage de Points (Scatter Plot)
+Permet d'analyser la relation entre deux variables numériques.
+```python
+heures_etude = [2, 5, 1, 8, 4, 7, 3, 6, 9, 5]
+notes = [50, 80, 40, 90, 70, 85, 60, 75, 95, 78]
+plt.scatter(heures_etude, notes, color='purple', marker='o')
+plt.xlabel("Heures d'étude par semaine")
+plt.ylabel("Note à l'examen")
+plt.title("Relation entre temps d'étude et performance")
+plt.show()
+```
+
+## Histogramme
+Utilisé pour représenter la distribution des valeurs d'une variable continue.
+```python
+np.random.seed(0)
+ages = np.random.randint(1, 101, size=200)
+plt.hist(ages, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel("Âge")
+plt.ylabel("Fréquence")
+plt.title("Histogramme des âges (200 personnes)")
+plt.show()
+```
+
+## Diagramme en Barres (Bar Chart)
+Comparaison des quantités entre différentes catégories.
+```python
+produits = ['Produit A', 'Produit B', 'Produit C', 'Produit D']
+ventes = [250, 400, 150, 300]
+plt.bar(produits, ventes, color='mediumseagreen')
+plt.xlabel("Produits")
+plt.ylabel("Nombre de ventes")
+plt.title("Ventes par produit")
+plt.show()
+```
+
+## Diagramme Circulaire (Pie Chart)
+Montre la répartition d'un ensemble sous forme de pourcentages.
+```python
+parts = [35, 25, 20, 20]
+labels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']
+colors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']
+plt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title("Répartition des parts de marché")
+plt.axis('equal')
+plt.show()
+```
+
+---

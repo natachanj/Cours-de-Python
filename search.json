@@ -1407,80 +1407,108 @@
     "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
   },
   {
-    "objectID": "doc/tp/tp5.html#récupération-et-exploration-des-données",
-    "href": "doc/tp/tp5.html#récupération-et-exploration-des-données",
+    "objectID": "doc/tp/tp5.html",
+    "href": "doc/tp/tp5.html",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.1 1. Récupération et Exploration des Données",
-    "text": "2.1 1. Récupération et Exploration des Données\n\n2.1.1 Téléchargement des données depuis Yahoo Finance\nNous allons utiliser la bibliothèque yfinance pour récupérer les prix historiques des actions de plusieurs entreprises technologiques.\nimport pandas as pd\nimport yfinance as yf\n\n# Liste des tickers des entreprises étudiées\ntickers = ['NVDA', 'AAPL', 'AMZN', 'MSFT']\n\n# Téléchargement des données de 2020 à 2024\ndf = yf.download(tickers, start='2020-01-01', end='2024-01-01', group_by='ticker')\n\n# Affichage des premières lignes du DataFrame\nprint(df.head())\n\n\n2.1.2 Analyse exploratoire\n📌 Questions à traiter :\n\nQuelles sont les colonnes disponibles dans le DataFrame ?\n\nQuel est le nombre total de lignes et de colonnes ?\n\nY a-t-il des valeurs manquantes ? Comment les gérer ?"
+    "section": "",
+    "text": "Tracez la courbe de la fonction \\(f(x) = x^2\\) pour \\(x\\) allant de 0 à 10. Utilisez 100 points pour \\(x\\) afin d’obtenir une courbe lisse. Ajoutez un titre “Courbe parabole” et nommez les axes “x” et “f(x)”.\n\n\n\nGénérez deux listes de 50 valeurs aléatoires chacune entre 0 et 1. Affichez le nuage de points correspondant. Personnalisez les points avec une couleur et un style de votre choix.\n\n\n\nCréez un tableau de 1000 valeurs aléatoires suivant une distribution normale de moyenne 5 et d’écart-type 2. Réalisez l’histogramme de ces données avec 30 bins et affichez un titre “Distribution normale simulée”.\n\n\n\nOn dispose du nombre d’élèves inscrits dans différents clubs d’une école. Créez un DataFrame avec ces données et affichez un diagramme en barres.\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Création du DataFrame\ndf_clubs = pd.DataFrame({\n    \"Club\": [\"Théâtre\", \"Musique\", \"Sport\", \"Art\"],\n    \"Nombre d'élèves\": [25, 30, 15, 10]\n})\n\n# Affichage du diagramme en barres\nplt.bar(df_clubs[\"Club\"], df_clubs[\"Nombre d'élèves\"], color='mediumseagreen')\nplt.xlabel(\"Clubs\")\nplt.ylabel(\"Nombre d'élèves\")\nplt.title(\"Inscriptions par club\")\nplt.show()\n\n\n\nReprenez les données de l’exercice précédent et représentez-les sous forme de camembert avec les pourcentages affichés.\n\n\n\nSimulez deux séries de 50 notes (sur 20) pour deux classes (classe A et classe B). Créez un DataFrame Pandas contenant ces données et réalisez un boxplot comparant les distributions.\n\n\n\nReprenez le DataFrame de l’exercice précédent et tracez un violin plot comparatif des deux distributions.\n\n\n\nUtilisez le dataset Iris (sns.load_dataset(\"iris\")). Réalisez un pairplot de l’ensemble des variables en utilisant “species” pour la couleur.\n\n\n\nToujours avec le dataset Iris, calculez la matrice de corrélation et affichez une heatmap de cette matrice avec les valeurs annotées.\n\n\n\nUtilisez la base de données Credit Risk Dataset. - Chargez les données et affichez les premières lignes. - Faites une analyse univariée des variables person_age, person_income, et loan_amnt en utilisant des histogrammes et des boxplots. - Identifiez les valeurs aberrantes dans loan_int_rate.\n\n\n\n\nÉtudiez la relation entre person_income et loan_amnt à l’aide d’un scatter plot (quanti-quanti).\nÉtudiez l’influence de person_home_ownership sur loan_amnt via un boxplot (quanti-quali).\nÉtudiez la relation entre loan_intent et loan_grade via un countplot (quali-quali).\n\n\n\n\n\nTestez s’il y a une différence significative de revenu (person_income) entre les propriétaires et non-propriétaires (person_home_ownership) avec un test t de Student.\nTestez si la distribution des taux d’intérêt (loan_int_rate) suit une loi normale.\nTestez l’indépendance entre loan_intent et loan_status avec un test du chi².\nRéalisez une ANOVA pour comparer le revenu (person_income) entre plusieurs catégories de but du prêt (loan_intent).\n\n\n\n\nCréez une figure comportant 4 subplots organisés en 2 lignes × 2 colonnes contenant : - Un graphique linéaire représentant une fonction de votre choix. - Un scatter plot illustrant une relation entre deux variables quantitatives. - Un histogramme d’une variable de votre choix. - Un camembert illustrant la répartition d’une variable catégorielle.\nAjoutez un titre à chaque subplot et ajustez la disposition pour éviter le chevauchement.\n\n\n\n\nEffectuez un test de corrélation de Pearson et de Spearman entre person_income et loan_amnt (quanti-quanti).\nRéalisez un test du chi² pour tester l’indépendance entre cb_person_default_on_file et loan_status (quali-quali).\nEffectuez une comparaison de moyennes (t-test indépendant) entre loan_int_rate pour les individus ayant un historique de défaut (cb_person_default_on_file) et ceux qui n’en ont pas.\nEffectuez une ANOVA pour comparer loan_amnt entre plusieurs catégories (loan_grade).\n\nBonus : Expérimentez avec d’autres types de graphiques et tests statistiques pour approfondir l’analyse."
   },
   {
-    "objectID": "doc/tp/tp5.html#nettoyage-et-préparation-des-données",
-    "href": "doc/tp/tp5.html#nettoyage-et-préparation-des-données",
+    "objectID": "doc/tp/tp5.html#exercice-1-courbe-linéaire",
+    "href": "doc/tp/tp5.html#exercice-1-courbe-linéaire",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.2 2. Nettoyage et Préparation des Données",
-    "text": "2.2 2. Nettoyage et Préparation des Données\n📌 Questions à traiter :\n\nSupprimez les lignes contenant des valeurs manquantes.\n\nDéfinissez la colonne Date comme index du DataFrame.\n\nVérifiez les types de données des colonnes et convertissez-les si nécessaire."
+    "section": "",
+    "text": "Tracez la courbe de la fonction \\(f(x) = x^2\\) pour \\(x\\) allant de 0 à 10. Utilisez 100 points pour \\(x\\) afin d’obtenir une courbe lisse. Ajoutez un titre “Courbe parabole” et nommez les axes “x” et “f(x)”."
   },
   {
-    "objectID": "doc/tp/tp5.html#analyse-des-tendances-du-marché",
-    "href": "doc/tp/tp5.html#analyse-des-tendances-du-marché",
+    "objectID": "doc/tp/tp5.html#exercice-2-nuage-de-points",
+    "href": "doc/tp/tp5.html#exercice-2-nuage-de-points",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.3 3. Analyse des Tendances du Marché",
-    "text": "2.3 3. Analyse des Tendances du Marché\n\n2.3.1 Calcul du rendement journalier\nLe rendement journalier d’une action est donné par la formule :\n[ R_t = ]\n📌 Questions à traiter :\n\nQuelle est la tendance des prix des actions pour chaque entreprise ?\n\nQuel jour chaque action a-t-elle atteint son plus haut prix ?\n\nCalculez le rendement quotidien de chaque action et affichez sa moyenne."
+    "section": "",
+    "text": "Générez deux listes de 50 valeurs aléatoires chacune entre 0 et 1. Affichez le nuage de points correspondant. Personnalisez les points avec une couleur et un style de votre choix."
   },
   {
-    "objectID": "doc/tp/tp5.html#comparaison-des-performances",
-    "href": "doc/tp/tp5.html#comparaison-des-performances",
+    "objectID": "doc/tp/tp5.html#exercice-3-histogramme",
+    "href": "doc/tp/tp5.html#exercice-3-histogramme",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.4 4. Comparaison des Performances",
-    "text": "2.4 4. Comparaison des Performances\n📌 Questions à traiter :\n\nQuelle entreprise a eu la meilleure croissance sur la période analysée ?\n\nQuel est le rendement moyen mensuel de chaque action ?\n\nComparez la volatilité des différentes actions."
+    "section": "",
+    "text": "Créez un tableau de 1000 valeurs aléatoires suivant une distribution normale de moyenne 5 et d’écart-type 2. Réalisez l’histogramme de ces données avec 30 bins et affichez un titre “Distribution normale simulée”."
   },
   {
-    "objectID": "doc/tp/tp5.html#conclusion",
-    "href": "doc/tp/tp5.html#conclusion",
+    "objectID": "doc/tp/tp5.html#exercice-4-diagramme-en-barres",
+    "href": "doc/tp/tp5.html#exercice-4-diagramme-en-barres",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.5 Conclusion",
-    "text": "2.5 Conclusion\n\nQuelle entreprise a eu la meilleure croissance sur la période ?\n\nQuel titre a offert le rendement moyen le plus élevé ?\n\nQuelle action était la plus volatile, indiquant un risque plus élevé ?\n\nDiscussion sur les facteurs pouvant expliquer ces résultats (ex. crise, innovations, changements dans l’industrie)."
+    "section": "",
+    "text": "On dispose du nombre d’élèves inscrits dans différents clubs d’une école. Créez un DataFrame avec ces données et affichez un diagramme en barres.\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Création du DataFrame\ndf_clubs = pd.DataFrame({\n    \"Club\": [\"Théâtre\", \"Musique\", \"Sport\", \"Art\"],\n    \"Nombre d'élèves\": [25, 30, 15, 10]\n})\n\n# Affichage du diagramme en barres\nplt.bar(df_clubs[\"Club\"], df_clubs[\"Nombre d'élèves\"], color='mediumseagreen')\nplt.xlabel(\"Clubs\")\nplt.ylabel(\"Nombre d'élèves\")\nplt.title(\"Inscriptions par club\")\nplt.show()"
   },
   {
-    "objectID": "doc/tp/tp5.html#résumé-des-principales-manipulations-avec-pandas",
-    "href": "doc/tp/tp5.html#résumé-des-principales-manipulations-avec-pandas",
+    "objectID": "doc/tp/tp5.html#exercice-5-diagramme-circulaire",
+    "href": "doc/tp/tp5.html#exercice-5-diagramme-circulaire",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.6 Résumé des principales manipulations avec pandas",
-    "text": "2.6 Résumé des principales manipulations avec pandas\n\n\n\n\n\n\n\nOpération\nCommande Pandas\n\n\n\n\nTélécharger des données financières\nyfinance.download()\n\n\nAfficher les colonnes disponibles\ndf.columns\n\n\nVérifier la présence de valeurs manquantes\ndf.isnull().sum()\n\n\nSupprimer les valeurs manquantes\ndf.dropna()\n\n\nDéfinir un index de type datetime\ndf.index = pd.to_datetime(df.index)\n\n\nCalculer le rendement journalier\n.pct_change()\n\n\nCalculer la volatilité\n.std()\n\n\nTrouver la date du prix maximum\n.idxmax()\n\n\nAgréger les données par mois\n.resample('M').mean()"
+    "section": "",
+    "text": "Reprenez les données de l’exercice précédent et représentez-les sous forme de camembert avec les pourcentages affichés."
   },
   {
-    "objectID": "doc/tp/tp5.html#partie-2-analyse-du-risque-de-défaut",
-    "href": "doc/tp/tp5.html#partie-2-analyse-du-risque-de-défaut",
+    "objectID": "doc/tp/tp5.html#exercice-6-boxplot",
+    "href": "doc/tp/tp5.html#exercice-6-boxplot",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.7 Partie 2 : Analyse du Risque de Défaut",
-    "text": "2.7 Partie 2 : Analyse du Risque de Défaut\nNous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.\nLa base de données est disponible ici: https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download ### Description des Colonnes de la Base de Données\n\n\n\n\n\n\n\nNom de la Colonne\nDescription\n\n\n\n\nperson_age\nÂge\n\n\nperson_income\nRevenu annuel\n\n\nperson_home_ownership\nType de propriété\n\n\nperson_emp_length\nAncienneté professionnelle (années)\n\n\nloan_intent\nBut du prêt\n\n\nloan_grade\nGrade du prêt\n\n\nloan_amnt\nMontant du prêt\n\n\nloan_int_rate\nTaux d’intérêt\n\n\nloan_status\nStatut du prêt (0: non défaut, 1: défaut)\n\n\nloan_percent_income\nPourcentage du revenu\n\n\ncb_person_default_on_file\nHistorique de défaut\n\n\ncb_person_cred_hist_length\nLongueur de l’historique de crédit\n\n\n\n\n2.7.1 1. Chargement et Exploration des Données\ndf_credit = pd.read_csv('credit_risk_data.csv')\nprint(df_credit.head())\ndf_credit.info()\ndf_credit.describe()\n📌 Questions : 1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ? 2. Quelle est la répartition des clients en défaut et non en défaut ? 3. Identifiez les valeurs manquantes et proposez une méthode de traitement.\n\n\n2.7.2 2. Nettoyage et Préparation des Données\n📌 Questions : 1. Convertissez les variables catégoriques en variables numériques. 2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.\n\n\n2.7.3 3. Analyse des Facteurs de Risque\n📌 Questions : Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant pandas et en réalisant des analyses numériques."
+    "section": "",
+    "text": "Simulez deux séries de 50 notes (sur 20) pour deux classes (classe A et classe B). Créez un DataFrame Pandas contenant ces données et réalisez un boxplot comparant les distributions."
   },
   {
-    "objectID": "doc/tp/tp5.html#objectifs",
-    "href": "doc/tp/tp5.html#objectifs",
+    "objectID": "doc/tp/tp5.html#exercice-7-violin-plot",
+    "href": "doc/tp/tp5.html#exercice-7-violin-plot",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.8 Objectifs",
-    "text": "2.8 Objectifs\n\nManipuler des DataFrames pandas pour explorer les relations entre les variables.\n\nUtiliser des statistiques descriptives et des mesures de corrélation.\n\nComprendre comment les facteurs influencent le risque de défaut et interpréter les résultats."
+    "section": "",
+    "text": "Reprenez le DataFrame de l’exercice précédent et tracez un violin plot comparatif des deux distributions."
   },
   {
-    "objectID": "doc/tp/tp5.html#questions-et-analyses",
-    "href": "doc/tp/tp5.html#questions-et-analyses",
+    "objectID": "doc/tp/tp5.html#exercice-8-pairplot-analyse-multivariée",
+    "href": "doc/tp/tp5.html#exercice-8-pairplot-analyse-multivariée",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.9 Questions et Analyses",
-    "text": "2.9 Questions et Analyses\n\n2.9.1 1. Impact du revenu annuel sur le risque de défaut\nAnalyse numérique\n- Afficher les statistiques descriptives du revenu annuel en fonction du statut de défaut.\n- Comparer les moyennes et médianes des revenus des clients en défaut et non en défaut.\n- Calculer l’écart-type et la variance du revenu annuel pour chaque groupe.\nÉtapes\n1. Charger les données dans un DataFrame pandas.\n2. Utiliser .describe() pour obtenir des statistiques globales sur le revenu annuel.\n3. Utiliser .groupby('Défaut') et .agg(['mean', 'median', 'std', 'var']) pour comparer les groupes.\n4. Interpréter les résultats et voir si une tendance se dégage.\n\n\n\n2.9.2 2. Influence de l’historique des paiements sur le risque de défaut\nAnalyse numérique\n- Calculer le nombre moyen de paiements en retard pour chaque statut de défaut.\n- Analyser la médiane et l’écart-type du nombre de paiements en retard.\n- Déterminer si les clients en défaut ont un historique de paiements significativement différent des autres.\nÉtapes\n1. Utiliser .groupby('Défaut')['Nb_Paiements_Retard'].agg(['mean', 'median', 'std']).\n2. Comparer les valeurs moyennes et médianes pour identifier les différences entre les groupes.\n3. Vérifier si la dispersion des retards de paiement est plus élevée chez les clients en défaut.\n\n\n\n2.9.3 3. Identification des facteurs les plus corrélés au risque de défaut\nAnalyse numérique\n- Calculer la matrice de corrélation entre les variables.\n- Identifier les trois facteurs les plus corrélés avec le risque de défaut.\n- Vérifier si ces corrélations sont significatives.\nÉtapes\n1. Utiliser .corr() pour calculer la matrice de corrélation du DataFrame.\n2. Extraire les valeurs de corrélation associées à la colonne “Défaut”.\n3. Trier ces valeurs par ordre décroissant et sélectionner les trois variables les plus influentes.\n4. Interpréter les résultats et vérifier si ces facteurs sont cohérents avec les analyses précédentes.\n\n\n2.9.4 Synthèse\nDans cette section, nous allons approfondir l’étude des facteurs influençant le risque de défaut en réalisant des analyses numériques sur la répartition des âges et l’impact du statut d’emploi."
+    "section": "",
+    "text": "Utilisez le dataset Iris (sns.load_dataset(\"iris\")). Réalisez un pairplot de l’ensemble des variables en utilisant “species” pour la couleur."
   },
   {
-    "objectID": "doc/tp/tp5.html#objectifs-1",
-    "href": "doc/tp/tp5.html#objectifs-1",
+    "objectID": "doc/tp/tp5.html#exercice-9-heatmap-de-corrélation",
+    "href": "doc/tp/tp5.html#exercice-9-heatmap-de-corrélation",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.10 Objectifs",
-    "text": "2.10 Objectifs\n\nAnalyser la distribution des âges des clients à l’aide de statistiques descriptives.\n\nExaminer l’influence du statut d’emploi sur le risque de défaut à travers des mesures numériques.\n\nSynthétiser les résultats obtenus et proposer des interprétations."
+    "section": "",
+    "text": "Toujours avec le dataset Iris, calculez la matrice de corrélation et affichez une heatmap de cette matrice avec les valeurs annotées."
   },
   {
-    "objectID": "doc/tp/tp5.html#questions-et-analyses-1",
-    "href": "doc/tp/tp5.html#questions-et-analyses-1",
+    "objectID": "doc/tp/tp5.html#exercice-10-analyse-univariée",
+    "href": "doc/tp/tp5.html#exercice-10-analyse-univariée",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
-    "section": "2.11 Questions et Analyses",
-    "text": "2.11 Questions et Analyses\n\n2.11.1 Analyse de la distribution des âges des clients\nAnalyse numérique\n- Calculer les statistiques descriptives générales sur l’âge des clients.\n- Identifier l’âge moyen, la médiane, l’écart-type et les valeurs minimales/maximales.\n- Déterminer s’il y a des valeurs aberrantes en comparant l’écart interquartile.\nÉtapes\n1. Utiliser .describe() sur la colonne Âge pour obtenir les principales statistiques.\n2. Vérifier les bornes des quartiles avec .quantile([0.25, 0.5, 0.75]).\n3. Déterminer les valeurs aberrantes potentielles en utilisant la règle des 1,5 IQR (Interquartile Range).\n4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.\n\n\n\n2.11.2 Influence du statut d’emploi sur le risque de défaut\nAnalyse numérique\n- Compter le nombre de clients par catégorie de statut d’emploi.\n- Calculer la proportion de clients en défaut dans chaque catégorie de statut d’emploi.\n- Identifier si certaines catégories ont un taux de défaut significativement plus élevé.\nÉtapes\n1. Utiliser .value_counts() sur la colonne Statut_Emploi pour connaître la répartition des clients par catégorie.\n2. Grouper les données par Statut_Emploi et calculer le taux de défaut dans chaque groupe avec .groupby('Statut_Emploi')['Défaut'].mean().\n3. Comparer ces taux et identifier les catégories ayant une probabilité plus élevée de défaut.\n4. Interpréter les résultats en lien avec les analyses précédentes (ex. une catégorie d’emploi avec des revenus plus faibles pourrait avoir un taux de défaut plus élevé)."
+    "section": "",
+    "text": "Utilisez la base de données Credit Risk Dataset. - Chargez les données et affichez les premières lignes. - Faites une analyse univariée des variables person_age, person_income, et loan_amnt en utilisant des histogrammes et des boxplots. - Identifiez les valeurs aberrantes dans loan_int_rate."
+  },
+  {
+    "objectID": "doc/tp/tp5.html#exercice-11-analyse-bivariée",
+    "href": "doc/tp/tp5.html#exercice-11-analyse-bivariée",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "",
+    "text": "Étudiez la relation entre person_income et loan_amnt à l’aide d’un scatter plot (quanti-quanti).\nÉtudiez l’influence de person_home_ownership sur loan_amnt via un boxplot (quanti-quali).\nÉtudiez la relation entre loan_intent et loan_grade via un countplot (quali-quali)."
+  },
+  {
+    "objectID": "doc/tp/tp5.html#exercice-12-tests-statistiques-en-python",
+    "href": "doc/tp/tp5.html#exercice-12-tests-statistiques-en-python",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "",
+    "text": "Testez s’il y a une différence significative de revenu (person_income) entre les propriétaires et non-propriétaires (person_home_ownership) avec un test t de Student.\nTestez si la distribution des taux d’intérêt (loan_int_rate) suit une loi normale.\nTestez l’indépendance entre loan_intent et loan_status avec un test du chi².\nRéalisez une ANOVA pour comparer le revenu (person_income) entre plusieurs catégories de but du prêt (loan_intent)."
+  },
+  {
+    "objectID": "doc/tp/tp5.html#exercice-13-organisation-en-subplots",
+    "href": "doc/tp/tp5.html#exercice-13-organisation-en-subplots",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "",
+    "text": "Créez une figure comportant 4 subplots organisés en 2 lignes × 2 colonnes contenant : - Un graphique linéaire représentant une fonction de votre choix. - Un scatter plot illustrant une relation entre deux variables quantitatives. - Un histogramme d’une variable de votre choix. - Un camembert illustrant la répartition d’une variable catégorielle.\nAjoutez un titre à chaque subplot et ajustez la disposition pour éviter le chevauchement."
+  },
+  {
+    "objectID": "doc/tp/tp5.html#exercice-14-tests-statistiques-avancés",
+    "href": "doc/tp/tp5.html#exercice-14-tests-statistiques-avancés",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "",
+    "text": "Effectuez un test de corrélation de Pearson et de Spearman entre person_income et loan_amnt (quanti-quanti).\nRéalisez un test du chi² pour tester l’indépendance entre cb_person_default_on_file et loan_status (quali-quali).\nEffectuez une comparaison de moyennes (t-test indépendant) entre loan_int_rate pour les individus ayant un historique de défaut (cb_person_default_on_file) et ceux qui n’en ont pas.\nEffectuez une ANOVA pour comparer loan_amnt entre plusieurs catégories (loan_grade).\n\nBonus : Expérimentez avec d’autres types de graphiques et tests statistiques pour approfondir l’analyse."
   }
 ]

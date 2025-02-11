@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -187,6 +216,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../doc/tp/tp4.html">
  <span class="dropdown-text">TP4 - Analyse de données avec Pandas</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp5.html">
+ <span class="dropdown-text">TP5 - Visualisation des données avec Matplotlib et Seaborn</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -221,42 +254,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#visualisation-des-données-avec-matplotlib-et-seaborn" id="toc-visualisation-des-données-avec-matplotlib-et-seaborn" class="nav-link active" data-scroll-target="#visualisation-des-données-avec-matplotlib-et-seaborn"><span class="header-section-number">1</span> Visualisation des Données avec Matplotlib et Seaborn</a></li>
-  <li><a href="#partie-1-analyse-des-données-financières" id="toc-partie-1-analyse-des-données-financières" class="nav-link" data-scroll-target="#partie-1-analyse-des-données-financières"><span class="header-section-number">2</span> Partie 1 : Analyse des Données Financières</a>
+  <li><a href="#visualisation-des-données-avec-matplotlib-et-seaborn" id="toc-visualisation-des-données-avec-matplotlib-et-seaborn" class="nav-link active" data-scroll-target="#visualisation-des-données-avec-matplotlib-et-seaborn"><span class="header-section-number">1</span> Visualisation des Données avec Matplotlib et Seaborn</a>
   <ul class="collapse">
-  <li><a href="#récupération-et-exploration-des-données" id="toc-récupération-et-exploration-des-données" class="nav-link" data-scroll-target="#récupération-et-exploration-des-données"><span class="header-section-number">2.1</span> 1. Récupération et Exploration des Données</a>
-  <ul class="collapse">
-  <li><a href="#téléchargement-des-données-depuis-yahoo-finance" id="toc-téléchargement-des-données-depuis-yahoo-finance" class="nav-link" data-scroll-target="#téléchargement-des-données-depuis-yahoo-finance"><span class="header-section-number">2.1.1</span> Téléchargement des données depuis Yahoo Finance</a></li>
-  <li><a href="#analyse-exploratoire" id="toc-analyse-exploratoire" class="nav-link" data-scroll-target="#analyse-exploratoire"><span class="header-section-number">2.1.2</span> Analyse exploratoire</a></li>
-  </ul></li>
-  <li><a href="#nettoyage-et-préparation-des-données" id="toc-nettoyage-et-préparation-des-données" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données"><span class="header-section-number">2.2</span> 2. Nettoyage et Préparation des Données</a></li>
-  <li><a href="#analyse-des-tendances-du-marché" id="toc-analyse-des-tendances-du-marché" class="nav-link" data-scroll-target="#analyse-des-tendances-du-marché"><span class="header-section-number">2.3</span> 3. Analyse des Tendances du Marché</a>
-  <ul class="collapse">
-  <li><a href="#calcul-du-rendement-journalier" id="toc-calcul-du-rendement-journalier" class="nav-link" data-scroll-target="#calcul-du-rendement-journalier"><span class="header-section-number">2.3.1</span> Calcul du rendement journalier</a></li>
-  </ul></li>
-  <li><a href="#comparaison-des-performances" id="toc-comparaison-des-performances" class="nav-link" data-scroll-target="#comparaison-des-performances"><span class="header-section-number">2.4</span> 4. Comparaison des Performances</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">2.5</span> Conclusion</a></li>
-  <li><a href="#résumé-des-principales-manipulations-avec-pandas" id="toc-résumé-des-principales-manipulations-avec-pandas" class="nav-link" data-scroll-target="#résumé-des-principales-manipulations-avec-pandas"><span class="header-section-number">2.6</span> Résumé des principales manipulations avec pandas</a></li>
-  <li><a href="#partie-2-analyse-du-risque-de-défaut" id="toc-partie-2-analyse-du-risque-de-défaut" class="nav-link" data-scroll-target="#partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">2.7</span> Partie 2 : Analyse du Risque de Défaut</a>
-  <ul class="collapse">
-  <li><a href="#chargement-et-exploration-des-données" id="toc-chargement-et-exploration-des-données" class="nav-link" data-scroll-target="#chargement-et-exploration-des-données"><span class="header-section-number">2.7.1</span> 1. Chargement et Exploration des Données</a></li>
-  <li><a href="#nettoyage-et-préparation-des-données-1" id="toc-nettoyage-et-préparation-des-données-1" class="nav-link" data-scroll-target="#nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.2</span> 2. Nettoyage et Préparation des Données</a></li>
-  <li><a href="#analyse-des-facteurs-de-risque" id="toc-analyse-des-facteurs-de-risque" class="nav-link" data-scroll-target="#analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.3</span> 3. Analyse des Facteurs de Risque</a></li>
-  </ul></li>
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">2.8</span> Objectifs</a></li>
-  <li><a href="#questions-et-analyses" id="toc-questions-et-analyses" class="nav-link" data-scroll-target="#questions-et-analyses"><span class="header-section-number">2.9</span> Questions et Analyses</a>
-  <ul class="collapse">
-  <li><a href="#impact-du-revenu-annuel-sur-le-risque-de-défaut" id="toc-impact-du-revenu-annuel-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">2.9.1</span> 1. Impact du revenu annuel sur le risque de défaut</a></li>
-  <li><a href="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" id="toc-influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">2.9.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</a></li>
-  <li><a href="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" id="toc-identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="nav-link" data-scroll-target="#identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">2.9.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse"><span class="header-section-number">2.9.4</span> Synthèse</a></li>
-  </ul></li>
-  <li><a href="#objectifs-1" id="toc-objectifs-1" class="nav-link" data-scroll-target="#objectifs-1"><span class="header-section-number">2.10</span> Objectifs</a></li>
-  <li><a href="#questions-et-analyses-1" id="toc-questions-et-analyses-1" class="nav-link" data-scroll-target="#questions-et-analyses-1"><span class="header-section-number">2.11</span> Questions et Analyses</a>
-  <ul class="collapse">
-  <li><a href="#analyse-de-la-distribution-des-âges-des-clients" id="toc-analyse-de-la-distribution-des-âges-des-clients" class="nav-link" data-scroll-target="#analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">2.11.1</span> Analyse de la distribution des âges des clients</a></li>
-  <li><a href="#influence-du-statut-demploi-sur-le-risque-de-défaut" id="toc-influence-du-statut-demploi-sur-le-risque-de-défaut" class="nav-link" data-scroll-target="#influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">2.11.2</span> Influence du statut d’emploi sur le risque de défaut</a></li>
-  </ul></li>
+  <li><a href="#exercice-1-courbe-linéaire" id="toc-exercice-1-courbe-linéaire" class="nav-link" data-scroll-target="#exercice-1-courbe-linéaire"><span class="header-section-number">1.1</span> Exercice 1 : Courbe linéaire</a></li>
+  <li><a href="#exercice-2-nuage-de-points" id="toc-exercice-2-nuage-de-points" class="nav-link" data-scroll-target="#exercice-2-nuage-de-points"><span class="header-section-number">1.2</span> Exercice 2 : Nuage de points</a></li>
+  <li><a href="#exercice-3-histogramme" id="toc-exercice-3-histogramme" class="nav-link" data-scroll-target="#exercice-3-histogramme"><span class="header-section-number">1.3</span> Exercice 3 : Histogramme</a></li>
+  <li><a href="#exercice-4-diagramme-en-barres" id="toc-exercice-4-diagramme-en-barres" class="nav-link" data-scroll-target="#exercice-4-diagramme-en-barres"><span class="header-section-number">1.4</span> Exercice 4 : Diagramme en barres</a></li>
+  <li><a href="#exercice-5-diagramme-circulaire" id="toc-exercice-5-diagramme-circulaire" class="nav-link" data-scroll-target="#exercice-5-diagramme-circulaire"><span class="header-section-number">1.5</span> Exercice 5 : Diagramme circulaire</a></li>
+  <li><a href="#exercice-6-boxplot" id="toc-exercice-6-boxplot" class="nav-link" data-scroll-target="#exercice-6-boxplot"><span class="header-section-number">1.6</span> Exercice 6 : Boxplot</a></li>
+  <li><a href="#exercice-7-violin-plot" id="toc-exercice-7-violin-plot" class="nav-link" data-scroll-target="#exercice-7-violin-plot"><span class="header-section-number">1.7</span> Exercice 7 : Violin plot</a></li>
+  <li><a href="#exercice-8-pairplot-analyse-multivariée" id="toc-exercice-8-pairplot-analyse-multivariée" class="nav-link" data-scroll-target="#exercice-8-pairplot-analyse-multivariée"><span class="header-section-number">1.8</span> Exercice 8 : Pairplot (analyse multivariée)</a></li>
+  <li><a href="#exercice-9-heatmap-de-corrélation" id="toc-exercice-9-heatmap-de-corrélation" class="nav-link" data-scroll-target="#exercice-9-heatmap-de-corrélation"><span class="header-section-number">1.9</span> Exercice 9 : Heatmap de corrélation</a></li>
+  <li><a href="#exercice-10-analyse-univariée" id="toc-exercice-10-analyse-univariée" class="nav-link" data-scroll-target="#exercice-10-analyse-univariée"><span class="header-section-number">1.10</span> Exercice 10 : Analyse univariée</a></li>
+  <li><a href="#exercice-11-analyse-bivariée" id="toc-exercice-11-analyse-bivariée" class="nav-link" data-scroll-target="#exercice-11-analyse-bivariée"><span class="header-section-number">1.11</span> Exercice 11 : Analyse bivariée</a></li>
+  <li><a href="#exercice-12-tests-statistiques-en-python" id="toc-exercice-12-tests-statistiques-en-python" class="nav-link" data-scroll-target="#exercice-12-tests-statistiques-en-python"><span class="header-section-number">1.12</span> Exercice 12 : Tests statistiques en Python</a></li>
+  <li><a href="#exercice-13-organisation-en-subplots" id="toc-exercice-13-organisation-en-subplots" class="nav-link" data-scroll-target="#exercice-13-organisation-en-subplots"><span class="header-section-number">1.13</span> Exercice 13 : Organisation en subplots</a></li>
+  <li><a href="#exercice-14-tests-statistiques-avancés" id="toc-exercice-14-tests-statistiques-avancés" class="nav-link" data-scroll-target="#exercice-14-tests-statistiques-avancés"><span class="header-section-number">1.14</span> Exercice 14 : Tests statistiques avancés</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -300,326 +313,94 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="visualisation-des-données-avec-matplotlib-et-seaborn" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Visualisation des Données avec Matplotlib et Seaborn</h1>
+<section id="exercice-1-courbe-linéaire" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="exercice-1-courbe-linéaire"><span class="header-section-number">1.1</span> Exercice 1 : Courbe linéaire</h2>
+<p>Tracez la courbe de la fonction <span class="math inline">\(f(x) = x^2\)</span> pour <span class="math inline">\(x\)</span> allant de 0 à 10. Utilisez 100 points pour <span class="math inline">\(x\)</span> afin d’obtenir une courbe lisse. Ajoutez un titre “Courbe parabole” et nommez les axes “x” et “f(x)”.</p>
 </section>
-<section id="partie-1-analyse-des-données-financières" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Partie 1 : Analyse des Données Financières</h1>
-<p>Ce TP a pour objectif d’explorer et d’analyser les données financières de plusieurs grandes entreprises cotées en bourse : <strong>NVIDIA, OpenAI, Amazon et Apple</strong>. Nous allons récupérer ces données directement depuis <strong>Yahoo Finance</strong> et les manipuler avec <strong>pandas</strong>.</p>
-<hr>
-<section id="récupération-et-exploration-des-données" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="récupération-et-exploration-des-données"><span class="header-section-number">2.1</span> 1. Récupération et Exploration des Données</h2>
-<section id="téléchargement-des-données-depuis-yahoo-finance" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="téléchargement-des-données-depuis-yahoo-finance"><span class="header-section-number">2.1.1</span> Téléchargement des données depuis Yahoo Finance</h3>
-<p>Nous allons utiliser la bibliothèque <code>yfinance</code> pour récupérer les prix historiques des actions de plusieurs entreprises technologiques.</p>
+<section id="exercice-2-nuage-de-points" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="exercice-2-nuage-de-points"><span class="header-section-number">1.2</span> Exercice 2 : Nuage de points</h2>
+<p>Générez deux listes de 50 valeurs aléatoires chacune entre 0 et 1. Affichez le nuage de points correspondant. Personnalisez les points avec une couleur et un style de votre choix.</p>
+</section>
+<section id="exercice-3-histogramme" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="exercice-3-histogramme"><span class="header-section-number">1.3</span> Exercice 3 : Histogramme</h2>
+<p>Créez un tableau de 1000 valeurs aléatoires suivant une distribution normale de moyenne 5 et d’écart-type 2. Réalisez l’histogramme de ces données avec 30 bins et affichez un titre “Distribution normale simulée”.</p>
+</section>
+<section id="exercice-4-diagramme-en-barres" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercice-4-diagramme-en-barres"><span class="header-section-number">1.4</span> Exercice 4 : Diagramme en barres</h2>
+<p>On dispose du nombre d’élèves inscrits dans différents clubs d’une école. Créez un DataFrame avec ces données et affichez un diagramme en barres.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste des tickers des entreprises étudiées</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tickers <span class="op">=</span> [<span class="st">'NVDA'</span>, <span class="st">'AAPL'</span>, <span class="st">'AMZN'</span>, <span class="st">'MSFT'</span>]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargement des données de 2020 à 2024</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> yf.download(tickers, start<span class="op">=</span><span class="st">'2020-01-01'</span>, end<span class="op">=</span><span class="st">'2024-01-01'</span>, group_by<span class="op">=</span><span class="st">'ticker'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Création du DataFrame</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df_clubs <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Club"</span>: [<span class="st">"Théâtre"</span>, <span class="st">"Musique"</span>, <span class="st">"Sport"</span>, <span class="st">"Art"</span>],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Nombre d'élèves"</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">15</span>, <span class="dv">10</span>]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage des premières lignes du DataFrame</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage du diagramme en barres</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.bar(df_clubs[<span class="st">"Club"</span>], df_clubs[<span class="st">"Nombre d'élèves"</span>], color<span class="op">=</span><span class="st">'mediumseagreen'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Clubs"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Nombre d'élèves"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Inscriptions par club"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="analyse-exploratoire" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="analyse-exploratoire"><span class="header-section-number">2.1.2</span> Analyse exploratoire</h3>
-<p>📌 <strong>Questions à traiter</strong> :</p>
-<ol type="1">
-<li><strong>Quelles sont les colonnes disponibles dans le DataFrame ?</strong><br>
-</li>
-<li><strong>Quel est le nombre total de lignes et de colonnes ?</strong><br>
-</li>
-<li><strong>Y a-t-il des valeurs manquantes ? Comment les gérer ?</strong></li>
-</ol>
-<hr>
+<section id="exercice-5-diagramme-circulaire" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="exercice-5-diagramme-circulaire"><span class="header-section-number">1.5</span> Exercice 5 : Diagramme circulaire</h2>
+<p>Reprenez les données de l’exercice précédent et représentez-les sous forme de camembert avec les pourcentages affichés.</p>
 </section>
+<section id="exercice-6-boxplot" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="exercice-6-boxplot"><span class="header-section-number">1.6</span> Exercice 6 : Boxplot</h2>
+<p>Simulez deux séries de 50 notes (sur 20) pour deux classes (classe A et classe B). Créez un DataFrame Pandas contenant ces données et réalisez un boxplot comparant les distributions.</p>
 </section>
-<section id="nettoyage-et-préparation-des-données" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données"><span class="header-section-number">2.2</span> 2. Nettoyage et Préparation des Données</h2>
-<p>📌 <strong>Questions à traiter</strong> :</p>
-<ol type="1">
-<li><strong>Supprimez les lignes contenant des valeurs manquantes.</strong><br>
-</li>
-<li><strong>Définissez la colonne Date comme index du DataFrame.</strong><br>
-</li>
-<li><strong>Vérifiez les types de données des colonnes et convertissez-les si nécessaire.</strong></li>
-</ol>
-<hr>
+<section id="exercice-7-violin-plot" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="exercice-7-violin-plot"><span class="header-section-number">1.7</span> Exercice 7 : Violin plot</h2>
+<p>Reprenez le DataFrame de l’exercice précédent et tracez un violin plot comparatif des deux distributions.</p>
 </section>
-<section id="analyse-des-tendances-du-marché" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="analyse-des-tendances-du-marché"><span class="header-section-number">2.3</span> 3. Analyse des Tendances du Marché</h2>
-<section id="calcul-du-rendement-journalier" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="calcul-du-rendement-journalier"><span class="header-section-number">2.3.1</span> Calcul du rendement journalier</h3>
-<p>Le rendement journalier d’une action est donné par la formule :</p>
-<p>[ R_t = ]</p>
-<p>📌 <strong>Questions à traiter</strong> :</p>
-<ol type="1">
-<li><strong>Quelle est la tendance des prix des actions pour chaque entreprise ?</strong><br>
-</li>
-<li><strong>Quel jour chaque action a-t-elle atteint son plus haut prix ?</strong><br>
-</li>
-<li><strong>Calculez le rendement quotidien de chaque action et affichez sa moyenne.</strong></li>
-</ol>
-<hr>
+<section id="exercice-8-pairplot-analyse-multivariée" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="exercice-8-pairplot-analyse-multivariée"><span class="header-section-number">1.8</span> Exercice 8 : Pairplot (analyse multivariée)</h2>
+<p>Utilisez le dataset Iris (<code>sns.load_dataset("iris")</code>). Réalisez un pairplot de l’ensemble des variables en utilisant “species” pour la couleur.</p>
 </section>
+<section id="exercice-9-heatmap-de-corrélation" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="exercice-9-heatmap-de-corrélation"><span class="header-section-number">1.9</span> Exercice 9 : Heatmap de corrélation</h2>
+<p>Toujours avec le dataset Iris, calculez la matrice de corrélation et affichez une heatmap de cette matrice avec les valeurs annotées.</p>
 </section>
-<section id="comparaison-des-performances" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="comparaison-des-performances"><span class="header-section-number">2.4</span> 4. Comparaison des Performances</h2>
-<p>📌 <strong>Questions à traiter</strong> :</p>
-<ol type="1">
-<li><strong>Quelle entreprise a eu la meilleure croissance sur la période analysée ?</strong><br>
-</li>
-<li><strong>Quel est le rendement moyen mensuel de chaque action ?</strong><br>
-</li>
-<li><strong>Comparez la volatilité des différentes actions.</strong></li>
-</ol>
-<hr>
+<section id="exercice-10-analyse-univariée" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="exercice-10-analyse-univariée"><span class="header-section-number">1.10</span> Exercice 10 : Analyse univariée</h2>
+<p>Utilisez la base de données <a href="https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download">Credit Risk Dataset</a>. - Chargez les données et affichez les premières lignes. - Faites une analyse univariée des variables <code>person_age</code>, <code>person_income</code>, et <code>loan_amnt</code> en utilisant des histogrammes et des boxplots. - Identifiez les valeurs aberrantes dans <code>loan_int_rate</code>.</p>
 </section>
-<section id="conclusion" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2.5</span> Conclusion</h2>
+<section id="exercice-11-analyse-bivariée" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="exercice-11-analyse-bivariée"><span class="header-section-number">1.11</span> Exercice 11 : Analyse bivariée</h2>
 <ul>
-<li>Quelle entreprise a eu la meilleure croissance sur la période ?<br>
-</li>
-<li>Quel titre a offert le rendement moyen le plus élevé ?<br>
-</li>
-<li>Quelle action était la plus volatile, indiquant un risque plus élevé ?<br>
-</li>
-<li>Discussion sur les facteurs pouvant expliquer ces résultats (ex. crise, innovations, changements dans l’industrie).</li>
-</ul>
-<hr>
-</section>
-<section id="résumé-des-principales-manipulations-avec-pandas" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="résumé-des-principales-manipulations-avec-pandas"><span class="header-section-number">2.6</span> Résumé des principales manipulations avec pandas</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 59%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Opération</th>
-<th>Commande Pandas</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Télécharger des données financières</td>
-<td><code>yfinance.download()</code></td>
-</tr>
-<tr class="even">
-<td>Afficher les colonnes disponibles</td>
-<td><code>df.columns</code></td>
-</tr>
-<tr class="odd">
-<td>Vérifier la présence de valeurs manquantes</td>
-<td><code>df.isnull().sum()</code></td>
-</tr>
-<tr class="even">
-<td>Supprimer les valeurs manquantes</td>
-<td><code>df.dropna()</code></td>
-</tr>
-<tr class="odd">
-<td>Définir un index de type datetime</td>
-<td><code>df.index = pd.to_datetime(df.index)</code></td>
-</tr>
-<tr class="even">
-<td>Calculer le rendement journalier</td>
-<td><code>.pct_change()</code></td>
-</tr>
-<tr class="odd">
-<td>Calculer la volatilité</td>
-<td><code>.std()</code></td>
-</tr>
-<tr class="even">
-<td>Trouver la date du prix maximum</td>
-<td><code>.idxmax()</code></td>
-</tr>
-<tr class="odd">
-<td>Agréger les données par mois</td>
-<td><code>.resample('M').mean()</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="partie-2-analyse-du-risque-de-défaut" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="partie-2-analyse-du-risque-de-défaut"><span class="header-section-number">2.7</span> Partie 2 : Analyse du Risque de Défaut</h2>
-<p>Nous allons maintenant utiliser une base de données de crédit pour analyser les facteurs influençant le risque de défaut.</p>
-<p>La base de données est disponible ici: https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download ### Description des Colonnes de la Base de Données</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 46%">
-<col style="width: 53%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Nom de la Colonne</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>person_age</code></td>
-<td>Âge</td>
-</tr>
-<tr class="even">
-<td><code>person_income</code></td>
-<td>Revenu annuel</td>
-</tr>
-<tr class="odd">
-<td><code>person_home_ownership</code></td>
-<td>Type de propriété</td>
-</tr>
-<tr class="even">
-<td><code>person_emp_length</code></td>
-<td>Ancienneté professionnelle (années)</td>
-</tr>
-<tr class="odd">
-<td><code>loan_intent</code></td>
-<td>But du prêt</td>
-</tr>
-<tr class="even">
-<td><code>loan_grade</code></td>
-<td>Grade du prêt</td>
-</tr>
-<tr class="odd">
-<td><code>loan_amnt</code></td>
-<td>Montant du prêt</td>
-</tr>
-<tr class="even">
-<td><code>loan_int_rate</code></td>
-<td>Taux d’intérêt</td>
-</tr>
-<tr class="odd">
-<td><code>loan_status</code></td>
-<td>Statut du prêt (0: non défaut, 1: défaut)</td>
-</tr>
-<tr class="even">
-<td><code>loan_percent_income</code></td>
-<td>Pourcentage du revenu</td>
-</tr>
-<tr class="odd">
-<td><code>cb_person_default_on_file</code></td>
-<td>Historique de défaut</td>
-</tr>
-<tr class="even">
-<td><code>cb_person_cred_hist_length</code></td>
-<td>Longueur de l’historique de crédit</td>
-</tr>
-</tbody>
-</table>
-<section id="chargement-et-exploration-des-données" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="chargement-et-exploration-des-données"><span class="header-section-number">2.7.1</span> 1. Chargement et Exploration des Données</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_credit <span class="op">=</span> pd.read_csv(<span class="st">'credit_risk_data.csv'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_credit.head())</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_credit.info()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_credit.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>📌 <strong>Questions</strong> : 1. Quelles sont les variables disponibles pour l’analyse du risque de défaut ? 2. Quelle est la répartition des clients en défaut et non en défaut ? 3. Identifiez les valeurs manquantes et proposez une méthode de traitement.</p>
-</section>
-<section id="nettoyage-et-préparation-des-données-1" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="nettoyage-et-préparation-des-données-1"><span class="header-section-number">2.7.2</span> 2. Nettoyage et Préparation des Données</h3>
-<p>📌 <strong>Questions</strong> : 1. Convertissez les variables catégoriques en variables numériques. 2. Séparez le dataset en deux groupes : clients en défaut et non en défaut.</p>
-</section>
-<section id="analyse-des-facteurs-de-risque" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="analyse-des-facteurs-de-risque"><span class="header-section-number">2.7.3</span> 3. Analyse des Facteurs de Risque</h3>
-<p>📌 <strong>Questions</strong> : Dans cette section, nous allons explorer les facteurs influençant le risque de défaut en manipulant <strong>pandas</strong> et en réalisant des analyses numériques.</p>
-</section>
-</section>
-<section id="objectifs" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="objectifs"><span class="header-section-number">2.8</span> Objectifs</h2>
-<ul>
-<li>Manipuler des <strong>DataFrames pandas</strong> pour explorer les relations entre les variables.<br>
-</li>
-<li>Utiliser des statistiques descriptives et des mesures de corrélation.<br>
-</li>
-<li>Comprendre comment les facteurs influencent le risque de défaut et interpréter les résultats.</li>
+<li>Étudiez la relation entre <code>person_income</code> et <code>loan_amnt</code> à l’aide d’un scatter plot (quanti-quanti).</li>
+<li>Étudiez l’influence de <code>person_home_ownership</code> sur <code>loan_amnt</code> via un boxplot (quanti-quali).</li>
+<li>Étudiez la relation entre <code>loan_intent</code> et <code>loan_grade</code> via un countplot (quali-quali).</li>
 </ul>
 </section>
-<section id="questions-et-analyses" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="questions-et-analyses"><span class="header-section-number">2.9</span> Questions et Analyses</h2>
-<section id="impact-du-revenu-annuel-sur-le-risque-de-défaut" class="level3" data-number="2.9.1">
-<h3 data-number="2.9.1" class="anchored" data-anchor-id="impact-du-revenu-annuel-sur-le-risque-de-défaut"><span class="header-section-number">2.9.1</span> 1. Impact du revenu annuel sur le risque de défaut</h3>
-<p><strong>Analyse numérique</strong><br>
-- Afficher les statistiques descriptives du revenu annuel en fonction du statut de défaut.<br>
-- Comparer les moyennes et médianes des revenus des clients en défaut et non en défaut.<br>
-- Calculer l’écart-type et la variance du revenu annuel pour chaque groupe.</p>
-<p><strong>Étapes</strong><br>
-1. Charger les données dans un DataFrame pandas.<br>
-2. Utiliser <code>.describe()</code> pour obtenir des statistiques globales sur le revenu annuel.<br>
-3. Utiliser <code>.groupby('Défaut')</code> et <code>.agg(['mean', 'median', 'std', 'var'])</code> pour comparer les groupes.<br>
-4. Interpréter les résultats et voir si une tendance se dégage.</p>
-<hr>
-</section>
-<section id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut" class="level3" data-number="2.9.2">
-<h3 data-number="2.9.2" class="anchored" data-anchor-id="influence-de-lhistorique-des-paiements-sur-le-risque-de-défaut"><span class="header-section-number">2.9.2</span> 2. Influence de l’historique des paiements sur le risque de défaut</h3>
-<p><strong>Analyse numérique</strong><br>
-- Calculer le nombre moyen de paiements en retard pour chaque statut de défaut.<br>
-- Analyser la médiane et l’écart-type du nombre de paiements en retard.<br>
-- Déterminer si les clients en défaut ont un historique de paiements significativement différent des autres.</p>
-<p><strong>Étapes</strong><br>
-1. Utiliser <code>.groupby('Défaut')['Nb_Paiements_Retard'].agg(['mean', 'median', 'std'])</code>.<br>
-2. Comparer les valeurs moyennes et médianes pour identifier les différences entre les groupes.<br>
-3. Vérifier si la dispersion des retards de paiement est plus élevée chez les clients en défaut.</p>
-<hr>
-</section>
-<section id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut" class="level3" data-number="2.9.3">
-<h3 data-number="2.9.3" class="anchored" data-anchor-id="identification-des-facteurs-les-plus-corrélés-au-risque-de-défaut"><span class="header-section-number">2.9.3</span> 3. Identification des facteurs les plus corrélés au risque de défaut</h3>
-<p><strong>Analyse numérique</strong><br>
-- Calculer la matrice de corrélation entre les variables.<br>
-- Identifier les trois facteurs les plus corrélés avec le risque de défaut.<br>
-- Vérifier si ces corrélations sont significatives.</p>
-<p><strong>Étapes</strong><br>
-1. Utiliser <code>.corr()</code> pour calculer la matrice de corrélation du DataFrame.<br>
-2. Extraire les valeurs de corrélation associées à la colonne “Défaut”.<br>
-3. Trier ces valeurs par ordre décroissant et sélectionner les trois variables les plus influentes.<br>
-4. Interpréter les résultats et vérifier si ces facteurs sont cohérents avec les analyses précédentes.</p>
-</section>
-<section id="synthèse" class="level3" data-number="2.9.4">
-<h3 data-number="2.9.4" class="anchored" data-anchor-id="synthèse"><span class="header-section-number">2.9.4</span> Synthèse</h3>
-<p>Dans cette section, nous allons approfondir l’étude des facteurs influençant le risque de défaut en réalisant des analyses numériques sur la répartition des âges et l’impact du statut d’emploi.</p>
-</section>
-</section>
-<section id="objectifs-1" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="objectifs-1"><span class="header-section-number">2.10</span> Objectifs</h2>
+<section id="exercice-12-tests-statistiques-en-python" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="exercice-12-tests-statistiques-en-python"><span class="header-section-number">1.12</span> Exercice 12 : Tests statistiques en Python</h2>
 <ul>
-<li>Analyser la distribution des âges des clients à l’aide de statistiques descriptives.<br>
-</li>
-<li>Examiner l’influence du statut d’emploi sur le risque de défaut à travers des mesures numériques.<br>
-</li>
-<li>Synthétiser les résultats obtenus et proposer des interprétations.</li>
+<li>Testez s’il y a une différence significative de revenu (<code>person_income</code>) entre les propriétaires et non-propriétaires (<code>person_home_ownership</code>) avec un test t de Student.</li>
+<li>Testez si la distribution des taux d’intérêt (<code>loan_int_rate</code>) suit une loi normale.</li>
+<li>Testez l’indépendance entre <code>loan_intent</code> et <code>loan_status</code> avec un test du chi².</li>
+<li>Réalisez une ANOVA pour comparer le revenu (<code>person_income</code>) entre plusieurs catégories de but du prêt (<code>loan_intent</code>).</li>
 </ul>
 </section>
-<section id="questions-et-analyses-1" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="questions-et-analyses-1"><span class="header-section-number">2.11</span> Questions et Analyses</h2>
-<section id="analyse-de-la-distribution-des-âges-des-clients" class="level3" data-number="2.11.1">
-<h3 data-number="2.11.1" class="anchored" data-anchor-id="analyse-de-la-distribution-des-âges-des-clients"><span class="header-section-number">2.11.1</span> Analyse de la distribution des âges des clients</h3>
-<p><strong>Analyse numérique</strong><br>
-- Calculer les statistiques descriptives générales sur l’âge des clients.<br>
-- Identifier l’âge moyen, la médiane, l’écart-type et les valeurs minimales/maximales.<br>
-- Déterminer s’il y a des valeurs aberrantes en comparant l’écart interquartile.</p>
-<p><strong>Étapes</strong><br>
-1. Utiliser <code>.describe()</code> sur la colonne <strong>Âge</strong> pour obtenir les principales statistiques.<br>
-2. Vérifier les bornes des quartiles avec <code>.quantile([0.25, 0.5, 0.75])</code>.<br>
-3. Déterminer les valeurs aberrantes potentielles en utilisant la règle des <strong>1,5 IQR</strong> (Interquartile Range).<br>
-4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.</p>
-<hr>
+<section id="exercice-13-organisation-en-subplots" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="exercice-13-organisation-en-subplots"><span class="header-section-number">1.13</span> Exercice 13 : Organisation en subplots</h2>
+<p>Créez une figure comportant 4 subplots organisés en 2 lignes × 2 colonnes contenant : - Un graphique linéaire représentant une fonction de votre choix. - Un scatter plot illustrant une relation entre deux variables quantitatives. - Un histogramme d’une variable de votre choix. - Un camembert illustrant la répartition d’une variable catégorielle.</p>
+<p>Ajoutez un titre à chaque subplot et ajustez la disposition pour éviter le chevauchement.</p>
 </section>
-<section id="influence-du-statut-demploi-sur-le-risque-de-défaut" class="level3" data-number="2.11.2">
-<h3 data-number="2.11.2" class="anchored" data-anchor-id="influence-du-statut-demploi-sur-le-risque-de-défaut"><span class="header-section-number">2.11.2</span> Influence du statut d’emploi sur le risque de défaut</h3>
-<p><strong>Analyse numérique</strong><br>
-- Compter le nombre de clients par catégorie de statut d’emploi.<br>
-- Calculer la proportion de clients en défaut dans chaque catégorie de statut d’emploi.<br>
-- Identifier si certaines catégories ont un taux de défaut significativement plus élevé.</p>
-<p><strong>Étapes</strong><br>
-1. Utiliser <code>.value_counts()</code> sur la colonne <strong>Statut_Emploi</strong> pour connaître la répartition des clients par catégorie.<br>
-2. Grouper les données par <strong>Statut_Emploi</strong> et calculer le <strong>taux de défaut</strong> dans chaque groupe avec <code>.groupby('Statut_Emploi')['Défaut'].mean()</code>.<br>
-3. Comparer ces taux et identifier les catégories ayant une probabilité plus élevée de défaut.<br>
-4. Interpréter les résultats en lien avec les analyses précédentes (ex. une catégorie d’emploi avec des revenus plus faibles pourrait avoir un taux de défaut plus élevé).</p>
-<hr>
+<section id="exercice-14-tests-statistiques-avancés" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="exercice-14-tests-statistiques-avancés"><span class="header-section-number">1.14</span> Exercice 14 : Tests statistiques avancés</h2>
+<ul>
+<li>Effectuez un test de corrélation de Pearson et de Spearman entre <code>person_income</code> et <code>loan_amnt</code> (quanti-quanti).</li>
+<li>Réalisez un test du chi² pour tester l’indépendance entre <code>cb_person_default_on_file</code> et <code>loan_status</code> (quali-quali).</li>
+<li>Effectuez une comparaison de moyennes (<code>t-test indépendant</code>) entre <code>loan_int_rate</code> pour les individus ayant un historique de défaut (<code>cb_person_default_on_file</code>) et ceux qui n’en ont pas.</li>
+<li>Effectuez une ANOVA pour comparer <code>loan_amnt</code> entre plusieurs catégories (<code>loan_grade</code>).</li>
+</ul>
+<p><strong>Bonus</strong> : Expérimentez avec d’autres types de graphiques et tests statistiques pour approfondir l’analyse.</p>
 
 
-</section>
 </section>
 </section>
 

@@ -22,363 +22,306 @@ code-line-numbers: true
 from: markdown+emoji
 ---
 
-# Analyse de Données avec Pandas
+# Introduction à la Visualisation des Données
+La visualisation des données est une étape cruciale en science des données. Elle permet de mieux comprendre la structure des données, d'identifier des tendances, des anomalies et de communiquer efficacement les résultats de l'analyse.
 
-## Introduction
+### Objectifs de la visualisation :
+- **Compréhension** : Transformer des données brutes en graphiques clairs et lisibles.
+- **Communication** : Présenter des résultats analytiques de manière percutante et accessible.
+- **Analyse exploratoire** : Détecter rapidement des corrélations, des patterns ou des valeurs aberrantes.
 
-**Pandas** est une bibliothèque open-source essentielle en Python pour la manipulation et l'analyse de données. Elle permet de travailler avec des ensembles de données sous forme de **tableaux** en offrant des outils puissants pour **nettoyer, transformer et analyser** les données efficacement.
+## Bibliothèques principales en Python :
+- **Matplotlib** : Outil puissant pour créer des graphiques personnalisables.
+- **Seaborn** : Extension de Matplotlib qui simplifie la création de graphiques statistiques avec des styles améliorés.
 
-### Pourquoi utiliser Pandas ?
+## Choix du Type de Graphique selon la Nature des Données
 
-- **Facilité de manipulation** : Pandas simplifie la manipulation des **données tabulaires** (issues de fichiers CSV, Excel, bases de données, etc.).
-- **Performance** : Pandas est optimisé pour gérer de **grandes quantités de données** bien plus rapidement que les structures classiques comme les listes Python.
-- **Interopérabilité** : Compatible avec **NumPy**, **Matplotlib**, **SQL**, et d'autres bibliothèques de data science.
-
-**Objectifs du cours :**
-- Comprendre les structures de Pandas : **Series** et **DataFrame**.
-- Apprendre à charger, explorer et manipuler des données.
-- Effectuer des analyses et transformations avancées.
+| Type de Graphique      | Type de Données                | Utilisation principale                      |
+|------------------------|--------------------------------|-------------------------------------------|
+| Courbe linéaire       | Variable continue              | Suivi d'une tendance                      |
+| Histogramme           | Variable numérique continue    | Distribution d'une variable               |
+| Diagramme en barres   | Variable catégorielle          | Comparaison entre différentes catégories  |
+| Nuage de points       | Deux variables numériques      | Relation entre deux variables             |
+| Boxplot               | Variable numérique / catégorielle | Comparaison de distributions            |
+| Violin plot           | Variable numérique / catégorielle | Visualisation de la distribution        |
+| Heatmap               | Matrice de valeurs numériques  | Corrélation entre variables              |
+| Pie chart (camembert) | Variables catégoriques         | Répartition proportionnelle              |
 
 ---
 
-##  Installation et Importation
+# Visualisation avec Matplotlib
 
-Si Pandas n'est pas encore installé, vous pouvez l'ajouter à votre environnement Python avec la commande suivante :
+# Installation et Importation
 ```bash
-pip install pandas
+pip install matplotlib numpy
 ```
-
-Une fois installé, importez Pandas :
 ```python
-import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 ```
 
-L'alias `pd` est une convention utilisée pour simplifier l'appel aux fonctions de la bibliothèque.
+##Graphiques de Base avec Matplotlib
+
+### Courbe Linéaire (Line Plot)
+Les courbes permettent d'observer l'évolution d'une variable sur un axe donné.
+```python
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Courbe de la fonction sin(x)")
+plt.legend()
+plt.show()
+```
+
+### Nuage de Points (Scatter Plot)
+Permet d'analyser la relation entre deux variables numériques.
+```python
+heures_etude = [2, 5, 1, 8, 4, 7, 3, 6, 9, 5]
+notes = [50, 80, 40, 90, 70, 85, 60, 75, 95, 78]
+plt.scatter(heures_etude, notes, color='purple', marker='o')
+plt.xlabel("Heures d'étude par semaine")
+plt.ylabel("Note à l'examen")
+plt.title("Relation entre temps d'étude et performance")
+plt.show()
+```
+
+### Histogramme
+Utilisé pour représenter la distribution des valeurs d'une variable continue.
+```python
+np.random.seed(0)
+ages = np.random.randint(1, 101, size=200)
+plt.hist(ages, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel("Âge")
+plt.ylabel("Fréquence")
+plt.title("Histogramme des âges (200 personnes)")
+plt.show()
+```
+
+### Diagramme en Barres (Bar Chart)
+Comparaison des quantités entre différentes catégories.
+```python
+produits = ['Produit A', 'Produit B', 'Produit C', 'Produit D']
+ventes = [250, 400, 150, 300]
+plt.bar(produits, ventes, color='mediumseagreen')
+plt.xlabel("Produits")
+plt.ylabel("Nombre de ventes")
+plt.title("Ventes par produit")
+plt.show()
+```
+
+### Diagramme Circulaire (Pie Chart)
+Montre la répartition d'un ensemble sous forme de pourcentages.
+```python
+parts = [35, 25, 20, 20]
+labels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']
+colors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']
+plt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title("Répartition des parts de marché")
+plt.axis('equal')
+plt.show()
+```
 
 ---
 
-##  Création et Chargement des Données
+# Visualisation Avancée avec Seaborn
 
-Pandas offre plusieurs méthodes pour créer des jeux de données ou les charger depuis divers formats.
-
-###  Création d'un DataFrame
-
-Un **DataFrame** est une table composée de lignes et de colonnes, similaire à une feuille de calcul Excel ou une base de données SQL.
-
+## Installation et Importation
+```bash
+pip install seaborn
+```
 ```python
-data = {
-    'Nom': ['Alice', 'Bob', 'Charlie'],
-    'Âge': [25, 30, 35],
-    'Salaire': [50000, 60000, 70000]
-}
-df = pd.DataFrame(data)
-print(df)
+import seaborn as sns
 ```
 
-Pourquoi utiliser un DataFrame ?
-- Il permet de manipuler facilement **des données hétérogènes**.
-- Il est conçu pour des **opérations analytiques rapides et intuitives**.
-
-### Chargement des Données à partir de Fichiers
-
-Pandas permet de lire des fichiers de différents formats : CSV, Excel, JSON, SQL, etc.
-
+## Boxplot
+Visualisation des statistiques de distribution d'une variable numérique.
 ```python
-# Charger un fichier CSV
-df = pd.read_csv("data.csv")
-
-# Charger un fichier Excel
-df = pd.read_excel("data.xlsx")
+tips = sns.load_dataset("tips")
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.xlabel("Jour de la semaine")
+plt.ylabel("Addition totale ($)")
+plt.title("Distribution des additions par jour")
+plt.show()
 ```
 
-**Exercice 1 :**
-- Chargez un fichier CSV et affichez ses premières lignes.
-- Affichez le nombre total de lignes et de colonnes.
+## Heatmap
+Représente une matrice de données sous forme de couleurs.
+```python
+corr = tips.corr()
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Matrice de corrélation (dataset Tips)")
+plt.show()
+```
 
 ---
+# Personnalisation Avancée des Graphiques
 
-##  Sélection et Filtrage des Données
+La personnalisation permet d'affiner la présentation de vos graphiques pour une meilleure lisibilité et un rendu professionnel. Vous pouvez modifier les axes, les titres, ajouter des annotations et sauvegarder vos graphiques avec une qualité optimale.
 
-L'accès aux données est une étape essentielle pour manipuler efficacement un DataFrame.
+## Modification des Axes et Titres
 
-###  Sélection des Colonnes
-
-Vous pouvez sélectionner une colonne spécifique comme suit :
-```python
-df['Nom']  # Retourne une Series
-```
-Pour sélectionner plusieurs colonnes :
-```python
-df[['Nom', 'Salaire']]
-```
-
-###  Sélection des Lignes avec `.loc` et `.iloc`
-
-#### **Différence entre `.loc` et `.iloc`**
-- `.loc` sélectionne les données par **étiquette** (nom des lignes ou colonnes).
-- `.iloc` sélectionne les données par **indice numérique**.
-
-**Exemples :**
-```python
-# Sélection par étiquette avec loc
-df.loc[0]  # Sélectionne la première ligne
-
-# Sélection par index numérique avec iloc
-df.iloc[0]  # Sélectionne la première ligne
-```
-
-**Sélection de plusieurs lignes :**
-```python
-df.loc[1:2]  # Sélectionne les lignes 1 à 2 (inclus)
-df.iloc[0:2]  # Sélectionne les deux premières lignes
-```
-
-**Exercice 2 :**
-- Sélectionnez toutes les personnes ayant un salaire supérieur à 50 000.
-- Affichez uniquement les colonnes 'Nom' et 'Âge'.
-
----
-
-## Transformation et Nettoyage des Données
-
-Les jeux de données réels sont souvent **incomplets** ou **mal structurés**. Pandas offre des outils pour les corriger.
-
-### Gestion des Valeurs Manquantes
+Vous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.
 
 ```python
-df.isnull().sum()  # Compter les valeurs manquantes
-df.fillna(df.mean(), inplace=True)  # Remplacer les NaN par la moyenne
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Données
+x = np.linspace(0, 2 * np.pi, 100)
+y = np.sin(x)
+
+# Tracé du graphique avec personnalisation des polices
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x", fontsize=12)  # Taille de la police de l'axe x
+plt.ylabel("sin(x)", fontsize=12)  # Taille de la police de l'axe y
+plt.title("Courbe sin(x) avec polices personnalisées", fontsize=16)  # Taille du titre
+plt.legend(fontsize=10)  # Taille de la police de la légende
+plt.show()
 ```
 
-Pourquoi gérer les valeurs manquantes ?
-- Les valeurs manquantes peuvent **fausser les résultats** d'analyse.
-- Pandas permet de **les remplacer ou les supprimer intelligemment**.
+## Annotations Avancées
 
-### Ajout et Suppression de Colonnes
+Les annotations permettent de mettre en évidence des points d'intérêt dans un graphique. Vous pouvez personnaliser le texte et la flèche de l'annotation.
 
 ```python
-df['Revenu Annuel'] = df['Salaire'] * 12  # Ajouter une colonne
-df.drop(columns=['Âge'], inplace=True)  # Supprimer une colonne
+# Définition du point maximum
+x_max = np.pi / 2
+y_max = np.sin(x_max)
+
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.scatter([x_max], [y_max], color='red')
+plt.annotate("Point max", xy=(x_max, y_max), xytext=(x_max + 1, y_max + 0.3),
+             arrowprops=dict(facecolor='black', shrink=0.05), fontsize=12)
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Annotation avancée sur sin(x)", fontsize=16)
+plt.legend()
+plt.show()
 ```
 
-Pourquoi manipuler les colonnes ?
-- Permet de **calculer de nouvelles métriques**.
-- Aide à **nettoyer les données** pour faciliter l’analyse.
+## Sauvegarde des Figures
 
-**Exercice 3 :**
-- Remplacez les valeurs NaN par la médiane.
-- Ajoutez une colonne calculant le double du salaire.
-
----
-
-## Gestion des indices
-
-Pandas permet de manipuler et personnaliser les indices d'un DataFrame pour optimiser l'analyse des données.
-
-### Modification de l'index
+Pour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :
 
 ```python
-df.set_index('Nom', inplace=True)  # Définir la colonne "Nom" comme index
-print(df)
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Graphique sauvegardé")
+plt.legend()
+plt.savefig("graphique_sin.png", dpi=300, bbox_inches='tight')
+plt.show()
 ```
 
-### Réinitialisation de l'index
+### Explications :
+- `dpi=300` : Définit une haute résolution pour l’image exportée.
+- `bbox_inches='tight'` : Ajuste les marges pour éviter que des éléments soient coupés.
 
-```python
-df.reset_index(inplace=True)  # Restaurer l'index par défaut
-print(df)
-```
-
-Pourquoi utiliser des indices personnalisés ?
-- Permet d'accéder plus rapidement aux lignes spécifiques.
-- Facilite les jointures et les regroupements de données.
-
----
-
-## Tri et ordonnancement des données
-
-Pandas permet de trier les données selon différentes colonnes.
-
-### Trier selon une colonne
-
-```python
-df.sort_values(by='Salaire', ascending=False)
-```
-
-### Trier selon l'index
-
-```python
-df.sort_index()
-```
-
-Pourquoi trier les données ?
-
-- Facilite l'interprétation des résultats.
-- Permet d'optimiser certaines analyses.
-
----
-
-## Optimisation et performances
-
-Pandas permet d'améliorer les performances des manipulations de données.
-
-### Utilisation des types `category`
-
-```python
-df['Nom'] = df['Nom'].astype('category')
-```
-
-Pourquoi utiliser `category` ?
-
-- Permet de réduire la mémoire utilisée.
-- Optimise les opérations de regroupement.
-
-### Chargement efficace de fichiers volumineux
-
-```python
-pd.read_csv('data.csv', chunksize=1000)  # Charger par blocs de 1000 lignes
-```
-
-Pourquoi charger en morceaux ?
-
-- Évite de saturer la mémoire RAM.
-- Facilite le traitement de très gros fichiers.
-
----
-
-## Exportation des données
-
-Pandas permet d'exporter facilement les résultats de l'analyse sous différents formats.
-
-```python
-df.to_csv('output.csv', index=False)  # Sauvegarde en CSV
-df.to_excel('output.xlsx', index=False)  # Sauvegarde en Excel
-df.to_json('output.json')  # Sauvegarde en JSON
-```
-
-Pourquoi exporter les données ?
-
-- Facilite le partage et la réutilisation des résultats.
-- Permet de documenter le travail réalisé.
-
+Avec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations.
 ---
 
 
-## GroupBy et Agrégations
 
-Pandas facilite le **regroupement des données** et leur analyse statistique.
+# Organisation des Graphiques avec les Subplots
+## Utilisation de plt.subplot()
 
-### Agrégation par GroupBy
+La fonction `plt.subplot(nrows, ncols, index)` permet de créer une grille simple de sous-graphes. Elle divise la figure en une matrice de `nrows` lignes et `ncols` colonnes, puis sélectionne le subplot à modifier à l'aide de l'`index`.
 
-```python
-df.groupby('Nom')['Salaire'].sum()
-```
+### Exemple : Deux graphiques côte à côte (sin(x) et cos(x))
 
-Pourquoi utiliser GroupBy ?
-
-- Permet d’analyser **des tendances** et de **comparer des groupes**.
-
-### Statistiques Avancées
+Dans cet exemple, nous allons afficher côte à côte les courbes des fonctions `sin(x)` et `cos(x)`.
 
 ```python
-df['Salaire'].mean()  # Moyenne
-df['Salaire'].median()  # Médiane
-df['Salaire'].std()  # Écart-type
+# Importation des bibliothèques
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Données
+x = np.linspace(0, 2 * np.pi, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+plt.figure(figsize=(10, 4))
+
+# Premier subplot : sin(x)
+plt.subplot(1, 2, 1)  # 1 ligne, 2 colonnes, 1er subplot
+plt.plot(x, y1, color='blue', label='sin(x)')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Courbe sin(x)")
+plt.legend()
+
+# Deuxième subplot : cos(x)
+plt.subplot(1, 2, 2)  # 1 ligne, 2 colonnes, 2e subplot
+plt.plot(x, y2, color='red', label='cos(x)')
+plt.xlabel("x")
+plt.ylabel("cos(x)")
+plt.title("Courbe cos(x)")
+plt.legend()
+
+# Ajustement de l'affichage
+plt.tight_layout()
+plt.show()
 ```
-
-Pourquoi les statistiques sont utiles ?
-
-- Aident à **détecter les tendances et anomalies**.
-
-**Exercice 4 :**
-
-- Trouvez la moyenne des salaires par groupe.
-- Identifiez la personne ayant le salaire le plus élevé.
 
 ---
+## Utilisation de plt.subplots()
 
+La fonction `plt.subplots()` crée à la fois une figure et un tableau d’axes (`fig, axes`), ce qui permet de gérer plusieurs subplots plus facilement que `plt.subplot()`. Elle retourne :
+- `fig` : la figure globale.
+- `axes` : une liste ou un tableau d'objets `AxesSubplot`, facilitant la manipulation des sous-graphiques.
 
-## Jointures et Fusion de Données
+### Exemple : Grille 2×2 de graphiques
 
-Lorsqu'on travaille avec plusieurs ensembles de données, il est souvent nécessaire de **les fusionner** pour obtenir une vue d'ensemble cohérente. Pandas offre plusieurs méthodes pour combiner des DataFrames.
-
-### La méthode `merge()`
-
-La méthode `merge()` permet de fusionner deux DataFrames sur une colonne commune.
-
-```python
-df1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie']})
-df2 = pd.DataFrame({'ID': [1, 2, 3], 'Salaire': [50000, 60000, 70000]})
-
-fusion = pd.merge(df1, df2, on='ID')
-print(fusion)
-```
-
-### Types de Jointures
-
-Pandas permet plusieurs types de jointures similaires aux bases de données SQL :
-
-- **Inner Join (Intersection)** : Ne garde que les valeurs communes aux deux DataFrames.
-- **Left Join (Jointure à gauche)** : Conserve toutes les lignes du premier DataFrame et ajoute les correspondances du second.
-- **Right Join (Jointure à droite)** : Conserve toutes les lignes du second DataFrame et ajoute les correspondances du premier.
-- **Outer Join (Jointure complète)** : Conserve toutes les données des deux DataFrames, même celles sans correspondance.
+Dans cet exemple, nous allons tracer quatre graphiques dans une grille de 2 lignes et 2 colonnes.
 
 ```python
-# Inner Join (par défaut)
-pd.merge(df1, df2, on='ID', how='inner')
+# Importation des bibliothèques
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Left Join
-pd.merge(df1, df2, on='ID', how='left')
+# Données
+x = np.linspace(0, 2*np.pi, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.sin(2*x)
+y4 = np.cos(2*x)
 
-# Right Join
-pd.merge(df1, df2, on='ID', how='right')
+# Création de la figure et des subplots
+fig, axes = plt.subplots(2, 2, figsize=(10, 8), sharex=True, sharey=True)
 
-# Outer Join
-pd.merge(df1, df2, on='ID', how='outer')
+# Premier graphique : sin(x)
+axes[0, 0].plot(x, y1, color='blue')
+axes[0, 0].set_title("sin(x)")
+
+# Deuxième graphique : cos(x)
+axes[0, 1].plot(x, y2, color='red')
+axes[0, 1].set_title("cos(x)")
+
+# Troisième graphique : sin(2x)
+axes[1, 0].plot(x, y3, color='green')
+axes[1, 0].set_title("sin(2x)")
+
+# Quatrième graphique : cos(2x)
+axes[1, 1].plot(x, y4, color='purple')
+axes[1, 1].set_title("cos(2x)")
+
+# Titre global
+fig.suptitle("Exemples de graphiques en subplots", fontsize=16)
+
+# Ajustement de l'affichage
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.show()
 ```
-
-### Concaténation de DataFrames
-
-Parfois, il est nécessaire de **concaténer** des DataFrames, c'est-à-dire les empiler verticalement ou horizontalement.
-
-```python
-df3 = pd.DataFrame({'ID': [4, 5], 'Nom': ['David', 'Emma']})
-concat_vertical = pd.concat([df1, df3], ignore_index=True)
-print(concat_vertical)
-```
-
-Pourquoi utiliser `concat()` ?
-
-- Utile lorsqu'on dispose de plusieurs fichiers contenant des données similaires et qu'on souhaite les regrouper.
-- Permet de fusionner facilement des ensembles de données de manière efficace.
-
-### Jointure Multi-index
-
-Dans certains cas, la fusion se fait sur plusieurs colonnes :
-
-```python
-df1 = pd.DataFrame({'ID': [1, 2, 3], 'Nom': ['Alice', 'Bob', 'Charlie'], 'Ville': ['Paris', 'Lyon', 'Marseille']})
-df2 = pd.DataFrame({'ID': [1, 2, 3], 'Ville': ['Paris', 'Lyon', 'Marseille'], 'Salaire': [50000, 60000, 70000]})
-
-fusion_multi = pd.merge(df1, df2, on=['ID', 'Ville'])
-print(fusion_multi)
-```
-
-**Exercice 5 :**
-
-- Créez deux DataFrames et appliquez différents types de jointures.
-- Testez la concaténation avec des DataFrames ayant des colonnes différentes.
-
 ---
 
-## Conclusion
+#Conclusion
+Ce guide vous offre une base solide pour utiliser Matplotlib et Seaborn en Python. Vous avez appris à :
+- Choisir le bon type de graphique selon vos données.
+- Créer et personnaliser des graphiques avec Matplotlib.
+- Explorer des visualisations avancées avec Seaborn.
+- Organiser plusieurs visualisations dans une même figure.
 
-Ce cours vous a permis d'apprendre à :
-
-- Charger et manipuler des ensembles de données.
-- Effectuer des analyses exploratoires et des transformations.
-- Nettoyer les données et appliquer des techniques avancées.
-- Fusionner et joindre plusieurs ensembles de données pour une analyse plus complète.
-
-
-
+En pratiquant avec ces outils, vous développerez une compréhension approfondie de l'analyse et de la présentation visuelle des données !

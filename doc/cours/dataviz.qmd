@@ -369,3 +369,64 @@ plt.show()
 ```
 
 ---
+
+
+
+
+## Utilisation de plt.subplots()
+
+La fonction `plt.subplots()` crée à la fois une figure et un tableau d’axes (`fig, axes`), ce qui permet de gérer plusieurs subplots plus facilement que `plt.subplot()`. Elle retourne :
+- `fig` : la figure globale.
+- `axes` : une liste ou un tableau d'objets `AxesSubplot`, facilitant la manipulation des sous-graphiques.
+
+### Exemple : Grille 2×2 de graphiques
+
+Dans cet exemple, nous allons tracer quatre graphiques dans une grille de 2 lignes et 2 colonnes.
+
+```python
+# Importation des bibliothèques
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Données
+x = np.linspace(0, 2*np.pi, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.sin(2*x)
+y4 = np.cos(2*x)
+
+# Création de la figure et des subplots
+fig, axes = plt.subplots(2, 2, figsize=(10, 8), sharex=True, sharey=True)
+
+# Premier graphique : sin(x)
+axes[0, 0].plot(x, y1, color='blue')
+axes[0, 0].set_title("sin(x)")
+
+# Deuxième graphique : cos(x)
+axes[0, 1].plot(x, y2, color='red')
+axes[0, 1].set_title("cos(x)")
+
+# Troisième graphique : sin(2x)
+axes[1, 0].plot(x, y3, color='green')
+axes[1, 0].set_title("sin(2x)")
+
+# Quatrième graphique : cos(2x)
+axes[1, 1].plot(x, y4, color='purple')
+axes[1, 1].set_title("cos(2x)")
+
+# Titre global
+fig.suptitle("Exemples de graphiques en subplots", fontsize=16)
+
+# Ajustement de l'affichage
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.show()
+```
+---
+
+#Conclusion
+Ce guide vous offre une base solide pour utiliser Matplotlib et Seaborn en Python. Vous avez appris à :
+- Choisir le bon type de graphique selon vos données.
+- Créer et personnaliser des graphiques avec Matplotlib.
+- Explorer des visualisations avancées avec Seaborn.
+- Organiser plusieurs visualisations dans une même figure.
+---

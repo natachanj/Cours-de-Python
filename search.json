@@ -361,7 +361,28 @@
     "href": "doc/cours/dataviz.html#heatmap",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "3.3 Heatmap",
-    "text": "3.3 Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()"
+    "text": "3.3 Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()\n\nExplications : - tips.corr() calcule la matrice de corrélation des variables numériques. - annot=True affiche les valeurs dans chaque cellule."
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#pairplot",
+    "href": "doc/cours/dataviz.html#pairplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.4 Pairplot",
+    "text": "3.4 Pairplot\nLe pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.\nExemple : Pairplot du dataset “iris”\n# Chargement des données\niris = sns.load_dataset(\"iris\")\n\n# Création du pairplot\nsns.pairplot(iris, hue=\"species\")\nplt.suptitle(\"Pairplot du dataset Iris\", y=1.02)\nplt.show()\nNote : - L’argument hue=\"species\" permet de colorer les points selon l’espèce."
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#violin-plot",
+    "href": "doc/cours/dataviz.html#violin-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.5 Violin Plot",
+    "text": "3.5 Violin Plot\nLe violin plot combine un boxplot avec une estimation de la densité de la distribution.\nExemple : Distribution des pourboires pour fumeurs vs non-fumeurs\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"Pastel1\")\nplt.xlabel(\"Fumeur\")\nplt.ylabel(\"Pourboire ($)\")\nplt.title(\"Distribution des pourboires pour fumeurs vs non-fumeurs\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#palettes-de-couleurs-et-thèmes",
+    "href": "doc/cours/dataviz.html#palettes-de-couleurs-et-thèmes",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.6 Palettes de Couleurs et Thèmes",
+    "text": "3.6 Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique.\n\nModifier la palette par défaut\nsns.set_palette(\"pastel\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.title(\"Boxplot avec palette pastel\")\nplt.show()"
   },
   {
     "objectID": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
@@ -439,6 +460,27 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "Heatmap",
     "text": "Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#pairplot",
+    "href": "doc/cours/visualisationdonnees-slides.html#pairplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Pairplot",
+    "text": "Pairplot\nLe pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.\nExemple : Pairplot du dataset “iris”\n# Chargement des données\niris = sns.load_dataset(\"iris\")\n\n# Création du pairplot\nsns.pairplot(iris, hue=\"species\")\nplt.suptitle(\"Pairplot du dataset Iris\", y=1.02)\nplt.show()\nNote : - L’argument hue=\"species\" permet de colorer les points selon l’espèce."
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#violin-plot",
+    "href": "doc/cours/visualisationdonnees-slides.html#violin-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Violin Plot",
+    "text": "Violin Plot\nLe violin plot combine un boxplot avec une estimation de la densité de la distribution.\nExemple : Distribution des pourboires pour fumeurs vs non-fumeurs\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"Pastel1\")\nplt.xlabel(\"Fumeur\")\nplt.ylabel(\"Pourboire ($)\")\nplt.title(\"Distribution des pourboires pour fumeurs vs non-fumeurs\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#palettes-de-couleurs-et-thèmes",
+    "href": "doc/cours/visualisationdonnees-slides.html#palettes-de-couleurs-et-thèmes",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Palettes de Couleurs et Thèmes",
+    "text": "Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique."
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html",

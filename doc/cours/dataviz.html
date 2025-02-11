@@ -241,6 +241,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installation-et-importation-1" id="toc-installation-et-importation-1" class="nav-link" data-scroll-target="#installation-et-importation-1"><span class="header-section-number">3.1</span> Installation et Importation</a></li>
   <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">3.2</span> Boxplot</a></li>
   <li><a href="#heatmap" id="toc-heatmap" class="nav-link" data-scroll-target="#heatmap"><span class="header-section-number">3.3</span> Heatmap</a></li>
+  <li><a href="#pairplot" id="toc-pairplot" class="nav-link" data-scroll-target="#pairplot"><span class="header-section-number">3.4</span> Pairplot</a></li>
+  <li><a href="#violin-plot" id="toc-violin-plot" class="nav-link" data-scroll-target="#violin-plot"><span class="header-section-number">3.5</span> Violin Plot</a></li>
+  <li><a href="#palettes-de-couleurs-et-thèmes" id="toc-palettes-de-couleurs-et-thèmes" class="nav-link" data-scroll-target="#palettes-de-couleurs-et-thèmes"><span class="header-section-number">3.6</span> Palettes de Couleurs et Thèmes</a>
+  <ul class="collapse">
+  <li><a href="#modifier-la-palette-par-défaut" id="toc-modifier-la-palette-par-défaut" class="nav-link" data-scroll-target="#modifier-la-palette-par-défaut">Modifier la palette par défaut</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="visualisationdonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -467,8 +473,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-6"><a href="#cb11-6"></a>plt.title(<span class="st">"Matrice de corrélation (dataset Tips)"</span>)</span>
 <span id="cb11-7"><a href="#cb11-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
+<p><strong>Explications :</strong> - <code>tips.corr()</code> calcule la matrice de corrélation des variables numériques. - <code>annot=True</code> affiche les valeurs dans chaque cellule.</p>
+</section>
+<section id="pairplot" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="pairplot"><span class="header-section-number">3.4</span> Pairplot</h2>
+<p>Le pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.</p>
+<p>Exemple : Pairplot du dataset “iris”</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Chargement des données</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>iris <span class="op">=</span> sns.load_dataset(<span class="st">"iris"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Création du pairplot</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>sns.pairplot(iris, hue<span class="op">=</span><span class="st">"species"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6"></a>plt.suptitle(<span class="st">"Pairplot du dataset Iris"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Note :</strong> - L’argument <code>hue="species"</code> permet de colorer les points selon l’espèce.</p>
+<hr>
+</section>
+<section id="violin-plot" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="violin-plot"><span class="header-section-number">3.5</span> Violin Plot</h2>
+<p>Le violin plot combine un boxplot avec une estimation de la densité de la distribution.</p>
+<p>Exemple : Distribution des pourboires pour fumeurs vs non-fumeurs</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>sns.violinplot(x<span class="op">=</span><span class="st">"smoker"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">"Pastel1"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>plt.xlabel(<span class="st">"Fumeur"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3"></a>plt.ylabel(<span class="st">"Pourboire ($)"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4"></a>plt.title(<span class="st">"Distribution des pourboires pour fumeurs vs non-fumeurs"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="palettes-de-couleurs-et-thèmes" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="palettes-de-couleurs-et-thèmes"><span class="header-section-number">3.6</span> Palettes de Couleurs et Thèmes</h2>
+<p>Seaborn offre des palettes et styles par défaut pour améliorer l’esthétique.</p>
+<section id="modifier-la-palette-par-défaut" class="level3">
+<h3 class="anchored" data-anchor-id="modifier-la-palette-par-défaut">Modifier la palette par défaut</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>sns.set_palette(<span class="st">"pastel"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb14-3"><a href="#cb14-3"></a>plt.title(<span class="st">"Boxplot avec palette pastel"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 
 
+</section>
 </section>
 </section>
 

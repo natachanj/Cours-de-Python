@@ -594,6 +594,58 @@ Natacha Njongwa Yepnga
 </section>
 <section class="slide level3">
 
+</section>
+
+<section id="utilisation-de-plt.subplots" class="title-slide slide level2 center">
+<h2>Utilisation de plt.subplots()</h2>
+<p>La fonction <code>plt.subplots()</code> crée à la fois une figure et un tableau d’axes (<code>fig, axes</code>), ce qui permet de gérer plusieurs subplots plus facilement que <code>plt.subplot()</code>. Elle retourne : - <code>fig</code> : la figure globale. - <code>axes</code> : une liste ou un tableau d’objets <code>AxesSubplot</code>, facilitant la manipulation des sous-graphiques.</p>
+</section>
+<section id="exemple-grille-22-de-graphiques" class="slide level3">
+<h3>Exemple : Grille 2×2 de graphiques</h3>
+<p>Dans cet exemple, nous allons tracer quatre graphiques dans une grille de 2 lignes et 2 colonnes.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="co"># Importation des bibliothèques</span></span>
+<span id="cb21-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-4"><a></a></span>
+<span id="cb21-5"><a></a><span class="co"># Données</span></span>
+<span id="cb21-6"><a></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">100</span>)</span>
+<span id="cb21-7"><a></a>y1 <span class="op">=</span> np.sin(x)</span>
+<span id="cb21-8"><a></a>y2 <span class="op">=</span> np.cos(x)</span>
+<span id="cb21-9"><a></a>y3 <span class="op">=</span> np.sin(<span class="dv">2</span><span class="op">*</span>x)</span>
+<span id="cb21-10"><a></a>y4 <span class="op">=</span> np.cos(<span class="dv">2</span><span class="op">*</span>x)</span>
+<span id="cb21-11"><a></a></span>
+<span id="cb21-12"><a></a><span class="co"># Création de la figure et des subplots</span></span>
+<span id="cb21-13"><a></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-14"><a></a></span>
+<span id="cb21-15"><a></a><span class="co"># Premier graphique : sin(x)</span></span>
+<span id="cb21-16"><a></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].plot(x, y1, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb21-17"><a></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"sin(x)"</span>)</span>
+<span id="cb21-18"><a></a></span>
+<span id="cb21-19"><a></a><span class="co"># Deuxième graphique : cos(x)</span></span>
+<span id="cb21-20"><a></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].plot(x, y2, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb21-21"><a></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"cos(x)"</span>)</span>
+<span id="cb21-22"><a></a></span>
+<span id="cb21-23"><a></a><span class="co"># Troisième graphique : sin(2x)</span></span>
+<span id="cb21-24"><a></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].plot(x, y3, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb21-25"><a></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"sin(2x)"</span>)</span>
+<span id="cb21-26"><a></a></span>
+<span id="cb21-27"><a></a><span class="co"># Quatrième graphique : cos(2x)</span></span>
+<span id="cb21-28"><a></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].plot(x, y4, color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb21-29"><a></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"cos(2x)"</span>)</span>
+<span id="cb21-30"><a></a></span>
+<span id="cb21-31"><a></a><span class="co"># Titre global</span></span>
+<span id="cb21-32"><a></a>fig.suptitle(<span class="st">"Exemples de graphiques en subplots"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb21-33"><a></a></span>
+<span id="cb21-34"><a></a><span class="co"># Ajustement de l'affichage</span></span>
+<span id="cb21-35"><a></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
+<span id="cb21-36"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
+
+<p>#Conclusion Ce guide vous offre une base solide pour utiliser Matplotlib et Seaborn en Python. Vous avez appris à : - Choisir le bon type de graphique selon vos données. - Créer et personnaliser des graphiques avec Matplotlib. - Explorer des visualisations avancées avec Seaborn. - Organiser plusieurs visualisations dans une même figure.</p>
+</section>
+<section class="slide level3">
+
 
 
 </section>

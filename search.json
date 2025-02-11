@@ -385,6 +385,13 @@
     "text": "3.6 Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique.\n\nModifier la palette par défaut\nsns.set_palette(\"pastel\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.title(\"Boxplot avec palette pastel\")\nplt.show()\n\n\n\nChanger le style global\nsns.set_style(\"ticks\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nsns.despine()  # Supprime les bordures supérieures et droites\nplt.title(\"Boxplot avec style 'ticks'\")\nplt.show()\n\n\nAjuster le contexte (taille des éléments)\nsns.set_context(\"talk\")\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"muted\")\nplt.title(\"Violin plot avec contexte 'talk'\")\nplt.show()"
   },
   {
+    "objectID": "doc/cours/dataviz.html#modification-des-axes-et-titres",
+    "href": "doc/cours/dataviz.html#modification-des-axes-et-titres",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "4.1 Modification des Axes et Titres",
+    "text": "4.1 Modification des Axes et Titres\nVous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Données\nx = np.linspace(0, 2 * np.pi, 100)\ny = np.sin(x)\n\n# Tracé du graphique avec personnalisation des polices\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\", fontsize=12)  # Taille de la police de l'axe x\nplt.ylabel(\"sin(x)\", fontsize=12)  # Taille de la police de l'axe y\nplt.title(\"Courbe sin(x) avec polices personnalisées\", fontsize=16)  # Taille du titre\nplt.legend(fontsize=10)  # Taille de la police de la légende\nplt.show()"
+  },
+  {
     "objectID": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
     "href": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
@@ -481,6 +488,13 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "Palettes de Couleurs et Thèmes",
     "text": "Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique."
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#modification-des-axes-et-titres",
+    "href": "doc/cours/visualisationdonnees-slides.html#modification-des-axes-et-titres",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Modification des Axes et Titres",
+    "text": "Modification des Axes et Titres\nVous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Données\nx = np.linspace(0, 2 * np.pi, 100)\ny = np.sin(x)\n\n# Tracé du graphique avec personnalisation des polices\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\", fontsize=12)  # Taille de la police de l'axe x\nplt.ylabel(\"sin(x)\", fontsize=12)  # Taille de la police de l'axe y\nplt.title(\"Courbe sin(x) avec polices personnalisées\", fontsize=16)  # Taille du titre\nplt.legend(fontsize=10)  # Taille de la police de la légende\nplt.show()"
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html",

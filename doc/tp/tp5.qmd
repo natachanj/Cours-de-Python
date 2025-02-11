@@ -13,6 +13,9 @@ number-depth: 3
 ---
 # Visualisation des Données avec Matplotlib et Seaborn
 
+[Le TP est disponible ici](https://colab.research.google.com/drive/12uIH7AZjFXDcG51a6sbzrauhD6B8QgqW?usp=drive_link)
+
+
 ## Exercice 1 : Courbe linéaire
 Tracez la courbe de la fonction $f(x) = x^2$ pour $x$ allant de 0 à 10. Utilisez 100 points pour $x$ afin d’obtenir une courbe lisse. Ajoutez un titre "Courbe parabole" et nommez les axes "x" et "f(x)".
 
@@ -60,23 +63,28 @@ Toujours avec le dataset Iris, calculez la matrice de corrélation et affichez u
 
 ## Exercice 10 : Analyse univariée
 Utilisez la base de données [Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset?resource=download).
+
 - Chargez les données et affichez les premières lignes.
 - Faites une analyse univariée des variables `person_age`, `person_income`, et `loan_amnt` en utilisant des histogrammes et des boxplots.
 - Identifiez les valeurs aberrantes dans `loan_int_rate`.
 
 ## Exercice 11 : Analyse bivariée
+
 - Étudiez la relation entre `person_income` et `loan_amnt` à l’aide d’un scatter plot (quanti-quanti).
 - Étudiez l’influence de `person_home_ownership` sur `loan_amnt` via un boxplot (quanti-quali).
 - Étudiez la relation entre `loan_intent` et `loan_grade` via un countplot (quali-quali).
 
 ## Exercice 12 : Tests statistiques en Python
+
 - Testez s’il y a une différence significative de revenu (`person_income`) entre les propriétaires et non-propriétaires (`person_home_ownership`) avec un test t de Student.
 - Testez si la distribution des taux d’intérêt (`loan_int_rate`) suit une loi normale.
 - Testez l’indépendance entre `loan_intent` et `loan_status` avec un test du chi².
 - Réalisez une ANOVA pour comparer le revenu (`person_income`) entre plusieurs catégories de but du prêt (`loan_intent`).
 
 ## Exercice 13 : Organisation en subplots
+
 Créez une figure comportant 4 subplots organisés en 2 lignes × 2 colonnes contenant :
+
 - Un graphique linéaire représentant une fonction de votre choix.
 - Un scatter plot illustrant une relation entre deux variables quantitatives.
 - Un histogramme d’une variable de votre choix.
@@ -85,6 +93,7 @@ Créez une figure comportant 4 subplots organisés en 2 lignes × 2 colonnes con
 Ajoutez un titre à chaque subplot et ajustez la disposition pour éviter le chevauchement.
 
 ## Exercice 14 : Tests statistiques avancés
+
 - Effectuez un test de corrélation de Pearson et de Spearman entre `person_income` et `loan_amnt` (quanti-quanti).
 - Réalisez un test du chi² pour tester l’indépendance entre `cb_person_default_on_file` et `loan_status` (quali-quali).
 - Effectuez une comparaison de moyennes (`t-test indépendant`) entre `loan_int_rate` pour les individus ayant un historique de défaut (`cb_person_default_on_file`) et ceux qui n’en ont pas.

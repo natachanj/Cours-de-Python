@@ -1,0 +1,137 @@
+---
+title: "Projet : Prédiction du Risque de Crédit (Machine Learning)"
+description: Projet : Prédiction du Risque de Crédit (Machine Learning)
+author: "Natacha NJONGWA YEPNGA"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+# Projet : Prédiction du Risque de Crédit (Machine Learning)
+
+**Date limite de rendu** : 20 février 2025  
+**Enseignante référente** : Natacha Njongwa Yepnga (natachayepnga@gmail.com)
+
+---
+
+## Introduction
+
+Dans ce projet, nous allons construire un modèle de machine learning pour prédire le risque de défaut de paiement d’un emprunteur. Le TP est divisé en deux parties :
+
+1. **Exercices théoriques**  
+   Cette première partie vous permettra de renforcer vos compétences en manipulation de données et en programmation Python (Pandas, boucles, fonctions, visualisations). Vous pratiquerez l'importation, le nettoyage et l'exploration de données ainsi que la création de graphiques avec Matplotlib et Seaborn.
+
+2. **Projet pratique**  
+   Vous développerez un modèle prédictif de risque de crédit de bout en bout, depuis l’exploration des données jusqu’à l’évaluation et l’interprétation des modèles. Vous utiliserez la base de données **Credit Risk Dataset**, qui contient des informations sur des emprunteurs ainsi que leur statut de prêt (0 = remboursé, 1 = défaut).
+
+Ce TP vous permettra de mettre en pratique vos compétences en Python, en manipulation de données et en machine learning, et sera évalué sur la structure et la qualité de votre code, la clarté de vos commentaires et l’interprétation de vos résultats.
+
+---
+
+## Partie 1 : Exercices Théoriques
+
+### Exercice 1 : Manipulation de données avec Pandas
+
+1. **Importer le dataset** depuis un fichier CSV (par exemple, `credit_risk_dataset.csv`).
+2. **Afficher un aperçu des données** : utilisez `head()`, `info()`, et `describe()` pour examiner la structure et les statistiques des variables.
+3. **Vérifier et traiter les valeurs manquantes** : utilisez `isna().sum()` et proposez une stratégie (suppression ou imputation) pour chaque colonne présentant des valeurs manquantes.
+4. **Trier les données** par revenu (`person_income`) en ordre décroissant et affichez les 5 premières lignes.
+5. **Filtrer les emprunteurs** : sélectionnez ceux dont l’intention de prêt (`loan_intent`) est `"EDUCATION"` et dont le statut de prêt (`loan_status`) est 1.
+6. **Créer une nouvelle colonne** : calculez le ratio du montant du prêt sur le revenu (`loan_amnt / person_income`) et ajoutez-la au DataFrame.
+
+---
+
+### Exercice 2 : Création de fonctions analytiques
+
+1. **Fonction d'analyse quantitative**  
+
+   Créez une fonction `analyse_quantitative(df)` qui prend en entrée un DataFrame et :
+   - Affiche les statistiques descriptives (moyenne, médiane, écart-type, quartiles, etc.) pour les variables numériques.
+   - Génère des histogrammes pour chaque variable numérique.
+   - Affiche des boxplots pour détecter les valeurs aberrantes.
+   
+2. **Fonction d'analyse qualitative**  
+
+   Créez une fonction `analyse_qualitative(df)` qui prend en entrée un DataFrame et :
+   - Calcule les effectifs et proportions pour chaque modalité des variables qualitatives.
+   - Trace des diagrammes en barres pour visualiser la répartition des catégories.
+
+3. **Fonction d'analyse bivariée**  
+
+   Créez une fonction `analyse_bivariee(df, var1, var2)` qui, en fonction du type des variables, réalise :
+   - Pour deux variables quantitatives : un scatter plot et le calcul du coefficient de corrélation.
+   - Pour deux variables qualitatives : un tableau de contingence suivi d'une heatmap.
+   - Pour une variable quantitative et une variable qualitative : un boxplot de la variable quantitative en fonction de la catégorie.
+4. Appliquez les fonctions à votre base de données et commentez.
+---
+
+
+## Partie 2 : Projet Pratique - Modèle de Prédiction du Risque de Crédit
+
+Dans cette partie, vous allez développer un modèle de machine learning complet pour prédire si un emprunteur fera défaut sur son crédit.
+
+### Étape 1 : Chargement et exploration des données
+
+- **Charger les données** depuis le fichier CSV dans un DataFrame.
+- **Afficher les premières lignes** et les informations générales du dataset.
+- **Calculer le pourcentage de défauts** en utilisant la colonne `loan_status`.
+- **Examiner la distribution** des variables catégorielles et numériques (à l'aide de `value_counts()`, `describe()`, et de quelques visualisations rapides).
+
+### Étape 2 : Nettoyage et prétraitement des données
+
+- **Traitement des valeurs manquantes** : identifiez les colonnes avec des valeurs manquantes et appliquez une stratégie d'imputation ou de suppression.
+- **Encodage des variables catégorielles** : transformez les variables qualitatives en variables numériques via One-Hot Encoding (ou un encodage ordinal si approprié).
+- **Standardisation** des variables numériques : appliquez la standardisation (ex. Z-score) sur les features numériques pour assurer une échelle comparable.
+
+### Étape 3 : Sélection des variables pertinentes
+
+- **Analyse de corrélation** : examinez la matrice de corrélation pour identifier les features fortement corrélées.
+- **Test d'importance** : entraînez un modèle simple (par exemple, une régression logistique ou une Random Forest) sur l’ensemble d’entraînement pour évaluer l’importance des variables.
+- **Sélection manuelle** : justifiez le choix des variables retenues pour le modèle final (citez, par exemple, le fait que `loan_intent`, `loan_grade`, et `person_income` semblent être les plus influents).
+
+### Étape 4 : Entraînement de modèles
+
+- **Séparer les données** en ensemble d’entraînement et ensemble de test (ex. 70% / 30%).
+- **Entraîner plusieurs modèles** :  
+  - **Modèle 1 : Régression Logistique**  
+  - **Modèle 2 : Random Forest**  
+- **Évaluer la performance** de chaque modèle sur l’ensemble test en calculant des métriques telles que l’accuracy, le F1-score, et en affichant la matrice de confusion.
+- **Tracer la courbe ROC** et calculer l’AUC pour comparer les modèles.
+
+### Étape 5 : Optimisation des hyperparamètres
+
+- Mettez en place une **Grid Search** ou **Randomized Search** avec validation croisée pour optimiser les hyperparamètres de vos modèles (par exemple, `C` pour la régression logistique, et `n_estimators`, `max_depth` pour la Random Forest).
+- Présentez les **meilleurs paramètres** trouvés et comparez la performance du modèle optimisé sur le jeu de test par rapport aux paramètres par défaut.
+
+### Étape 6 : Interprétation et recommandations
+
+- **Analysez l'importance des variables** : identifiez quelles features influencent le plus le risque de défaut.
+- **Discutez des limites** du modèle : par exemple, le déséquilibre de classes, le sur-apprentissage, etc.
+- **Proposez des recommandations** pour une utilisation en production (ex. ajuster le seuil de décision en fonction du coût des faux négatifs, implémenter un système de monitoring des performances du modèle).
+- **Résumé des insights** : concluez sur ce que votre modèle révèle du risque de crédit dans ce dataset et comment il pourrait aider une institution financière dans ses décisions de prêt.
+
+---
+
+## Barème d’évaluation
+
+- **Qualité du code** (propreté, clarté, noms des variables, commentaires) : **30%**
+- **Structure du notebook** (organisation claire des sections, séparation logique des étapes) : **20%**
+- **Justification et interprétation des résultats** (analyse critique et explications détaillées) : **30%**
+- **Pertinence des choix de modélisation et visualisation** (sélection des features, choix des modèles, visualisations soignées) : **20%**
+
+---
+
+## Conclusion
+
+Ce projet vous permettra de mettre en pratique la manipulation de données, la visualisation, et l’apprentissage automatique sur un cas concret de risque de crédit. Vous devez non seulement implémenter un modèle performant, mais aussi structurer et commenter votre travail de manière claire et détaillée. Pensez à bien expliquer chaque choix (prétraitement, sélection de variables, hyperparamètres) et à interpréter vos résultats.
+
+Bonne chance et bonne exploration !
+
+---
+
+**Rappel** : Le rendu du TP doit être soumis au plus tard le **20 février 2025**. Veillez à envoyer votre notebook complet à l’adresse : natacha.njongwa.yepnga@gmail.com.

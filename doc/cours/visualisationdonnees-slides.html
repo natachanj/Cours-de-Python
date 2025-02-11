@@ -363,6 +363,169 @@ Natacha Njongwa Yepnga
 </section>
 <section class="slide level3">
 
+</section>
+</section>
+<section>
+<section id="visualisation-avancée-avec-seaborn" class="title-slide slide level1 center">
+<h1>Visualisation Avancée avec Seaborn</h1>
+<p>Seaborn simplifie la création de graphiques statistiques et esthétiques, en particulier pour des DataFrames issus de Pandas.</p>
+</section>
+<section id="installation-et-importation-1" class="title-slide slide level2 center">
+<h2>Installation et Importation</h2>
+<p>Si nécessaire, installez Seaborn :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">pip</span> install seaborn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Puis importez-le :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="boxplot" class="title-slide slide level2 center">
+<h2>Boxplot</h2>
+<p>Le boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.</p>
+<p>Exemple : Distribution des additions par jour avec le dataset “tips”</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co"># Chargement des données</span></span>
+<span id="cb10-2"><a></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="co"># Création du boxplot</span></span>
+<span id="cb10-5"><a></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb10-6"><a></a>plt.xlabel(<span class="st">"Jour de la semaine"</span>)</span>
+<span id="cb10-7"><a></a>plt.ylabel(<span class="st">"Addition totale ($)"</span>)</span>
+<span id="cb10-8"><a></a>plt.title(<span class="st">"Distribution des additions par jour"</span>)</span>
+<span id="cb10-9"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="heatmap" class="title-slide slide level2 center">
+<h2>Heatmap</h2>
+<p>La heatmap représente une matrice de données à l’aide de codes couleur.</p>
+<p>Exemple : Matrice de corrélation du dataset “tips”</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># Calcul de la matrice de corrélation</span></span>
+<span id="cb11-2"><a></a>corr <span class="op">=</span> tips.corr()</span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a><span class="co"># Affichage de la heatmap</span></span>
+<span id="cb11-5"><a></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>)</span>
+<span id="cb11-6"><a></a>plt.title(<span class="st">"Matrice de corrélation (dataset Tips)"</span>)</span>
+<span id="cb11-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explications :</strong> - <code>tips.corr()</code> calcule la matrice de corrélation des variables numériques. - <code>annot=True</code> affiche les valeurs dans chaque cellule.</p>
+</section>
+
+<section id="pairplot" class="title-slide slide level2 center">
+<h2>Pairplot</h2>
+<p>Le pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.</p>
+<p>Exemple : Pairplot du dataset “iris”</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># Chargement des données</span></span>
+<span id="cb12-2"><a></a>iris <span class="op">=</span> sns.load_dataset(<span class="st">"iris"</span>)</span>
+<span id="cb12-3"><a></a></span>
+<span id="cb12-4"><a></a><span class="co"># Création du pairplot</span></span>
+<span id="cb12-5"><a></a>sns.pairplot(iris, hue<span class="op">=</span><span class="st">"species"</span>)</span>
+<span id="cb12-6"><a></a>plt.suptitle(<span class="st">"Pairplot du dataset Iris"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb12-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Note :</strong> - L’argument <code>hue="species"</code> permet de colorer les points selon l’espèce.</p>
+</section>
+
+<section id="violin-plot" class="title-slide slide level2 center">
+<h2>Violin Plot</h2>
+<p>Le violin plot combine un boxplot avec une estimation de la densité de la distribution.</p>
+<p>Exemple : Distribution des pourboires pour fumeurs vs non-fumeurs</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>sns.violinplot(x<span class="op">=</span><span class="st">"smoker"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">"Pastel1"</span>)</span>
+<span id="cb13-2"><a></a>plt.xlabel(<span class="st">"Fumeur"</span>)</span>
+<span id="cb13-3"><a></a>plt.ylabel(<span class="st">"Pourboire ($)"</span>)</span>
+<span id="cb13-4"><a></a>plt.title(<span class="st">"Distribution des pourboires pour fumeurs vs non-fumeurs"</span>)</span>
+<span id="cb13-5"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="palettes-de-couleurs-et-thèmes" class="title-slide slide level2 center">
+<h2>Palettes de Couleurs et Thèmes</h2>
+<p>Seaborn offre des palettes et styles par défaut pour améliorer l’esthétique.</p>
+</section>
+<section id="modifier-la-palette-par-défaut" class="slide level3">
+<h3>Modifier la palette par défaut</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>sns.set_palette(<span class="st">"pastel"</span>)</span>
+<span id="cb14-2"><a></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb14-3"><a></a>plt.title(<span class="st">"Boxplot avec palette pastel"</span>)</span>
+<span id="cb14-4"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="changer-le-style-global" class="slide level3">
+<h3>Changer le style global</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>sns.set_style(<span class="st">"ticks"</span>)</span>
+<span id="cb15-2"><a></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb15-3"><a></a>sns.despine()  <span class="co"># Supprime les bordures supérieures et droites</span></span>
+<span id="cb15-4"><a></a>plt.title(<span class="st">"Boxplot avec style 'ticks'"</span>)</span>
+<span id="cb15-5"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ajuster-le-contexte-taille-des-éléments" class="slide level3">
+<h3>Ajuster le contexte (taille des éléments)</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>sns.set_context(<span class="st">"talk"</span>)</span>
+<span id="cb16-2"><a></a>sns.violinplot(x<span class="op">=</span><span class="st">"smoker"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">"muted"</span>)</span>
+<span id="cb16-3"><a></a>plt.title(<span class="st">"Violin plot avec contexte 'talk'"</span>)</span>
+<span id="cb16-4"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
+
+</section>
+</section>
+<section>
+<section id="personnalisation-avancée-des-graphiques" class="title-slide slide level1 center">
+<h1>Personnalisation Avancée des Graphiques</h1>
+<p>La personnalisation permet d’affiner la présentation de vos graphiques pour une meilleure lisibilité et un rendu professionnel. Vous pouvez modifier les axes, les titres, ajouter des annotations et sauvegarder vos graphiques avec une qualité optimale.</p>
+</section>
+<section id="modification-des-axes-et-titres" class="title-slide slide level2 center">
+<h2>Modification des Axes et Titres</h2>
+<p>Vous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a><span class="co"># Données</span></span>
+<span id="cb17-5"><a></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, <span class="dv">100</span>)</span>
+<span id="cb17-6"><a></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb17-7"><a></a></span>
+<span id="cb17-8"><a></a><span class="co"># Tracé du graphique avec personnalisation des polices</span></span>
+<span id="cb17-9"><a></a>plt.plot(x, y, label<span class="op">=</span><span class="st">"sin(x)"</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb17-10"><a></a>plt.xlabel(<span class="st">"x"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)  <span class="co"># Taille de la police de l'axe x</span></span>
+<span id="cb17-11"><a></a>plt.ylabel(<span class="st">"sin(x)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)  <span class="co"># Taille de la police de l'axe y</span></span>
+<span id="cb17-12"><a></a>plt.title(<span class="st">"Courbe sin(x) avec polices personnalisées"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)  <span class="co"># Taille du titre</span></span>
+<span id="cb17-13"><a></a>plt.legend(fontsize<span class="op">=</span><span class="dv">10</span>)  <span class="co"># Taille de la police de la légende</span></span>
+<span id="cb17-14"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="annotations-avancées" class="title-slide slide level2 center">
+<h2>Annotations Avancées</h2>
+<p>Les annotations permettent de mettre en évidence des points d’intérêt dans un graphique. Vous pouvez personnaliser le texte et la flèche de l’annotation.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="co"># Définition du point maximum</span></span>
+<span id="cb18-2"><a></a>x_max <span class="op">=</span> np.pi <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb18-3"><a></a>y_max <span class="op">=</span> np.sin(x_max)</span>
+<span id="cb18-4"><a></a></span>
+<span id="cb18-5"><a></a>plt.plot(x, y, label<span class="op">=</span><span class="st">"sin(x)"</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb18-6"><a></a>plt.scatter([x_max], [y_max], color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb18-7"><a></a>plt.annotate(<span class="st">"Point max"</span>, xy<span class="op">=</span>(x_max, y_max), xytext<span class="op">=</span>(x_max <span class="op">+</span> <span class="dv">1</span>, y_max <span class="op">+</span> <span class="fl">0.3</span>),</span>
+<span id="cb18-8"><a></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, shrink<span class="op">=</span><span class="fl">0.05</span>), fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb18-9"><a></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb18-10"><a></a>plt.ylabel(<span class="st">"sin(x)"</span>)</span>
+<span id="cb18-11"><a></a>plt.title(<span class="st">"Annotation avancée sur sin(x)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb18-12"><a></a>plt.legend()</span>
+<span id="cb18-13"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="sauvegarde-des-figures" class="title-slide slide level2 center">
+<h2>Sauvegarde des Figures</h2>
+<p>Pour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>plt.plot(x, y, label<span class="op">=</span><span class="st">"sin(x)"</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb19-2"><a></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb19-3"><a></a>plt.ylabel(<span class="st">"sin(x)"</span>)</span>
+<span id="cb19-4"><a></a>plt.title(<span class="st">"Graphique sauvegardé"</span>)</span>
+<span id="cb19-5"><a></a>plt.legend()</span>
+<span id="cb19-6"><a></a>plt.savefig(<span class="st">"graphique_sin.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb19-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explications" class="slide level3">
+<h3>Explications :</h3>
+<ul>
+<li><code>dpi=300</code> : Définit une haute résolution pour l’image exportée.</li>
+<li><code>bbox_inches='tight'</code> : Ajuste les marges pour éviter que des éléments soient coupés.</li>
+</ul>
+<p>Avec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations.</p>
+</section>
+<section class="slide level3">
+
 
 
 </section>

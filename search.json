@@ -938,6 +938,69 @@
     "text": "Diagramme Circulaire (Pie Chart)\nMontre la répartition d’un ensemble sous forme de pourcentages.\nparts = [35, 25, 20, 20]\nlabels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']\ncolors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']\nplt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)\nplt.title(\"Répartition des parts de marché\")\nplt.axis('equal')\nplt.show()"
   },
   {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#installation-et-importation-1",
+    "href": "doc/cours/visualisationdonnees-slides.html#installation-et-importation-1",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Installation et Importation",
+    "text": "Installation et Importation\nSi nécessaire, installez Seaborn :\npip install seaborn\nPuis importez-le :\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#boxplot",
+    "href": "doc/cours/visualisationdonnees-slides.html#boxplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Boxplot",
+    "text": "Boxplot\nLe boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.\nExemple : Distribution des additions par jour avec le dataset “tips”\n# Chargement des données\ntips = sns.load_dataset(\"tips\")\n\n# Création du boxplot\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.xlabel(\"Jour de la semaine\")\nplt.ylabel(\"Addition totale ($)\")\nplt.title(\"Distribution des additions par jour\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#heatmap",
+    "href": "doc/cours/visualisationdonnees-slides.html#heatmap",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Heatmap",
+    "text": "Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()\nExplications : - tips.corr() calcule la matrice de corrélation des variables numériques. - annot=True affiche les valeurs dans chaque cellule."
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#pairplot",
+    "href": "doc/cours/visualisationdonnees-slides.html#pairplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Pairplot",
+    "text": "Pairplot\nLe pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.\nExemple : Pairplot du dataset “iris”\n# Chargement des données\niris = sns.load_dataset(\"iris\")\n\n# Création du pairplot\nsns.pairplot(iris, hue=\"species\")\nplt.suptitle(\"Pairplot du dataset Iris\", y=1.02)\nplt.show()\nNote : - L’argument hue=\"species\" permet de colorer les points selon l’espèce."
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#violin-plot",
+    "href": "doc/cours/visualisationdonnees-slides.html#violin-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Violin Plot",
+    "text": "Violin Plot\nLe violin plot combine un boxplot avec une estimation de la densité de la distribution.\nExemple : Distribution des pourboires pour fumeurs vs non-fumeurs\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"Pastel1\")\nplt.xlabel(\"Fumeur\")\nplt.ylabel(\"Pourboire ($)\")\nplt.title(\"Distribution des pourboires pour fumeurs vs non-fumeurs\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#palettes-de-couleurs-et-thèmes",
+    "href": "doc/cours/visualisationdonnees-slides.html#palettes-de-couleurs-et-thèmes",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Palettes de Couleurs et Thèmes",
+    "text": "Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique."
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#modification-des-axes-et-titres",
+    "href": "doc/cours/visualisationdonnees-slides.html#modification-des-axes-et-titres",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Modification des Axes et Titres",
+    "text": "Modification des Axes et Titres\nVous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Données\nx = np.linspace(0, 2 * np.pi, 100)\ny = np.sin(x)\n\n# Tracé du graphique avec personnalisation des polices\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\", fontsize=12)  # Taille de la police de l'axe x\nplt.ylabel(\"sin(x)\", fontsize=12)  # Taille de la police de l'axe y\nplt.title(\"Courbe sin(x) avec polices personnalisées\", fontsize=16)  # Taille du titre\nplt.legend(fontsize=10)  # Taille de la police de la légende\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#annotations-avancées",
+    "href": "doc/cours/visualisationdonnees-slides.html#annotations-avancées",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Annotations Avancées",
+    "text": "Annotations Avancées\nLes annotations permettent de mettre en évidence des points d’intérêt dans un graphique. Vous pouvez personnaliser le texte et la flèche de l’annotation.\n# Définition du point maximum\nx_max = np.pi / 2\ny_max = np.sin(x_max)\n\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.scatter([x_max], [y_max], color='red')\nplt.annotate(\"Point max\", xy=(x_max, y_max), xytext=(x_max + 1, y_max + 0.3),\n             arrowprops=dict(facecolor='black', shrink=0.05), fontsize=12)\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Annotation avancée sur sin(x)\", fontsize=16)\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#sauvegarde-des-figures",
+    "href": "doc/cours/visualisationdonnees-slides.html#sauvegarde-des-figures",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Sauvegarde des Figures",
+    "text": "Sauvegarde des Figures\nPour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Graphique sauvegardé\")\nplt.legend()\nplt.savefig(\"graphique_sin.png\", dpi=300, bbox_inches='tight')\nplt.show()"
+  },
+  {
     "objectID": "doc/cours/dataviz.html",
     "href": "doc/cours/dataviz.html",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
@@ -999,6 +1062,69 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "2.6 Diagramme Circulaire (Pie Chart)",
     "text": "2.6 Diagramme Circulaire (Pie Chart)\nMontre la répartition d’un ensemble sous forme de pourcentages.\nparts = [35, 25, 20, 20]\nlabels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']\ncolors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']\nplt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)\nplt.title(\"Répartition des parts de marché\")\nplt.axis('equal')\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#installation-et-importation-1",
+    "href": "doc/cours/dataviz.html#installation-et-importation-1",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.1 Installation et Importation",
+    "text": "3.1 Installation et Importation\nSi nécessaire, installez Seaborn :\npip install seaborn\nPuis importez-le :\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#boxplot",
+    "href": "doc/cours/dataviz.html#boxplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.2 Boxplot",
+    "text": "3.2 Boxplot\nLe boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.\nExemple : Distribution des additions par jour avec le dataset “tips”\n# Chargement des données\ntips = sns.load_dataset(\"tips\")\n\n# Création du boxplot\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.xlabel(\"Jour de la semaine\")\nplt.ylabel(\"Addition totale ($)\")\nplt.title(\"Distribution des additions par jour\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#heatmap",
+    "href": "doc/cours/dataviz.html#heatmap",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.3 Heatmap",
+    "text": "3.3 Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()\nExplications : - tips.corr() calcule la matrice de corrélation des variables numériques. - annot=True affiche les valeurs dans chaque cellule."
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#pairplot",
+    "href": "doc/cours/dataviz.html#pairplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.4 Pairplot",
+    "text": "3.4 Pairplot\nLe pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.\nExemple : Pairplot du dataset “iris”\n# Chargement des données\niris = sns.load_dataset(\"iris\")\n\n# Création du pairplot\nsns.pairplot(iris, hue=\"species\")\nplt.suptitle(\"Pairplot du dataset Iris\", y=1.02)\nplt.show()\nNote : - L’argument hue=\"species\" permet de colorer les points selon l’espèce."
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#violin-plot",
+    "href": "doc/cours/dataviz.html#violin-plot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.5 Violin Plot",
+    "text": "3.5 Violin Plot\nLe violin plot combine un boxplot avec une estimation de la densité de la distribution.\nExemple : Distribution des pourboires pour fumeurs vs non-fumeurs\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"Pastel1\")\nplt.xlabel(\"Fumeur\")\nplt.ylabel(\"Pourboire ($)\")\nplt.title(\"Distribution des pourboires pour fumeurs vs non-fumeurs\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#palettes-de-couleurs-et-thèmes",
+    "href": "doc/cours/dataviz.html#palettes-de-couleurs-et-thèmes",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.6 Palettes de Couleurs et Thèmes",
+    "text": "3.6 Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique.\n\nModifier la palette par défaut\nsns.set_palette(\"pastel\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.title(\"Boxplot avec palette pastel\")\nplt.show()\n\n\nChanger le style global\nsns.set_style(\"ticks\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nsns.despine()  # Supprime les bordures supérieures et droites\nplt.title(\"Boxplot avec style 'ticks'\")\nplt.show()\n\n\nAjuster le contexte (taille des éléments)\nsns.set_context(\"talk\")\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"muted\")\nplt.title(\"Violin plot avec contexte 'talk'\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#modification-des-axes-et-titres",
+    "href": "doc/cours/dataviz.html#modification-des-axes-et-titres",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "4.1 Modification des Axes et Titres",
+    "text": "4.1 Modification des Axes et Titres\nVous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Données\nx = np.linspace(0, 2 * np.pi, 100)\ny = np.sin(x)\n\n# Tracé du graphique avec personnalisation des polices\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\", fontsize=12)  # Taille de la police de l'axe x\nplt.ylabel(\"sin(x)\", fontsize=12)  # Taille de la police de l'axe y\nplt.title(\"Courbe sin(x) avec polices personnalisées\", fontsize=16)  # Taille du titre\nplt.legend(fontsize=10)  # Taille de la police de la légende\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#annotations-avancées",
+    "href": "doc/cours/dataviz.html#annotations-avancées",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "4.2 Annotations Avancées",
+    "text": "4.2 Annotations Avancées\nLes annotations permettent de mettre en évidence des points d’intérêt dans un graphique. Vous pouvez personnaliser le texte et la flèche de l’annotation.\n# Définition du point maximum\nx_max = np.pi / 2\ny_max = np.sin(x_max)\n\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.scatter([x_max], [y_max], color='red')\nplt.annotate(\"Point max\", xy=(x_max, y_max), xytext=(x_max + 1, y_max + 0.3),\n             arrowprops=dict(facecolor='black', shrink=0.05), fontsize=12)\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Annotation avancée sur sin(x)\", fontsize=16)\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#sauvegarde-des-figures",
+    "href": "doc/cours/dataviz.html#sauvegarde-des-figures",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "4.3 Sauvegarde des Figures",
+    "text": "4.3 Sauvegarde des Figures\nPour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Graphique sauvegardé\")\nplt.legend()\nplt.savefig(\"graphique_sin.png\", dpi=300, bbox_inches='tight')\nplt.show()\n\nExplications :\n\ndpi=300 : Définit une haute résolution pour l’image exportée.\nbbox_inches='tight' : Ajuste les marges pour éviter que des éléments soient coupés.\n\nAvec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations."
   },
   {
     "objectID": "doc/cours/intro-python-slides.html#programmation-avec-python-bases-et-applications",

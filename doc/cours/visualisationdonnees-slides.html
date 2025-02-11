@@ -363,6 +363,57 @@ Natacha Njongwa Yepnga
 </section>
 <section class="slide level3">
 
+</section>
+</section>
+<section>
+<section id="visualisation-avancée-avec-seaborn" class="title-slide slide level1 center">
+<h1>Visualisation Avancée avec Seaborn</h1>
+<p>Seaborn simplifie la création de graphiques statistiques et esthétiques, en particulier pour des DataFrames issus de Pandas.</p>
+</section>
+<section id="installation-et-importation-1" class="title-slide slide level2 center">
+<h2>Installation et Importation</h2>
+<p>Si nécessaire, installez Seaborn :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">pip</span> install seaborn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Puis importez-le :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
+
+</section>
+
+<section id="boxplot" class="title-slide slide level2 center">
+<h2>Boxplot</h2>
+<p>Le boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.</p>
+<p>Exemple : Distribution des additions par jour avec le dataset “tips”</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co"># Chargement des données</span></span>
+<span id="cb10-2"><a></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="co"># Création du boxplot</span></span>
+<span id="cb10-5"><a></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb10-6"><a></a>plt.xlabel(<span class="st">"Jour de la semaine"</span>)</span>
+<span id="cb10-7"><a></a>plt.ylabel(<span class="st">"Addition totale ($)"</span>)</span>
+<span id="cb10-8"><a></a>plt.title(<span class="st">"Distribution des additions par jour"</span>)</span>
+<span id="cb10-9"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
+
+</section>
+
+<section id="heatmap" class="title-slide slide level2 center">
+<h2>Heatmap</h2>
+<p>La heatmap représente une matrice de données à l’aide de codes couleur.</p>
+<p>Exemple : Matrice de corrélation du dataset “tips”</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># Calcul de la matrice de corrélation</span></span>
+<span id="cb11-2"><a></a>corr <span class="op">=</span> tips.corr()</span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a><span class="co"># Affichage de la heatmap</span></span>
+<span id="cb11-5"><a></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>)</span>
+<span id="cb11-6"><a></a>plt.title(<span class="st">"Matrice de corrélation (dataset Tips)"</span>)</span>
+<span id="cb11-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level3">
+
 
 
 </section>

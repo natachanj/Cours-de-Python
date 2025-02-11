@@ -236,6 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#diagramme-en-barres-bar-chart" id="toc-diagramme-en-barres-bar-chart" class="nav-link" data-scroll-target="#diagramme-en-barres-bar-chart"><span class="header-section-number">2.5</span> Diagramme en Barres (Bar Chart)</a></li>
   <li><a href="#diagramme-circulaire-pie-chart" id="toc-diagramme-circulaire-pie-chart" class="nav-link" data-scroll-target="#diagramme-circulaire-pie-chart"><span class="header-section-number">2.6</span> Diagramme Circulaire (Pie Chart)</a></li>
   </ul></li>
+  <li><a href="#visualisation-avancée-avec-seaborn" id="toc-visualisation-avancée-avec-seaborn" class="nav-link" data-scroll-target="#visualisation-avancée-avec-seaborn"><span class="header-section-number">3</span> Visualisation Avancée avec Seaborn</a>
+  <ul class="collapse">
+  <li><a href="#installation-et-importation-1" id="toc-installation-et-importation-1" class="nav-link" data-scroll-target="#installation-et-importation-1"><span class="header-section-number">3.1</span> Installation et Importation</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">3.2</span> Boxplot</a></li>
+  <li><a href="#heatmap" id="toc-heatmap" class="nav-link" data-scroll-target="#heatmap"><span class="header-section-number">3.3</span> Heatmap</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="visualisationdonnees-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
@@ -419,6 +425,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-5"><a href="#cb7-5"></a>plt.title(<span class="st">"Répartition des parts de marché"</span>)</span>
 <span id="cb7-6"><a href="#cb7-6"></a>plt.axis(<span class="st">'equal'</span>)</span>
 <span id="cb7-7"><a href="#cb7-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="visualisation-avancée-avec-seaborn" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Visualisation Avancée avec Seaborn</h1>
+<p>Seaborn simplifie la création de graphiques statistiques et esthétiques, en particulier pour des DataFrames issus de Pandas.</p>
+<section id="installation-et-importation-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="installation-et-importation-1"><span class="header-section-number">3.1</span> Installation et Importation</h2>
+<p>Si nécessaire, installez Seaborn :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">pip</span> install seaborn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Puis importez-le :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="boxplot" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">3.2</span> Boxplot</h2>
+<p>Le boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.</p>
+<p>Exemple : Distribution des additions par jour avec le dataset “tips”</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Chargement des données</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Création du boxplot</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb10-6"><a href="#cb10-6"></a>plt.xlabel(<span class="st">"Jour de la semaine"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a>plt.ylabel(<span class="st">"Addition totale ($)"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8"></a>plt.title(<span class="st">"Distribution des additions par jour"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="heatmap" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="heatmap"><span class="header-section-number">3.3</span> Heatmap</h2>
+<p>La heatmap représente une matrice de données à l’aide de codes couleur.</p>
+<p>Exemple : Matrice de corrélation du dataset “tips”</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Calcul de la matrice de corrélation</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>corr <span class="op">=</span> tips.corr()</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Affichage de la heatmap</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>plt.title(<span class="st">"Matrice de corrélation (dataset Tips)"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 
 

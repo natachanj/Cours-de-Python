@@ -343,6 +343,27 @@
     "text": "2.6 Diagramme Circulaire (Pie Chart)\nMontre la répartition d’un ensemble sous forme de pourcentages.\nparts = [35, 25, 20, 20]\nlabels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']\ncolors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']\nplt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)\nplt.title(\"Répartition des parts de marché\")\nplt.axis('equal')\nplt.show()"
   },
   {
+    "objectID": "doc/cours/dataviz.html#installation-et-importation-1",
+    "href": "doc/cours/dataviz.html#installation-et-importation-1",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.1 Installation et Importation",
+    "text": "3.1 Installation et Importation\nSi nécessaire, installez Seaborn :\npip install seaborn\nPuis importez-le :\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#boxplot",
+    "href": "doc/cours/dataviz.html#boxplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.2 Boxplot",
+    "text": "3.2 Boxplot\nLe boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.\nExemple : Distribution des additions par jour avec le dataset “tips”\n# Chargement des données\ntips = sns.load_dataset(\"tips\")\n\n# Création du boxplot\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.xlabel(\"Jour de la semaine\")\nplt.ylabel(\"Addition totale ($)\")\nplt.title(\"Distribution des additions par jour\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/dataviz.html#heatmap",
+    "href": "doc/cours/dataviz.html#heatmap",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "3.3 Heatmap",
+    "text": "3.3 Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()"
+  },
+  {
     "objectID": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
     "href": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
@@ -397,6 +418,27 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "Diagramme Circulaire (Pie Chart)",
     "text": "Diagramme Circulaire (Pie Chart)\nMontre la répartition d’un ensemble sous forme de pourcentages.\nparts = [35, 25, 20, 20]\nlabels = ['Marque A', 'Marque B', 'Marque C', 'Marque D']\ncolors = ['gold', 'lightcoral', 'lightskyblue', 'yellowgreen']\nplt.pie(parts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)\nplt.title(\"Répartition des parts de marché\")\nplt.axis('equal')\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#installation-et-importation-1",
+    "href": "doc/cours/visualisationdonnees-slides.html#installation-et-importation-1",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Installation et Importation",
+    "text": "Installation et Importation\nSi nécessaire, installez Seaborn :\npip install seaborn\nPuis importez-le :\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#boxplot",
+    "href": "doc/cours/visualisationdonnees-slides.html#boxplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Boxplot",
+    "text": "Boxplot\nLe boxplot visualise la distribution d’une variable et met en avant la médiane, les quartiles et les valeurs aberrantes.\nExemple : Distribution des additions par jour avec le dataset “tips”\n# Chargement des données\ntips = sns.load_dataset(\"tips\")\n\n# Création du boxplot\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.xlabel(\"Jour de la semaine\")\nplt.ylabel(\"Addition totale ($)\")\nplt.title(\"Distribution des additions par jour\")\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#heatmap",
+    "href": "doc/cours/visualisationdonnees-slides.html#heatmap",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Heatmap",
+    "text": "Heatmap\nLa heatmap représente une matrice de données à l’aide de codes couleur.\nExemple : Matrice de corrélation du dataset “tips”\n# Calcul de la matrice de corrélation\ncorr = tips.corr()\n\n# Affichage de la heatmap\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\")\nplt.title(\"Matrice de corrélation (dataset Tips)\")\nplt.show()"
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html",

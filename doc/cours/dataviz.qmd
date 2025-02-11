@@ -177,3 +177,56 @@ plt.title("Matrice de corrélation (dataset Tips)")
 plt.show()
 ```
 ---
+
+
+
+**Explications :**
+- `tips.corr()` calcule la matrice de corrélation des variables numériques.
+- `annot=True` affiche les valeurs dans chaque cellule.
+
+## Pairplot
+Le pairplot affiche une matrice de scatter plots pour examiner les relations entre chaque paire de variables.
+
+Exemple : Pairplot du dataset "iris"
+
+```python
+# Chargement des données
+iris = sns.load_dataset("iris")
+
+# Création du pairplot
+sns.pairplot(iris, hue="species")
+plt.suptitle("Pairplot du dataset Iris", y=1.02)
+plt.show()
+```
+
+**Note :**
+- L’argument `hue="species"` permet de colorer les points selon l'espèce.
+
+---
+## Violin Plot
+Le violin plot combine un boxplot avec une estimation de la densité de la distribution.
+
+Exemple : Distribution des pourboires pour fumeurs vs non-fumeurs
+
+```python
+sns.violinplot(x="smoker", y="tip", data=tips, palette="Pastel1")
+plt.xlabel("Fumeur")
+plt.ylabel("Pourboire ($)")
+plt.title("Distribution des pourboires pour fumeurs vs non-fumeurs")
+plt.show()
+```
+---
+
+## Palettes de Couleurs et Thèmes
+Seaborn offre des palettes et styles par défaut pour améliorer l'esthétique.
+
+### Modifier la palette par défaut
+
+```python
+sns.set_palette("pastel")
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.title("Boxplot avec palette pastel")
+plt.show()
+```
+
+---

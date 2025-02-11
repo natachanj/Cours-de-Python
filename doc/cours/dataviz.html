@@ -246,6 +246,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#palettes-de-couleurs-et-thèmes" id="toc-palettes-de-couleurs-et-thèmes" class="nav-link" data-scroll-target="#palettes-de-couleurs-et-thèmes"><span class="header-section-number">3.6</span> Palettes de Couleurs et Thèmes</a>
   <ul class="collapse">
   <li><a href="#modifier-la-palette-par-défaut" id="toc-modifier-la-palette-par-défaut" class="nav-link" data-scroll-target="#modifier-la-palette-par-défaut">Modifier la palette par défaut</a></li>
+  <li><a href="#changer-le-style-global" id="toc-changer-le-style-global" class="nav-link" data-scroll-target="#changer-le-style-global">Changer le style global</a></li>
+  <li><a href="#ajuster-le-contexte-taille-des-éléments" id="toc-ajuster-le-contexte-taille-des-éléments" class="nav-link" data-scroll-target="#ajuster-le-contexte-taille-des-éléments">Ajuster le contexte (taille des éléments)</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -509,6 +511,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-2"><a href="#cb14-2"></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
 <span id="cb14-3"><a href="#cb14-3"></a>plt.title(<span class="st">"Boxplot avec palette pastel"</span>)</span>
 <span id="cb14-4"><a href="#cb14-4"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="changer-le-style-global" class="level3">
+<h3 class="anchored" data-anchor-id="changer-le-style-global">Changer le style global</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>sns.set_style(<span class="st">"ticks"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, data<span class="op">=</span>tips)</span>
+<span id="cb15-3"><a href="#cb15-3"></a>sns.despine()  <span class="co"># Supprime les bordures supérieures et droites</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>plt.title(<span class="st">"Boxplot avec style 'ticks'"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ajuster-le-contexte-taille-des-éléments" class="level3">
+<h3 class="anchored" data-anchor-id="ajuster-le-contexte-taille-des-éléments">Ajuster le contexte (taille des éléments)</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>sns.violinplot(x<span class="op">=</span><span class="st">"smoker"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">"muted"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>plt.title(<span class="st">"Violin plot avec contexte 'talk'"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 
 

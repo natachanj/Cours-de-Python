@@ -382,7 +382,7 @@
     "href": "doc/cours/dataviz.html#palettes-de-couleurs-et-thèmes",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "3.6 Palettes de Couleurs et Thèmes",
-    "text": "3.6 Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique.\n\nModifier la palette par défaut\nsns.set_palette(\"pastel\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.title(\"Boxplot avec palette pastel\")\nplt.show()"
+    "text": "3.6 Palettes de Couleurs et Thèmes\nSeaborn offre des palettes et styles par défaut pour améliorer l’esthétique.\n\nModifier la palette par défaut\nsns.set_palette(\"pastel\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nplt.title(\"Boxplot avec palette pastel\")\nplt.show()\n\n\n\nChanger le style global\nsns.set_style(\"ticks\")\nsns.boxplot(x=\"day\", y=\"total_bill\", data=tips)\nsns.despine()  # Supprime les bordures supérieures et droites\nplt.title(\"Boxplot avec style 'ticks'\")\nplt.show()\n\n\nAjuster le contexte (taille des éléments)\nsns.set_context(\"talk\")\nsns.violinplot(x=\"smoker\", y=\"tip\", data=tips, palette=\"muted\")\nplt.title(\"Violin plot avec contexte 'talk'\")\nplt.show()"
   },
   {
     "objectID": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",

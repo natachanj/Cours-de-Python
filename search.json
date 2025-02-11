@@ -406,6 +406,13 @@
     "text": "4.3 Sauvegarde des Figures\nPour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Graphique sauvegardé\")\nplt.legend()\nplt.savefig(\"graphique_sin.png\", dpi=300, bbox_inches='tight')\nplt.show()\n\nExplications :\n\ndpi=300 : Définit une haute résolution pour l’image exportée.\nbbox_inches='tight' : Ajuste les marges pour éviter que des éléments soient coupés.\n\nAvec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations."
   },
   {
+    "objectID": "doc/cours/dataviz.html#utilisation-de-plt.subplot",
+    "href": "doc/cours/dataviz.html#utilisation-de-plt.subplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "5.1 Utilisation de plt.subplot()",
+    "text": "5.1 Utilisation de plt.subplot()\nLa fonction plt.subplot(nrows, ncols, index) permet de créer une grille simple de sous-graphes. Elle divise la figure en une matrice de nrows lignes et ncols colonnes, puis sélectionne le subplot à modifier à l’aide de l’index.\n\nExemple : Deux graphiques côte à côte (sin(x) et cos(x))\nDans cet exemple, nous allons afficher côte à côte les courbes des fonctions sin(x) et cos(x).\n# Importation des bibliothèques\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Données\nx = np.linspace(0, 2 * np.pi, 100)\ny1 = np.sin(x)\ny2 = np.cos(x)\n\nplt.figure(figsize=(10, 4))\n\n# Premier subplot : sin(x)\nplt.subplot(1, 2, 1)  # 1 ligne, 2 colonnes, 1er subplot\nplt.plot(x, y1, color='blue', label='sin(x)')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Courbe sin(x)\")\nplt.legend()\n\n# Deuxième subplot : cos(x)\nplt.subplot(1, 2, 2)  # 1 ligne, 2 colonnes, 2e subplot\nplt.plot(x, y2, color='red', label='cos(x)')\nplt.xlabel(\"x\")\nplt.ylabel(\"cos(x)\")\nplt.title(\"Courbe cos(x)\")\nplt.legend()\n\n# Ajustement de l'affichage\nplt.tight_layout()\nplt.show()"
+  },
+  {
     "objectID": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
     "href": "doc/cours/visualisationdonnees-slides.html#bibliothèques-principales-en-python",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
@@ -523,6 +530,13 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "Sauvegarde des Figures",
     "text": "Sauvegarde des Figures\nPour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :\nplt.plot(x, y, label=\"sin(x)\", color='orange')\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.title(\"Graphique sauvegardé\")\nplt.legend()\nplt.savefig(\"graphique_sin.png\", dpi=300, bbox_inches='tight')\nplt.show()"
+  },
+  {
+    "objectID": "doc/cours/visualisationdonnees-slides.html#utilisation-de-plt.subplot",
+    "href": "doc/cours/visualisationdonnees-slides.html#utilisation-de-plt.subplot",
+    "title": "Visualisation des Données avec Matplotlib et Seaborn",
+    "section": "Utilisation de plt.subplot()",
+    "text": "Utilisation de plt.subplot()\nLa fonction plt.subplot(nrows, ncols, index) permet de créer une grille simple de sous-graphes. Elle divise la figure en une matrice de nrows lignes et ncols colonnes, puis sélectionne le subplot à modifier à l’aide de l’index."
   },
   {
     "objectID": "doc/cours/fonctionsmodules.html",

@@ -252,3 +252,71 @@ plt.show()
 ```
 
 ---
+
+
+
+# Personnalisation Avancée des Graphiques
+
+La personnalisation permet d'affiner la présentation de vos graphiques pour une meilleure lisibilité et un rendu professionnel. Vous pouvez modifier les axes, les titres, ajouter des annotations et sauvegarder vos graphiques avec une qualité optimale.
+
+## Modification des Axes et Titres
+
+Vous pouvez personnaliser les étiquettes des axes, le titre et la légende en ajustant la taille des polices.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Données
+x = np.linspace(0, 2 * np.pi, 100)
+y = np.sin(x)
+
+# Tracé du graphique avec personnalisation des polices
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x", fontsize=12)  # Taille de la police de l'axe x
+plt.ylabel("sin(x)", fontsize=12)  # Taille de la police de l'axe y
+plt.title("Courbe sin(x) avec polices personnalisées", fontsize=16)  # Taille du titre
+plt.legend(fontsize=10)  # Taille de la police de la légende
+plt.show()
+```
+---
+## Annotations Avancées
+
+Les annotations permettent de mettre en évidence des points d'intérêt dans un graphique. Vous pouvez personnaliser le texte et la flèche de l'annotation.
+
+```python
+# Définition du point maximum
+x_max = np.pi / 2
+y_max = np.sin(x_max)
+
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.scatter([x_max], [y_max], color='red')
+plt.annotate("Point max", xy=(x_max, y_max), xytext=(x_max + 1, y_max + 0.3),
+             arrowprops=dict(facecolor='black', shrink=0.05), fontsize=12)
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Annotation avancée sur sin(x)", fontsize=16)
+plt.legend()
+plt.show()
+```
+---
+## Sauvegarde des Figures
+
+Pour exporter vos graphiques dans différents formats (PNG, PDF, SVG) :
+
+```python
+plt.plot(x, y, label="sin(x)", color='orange')
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Graphique sauvegardé")
+plt.legend()
+plt.savefig("graphique_sin.png", dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+### Explications :
+- `dpi=300` : Définit une haute résolution pour l’image exportée.
+- `bbox_inches='tight'` : Ajuste les marges pour éviter que des éléments soient coupés.
+
+Avec ces options, vous obtenez un graphique professionnel prêt à être utilisé dans des rapports ou présentations.
+---

@@ -1,0 +1,32 @@
+---
+title: "Correction Des TPs De Python"
+description: Correction des TPS De Python
+author: "Natacha NJONGWA YEPNGA"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+# Correction Des TP
+
+## TP 1
+
+- Structures de contrôle:[La correstion du TP est disponible ici](https://colab.research.google.com/drive/11J6OBN0wRf2LFrZfu-WkWq8L_FC-ARjm?usp=sharing)
+- Types de données : [La correstion du TP est disponible ici](https://colab.research.google.com/drive/1n_mAn2xWfjEKchfrLvRGaJAq1FaXBS6s?usp=sharing)
+
+## TP 2: Introduction aux fonctions, aux modules et à la programmation orientée objet (POO) en Python
+[La correstion du TP est disponible ici](https://colab.research.google.com/drive/1HpUiAzQ8h8f82pQFwjc5yKpCz7wQdbbP?usp=sharing)
+
+## TP 3: Manipulation de données avec Numpy
+
+[La correstion du TP est disponible ici](https://colab.research.google.com/drive/1U2kdXHkjqGtWa_Om_pcdLZBFceEXElvg?usp=drive_link)
+
+## TP 4: TP Analyse de Données avec Pandas
+[La correstion du TP est disponible ici](https://colab.research.google.com/drive/1DKsQVjo86tn4tPCtDLJojb1FBN5XtiE8?usp=sharing)
+
+## TP 5: Visualisation des Données avec Matplotlib et Seaborn
+[La correstion du TP est disponible ici](https://colab.research.google.com/drive/1xKs4_5pg0lrXr8cbcPadzTRpnm2UOR-R?usp=drive_link)

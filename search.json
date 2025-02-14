@@ -1,87 +1,24 @@
 [
   {
-    "objectID": "doc/tp/tp1.html",
-    "href": "doc/tp/tp1.html",
-    "title": "Bien Démarrer Avec Python",
+    "objectID": "doc/glossaire.html",
+    "href": "doc/glossaire.html",
+    "title": "Glossaire",
     "section": "",
-    "text": "Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données.\n\n\nCe fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python\n\n\n\n\nDans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données\n\n\n\n\nÀ la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
+    "text": "🚧"
   },
   {
-    "objectID": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
-    "href": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Ce fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python"
+    "objectID": "doc/glossaire.html#python",
+    "href": "doc/glossaire.html#python",
+    "title": "Glossaire",
+    "section": "Python",
+    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
   },
   {
-    "objectID": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
-    "href": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#objectif",
-    "href": "doc/tp/tp1.html#objectif",
-    "title": "Bien Démarrer Avec Python",
-    "section": "",
-    "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
-  },
-  {
-    "objectID": "doc/tp/tp3.html",
-    "href": "doc/tp/tp3.html",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
-    "href": "doc/tp/tp3.html#objectifs-du-tp",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
-    "href": "doc/tp/tp3.html#introduction-à-numpy",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
-  },
-  {
-    "objectID": "doc/tp/tp3.html#création-de-tableaux",
-    "href": "doc/tp/tp3.html#création-de-tableaux",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#accès-et-modifications",
-    "href": "doc/tp/tp3.html#accès-et-modifications",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
-    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#exercices-pratiques",
-    "href": "doc/tp/tp3.html#exercices-pratiques",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
-  },
-  {
-    "objectID": "doc/tp/tp3.html#récapitulatif",
-    "href": "doc/tp/tp3.html#récapitulatif",
-    "title": "Manipulation de données avec Numpy",
-    "section": "",
-    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+    "objectID": "doc/glossaire.html#structures-de-contrôle",
+    "href": "doc/glossaire.html#structures-de-contrôle",
+    "title": "Glossaire",
+    "section": "Structures de contrôle",
+    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
   },
   {
     "objectID": "doc/tp/tp4.html#récupération-et-exploration-des-données",
@@ -159,6 +96,125 @@
     "title": "TP Analyse de Données avec Pandas",
     "section": "2.11 Questions et Analyses",
     "text": "2.11 Questions et Analyses\n\n2.11.1 Analyse de la distribution des âges des clients\nAnalyse numérique\n- Calculer les statistiques descriptives générales sur l’âge des clients.\n- Identifier l’âge moyen, la médiane, l’écart-type et les valeurs minimales/maximales.\n- Déterminer s’il y a des valeurs aberrantes en comparant l’écart interquartile.\nÉtapes\n1. Utiliser .describe() sur la colonne Âge pour obtenir les principales statistiques.\n2. Vérifier les bornes des quartiles avec .quantile([0.25, 0.5, 0.75]).\n3. Déterminer les valeurs aberrantes potentielles en utilisant la règle des 1,5 IQR (Interquartile Range).\n4. Comparer ces statistiques avec celles d’autres variables pour voir si certaines tranches d’âge sont plus représentées parmi les clients en défaut.\n\n\n\n2.11.2 Influence du statut d’emploi sur le risque de défaut\nAnalyse numérique\n- Compter le nombre de clients par catégorie de statut d’emploi.\n- Calculer la proportion de clients en défaut dans chaque catégorie de statut d’emploi.\n- Identifier si certaines catégories ont un taux de défaut significativement plus élevé.\nÉtapes\n1. Utiliser .value_counts() sur la colonne Statut_Emploi pour connaître la répartition des clients par catégorie.\n2. Grouper les données par Statut_Emploi et calculer le taux de défaut dans chaque groupe avec .groupby('Statut_Emploi')['Défaut'].mean().\n3. Comparer ces taux et identifier les catégories ayant une probabilité plus élevée de défaut.\n4. Interpréter les résultats en lien avec les analyses précédentes (ex. une catégorie d’emploi avec des revenus plus faibles pourrait avoir un taux de défaut plus élevé)."
+  },
+  {
+    "objectID": "doc/tp/tp3.html",
+    "href": "doc/tp/tp3.html",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\nNumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques.\n\n\n\n\n\nimport numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments\n\n\n\n# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)\n\n\n\n# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)\n\n\n\n\n\n\nCréez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales.\n\n\n\n\n\n\nNumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#objectifs-du-tp",
+    "href": "doc/tp/tp3.html#objectifs-du-tp",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Comprendre l’utilisation du module NumPy pour le calcul scientifique.\nCréer et manipuler des tableaux multidimensionnels.\nAppliquer des opérations mathématiques et statistiques sur des données.\nExplorer les masques booléens pour des filtrages avancés.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#introduction-à-numpy",
+    "href": "doc/tp/tp3.html#introduction-à-numpy",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque puissante pour manipuler des tableaux et effectuer des calculs scientifiques. Elle est optimisée pour la performance et largement utilisée dans l’analyse de données.\n\n\n\nPerformance : Calculs rapides grâce à une implémentation en C.\nSimplicité : Manipulation intuitive des tableaux multidimensionnels.\nRichesse fonctionnelle : Nombreuses fonctions mathématiques, algébriques, et statistiques."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#création-de-tableaux",
+    "href": "doc/tp/tp3.html#création-de-tableaux",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "import numpy as np\n\n# Tableau 1D\nA = np.array([1, 2, 3])\n\n# Tableau 2D\nB = np.array([[1, 2], [3, 4]])\nprint(A)\nprint(B)\n\n# Zéros et Uns\nzeros = np.zeros((3, 3))\nones = np.ones((2, 4))\nprint(zeros)\nprint(ones)\n\n# Valeurs aléatoires\nrandom = np.random.random((3, 3))\nprint(random)\n\n# Plages de valeurs\narange = np.arange(0, 10, 2)\nlinspace = np.linspace(0, 1, 5)\nprint(arange)\nprint(linspace)\n\n# Informations sur un tableau\nprint(B.shape)  # Dimensions\nprint(B.size)   # Nombre d'éléments\nprint(B.dtype)  # Type des éléments"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#accès-et-modifications",
+    "href": "doc/tp/tp3.html#accès-et-modifications",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Accéder aux éléments\nprint(B[0, 1])\nprint(B[:, 1])\nprint(B[1, :])\n\n# Modifier des éléments\nB[0, 0] = 100\nprint(B)\n\n# Ajouter des éléments\nA = np.append(A, [4, 5])\nprint(A)\n\n# Supprimer des éléments\nC = np.delete(A, [0, 1])\nprint(C)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/tp/tp3.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "# Opérations arithmétiques\nD = B + 10\nprint(D)\n\nE = B * 2\nprint(E)\n\n# Statistiques\nprint(np.sum(B))\nprint(np.mean(B))\nprint(np.std(B))\n\n# Masques booléens\nmask = B &gt; 2\nprint(mask)\nprint(B[mask])\n\n# Modification conditionnelle\nB[B &gt; 2] = -1\nprint(B)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#exercices-pratiques",
+    "href": "doc/tp/tp3.html#exercices-pratiques",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "Créez un tableau 3x3 contenant des valeurs aléatoires entre 0 et 1.\nRemplacez les valeurs inférieures à 0.5 par 0.\nCalculez la somme et la moyenne des éléments du tableau.\n\n\n\n\n\nCréez un tableau 1D de 10 éléments entre 1 et 100.\nSupprimez les trois derniers éléments et ajoutez deux nouveaux.\nRemplacez les valeurs paires par -1.\n\n\n\n\n\nCréez une matrice 4x4 contenant des valeurs aléatoires entre -10 et 10.\nUtilisez un masque pour remplacer les valeurs négatives par leur valeur absolue.\nCalculez la moyenne des valeurs finales."
+  },
+  {
+    "objectID": "doc/tp/tp3.html#récapitulatif",
+    "href": "doc/tp/tp3.html#récapitulatif",
+    "title": "Manipulation de données avec Numpy",
+    "section": "",
+    "text": "NumPy permet de manipuler efficacement des tableaux pour des calculs rapides.\nLes masques booléens offrent des possibilités puissantes pour le filtrage et la modification des données.\nL’utilisation des opérations vectorisées améliore grandement les performances.\n\n\n\n\nDocumentation officielle NumPy"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html",
+    "href": "doc/cours/typedonnees.html",
+    "title": "Les Types de données en Python",
+    "section": "",
+    "text": "Python propose des types de données avancés pour manipuler des collections de données ou des structures complexes. Ces types sont essentiels pour gérer des informations organisées."
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-listes-list",
+    "href": "doc/cours/typedonnees.html#les-listes-list",
+    "title": "Les Types de données en Python",
+    "section": "1 Les Listes (list)",
+    "text": "1 Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types.\n\n\n\nCréation de listes\nLes listes peuvent être créées à partir d’une série d’éléments séparés par des virgules et entourés de crochets [ ].\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)\n\n\n\nOpérations CRUD sur les Listes en Python\nLes opérations CRUD (Create, Read, Update, Delete) représentent les actions fondamentales que l’on peut effectuer sur des données dans une application. Ces actions sont souvent utilisées dans la gestion des bases de données, mais elles s’appliquent également aux structures de données comme les listes en Python :\n\nCreate (Créer) : Ajouter de nouvelles données.\nRead (Lire) : Consulter ou accéder aux données existantes.\nUpdate (Mettre à jour) : Modifier les données existantes.\nDelete (Supprimer) : Effacer les données.\n\n\n\nCréer une Liste (Create)\nPour créer une liste, utilisez des crochets ([]) et séparez les éléments par des virgules.\nExemple :\n# Créer une liste vide\nma_liste = []\n\n# Créer une liste avec des éléments\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(fruits)  # Affiche : ['pomme', 'banane', 'cerise']\n\n\n\n\nLire les Données (Read)\n\nAccéder à un élément par son index\nLes indices commencent à 0.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(fruits[0])  # Affiche : \"pomme\"\nprint(fruits[-1])  # Affiche : \"cerise\" (dernier élément)\n\n\n\nParcourir une liste\nVous pouvez utiliser une boucle pour parcourir tous les éléments.\nExemple :\nfor fruit in fruits:\n    print(fruit)\n\n\n\nLongueur de la liste\nUtilisez la fonction len() pour connaître le nombre d’éléments dans une liste.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(len(fruits))  # Affiche : 3\n\n\n\n\nMettre à Jour une Liste (Update)\n\nModifier un élément existant\nAccédez à l’élément par son index et assignez-lui une nouvelle valeur.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nfruits[1] = \"orange\"  # Remplace \"banane\" par \"orange\"\nprint(fruits)  # Affiche : ['pomme', 'orange', 'cerise']\n\n\n\nAjouter des éléments\n\nÀ la fin de la liste :\nUtilisez la méthode append().\nExemple :\nfruits = [\"pomme\", \"orange\", \"cerise\"]\nfruits.append(\"mangue\")\nprint(fruits)  # Affiche : ['pomme', 'orange', 'cerise', 'mangue']\n\n\n\n\nÀ une position spécifique\nUtilisez la méthode insert() pour insérer un élément à une position spécifique dans une liste.\nExemple :\nfruits = [\"pomme\", \"orange\", \"cerise\", \"mangue\"]\nfruits.insert(1, \"fraise\")  # Ajoute \"fraise\" à l'index 1\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']\n\n\n\nFusionner deux listes\nPour fusionner deux listes, vous pouvez utiliser l’opérateur + ou la méthode extend().\nExemple :\nlegumes = [\"carotte\", \"tomate\"]\nfruits = [\"pomme\", \"fraise\", \"orange\", \"cerise\", \"mangue\"]\n\n# Fusion avec extend()\nfruits.extend(legumes)\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\nFusionner deux listes avec l’opérateur +\nVous pouvez également utiliser l’opérateur + pour créer une nouvelle liste fusionnée.\nExemple :\nlegumes = [\"carotte\", \"tomate\"]\nfruits = [\"pomme\", \"fraise\", \"orange\", \"cerise\", \"mangue\"]\n\n# Fusion avec +\nnouvelle_liste = fruits + legumes\nprint(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nSupprimer des Éléments (Delete)\n\nSupprimer un élément par sa valeur\nUtilisez la méthode remove().\nExemple :\nfruits.remove(\"orange\")  # Supprime \"orange\"\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nSupprimer un élément par son index\nUtilisez l’instruction del ou la méthode pop().\n\nAvec del :\ndel fruits[0]  # Supprime le premier élément\nprint(fruits)  # Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nUtilisation de pop()\nLa méthode pop() supprime un élément d’une liste et le retourne. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.\nExemple :\nfruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n# Supprimer et retourner le dernier élément\ndernier_fruit = fruits.pop()  # Supprime \"tomate\" de la liste\nprint(dernier_fruit)  # Affiche : \"tomate\"\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']\n\n\n\nSupprimer tous les éléments avec clear()\nLa méthode clear() supprime tous les éléments de la liste, laissant une liste vide. Contrairement à pop(), elle ne retourne aucun élément.\nExemple :\nfruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']\n\n# Supprimer tous les éléments\nfruits.clear()\nprint(fruits)  # Affiche : []\n\n\n\nDifférence entre pop() et clear()\n\n\n\n\n\n\n\n\nMéthode\nFonctionnalité\nExemple de résultat\n\n\n\n\npop()\nSupprime et retourne un seul élément de la liste (par défaut, le dernier).\nfruits.pop() -&gt; retourne \"tomate\", modifie la liste.\n\n\nclear()\nSupprime tous les éléments de la liste sans retourner quoi que ce soit.\nfruits.clear() -&gt; retourne None, vide la liste.\n\n\n\n\npop() est utile lorsque vous voulez traiter ou sauvegarder l’élément supprimé.\nclear() est idéal pour réinitialiser une liste sans conserver ses éléments.\n\n\n\n\nRésumé des Méthodes CRUD sur les Listes\n\n\n\n\n\n\n\n\nOpération\nMéthode\nDescription\n\n\n\n\nCreate\n[], append(), insert()\nCréer ou ajouter des éléments.\n\n\nRead\nindex, len(), for loop\nLire ou parcourir les éléments.\n\n\nUpdate\nindex, append(), extend()\nModifier ou ajouter des éléments.\n\n\nDelete\nremove(), pop(), del, clear()\nSupprimer des éléments ou tout vider."
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-tuples-tuple",
+    "href": "doc/cours/typedonnees.html#les-tuples-tuple",
+    "title": "Les Types de données en Python",
+    "section": "2 Les Tuples (tuple)",
+    "text": "2 Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création.\n\n\n\nCréation de Tuples\nUn tuple peut être créé en plaçant une série d’éléments séparés par des virgules dans des parenthèses ().\nExemple :\nmon_tuple = (1, 2, 3)\nprint(mon_tuple)  # Affiche : (1, 2, 3)\n\n\n\nOpérations CRUD sur les Tuples\nComme les tuples sont immuables, les opérations Update et Delete diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :\n\nCreate (Créer) : Ajouter de nouvelles données.\nRead (Lire) : Consulter ou accéder aux données existantes.\nUpdate (Mettre à jour) : Pas directement possible (les tuples sont immuables).\nDelete (Supprimer) : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.\n\n\n\nCréer un Tuple (Create)\nExemple :\n# Créer un tuple avec des éléments\nmon_tuple = (1, 'Python', 3.14)\nprint(mon_tuple)  # Affiche : (1, 'Python', 3.14)\nVous pouvez également créer un tuple sans parenthèses (packing) :\nmon_tuple = 1, 'Python', 3.14\n\n\nLire les Données (Read)\nAccéder à un élément par son index :\nmon_tuple = (1, 'Python', 3.14)\nprint(mon_tuple[1])  # Affiche : 'Python'\nParcourir un tuple avec une boucle :\nfor element in mon_tuple:\n    print(element)\nLongueur du tuple :\nprint(len(mon_tuple))  # Affiche : 3\n\n\nMettre à Jour un Tuple (Update)\nLes tuples sont immutables, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un nouveau tuple basé sur l’ancien.\nExemple :\nmon_tuple = (1, 2, 3)\nnouveau_tuple = mon_tuple + (4, 5)\nprint(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)\n\n\nSupprimer un Tuple (Delete)\nVous ne pouvez pas supprimer un élément spécifique d’un tuple, mais vous pouvez supprimer le tuple entier.\nExemple :\nmon_tuple = (1, 2, 3)\ndel mon_tuple\n\n\n\nAvantages des Tuples\n\nImmutabilité : Protège les données contre les modifications accidentelles.\nPerformance : Les tuples sont plus rapides à traiter que les listes.\nUtilisation dans les clés de dictionnaire : Les tuples peuvent être utilisés comme clés dans un dictionnaire (contrairement aux listes).\n\nExemple :\ncoordonnees = {\n    (0, 0): 'Origine',\n    (1, 2): 'Point A'\n}\nprint(coordonnees[(1, 2)])  # Affiche : 'Point A'\n\n\nDifférences entre Listes et Tuples\n\n\n\nCaractéristique\nListe\nTuple\n\n\n\n\nMutabilité\nMutable\nImmuable\n\n\nSyntaxe\n[ ]\n( )\n\n\nPerformance\nPlus lente\nPlus rapide\n\n\nUtilisation\nDonnées modifiables\nDonnées fixes"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-dictionnaires-dict",
+    "href": "doc/cours/typedonnees.html#les-dictionnaires-dict",
+    "title": "Les Types de données en Python",
+    "section": "3 Les Dictionnaires (dict)",
+    "text": "3 Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\n\nCréation de Dictionnaires\nUn dictionnaire peut être créé en utilisant des accolades {} et des paires clé-valeur séparées par des deux-points :.\nExemple :\nmon_dict = {\n    'nom': 'Alice',\n    'age': 25,\n    'ville': 'Paris'\n}\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\n\n\nOpérations CRUD sur les Dictionnaires\nLes dictionnaires permettent les opérations fondamentales CRUD (Create, Read, Update, Delete) comme suit :\n\nCreate (Créer) : Ajouter de nouvelles paires clé-valeur.\nRead (Lire) : Accéder à une valeur via sa clé.\nUpdate (Mettre à jour) : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.\nDelete (Supprimer) : Supprimer une paire clé-valeur.\n\n\nCréer un Dictionnaire (Create)\nExemple :\n# Créer un dictionnaire vide\nmon_dict = {}\n\n# Ajouter des paires clé-valeur\nmon_dict['nom'] = 'Alice'\nmon_dict['age'] = 25\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}\n\n\nLire les Données (Read)\nAccéder à une valeur par sa clé :\nmon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\nprint(mon_dict['nom'])  # Affiche : Alice\nUtiliser la méthode get() pour éviter les erreurs :\nprint(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable\nParcourir un dictionnaire :\nfor cle, valeur in mon_dict.items():\n    print(f'{cle} : {valeur}')\nClés et valeurs :\nprint(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville'])\nprint(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])\n\n\nMettre à Jour un Dictionnaire (Update)\nAjouter ou modifier une clé :\nmon_dict = {'nom': 'Alice', 'age': 25}\nmon_dict['ville'] = 'Paris'  # Ajout\nmon_dict['age'] = 26         # Mise à jour\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}\nFusionner deux dictionnaires :\nautre_dict = {'pays': 'France', 'profession': 'Ingénieure'}\nmon_dict.update(autre_dict)\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}\n\n\nSupprimer des Éléments (Delete)\nSupprimer une paire clé-valeur :\nmon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\ndel mon_dict['age']\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}\nSupprimer et retourner une valeur avec pop() :\nville = mon_dict.pop('ville')\nprint(ville)  # Affiche : Paris\nprint(mon_dict)  # Affiche : {'nom': 'Alice'}\nSupprimer tous les éléments avec clear() :\nmon_dict.clear()\nprint(mon_dict)  # Affiche : {}\n\n\n\nAvantages des Dictionnaires\n\nRapidité : Accès direct aux valeurs via les clés.\nFlexible : Peut contenir des données de types variés.\nOrganisation : Idéal pour structurer des données complexes.\n\nExemple :\nutilisateur = {\n    'id': 123,\n    'nom': 'Alice',\n    'contact': {\n        'email': 'alice@example.com',\n        'telephone': '123-456-7890'\n    }\n}\nprint(utilisateur['contact']['email'])  # Affiche : alice@example.com\n\n\nDifférences entre Listes et Dictionnaires\n\n\n\n\n\n\n\n\nCaractéristique\nListe\nDictionnaire\n\n\n\n\nAccès aux données\nPar index numérique\nPar clé\n\n\nStructure\nSéquence ordonnée\nPaires clé-valeur\n\n\nMutabilité\nMutable\nMutable (clés immuables)"
+  },
+  {
+    "objectID": "doc/cours/typedonnees.html#les-ensembles-set",
+    "href": "doc/cours/typedonnees.html#les-ensembles-set",
+    "title": "Les Types de données en Python",
+    "section": "4 Les Ensembles (set)",
+    "text": "4 Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc.\n\n\nCréation d’Ensembles\nUn ensemble peut être créé en utilisant la fonction set() ou en plaçant des éléments entre accolades {}.\nExemple :\nmon_set = {1, 2, 3, 4}\nprint(mon_set)  # Affiche : {1, 2, 3, 4}\n\n# Création d'un ensemble à partir d'une liste\nmon_set = set([1, 2, 2, 3])\nprint(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)\n\n\nOpérations CRUD sur les Ensembles\nLes ensembles prennent en charge les opérations fondamentales CRUD (Create, Read, Update, Delete) :\n\nCreate (Créer) : Ajouter de nouveaux éléments.\nRead (Lire) : Vérifier la présence d’un élément.\nUpdate (Mettre à jour) : Ajouter ou supprimer des éléments.\nDelete (Supprimer) : Supprimer des éléments ou réinitialiser l’ensemble.\n\n\nCréer un Ensemble (Create)\nExemple :\n# Créer un ensemble vide\nmon_set = set()\n\n# Ajouter des éléments\nmon_set.add(1)\nmon_set.add(2)\nprint(mon_set)  # Affiche : {1, 2}\n\n\nLire les Données (Read)\nVérifier la présence d’un élément :\nmon_set = {1, 2, 3}\nprint(1 in mon_set)  # Affiche : True\nprint(4 in mon_set)  # Affiche : False\nParcourir un ensemble avec une boucle :\nfor element in mon_set:\n    print(element)\nTaille de l’ensemble :\nprint(len(mon_set))  # Affiche : 3\n\n\nMettre à Jour un Ensemble (Update)\nAjouter des éléments :\nmon_set = {1, 2}\nmon_set.add(3)  # Ajoute un seul élément\nmon_set.update([4, 5])  # Ajoute plusieurs éléments\nprint(mon_set)  # Affiche : {1, 2, 3, 4, 5}\nSupprimer des éléments :\nAvec remove() :\nmon_set.remove(2)  # Supprime 2 de l'ensemble\nprint(mon_set)  # Affiche : {1, 3, 4, 5}\nAvec discard() (ne lève pas d’erreur si l’élément n’existe pas) :\nmon_set.discard(10)  # Aucun effet si 10 n'est pas présent\n\n\nSupprimer des Éléments (Delete)\nSupprimer un élément avec pop() :\nmon_set = {1, 2, 3}\nelement = mon_set.pop()  # Supprime et retourne un élément aléatoire\nprint(element)  # Affiche : 1 (ou un autre élément)\nprint(mon_set)  # Affiche : {2, 3}\nSupprimer tous les éléments avec clear() :\nmon_set.clear()\nprint(mon_set)  # Affiche : set()\n\n\n\nOpérations Mathématiques avec les Ensembles\nLes ensembles permettent des opérations mathématiques classiques :\nUnion : Combine tous les éléments des deux ensembles.\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\nprint(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}\nIntersection : Récupère les éléments communs aux deux ensembles.\nprint(set1 & set2)  # Affiche : {3}\nDifférence : Récupère les éléments présents dans le premier ensemble mais pas dans le second.\nprint(set1 - set2)  # Affiche : {1, 2}\nDifférence Symétrique : Récupère les éléments présents dans un seul des deux ensembles.\nprint(set1 ^ set2)  # Affiche : {1, 2, 4, 5}"
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-listes-list",
+    "href": "doc/cours/typedonnees-slides.html#les-listes-list",
+    "title": "Les Types de données en Python",
+    "section": "Les Listes (list)",
+    "text": "Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
+    "href": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
+    "title": "Les Types de données en Python",
+    "section": "Les Tuples (tuple)",
+    "text": "Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-dictionnaires-dict",
+    "href": "doc/cours/typedonnees-slides.html#les-dictionnaires-dict",
+    "title": "Les Types de données en Python",
+    "section": "Les Dictionnaires (dict)",
+    "text": "Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois."
+  },
+  {
+    "objectID": "doc/cours/typedonnees-slides.html#les-ensembles-set",
+    "href": "doc/cours/typedonnees-slides.html#les-ensembles-set",
+    "title": "Les Types de données en Python",
+    "section": "Les Ensembles (set)",
+    "text": "Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc."
   },
   {
     "objectID": "doc/cours/intro.html",
@@ -756,153 +812,6 @@
     "text": "Les packages\nUn package est un répertoire contenant plusieurs modules, généralement accompagné d’un fichier __init__.py.\nExemple de structure de package :\nmon_package/\n|-- __init__.py\n|-- module1.py\n|-- module2.py\nVous pouvez importer des éléments d’un package comme suit :\nfrom mon_package.module1 import ma_fonction"
   },
   {
-    "objectID": "doc/cours/manipulationdonnees.html",
-    "href": "doc/cours/manipulationdonnees.html",
-    "title": "Manipulation des données avec Numpy",
-    "section": "",
-    "text": "NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\n\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement"
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#introduction",
-    "href": "doc/cours/manipulationdonnees.html#introduction",
-    "title": "Manipulation des données avec Numpy",
-    "section": "",
-    "text": "NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\n\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement"
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#installation-et-importation",
-    "href": "doc/cours/manipulationdonnees.html#installation-et-importation",
-    "title": "Manipulation des données avec Numpy",
-    "section": "2 Installation et Importation",
-    "text": "2 Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#création-et-manipulation-des-tableaux-numpy",
-    "href": "doc/cours/manipulationdonnees.html#création-et-manipulation-des-tableaux-numpy",
-    "title": "Manipulation des données avec Numpy",
-    "section": "3 Création et Manipulation des Tableaux NumPy",
-    "text": "3 Création et Manipulation des Tableaux NumPy\nNumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.\n\nCréation de Tableaux (ndarray)\nLes tableaux NumPy peuvent être créés à partir de listes Python, de valeurs prédéfinies ou de valeurs générées automatiquement :\n# Création d'un tableau à partir d'une liste\narr1 = np.array([1, 2, 3, 4, 5])\nprint(arr1)\n\n# Tableau multidimensionnel\narr2 = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr2)\nD’autres méthodes permettent de générer rapidement des tableaux :\nnp.zeros((3, 3))    # Matrice 3x3 remplie de 0\nnp.ones((2, 4))     # Matrice 2x4 remplie de 1\nnp.full((3, 3), 7)  # Matrice 3x3 remplie de 7\nnp.eye(4)           # Matrice identité 4x4\nnp.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10\nPourquoi ces méthodes sont utiles ?\n\nzeros et ones permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.\neye est très utilisé en algèbre linéaire pour les calculs de matrices identité.\nlinspace est idéal pour générer des valeurs numériques espacées uniformément.\n\nExercice 1 :\n\nCréez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.\nGénérer une séquence de 10 nombres entre 1 et 100."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#indexation-et-slicing",
-    "href": "doc/cours/manipulationdonnees.html#indexation-et-slicing",
-    "title": "Manipulation des données avec Numpy",
-    "section": "4 Indexation et Slicing",
-    "text": "4 Indexation et Slicing\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires.\n\nSélection d’éléments\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[2])  # Accéder au 3e élément\nL’indexation commence toujours à 0 en Python, donc arr[2] retourne 30.\n\n\nIndexation avancée\nNumPy permet d’accéder à des sous-ensembles de tableaux plus facilement :\narr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(arr2d[1, 2])  # 6 (ligne 2, colonne 3)\n\n\nSlicing (Découpage d’un tableau)\nAvec NumPy, on peut extraire plusieurs valeurs avec des tranches (slices) :\nsub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau\nprint(sub_arr)\nPourquoi utiliser le slicing ?\n\nPermet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement.\nTrès utile en analyse de données pour filtrer des valeurs selon des conditions spécifiques.\n\nExercice 2 :\n\nExtraire la première colonne d’une matrice 3x3.\nModifier les valeurs d’une portion spécifique d’un tableau."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#opérations-mathématiques-et-statistiques",
-    "href": "doc/cours/manipulationdonnees.html#opérations-mathématiques-et-statistiques",
-    "title": "Manipulation des données avec Numpy",
-    "section": "5 Opérations Mathématiques et Statistiques",
-    "text": "5 Opérations Mathématiques et Statistiques\nNumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.\narr = np.array([1, 2, 3, 4, 5])\nprint(arr + 10)  # Ajouter 10 à chaque élément\nprint(arr ** 2)  # Élever chaque élément au carré\nPourquoi ces opérations sont-elles utiles ?\n\nElles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances.\nElles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.\n\nNumPy fournit également des fonctions statistiques :\nprint(arr.mean())  # Moyenne\nprint(arr.sum())   # Somme\nprint(arr.std())   # Écart-type\nExercice 3 : - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#reshaping-et-manipulation-des-formes",
-    "href": "doc/cours/manipulationdonnees.html#reshaping-et-manipulation-des-formes",
-    "title": "Manipulation des données avec Numpy",
-    "section": "6 Reshaping et Manipulation des Formes",
-    "text": "6 Reshaping et Manipulation des Formes\nLe reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.\narr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes\nprint(arr)\nLa transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :\nprint(arr.T)  # Transpose la matrice\nExercice 4 : - Créez une matrice 3x3 et affichez sa transposée."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#broadcasting-et-vectorisation",
-    "href": "doc/cours/manipulationdonnees.html#broadcasting-et-vectorisation",
-    "title": "Manipulation des données avec Numpy",
-    "section": "7 Broadcasting et Vectorisation",
-    "text": "7 Broadcasting et Vectorisation\nLe broadcasting est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr + np.array([10, 20, 30]))  # Broadcasting\nPourquoi le broadcasting est important ? - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.\nExercice 5 : - Multipliez une matrice par un vecteur ligne avec broadcasting."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#gestion-des-valeurs-manquantes",
-    "href": "doc/cours/manipulationdonnees.html#gestion-des-valeurs-manquantes",
-    "title": "Manipulation des données avec Numpy",
-    "section": "8 Gestion des Valeurs Manquantes",
-    "text": "8 Gestion des Valeurs Manquantes\nNumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.\narr = np.array([1, 2, np.nan, 4, 5])\nprint(np.isnan(arr))  # Détecter les NaN\nprint(np.nanmean(arr))  # Moyenne en ignorant NaN\nPourquoi est-ce utile ? - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.\nExercice 6 : - Remplacez les valeurs NaN par la moyenne du tableau."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#applications-pratiques",
-    "href": "doc/cours/manipulationdonnees.html#applications-pratiques",
-    "title": "Manipulation des données avec Numpy",
-    "section": "9 Applications Pratiques",
-    "text": "9 Applications Pratiques\nNumPy est souvent utilisé pour des applications pratiques en science des données et en intelligence artificielle.\n\nProduit Matriciel\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nprint(np.dot(A, B))  # Produit matriciel\n\n\nSimulation de Données\nsim_data = np.random.randn(1000)\nprint(np.histogram(sim_data, bins=10))  # Histogramme des valeurs simulées\nExercice 7 : - Simulez une série de valeurs et tracez son histogramme."
-  },
-  {
-    "objectID": "doc/cours/manipulationdonnees.html#conclusion",
-    "href": "doc/cours/manipulationdonnees.html#conclusion",
-    "title": "Manipulation des données avec Numpy",
-    "section": "10 Conclusion",
-    "text": "10 Conclusion\nCe cours vous a permis de maîtriser :\n\nLa manipulation et la création de tableaux NumPy\nLes opérations mathématiques et statistiques\nLes techniques avancées de reshaping et broadcasting"
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#introduction",
-    "href": "doc/cours/manipdonnees-slides.html#introduction",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Introduction",
-    "text": "Introduction\nNumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#installation-et-importation",
-    "href": "doc/cours/manipdonnees-slides.html#installation-et-importation",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Installation et Importation",
-    "text": "Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#création-et-manipulation-des-tableaux-numpy",
-    "href": "doc/cours/manipdonnees-slides.html#création-et-manipulation-des-tableaux-numpy",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Création et Manipulation des Tableaux NumPy",
-    "text": "Création et Manipulation des Tableaux NumPy\nNumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#indexation-et-slicing",
-    "href": "doc/cours/manipdonnees-slides.html#indexation-et-slicing",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Indexation et Slicing",
-    "text": "Indexation et Slicing\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#opérations-mathématiques-et-statistiques",
-    "href": "doc/cours/manipdonnees-slides.html#opérations-mathématiques-et-statistiques",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Opérations Mathématiques et Statistiques",
-    "text": "Opérations Mathématiques et Statistiques\nNumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.\narr = np.array([1, 2, 3, 4, 5])\nprint(arr + 10)  # Ajouter 10 à chaque élément\nprint(arr ** 2)  # Élever chaque élément au carré\nPourquoi ces opérations sont-elles utiles ?\n\nElles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances.\nElles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.\n\nNumPy fournit également des fonctions statistiques :\nprint(arr.mean())  # Moyenne\nprint(arr.sum())   # Somme\nprint(arr.std())   # Écart-type\nExercice 3 : - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#reshaping-et-manipulation-des-formes",
-    "href": "doc/cours/manipdonnees-slides.html#reshaping-et-manipulation-des-formes",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Reshaping et Manipulation des Formes",
-    "text": "Reshaping et Manipulation des Formes\nLe reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.\narr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes\nprint(arr)\nLa transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :\nprint(arr.T)  # Transpose la matrice\nExercice 4 : - Créez une matrice 3x3 et affichez sa transposée."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#broadcasting-et-vectorisation",
-    "href": "doc/cours/manipdonnees-slides.html#broadcasting-et-vectorisation",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Broadcasting et Vectorisation",
-    "text": "Broadcasting et Vectorisation\nLe broadcasting est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr + np.array([10, 20, 30]))  # Broadcasting\nPourquoi le broadcasting est important ? - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.\nExercice 5 : - Multipliez une matrice par un vecteur ligne avec broadcasting."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#gestion-des-valeurs-manquantes",
-    "href": "doc/cours/manipdonnees-slides.html#gestion-des-valeurs-manquantes",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Gestion des Valeurs Manquantes",
-    "text": "Gestion des Valeurs Manquantes\nNumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.\narr = np.array([1, 2, np.nan, 4, 5])\nprint(np.isnan(arr))  # Détecter les NaN\nprint(np.nanmean(arr))  # Moyenne en ignorant NaN\nPourquoi est-ce utile ? - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.\nExercice 6 : - Remplacez les valeurs NaN par la moyenne du tableau."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#applications-pratiques",
-    "href": "doc/cours/manipdonnees-slides.html#applications-pratiques",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Applications Pratiques",
-    "text": "Applications Pratiques\nNumPy est souvent utilisé pour des applications pratiques en science des données et en intelligence artificielle."
-  },
-  {
-    "objectID": "doc/cours/manipdonnees-slides.html#conclusion",
-    "href": "doc/cours/manipdonnees-slides.html#conclusion",
-    "title": "Manipulation des données avec Numpy",
-    "section": "Conclusion",
-    "text": "Conclusion\nCe cours vous a permis de maîtriser :\n\nLa manipulation et la création de tableaux NumPy\nLes opérations mathématiques et statistiques\nLes techniques avancées de reshaping et broadcasting"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Programmation avec Python: Analyse de données et Data visualisation",
@@ -1090,6 +999,153 @@
     "title": "Analyse de données avec Pandas",
     "section": "",
     "text": "Ce cours vous a permis d’apprendre à :\n\nCharger et manipuler des ensembles de données.\nEffectuer des analyses exploratoires et des transformations.\nNettoyer les données et appliquer des techniques avancées.\nFusionner et joindre plusieurs ensembles de données pour une analyse plus complète."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#introduction",
+    "href": "doc/cours/manipdonnees-slides.html#introduction",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Introduction",
+    "text": "Introduction\nNumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#installation-et-importation",
+    "href": "doc/cours/manipdonnees-slides.html#installation-et-importation",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Installation et Importation",
+    "text": "Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#création-et-manipulation-des-tableaux-numpy",
+    "href": "doc/cours/manipdonnees-slides.html#création-et-manipulation-des-tableaux-numpy",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Création et Manipulation des Tableaux NumPy",
+    "text": "Création et Manipulation des Tableaux NumPy\nNumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#indexation-et-slicing",
+    "href": "doc/cours/manipdonnees-slides.html#indexation-et-slicing",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Indexation et Slicing",
+    "text": "Indexation et Slicing\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/cours/manipdonnees-slides.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Opérations Mathématiques et Statistiques",
+    "text": "Opérations Mathématiques et Statistiques\nNumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.\narr = np.array([1, 2, 3, 4, 5])\nprint(arr + 10)  # Ajouter 10 à chaque élément\nprint(arr ** 2)  # Élever chaque élément au carré\nPourquoi ces opérations sont-elles utiles ?\n\nElles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances.\nElles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.\n\nNumPy fournit également des fonctions statistiques :\nprint(arr.mean())  # Moyenne\nprint(arr.sum())   # Somme\nprint(arr.std())   # Écart-type\nExercice 3 : - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#reshaping-et-manipulation-des-formes",
+    "href": "doc/cours/manipdonnees-slides.html#reshaping-et-manipulation-des-formes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Reshaping et Manipulation des Formes",
+    "text": "Reshaping et Manipulation des Formes\nLe reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.\narr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes\nprint(arr)\nLa transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :\nprint(arr.T)  # Transpose la matrice\nExercice 4 : - Créez une matrice 3x3 et affichez sa transposée."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#broadcasting-et-vectorisation",
+    "href": "doc/cours/manipdonnees-slides.html#broadcasting-et-vectorisation",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Broadcasting et Vectorisation",
+    "text": "Broadcasting et Vectorisation\nLe broadcasting est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr + np.array([10, 20, 30]))  # Broadcasting\nPourquoi le broadcasting est important ? - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.\nExercice 5 : - Multipliez une matrice par un vecteur ligne avec broadcasting."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#gestion-des-valeurs-manquantes",
+    "href": "doc/cours/manipdonnees-slides.html#gestion-des-valeurs-manquantes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Gestion des Valeurs Manquantes",
+    "text": "Gestion des Valeurs Manquantes\nNumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.\narr = np.array([1, 2, np.nan, 4, 5])\nprint(np.isnan(arr))  # Détecter les NaN\nprint(np.nanmean(arr))  # Moyenne en ignorant NaN\nPourquoi est-ce utile ? - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.\nExercice 6 : - Remplacez les valeurs NaN par la moyenne du tableau."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#applications-pratiques",
+    "href": "doc/cours/manipdonnees-slides.html#applications-pratiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Applications Pratiques",
+    "text": "Applications Pratiques\nNumPy est souvent utilisé pour des applications pratiques en science des données et en intelligence artificielle."
+  },
+  {
+    "objectID": "doc/cours/manipdonnees-slides.html#conclusion",
+    "href": "doc/cours/manipdonnees-slides.html#conclusion",
+    "title": "Manipulation des données avec Numpy",
+    "section": "Conclusion",
+    "text": "Conclusion\nCe cours vous a permis de maîtriser :\n\nLa manipulation et la création de tableaux NumPy\nLes opérations mathématiques et statistiques\nLes techniques avancées de reshaping et broadcasting"
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html",
+    "href": "doc/cours/manipulationdonnees.html",
+    "title": "Manipulation des données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\n\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement"
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#introduction",
+    "href": "doc/cours/manipulationdonnees.html#introduction",
+    "title": "Manipulation des données avec Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle permet de travailler efficacement avec des tableaux multidimensionnels et offre une large gamme d’opérations mathématiques optimisées.\nL’intérêt principal de NumPy est sa capacité à effectuer des calculs beaucoup plus rapidement que les structures de données classiques en Python comme les listes. En effet, NumPy repose sur des algorithmes optimisés et implémentés en C, ce qui améliore considérablement la performance et réduit le temps de calcul.\n\n\n\nEfficacité et rapidité : NumPy effectue les opérations mathématiques sur des tableaux de manière optimisée.\nGestion de données complexes : permet de manipuler aisément des matrices, tenseurs et grandes séries de données.\nCompatibilité avec d’autres bibliothèques : NumPy est souvent utilisé avec Pandas, Matplotlib, et Scikit-learn pour l’analyse et la modélisation des données.\n\nObjectifs de ce cours : - Comprendre et manipuler les tableaux (ndarray) de NumPy - Appliquer des opérations mathématiques et statistiques - Optimiser les calculs avec le broadcasting et la vectorisation - Transformer et structurer les données efficacement"
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#installation-et-importation",
+    "href": "doc/cours/manipulationdonnees.html#installation-et-importation",
+    "title": "Manipulation des données avec Numpy",
+    "section": "2 Installation et Importation",
+    "text": "2 Installation et Importation\nNumPy est inclus dans de nombreuses distributions Python, mais s’il n’est pas installé, utilisez la commande suivante :\npip install numpy\nEnsuite, importez NumPy dans votre script Python :\nimport numpy as np\nL’alias np est utilisé par convention pour éviter d’avoir à taper numpy en entier à chaque fois."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#création-et-manipulation-des-tableaux-numpy",
+    "href": "doc/cours/manipulationdonnees.html#création-et-manipulation-des-tableaux-numpy",
+    "title": "Manipulation des données avec Numpy",
+    "section": "3 Création et Manipulation des Tableaux NumPy",
+    "text": "3 Création et Manipulation des Tableaux NumPy\nNumPy repose sur une structure de données appelée ndarray (N-dimensional array), qui est un tableau multidimensionnel homogène, optimisé pour les opérations mathématiques.\n\nCréation de Tableaux (ndarray)\nLes tableaux NumPy peuvent être créés à partir de listes Python, de valeurs prédéfinies ou de valeurs générées automatiquement :\n# Création d'un tableau à partir d'une liste\narr1 = np.array([1, 2, 3, 4, 5])\nprint(arr1)\n\n# Tableau multidimensionnel\narr2 = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr2)\nD’autres méthodes permettent de générer rapidement des tableaux :\nnp.zeros((3, 3))    # Matrice 3x3 remplie de 0\nnp.ones((2, 4))     # Matrice 2x4 remplie de 1\nnp.full((3, 3), 7)  # Matrice 3x3 remplie de 7\nnp.eye(4)           # Matrice identité 4x4\nnp.linspace(0, 10, 5)  # 5 valeurs espacées entre 0 et 10\nPourquoi ces méthodes sont utiles ?\n\nzeros et ones permettent d’initialiser rapidement des tableaux sans avoir à taper les valeurs une à une.\neye est très utilisé en algèbre linéaire pour les calculs de matrices identité.\nlinspace est idéal pour générer des valeurs numériques espacées uniformément.\n\nExercice 1 :\n\nCréez un tableau NumPy de 4x4 rempli de nombres aléatoires entre 0 et 1.\nGénérer une séquence de 10 nombres entre 1 et 100."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#indexation-et-slicing",
+    "href": "doc/cours/manipulationdonnees.html#indexation-et-slicing",
+    "title": "Manipulation des données avec Numpy",
+    "section": "4 Indexation et Slicing",
+    "text": "4 Indexation et Slicing\nL’accès aux éléments d’un tableau NumPy se fait de manière similaire aux listes Python, mais avec des fonctionnalités supplémentaires.\n\nSélection d’éléments\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[2])  # Accéder au 3e élément\nL’indexation commence toujours à 0 en Python, donc arr[2] retourne 30.\n\n\nIndexation avancée\nNumPy permet d’accéder à des sous-ensembles de tableaux plus facilement :\narr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(arr2d[1, 2])  # 6 (ligne 2, colonne 3)\n\n\nSlicing (Découpage d’un tableau)\nAvec NumPy, on peut extraire plusieurs valeurs avec des tranches (slices) :\nsub_arr = arr2d[:2, 1:]  # Extraction de sous-tableau\nprint(sub_arr)\nPourquoi utiliser le slicing ?\n\nPermet d’extraire rapidement des parties spécifiques d’un tableau sans devoir recréer un autre tableau manuellement.\nTrès utile en analyse de données pour filtrer des valeurs selon des conditions spécifiques.\n\nExercice 2 :\n\nExtraire la première colonne d’une matrice 3x3.\nModifier les valeurs d’une portion spécifique d’un tableau."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#opérations-mathématiques-et-statistiques",
+    "href": "doc/cours/manipulationdonnees.html#opérations-mathématiques-et-statistiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "5 Opérations Mathématiques et Statistiques",
+    "text": "5 Opérations Mathématiques et Statistiques\nNumPy permet d’effectuer des calculs mathématiques sur des tableaux de manière optimisée. Ces opérations peuvent être appliquées élément par élément sans nécessiter de boucle explicite.\narr = np.array([1, 2, 3, 4, 5])\nprint(arr + 10)  # Ajouter 10 à chaque élément\nprint(arr ** 2)  # Élever chaque élément au carré\nPourquoi ces opérations sont-elles utiles ?\n\nElles permettent d’éviter l’utilisation de boucles explicites en Python, ce qui améliore grandement les performances.\nElles sont très utilisées dans le cadre du traitement des données et du calcul scientifique.\n\nNumPy fournit également des fonctions statistiques :\nprint(arr.mean())  # Moyenne\nprint(arr.sum())   # Somme\nprint(arr.std())   # Écart-type\nExercice 3 : - Créez une matrice 5x5 remplie de nombres aléatoires et calculez sa moyenne et son écart-type."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#reshaping-et-manipulation-des-formes",
+    "href": "doc/cours/manipulationdonnees.html#reshaping-et-manipulation-des-formes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "6 Reshaping et Manipulation des Formes",
+    "text": "6 Reshaping et Manipulation des Formes\nLe reshaping permet de modifier la structure d’un tableau sans en changer les données. Cela est très utile lorsqu’on manipule des matrices pour l’apprentissage automatique ou la visualisation des données.\narr = np.arange(12).reshape(3, 4)  # Transformation en 3 lignes, 4 colonnes\nprint(arr)\nLa transposition est également une technique couramment utilisée pour réarranger les axes d’un tableau :\nprint(arr.T)  # Transpose la matrice\nExercice 4 : - Créez une matrice 3x3 et affichez sa transposée."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#broadcasting-et-vectorisation",
+    "href": "doc/cours/manipulationdonnees.html#broadcasting-et-vectorisation",
+    "title": "Manipulation des données avec Numpy",
+    "section": "7 Broadcasting et Vectorisation",
+    "text": "7 Broadcasting et Vectorisation\nLe broadcasting est un mécanisme puissant de NumPy qui permet d’effectuer des opérations entre tableaux de tailles différentes sans copier les données.\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr + np.array([10, 20, 30]))  # Broadcasting\nPourquoi le broadcasting est important ? - Il permet d’optimiser les calculs en évitant la création de copies inutiles. - Il est essentiel pour le traitement efficace des images et des séries temporelles.\nExercice 5 : - Multipliez une matrice par un vecteur ligne avec broadcasting."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#gestion-des-valeurs-manquantes",
+    "href": "doc/cours/manipulationdonnees.html#gestion-des-valeurs-manquantes",
+    "title": "Manipulation des données avec Numpy",
+    "section": "8 Gestion des Valeurs Manquantes",
+    "text": "8 Gestion des Valeurs Manquantes\nNumPy offre plusieurs fonctions pour détecter et gérer les valeurs manquantes dans les jeux de données.\narr = np.array([1, 2, np.nan, 4, 5])\nprint(np.isnan(arr))  # Détecter les NaN\nprint(np.nanmean(arr))  # Moyenne en ignorant NaN\nPourquoi est-ce utile ? - En analyse de données, les valeurs manquantes sont courantes et doivent être traitées pour éviter les erreurs dans les calculs. - NumPy permet de gérer ces valeurs sans nécessiter de prétraitement complexe.\nExercice 6 : - Remplacez les valeurs NaN par la moyenne du tableau."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#applications-pratiques",
+    "href": "doc/cours/manipulationdonnees.html#applications-pratiques",
+    "title": "Manipulation des données avec Numpy",
+    "section": "9 Applications Pratiques",
+    "text": "9 Applications Pratiques\nNumPy est souvent utilisé pour des applications pratiques en science des données et en intelligence artificielle.\n\nProduit Matriciel\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nprint(np.dot(A, B))  # Produit matriciel\n\n\nSimulation de Données\nsim_data = np.random.randn(1000)\nprint(np.histogram(sim_data, bins=10))  # Histogramme des valeurs simulées\nExercice 7 : - Simulez une série de valeurs et tracez son histogramme."
+  },
+  {
+    "objectID": "doc/cours/manipulationdonnees.html#conclusion",
+    "href": "doc/cours/manipulationdonnees.html#conclusion",
+    "title": "Manipulation des données avec Numpy",
+    "section": "10 Conclusion",
+    "text": "10 Conclusion\nCe cours vous a permis de maîtriser :\n\nLa manipulation et la création de tableaux NumPy\nLes opérations mathématiques et statistiques\nLes techniques avancées de reshaping et broadcasting"
   },
   {
     "objectID": "doc/cours/introduction-slides.html#introduction",
@@ -1295,118 +1351,6 @@
     "text": "4.3 Résumé\n\n\n\n\n\n\n\nStructure\nDescription\n\n\n\n\nif\nExécute un bloc si une condition est vraie.\n\n\nelif\nAjoute des conditions supplémentaires.\n\n\nelse\nDéfinit un bloc exécuté si toutes les conditions sont fausses.\n\n\nfor\nParcourt une séquence ou un intervalle.\n\n\nwhile\nRépète un bloc tant qu’une condition est vraie.\n\n\nbreak\nInterrompt une boucle.\n\n\ncontinue\nSaute à l’itération suivante.\n\n\npass\nNe fait rien (utile pour des blocs vides).\n\n\n\nAvec ces structures, vous pouvez écrire des programmes dynamiques et efficaces en Python !"
   },
   {
-    "objectID": "doc/cours/typedonnees-slides.html#les-listes-list",
-    "href": "doc/cours/typedonnees-slides.html#les-listes-list",
-    "title": "Les Types de données en Python",
-    "section": "Les Listes (list)",
-    "text": "Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types."
-  },
-  {
-    "objectID": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
-    "href": "doc/cours/typedonnees-slides.html#les-tuples-tuple",
-    "title": "Les Types de données en Python",
-    "section": "Les Tuples (tuple)",
-    "text": "Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création."
-  },
-  {
-    "objectID": "doc/cours/typedonnees-slides.html#les-dictionnaires-dict",
-    "href": "doc/cours/typedonnees-slides.html#les-dictionnaires-dict",
-    "title": "Les Types de données en Python",
-    "section": "Les Dictionnaires (dict)",
-    "text": "Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois."
-  },
-  {
-    "objectID": "doc/cours/typedonnees-slides.html#les-ensembles-set",
-    "href": "doc/cours/typedonnees-slides.html#les-ensembles-set",
-    "title": "Les Types de données en Python",
-    "section": "Les Ensembles (set)",
-    "text": "Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc."
-  },
-  {
-    "objectID": "doc/cours/typedonnees.html",
-    "href": "doc/cours/typedonnees.html",
-    "title": "Les Types de données en Python",
-    "section": "",
-    "text": "Python propose des types de données avancés pour manipuler des collections de données ou des structures complexes. Ces types sont essentiels pour gérer des informations organisées."
-  },
-  {
-    "objectID": "doc/cours/typedonnees.html#les-listes-list",
-    "href": "doc/cours/typedonnees.html#les-listes-list",
-    "title": "Les Types de données en Python",
-    "section": "1 Les Listes (list)",
-    "text": "1 Les Listes (list)\nLes listes sont des collections ordonnées et modifiables. Elles peuvent contenir des éléments de types différents.\nCaractéristiques :\n\nOrdonnées : Les éléments conservent leur position dans l’ordre dans lequel ils ont été ajoutés.\nModifiables : Les listes peuvent être modifiées après leur création (ajout, suppression, modification d’éléments).\nHétérogènes : Une liste peut contenir des éléments de différents types.\n\n\n\nCréation de listes\nLes listes peuvent être créées à partir d’une série d’éléments séparés par des virgules et entourés de crochets [ ].\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nnombres = [1, 2, 3, 4]\nfruits.append(\"orange\")  # Ajoute un élément\nprint(fruits)\n\n\n\nOpérations CRUD sur les Listes en Python\nLes opérations CRUD (Create, Read, Update, Delete) représentent les actions fondamentales que l’on peut effectuer sur des données dans une application. Ces actions sont souvent utilisées dans la gestion des bases de données, mais elles s’appliquent également aux structures de données comme les listes en Python :\n\nCreate (Créer) : Ajouter de nouvelles données.\nRead (Lire) : Consulter ou accéder aux données existantes.\nUpdate (Mettre à jour) : Modifier les données existantes.\nDelete (Supprimer) : Effacer les données.\n\n\n\nCréer une Liste (Create)\nPour créer une liste, utilisez des crochets ([]) et séparez les éléments par des virgules.\nExemple :\n# Créer une liste vide\nma_liste = []\n\n# Créer une liste avec des éléments\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(fruits)  # Affiche : ['pomme', 'banane', 'cerise']\n\n\n\n\nLire les Données (Read)\n\nAccéder à un élément par son index\nLes indices commencent à 0.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(fruits[0])  # Affiche : \"pomme\"\nprint(fruits[-1])  # Affiche : \"cerise\" (dernier élément)\n\n\n\nParcourir une liste\nVous pouvez utiliser une boucle pour parcourir tous les éléments.\nExemple :\nfor fruit in fruits:\n    print(fruit)\n\n\n\nLongueur de la liste\nUtilisez la fonction len() pour connaître le nombre d’éléments dans une liste.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nprint(len(fruits))  # Affiche : 3\n\n\n\n\nMettre à Jour une Liste (Update)\n\nModifier un élément existant\nAccédez à l’élément par son index et assignez-lui une nouvelle valeur.\nExemple :\nfruits = [\"pomme\", \"banane\", \"cerise\"]\nfruits[1] = \"orange\"  # Remplace \"banane\" par \"orange\"\nprint(fruits)  # Affiche : ['pomme', 'orange', 'cerise']\n\n\n\nAjouter des éléments\n\nÀ la fin de la liste :\nUtilisez la méthode append().\nExemple :\nfruits = [\"pomme\", \"orange\", \"cerise\"]\nfruits.append(\"mangue\")\nprint(fruits)  # Affiche : ['pomme', 'orange', 'cerise', 'mangue']\n\n\n\n\nÀ une position spécifique\nUtilisez la méthode insert() pour insérer un élément à une position spécifique dans une liste.\nExemple :\nfruits = [\"pomme\", \"orange\", \"cerise\", \"mangue\"]\nfruits.insert(1, \"fraise\")  # Ajoute \"fraise\" à l'index 1\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue']\n\n\n\nFusionner deux listes\nPour fusionner deux listes, vous pouvez utiliser l’opérateur + ou la méthode extend().\nExemple :\nlegumes = [\"carotte\", \"tomate\"]\nfruits = [\"pomme\", \"fraise\", \"orange\", \"cerise\", \"mangue\"]\n\n# Fusion avec extend()\nfruits.extend(legumes)\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\nFusionner deux listes avec l’opérateur +\nVous pouvez également utiliser l’opérateur + pour créer une nouvelle liste fusionnée.\nExemple :\nlegumes = [\"carotte\", \"tomate\"]\nfruits = [\"pomme\", \"fraise\", \"orange\", \"cerise\", \"mangue\"]\n\n# Fusion avec +\nnouvelle_liste = fruits + legumes\nprint(nouvelle_liste)  # Affiche : ['pomme', 'fraise', 'orange', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nSupprimer des Éléments (Delete)\n\nSupprimer un élément par sa valeur\nUtilisez la méthode remove().\nExemple :\nfruits.remove(\"orange\")  # Supprime \"orange\"\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nSupprimer un élément par son index\nUtilisez l’instruction del ou la méthode pop().\n\nAvec del :\ndel fruits[0]  # Supprime le premier élément\nprint(fruits)  # Affiche : ['fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n\n\n\nUtilisation de pop()\nLa méthode pop() supprime un élément d’une liste et le retourne. Par défaut, elle supprime le dernier élément de la liste, mais vous pouvez également lui spécifier un index pour supprimer un élément particulier.\nExemple :\nfruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte', 'tomate']\n\n# Supprimer et retourner le dernier élément\ndernier_fruit = fruits.pop()  # Supprime \"tomate\" de la liste\nprint(dernier_fruit)  # Affiche : \"tomate\"\nprint(fruits)  # Affiche : ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']\n\n\n\nSupprimer tous les éléments avec clear()\nLa méthode clear() supprime tous les éléments de la liste, laissant une liste vide. Contrairement à pop(), elle ne retourne aucun élément.\nExemple :\nfruits = ['pomme', 'fraise', 'cerise', 'mangue', 'carotte']\n\n# Supprimer tous les éléments\nfruits.clear()\nprint(fruits)  # Affiche : []\n\n\n\nDifférence entre pop() et clear()\n\n\n\n\n\n\n\n\nMéthode\nFonctionnalité\nExemple de résultat\n\n\n\n\npop()\nSupprime et retourne un seul élément de la liste (par défaut, le dernier).\nfruits.pop() -&gt; retourne \"tomate\", modifie la liste.\n\n\nclear()\nSupprime tous les éléments de la liste sans retourner quoi que ce soit.\nfruits.clear() -&gt; retourne None, vide la liste.\n\n\n\n\npop() est utile lorsque vous voulez traiter ou sauvegarder l’élément supprimé.\nclear() est idéal pour réinitialiser une liste sans conserver ses éléments.\n\n\n\n\nRésumé des Méthodes CRUD sur les Listes\n\n\n\n\n\n\n\n\nOpération\nMéthode\nDescription\n\n\n\n\nCreate\n[], append(), insert()\nCréer ou ajouter des éléments.\n\n\nRead\nindex, len(), for loop\nLire ou parcourir les éléments.\n\n\nUpdate\nindex, append(), extend()\nModifier ou ajouter des éléments.\n\n\nDelete\nremove(), pop(), del, clear()\nSupprimer des éléments ou tout vider."
-  },
-  {
-    "objectID": "doc/cours/typedonnees.html#les-tuples-tuple",
-    "href": "doc/cours/typedonnees.html#les-tuples-tuple",
-    "title": "Les Types de données en Python",
-    "section": "2 Les Tuples (tuple)",
-    "text": "2 Les Tuples (tuple)\nLes tuples sont des collections ordonnées, mais immuables (non modifiables après leur création). Ils sont souvent utilisés pour stocker des données constantes.\nCaractéristiques :\n\nOrdonnés : Les éléments conservent leur position.\nImmuables : Impossible de modifier, ajouter ou supprimer des éléments après leur création.\n\n\n\nCréation de Tuples\nUn tuple peut être créé en plaçant une série d’éléments séparés par des virgules dans des parenthèses ().\nExemple :\nmon_tuple = (1, 2, 3)\nprint(mon_tuple)  # Affiche : (1, 2, 3)\n\n\n\nOpérations CRUD sur les Tuples\nComme les tuples sont immuables, les opérations Update et Delete diffèrent légèrement de celles des listes. Voici un aperçu des actions fondamentales :\n\nCreate (Créer) : Ajouter de nouvelles données.\nRead (Lire) : Consulter ou accéder aux données existantes.\nUpdate (Mettre à jour) : Pas directement possible (les tuples sont immuables).\nDelete (Supprimer) : Vous pouvez supprimer le tuple entier mais pas ses éléments individuels.\n\n\n\nCréer un Tuple (Create)\nExemple :\n# Créer un tuple avec des éléments\nmon_tuple = (1, 'Python', 3.14)\nprint(mon_tuple)  # Affiche : (1, 'Python', 3.14)\nVous pouvez également créer un tuple sans parenthèses (packing) :\nmon_tuple = 1, 'Python', 3.14\n\n\nLire les Données (Read)\nAccéder à un élément par son index :\nmon_tuple = (1, 'Python', 3.14)\nprint(mon_tuple[1])  # Affiche : 'Python'\nParcourir un tuple avec une boucle :\nfor element in mon_tuple:\n    print(element)\nLongueur du tuple :\nprint(len(mon_tuple))  # Affiche : 3\n\n\nMettre à Jour un Tuple (Update)\nLes tuples sont immutables, donc vous ne pouvez pas modifier leurs éléments directement. Cependant, vous pouvez créer un nouveau tuple basé sur l’ancien.\nExemple :\nmon_tuple = (1, 2, 3)\nnouveau_tuple = mon_tuple + (4, 5)\nprint(nouveau_tuple)  # Affiche : (1, 2, 3, 4, 5)\n\n\nSupprimer un Tuple (Delete)\nVous ne pouvez pas supprimer un élément spécifique d’un tuple, mais vous pouvez supprimer le tuple entier.\nExemple :\nmon_tuple = (1, 2, 3)\ndel mon_tuple\n\n\n\nAvantages des Tuples\n\nImmutabilité : Protège les données contre les modifications accidentelles.\nPerformance : Les tuples sont plus rapides à traiter que les listes.\nUtilisation dans les clés de dictionnaire : Les tuples peuvent être utilisés comme clés dans un dictionnaire (contrairement aux listes).\n\nExemple :\ncoordonnees = {\n    (0, 0): 'Origine',\n    (1, 2): 'Point A'\n}\nprint(coordonnees[(1, 2)])  # Affiche : 'Point A'\n\n\nDifférences entre Listes et Tuples\n\n\n\nCaractéristique\nListe\nTuple\n\n\n\n\nMutabilité\nMutable\nImmuable\n\n\nSyntaxe\n[ ]\n( )\n\n\nPerformance\nPlus lente\nPlus rapide\n\n\nUtilisation\nDonnées modifiables\nDonnées fixes"
-  },
-  {
-    "objectID": "doc/cours/typedonnees.html#les-dictionnaires-dict",
-    "href": "doc/cours/typedonnees.html#les-dictionnaires-dict",
-    "title": "Les Types de données en Python",
-    "section": "3 Les Dictionnaires (dict)",
-    "text": "3 Les Dictionnaires (dict)\nLes dictionnaires sont des collections non ordonnées (dans les versions antérieures à Python 3.7) qui stockent des paires clé-valeur. Chaque clé doit être unique.\nCaractéristiques :\n\nAccès rapide : Vous pouvez accéder rapidement aux valeurs à l’aide de leurs clés.\nModifiables : Vous pouvez ajouter, modifier ou supprimer des paires clé-valeur.\nClés uniques : Une clé ne peut être présente qu’une seule fois.\n\n\nCréation de Dictionnaires\nUn dictionnaire peut être créé en utilisant des accolades {} et des paires clé-valeur séparées par des deux-points :.\nExemple :\nmon_dict = {\n    'nom': 'Alice',\n    'age': 25,\n    'ville': 'Paris'\n}\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\n\n\nOpérations CRUD sur les Dictionnaires\nLes dictionnaires permettent les opérations fondamentales CRUD (Create, Read, Update, Delete) comme suit :\n\nCreate (Créer) : Ajouter de nouvelles paires clé-valeur.\nRead (Lire) : Accéder à une valeur via sa clé.\nUpdate (Mettre à jour) : Modifier la valeur associée à une clé existante ou ajouter une nouvelle clé.\nDelete (Supprimer) : Supprimer une paire clé-valeur.\n\n\nCréer un Dictionnaire (Create)\nExemple :\n# Créer un dictionnaire vide\nmon_dict = {}\n\n# Ajouter des paires clé-valeur\nmon_dict['nom'] = 'Alice'\nmon_dict['age'] = 25\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 25}\n\n\nLire les Données (Read)\nAccéder à une valeur par sa clé :\nmon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\nprint(mon_dict['nom'])  # Affiche : Alice\nUtiliser la méthode get() pour éviter les erreurs :\nprint(mon_dict.get('pays', 'Clé introuvable'))  # Affiche : Clé introuvable\nParcourir un dictionnaire :\nfor cle, valeur in mon_dict.items():\n    print(f'{cle} : {valeur}')\nClés et valeurs :\nprint(mon_dict.keys())   # Affiche les clés : dict_keys(['nom', 'age', 'ville'])\nprint(mon_dict.values()) # Affiche les valeurs : dict_values(['Alice', 25, 'Paris'])\n\n\nMettre à Jour un Dictionnaire (Update)\nAjouter ou modifier une clé :\nmon_dict = {'nom': 'Alice', 'age': 25}\nmon_dict['ville'] = 'Paris'  # Ajout\nmon_dict['age'] = 26         # Mise à jour\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris'}\nFusionner deux dictionnaires :\nautre_dict = {'pays': 'France', 'profession': 'Ingénieure'}\nmon_dict.update(autre_dict)\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'age': 26, 'ville': 'Paris', 'pays': 'France', 'profession': 'Ingénieure'}\n\n\nSupprimer des Éléments (Delete)\nSupprimer une paire clé-valeur :\nmon_dict = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}\ndel mon_dict['age']\nprint(mon_dict)  # Affiche : {'nom': 'Alice', 'ville': 'Paris'}\nSupprimer et retourner une valeur avec pop() :\nville = mon_dict.pop('ville')\nprint(ville)  # Affiche : Paris\nprint(mon_dict)  # Affiche : {'nom': 'Alice'}\nSupprimer tous les éléments avec clear() :\nmon_dict.clear()\nprint(mon_dict)  # Affiche : {}\n\n\n\nAvantages des Dictionnaires\n\nRapidité : Accès direct aux valeurs via les clés.\nFlexible : Peut contenir des données de types variés.\nOrganisation : Idéal pour structurer des données complexes.\n\nExemple :\nutilisateur = {\n    'id': 123,\n    'nom': 'Alice',\n    'contact': {\n        'email': 'alice@example.com',\n        'telephone': '123-456-7890'\n    }\n}\nprint(utilisateur['contact']['email'])  # Affiche : alice@example.com\n\n\nDifférences entre Listes et Dictionnaires\n\n\n\n\n\n\n\n\nCaractéristique\nListe\nDictionnaire\n\n\n\n\nAccès aux données\nPar index numérique\nPar clé\n\n\nStructure\nSéquence ordonnée\nPaires clé-valeur\n\n\nMutabilité\nMutable\nMutable (clés immuables)"
-  },
-  {
-    "objectID": "doc/cours/typedonnees.html#les-ensembles-set",
-    "href": "doc/cours/typedonnees.html#les-ensembles-set",
-    "title": "Les Types de données en Python",
-    "section": "4 Les Ensembles (set)",
-    "text": "4 Les Ensembles (set)\nLes ensembles sont des collections non ordonnées et uniques (chaque élément apparaît une seule fois). Ils sont utiles pour éliminer les doublons ou effectuer des opérations mathématiques sur des ensembles.\nCaractéristiques :\n\nNon ordonnés : Les éléments n’ont pas de position fixe.\nÉléments uniques : Les doublons sont automatiquement supprimés.\nOpérations mathématiques : Permettent des opérations comme l’union, l’intersection, la différence, etc.\n\n\nCréation d’Ensembles\nUn ensemble peut être créé en utilisant la fonction set() ou en plaçant des éléments entre accolades {}.\nExemple :\nmon_set = {1, 2, 3, 4}\nprint(mon_set)  # Affiche : {1, 2, 3, 4}\n\n# Création d'un ensemble à partir d'une liste\nmon_set = set([1, 2, 2, 3])\nprint(mon_set)  # Affiche : {1, 2, 3} (les doublons sont supprimés)\n\n\nOpérations CRUD sur les Ensembles\nLes ensembles prennent en charge les opérations fondamentales CRUD (Create, Read, Update, Delete) :\n\nCreate (Créer) : Ajouter de nouveaux éléments.\nRead (Lire) : Vérifier la présence d’un élément.\nUpdate (Mettre à jour) : Ajouter ou supprimer des éléments.\nDelete (Supprimer) : Supprimer des éléments ou réinitialiser l’ensemble.\n\n\nCréer un Ensemble (Create)\nExemple :\n# Créer un ensemble vide\nmon_set = set()\n\n# Ajouter des éléments\nmon_set.add(1)\nmon_set.add(2)\nprint(mon_set)  # Affiche : {1, 2}\n\n\nLire les Données (Read)\nVérifier la présence d’un élément :\nmon_set = {1, 2, 3}\nprint(1 in mon_set)  # Affiche : True\nprint(4 in mon_set)  # Affiche : False\nParcourir un ensemble avec une boucle :\nfor element in mon_set:\n    print(element)\nTaille de l’ensemble :\nprint(len(mon_set))  # Affiche : 3\n\n\nMettre à Jour un Ensemble (Update)\nAjouter des éléments :\nmon_set = {1, 2}\nmon_set.add(3)  # Ajoute un seul élément\nmon_set.update([4, 5])  # Ajoute plusieurs éléments\nprint(mon_set)  # Affiche : {1, 2, 3, 4, 5}\nSupprimer des éléments :\nAvec remove() :\nmon_set.remove(2)  # Supprime 2 de l'ensemble\nprint(mon_set)  # Affiche : {1, 3, 4, 5}\nAvec discard() (ne lève pas d’erreur si l’élément n’existe pas) :\nmon_set.discard(10)  # Aucun effet si 10 n'est pas présent\n\n\nSupprimer des Éléments (Delete)\nSupprimer un élément avec pop() :\nmon_set = {1, 2, 3}\nelement = mon_set.pop()  # Supprime et retourne un élément aléatoire\nprint(element)  # Affiche : 1 (ou un autre élément)\nprint(mon_set)  # Affiche : {2, 3}\nSupprimer tous les éléments avec clear() :\nmon_set.clear()\nprint(mon_set)  # Affiche : set()\n\n\n\nOpérations Mathématiques avec les Ensembles\nLes ensembles permettent des opérations mathématiques classiques :\nUnion : Combine tous les éléments des deux ensembles.\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\nprint(set1 | set2)  # Affiche : {1, 2, 3, 4, 5}\nIntersection : Récupère les éléments communs aux deux ensembles.\nprint(set1 & set2)  # Affiche : {3}\nDifférence : Récupère les éléments présents dans le premier ensemble mais pas dans le second.\nprint(set1 - set2)  # Affiche : {1, 2}\nDifférence Symétrique : Récupère les éléments présents dans un seul des deux ensembles.\nprint(set1 ^ set2)  # Affiche : {1, 2, 4, 5}"
-  },
-  {
-    "objectID": "doc/glossaire.html",
-    "href": "doc/glossaire.html",
-    "title": "Glossaire",
-    "section": "",
-    "text": "🚧"
-  },
-  {
-    "objectID": "doc/glossaire.html#python",
-    "href": "doc/glossaire.html#python",
-    "title": "Glossaire",
-    "section": "Python",
-    "text": "Python\nUn langage de programmation interprété, polyvalent, et accessible, utilisé dans divers domaines comme la data science, l’intelligence artificielle, le développement web et l’automatisation.\n\nVariable\nUn espace mémoire réservé pour stocker une valeur.\nEn Python, les variables n’ont pas de type explicitement défini, mais leur contenu en a un (ex : int, str, float).\nSynonymes : Identifiant, Conteneur.\n\n\nType de données\nCatégorie de données que peut prendre une variable : - int : nombres entiers. - float : nombres décimaux. - str : chaînes de caractères. - bool : valeurs booléennes (True, False).\nSynonymes : Type, Classe."
-  },
-  {
-    "objectID": "doc/glossaire.html#structures-de-contrôle",
-    "href": "doc/glossaire.html#structures-de-contrôle",
-    "title": "Glossaire",
-    "section": "Structures de contrôle",
-    "text": "Structures de contrôle\n\nCondition\nPermet d’exécuter un bloc de code en fonction d’une condition.\nSyntaxe en Python :\nif condition:\n    # Faire quelque chose\nelif autre_condition:\n    # Faire autre chose\nelse:\n    # Faire par défaut"
-  },
-  {
-    "objectID": "doc/tp/tp2.html",
-    "href": "doc/tp/tp2.html",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\n\n\nÉcrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré.\n\n\n\n\n\n\n\n\nDéfinissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#objectifs",
-    "href": "doc/tp/tp2.html#objectifs",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#partie-1-fonctions",
-    "href": "doc/tp/tp2.html#partie-1-fonctions",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré."
-  },
-  {
-    "objectID": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
-    "href": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
-    "title": "Fonctions, Modules et POO",
-    "section": "",
-    "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
-  },
-  {
     "objectID": "doc/tp/tp5.html",
     "href": "doc/tp/tp5.html",
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
@@ -1510,5 +1454,61 @@
     "title": "Visualisation des Données avec Matplotlib et Seaborn",
     "section": "",
     "text": "Effectuez un test de corrélation de Pearson et de Spearman entre person_income et loan_amnt (quanti-quanti).\nRéalisez un test du chi² pour tester l’indépendance entre cb_person_default_on_file et loan_status (quali-quali).\nEffectuez une comparaison de moyennes (t-test indépendant) entre loan_int_rate pour les individus ayant un historique de défaut (cb_person_default_on_file) et ceux qui n’en ont pas.\nEffectuez une ANOVA pour comparer loan_amnt entre plusieurs catégories (loan_grade).\n\nBonus : Expérimentez avec d’autres types de graphiques et tests statistiques pour approfondir l’analyse."
+  },
+  {
+    "objectID": "doc/tp/tp1.html",
+    "href": "doc/tp/tp1.html",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Ce TP est composé de deux parties principales qui vous guideront à travers les bases de Python, les structures de contrôle et les types de données.\n\n\nCe fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python\n\n\n\n\nDans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données\n\n\n\n\nÀ la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
+    "href": "doc/tp/tp1.html#partie-1-bien-démarrer-avec-python",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Ce fichier introduit les concepts de base pour débuter avec Python :\n\nInstallation et configuration de l’environnement Python.\nPremiers pas avec les types de données (entiers, flottants, chaînes, etc.).\nUtilisation de l’instruction print() pour afficher des résultats.\nPremiers calculs et manipulations de variables.\n\nTélécharger le notebook : Bien démarrer avec Python"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
+    "href": "doc/tp/tp1.html#partie-2-structures-de-contrôle-et-types-de-données",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "Dans cette partie, vous apprendrez à structurer vos programmes et à manipuler les données efficacement :\n\nLes structures de contrôle comme les boucles for et while.\nLes conditions if, elif, et else.\nManipulation des types de données complexes comme les listes, dictionnaires, et ensembles.\nExercices pratiques pour appliquer les concepts étudiés.\n\nTélécharger le notebook : Structure de contôle\nTélécharger le notebook : Types de Données"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#objectif",
+    "href": "doc/tp/tp1.html#objectif",
+    "title": "Bien Démarrer Avec Python",
+    "section": "",
+    "text": "À la fin de ce TP, vous serez capable de : - Manipuler les types de données de base en Python. - Utiliser des structures conditionnelles et des boucles pour contrôler l’exécution de votre code. - Résoudre des exercices pratiques pour renforcer vos compétences.\nTéléchargez les fichiers et commencez votre apprentissage dès maintenant !"
+  },
+  {
+    "objectID": "doc/tp/tp2.html",
+    "href": "doc/tp/tp2.html",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici\n\n\n\n\n\nÉcrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré.\n\n\n\n\n\n\n\n\nDéfinissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#objectifs",
+    "href": "doc/tp/tp2.html#objectifs",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Comprendre et appliquer les fonctions en Python.\nStructurer un projet Python en utilisant des modules.\nDécouvrir les bases de la programmation orientée objet.\n\nVous pouvez télécharger le fichier .ipynb en cliquant ici"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#partie-1-fonctions",
+    "href": "doc/tp/tp2.html#partie-1-fonctions",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Écrivez une fonction qui affiche le tableau de multiplication d’un entier positif donné.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et qui retourne True si a est présent dans la liste, et False sinon.\n\n\n\n\nÉcrivez une fonction qui prend une liste L de nombres et un entier n en paramètres, puis renvoie une nouvelle liste où chaque élément est multiplié par n.\n\n\n\n\nÉcrivez une fonction qui prend en paramètres une liste L et un élément a, et retourne la position de a dans la liste. Si l’élément n’est pas présent, renvoyez -1. N’utilisez pas la fonction index().\n\n\n\n\nÉcrivez une fonction qui prend une liste de nombres entiers en paramètre, et renvoie un dictionnaire où les clés sont les nombres et les valeurs indiquent leur parité ('pair' ou 'impair').\n\n\n\n\nÉcrivez une fonction qui prend une liste en paramètre et retourne une liste de tuples (élément, occurrence) représentant chaque élément et son nombre d’apparitions dans la liste, sans répétitions.\n\n\n\n\nCréez une liste en compréhension qui contient uniquement les carrés des nombres pairs d’une liste donnée.\n\n\n\n\nCréez un dictionnaire en compréhension qui associe chaque élément d’une liste à son carré."
+  },
+  {
+    "objectID": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
+    "href": "doc/tp/tp2.html#partie-2-programmation-orientée-objet-poo",
+    "title": "Fonctions, Modules et POO",
+    "section": "",
+    "text": "Définissez une classe Book avec les attributs : title, author et price.\nImplémentez un constructeur pour initialiser ces attributs.\nAjoutez une méthode view() qui affiche les informations du livre.\nTestez la classe en créant plusieurs instances.\n\n\n\n\n\n\nImplémentez une classe Polynome représentant un polynôme du second degré ( P(x) = ax^2 + bx + c ).\nAjoutez les méthodes suivantes :\n\neval(x) : calcule la valeur de ( P(x) ) pour une valeur donnée de ( x ).\ndelta() : calcule le discriminant ( = b^2 - 4ac ).\nracines() : calcule les racines du polynôme si elles existent.\n\n\n\n\n\n\n\nCréez une classe Domino avec deux attributs représentant les valeurs des deux parties du domino.\nAjoutez une méthode affiche_points() pour afficher les points du domino.\nAjoutez une méthode valeur() pour retourner la somme des points.\nTestez votre classe en instanciant plusieurs dominos.\n\n\n\n\n\n\nÉcrivez une fonction récursive pour calculer la somme des éléments d’une liste.\nImplémentez une fonction récursive pour calculer la suite de Fibonacci ( F(n) ).\n\nLa suite de Fibonacci est une série de nombres dans laquelle chaque terme est la somme des deux termes précédents. La formule mathématique de cette suite est définie comme suit :\n[ F(n) =\n\\[\\begin{cases}\n0 & \\text{si } n = 0, \\\\\n1 & \\text{si } n = 1, \\\\\nF(n-1) + F(n-2) & \\text{si } n &gt; 1.\n\\end{cases}\\]\n]\n\n\n\nPour ( n = 0, 1, 2, , 9 ), la suite de Fibonacci est donnée par :\n[ F(0) = 0, , F(1) = 1, , F(2) = 1, , F(3) = 2, , F(4) = 3, , F(5) = 5, , F(6) = 8, , F(7) = 13, , F(8) = 21, , F(9) = 34. ]"
   }
 ]

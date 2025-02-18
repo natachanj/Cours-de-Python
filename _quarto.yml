@@ -46,8 +46,6 @@ website:
             text: "TP5 - Visualisation des données avec Matplotlib et Seaborn"
           - href: doc/tp/correctionsTP.qmd
             text: "Correction des TP"
-          #- href: doc/tp/projet.qmd
-          #  text: "Projet de Python"
     
     right:
       - href: doc/glossaire.qmd

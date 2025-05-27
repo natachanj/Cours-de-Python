@@ -102,7 +102,7 @@ from: markdown+emoji
 ## Bibliographie {.smaller}
 
 - [Documentation officielle Python](https://docs.python.org/3/)
-- [Cours excellent de l'ENSAE] (https://pythonds.linogaliana.fr/)
+- [Cours excellent de l'ENSAE](https://pythonds.linogaliana.fr/)
 - [Python for Everybody](https://www.py4e.com/)
 - [Python Crash Course (Livre)](https://nostarch.com/pythoncrashcourse2e)
 - [Site](https://www.lamsade.dauphine.fr/~manouvri/PYTHON/CoursPython_MM.html)

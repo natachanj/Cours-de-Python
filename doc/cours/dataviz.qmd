@@ -60,7 +60,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-##Graphiques de Base avec Matplotlib
+## Graphiques de Base avec Matplotlib
 
 ## Courbe Linéaire (Line Plot)
 Les courbes permettent d'observer l'évolution d'une variable sur un axe donné.
@@ -423,7 +423,7 @@ plt.show()
 ```
 ---
 
-#Conclusion
+# Conclusion
 
 Ce guide vous offre une base solide pour utiliser Matplotlib et Seaborn en Python. Vous avez appris à :
 - Choisir le bon type de graphique selon vos données.
